@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Lantech</title>
+  <meta name="description" content="Tips, guides, and insights on web design, SEO, and growing your local business online — from the Lantech team.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #00E5FF; --accent-dim: rgba(0,229,255,0.07); --accent-border: rgba(0,229,255,0.14); --text: #EAEAF5; --text-muted: #68688A; --border: rgba(255,255,255,0.05); --surface: #0E0E1C; --bg: #07070E; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    .dot-grid { background-image: radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 28px 28px; }
+    .blob { position: absolute; border-radius: 50%; pointer-events: none; }
+    .blob-cyan { background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%); }
+    .blob-purple { background: radial-gradient(circle, rgba(124,92,252,0.06) 0%, transparent 65%); }
+    .h-xl { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.035em; line-height: 1.08; }
+    .h-lg { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.025em; line-height: 1.18; }
+    .h-md { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
+    .text-grad { background: linear-gradient(135deg, #00E5FF 0%, #7C5CFC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .tag { display: inline-flex; align-items: center; gap: 7px; font-family: 'Space Grotesk', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); padding: 0.3rem 0.85rem; border-radius: 100px; }
+    .tag-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.9rem; color: #07070E; background: var(--accent); padding: 0.7rem 1.6rem; border-radius: 7px; border: none; cursor: pointer; text-decoration: none; transition: opacity 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 0.9rem; color: var(--text); background: transparent; padding: 0.7rem 1.6rem; border-radius: 7px; border: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.14); transform: translateY(-2px); }
+    .btn-ghost:active { transform: translateY(0); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
+    .nav-link { font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text); }
+    .nav-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* Post card */
+    .post-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease; text-decoration: none; display: block; }
+    .post-card:hover { border-color: rgba(0,229,255,0.18); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.45); }
+    .post-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 14px; }
+
+    /* Post image placeholder */
+    .post-img { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+
+    /* Category pill */
+    .cat-pill { display: inline-flex; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 100px; }
+    .cat-web { color: #00E5FF; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.15); }
+    .cat-seo { color: #7C5CFC; background: rgba(124,92,252,0.08); border: 1px solid rgba(124,92,252,0.15); }
+    .cat-gmb { color: #00D68F; background: rgba(0,214,143,0.08); border: 1px solid rgba(0,214,143,0.15); }
+    .cat-social { color: #FF8C42; background: rgba(255,140,66,0.08); border: 1px solid rgba(255,140,66,0.15); }
+    .cat-tips { color: #EAEAF5; background: rgba(234,234,245,0.06); border: 1px solid rgba(234,234,245,0.1); }
+
+    /* Featured post */
+    .featured-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.4); transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1); text-decoration: none; display: grid; grid-template-columns: 1fr 1fr; }
+    .featured-card:hover { border-color: rgba(0,229,255,0.2); transform: translateY(-2px); }
+    .featured-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 16px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(7,7,14,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <div style="width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+      </div>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:-0.025em;">Lantech</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:36px;">
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link" style="color:var(--text);">Blog</a>
+      <a href="help.html" class="nav-link">Help</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section style="position:relative;overflow:hidden;padding:80px 32px 64px;">
+  <div class="blob blob-cyan" style="width:500px;height:500px;top:-180px;right:-100px;"></div>
+  <div class="dot-grid" style="position:absolute;inset:0;pointer-events:none;"></div>
+  <div style="position:relative;max-width:720px;margin:0 auto;text-align:center;">
+    <div class="tag" style="margin-bottom:20px;"><span class="tag-dot"></span>Lantech Blog</div>
+    <h1 class="h-xl" style="font-size:clamp(2rem,5vw,3.5rem);color:var(--text);margin-bottom:18px;">
+      Insights to grow your<br><span class="text-grad">business online</span>
+    </h1>
+    <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:480px;margin:0 auto;">Practical guides on web design, local SEO, GMB optimization, and social media — written for small business owners, not tech people.</p>
+  </div>
+</section>
+
+<hr class="divider" style="max-width:1200px;margin:0 auto;">
+
+<!-- FEATURED POST -->
+<section style="padding:64px 32px 0;max-width:1200px;margin:0 auto;">
+  <div style="margin-bottom:24px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:600;color:var(--text-muted);letter-spacing:0.07em;text-transform:uppercase;">Featured Post</span>
+  </div>
+  <a href="#" class="featured-card">
+    <!-- Image side -->
+    <div class="post-img" style="height:100%;min-height:260px;background:#0E0E1C;border-right:1px solid var(--border);">
+      <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=640&h=420&fit=crop&auto=format" alt="Local business Google search" style="width:100%;height:100%;object-fit:cover;opacity:0.55;filter:saturate(0.6);">
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at 40% 50%, rgba(0,229,255,0.1) 0%, transparent 65%);"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right, transparent 55%, #0E0E1C);"></div>
+    </div>
+    <!-- Content side -->
+    <div style="padding:2.5rem;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+        <span class="cat-pill cat-seo">SEO</span>
+        <span style="font-size:0.8rem;color:var(--text-muted);">April 12, 2026 · 8 min read</span>
+      </div>
+      <h2 class="h-lg" style="font-size:1.5rem;color:var(--text);margin-bottom:14px;line-height:1.3;">Why Your Local Business Isn't Showing Up on Google — And How to Fix It</h2>
+      <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.75;margin-bottom:24px;">Most small businesses are invisible on Google not because of bad luck, but because of a few fixable mistakes. This guide walks you through the exact steps to get found by local customers.</p>
+      <span style="display:inline-flex;align-items:center;gap:6px;font-family:'Space Grotesk',sans-serif;font-size:0.875rem;font-weight:600;color:var(--accent);">
+        Read Article
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+  </a>
+</section>
+
+<!-- CATEGORY FILTERS -->
+<section style="padding:48px 32px 0;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <button style="font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;padding:0.4rem 1rem;border-radius:100px;background:var(--accent);color:#07070E;border:none;cursor:pointer;transition:opacity 0.15s ease;" onclick="filterPosts('all')">All</button>
+    <button style="font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;background:transparent;color:var(--text-muted);border:1px solid var(--border);cursor:pointer;transition:all 0.15s ease;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')" onclick="filterPosts('web')">Web Design</button>
+    <button style="font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;background:transparent;color:var(--text-muted);border:1px solid var(--border);cursor:pointer;transition:all 0.15s ease;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')" onclick="filterPosts('seo')">SEO</button>
+    <button style="font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;background:transparent;color:var(--text-muted);border:1px solid var(--border);cursor:pointer;transition:all 0.15s ease;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')" onclick="filterPosts('gmb')">GMB</button>
+    <button style="font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;background:transparent;color:var(--text-muted);border:1px solid var(--border);cursor:pointer;transition:all 0.15s ease;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')" onclick="filterPosts('social')">Social Media</button>
+    <button style="font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:500;padding:0.4rem 1rem;border-radius:100px;background:transparent;color:var(--text-muted);border:1px solid var(--border);cursor:pointer;transition:all 0.15s ease;" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text')" onmouseout="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text-muted')" onclick="filterPosts('tips')">Business Tips</button>
+  </div>
+</section>
+
+<!-- POST GRID -->
+<section style="padding:40px 32px 80px;max-width:1200px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;">
+
+    <!-- Post 1 -->
+    <a href="#" class="post-card">
+      <div class="post-img" style="background:#0E0E1C;">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=680&h=220&fit=crop&auto=format" alt="Web design for small business" style="width:100%;height:100%;object-fit:cover;opacity:0.5;filter:saturate(0.65);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,28,0.92) 0%,transparent 60%);"></div>
+        <div style="position:absolute;bottom:16px;left:16px;"><span class="cat-pill cat-web">Web Design</span></div>
+      </div>
+      <div style="padding:1.5rem;">
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:10px;">March 28, 2026 · 5 min read</p>
+        <h3 class="h-md" style="font-size:1.05rem;color:var(--text);margin-bottom:10px;line-height:1.35;">5 Things Every Small Business Website Needs in 2026</h3>
+        <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">From click-to-call buttons to fast load times — here's the minimum your site needs to turn visitors into customers.</p>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Space Grotesk',sans-serif;font-size:0.825rem;font-weight:600;color:var(--accent);">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <!-- Post 2 -->
+    <a href="#" class="post-card">
+      <div class="post-img" style="background:#0E0E1C;">
+        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=680&h=220&fit=crop&auto=format" alt="SEO for small businesses" style="width:100%;height:100%;object-fit:cover;opacity:0.5;filter:saturate(0.6);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,28,0.92) 0%,transparent 60%);"></div>
+        <div style="position:absolute;bottom:16px;left:16px;"><span class="cat-pill cat-seo">SEO</span></div>
+      </div>
+      <div style="padding:1.5rem;">
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:10px;">March 15, 2026 · 6 min read</p>
+        <h3 class="h-md" style="font-size:1.05rem;color:var(--text);margin-bottom:10px;line-height:1.35;">Local SEO in 2026: What Actually Works for Small Businesses</h3>
+        <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Google's algorithm has changed. Here's what still moves the needle for local search rankings and what you can stop wasting time on.</p>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Space Grotesk',sans-serif;font-size:0.825rem;font-weight:600;color:var(--accent);">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <!-- Post 3 -->
+    <a href="#" class="post-card">
+      <div class="post-img" style="background:#0E0E1C;">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=680&h=220&fit=crop&auto=format" alt="Google Business Profile optimization" style="width:100%;height:100%;object-fit:cover;opacity:0.48;filter:saturate(0.6);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,28,0.92) 0%,transparent 60%);"></div>
+        <div style="position:absolute;bottom:16px;left:16px;"><span class="cat-pill cat-gmb">GMB</span></div>
+      </div>
+      <div style="padding:1.5rem;">
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:10px;">February 22, 2026 · 7 min read</p>
+        <h3 class="h-md" style="font-size:1.05rem;color:var(--text);margin-bottom:10px;line-height:1.35;">How to Get More Google Reviews (Without Begging or Breaking Rules)</h3>
+        <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Reviews are one of the biggest local ranking factors. Here's a system for getting more — ethically and automatically.</p>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Space Grotesk',sans-serif;font-size:0.825rem;font-weight:600;color:var(--accent);">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <!-- Post 4 -->
+    <a href="#" class="post-card">
+      <div class="post-img" style="background:#0E0E1C;">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=680&h=220&fit=crop&auto=format" alt="Social media for small business" style="width:100%;height:100%;object-fit:cover;opacity:0.5;filter:saturate(0.6);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,28,0.92) 0%,transparent 60%);"></div>
+        <div style="position:absolute;bottom:16px;left:16px;"><span class="cat-pill cat-social">Social Media</span></div>
+      </div>
+      <div style="padding:1.5rem;">
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:10px;">February 8, 2026 · 4 min read</p>
+        <h3 class="h-md" style="font-size:1.05rem;color:var(--text);margin-bottom:10px;line-height:1.35;">What to Post on Facebook When You Have No Ideas</h3>
+        <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">A simple 5-category content framework that keeps your page active without spending hours thinking about what to say.</p>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Space Grotesk',sans-serif;font-size:0.825rem;font-weight:600;color:var(--accent);">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <!-- Post 5 -->
+    <a href="#" class="post-card">
+      <div class="post-img" style="background:#0E0E1C;">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=680&h=220&fit=crop&auto=format" alt="Small business marketing tips" style="width:100%;height:100%;object-fit:cover;opacity:0.48;filter:saturate(0.6);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,28,0.92) 0%,transparent 60%);"></div>
+        <div style="position:absolute;bottom:16px;left:16px;"><span class="cat-pill cat-tips">Business Tips</span></div>
+      </div>
+      <div style="padding:1.5rem;">
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:10px;">January 30, 2026 · 5 min read</p>
+        <h3 class="h-md" style="font-size:1.05rem;color:var(--text);margin-bottom:10px;line-height:1.35;">The Cheapest Marketing Strategy for Local Businesses in 2026</h3>
+        <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Before spending on ads, make sure you've maxed out these free and near-free channels that most small businesses overlook.</p>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Space Grotesk',sans-serif;font-size:0.825rem;font-weight:600;color:var(--accent);">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <!-- Post 6 -->
+    <a href="#" class="post-card">
+      <div class="post-img" style="background:#0E0E1C;">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=680&h=220&fit=crop&auto=format" alt="SEO timeline honest answer" style="width:100%;height:100%;object-fit:cover;opacity:0.48;filter:saturate(0.6);">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,28,0.92) 0%,transparent 60%);"></div>
+        <div style="position:absolute;bottom:16px;left:16px;"><span class="cat-pill cat-seo">SEO</span></div>
+      </div>
+      <div style="padding:1.5rem;">
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:10px;">January 14, 2026 · 6 min read</p>
+        <h3 class="h-md" style="font-size:1.05rem;color:var(--text);margin-bottom:10px;line-height:1.35;">How Long Does SEO Actually Take? An Honest Answer</h3>
+        <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Everyone promises results in 30 days. Here's the real timeline, what to expect at each stage, and what a red flag looks like.</p>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-family:'Space Grotesk',sans-serif;font-size:0.825rem;font-weight:600;color:var(--accent);">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Load more -->
+  <div style="text-align:center;margin-top:48px;">
+    <button class="btn-ghost">Load More Articles</button>
+  </div>
+</section>
+
+<!-- NEWSLETTER CTA -->
+<section style="position:relative;overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 32px;">
+  <div class="blob blob-purple" style="width:500px;height:500px;top:-200px;right:-80px;opacity:0.8;"></div>
+  <div style="position:relative;max-width:560px;margin:0 auto;text-align:center;">
+    <div class="tag" style="margin-bottom:16px;"><span class="tag-dot"></span>Stay in the loop</div>
+    <h2 class="h-lg" style="font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--text);margin-bottom:12px;">Get new articles in your inbox</h2>
+    <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:28px;">No spam. Just practical tips for growing your local business online — delivered when we publish.</p>
+    <form style="display:flex;gap:10px;max-width:440px;margin:0 auto;" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.7rem 1rem;font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--text);outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(0,229,255,0.35)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      <button type="submit" class="btn-primary" style="white-space:nowrap;padding:0.7rem 1.4rem;">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:44px 32px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+        <svg width="15" height="15" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+      </div>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-0.02em;">Lantech</span>
+    </div>
+    <nav style="display:flex;gap:28px;">
+      <a href="services.html" class="nav-link" style="font-size:0.825rem;">Services</a>
+      <a href="about.html" class="nav-link" style="font-size:0.825rem;">About</a>
+      <a href="blog.html" class="nav-link" style="font-size:0.825rem;">Blog</a>
+      <a href="help.html" class="nav-link" style="font-size:0.825rem;">Help</a>
+      <a href="contact.html" class="nav-link" style="font-size:0.825rem;">Contact</a>
+    </nav>
+    <div style="font-size:0.8rem;color:var(--text-muted);">© 2026 Lantech. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

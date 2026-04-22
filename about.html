@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Lantech | Affordable Web Design Agency for Small Businesses</title>
+  <meta name="description" content="Lantech is a US-based web design agency built exclusively for small businesses. Flat-rate pricing, fast delivery, and SEO included on every project.">
+  <link rel="canonical" href="https://lantech.co/about">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #00E5FF; --accent-dim: rgba(0,229,255,0.07); --accent-border: rgba(0,229,255,0.14); --text: #EAEAF5; --text-muted: #68688A; --border: rgba(255,255,255,0.05); --surface: #0E0E1C; --bg: #07070E; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    .dot-grid { background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px); background-size: 72px 72px; }
+    .blob { position: absolute; border-radius: 50%; pointer-events: none; }
+    .blob-cyan { background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%); }
+    .blob-purple { background: radial-gradient(circle, rgba(124,92,252,0.06) 0%, transparent 65%); }
+    .h-xl { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+    .h-lg { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; }
+    .h-md { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.22; }
+    .text-grad { background: linear-gradient(135deg, #00E5FF 0%, #7C5CFC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .tag { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); padding: 0.3rem 0.85rem; border-radius: 100px; }
+    .tag-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; color: #07070E; background: var(--accent); padding: 0.7rem 1.6rem; border-radius: 7px; border: none; cursor: pointer; text-decoration: none; transition: opacity 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 0.9rem; color: var(--text); background: transparent; padding: 0.7rem 1.6rem; border-radius: 7px; border: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.14); transform: translateY(-2px); }
+    .btn-ghost:active { transform: translateY(0); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
+    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text); }
+    .nav-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; box-shadow: 0 1px 0 0 rgba(255,255,255,0.03) inset, 0 4px 20px rgba(0,0,0,0.35); }
+    .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1); }
+    .value-card:hover { border-color: rgba(0,229,255,0.18); transform: translateY(-2px); }
+    .icon-box { width: 46px; height: 46px; background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .divider { border: none; border-top: 1px solid var(--border); }
+    .stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 2rem; font-weight: 500; color: var(--accent); letter-spacing: -0.02em; }
+    .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .anim-in { animation: fadeUp 0.65s cubic-bezier(0.16,1,0.3,1) both; }
+
+    .btn-primary { position: relative; overflow: hidden; }
+    .btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 55%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent); transition: left 0.48s ease; pointer-events: none; }
+    .btn-primary:hover::after { left: 160%; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(7,7,14,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <div style="width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+      </div>
+      <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:-0.025em;">Lantech</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:36px;">
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="about.html" class="nav-link" style="color:var(--text);">About</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section style="position:relative;overflow:hidden;padding:96px 32px 80px;">
+  <div class="blob blob-purple" style="width:600px;height:600px;top:-200px;right:-150px;"></div>
+  <div class="dot-grid" style="position:absolute;inset:0;pointer-events:none;"></div>
+  <div style="position:relative;max-width:720px;margin:0 auto;text-align:center;">
+    <div class="tag anim-in" style="margin-bottom:20px;animation-delay:0.05s;"><span class="tag-dot"></span>About Lantech</div>
+    <h1 class="h-xl anim-in" style="font-size:clamp(2.2rem,5vw,3.75rem);color:var(--text);margin-bottom:20px;animation-delay:0.15s;">
+      We're on the side<br>of <span class="text-grad">small business</span>
+    </h1>
+    <p class="anim-in" style="font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:520px;margin:0 auto;animation-delay:0.25s;">Lantech exists to give local businesses the same quality of web presence that big brands take for granted — at a price that makes sense.</p>
+  </div>
+</section>
+
+<hr class="divider" style="max-width:1200px;margin:0 auto;">
+
+<!-- MISSION -->
+<section style="padding:80px 32px;max-width:1200px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+    <div>
+      <div class="tag" style="margin-bottom:18px;"><span class="tag-dot"></span>Our Mission</div>
+      <h2 class="h-lg" style="font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--text);margin-bottom:20px;">Closing the gap between<br>local and digital</h2>
+      <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;margin-bottom:20px;">Most web agencies chase enterprise contracts. We chose a different path — focusing exclusively on the businesses that actually need help: local shops, service providers, and small teams across the United States.</p>
+      <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;">We believe every business — no matter how small — deserves a professional online presence that works. That's what Lantech is built to deliver.</p>
+    </div>
+    <!-- Visual + stats -->
+    <div>
+      <div style="position:relative;border-radius:16px;overflow:hidden;margin-bottom:20px;border:1px solid var(--border);">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=640&h=340&fit=crop&auto=format" alt="Small business team working together" style="width:100%;height:240px;object-fit:cover;display:block;filter:saturate(0.7) brightness(0.75);">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,255,0.15) 0%,rgba(124,92,252,0.12) 100%);mix-blend-mode:multiply;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,14,0.7) 0%,transparent 50%);"></div>
+        <div style="position:absolute;bottom:16px;left:20px;">
+          <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(0,229,255,0.8);">Our mission</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:600;color:#EAEAF5;">Every small business deserves a great website.</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Businesses served</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+          <div class="stat-num">48h</div>
+          <div class="stat-label">Avg. delivery time</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Core services</div>
+        </div>
+        <div class="card" style="text-align:center;padding:1.5rem 1rem;">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Satisfaction rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" style="max-width:1200px;margin:0 auto;">
+
+<!-- VALUES -->
+<section style="padding:80px 32px;max-width:1200px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:64px;">
+    <div class="tag" style="margin-bottom:16px;"><span class="tag-dot"></span>How We Work</div>
+    <h2 class="h-lg" style="font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);margin-bottom:14px;">Our values</h2>
+    <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:440px;margin:0 auto;">These aren't buzzwords — they're how we make decisions on every project.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+    <div class="value-card">
+      <div class="icon-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4v12" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="h-md" style="font-size:1rem;color:var(--text);margin-bottom:8px;">Simplicity first</h3>
+      <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">We cut the complexity. Clean code, clear design, straightforward communication — no unnecessary layers.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#00E5FF" stroke-width="1.5"/><path d="M10 7v3.5l2.5 1.5" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="h-md" style="font-size:1rem;color:var(--text);margin-bottom:8px;">Speed without shortcuts</h3>
+      <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">Fast delivery doesn't mean cutting corners. We move quickly because our process is tight, not because quality is optional.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10l5 5L17 5" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="h-md" style="font-size:1rem;color:var(--text);margin-bottom:8px;">Transparent by default</h3>
+      <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">Flat-rate pricing, honest timelines, and clear scope. You know exactly what you're getting before anything starts.</p>
+    </div>
+    <div class="value-card">
+      <div class="icon-box">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3C6.69 3 4 5.69 4 9c0 2.5 1.43 4.67 3.5 5.74V17h5v-2.26C14.57 13.67 16 11.5 16 9c0-3.31-2.69-6-6-6z" stroke="#00E5FF" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.5 17h5" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="h-md" style="font-size:1rem;color:var(--text);margin-bottom:8px;">Results that matter</h3>
+      <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">A beautiful site is worthless if it doesn't generate calls, leads, or visits. Everything we build is designed around what actually moves your business forward.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section style="padding:80px 32px;max-width:1200px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="tag" style="margin-bottom:16px;"><span class="tag-dot"></span>The Team</div>
+    <h2 class="h-lg" style="font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);margin-bottom:14px;">The people behind <span class="text-grad">Lantech</span></h2>
+    <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;max-width:440px;margin:0 auto;">Small team, tight process. Every project is handled by someone who cares about the outcome.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+    <!-- Member 1 -->
+    <div class="value-card" style="text-align:center;padding:2.5rem 2rem;">
+      <div style="width:88px;height:88px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:2px solid rgba(0,229,255,0.25);box-shadow:0 0 0 4px rgba(0,229,255,0.07);">
+        <img src="https://i.pravatar.cc/200?img=12" alt="Team member placeholder" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85);">
+      </div>
+      <div class="h-md" style="font-size:1rem;color:var(--text);margin-bottom:4px;">Alex Rivera</div>
+      <div style="font-size:0.78rem;font-family:'Syne',sans-serif;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Founder & Web Designer</div>
+      <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;">8 years building websites for local businesses. Obsessed with speed, conversion, and clean design that actually works.</p>
+    </div>
+    <!-- Member 2 -->
+    <div class="value-card" style="text-align:center;padding:2.5rem 2rem;">
+      <div style="width:88px;height:88px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:2px solid rgba(124,92,252,0.25);box-shadow:0 0 0 4px rgba(124,92,252,0.07);">
+        <img src="https://i.pravatar.cc/200?img=5" alt="Team member placeholder" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85);">
+      </div>
+      <div class="h-md" style="font-size:1rem;color:var(--text);margin-bottom:4px;">Morgan Chen</div>
+      <div style="font-size:0.78rem;font-family:'Syne',sans-serif;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">SEO & Local Search Lead</div>
+      <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;">Specializes in getting small businesses ranking on Google Maps and local search. Former agency SEO manager.</p>
+    </div>
+    <!-- Member 3 -->
+    <div class="value-card" style="text-align:center;padding:2.5rem 2rem;">
+      <div style="width:88px;height:88px;border-radius:50%;overflow:hidden;margin:0 auto 20px;border:2px solid rgba(0,229,255,0.25);box-shadow:0 0 0 4px rgba(0,229,255,0.07);">
+        <img src="https://i.pravatar.cc/200?img=33" alt="Team member placeholder" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85);">
+      </div>
+      <div class="h-md" style="font-size:1rem;color:var(--text);margin-bottom:4px;">Jordan Lee</div>
+      <div style="font-size:0.78rem;font-family:'Syne',sans-serif;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Client Success & Strategy</div>
+      <p style="font-size:0.855rem;color:var(--text-muted);line-height:1.7;">Makes sure every client knows exactly what's happening and why. Keeps projects on time and clients in the loop.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" style="max-width:1200px;margin:0 auto;">
+
+<!-- CTA BANNER -->
+<section style="position:relative;overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:88px 32px;">
+  <div class="blob blob-cyan" style="width:600px;height:600px;top:-250px;left:-100px;opacity:0.8;"></div>
+  <div style="position:relative;max-width:680px;margin:0 auto;text-align:center;">
+    <h2 class="h-lg" style="font-size:clamp(1.8rem,4vw,2.6rem);color:var(--text);margin-bottom:16px;">Let's build something together</h2>
+    <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;margin-bottom:36px;">Tell us about your business and we'll put together a plan that fits your goals and your budget.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary" style="font-size:0.95rem;padding:0.8rem 2rem;">Get a Free Quote →</a>
+      <a href="services.html" class="btn-ghost" style="font-size:0.95rem;padding:0.8rem 2rem;">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:44px 32px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+        <svg width="15" height="15" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+      </div>
+      <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-0.02em;">Lantech</span>
+    </div>
+    <nav style="display:flex;gap:28px;">
+      <a href="services.html" class="nav-link" style="font-size:0.825rem;">Services</a>
+      <a href="pricing.html" class="nav-link" style="font-size:0.825rem;">Pricing</a>
+      <a href="about.html" class="nav-link" style="font-size:0.825rem;">About</a>
+      <a href="blog.html" class="nav-link" style="font-size:0.825rem;">Blog</a>
+      <a href="contact.html" class="nav-link" style="font-size:0.825rem;">Contact</a>
+    </nav>
+    <div style="font-size:0.8rem;color:var(--text-muted);">© 2026 Lantech. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

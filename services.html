@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design & Development Services for Small Business | Lantech</title>
+  <meta name="description" content="Professional web design, SEO, Google Business Profile optimization, and social media services for small businesses across the USA. Transparent pricing, fast delivery.">
+  <link rel="canonical" href="https://lantech.co/services">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #00E5FF; --accent-dim: rgba(0,229,255,0.07); --accent-border: rgba(0,229,255,0.14); --text: #EAEAF5; --text-muted: #68688A; --border: rgba(255,255,255,0.05); --surface: #0E0E1C; --bg: #07070E; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    .dot-grid { background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px); background-size: 72px 72px; }
+    .blob { position: absolute; border-radius: 50%; pointer-events: none; }
+    .blob-cyan { background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%); }
+    .blob-purple { background: radial-gradient(circle, rgba(124,92,252,0.06) 0%, transparent 65%); }
+    .h-xl { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+    .h-lg { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; }
+    .h-md { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.22; }
+    .text-grad { background: linear-gradient(135deg, #00E5FF 0%, #7C5CFC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .tag { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); padding: 0.3rem 0.85rem; border-radius: 100px; }
+    .tag-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; color: #07070E; background: var(--accent); padding: 0.7rem 1.6rem; border-radius: 7px; border: none; cursor: pointer; text-decoration: none; transition: opacity 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 0.9rem; color: var(--text); background: transparent; padding: 0.7rem 1.6rem; border-radius: 7px; border: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.14); transform: translateY(-2px); }
+    .btn-ghost:active { transform: translateY(0); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
+    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--text); }
+    .nav-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; box-shadow: 0 1px 0 0 rgba(255,255,255,0.03) inset, 0 4px 20px rgba(0,0,0,0.35); }
+    .icon-box { width: 50px; height: 50px; background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+    .divider { border: none; border-top: 1px solid var(--border); }
+    .check-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+    .check-icon { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+    .step-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; font-weight: 500; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .anim-in { animation: fadeUp 0.65s cubic-bezier(0.16,1,0.3,1) both; }
+
+    .btn-primary { position: relative; overflow: hidden; }
+    .btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 55%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent); transition: left 0.48s ease; pointer-events: none; }
+    .btn-primary:hover::after { left: 160%; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(7,7,14,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <div style="width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+      </div>
+      <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:-0.025em;">Lantech</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:36px;">
+      <a href="services.html" class="nav-link" style="color:var(--text);">Services</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section style="position:relative;overflow:hidden;padding:96px 32px 80px;">
+  <div class="blob blob-cyan" style="width:600px;height:600px;top:-200px;left:-150px;"></div>
+  <div class="dot-grid" style="position:absolute;inset:0;pointer-events:none;"></div>
+  <div style="position:relative;max-width:720px;margin:0 auto;text-align:center;">
+    <div class="tag anim-in" style="margin-bottom:20px;animation-delay:0.05s;"><span class="tag-dot"></span>Our Services</div>
+    <h1 class="h-xl anim-in" style="font-size:clamp(2.2rem,5vw,3.75rem);color:var(--text);margin-bottom:20px;animation-delay:0.15s;">
+      Web design services for<br><span class="text-grad">small businesses</span>
+    </h1>
+    <p class="anim-in" style="font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:500px;margin:0 auto;animation-delay:0.25s;">Transparent, affordable packages built for small businesses across the USA. No tech jargon, no hidden fees — just a professional website that works.</p>
+  </div>
+</section>
+
+<hr class="divider" style="max-width:1200px;margin:0 auto;">
+
+<!-- SERVICE BLOCKS -->
+<section style="padding:72px 32px;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px;">
+
+  <!-- Web Design -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <div class="icon-box">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="3" width="18" height="13" rx="2.5" stroke="#00E5FF" stroke-width="1.5"/><path d="M8 19h6M11 16v3" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/><path d="M2 8h18" stroke="#00E5FF" stroke-width="1.5"/></svg>
+      </div>
+      <div class="tag" style="margin-bottom:14px;"><span class="tag-dot"></span>Service 01</div>
+      <h2 class="h-lg" style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);margin-bottom:14px;">Web Design &<br>Development</h2>
+      <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:16px;">A professional website is your #1 marketing asset. We design and build clean, fast, mobile-first sites that look great and drive action — without the agency price tag.</p>
+      <div style="border-radius:12px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);">
+        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=560&h=220&fit=crop&auto=format" alt="Web design and development" style="width:100%;height:180px;object-fit:cover;display:block;filter:saturate(0.65) brightness(0.75);">
+        <div style="position:relative;margin-top:-1px;"></div>
+      </div>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <div class="card" style="padding:2rem;">
+      <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px;">What's included</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Custom design — no templates</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Mobile-first, fully responsive</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Speed-optimized for Core Web Vitals</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Contact forms & click-to-call</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">SSL, hosting setup & launch</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">48–72 hour delivery</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SEO -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <div class="icon-box">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="10" cy="10" r="7" stroke="#00E5FF" stroke-width="1.5"/><path d="M15.5 15.5L20 20" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/><path d="M10 7v6M7 10h6" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="tag" style="margin-bottom:14px;"><span class="tag-dot"></span>Service 02</div>
+      <h2 class="h-lg" style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);margin-bottom:14px;">SEO<br>Optimization</h2>
+      <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:16px;">Rank higher in Google when local customers search for services you offer. We implement proven on-page and local SEO strategies that build visibility over time.</p>
+      <div style="border-radius:12px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);">
+        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=560&h=220&fit=crop&auto=format" alt="SEO optimization for small business" style="width:100%;height:180px;object-fit:cover;display:block;filter:saturate(0.65) brightness(0.72);">
+      </div>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <div class="card">
+      <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px;">What's included</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Keyword research & targeting</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">On-page SEO (meta, headings, schema)</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Local SEO & citation building</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Google Search Console setup</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Monthly ranking report</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GMB -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <div class="icon-box">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2C7.68 2 5 4.68 5 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.32-2.68-6-6-6z" stroke="#00E5FF" stroke-width="1.5"/><circle cx="11" cy="8" r="2.5" stroke="#00E5FF" stroke-width="1.5"/></svg>
+      </div>
+      <div class="tag" style="margin-bottom:14px;"><span class="tag-dot"></span>Service 03</div>
+      <h2 class="h-lg" style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);margin-bottom:14px;">GMB<br>Optimization</h2>
+      <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:16px;">Dominate Google Maps and the local pack when customers nearby search for what you offer. We fully optimize your Google Business Profile — categories, photos, reviews, and more — to maximize calls, visits, and trust.</p>
+      <div style="border-radius:12px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);">
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=560&h=220&fit=crop&auto=format" alt="Google Maps local search" style="width:100%;height:180px;object-fit:cover;display:block;filter:saturate(0.65) brightness(0.72);">
+      </div>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <div class="card">
+      <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px;">What's included</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Profile creation & verification</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Category & service optimization</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Photo upload & branding</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Review response strategy</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">NAP consistency check</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Facebook -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div>
+      <div class="icon-box">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="5" stroke="#00E5FF" stroke-width="1.5"/><path d="M12.5 11.5h2L15 9H12.5V7.5c0-.55.45-1 1-1H15V4.5S14 4 12.5 4C10.57 4 9.5 5.07 9.5 7v2H7.5V11.5H9.5V18h3v-6.5z" fill="#00E5FF"/></svg>
+      </div>
+      <div class="tag" style="margin-bottom:14px;"><span class="tag-dot"></span>Service 04</div>
+      <h2 class="h-lg" style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--text);margin-bottom:14px;">Social Media<br>Optimization</h2>
+      <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:16px;">Your customers are on social media every day. We build and optimize your presence across Facebook, Instagram, and other key platforms — consistent branding, strategic content, and real engagement that converts followers into customers.</p>
+      <div style="border-radius:12px;overflow:hidden;margin-bottom:28px;border:1px solid var(--border);">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=560&h=220&fit=crop&auto=format" alt="Social media optimization" style="width:100%;height:180px;object-fit:cover;display:block;filter:saturate(0.65) brightness(0.72);">
+      </div>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <div class="card">
+      <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px;">What's included</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Facebook & Instagram setup/optimization</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Consistent branding across platforms</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Profile bio, CTA & links optimized</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Content strategy & starter posts</span></div>
+        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Cross-linked to website & GMB</span></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA BANNER -->
+<section style="position:relative;overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:88px 32px;">
+  <div class="blob blob-cyan" style="width:600px;height:600px;top:-250px;right:-100px;opacity:0.8;"></div>
+  <div style="position:relative;max-width:680px;margin:0 auto;text-align:center;">
+    <h2 class="h-lg" style="font-size:clamp(1.8rem,4vw,2.6rem);color:var(--text);margin-bottom:16px;">Not sure which service you need?</h2>
+    <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;margin-bottom:36px;">Tell us about your business and we'll recommend the right starting point — free, no obligation.</p>
+    <a href="contact.html" class="btn-primary" style="font-size:0.95rem;padding:0.8rem 2rem;">
+      Let's Talk →
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:44px 32px;max-width:1200px;margin:0 auto;">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+        <svg width="15" height="15" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+      </div>
+      <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-0.02em;">Lantech</span>
+    </div>
+    <nav style="display:flex;gap:28px;">
+      <a href="services.html" class="nav-link" style="font-size:0.825rem;">Services</a>
+      <a href="pricing.html" class="nav-link" style="font-size:0.825rem;">Pricing</a>
+      <a href="about.html" class="nav-link" style="font-size:0.825rem;">About</a>
+      <a href="blog.html" class="nav-link" style="font-size:0.825rem;">Blog</a>
+      <a href="contact.html" class="nav-link" style="font-size:0.825rem;">Contact</a>
+    </nav>
+    <div style="font-size:0.8rem;color:var(--text-muted);">© 2026 Lantech. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
