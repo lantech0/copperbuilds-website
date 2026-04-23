@@ -1,457 +1,560 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Small Business Website Design Packages & Pricing | Lantech</title>
-  <meta name="description" content="Transparent, flat-rate website design packages for small businesses. Starting at $499. No hidden fees. See exactly what's included in each plan.">
-  <link rel="canonical" href="https://lantech.co/pricing">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Small Business Website Design Packages & Pricing | Lantech">
-  <meta property="og:description" content="Flat-rate website design packages starting at $499. No hidden fees, no long-term contracts. See plans for small businesses.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lantech.co/pricing">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
-
-  <!-- Schema: Service with pricing -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Small Business Website Design",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Lantech",
-      "url": "https://lantech.co"
-    },
-    "description": "Affordable, professional website design packages for small businesses in the USA.",
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Website Design Packages",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "Starter",
-          "price": "499",
-          "priceCurrency": "USD",
-          "description": "5-page professional website for small businesses"
-        },
-        {
-          "@type": "Offer",
-          "name": "Growth",
-          "price": "899",
-          "priceCurrency": "USD",
-          "description": "10-page website with SEO optimization for growing small businesses"
-        },
-        {
-          "@type": "Offer",
-          "name": "Pro",
-          "price": "1499",
-          "priceCurrency": "USD",
-          "description": "Full-featured website with ecommerce, SEO, and GMB optimization"
-        }
-      ]
-    }
-  }
-  </script>
-
-  <!-- FAQPage Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is included in the Starter website design package?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Starter package includes a 5-page custom website (Home, About, Services, Contact, and one more), mobile-first responsive design, basic on-page SEO, contact form, SSL setup, and delivery within 48–72 hours."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are there any monthly fees?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. All Lantech packages are one-time flat-rate payments. You own your website outright. The only recurring costs are your domain name (typically $10–15/year) and hosting (typically $5–15/month), which you control directly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I upgrade my package later?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. You can add pages, services, or features to your website at any time. We also offer ongoing SEO and maintenance services you can add on after launch."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer custom pricing for larger projects?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. If your project doesn't fit neatly into one of our packages, contact us for a custom quote. We handle everything from single landing pages to multi-location business sites."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    :root { --accent: #00E5FF; --accent-dim: rgba(0,229,255,0.07); --accent-border: rgba(0,229,255,0.14); --text: #EAEAF5; --text-muted: #68688A; --border: rgba(255,255,255,0.05); --surface: #0E0E1C; --bg: #07070E; }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; }
-    .dot-grid { background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px); background-size: 72px 72px; }
-    .blob { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(1px); }
-    .blob-cyan { background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%); }
-    .blob-purple { background: radial-gradient(circle, rgba(124,92,252,0.06) 0%, transparent 65%); }
-    .h-xl { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
-    .h-lg { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; }
-    .h-md { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.22; }
-    .text-grad { background: linear-gradient(135deg, #00E5FF 0%, #7C5CFC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .tag { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); padding: 0.3rem 0.85rem; border-radius: 100px; }
-    .tag-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
-    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; color: #07070E; background: var(--accent); padding: 0.75rem 1.75rem; border-radius: 7px; border: none; cursor: pointer; text-decoration: none; transition: opacity 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
-    .btn-primary:active { transform: translateY(0); }
-    .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
-    .btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 500; font-size: 0.9rem; color: var(--text); background: transparent; padding: 0.75rem 1.75rem; border-radius: 7px; border: 1px solid rgba(255,255,255,0.08); cursor: pointer; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
-    .btn-ghost:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.14); transform: translateY(-2px); }
-    .btn-ghost:active { transform: translateY(0); }
-    .btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 7px; }
-    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s ease; }
-    .nav-link:hover { color: var(--text); }
-    .nav-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
-    .divider { border: none; border-top: 1px solid var(--border); }
-    .check-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
-    .check-icon { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
-    .pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35); display: flex; flex-direction: column; transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease; }
-    .pricing-card:hover { border-color: rgba(0,229,255,0.2); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.45); }
-    .pricing-card.featured { border-color: rgba(0,229,255,0.3); background: linear-gradient(135deg, rgba(0,229,255,0.04) 0%, rgba(124,92,252,0.04) 100%); box-shadow: 0 0 0 1px rgba(0,229,255,0.15), 0 8px 32px rgba(0,0,0,0.45); }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; color: var(--text); font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; transition: color 0.2s ease; }
-    .faq-question:hover { color: var(--accent); }
-    .faq-answer { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; padding-bottom: 20px; display: none; }
-    .faq-answer.open { display: block; }
-    .faq-icon { flex-shrink: 0; transition: transform 0.2s ease; color: var(--accent); }
-    .faq-icon.open { transform: rotate(45deg); }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-    .anim-in { animation: fadeUp 0.65s cubic-bezier(0.16,1,0.3,1) both; }
-
-    .btn-primary { position: relative; overflow: hidden; }
-    .btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 55%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent); transition: left 0.48s ease; pointer-events: none; }
-    .btn-primary:hover::after { left: 160%; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Lantech | Transparent Web Design Packages</title>
+<meta name="description" content="Simple, flat-rate pricing for professional web design and SEO. Starter at $1,200, Growth at $1,699, Pro at $1,999. No contracts, no hidden fees.">
+<link rel="canonical" href="https://lantech.co/pricing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{screens:{sm:'480px',md:'768px',lg:'1024px',xl:'1280px'},extend:{colors:{bg:'#07070E',surface:'#0D0D1A',elevated:'#141428',accent:'#00E5FF',accent2:'#7C5CFC',txt:'#EAEAF5',muted:'#8A8AAA'},fontFamily:{display:['Unbounded','sans-serif'],sans:['Plus Jakarta Sans','sans-serif'],mono:['IBM Plex Mono','monospace']}}}}
+</script>
+<style>
+:root{--bg:#07070E;--surface:#0D0D1A;--elevated:#141428;--accent:#00E5FF;--accent2:#7C5CFC;--txt:#EAEAF5;--muted:#8A8AAA;--border:rgba(255,255,255,0.06);--accent-dim:rgba(0,229,255,0.06);--accent-border:rgba(0,229,255,0.18);--purple-dim:rgba(124,92,252,0.08);--purple-border:rgba(124,92,252,0.22);--section-py:7rem;--container-px:2rem;--content-max:1200px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.container{max-width:var(--content-max);margin:0 auto;padding:0 var(--container-px)}
+.section{padding:var(--section-py) 0}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.grid-hero{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.glow{position:absolute;border-radius:50%;pointer-events:none}
+.glow-cyan{background:radial-gradient(circle,rgba(0,229,255,0.09) 0%,transparent 70%)}
+.glow-purple{background:radial-gradient(circle,rgba(124,92,252,0.10) 0%,transparent 70%)}
+.dot-grid{background-image:radial-gradient(circle,rgba(255,255,255,0.045) 1px,transparent 1px);background-size:28px 28px}
+.gradient-text{background:linear-gradient(135deg,#00E5FF 0%,#7C5CFC 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tag{display:inline-flex;align-items:center;gap:.4rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:100px;padding:.3rem .8rem}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.875rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#07070E;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem;padding:.75rem 1.5rem;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .18s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;white-space:nowrap}
+.btn-primary:hover{background:#26eeff;transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,229,255,.28)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--txt);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.875rem;padding:.75rem 1.5rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);text-decoration:none;cursor:pointer;transition:border-color .2s,background .2s,transform .18s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.04);transform:translateY(-2px)}
+.btn-text{display:inline-flex;align-items:center;gap:.375rem;background:transparent;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.875rem;padding:.75rem 0;border:none;text-decoration:none;cursor:pointer;transition:color .2s}
+.btn-text:hover{color:var(--txt)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.75rem;position:relative;overflow:hidden;transition:border-color .25s,transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);pointer-events:none}
+.card:hover{border-color:var(--accent-border);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.35),0 0 0 1px var(--accent-border)}
+.card-icon{width:46px;height:46px;border-radius:11px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;margin-bottom:1.375rem}
+.section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.625rem,2.8vw,2.25rem);font-weight:800;letter-spacing:-.025em;line-height:1.18;color:var(--txt)}
+.page-h1{font-family:'Unbounded',sans-serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--txt)}
+.nav-link{color:var(--muted);font-size:.875rem;font-weight:500;text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--txt)}
+.nav-link.active{color:var(--accent)}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:1.5rem var(--container-px) 2rem;z-index:40;flex-direction:column;gap:1rem}
+.mobile-menu.open{display:flex}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0;background:none;border:none;color:var(--txt);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9375rem;font-weight:600;text-align:left;cursor:pointer;transition:color .2s}
+.faq-btn:hover{color:var(--accent)}
+.faq-icon{width:26px;height:26px;min-width:26px;border:1px solid rgba(255,255,255,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:border-color .2s,background .2s,transform .25s cubic-bezier(.34,1.56,.64,1),color .2s}
+.faq-btn[aria-expanded="true"] .faq-icon{border-color:var(--accent-border);background:var(--accent-dim);color:var(--accent);transform:rotate(45deg)}
+.faq-answer{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.faq-answer.open{max-height:300px}
+.faq-answer-inner{padding-bottom:1.375rem;color:var(--muted);line-height:1.72;font-size:.9125rem}
+.footer-link{color:var(--muted);font-size:.875rem;text-decoration:none;transition:color .2s;display:block}
+.footer-link:hover{color:var(--txt)}
+.social-btn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9px;border:1px solid var(--border);color:var(--muted);transition:border-color .2s,background .2s,color .2s}
+.social-btn:hover{border-color:var(--accent-border);background:var(--accent-dim);color:var(--accent)}
+.rule{border:none;border-top:1px solid var(--border)}
+.cta-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:5rem 2rem;position:relative;overflow:hidden;text-align:center}
+.bullet-item{display:flex;align-items:flex-start;gap:1rem}
+.bullet-icon{width:32px;height:32px;min-width:32px;border-radius:8px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;margin-top:.125rem;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:.6rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;white-space:nowrap;margin-bottom:.75rem}
+.pill-cyan{color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border)}
+.pill-purple{color:var(--accent2);background:var(--purple-dim);border:1px solid var(--purple-border)}
+.pill-muted{color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border)}
+.input-field{width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1rem;color:var(--txt);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s}
+.input-field:focus{border-color:var(--accent-border)}
+.input-field::placeholder{color:var(--muted)}
+@media(max-width:900px){.grid-hero{grid-template-columns:1fr}.hero-illus{display:none}.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){:root{--section-py:4.5rem;--container-px:1.25rem}.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.grid-4{grid-template-columns:1fr}}
+</style>
+<meta name="theme-color" content="#07070E">
+<link rel="icon" type="image/png" sizes="512x512" href="/brand_assets/lantech-icon-800.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/lantech-icon-800.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lantech">
+<meta property="og:title" content="Pricing — Lantech | Transparent Web Design Packages">
+<meta property="og:description" content="Simple, flat-rate pricing for professional web design and SEO. Starter at $1,200, Growth at $1,699, Pro at $1,999. No contracts, no hidden fees.">
+<meta property="og:url" content="https://lantech.co/pricing">
+<meta property="og:image" content="https://lantech.co/brand_assets/lantech-fb-banner-820x312.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing — Lantech | Transparent Web Design Packages">
+<meta name="twitter:description" content="Simple, flat-rate pricing for professional web design and SEO. Starter at $1,200, Growth at $1,699, Pro at $1,999. No contracts, no hidden fees.">
+<meta name="twitter:image" content="https://lantech.co/brand_assets/lantech-fb-banner-820x312.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Lantech Pricing Plans",
+  "url": "https://lantech.co/pricing",
+  "description": "Flat-rate website packages for small businesses. No contracts, no hidden fees.",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "item": {"@type": "Offer", "name": "Starter Package", "description": "Up to 5 pages, custom mobile-first design, on-page SEO, contact form, Google Analytics, 48-hour delivery.", "priceCurrency": "USD", "price": "1200", "seller": {"@type": "Organization", "name": "Lantech", "url": "https://lantech.co"}, "availability": "https://schema.org/InStock", "areaServed": {"@type": "Country", "name": "United States"}}},
+    {"@type": "ListItem", "position": 2, "item": {"@type": "Offer", "name": "Growth Package", "description": "Up to 10 pages, local SEO setup, Google Business Profile optimization, Google Search Console, 2 revisions.", "priceCurrency": "USD", "price": "1699", "seller": {"@type": "Organization", "name": "Lantech", "url": "https://lantech.co"}, "availability": "https://schema.org/InStock", "areaServed": {"@type": "Country", "name": "United States"}}},
+    {"@type": "ListItem", "position": 3, "item": {"@type": "Offer", "name": "Pro Package", "description": "Up to 20 pages, full SEO, Maps, social media setup, competitor analysis, heat mapping, 30-day post-launch support.", "priceCurrency": "USD", "price": "1999", "seller": {"@type": "Organization", "name": "Lantech", "url": "https://lantech.co"}, "availability": "https://schema.org/InStock", "areaServed": {"@type": "Country", "name": "United States"}}}
+  ]
+}
+</script>
 </head>
 <body>
-
-<!-- NAV -->
-<header style="position:sticky;top:0;z-index:50;background:rgba(7,7,14,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);">
-  <div style="max-width:1200px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;" aria-label="Lantech home">
-      <div style="width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+<nav style="position:sticky;top:0;z-index:50;height:64px;background:rgba(7,7,14,0.88);backdrop-filter:blur(22px);border-bottom:1px solid var(--border)" aria-label="Main navigation">
+<div class="container" style="display:flex;align-items:center;justify-content:space-between;height:100%">
+  <a href="index.html" aria-label="Lantech homepage" style="display:flex;align-items:center;gap:.625rem;text-decoration:none;flex-shrink:0">
+    <svg height="30" viewBox="0 0 272 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lantech" style="display:block;flex-shrink:0">
+      <text y="44" font-family="Unbounded, sans-serif" font-weight="700" font-size="38" letter-spacing="-1">
+        <tspan fill="#EAEAF5">Lan</tspan><tspan fill="#00E5FF">tech</tspan>
+      </text>
+      <rect x="2" y="51" width="98" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+      <rect x="100" y="51" width="168" height="3" rx="1.5" fill="#00E5FF"/>
+    </svg>
+  </a>
+  <div class="hidden md:flex" style="align-items:center;gap:2rem"><a href="services.html" class="nav-link">Services</a>
+<a href="pricing.html" class="nav-link active">Pricing</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="blog.html" class="nav-link">Blog</a>
+<a href="contact.html" class="nav-link">Contact</a></div>
+  <div style="display:flex;align-items:center;gap:.875rem">
+    <a href="contact.html" class="btn-primary hidden md:inline-flex" style="padding:.625rem 1.125rem">Get a Free Quote</a>
+    <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden" style="display:flex;flex-direction:column;gap:5px;padding:.5rem;background:none;border:none;cursor:pointer">
+      <span id="hb1" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:transform .22s,opacity .22s"></span>
+      <span id="hb2" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:opacity .22s"></span>
+      <span id="hb3" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:transform .22s,opacity .22s"></span>
+    </button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="services.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Services</a>
+<a href="pricing.html" class="nav-link active" style="font-size:1rem;padding:.25rem 0">Pricing</a>
+<a href="about.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">About</a>
+<a href="blog.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Blog</a>
+<a href="contact.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Contact</a>
+  <hr class="rule" style="margin:.25rem 0">
+  <a href="contact.html" class="btn-primary" style="width:fit-content">Get a Free Quote</a>
+</div>
+</nav><section style="position:relative;padding:6rem 0 4rem;overflow:hidden" aria-label="Page hero">
+  <div class="glow glow-cyan" style="width:600px;height:600px;top:-200px;left:-100px;opacity:.9"></div>
+  <div class="glow glow-purple" style="width:500px;height:500px;top:-60px;right:-140px"></div>
+  <div class="dot-grid" style="position:absolute;inset:0;opacity:.55;pointer-events:none" aria-hidden="true"></div>
+  <div class="container" style="position:relative">
+    <div class="grid-hero">
+      <div>
+        <span class="tag"><svg width="7" height="7" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="3.5"/></svg> Simple Pricing</span>
+        <h1 class="page-h1" style="margin:1.5rem 0 1.25rem">Flat-rate packages. <span class="gradient-text">No surprises.</span></h1>
+        <p style="font-size:1.05rem;line-height:1.72;color:var(--muted);max-width:490px;margin-bottom:2rem">Flat-rate website packages with 1 year of managed hosting included. Monthly retainer plans for ongoing SEO and site management.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem"><a href="contact.html" class="btn-primary">Get a Free Quote <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#plans" class="btn-ghost">See Plans &darr;</a></div>
       </div>
-      <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:-0.025em;">Lantech</span>
-    </a>
-    <nav style="display:flex;align-items:center;gap:36px;">
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="pricing.html" class="nav-link" style="color:var(--text);">Pricing</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-    <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+      <div class="hero-illus" style="display:flex;justify-content:center" aria-hidden="true"><svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;filter:drop-shadow(0 24px 64px rgba(0,0,0,.4))">
+<defs>
+<radialGradient id="pr-gc" cx="50%" cy="45%" r="60%"><stop offset="0%" stop-color="#00E5FF" stop-opacity=".10"/><stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/></radialGradient>
+<radialGradient id="pr-gp" cx="70%" cy="65%" r="50%"><stop offset="0%" stop-color="#7C5CFC" stop-opacity=".09"/><stop offset="100%" stop-color="#7C5CFC" stop-opacity="0"/></radialGradient>
+<pattern id="pr-g" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M 22 0 L 0 0 0 22" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern>
+</defs>
+<rect width="480" height="360" fill="url(#pr-g)"/>
+<ellipse cx="240" cy="180" rx="240" ry="200" fill="url(#pr-gc)"/>
+<ellipse cx="360" cy="260" rx="180" ry="160" fill="url(#pr-gp)"/>
+<rect x="28" y="58" width="132" height="222" rx="14" fill="#0D0D1A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+<text x="44" y="84" font-family="IBM Plex Mono" font-size="7" fill="rgba(255,255,255,0.38)" letter-spacing="1">STARTER</text>
+<text x="44" y="114" font-family="IBM Plex Mono" font-size="22" font-weight="700" fill="#EAEAF5">$1,200</text>
+<line x1="44" y1="124" x2="144" y2="124" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<circle cx="50" cy="140" r="2.5" fill="rgba(255,255,255,0.28)"/><rect x="58" y="136" width="64" height="6" rx="1.5" fill="rgba(255,255,255,0.14)"/>
+<circle cx="50" cy="156" r="2.5" fill="rgba(255,255,255,0.28)"/><rect x="58" y="152" width="52" height="6" rx="1.5" fill="rgba(255,255,255,0.14)"/>
+<circle cx="50" cy="172" r="2.5" fill="rgba(255,255,255,0.28)"/><rect x="58" y="168" width="60" height="6" rx="1.5" fill="rgba(255,255,255,0.14)"/>
+<rect x="44" y="244" width="100" height="22" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+<rect x="174" y="34" width="134" height="246" rx="14" fill="#0D0D1A" stroke="rgba(0,229,255,0.3)" stroke-width="1.5"/>
+<rect x="174" y="34" width="134" height="2" rx="1" fill="rgba(0,229,255,0.55)"/>
+<rect x="203" y="22" width="76" height="18" rx="9" fill="rgba(0,229,255,0.12)" stroke="rgba(0,229,255,0.3)" stroke-width="1"/>
+<text x="241" y="34" font-family="IBM Plex Mono" font-size="6.5" fill="#00E5FF" letter-spacing="0.8" text-anchor="middle">MOST POPULAR</text>
+<text x="190" y="64" font-family="IBM Plex Mono" font-size="7" fill="#00E5FF" letter-spacing="1">GROWTH</text>
+<text x="190" y="96" font-family="IBM Plex Mono" font-size="26" font-weight="700" fill="#EAEAF5">$1,699</text>
+<line x1="190" y1="108" x2="292" y2="108" stroke="rgba(0,229,255,0.12)" stroke-width="1"/>
+<circle cx="196" cy="124" r="2.5" fill="#00E5FF" opacity="0.7"/><rect x="206" y="120" width="76" height="6" rx="1.5" fill="rgba(255,255,255,0.18)"/>
+<circle cx="196" cy="140" r="2.5" fill="#00E5FF" opacity="0.7"/><rect x="206" y="136" width="60" height="6" rx="1.5" fill="rgba(255,255,255,0.18)"/>
+<circle cx="196" cy="156" r="2.5" fill="#00E5FF" opacity="0.7"/><rect x="206" y="152" width="80" height="6" rx="1.5" fill="rgba(255,255,255,0.18)"/>
+<circle cx="196" cy="172" r="2.5" fill="#00E5FF" opacity="0.7"/><rect x="206" y="168" width="56" height="6" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+<circle cx="196" cy="188" r="2.5" fill="#00E5FF" opacity="0.5"/><rect x="206" y="184" width="68" height="6" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+<rect x="190" y="248" width="102" height="22" rx="6" fill="#00E5FF"/>
+<rect x="322" y="58" width="132" height="222" rx="14" fill="#0D0D1A" stroke="rgba(124,92,252,0.18)" stroke-width="1"/>
+<text x="338" y="84" font-family="IBM Plex Mono" font-size="7" fill="#7C5CFC" letter-spacing="1">PRO</text>
+<text x="338" y="114" font-family="IBM Plex Mono" font-size="22" font-weight="700" fill="#EAEAF5">$1,999</text>
+<line x1="338" y1="124" x2="438" y2="124" stroke="rgba(124,92,252,0.12)" stroke-width="1"/>
+<circle cx="344" cy="140" r="2.5" fill="#7C5CFC" opacity="0.7"/><rect x="354" y="136" width="76" height="6" rx="1.5" fill="rgba(255,255,255,0.18)"/>
+<circle cx="344" cy="156" r="2.5" fill="#7C5CFC" opacity="0.7"/><rect x="354" y="152" width="60" height="6" rx="1.5" fill="rgba(255,255,255,0.18)"/>
+<circle cx="344" cy="172" r="2.5" fill="#7C5CFC" opacity="0.7"/><rect x="354" y="168" width="68" height="6" rx="1.5" fill="rgba(255,255,255,0.18)"/>
+<circle cx="344" cy="188" r="2.5" fill="#7C5CFC" opacity="0.7"/><rect x="354" y="184" width="52" height="6" rx="1.5" fill="rgba(255,255,255,0.15)"/>
+<rect x="338" y="244" width="100" height="22" rx="6" fill="rgba(124,92,252,0.15)" stroke="rgba(124,92,252,0.35)" stroke-width="1"/>
+<rect x="36" y="302" width="116" height="36" rx="9" fill="#0D0D1A" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+<text x="94" y="316" font-family="IBM Plex Mono" font-size="6" fill="rgba(255,255,255,0.35)" letter-spacing="0.8" text-anchor="middle">NO CONTRACTS</text>
+<rect x="182" y="302" width="116" height="36" rx="9" fill="#0D0D1A" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+<text x="240" y="316" font-family="IBM Plex Mono" font-size="6" fill="rgba(255,255,255,0.35)" letter-spacing="0.8" text-anchor="middle">FLAT-RATE PRICE</text>
+<rect x="328" y="302" width="116" height="36" rx="9" fill="#0D0D1A" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+<text x="386" y="316" font-family="IBM Plex Mono" font-size="6" fill="rgba(255,255,255,0.35)" letter-spacing="0.8" text-anchor="middle">YOU OWN FILES</text>
+</svg></div>
+    </div>
   </div>
-</header>
+</section><section class="section" id="plans" aria-labelledby="plans-h2">
+<div class="container">
+  <div style="text-align:center;max-width:560px;margin:0 auto 3.75rem">
+    <span class="section-label">Choose Your Plan</span>
+    <h2 class="section-title" id="plans-h2" style="margin-bottom:1rem">Pick the package that fits your business</h2>
+    <p style="color:var(--muted);font-size:.9375rem;line-height:1.7">Every plan includes a custom website with SEO built in. Upgrade for more services and ongoing support.</p>
+  </div>
+  <div class="grid-3" style="gap:1.5rem;align-items:start">
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:1.75rem;position:relative">
+  
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.875rem">Starter</div>
+  <div style="display:flex;align-items:baseline;gap:.375rem;margin-bottom:.5rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:2.5rem;font-weight:700;color:var(--txt);line-height:1">$1,200</span>
+    <span style="color:var(--muted);font-size:.875rem">flat rate</span>
+  </div>
+  <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)">Get your business online fast with a clean, professional, SEO-ready website.</p>
+  <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.625rem"><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 5 pages</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Custom mobile-first design</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>On-page SEO (meta, schema, sitemap)</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Contact form and click-to-call</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Google Analytics setup</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>48-hour delivery</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>You own all files</li></ul>
+  <a href="contact.html" class="btn-ghost" style="display:block;text-align:center;margin-top:1.5rem">Get Started</a>
+</div>
+    <div style="background:var(--surface);border:1px solid rgba(0,229,255,0.28);border-radius:14px;padding:1.75rem;position:relative">
+  <span class="pill pill-cyan" style="position:absolute;top:-14px;left:50%;transform:translateX(-50%)">Most Popular</span><div style="height:2px;background:rgba(0,229,255,0.5);border-radius:2px 2px 0 0;margin:-1.75rem -1.75rem 1.5rem"></div>
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.875rem">Growth</div>
+  <div style="display:flex;align-items:baseline;gap:.375rem;margin-bottom:.5rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:2.5rem;font-weight:700;color:var(--txt);line-height:1">$1,699</span>
+    <span style="color:var(--muted);font-size:.875rem">flat rate</span>
+  </div>
+  <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)">More pages, deeper SEO, and Google Maps optimization — the most-chosen package for growing small businesses.</p>
+  <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.625rem"><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 10 pages</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Everything in Starter</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Local SEO Setup</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Google Business Profile optimization</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Google Search Console setup</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Handover package with full documentation</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>2 rounds of revisions</li></ul>
+  <a href="contact.html" class="btn-primary" style="display:block;text-align:center;margin-top:1.5rem">Get Started</a>
+</div>
+    <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:1.75rem;position:relative">
+  
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.875rem">Pro</div>
+  <div style="display:flex;align-items:baseline;gap:.375rem;margin-bottom:.5rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:2.5rem;font-weight:700;color:var(--txt);line-height:1">$1,999</span>
+    <span style="color:var(--muted);font-size:.875rem">flat rate</span>
+  </div>
+  <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)">The complete digital presence package: website, SEO, Maps, social media, and analytics — all done for you.</p>
+  <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.625rem"><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 20 pages</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Everything in Growth</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Facebook Business Page Setup</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Comprehensive competitor analysis</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Google Analytics + heat mapping</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Priority delivery (24 hours)</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>3 rounds of revisions</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+      <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>30-day post-launch support</li></ul>
+  <a href="contact.html" class="btn-ghost" style="display:block;text-align:center;margin-top:1.5rem">Get Started</a>
+</div>
+  </div>
 
-<!-- PAGE HERO -->
-<section style="position:relative;overflow:hidden;padding:96px 32px 80px;">
-  <div class="blob blob-cyan" style="width:600px;height:600px;top:-200px;left:-150px;"></div>
-  <div class="blob blob-purple" style="width:500px;height:500px;bottom:-150px;right:-100px;"></div>
-  <div class="dot-grid" style="position:absolute;inset:0;pointer-events:none;"></div>
-  <div style="position:relative;max-width:720px;margin:0 auto;text-align:center;">
-    <div class="tag anim-in" style="margin-bottom:20px;animation-delay:0.05s;"><span class="tag-dot"></span>Transparent Pricing</div>
-    <h1 class="h-xl anim-in" style="font-size:clamp(2.2rem,5vw,3.75rem);color:var(--text);margin-bottom:20px;animation-delay:0.15s;">
-      Small business website<br><span class="text-grad">design packages</span>
-    </h1>
-    <p class="anim-in" style="font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:520px;margin:0 auto;animation-delay:0.25s;">Flat-rate pricing with no hidden fees. You know the exact cost before we start. No long-term contracts required.</p>
+  <div style="margin-top:2rem;background:var(--elevated);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <p style="color:var(--muted);font-size:.875rem;line-height:1.6;max-width:560px"><span style="color:var(--txt);font-weight:600">How does this compare?</span> US web agencies typically charge $5,000–$15,000 for the same scope. Our packages deliver the same professional quality at a fraction of the cost — with a dedicated team focused exclusively on the US small business market.</p>
+    <a href="contact.html" class="btn-ghost" style="flex-shrink:0;white-space:nowrap">Get a Free Quote &rarr;</a>
   </div>
+  <div style="margin-top:1.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+    <div style="display:flex;align-items:center;gap:.875rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.125rem">
+      <div style="width:36px;height:36px;min-width:36px;border-radius:9px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div>
+        <div style="font-weight:700;font-size:.875rem;margin-bottom:.2rem">No contracts</div>
+        <div style="color:var(--muted);font-size:.8rem">Pay once, own it forever</div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:.875rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.125rem">
+      <div style="width:36px;height:36px;min-width:36px;border-radius:9px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div>
+        <div style="font-weight:700;font-size:.875rem;margin-bottom:.2rem">No hidden fees</div>
+        <div style="color:var(--muted);font-size:.8rem">Flat rate, no surprises</div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:.875rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.125rem">
+      <div style="width:36px;height:36px;min-width:36px;border-radius:9px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div>
+        <div style="font-weight:700;font-size:.875rem;margin-bottom:.2rem">You own the files</div>
+        <div style="color:var(--muted);font-size:.8rem">Host anywhere, no lock-in</div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
-<hr class="divider" style="max-width:1200px;margin:0 auto;">
-
-<!-- PRICING CARDS -->
-<section style="padding:72px 32px;max-width:1200px;margin:0 auto;">
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start;">
-
-    <!-- Starter -->
-    <div class="pricing-card">
-      <div style="margin-bottom:28px;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Starter</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
-          <span style="font-family:'Syne',sans-serif;font-size:2.75rem;font-weight:700;color:var(--text);letter-spacing:-0.04em;">$499</span>
-          <span style="font-size:0.875rem;color:var(--text-muted);">one-time</span>
-        </div>
-        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.65;">Perfect for new small businesses that need a clean, professional website to get online fast.</p>
-      </div>
-
-      <div style="flex:1;margin-bottom:32px;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;">What's included</div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">5-page custom website</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Mobile-first responsive design</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">On-page SEO setup (meta, schema)</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Contact form & click-to-call</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">SSL & hosting setup</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Delivered in 48–72 hours</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Google Search Console submission</span></div>
-      </div>
-
-      <a href="contact.html?plan=starter" class="btn-ghost" style="width:100%;">Get Started</a>
-    </div>
-
-    <!-- Growth (Featured) -->
-    <div class="pricing-card featured" style="position:relative;">
-      <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#00E5FF,#7C5CFC);color:#07070E;font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:100px;white-space:nowrap;">Most Popular</div>
-
-      <div style="margin-bottom:28px;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Growth</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
-          <span style="font-family:'Syne',sans-serif;font-size:2.75rem;font-weight:700;color:var(--text);letter-spacing:-0.04em;">$899</span>
-          <span style="font-size:0.875rem;color:var(--text-muted);">one-time</span>
-        </div>
-        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.65;">For small businesses ready to compete on Google and grow their online presence seriously.</p>
-      </div>
-
-      <div style="flex:1;margin-bottom:32px;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;">Everything in Starter, plus</div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">10 pages (services, location, blog, etc.)</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Full keyword research & targeting</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Local SEO & citation setup</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Google Business Profile optimization</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Speed optimization for Core Web Vitals</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Google Analytics 4 setup</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">30-day post-launch support</span></div>
-      </div>
-
-      <a href="contact.html?plan=growth" class="btn-primary" style="width:100%;">
-        Get Started
-        <svg width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M9 4l3.5 3.5L9 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-
-    <!-- Pro -->
-    <div class="pricing-card">
-      <div style="margin-bottom:28px;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Pro</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
-          <span style="font-family:'Syne',sans-serif;font-size:2.75rem;font-weight:700;color:var(--text);letter-spacing:-0.04em;">$1,499</span>
-          <span style="font-size:0.875rem;color:var(--text-muted);">one-time</span>
-        </div>
-        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.65;">For businesses that want the full digital presence — website, SEO, ecommerce, and social media all handled.</p>
-      </div>
-
-      <div style="flex:1;margin-bottom:32px;">
-        <div style="font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:600;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;">Everything in Growth, plus</div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Up to 20 pages</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Ecommerce / online store setup</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Facebook & Instagram profile optimization</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Blog setup with 2 starter posts</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">Priority 24h delivery on revisions</span></div>
-        <div class="check-item"><svg class="check-icon" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(0,229,255,0.08)" stroke="rgba(0,229,255,0.2)" stroke-width="1"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="#00E5FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:0.875rem;color:var(--text-muted);">60-day post-launch support</span></div>
-      </div>
-
-      <a href="contact.html?plan=pro" class="btn-ghost" style="width:100%;">Get Started</a>
-    </div>
-
+<section class="section" style="padding-top:0" aria-labelledby="compare-h2">
+<div class="container">
+  <div style="text-align:center;margin-bottom:3rem">
+    <span class="section-label">Feature Comparison</span>
+    <h2 class="section-title" id="compare-h2">What's included in each plan</h2>
   </div>
-
-  <!-- Trust note -->
-  <div style="text-align:center;margin-top:40px;">
-    <p style="font-size:0.875rem;color:var(--text-muted);">All prices in USD. You own your website outright after delivery. No recurring fees unless you choose an ongoing service. Need something custom? <a href="contact.html" style="color:var(--accent);text-decoration:none;">Contact us for a quote.</a></p>
-  </div>
-</section>
-
-<hr class="divider" style="max-width:1200px;margin:0 auto;">
-
-<!-- COMPARISON TABLE -->
-<section style="padding:72px 32px;max-width:900px;margin:0 auto;">
-  <div style="text-align:center;margin-bottom:48px;">
-    <div class="tag" style="margin-bottom:16px;"><span class="tag-dot"></span>Compare Plans</div>
-    <h2 class="h-lg" style="font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--text);">What's included in each package</h2>
-  </div>
-
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-    <table style="width:100%;border-collapse:collapse;">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden">
+    <table style="width:100%;border-collapse:collapse">
       <thead>
-        <tr style="border-bottom:1px solid var(--border);">
-          <th style="padding:16px 24px;text-align:left;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-muted);letter-spacing:0.05em;text-transform:uppercase;">Feature</th>
-          <th style="padding:16px 20px;text-align:center;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-muted);">Starter<br><span style="color:var(--accent);">$499</span></th>
-          <th style="padding:16px 20px;text-align:center;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--accent);">Growth<br><span style="color:var(--accent);">$899</span></th>
-          <th style="padding:16px 20px;text-align:center;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:var(--text-muted);">Pro<br><span style="color:var(--accent);">$1,499</span></th>
+        <tr style="border-bottom:1px solid var(--border)">
+          <th style="text-align:left;padding:1.25rem 1.5rem;font-size:.8rem;font-weight:600;color:var(--muted)">Feature</th>
+          <th style="text-align:center;padding:1.25rem;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Starter</th><th style="text-align:center;padding:1.25rem;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Growth</th><th style="text-align:center;padding:1.25rem;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#7C5CFC">Pro</th>
         </tr>
       </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Number of pages</td>
-          <td style="padding:14px 20px;text-align:center;font-size:0.875rem;color:var(--text);">5</td>
-          <td style="padding:14px 20px;text-align:center;font-size:0.875rem;color:var(--text);">10</td>
-          <td style="padding:14px 20px;text-align:center;font-size:0.875rem;color:var(--text);">20</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Mobile-first design</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">On-page SEO setup</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Keyword research</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">—</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Local SEO & citations</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">—</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Google Business Profile</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">—</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Ecommerce setup</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">—</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">—</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Social media setup</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">—</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--text-muted);">—</td>
-          <td style="padding:14px 20px;text-align:center;color:var(--accent);">✓</td>
-        </tr>
-        <tr>
-          <td style="padding:14px 24px;font-size:0.875rem;color:var(--text-muted);">Post-launch support</td>
-          <td style="padding:14px 20px;text-align:center;font-size:0.875rem;color:var(--text);">7 days</td>
-          <td style="padding:14px 20px;text-align:center;font-size:0.875rem;color:var(--text);">30 days</td>
-          <td style="padding:14px 20px;text-align:center;font-size:0.875rem;color:var(--text);">60 days</td>
-        </tr>
-      </tbody>
+      <tbody><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Custom website design</td>
+          <td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Mobile-first responsive</td>
+          <td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">On-page SEO</td>
+          <td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Contact form &amp; click-to-call</td>
+          <td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">GMB Setup</td>
+          <td style="text-align:center;padding:1rem;color:var(--muted)">&#8211;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Local SEO Setup</td>
+          <td style="text-align:center;padding:1rem;color:var(--muted)">&#8211;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Facebook Business Page Setup</td>
+          <td style="text-align:center;padding:1rem;color:var(--muted)">&#8211;</td><td style="text-align:center;padding:1rem;color:var(--muted)">&#8211;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Client site management portal</td>
+          <td style="text-align:center;padding:1rem;color:var(--muted)">&#8211;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td><td style="text-align:center;padding:1rem;color:var(--accent)">&#10003;</td>
+        </tr><tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Business email accounts</td>
+          <td style="text-align:center;padding:1rem;font-size:.8rem;color:var(--accent)">1</td><td style="text-align:center;padding:1rem;font-size:.8rem;color:var(--accent)">5</td><td style="text-align:center;padding:1rem;font-size:.8rem;color:var(--accent)">10</td>
+        </tr><tr style="">
+          <td style="padding:1rem 1.5rem;font-size:.875rem;color:var(--muted)">Managed WordPress hosting</td>
+          <td style="text-align:center;padding:1rem;font-size:.8rem;color:var(--accent)">1 yr</td><td style="text-align:center;padding:1rem;font-size:.8rem;color:var(--accent)">1 yr</td><td style="text-align:center;padding:1rem;font-size:.8rem;color:var(--accent)">1 yr</td>
+        </tr></tbody>
     </table>
   </div>
+</div>
 </section>
 
-<hr class="divider" style="max-width:1200px;margin:0 auto;">
-
-<!-- FAQ -->
-<section style="padding:72px 32px;max-width:800px;margin:0 auto;">
-  <div style="text-align:center;margin-bottom:48px;">
-    <div class="tag" style="margin-bottom:16px;"><span class="tag-dot"></span>FAQ</div>
-    <h2 class="h-lg" style="font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--text);">Pricing questions answered</h2>
+<section class="section" style="padding-top:0" aria-labelledby="retainer-h2">
+<div class="container">
+  <div style="text-align:center;max-width:580px;margin:0 auto 2.5rem">
+    <span class="section-label">Ongoing Support</span>
+    <h2 class="section-title" id="retainer-h2" style="margin-bottom:1rem">Monthly retainer plans</h2>
+    <p style="color:var(--muted);font-size:.9375rem;line-height:1.7">Your website is live — now let's grow it. Retainer plans cover hosting, maintenance, SEO, and full site management so you keep ranking and converting.</p>
   </div>
 
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0 2rem;box-shadow:0 4px 24px rgba(0,0,0,0.3);">
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-        What's included in the Starter package?
-        <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
-      <div class="faq-answer">The Starter package includes a 5-page custom website (typically: Home, About, Services, Contact, and one additional page of your choice), mobile-first responsive design, on-page SEO setup (meta titles, descriptions, schema), contact form, click-to-call button, SSL setup, hosting configuration, and Google Search Console submission. Delivered in 48–72 hours.</div>
+  <!-- Hosting explainer -->
+  <div style="background:var(--elevated);border:1px solid var(--accent-border);border-radius:14px;padding:1.5rem 2rem;margin-bottom:3rem;display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start">
+    <div style="width:44px;height:44px;min-width:44px;border-radius:11px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="5" rx="2" stroke="#00E5FF" stroke-width="1.5"/><rect x="2" y="12" width="16" height="5" rx="2" stroke="#00E5FF" stroke-width="1.5" opacity=".5"/><circle cx="5.5" cy="7.5" r="1" fill="#00E5FF"/><circle cx="5.5" cy="14.5" r="1" fill="#00E5FF" opacity=".5"/></svg>
     </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-        Are there any monthly fees?
-        <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
-      <div class="faq-answer">No. All Lantech packages are one-time flat-rate payments with no recurring fees. You own your website and all files outright. The only ongoing costs are your domain name (~$10–15/year) and hosting (~$5–15/month), which you pay directly to your provider — we help set these up but don't charge a markup.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-        Can I upgrade or add pages later?
-        <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
-      <div class="faq-answer">Yes. You can add pages, features, or services to your website at any time. We charge a flat per-page rate for additional pages, and we offer ongoing SEO and maintenance services you can add after launch. Just contact us and we'll quote it upfront.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
-        Do you offer custom pricing for larger projects?
-        <svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </button>
-      <div class="faq-answer">Yes. If your project is larger or has specific requirements not covered by our packages, contact us for a custom quote. We handle everything from single landing pages to multi-location business sites with custom functionality.</div>
+    <div>
+      <p style="font-weight:700;font-size:.9375rem;margin-bottom:.375rem;color:var(--txt)">How hosting works with Lantech</p>
+      <p style="color:var(--muted);font-size:.875rem;line-height:1.65">Every build package includes <strong style="color:var(--txt)">1 year of managed WordPress hosting</strong> on enterprise-grade infrastructure at no extra cost. After year one, hosting continues seamlessly under the <strong style="color:var(--txt)">Care plan</strong> ($299/mo) or you can migrate the site to any host you prefer — you own all files either way. Clients get their own secure dashboard to manage their WordPress site. Each site runs in a fully isolated environment for security.</p>
     </div>
   </div>
-</section>
 
-<!-- CTA BANNER -->
-<section style="position:relative;overflow:hidden;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:88px 32px;">
-  <div class="blob blob-purple" style="width:600px;height:600px;top:-250px;right:-100px;opacity:0.8;"></div>
-  <div style="position:relative;max-width:680px;margin:0 auto;text-align:center;">
-    <h2 class="h-lg" style="font-size:clamp(1.8rem,4vw,2.6rem);color:var(--text);margin-bottom:16px;">Not sure which plan is right for you?</h2>
-    <p style="font-size:1rem;color:var(--text-muted);line-height:1.75;margin-bottom:36px;">Tell us about your business and we'll recommend the best starting point — free, no obligation, no pressure.</p>
-    <a href="contact.html" class="btn-primary" style="font-size:0.95rem;padding:0.8rem 2rem;">
-      Get a Free Recommendation →
-    </a>
-  </div>
-</section>
+  <div class="grid-3" style="gap:1.5rem;align-items:start">
 
-<!-- FOOTER -->
-<footer style="padding:44px 32px;max-width:1200px;margin:0 auto;">
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;">
-        <svg width="15" height="15" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+    <!-- Care Plan -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.75rem">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.875rem">Care</div>
+      <div style="display:flex;align-items:baseline;gap:.375rem;margin-bottom:.5rem">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:2.25rem;font-weight:700;color:var(--txt);line-height:1">$299</span>
+        <span style="color:var(--muted);font-size:.875rem">/ month</span>
       </div>
-      <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-0.02em;">Lantech</span>
+      <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)">Hosting + maintenance in one monthly plan. Keep your site live, secure, and up to date after your first year.</p>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.625rem">
+        <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Managed WordPress hosting (Hostinger)</li>
+        <li style="display:flex;align-items:flex-start;gap:.625rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Monthly website maintenance &amp; updates<<li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Security monitoring &amp; malware scanning</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Weekly automated backups</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Plugin &amp; CMS updates</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Uptime monitoring (99.9% SLA)</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 1 hour content edits/month</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Monthly health report</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost" style="display:block;text-align:center;margin-top:1.5rem">Get Started</a>
     </div>
-    <nav style="display:flex;gap:28px;">
-      <a href="services.html" class="nav-link" style="font-size:0.825rem;">Services</a>
-      <a href="pricing.html" class="nav-link" style="font-size:0.825rem;">Pricing</a>
-      <a href="about.html" class="nav-link" style="font-size:0.825rem;">About</a>
-      <a href="blog.html" class="nav-link" style="font-size:0.825rem;">Blog</a>
-      <a href="contact.html" class="nav-link" style="font-size:0.825rem;">Contact</a>
-    </nav>
-    <div style="font-size:0.8rem;color:var(--text-muted);">© 2026 Lantech. All rights reserved.</div>
+
+    <!-- SEO Growth Plan -->
+    <div style="background:var(--surface);border:1px solid rgba(0,229,255,0.28);border-radius:14px;padding:1.75rem;position:relative">
+      <div style="height:2px;background:rgba(0,229,255,0.5);border-radius:2px 2px 0 0;margin:-1.75rem -1.75rem 1.5rem"></div>
+      <span class="pill pill-cyan" style="position:absolute;top:-14px;left:50%;transform:translateX(-50%)">Most Popular</span>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.875rem">SEO Growth</div>
+      <div style="display:flex;align-items:baseline;gap:.375rem;margin-bottom:.5rem">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:2.25rem;font-weight:700;color:var(--txt);line-height:1">$699</span>
+        <span style="color:var(--muted);font-size:.875rem">/ month</span>
+      </div>
+      <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(0,229,255,0.12)">Ongoing SEO optimization and GMB management to improve your local rankings and drive consistent organic traffic every month.</p>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.625rem">
+        <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Everything in Care</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Monthly on-page SEO optimization</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Keyword ranking tracking &amp; reporting</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>GMB optimization &amp; management</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>2 blog posts per month</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Backlink outreach (5 links/month)</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Google Search Console monitoring</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#00E5FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Monthly SEO performance report</li>
+      </ul>
+      <a href="contact.html" class="btn-primary" style="display:block;text-align:center;margin-top:1.5rem">Get Started</a>
+    </div>
+
+    <!-- Full Management Plan -->
+    <div style="background:var(--surface);border:1px solid var(--purple-border);border-radius:14px;padding:1.75rem">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:.875rem">Full Management</div>
+      <div style="display:flex;align-items:baseline;gap:.375rem;margin-bottom:.5rem">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:2.25rem;font-weight:700;color:var(--txt);line-height:1">$1,499</span>
+        <span style="color:var(--muted);font-size:.875rem">/ month</span>
+      </div>
+      <p style="color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)">Your complete digital presence — actively managed and optimized every month. We handle everything so you can focus on running your business.</p>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.625rem">
+        <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Everything in SEO Growth</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Facebook page optimization &amp; management</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>4 blog posts / content pieces per month</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Email marketing setup &amp; 2 campaigns/month</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Conversion rate optimization (CRO)</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Competitor analysis &amp; strategy calls</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Priority support (4-hour response)</li><li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted)">
+          <span style="color:var(--accent2);flex-shrink:0;margin-top:.12rem"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="#7C5CFC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Dedicated account manager</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost" style="display:block;text-align:center;margin-top:1.5rem;border-color:var(--purple-border);color:var(--accent2)">Get Started</a>
+    </div>
+
   </div>
+
+  <div style="margin-top:2rem;background:var(--elevated);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0"><circle cx="9" cy="9" r="7.5" stroke="#00E5FF" stroke-width="1.25"/><path d="M9 6v4M9 12v.5" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <p style="color:var(--muted);font-size:.875rem;line-height:1.6"><span style="color:var(--txt);font-weight:600">Retainer plans require an active Lantech website.</span> Cancel anytime with 30 days notice. Billed monthly, no lock-in contracts. Discounts available for 6-month and 12-month commitments.</p>
+  </div>
+</div>
+</section>
+
+
+<section class="section" style="padding-top:0" aria-labelledby="pfaq-h2">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start">
+    <div>
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title" id="pfaq-h2" style="margin-bottom:1rem">Pricing questions, answered</h2>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.7;margin-bottom:2rem">Still unsure which plan is right for you? We're happy to recommend one.</p>
+      <a href="contact.html" class="btn-primary">Talk to Us <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="fa1" id="fq1">Are there any monthly fees or subscriptions?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="fa1" role="region" aria-labelledby="fq1"><div class="faq-answer-inner">Our website build packages are one-time flat fees — no recurring charges, no hosting fees, no subscriptions. We do offer optional monthly retainer plans for ongoing SEO and site management, but those are completely separate and optional.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="fa2" id="fq2">Can I upgrade from Starter to Growth later?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="fa2" role="region" aria-labelledby="fq2"><div class="faq-answer-inner">Yes. You can start with Starter and upgrade at any time. We'll quote the difference and expand your site accordingly.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="fa3" id="fq3">What payment methods do you accept?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="fa3" role="region" aria-labelledby="fq3"><div class="faq-answer-inner">We accept PayPal and bank transfer. A 50% deposit is due at kickoff and the remaining 50% upon delivery.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="fa4" id="fq4">Do I need to provide content and photos?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="fa4" role="region" aria-labelledby="fq4"><div class="faq-answer-inner">We'll write all the SEO-optimized copy for your site. We recommend providing your own photos — real images of your business, team, and work build far more trust with customers and perform better on Google. If you don't have any yet, we'll use professional stock as a temporary placeholder until you do.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="fa5" id="fq5">What if I need more pages than my plan includes?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="fa5" role="region" aria-labelledby="fq5"><div class="faq-answer-inner">Additional pages can be added to any plan for a flat per-page rate. Just let us know during onboarding and we'll include it in your quote.</div></div>
+</div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="section" style="padding-top:0" aria-label="Call to action">
+<div class="container"><div class="cta-card">
+  <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(0,229,255,.07) 0%,transparent 70%);pointer-events:none" aria-hidden="true"></div>
+  <div style="position:absolute;bottom:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(124,92,252,.07) 0%,transparent 70%);pointer-events:none" aria-hidden="true"></div>
+  <div style="position:relative">
+    <span class="section-label" style="display:block;text-align:center">Ready to get started?</span>
+    <h2 class="section-title" style="text-align:center;margin-bottom:1rem;font-size:clamp(1.625rem,3vw,2.5rem)">Start your project today</h2>
+    <p style="color:var(--muted);font-size:1rem;max-width:440px;margin:0 auto 2.75rem;line-height:1.72;text-align:center">Pick a plan or get a custom quote — we'll help you find the right fit for your business.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.875rem;justify-content:center">
+      <a href="contact.html" class="btn-primary" style="padding:.9375rem 2rem;font-size:.9375rem">Get a Free Quote <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="services.html" class="btn-ghost" style="padding:.9375rem 2rem;font-size:.9375rem">View Services</a>
+    </div>
+  </div>
+</div></div>
+</section>
+<footer aria-label="Site footer" style="border-top:1px solid var(--border);padding:4.5rem 0 2rem">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem">
+    <div>
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:.625rem;text-decoration:none;margin-bottom:1.125rem">
+        <svg height="26" viewBox="0 0 272 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lantech" style="display:block;flex-shrink:0">
+      <text y="44" font-family="Unbounded, sans-serif" font-weight="700" font-size="38" letter-spacing="-1">
+        <tspan fill="#EAEAF5">Lan</tspan><tspan fill="#00E5FF">tech</tspan>
+      </text>
+      <rect x="2" y="51" width="98" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+      <rect x="100" y="51" width="168" height="3" rx="1.5" fill="#00E5FF"/>
+    </svg>
+      </a>
+      <p style="color:var(--muted);font-size:.875rem;line-height:1.7;max-width:220px;margin-bottom:1.5rem">Web design &amp; SEO for small businesses across the United States.</p>
+      <div style="display:flex;gap:.625rem">
+        <a href="https://facebook.com/lantechco" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 2h-2a3 3 0 00-3 3v2H5v3h2v4h3v-4h2l.5-3H10V5a.5.5 0 01.5-.5H12V2z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg></a>
+        <a href="https://instagram.com/lantechco" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.25"/><circle cx="8" cy="8" r="2.75" stroke="currentColor" stroke-width="1.25"/><circle cx="11.5" cy="4.5" r=".75" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Services</p>
+      <div style="display:flex;flex-direction:column;gap:.625rem">
+        <a href="services.html" class="footer-link">Web Design</a>
+        <a href="services.html" class="footer-link">SEO Optimization</a>
+        <a href="services.html" class="footer-link">Google Business Profile</a>
+        <a href="services.html" class="footer-link">Social Media</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Company</p>
+      <div style="display:flex;flex-direction:column;gap:.625rem">
+        <a href="about.html" class="footer-link">About</a>
+        <a href="pricing.html" class="footer-link">Pricing</a>
+        <a href="blog.html" class="footer-link">Blog</a>
+        <a href="help.html" class="footer-link">Help</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Contact</p>
+      <div style="display:flex;flex-direction:column;gap:.625rem">
+        <a href="mailto:hello@lantech.co" class="footer-link">hello@lantech.co</a>
+        <a href="tel:+18000000000" class="footer-link">+1-800-000-0000</a>
+        <a href="contact.html" class="footer-link" style="color:var(--accent);margin-top:.25rem">Get a Free Quote &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <hr class="rule" style="margin-bottom:1.625rem">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem">
+    <p style="color:var(--muted);font-size:.8rem">&copy; 2026 Lantech. All rights reserved.</p>
+    <p style="color:var(--muted);font-size:.78rem;font-family:'IBM Plex Mono',monospace">@lantechco</p>
+  </div>
+</div>
 </footer>
-
 <script>
-  function toggleFaq(btn) {
-    const answer = btn.nextElementSibling;
-    const icon = btn.querySelector('.faq-icon');
-    const isOpen = answer.classList.contains('open');
-    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
-    document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
-    if (!isOpen) {
-      answer.classList.add('open');
-      icon.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-  }
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const expanded=btn.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.faq-btn').forEach(b=>{b.setAttribute('aria-expanded','false');const p=document.getElementById(b.getAttribute('aria-controls'));if(p)p.classList.remove('open')});
+    if(!expanded){btn.setAttribute('aria-expanded','true');const p=document.getElementById(btn.getAttribute('aria-controls'));if(p)p.classList.add('open')}
+  });
+});
+const T=document.getElementById('nav-toggle'),M=document.getElementById('mobile-menu'),h1=document.getElementById('hb1'),h2=document.getElementById('hb2'),h3=document.getElementById('hb3');
+T.addEventListener('click',()=>{const o=M.classList.contains('open');M.classList.toggle('open',!o);T.setAttribute('aria-expanded',String(!o));T.setAttribute('aria-label',o?'Open navigation menu':'Close navigation menu');if(!o){h1.style.transform='translateY(6.5px) rotate(45deg)';h2.style.opacity='0';h3.style.transform='translateY(-6.5px) rotate(-45deg)'}else{h1.style.transform='';h2.style.opacity='';h3.style.transform=''}});
+M.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{M.classList.remove('open');T.setAttribute('aria-expanded','false');T.setAttribute('aria-label','Open navigation menu');h1.style.transform='';h2.style.opacity='';h3.style.transform=''})});
 </script>
-
 </body>
 </html>

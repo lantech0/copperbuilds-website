@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice — Lantech</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07070E;
+    --surface: #0E0E1C;
+    --elevated: #161628;
+    --accent: #00E5FF;
+    --accent2: #7C5CFC;
+    --text: #EAEAF5;
+    --muted: #68688A;
+    --border: rgba(255,255,255,0.06);
+    --accent-dim: rgba(0,229,255,0.07);
+    --accent-border: rgba(0,229,255,0.18);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 48px;
+    max-width: 860px;
+    margin: 0 auto;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 10px; }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--text); letter-spacing: -0.03em; }
+  .invoice-meta { text-align: right; }
+  .invoice-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 4px; }
+  .invoice-number { font-family: 'IBM Plex Mono', monospace; font-size: 1.4rem; font-weight: 500; color: var(--accent); letter-spacing: -0.02em; }
+  .invoice-date { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+  /* PARTIES */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .party-block { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+  .party-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; }
+  .party-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 6px; letter-spacing: -0.02em; }
+  .party-detail { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+  /* STATUS BADGE */
+  .status-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.3rem 0.9rem; border-radius: 100px;
+  }
+  .status-unpaid { color: #ffb347; background: rgba(255,179,71,0.1); border: 1px solid rgba(255,179,71,0.25); }
+  .status-paid { color: #00c896; background: rgba(0,200,150,0.1); border: 1px solid rgba(0,200,150,0.25); }
+  .status-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .due-date { font-size: 0.82rem; color: var(--muted); }
+  .due-date strong { color: var(--text); }
+
+  /* LINE ITEMS TABLE */
+  .table-wrap { margin-bottom: 32px; }
+  .table-head {
+    display: grid;
+    grid-template-columns: 1fr 80px 100px 110px;
+    gap: 16px;
+    padding: 10px 16px;
+    background: var(--elevated);
+    border-radius: 8px 8px 0 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .table-head span:not(:first-child) { text-align: right; }
+  .table-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 100px 110px;
+    gap: 16px;
+    padding: 16px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    align-items: start;
+  }
+  .table-row:last-child { border-bottom: none; border-radius: 0 0 8px 8px; }
+  .item-name { font-weight: 500; font-size: 0.9rem; color: var(--text); margin-bottom: 3px; }
+  .item-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+  .item-qty, .item-rate, .item-amount { text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--text); padding-top: 2px; }
+  .item-amount { font-weight: 500; color: var(--accent); }
+
+  /* TOTALS */
+  .totals {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+  .totals-box { width: 280px; }
+  .totals-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .totals-row:last-child { border-bottom: none; }
+  .totals-row.total {
+    padding-top: 14px;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem;
+    color: var(--text);
+    border-top: 2px solid var(--accent-border);
+    border-bottom: none;
+    margin-top: 4px;
+  }
+  .totals-row.total .amount { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 1.3rem; font-weight: 500; }
+  .totals-row .amount { font-family: 'IBM Plex Mono', monospace; color: var(--text); }
+
+  /* PAYMENT */
+  .payment-section {
+    background: var(--surface);
+    border: 1px solid var(--accent-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+  .payment-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--accent); margin-bottom: 14px; letter-spacing: -0.01em; }
+  .payment-methods { display: flex; flex-direction: column; gap: 10px; }
+  .payment-method {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--elevated); border-radius: 8px; padding: 12px 16px;
+  }
+  .method-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); width: 80px; flex-shrink: 0; }
+  .method-value { font-size: 0.85rem; color: var(--text); }
+
+  /* NOTES */
+  .notes-section { margin-bottom: 48px; }
+  .notes-title { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 10px; }
+  .notes-body { font-size: 0.82rem; color: var(--muted); line-height: 1.75; background: var(--surface); border-radius: 8px; padding: 14px 16px; border: 1px solid var(--border); }
+
+  /* FOOTER */
+  .footer { border-top: 1px solid var(--border); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--text); letter-spacing: -0.02em; }
+  .footer-contact { font-size: 0.78rem; color: var(--muted); text-align: right; line-height: 1.7; }
+
+  /* PRINT */
+  @media print {
+    body { background: white; color: #111; padding: 24px; }
+    :root {
+      --bg: white; --surface: #f5f5f5; --elevated: #ebebeb;
+      --text: #111; --muted: #666; --accent: #0099bb;
+      --border: rgba(0,0,0,0.1); --accent-border: rgba(0,153,187,0.3);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-wrap">
+    <div class="logo-icon">
+      <svg width="19" height="19" viewBox="0 0 17 17" fill="none"><rect x="2" y="2" width="5.5" height="13" rx="1" fill="#07070E"/><rect x="9.5" y="2" width="5.5" height="6" rx="1" fill="#07070E"/><rect x="9.5" y="9" width="5.5" height="6" rx="1" fill="#07070E"/></svg>
+    </div>
+    <span class="logo-text">Lantech</span>
+  </div>
+  <div class="invoice-meta">
+    <div class="invoice-label">Invoice</div>
+    <div class="invoice-number">#[INVOICE_NUMBER]</div>
+    <div class="invoice-date">Issued: [ISSUE_DATE]</div>
+  </div>
+</div>
+
+<!-- PARTIES -->
+<div class="parties">
+  <div class="party-block">
+    <div class="party-label">From</div>
+    <div class="party-name">Lantech</div>
+    <div class="party-detail">
+      hello@lantech.co<br>
+      lantech.co<br>
+      +1-800-000-0000
+    </div>
+  </div>
+  <div class="party-block">
+    <div class="party-label">Bill To</div>
+    <div class="party-name">[CLIENT_BUSINESS_NAME]</div>
+    <div class="party-detail">
+      [CLIENT_CONTACT_NAME]<br>
+      [CLIENT_EMAIL]<br>
+      [CLIENT_PHONE]<br>
+      [CLIENT_ADDRESS]
+    </div>
+  </div>
+</div>
+
+<!-- STATUS -->
+<div class="status-row">
+  <span class="status-badge status-unpaid">
+    <span class="status-dot"></span>
+    Payment Due
+  </span>
+  <!-- Change class to status-paid and text to "Paid" when payment received -->
+  <div class="due-date">Due: <strong>[DUE_DATE]</strong> &nbsp;·&nbsp; Payment required before work begins</div>
+</div>
+
+<!-- LINE ITEMS -->
+<div class="table-wrap">
+  <div class="table-head">
+    <span>Description</span>
+    <span style="text-align:right">Qty</span>
+    <span style="text-align:right">Rate</span>
+    <span style="text-align:right">Amount</span>
+  </div>
+
+  <!-- ITEM 1 — always present -->
+  <div class="table-row">
+    <div>
+      <div class="item-name">[PACKAGE_NAME] Website Design Package</div>
+      <div class="item-desc">[NUMBER]-page custom website — mobile-first, responsive design, on-page SEO setup, contact form, SSL, Google Search Console submission, delivered in [TIMELINE]</div>
+    </div>
+    <div class="item-qty">1</div>
+    <div class="item-rate">$[PRICE]</div>
+    <div class="item-amount">$[PRICE]</div>
+  </div>
+
+  <!-- ITEM 2 — add-on (delete if not applicable) -->
+  <!--
+  <div class="table-row">
+    <div>
+      <div class="item-name">SEO Optimization</div>
+      <div class="item-desc">Keyword research, on-page SEO, local SEO setup, schema markup, monthly reporting</div>
+    </div>
+    <div class="item-qty">1</div>
+    <div class="item-rate">$[PRICE]</div>
+    <div class="item-amount">$[PRICE]</div>
+  </div>
+  -->
+
+  <!-- ITEM 3 — add-on (delete if not applicable) -->
+  <!--
+  <div class="table-row">
+    <div>
+      <div class="item-name">Google Business Profile Optimization</div>
+      <div class="item-desc">GMB setup, category optimization, photo upload, review response, maps ranking</div>
+    </div>
+    <div class="item-qty">1</div>
+    <div class="item-rate">$[PRICE]</div>
+    <div class="item-amount">$[PRICE]</div>
+  </div>
+  -->
+</div>
+
+<!-- TOTALS -->
+<div class="totals">
+  <div class="totals-box">
+    <div class="totals-row">
+      <span>Subtotal</span>
+      <span class="amount">$[SUBTOTAL]</span>
+    </div>
+    <div class="totals-row">
+      <span>Tax (if applicable)</span>
+      <span class="amount">$0.00</span>
+    </div>
+    <div class="totals-row">
+      <span>Discount</span>
+      <span class="amount">$0.00</span>
+    </div>
+    <div class="totals-row total">
+      <span>Total Due</span>
+      <span class="amount">$[TOTAL]</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAYMENT -->
+<div class="payment-section">
+  <div class="payment-title">How to Pay</div>
+  <div class="payment-methods">
+    <div class="payment-method">
+      <span class="method-label">PayPal</span>
+      <span class="method-value">[PAYPAL_LINK_OR_EMAIL]</span>
+    </div>
+    <div class="payment-method">
+      <span class="method-label">Venmo</span>
+      <span class="method-value">[VENMO_HANDLE]</span>
+    </div>
+    <div class="payment-method">
+      <span class="method-label">Bank</span>
+      <span class="method-value">Request account details via email: hello@lantech.co</span>
+    </div>
+  </div>
+</div>
+
+<!-- NOTES -->
+<div class="notes-section">
+  <div class="notes-title">Notes</div>
+  <div class="notes-body">
+    Payment is due in full before work begins. Project timeline starts upon receipt of payment AND completed onboarding questionnaire.<br><br>
+    This invoice covers the scope of work described in your signed Service Agreement dated [AGREEMENT_DATE].<br><br>
+    Questions? Email hello@lantech.co or reply to your welcome email.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">Lantech</div>
+  <div class="footer-contact">
+    hello@lantech.co &nbsp;·&nbsp; lantech.co<br>
+    Invoice #[INVOICE_NUMBER] &nbsp;·&nbsp; [ISSUE_DATE]
+  </div>
+</div>
+
+</body>
+</html>
