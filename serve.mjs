@@ -28,8 +28,10 @@ http.createServer((req, res) => {
 
   let filePath = path.join(__dirname, urlPath);
 
-  // Try adding .html if no extension
-  if (!path.extname(filePath) && !fs.existsSync(filePath)) {
+  // Serve index.html from directories
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  } else if (!path.extname(filePath) && !fs.existsSync(filePath)) {
     filePath += '.html';
   }
 
