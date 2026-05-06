@@ -119,7 +119,7 @@ Every page must have this footer:
 
 ```
 [Lantech logo + tagline]    [Pages]           [Services]         [Contact]
-                            Home              Web Design         hello@lantech.co
+                            Home              Web Design         lantech016@gmail.com
                             Services          SEO                [Phone — TBD]
                             Pricing           Google Business    [City, State — TBD]
                             Blog              Social Media
@@ -135,7 +135,7 @@ Background: #07070E, top border: 1px solid var(--border)
 ```
 
 **IMPORTANT:** Do NOT invent a phone number or address. If those are not provided, omit them.
-Use `hello@lantech.co` for email.
+Use `lantech016@gmail.com` for email.
 
 ---
 
@@ -194,7 +194,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     "logo": "https://lantech.co/brand_assets/lantech-logo-white.png",
     "image": "https://lantech.co/brand_assets/lantech-fb-banner-820x312.png",
     "description": "Web design, SEO, Google Business Profile optimization, and social media services for small businesses across the United States.",
-    "email": "hello@lantech.co",
+    "email": "lantech016@gmail.com",
     "priceRange": "$1,200 - $1,999",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -261,7 +261,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "logo": "https://lantech.co/brand_assets/lantech-logo-white.png",
   "description": "A dedicated web design studio helping US small businesses grow online with fast, affordable websites and SEO. Founded by Luis Echarri.",
   "founder": {"@type": "Person", "name": "Luis Echarri"},
-  "email": "hello@lantech.co",
+  "email": "lantech016@gmail.com",
   "areaServed": {"@type": "Country", "name": "United States"}
 }
 </script>
@@ -278,11 +278,11 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "mainEntity": {
     "@type": "Organization",
     "name": "Lantech",
-    "email": "hello@lantech.co",
+    "email": "lantech016@gmail.com",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "sales",
-      "email": "hello@lantech.co",
+      "email": "lantech016@gmail.com",
       "availableLanguage": "English",
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
@@ -400,7 +400,7 @@ These values must match exactly everywhere they appear:
 |---|---|
 | Business name | Lantech (not "LanTech", not "LANTECH") |
 | Founder | Luis Echarri |
-| Email | hello@lantech.co |
+| Email | lantech016@gmail.com |
 | Starter price | $1,200 |
 | Growth price | $1,699 |
 | Pro price | $1,999 |

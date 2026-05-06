@@ -33,7 +33,7 @@ of the vibe ("modern and techy", "warm and local", "clean and minimal").
 | Item | Lantech Status | Notes |
 |---|---|---|
 | Owner / founder name | ✅ Luis Echarri | |
-| Business email | ⚠️ Placeholder | `hello@lantech.co` — confirm this is real |
+| Business email | ⚠️ Placeholder | `lantech016@gmail.com` — confirm this is real |
 | Phone number | ❌ Missing | Currently showing fake +1-800-000-0000 |
 | Physical address | ❌ Missing | City + state at minimum (e.g. Miami, FL) |
 | Business hours | ✅ Mon–Fri, 9am–6pm EST | |
@@ -76,7 +76,7 @@ Refund/satisfaction policy. Whether retainer plans are live or coming soon.
 | Hosting platform | ✅ Vercel | |
 | GitHub repo | ✅ github.com/lantech0/lantech-website | |
 | SSL certificate | ✅ (Vercel handles automatically) | |
-| Custom email (e.g. hello@lantech.co) | ⚠️ Unknown | Confirm email is live and receiving |
+| Custom email (e.g. lantech016@gmail.com) | ⚠️ Unknown | Confirm email is live and receiving |
 | Analytics (Google Analytics / GA4) | ❌ Not set up | GA4 property ID needed |
 | Google Search Console | ❌ Not verified | Need to verify domain ownership |
 
@@ -155,7 +155,7 @@ Before the Lantech website is launch-ready, these are the remaining blockers:
 
 ### Must Have (blocks launch)
 1. **Real phone number** — or decision to remove it
-2. **Real email confirmed working** — hello@lantech.co
+2. **Real email confirmed working** — lantech016@gmail.com
 3. **Domain confirmed live** — lantech.co
 4. **Contact form backend** — where do form submissions go?
 5. **Privacy Policy page** — legal requirement

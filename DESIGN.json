@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-04-29T00:00:00Z",
+  "title": "Design System: Lantech",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Advocate Orange",
+        "canonical": "#E8600A",
+        "tonalRamp": ["#7A2C06", "#9E3D08", "#C2500A", "#E8600A", "#F08040", "#F5A068", "#FAC9A0", "#FDE8D8"]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Advocate Orange — Hover",
+        "canonical": "#C2500A",
+        "tonalRamp": ["#7A2C06", "#9E3D08", "#C2500A", "#E8600A", "#F08040", "#F5A068", "#FAC9A0", "#FDE8D8"]
+      },
+      "warm-parchment": {
+        "role": "neutral",
+        "displayName": "Morning Parchment",
+        "canonical": "#FAFAF7",
+        "tonalRamp": ["#2D2A27", "#4A4642", "#6B6560", "#8C857E", "#A39D96", "#C0BCB6", "#E0DDD9", "#FAFAF7"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Clean Canvas",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#2D2A27", "#4A4642", "#6B6560", "#8C857E", "#A39D96", "#C0BCB6", "#E0DDD9", "#FFFFFF"]
+      },
+      "elevated": {
+        "role": "neutral",
+        "displayName": "Warm Cream",
+        "canonical": "#F5F0EA",
+        "tonalRamp": ["#2D2924", "#4A4540", "#67625C", "#847E78", "#A09A95", "#BDB8B2", "#DCD8D2", "#F5F0EA"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm Ink",
+        "canonical": "#1C1917",
+        "tonalRamp": ["#1C1917", "#2D2924", "#3E3530", "#514D49", "#65615D", "#7D7971", "#A09C98", "#DDD9D5"]
+      },
+      "warm-stone": {
+        "role": "neutral",
+        "displayName": "River Stone",
+        "canonical": "#78716C",
+        "tonalRamp": ["#322E2B", "#4A4542", "#625D58", "#78716C", "#908A85", "#A8A29E", "#C5C1BD", "#E2DFDC"]
+      },
+      "subtle": {
+        "role": "neutral",
+        "displayName": "Soft Stone",
+        "canonical": "#A8A29E",
+        "tonalRamp": ["#3C3834", "#5A5550", "#78736E", "#959090", "#A8A29E", "#BDB8B4", "#D4D0CC", "#ECEAE8"]
+      },
+      "confident-blue": {
+        "role": "secondary",
+        "displayName": "Anchor Blue",
+        "canonical": "#1D4ED8",
+        "tonalRamp": ["#0D1E5A", "#1A2F7A", "#1D4ED8", "#3B6AEA", "#6E94F0", "#9CB5F5", "#C4D4FA", "#EAF0FE"]
+      },
+      "parchment-border": {
+        "role": "neutral",
+        "displayName": "Parchment Edge",
+        "canonical": "#E7E0D8",
+        "tonalRamp": ["#5A5350", "#7A7470", "#9C9592", "#B8B1AC", "#CECCCA", "#DCD8D4", "#E7E0D8", "#F4F1EE"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero H1 only. Calistoga editorial serif — signals craft and establishment, not startup. Fluid via clamp()."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section H2 titles. Same Calistoga warmth at a smaller fluid range."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "H3 card headers, sidebar labels. DM Sans 700 — weight creates hierarchy without a second serif scale."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All paragraph copy. Max line length 680px container (65-75ch). High line-height (1.72) for readability."
+      },
+      "body-large": {
+        "displayName": "Body Large",
+        "purpose": "Hero sub-headlines, lead paragraphs. Slightly larger but same weight — creates a lead paragraph feel."
+      },
+      "label": {
+        "displayName": "Label / Mono",
+        "purpose": "Tags, stat readouts, price callouts, section eyebrows. The only typographic role that uses letter-spacing."
+      }
+    },
+    "shadows": [
+      {
+        "name": "definition",
+        "value": "0 1px 3px rgba(28,25,23,0.08), 0 1px 2px rgba(28,25,23,0.06)",
+        "purpose": "Card resting edge definition. Functions as a border alternative, not decorative depth."
+      },
+      {
+        "name": "hover-lift",
+        "value": "0 4px 16px rgba(28,25,23,0.10), 0 2px 6px rgba(28,25,23,0.06)",
+        "purpose": "Cards and interactive surfaces on hover. Lifts the element; signals interactivity."
+      },
+      {
+        "name": "elevated",
+        "value": "0 12px 40px rgba(28,25,23,0.12), 0 4px 12px rgba(28,25,23,0.06)",
+        "purpose": "Modals, dropdowns, popovers. Maximum depth in the system."
+      },
+      {
+        "name": "accent-glow",
+        "value": "0 8px 24px rgba(232, 96, 10, 0.22)",
+        "purpose": "Primary CTA button on hover ONLY. One per screen maximum. Never on cards or section backgrounds."
+      }
+    ],
+    "motion": [
+      {
+        "name": "entrance",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All element entrances and hover lift animations. Expo-out — fast start, gentle settle."
+      },
+      {
+        "name": "exit",
+        "value": "ease-in",
+        "purpose": "All exit animations. Duration 60-70% of entrance. Faster exits feel more responsive."
+      },
+      {
+        "name": "color-shift",
+        "value": "ease",
+        "purpose": "Background and text color transitions. Always 150ms."
+      },
+      {
+        "name": "duration-color",
+        "value": "150ms",
+        "purpose": "Color and opacity transitions."
+      },
+      {
+        "name": "duration-transform",
+        "value": "200ms",
+        "purpose": "Hover lift (translateY) transitions."
+      },
+      {
+        "name": "duration-reveal",
+        "value": "350ms",
+        "purpose": "Card and content reveal animations."
+      },
+      {
+        "name": "stagger-delay",
+        "value": "40ms",
+        "purpose": "Per-item stagger delay for list/grid entrance sequences."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm",  "value": "480px",  "purpose": "Small mobile" },
+      { "name": "md",  "value": "768px",  "purpose": "Tablet / layout collapse threshold" },
+      { "name": "lg",  "value": "1024px", "purpose": "Large tablet / small desktop" },
+      { "name": "xl",  "value": "1280px", "purpose": "Desktop" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary CTA. Advocate Orange background. Used once per section — its scarcity is the point.",
+      "html": "<button class=\"ds-btn-primary\">Get a Free Quote <svg width=\"15\" height=\"15\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #E8600A; color: #FFFFFF; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.875rem; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.15s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease; } .ds-btn-primary:hover { background: #C2500A; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232, 96, 10, 0.22); } .ds-btn-primary:active { transform: translateY(0); box-shadow: none; } .ds-btn-primary:focus-visible { outline: 2px solid #E8600A; outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action. Transparent background with warm border. Warm tint on hover.",
+      "html": "<button class=\"ds-btn-ghost\">Start Your Project</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: #1C1917; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.875rem; padding: 0.75rem 1.5rem; border-radius: 6px; border: 1.5px solid #E7E0D8; cursor: pointer; text-decoration: none; white-space: nowrap; transition: border-color 0.15s ease, background 0.15s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { border-color: rgba(232, 96, 10, 0.38); background: rgba(232, 96, 10, 0.08); transform: translateY(-2px); } .ds-btn-ghost:active { transform: translateY(0); } .ds-btn-ghost:focus-visible { outline: 2px solid #E8600A; outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Tag / Label",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Mono eyebrow label. Advocate Orange foreground on tinted background. Used above headings and on card metadata.",
+      "html": "<span class=\"ds-tag\"><svg width=\"7\" height=\"7\" viewBox=\"0 0 8 8\" fill=\"currentColor\" aria-hidden=\"true\"><circle cx=\"4\" cy=\"4\" r=\"3.5\"/></svg> Built for Small Businesses</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: #E8600A; background: rgba(232, 96, 10, 0.08); border: 1px solid rgba(232, 96, 10, 0.22); border-radius: 100px; padding: 0.3rem 0.8rem; white-space: nowrap; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard content card. Clean Canvas on Morning Parchment. Flat at rest, lifts on hover. Never nested.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Service Name</h3><p class=\"ds-card-body\">A brief description of what this service delivers and why it matters to the client's business.</p></div>",
+      "css": ".ds-card { background: #FFFFFF; border: 1.5px solid #E7E0D8; border-radius: 12px; padding: 1.75rem; transition: border-color 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease; } .ds-card:hover { border-color: rgba(232, 96, 10, 0.38); transform: translateY(-3px); box-shadow: 0 4px 16px rgba(28,25,23,0.10), 0 2px 6px rgba(28,25,23,0.06), 0 0 0 1px rgba(232, 96, 10, 0.22); } .ds-card-title { font-family: 'DM Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: #1C1917; line-height: 1.3; margin-bottom: 0.75rem; } .ds-card-body { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 400; color: #78716C; line-height: 1.72; margin: 0; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Desktop nav link. River Stone at rest, Warm Ink on hover, Advocate Orange when active.",
+      "html": "<a href=\"#\" class=\"ds-nav-link\">Services</a>",
+      "css": ".ds-nav-link { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; color: #78716C; text-decoration: none; transition: color 0.15s ease; } .ds-nav-link:hover { color: #1C1917; } .ds-nav-link.active { color: #E8600A; } .ds-nav-link:focus-visible { outline: 2px solid #E8600A; outline-offset: 4px; border-radius: 4px; }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": "tag",
+      "description": "Mono section eyebrow. Appears above H2 headings to name the section. River Stone for neutral, Advocate Orange for emphasis.",
+      "html": "<span class=\"ds-section-label\">Our Services</span>",
+      "css": ".ds-section-label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #E8600A; margin-bottom: 0.875rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Trusted Craftsman",
+    "overview": "Lantech serves small businesses that have been burned by agencies — overcharged, underdelivered, treated like an account number. The design system's job is to signal, at a glance, that this is different: a skilled local expert with their act together. Warm, confident, clean — not the cold chrome of enterprise SaaS or the hollow polish of an AI-generated template.\n\nLight mode is mandatory. The background is Morning Parchment (#FAFAF7) — not pure white, not dark. The accent is Advocate Orange (#E8600A): the Rebel signal. It says 'we mean it' without aggression. Calistoga headings carry the editorial warmth of a craftsman's sign, not a startup's growth deck. DM Sans body copy reads like someone who knows their field and speaks plainly.\n\nThis system explicitly rejects: dark mode defaults, cyan/purple SaaS palettes, gradient text on headings, glassmorphism, dot-grid textures, ambient glow radial blobs, identical-card feature grids, and the SaaS metric hero row. All are signals of 'AI-generated template' — none belong here.",
+    "keyCharacteristics": [
+      "Light mode only. Warm parchment base. Cold white and dark backgrounds are prohibited.",
+      "One accent color. Advocate Orange (#E8600A) on no more than 15% of any given screen. Rarity is the signal.",
+      "Editorial serif headings (Calistoga) paired with a humanist sans body (DM Sans). No interchangeable defaults.",
+      "Flat surfaces at rest. Shadows are earned by state change (hover, elevation, modal).",
+      "At least one anti-grid layout moment per page — asymmetry, overlap, or diagonal flow — to break template symmetry."
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Advocate Orange is used on no more than 15% of any given screen. CTAs and active states only. If orange appears everywhere, it means nothing.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Cold-Shadow Rule",
+        "body": "All shadow values use rgba(28, 25, 23, ...) — warm ink at low alpha. rgba(0, 0, 0, ...) is prohibited in all shadow declarations.",
+        "section": "colors"
+      },
+      {
+        "name": "The Calistoga-Only Rule",
+        "body": "Calistoga is the sole heading font. Inter, Space Grotesk, Unbounded, Poppins, Plus Jakarta Sans, and Roboto are prohibited as heading fonts.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Body-Tracking Rule",
+        "body": "Letter-spacing on DM Sans body copy is forbidden. Tracking (0.10em) is permitted only on JetBrains Mono label elements.",
+        "section": "typography"
+      },
+      {
+        "name": "The Italic-as-Voice Rule",
+        "body": "Calistoga italic is the only emphasis voice permitted in headings. Body copy uses DM Sans 600 weight for inline emphasis — never italic.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-by-Default Rule",
+        "body": "No surface renders decorative shadow at rest. Real elevation is earned by interaction state only.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Earned Glow Rule",
+        "body": "Accent Glow (rgba(232, 96, 10, 0.22)) is permitted on one element per screen: the primary CTA button hover state. It is not a decorative pattern for cards, sections, or secondary buttons.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use #FAFAF7 (Morning Parchment) as the page background — the warm off-white is the system's base signal.",
+      "Do use Calistoga for all H1 and H2 headings — the editorial serif is the primary brand differentiator.",
+      "Do use Advocate Orange (#E8600A) sparingly: primary CTAs, active nav states, tags, focus rings only.",
+      "Do use warm shadows exclusively: rgba(28, 25, 23, ...) at maximum 0.12 alpha.",
+      "Do keep surfaces flat at rest — shadows and lifts are earned by hover state only.",
+      "Do include at least one anti-grid layout moment per page: asymmetric columns, overlap, diagonal flow, or a grid-breaking element.",
+      "Do specify hover + focus-visible + active states on every interactive element.",
+      "Do animate transform and opacity only — no layout property animations.",
+      "Do use transition: [property] [duration] [easing] — named properties always, never transition-all.",
+      "Do cap body text containers at 680px max-width (65–75 characters per line).",
+      "Do use prefers-reduced-motion to disable all non-essential transitions.",
+      "Do use the entrance easing cubic-bezier(0.16, 1, 0.3, 1) for hover lifts and element entrances."
+    ],
+    "donts": [
+      "Don't use dark mode as default. The site is light mode. This is non-negotiable.",
+      "Don't use cyan (#00E5FF) or purple (#7C5CFC) — these are the eradicated old brand colors.",
+      "Don't use gradient text via background-clip: text on headings. Prohibited.",
+      "Don't add dot-grid texture backgrounds. Prohibited.",
+      "Don't add ambient glow radial gradients (the cyan/purple blob glows). Prohibited.",
+      "Don't use glassmorphism — blurred translucent cards or glass-border effects. Prohibited.",
+      "Don't use Inter, Roboto, Arial, Space Grotesk, Unbounded, Plus Jakarta Sans, or Poppins as a heading font.",
+      "Don't use transition-all — always specify individual transition properties.",
+      "Don't use bounce or elastic easing — cubic-bezier(0.34, 1.56, ...) is banned.",
+      "Don't animate layout properties (width, height, padding, margin).",
+      "Don't nest cards — no card inside a card.",
+      "Don't use identical-card feature grids — vary card sizes, weights, or layout rhythm.",
+      "Don't use a colored left-border or right-border stripe as a card emphasis pattern.",
+      "Don't build a SaaS metric hero row ('50+ businesses · 48h · 100%') — use contextual social proof instead.",
+      "Don't use cold black shadows (rgba(0,0,0,...)). Warm ink tints only.",
+      "Don't use pure white (#FFFFFF) as the page background — Morning Parchment (#FAFAF7) only."
+    ]
+  }
+}

@@ -131,7 +131,7 @@ Your contact form is set up and working.
 Your website is built with static HTML/CSS files. To make changes:
 
 **Option A — Hire Lantech** (recommended)
-Email hello@lantech.co with the changes you need. We quote small updates at $[RATE]/hour.
+Email lantech016@gmail.com with the changes you need. We quote small updates at $[RATE]/hour.
 
 **Option B — Edit it yourself**
 1. Download your website files from the backup link in Section 4
@@ -165,7 +165,7 @@ This does NOT cover:
 - ❌ Content changes (copy, images, pricing updates)
 - ❌ Third-party service integrations added after launch
 
-**After 30 days:** Support is available at $[RATE]/hour. Just email hello@lantech.co.
+**After 30 days:** Support is available at $[RATE]/hour. Just email lantech016@gmail.com.
 
 ---
 
@@ -194,7 +194,7 @@ Here's what we recommend doing in your first month to get the most from your new
 ## 12. CONTACT & ONGOING SUPPORT
 
 **Project lead:** [YOUR_NAME]
-**Email:** hello@lantech.co
+**Email:** lantech016@gmail.com
 **Phone:** +1-800-000-0000
 **Response time:** Within 1 business day
 

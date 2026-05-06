@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: transparent; }
+
+  .wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 0;
+  }
+
+  .wordmark {
+    font-family: 'Calistoga', Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .part-lan {
+    color: #1C1917;
+  }
+
+  .part-tech {
+    color: #E8600A;
+  }
+
+  /* Underline sits only under "Lan" — inline so bounding box includes it */
+  .lan-wrap {
+    display: inline-block;
+    border-bottom: 4px solid #E8600A;
+    padding-bottom: 0px;
+    line-height: 1;
+  }
+
+  /* White variant — for dark backgrounds */
+  body.white .part-lan { color: #FAFAF7; }
+  body.white .part-tech { color: #E8600A; }
+  body.white .lan-wrap { border-bottom-color: #E8600A; }
+</style>
+</head>
+<body>
+  <div class="wrap" id="logo">
+    <div class="wordmark">
+      <span class="lan-wrap"><span class="part-lan">Lan</span></span><span class="part-tech">tech</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -109,6 +109,7 @@
 }
 </script>
 
+<link rel="stylesheet" href="/css/foundation.css">
 <style>
 :root {
   --bg: #FAFAF7;
@@ -151,10 +152,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #E8600A 0%, #E8600A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E8600A;
 }
 
 /* Nav */
@@ -419,46 +417,7 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
 </head>
 <body>
 
-<!-- NAV -->
-<nav aria-label="Main navigation">
-  <div class="container nav-inner">
-    <a href="../index.html" aria-label="Lantech homepage" style="display:flex;align-items:center;gap:.625rem;text-decoration:none;flex-shrink:0">
-      <svg height="30" viewBox="0 0 272 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lantech" style="display:block;flex-shrink:0">
-        <text y="44" font-family="Calistoga, serif" font-weight="700" font-size="38" letter-spacing="-1">
-          <tspan fill="#1C1917">Lan</tspan><tspan fill="#E8600A">tech</tspan>
-        </text>
-        <rect x="2" y="51" width="98" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
-        <rect x="100" y="51" width="168" height="3" rx="1.5" fill="#E8600A"/>
-      </svg>
-    </a>
-    <div class="nav-links" aria-label="Site navigation">
-      <a href="../index.html" class="nav-link">Home</a>
-      <a href="../services.html" class="nav-link">Services</a>
-      <a href="../pricing.html" class="nav-link">Pricing</a>
-      <a href="../blog.html" class="nav-link active" aria-current="page">Blog</a>
-      <a href="../about.html" class="nav-link">About</a>
-      <a href="../contact.html" class="nav-link">Contact</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:.875rem">
-      <a href="../contact.html" class="btn-primary nav-desktop-cta">Get a Free Quote</a>
-      <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" style="display:none;flex-direction:column;gap:5px;padding:.5rem;background:none;border:none;cursor:pointer" class="nav-mobile-btn">
-        <span id="hb1" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:transform .22s,opacity .22s"></span>
-        <span id="hb2" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:opacity .22s"></span>
-        <span id="hb3" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:transform .22s,opacity .22s"></span>
-      </button>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="../index.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Home</a>
-    <a href="../services.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Services</a>
-    <a href="../pricing.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Pricing</a>
-    <a href="../blog.html" class="nav-link active" style="font-size:1rem;padding:.25rem 0">Blog</a>
-    <a href="../about.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">About</a>
-    <a href="../contact.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Contact</a>
-    <hr class="rule" style="margin:.25rem 0">
-    <a href="../contact.html" class="btn-primary" style="width:fit-content">Get a Free Quote</a>
-  </div>
-</nav>
+<script src="/js/nav.js"></script>
 
 <!-- ARTICLE HEADER -->
 <header style="position:relative;padding:4rem 0 0;overflow:hidden" aria-label="Article header">
@@ -841,7 +800,6 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
   The businesses adapting now, before their competitors catch on, will own local search for the next several years. The window to get ahead is open, but it won't stay open for long.
 </p>
 <p>
-  <!-- [UNIQUE INSIGHT] -->
   After working with more than 50 small business owners over the past three years, I've seen one consistent pattern: the ones who optimized their Google Business Profile first always saw ranking improvements first. Not backlinks, not blog content. A complete, active GBP. Start there, then build outward.
 </p>
 <p>
@@ -907,7 +865,7 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
       <div>
         <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Contact</p>
         <div style="display:flex;flex-direction:column;gap:.625rem">
-          <a href="mailto:hello@lantech.co" class="footer-link">hello@lantech.co</a>
+          <a href="mailto:lantech016@gmail.com" class="footer-link">lantech016@gmail.com</a>
           <a href="contact.html" class="footer-link" style="color:var(--accent);margin-top:.25rem">Get a Free Quote &rarr;</a>
         </div>
       </div>
@@ -923,29 +881,6 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
 <!-- JS: Mobile nav + FAQ accordion -->
 <script>
 (function () {
-  // Mobile nav toggle
-  const toggle = document.getElementById('nav-toggle');
-  const menu = document.getElementById('mobile-menu');
-  const hb1 = document.getElementById('hb1');
-  const hb2 = document.getElementById('hb2');
-  const hb3 = document.getElementById('hb3');
-
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open) {
-        hb1.style.transform = 'translateY(6.5px) rotate(45deg)';
-        hb2.style.opacity = '0';
-        hb3.style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      } else {
-        hb1.style.transform = '';
-        hb2.style.opacity = '';
-        hb3.style.transform = '';
-      }
-    });
-  }
-
   // FAQ accordion
   document.querySelectorAll('.faq-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {

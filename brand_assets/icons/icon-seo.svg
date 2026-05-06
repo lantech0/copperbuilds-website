@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <!-- Search circle -->
+  <circle cx="10" cy="10" r="6.5" stroke="#1C1917" stroke-width="1.75"/>
+  <!-- Search handle -->
+  <path d="M15 15l4.5 4.5" stroke="#1C1917" stroke-width="1.75" stroke-linecap="round"/>
+  <!-- Map pin inside magnifier (orange accent) -->
+  <path d="M10 6.5C8.3 6.5 7 7.8 7 9.5c0 2.2 3 5 3 5s3-2.8 3-5c0-1.7-1.3-3-3-3z" fill="#E8600A" opacity="0.9"/>
+  <circle cx="10" cy="9.5" r="1.1" fill="#FAFAF7"/>
+</svg>

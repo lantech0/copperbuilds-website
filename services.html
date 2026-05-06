@@ -17,7 +17,7 @@
       "@type": "ProfessionalService",
       "name": "Lantech",
       "url": "https://lantech.co",
-      "email": "hello@lantech.co"
+      "email": "lantech016@gmail.com"
     },
     "name": "Web Design, Local SEO & Digital Marketing for Home Services Pros",
     "description": "Web design, local SEO, Google Business Profile management, and social media for home services pros — plumbing, HVAC, electrical, drain & sewer, water damage restoration — across the United States.",
@@ -80,6 +80,13 @@
       .stats-row { flex-direction: column; gap: 1.5rem; }
       .stat-block { flex: none; }
     }
+    .svc-hero-split { display: grid; grid-template-columns: 55% 1fr; gap: 5rem; align-items: center; padding-bottom: 64px; }
+    .svc-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .svc-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.125rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .svc-tile-icon { width: 38px; height: 38px; border-radius: 8px; background: rgba(232,96,10,0.10); display: flex; align-items: center; justify-content: center; margin-bottom: 0.25rem; }
+    .svc-tile-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--ink); margin: 0; }
+    .svc-tile-desc { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: var(--warm-stone); line-height: 1.45; margin: 0; }
+    @media (max-width: 900px) { .svc-hero-split { grid-template-columns: 1fr; gap: 2.5rem; } }
   </style>
 </head>
 
@@ -88,53 +95,7 @@
 <!-- ═══════════════════════════════════
      NAV
 ═══════════════════════════════════ -->
-<nav id="main-nav" aria-label="Main navigation" style="
-  position: sticky; top: 0; z-index: 50;
-  height: 64px;
-  background: rgba(250,250,247,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--rule);
-">
-  <div class="container" style="display:flex; align-items:center; justify-content:space-between; height:100%;">
-
-    <a href="index.html" aria-label="Lantech — go to homepage" style="display:flex; align-items:center; text-decoration:none; flex-shrink:0;">
-      <img src="/brand_assets/lantech-logo-new-light.png" alt="Lantech" width="89" height="32" style="display:block;">
-    </a>
-
-    <div id="nav-links" style="display:flex; align-items:center; gap:2rem;">
-      <a href="services.html" aria-current="page" style="color:var(--accent); font-size:0.9375rem; font-weight:600; text-decoration:none;">Services</a>
-      <a href="pricing.html"  style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Pricing</a>
-      <a href="about.html"    style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">About</a>
-      <a href="blog.html"     style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Blog</a>
-      <a href="contact.html"  style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Contact</a>
-    </div>
-
-    <div style="display:flex; align-items:center; gap:0.875rem;">
-      <a href="contact.html" class="btn btn-primary" style="padding:0.625rem 1.125rem; font-size:0.875rem;" id="nav-cta">Get a Free Quote</a>
-      <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"
-        style="display:none; flex-direction:column; gap:5px; padding:0.5rem; background:none; border:none; cursor:pointer;">
-        <span class="hb" style="display:block; width:22px; height:1.5px; background:var(--ink); border-radius:2px; transition:transform 0.2s ease, opacity 0.2s ease;"></span>
-        <span class="hb" style="display:block; width:22px; height:1.5px; background:var(--ink); border-radius:2px; transition:opacity 0.2s ease;"></span>
-        <span class="hb" style="display:block; width:22px; height:1.5px; background:var(--ink); border-radius:2px; transition:transform 0.2s ease, opacity 0.2s ease;"></span>
-      </button>
-    </div>
-  </div>
-
-  <div id="mobile-menu" aria-label="Mobile navigation" style="
-    display:none; position:fixed; top:64px; left:0; right:0;
-    background:var(--bg); border-bottom:1px solid var(--rule);
-    padding:1.5rem 2rem 2rem; z-index:40; flex-direction:column; gap:1rem;
-  ">
-    <a href="services.html" aria-current="page" style="color:var(--accent); font-size:1rem; font-weight:600; text-decoration:none; padding:0.25rem 0;">Services</a>
-    <a href="pricing.html"  style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">Pricing</a>
-    <a href="about.html"    style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">About</a>
-    <a href="blog.html"     style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">Blog</a>
-    <a href="contact.html"  style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">Contact</a>
-    <hr class="rule" style="margin:0.25rem 0;">
-    <a href="contact.html" class="btn btn-primary" style="width:fit-content;">Get a Free Quote</a>
-  </div>
-</nav>
+<script src="/js/nav.js"></script>
 
 
 <!-- ═══════════════════════════════════
@@ -142,10 +103,42 @@
 ═══════════════════════════════════ -->
 <header style="padding: 88px 0 0; border-bottom: 1px solid var(--rule);" aria-label="Services overview">
   <div class="container">
-    <div style="max-width: 680px; padding-bottom: 64px;">
-      <span class="section-label fade-up d1">Our Services</span>
-      <h1 class="display fade-up d2" style="margin-bottom: 1.25rem;">Four services.<br>Built for home services pros.</h1>
-      <p class="body-large fade-up d3" style="max-width: 540px;">Every Lantech service is built to help home services pros get found, get calls, and get jobs — at a price that makes sense for a service business.</p>
+    <div class="svc-hero-split">
+      <div>
+        <span class="section-label fade-up d1">Our Services</span>
+        <h1 class="display fade-up d2" style="margin-bottom: 1.25rem;">Four services.<br>Built for home services pros.</h1>
+        <p class="body-large fade-up d3" style="max-width: 480px;">Every Lantech service is built to help home services pros get found, get calls, and get jobs — at a price that makes sense for a service business.</p>
+      </div>
+      <div class="svc-hero-grid fade-up d4">
+        <div class="svc-tile">
+          <div class="svc-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8600A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <p class="svc-tile-name">Web Design</p>
+          <p class="svc-tile-desc">Live site in 7 days, mobile-first</p>
+        </div>
+        <div class="svc-tile">
+          <div class="svc-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8600A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <p class="svc-tile-name">Local SEO</p>
+          <p class="svc-tile-desc">Rank in your city, not just online</p>
+        </div>
+        <div class="svc-tile">
+          <div class="svc-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8600A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <p class="svc-tile-name">Google Business Profile</p>
+          <p class="svc-tile-desc">More calls from Maps searches</p>
+        </div>
+        <div class="svc-tile">
+          <div class="svc-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8600A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+          </div>
+          <p class="svc-tile-name">Social Media</p>
+          <p class="svc-tile-desc">Stay top of mind, every week</p>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -683,7 +676,7 @@
         <a href="contact.html" class="btn btn-primary" style="font-size:0.875rem; padding:0.6875rem 1.25rem;">
           Free Quote
         </a>
-        <p style="color:var(--subtle); font-size:0.8125rem; margin-top:0.875rem;">hello@lantech.co</p>
+        <p style="color:var(--subtle); font-size:0.8125rem; margin-top:0.875rem;">lantech016@gmail.com</p>
       </div>
 
     </div>
@@ -705,26 +698,6 @@
      JS
 ═══════════════════════════════════ -->
 <script>
-  // Nav hamburger
-  const toggle = document.getElementById('nav-toggle');
-  const menu   = document.getElementById('mobile-menu');
-  const hbs    = document.querySelectorAll('.hb');
-
-  toggle.addEventListener('click', () => {
-    const open = menu.style.display === 'flex';
-    menu.style.display = open ? 'none' : 'flex';
-    toggle.setAttribute('aria-expanded', String(!open));
-    if (!open) {
-      hbs[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-      hbs[1].style.opacity   = '0';
-      hbs[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
-    } else {
-      hbs[0].style.transform = '';
-      hbs[1].style.opacity   = '1';
-      hbs[2].style.transform = '';
-    }
-  });
-
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

@@ -1,18 +1,79 @@
 # CLAUDE.md — Lantech Agency Website
 
+## Session Start — Run This First
+**On the first message of every session, before responding to anything else:**
+Run `workflows/session-start.md` — read client and prospect files, check page rebuild status, then display the session dashboard. Do this automatically. Do not wait to be asked.
+
 ## Workstation Purpose
 Building and maintaining the **Lantech** web agency website targeting small local businesses.
 Stack: Static HTML/CSS/JS · Hosted on Hostinger · `serve.mjs` dev server at localhost:3000
 
+## WAT Workflows
+Read the relevant workflow before starting any process — it defines every required output.
+
+| Workflow | When to use |
+|----------|-------------|
+| `workflows/session-start.md` | **Automatic — run on every session open before anything else** |
+| `workflows/prospect.md` | Before running `/prospect` — any prospecting session |
+| `workflows/discovery-call.md` | When a prospect agrees to a call — pre-call prep, call structure, close |
+| `workflows/project.md` | When a lead closes — creates client folder, queues onboarding |
+| `workflows/revisions.md` | After build passes QA — preview delivery, feedback, revision tracking |
+| `workflows/deploy.md` | After client approves — FTP upload, go-live, handover |
+| `workflows/post-launch.md` | 30 days after launch — check-in, testimonial, upsell |
+| `workflows/portfolio-capture.md` | After every launch — screenshot, case study, portfolio page update |
+| `workflows/proposal.md` | When prospect wants a written proposal before signing — bridges discovery-call and project.md |
+| `workflows/offboarding.md` | When a client ends the relationship — file handover, access transfer, graceful close |
+| `workflows/analytics-setup.md` | Immediately after live site smoke test — GA4 + GSC setup, tagging, conversions, access |
+| `workflows/monthly-report.md` | Start of each month — generate and deliver client performance report |
+| `workflows/maintenance.md` | Start of each month — run maintenance retainer checks and updates |
+
+---
+
 ## Always Do First
+- **Read `DESIGN.md`** before writing any frontend code — it is the single source of truth for all visual decisions.
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+
+## Page Rebuild Process — FOLLOW THIS EXACTLY
+
+This is the correct process for rebuilding any page. Do NOT skip to coding directly.
+
+1. **Invoke `frontend-design` skill** — required before any frontend work (every session)
+2. **Run `/impeccable craft`** for the specific page being rebuilt
+   - craft runs shape discovery first: interviews about purpose, key user action, content, scope
+   - User confirms the design brief before any code is written
+   - craft then builds using DESIGN.md as the token/system source
+3. **Start dev server** — `node serve.mjs` in background
+4. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
+5. **Run quality gates** — check every item in the DO-CONFIRM checklist below
+6. **Iterate** — minimum 2 screenshot rounds before calling a page done
+
+**The old wrong process (banned):**
+- ~~Read old HTML → write new HTML directly → screenshot → iterate~~
+- Reading old HTML for content reference is fine. Jumping to code without `/impeccable craft` is not.
 
 ## Brand
 - **Name:** Lantech
-- **Style:** Techy minimalist
-- **Colors:** `#07070E` bg · `#0E0E1C` surface · `#00E5FF` cyan accent · `#7C5CFC` purple gradient
-- **Fonts:** Space Grotesk (headings) · Inter (body)
+- **Archetype:** Friend (primary) · Rebel (secondary) — warm, on the client's side, quietly angry at agency overcharging
+- **Style:** Clean editorial · Light mode · Warm tones · Anti-corporate
+- **Colors (NEW — erase all old tokens):**
+  - `--bg: #FAFAF7` (warm off-white background)
+  - `--surface: #FFFFFF` (cards)
+  - `--txt: #1C1917` (warm near-black)
+  - `--muted: #78716C` (warm stone gray)
+  - `--accent: #E8600A` (warm orange — THE Rebel signal)
+  - `--accent-hover: #C2500A`
+  - `--blue: #1D4ED8` (supporting blue for links)
+  - `--border: #E7E0D8` (warm border)
+- **Fonts (NEW):**
+  - Headings: `Calistoga` (warm editorial serif — NOT Unbounded, NOT Space Grotesk)
+  - Body: `DM Sans` (approachable sans — NOT Inter, NOT Plus Jakarta Sans)
+  - Mono: `JetBrains Mono` (stats, labels, prices)
+- **Tagline:** "Built for small businesses. Not enterprise." — protect this, use on every page
 - **Pages:** index.html, services.html, about.html, contact.html, blog.html, help.html
+
+## Design System
+- Full token system, component rules, and anti-patterns are in `DESIGN.md` — always read it first.
+- Brand voice, copy rules, and messaging hierarchy are in `BRAND-VOICE.md`.
 
 ## Brand Assets
 - Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
@@ -32,10 +93,10 @@ Stack: Static HTML/CSS/JS · Hosted on Hostinger · `serve.mjs` dev server at lo
 ## Screenshot Workflow
 - Puppeteer is installed at `C:/Users/User/LantechAI/`. Chrome cache is at `C:/Users/User/.cache/puppeteer/`.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
-- Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
+- Screenshots are saved automatically to `./.tmp/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
 - `screenshot.mjs` lives in this folder. Use it as-is.
-- After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
+- After screenshotting, read the PNG from `.tmp/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
 
@@ -46,15 +107,45 @@ Stack: Static HTML/CSS/JS · Hosted on Hostinger · `serve.mjs` dev server at lo
 - Mobile-first responsive
 
 ## Anti-Generic Guardrails
-- **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Use brand colors above.
-- **Shadows:** Never use flat `shadow-md`. Use layered, color-tinted shadows with low opacity.
-- **Typography:** Space Grotesk for headings, Inter for body. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
-- **Gradients:** Layer multiple radial gradients. Add grain/texture via SVG noise filter for depth.
-- **Animations:** Only animate `transform` and `opacity`. Never `transition-all`. Use spring-style easing.
-- **Interactive states:** Every clickable element needs hover, focus-visible, and active states. No exceptions.
-- **Images:** Add a gradient overlay (`bg-gradient-to-t from-black/60`) and a color treatment layer with `mix-blend-multiply`.
-- **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
-- **Depth:** Surfaces should have a layering system (base → elevated → floating).
+
+### Colors
+- Use ONLY tokens from `DESIGN.md` — never hardcode hex in components
+- Background is `#FAFAF7` — NOT dark, NOT pure white
+- Accent is `#E8600A` orange — NEVER cyan, NEVER purple, NEVER blue-600 as primary
+- Shadows are warm-tinted `rgba(28,25,23,...)` at max 0.12 alpha — never cold black shadows
+
+### Typography
+- Headings: Calistoga only — NOT Inter, NOT Space Grotesk, NOT Unbounded, NOT Poppins, NOT Roboto
+- Body: DM Sans only — NOT Inter, NOT Plus Jakarta Sans
+- Body line-height: 1.72. Body text max-width: 680px (65–75 chars/line)
+- No `letter-spacing` on body text. Labels (JetBrains Mono) get `0.10em` tracking only.
+
+### Animations
+- Animate `transform` and `opacity` ONLY — never `width`, `height`, `padding`, `margin`
+- Never `transition-all` — always specify properties
+- Easing: `cubic-bezier(0.16, 1, 0.3, 1)` for entrances, `ease-in` for exits
+- Respect `prefers-reduced-motion`
+- Never bounce or elastic easing
+
+### Interactive States
+- Every clickable element: hover + focus-visible + active. No exceptions.
+- Focus rings: 2px solid `var(--accent)` with 3px offset
+
+### Spacing
+- Use spacing scale from `DESIGN.md`: 8/16/24/32/48/80/120px — no arbitrary values
+
+## Hard NEVER Rules (Impeccable Anti-Patterns — Zero Exceptions)
+- **NEVER** dark mode as default — site is light mode always
+- **NEVER** gradient text via `background-clip: text` on headings
+- **NEVER** glassmorphism (blurred translucent cards, glass-border effects)
+- **NEVER** dot grid texture backgrounds
+- **NEVER** ambient glow radial gradient blobs (cyan or purple glows)
+- **NEVER** SaaS hero metric layout (stat row: "50+ clients · 48h · 100%") — use contextual proof instead
+- **NEVER** nested cards (card inside card inside card)
+- **NEVER** colored left/right border stripes on cards as emphasis
+- **NEVER** bounce or elastic easing (`cubic-bezier(0.34, 1.56, ...)` is banned)
+- **NEVER** animate layout properties (width, height, padding, margin)
+- **NEVER** identical-card feature grids — vary card sizes or weights
 
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
@@ -63,8 +154,43 @@ Stack: Static HTML/CSS/JS · Hosted on Hostinger · `serve.mjs` dev server at lo
 - Do not use `transition-all`
 - Do not use default Tailwind blue/indigo as primary color
 
+## Quality Gates — DO-CONFIRM Before Marking Any Page Done
+
+IMPORTANT: A page is not done until ALL of these pass:
+
+**Visual (run after every screenshot round):**
+- [ ] Background is `#FAFAF7` — NOT dark, NOT pure white
+- [ ] Accent is `#E8600A` — no cyan, no purple anywhere on page
+- [ ] Headings use Calistoga — NOT Inter, NOT Unbounded, NOT Space Grotesk
+- [ ] Body uses DM Sans — NOT Inter, NOT Plus Jakarta Sans
+- [ ] Zero gradient text via `background-clip`
+- [ ] Zero dot grid textures, zero glow blobs, zero glassmorphism
+- [ ] Cards flat at rest — shadow only on hover
+- [ ] At least 1 anti-grid layout moment on the page
+- [ ] All clickable elements have hover + focus-visible + active states
+- [ ] Mobile viewport (375px) tested — no overflow, no broken layouts
+- [ ] At least 2 screenshot comparison rounds completed
+
+**Performance (run before calling a page "launch-ready"):**
+- [ ] LCP < 2.5s (Core Web Vital — use Lighthouse or PageSpeed Insights)
+- [ ] CLS < 0.1 (no layout shift on load)
+- [ ] No render-blocking scripts in `<head>` (defer or async all non-critical JS)
+- [ ] Images have explicit `width` and `height` attributes
+
+**Launch smoke test (5 items — run on final localhost before any deploy):**
+- [ ] All nav links resolve (no 404s)
+- [ ] Contact form submits without error (or shows correct placeholder state)
+- [ ] Page title and meta description are set and unique per page
+- [ ] No console errors on load
+- [ ] Page looks correct on both desktop (1280px) and mobile (375px)
+
 ## Relevant Skills
-- `frontend-design` — invoke before any frontend work
+- `frontend-design` — invoke before any frontend work (every session, no exceptions)
+- `anti-ai-design` — **invoke before any brand or design work** — universal anti-pattern reference; works alongside DESIGN.md
+- `brand-web` — invoke when creating a new brand or rebranding an existing site (tokens, DESIGN.md, SVG logo, grep audit, file-by-file replacement)
+- `ai-graphic-design` — use for logo, brand identity, visual asset generation (5-phase briefing workflow)
+- `ui-ux-pro-max` — use for design system queries, color/typography recommendations, UX review
+- `market-brand` — brand voice analysis and guidelines (see `BRAND-VOICE.md` for Lantech's output)
 - `/seo page <url>` — audit a single page
 - `/seo schema <url>` — generate/validate structured data
 - `/seo technical <url>` — technical SEO audit

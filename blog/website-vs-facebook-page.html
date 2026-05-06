@@ -142,6 +142,7 @@
 }
 </script>
 
+<link rel="stylesheet" href="/css/foundation.css">
 <style>
 /* ===== CSS Variables ===== */
 :root {
@@ -194,10 +195,7 @@ body {
 
 /* ===== Utility ===== */
 .gradient-text {
-  background: linear-gradient(135deg, #E8600A 0%, #E8600A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E8600A;
 }
 
 .glow {
@@ -788,46 +786,7 @@ body {
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav class="site-nav" aria-label="Main navigation">
-  <div class="container nav-inner">
-    <a href="../index.html" class="nav-logo" aria-label="Lantech homepage">
-      <svg height="30" viewBox="0 0 272 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lantech" style="display:block;flex-shrink:0">
-        <text y="44" font-family="Calistoga" font-weight="700" font-size="38" letter-spacing="-1">
-          <tspan fill="#1C1917">Lan</tspan><tspan fill="#E8600A">tech</tspan>
-        </text>
-        <rect x="2" y="51" width="98" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
-        <rect x="100" y="51" width="168" height="3" rx="1.5" fill="#E8600A"/>
-      </svg>
-    </a>
-
-    <div class="nav-links" role="list">
-      <a href="../index.html" class="nav-link" role="listitem">Home</a>
-      <a href="../services.html" class="nav-link" role="listitem">Services</a>
-      <a href="../pricing.html" class="nav-link" role="listitem">Pricing</a>
-      <a href="../blog.html" class="nav-link active" role="listitem" aria-current="page">Blog</a>
-    </div>
-
-    <div style="display:flex;align-items:center;gap:0.875rem">
-      <a href="../contact.html" class="btn-primary nav-cta-desktop">Get a Free Quote</a>
-      <button id="nav-toggle" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span id="hb1"></span>
-        <span id="hb2"></span>
-        <span id="hb3"></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="mobile-menu" id="mobile-menu" role="menu">
-    <a href="../index.html" class="nav-link" role="menuitem" style="font-size:1rem;padding:0.25rem 0">Home</a>
-    <a href="../services.html" class="nav-link" role="menuitem" style="font-size:1rem;padding:0.25rem 0">Services</a>
-    <a href="../pricing.html" class="nav-link" role="menuitem" style="font-size:1rem;padding:0.25rem 0">Pricing</a>
-    <a href="../blog.html" class="nav-link active" role="menuitem" style="font-size:1rem;padding:0.25rem 0">Blog</a>
-    <a href="../contact.html" class="nav-link" role="menuitem" style="font-size:1rem;padding:0.25rem 0">Contact</a>
-    <hr class="rule" style="margin:0.25rem 0">
-    <a href="../contact.html" class="btn-primary" style="width:fit-content">Get a Free Quote</a>
-  </div>
-</nav>
+<script src="/js/nav.js"></script>
 
 
 <!-- ===== ARTICLE HEADER ===== -->
@@ -1050,7 +1009,7 @@ body {
           </svg>
         </a>
         <p class="footer-tagline">Fast, conversion-focused websites for US small businesses. Flat-rate pricing, no retainers.</p>
-        <p class="footer-contact">Email: <a href="mailto:hello@lantech.co">hello@lantech.co</a></p>
+        <p class="footer-contact">Email: <a href="mailto:lantech016@gmail.com">lantech016@gmail.com</a></p>
       </div>
 
       <!-- Col 2: Pages -->
@@ -1089,29 +1048,6 @@ body {
 <script>
 (function () {
   'use strict';
-
-  // Mobile nav toggle
-  var toggle = document.getElementById('nav-toggle');
-  var menu = document.getElementById('mobile-menu');
-  var hb1 = document.getElementById('hb1');
-  var hb2 = document.getElementById('hb2');
-  var hb3 = document.getElementById('hb3');
-
-  if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      var isOpen = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      if (isOpen) {
-        hb1.style.transform = 'translateY(6.5px) rotate(45deg)';
-        hb2.style.opacity = '0';
-        hb3.style.transform = 'translateY(-6.5px) rotate(-45deg)';
-      } else {
-        hb1.style.transform = '';
-        hb2.style.opacity = '';
-        hb3.style.transform = '';
-      }
-    });
-  }
 
   // FAQ accordion
   var faqBtns = document.querySelectorAll('.faq-btn');

@@ -14,6 +14,20 @@
 
 ---
 
+## PROJECT TIMELINE
+
+| Field | Value |
+|---|---|
+| Contract signed date | YYYY-MM-DD |
+| Build start date | YYYY-MM-DD |
+| Preview delivery deadline | YYYY-MM-DD |
+| Revision deadline | YYYY-MM-DD |
+| Deploy date | YYYY-MM-DD |
+| Next follow-up date | YYYY-MM-DD |
+| Post-launch check-in | YYYY-MM-DD (30 days after deploy) |
+
+---
+
 ## THE CLIENT
 
 | Field | Value |

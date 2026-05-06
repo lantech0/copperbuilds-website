@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantech — Internal Agency Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --elevated: #F4F2EE;
+    --ink: #1C1917;
+    --warm-stone: #78716C;
+    --subtle: #A8A29E;
+    --border: #E7E0D8;
+    --rule: #EDE8E2;
+    --accent: #E8600A;
+    --accent-dim: rgba(232,96,10,0.08);
+    --accent-border: rgba(232,96,10,0.25);
+    --green: #15803D;
+    --green-dim: rgba(21,128,61,0.08);
+    --green-border: rgba(21,128,61,0.25);
+    --blue: #1D4ED8;
+    --blue-dim: rgba(29,78,216,0.08);
+    --blue-border: rgba(29,78,216,0.25);
+    --purple: #7C3AED;
+    --purple-dim: rgba(124,58,237,0.08);
+    --purple-border: rgba(124,58,237,0.25);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.7; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ── HEADER ── */
+  .doc-header { background: var(--ink); color: #fff; padding: 3rem 0; border-bottom: 4px solid var(--accent); }
+  .doc-header .wrap { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .doc-title { font-family: 'Calistoga', serif; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 400; color: #fff; line-height: 1.1; margin-bottom: 0.5rem; }
+  .doc-subtitle { color: rgba(255,255,255,0.55); font-size: 0.9375rem; }
+  .doc-badge { background: var(--accent); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.75rem; border-radius: 100px; white-space: nowrap; }
+  .doc-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+  .doc-version { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+  /* ── TOC ── */
+  .toc { background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; }
+  .toc h2 { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-stone); margin-bottom: 1.25rem; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem; }
+  .toc-item { display: flex; align-items: center; gap: 0.625rem; padding: 0.5rem 0.75rem; border-radius: 8px; text-decoration: none; color: var(--ink); font-size: 0.875rem; font-weight: 500; transition: background 0.15s; }
+  .toc-item:hover { background: var(--elevated); }
+  .toc-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent); font-weight: 700; min-width: 1.5rem; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  .section:last-child { border-bottom: none; }
+  .section-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+  .section-num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; flex-shrink: 0; }
+  .section-title { font-family: 'Calistoga', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 0.5rem; }
+  .section-lead { font-size: 1rem; color: var(--warm-stone); line-height: 1.72; max-width: 680px; margin-bottom: 2rem; }
+
+  /* ── INFO BLOCK ── */
+  .info-block { background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px; padding: 1.75rem; }
+  .info-block + .info-block { margin-top: 1rem; }
+  .info-block-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-stone); margin-bottom: 0.75rem; }
+  .info-block-value { font-size: 1.0625rem; color: var(--ink); line-height: 1.65; }
+
+  /* ── HIGHLIGHT BLOCK ── */
+  .highlight { background: var(--accent-dim); border: 1.5px solid var(--accent-border); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+  .highlight p { color: var(--ink); font-size: 0.9375rem; line-height: 1.72; }
+  .highlight strong { color: var(--accent); }
+  .highlight.green { background: var(--green-dim); border-color: var(--green-border); }
+  .highlight.green strong { color: var(--green); }
+  .highlight.blue { background: var(--blue-dim); border-color: var(--blue-border); }
+  .highlight.blue strong { color: var(--blue); }
+
+  /* ── GRID LAYOUTS ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  @media (max-width: 767px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+  /* ── STAT CARDS ── */
+  .stat-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .stat-num { font-family: 'Calistoga', serif; font-size: 2rem; color: var(--accent); line-height: 1; display: block; margin-bottom: 0.25rem; }
+  .stat-label { font-size: 0.8125rem; color: var(--warm-stone); font-weight: 500; }
+
+  /* ── COLOR SWATCHES ── */
+  .swatch-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .swatch-box { width: 64px; height: 64px; border-radius: 12px; border: 1.5px solid var(--border); }
+  .swatch-hex { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--warm-stone); }
+  .swatch-name { font-size: 0.75rem; color: var(--ink); font-weight: 600; text-align: center; }
+
+  /* ── TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 14px; overflow: hidden; border: 1.5px solid var(--border); }
+  .data-table th { background: var(--elevated); text-align: left; padding: 0.875rem 1.25rem; font-size: 0.8rem; font-weight: 700; color: var(--warm-stone); letter-spacing: 0.02em; border-bottom: 1.5px solid var(--border); }
+  .data-table td { padding: 0.875rem 1.25rem; font-size: 0.875rem; color: var(--ink); border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.65; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--elevated); }
+  .check { color: var(--accent); font-weight: 700; }
+  .dash { color: var(--subtle); }
+  .td-label { font-weight: 600; color: var(--ink); }
+
+  /* ── PACKAGE CARDS ── */
+  .pkg-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; padding: 1.75rem; position: relative; }
+  .pkg-card.featured { border-color: var(--accent-border); }
+  .pkg-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.25rem 0.75rem; border-radius: 100px; white-space: nowrap; text-transform: uppercase; }
+  .pkg-card.featured .pkg-top-bar { height: 3px; background: var(--accent); border-radius: 2px; margin: -1.75rem -1.75rem 1.5rem; }
+  .pkg-name { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-stone); margin-bottom: 0.75rem; }
+  .pkg-name.accent { color: var(--accent); }
+  .pkg-price { font-family: 'JetBrains Mono', monospace; font-size: 2.25rem; font-weight: 700; color: var(--ink); line-height: 1; }
+  .pkg-price-unit { font-size: 0.875rem; color: var(--warm-stone); font-family: 'DM Sans', sans-serif; font-weight: 400; }
+  .pkg-desc { font-size: 0.875rem; color: var(--warm-stone); line-height: 1.65; margin: 0.75rem 0 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--rule); }
+  .pkg-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .pkg-features li { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.875rem; color: var(--warm-stone); line-height: 1.55; }
+  .pkg-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+  /* ── PROCESS STEPS ── */
+  .process-list { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .process-item { display: grid; grid-template-columns: 48px 1fr; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+  .process-item:last-child { border-bottom: none; }
+  .process-num-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .process-num { width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .process-connector { width: 2px; background: var(--rule); flex: 1; min-height: 20px; margin-top: 4px; }
+  .process-item:last-child .process-connector { display: none; }
+  .process-title { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.375rem; }
+  .process-desc { font-size: 0.875rem; color: var(--warm-stone); line-height: 1.65; }
+  .process-tag { display: inline-block; background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.15rem 0.5rem; font-size: 0.72rem; font-weight: 600; color: var(--warm-stone); margin-top: 0.5rem; margin-right: 0.25rem; font-family: 'JetBrains Mono', monospace; }
+  .process-tag.accent { background: var(--accent-dim); border-color: var(--accent-border); color: var(--accent); }
+
+  /* ── CHECK LIST ── */
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+  .check-list li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: var(--warm-stone); line-height: 1.6; }
+  .check-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+  /* ── VOICE CHART ── */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .voice-col { background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .voice-col.is { border-color: var(--green-border); background: var(--green-dim); }
+  .voice-col.isnt { border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.05); }
+  .voice-col-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.875rem; }
+  .voice-col.is .voice-col-label { color: var(--green); }
+  .voice-col.isnt .voice-col-label { color: #EF4444; }
+  .voice-pair { display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.875rem; padding: 0.375rem 0; border-bottom: 1px solid var(--rule); }
+  .voice-pair:last-child { border-bottom: none; }
+  .voice-is { color: var(--green); font-weight: 600; }
+  .voice-isnt { color: #EF4444; font-weight: 600; }
+
+  /* ── TAG BADGES ── */
+  .tag { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.2rem 0.625rem; font-size: 0.75rem; font-weight: 500; color: var(--warm-stone); margin: 0.2rem; }
+  .tag.accent { background: var(--accent-dim); border-color: var(--accent-border); color: var(--accent); }
+  .tag.green { background: var(--green-dim); border-color: var(--green-border); color: var(--green); }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--rule); margin: 1.5rem 0; }
+
+  /* ── FOOTER ── */
+  .doc-footer { background: var(--elevated); border-top: 1px solid var(--border); padding: 2rem 0; margin-top: 2rem; text-align: center; }
+  .doc-footer p { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--subtle); }
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block { border-left: 4px solid var(--accent); padding: 1rem 1.5rem; margin: 1.5rem 0; background: var(--surface); border-radius: 0 12px 12px 0; }
+  .quote-block p { font-size: 1.0625rem; color: var(--ink); line-height: 1.65; font-style: italic; }
+  .quote-block cite { display: block; font-size: 0.8125rem; color: var(--warm-stone); margin-top: 0.5rem; font-style: normal; font-weight: 600; }
+
+  /* ── WARNING BLOCK ── */
+  .warning { background: rgba(234,179,8,0.08); border: 1.5px solid rgba(234,179,8,0.3); border-radius: 12px; padding: 1rem 1.5rem; margin: 1rem 0; }
+  .warning p { font-size: 0.875rem; color: var(--ink); line-height: 1.65; }
+  .warning strong { color: #92400E; }
+
+  /* Print */
+  @media print { .toc { display: none; } .section { break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════ -->
+<header class="doc-header">
+  <div class="wrap">
+    <div>
+      <div class="doc-title">Lantech Agency Brief</div>
+      <div class="doc-subtitle">Internal reference — everything about how we work, who we serve, and what we sell</div>
+    </div>
+    <div class="doc-meta">
+      <span class="doc-badge">Internal Use Only</span>
+      <span class="doc-version">Updated: May 2026 · v1.0</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ══ TOC ══════════════════════════════════════════════ -->
+<nav class="toc">
+  <h2>Contents</h2>
+  <div class="toc-grid">
+    <a href="#identity" class="toc-item"><span class="toc-num">01</span> Agency Identity</a>
+    <a href="#brand" class="toc-item"><span class="toc-num">02</span> Brand System</a>
+    <a href="#market" class="toc-item"><span class="toc-num">03</span> Target Market</a>
+    <a href="#packages" class="toc-item"><span class="toc-num">04</span> Packages & Pricing</a>
+    <a href="#retainer" class="toc-item"><span class="toc-num">05</span> Retainer Plans</a>
+    <a href="#process" class="toc-item"><span class="toc-num">06</span> Build Process</a>
+    <a href="#quality" class="toc-item"><span class="toc-num">07</span> Quality Standards</a>
+    <a href="#deliverables" class="toc-item"><span class="toc-num">08</span> What Clients Receive</a>
+    <a href="#timeline" class="toc-item"><span class="toc-num">09</span> Timeline & Communication</a>
+    <a href="#positioning" class="toc-item"><span class="toc-num">10</span> Competitive Positioning</a>
+    <a href="#voice" class="toc-item"><span class="toc-num">11</span> Brand Voice Rules</a>
+    <a href="#promises" class="toc-item"><span class="toc-num">12</span> Key Promises</a>
+  </div>
+</nav>
+
+
+<!-- ══ 01 — IDENTITY ════════════════════════════════════ -->
+<section class="section" id="identity">
+  <div class="section-eyebrow"><span class="section-num">01</span> Agency Identity</div>
+  <h2 class="section-title">Who We Are</h2>
+
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="info-block">
+      <div class="info-block-label">Agency Name</div>
+      <div class="info-block-value" style="font-family:'Calistoga',serif;font-size:1.5rem;">Lantech</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label">Website</div>
+      <div class="info-block-value"><a href="https://lantech.co" style="color:var(--accent);">lantech.co</a></div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label">Contact Email</div>
+      <div class="info-block-value">lantech016@gmail.com</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label">Operations</div>
+      <div class="info-block-value">Philippines-based, serving home services pros across the US</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Tagline (protect this — never change it):</strong> "Built for small businesses. Not enterprise."</p>
+  </div>
+
+  <div class="info-block" style="margin-top:1rem;">
+    <div class="info-block-label">Mission</div>
+    <div class="info-block-value">Most web agencies are built for enterprise clients. Their prices, timelines, and contracts prove it. Lantech is built for the other 99% — small businesses that need a real website, fast, without the overhead. We build mobile-first, SEO-ready sites at flat rates. No surprise invoices, no retainers required, no jargon. Just a website that works, from a team that's actually on your side.</div>
+  </div>
+
+  <div class="grid-2" style="margin-top:1.25rem;">
+    <div class="info-block">
+      <div class="info-block-label">Primary Brand Archetype</div>
+      <div class="info-block-value"><strong>The Friend</strong> — warm, on your side, makes complex things manageable. Talks like a knowledgeable ally, not a vendor.</div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label">Secondary Brand Archetype</div>
+      <div class="info-block-value"><strong>The Rebel</strong> — motivated by the injustice of how big agencies overcharge and under-deliver for small businesses. Gives the Friend backbone.</div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:1.25rem;">
+    <p><strong>Combined voice feel:</strong> A trusted local expert who's quietly angry on your behalf. Not performatively aggressive — just honest about the problem and confident about the solution.</p>
+  </div>
+
+  <div class="grid-4" style="margin-top:1.5rem;">
+    <div class="stat-card"><span class="stat-num">$1,200</span><span class="stat-label">Starting price (Starter pack)</span></div>
+    <div class="stat-card"><span class="stat-num">1 wk</span><span class="stat-label">Typical delivery time</span></div>
+    <div class="stat-card"><span class="stat-num">0</span><span class="stat-label">Contracts or retainers required</span></div>
+    <div class="stat-card"><span class="stat-num">100%</span><span class="stat-label">Files owned by client</span></div>
+  </div>
+</section>
+
+
+<!-- ══ 02 — BRAND SYSTEM ═════════════════════════════════ -->
+<section class="section" id="brand">
+  <div class="section-eyebrow"><span class="section-num">02</span> Brand System</div>
+  <h2 class="section-title">Colors, Fonts & Rules</h2>
+  <p class="section-lead">These tokens apply ONLY to Lantech's own website and materials. Never use them on client sites — each client has their own brand.</p>
+
+  <h3 style="font-size:0.9rem;font-weight:700;color:var(--ink);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;">Color Palette</h3>
+  <div class="swatch-row">
+    <div class="swatch"><div class="swatch-box" style="background:#FAFAF7;"></div><div class="swatch-hex">#FAFAF7</div><div class="swatch-name">Background</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#1C1917;"></div><div class="swatch-hex">#1C1917</div><div class="swatch-name">Ink / Text</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#E8600A;"></div><div class="swatch-hex">#E8600A</div><div class="swatch-name">Accent (Orange)</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#78716C;"></div><div class="swatch-hex">#78716C</div><div class="swatch-name">Warm Stone</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#E7E0D8;"></div><div class="swatch-hex">#E7E0D8</div><div class="swatch-name">Border</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#F4F2EE;"></div><div class="swatch-hex">#F4F2EE</div><div class="swatch-name">Elevated BG</div></div>
+  </div>
+
+  <div class="warning">
+    <p><strong>NEVER use:</strong> Dark backgrounds (#07070E), cyan (#00E5FF), purple (#7C5CFC), or blue as a primary accent. These are old-brand tokens — eradicated in the 2026 rebrand. If you see them anywhere on the Lantech site, it's a bug.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-size:0.9rem;font-weight:700;color:var(--ink);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;">Typography</h3>
+  <table class="data-table" style="margin-bottom:1.25rem;">
+    <thead><tr><th>Role</th><th>Font</th><th>Usage</th><th>Never Use Instead</th></tr></thead>
+    <tbody>
+      <tr><td class="td-label">Headings</td><td><span style="font-family:'Calistoga',serif;font-size:1.1rem;">Calistoga</span></td><td>All H1–H3, display sizes, logo wordmark</td><td>Inter, Space Grotesk, Unbounded, Poppins</td></tr>
+      <tr><td class="td-label">Body</td><td>DM Sans</td><td>All body copy, nav, buttons, captions</td><td>Inter, Plus Jakarta Sans</td></tr>
+      <tr><td class="td-label">Mono / Labels</td><td style="font-family:'JetBrains Mono',monospace;">JetBrains Mono</td><td>Prices, tags, eyebrows, code, data labels</td><td>Any other monospace</td></tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <h3 style="font-size:0.9rem;font-weight:700;color:var(--ink);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;">Design Hard Rules — Zero Exceptions</h3>
+  <ul class="check-list" style="color:var(--ink);">
+    <li>Background is always warm off-white (#FAFAF7) — never dark, never pure white</li>
+    <li>Accent is always warm orange (#E8600A) — no cyan, no purple, no blue as primary</li>
+    <li>Cards flat at rest — shadow only on hover/focus</li>
+    <li>No gradient text via background-clip on headings</li>
+    <li>No glassmorphism, no dot grid textures, no ambient glow blobs</li>
+    <li>No bounce or elastic easing in animations</li>
+    <li>Every clickable element has hover + focus-visible + active states</li>
+    <li>Mobile viewport (375px) tested before any page is called done</li>
+  </ul>
+</section>
+
+
+<!-- ══ 03 — TARGET MARKET ═══════════════════════════════ -->
+<section class="section" id="market">
+  <div class="section-eyebrow"><span class="section-num">03</span> Target Market</div>
+  <h2 class="section-title">Who We Serve</h2>
+  <p class="section-lead">Lantech is built exclusively for home services tradespeople in the United States. Not e-commerce. Not restaurants. Not SaaS. Trades.</p>
+
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="info-block">
+      <div class="info-block-label">Primary Industries</div>
+      <div class="info-block-value">
+        <div style="display:flex;flex-wrap:wrap;gap:0.375rem;margin-top:0.25rem;">
+          <span class="tag accent">HVAC</span><span class="tag accent">Plumbing</span><span class="tag accent">Electrical</span><span class="tag accent">Roofing</span><span class="tag accent">Landscaping</span><span class="tag accent">Concrete</span><span class="tag accent">Renovation / Remodeling</span><span class="tag accent">Pest Control</span><span class="tag accent">Painting</span><span class="tag accent">Flooring</span><span class="tag accent">Water Damage / Restoration</span><span class="tag accent">Garage Door</span><span class="tag accent">Handyman</span><span class="tag accent">Pool & Spa</span><span class="tag accent">Foundation / Structural</span>
+        </div>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label">Ideal Client Profile</div>
+      <div class="info-block-value">
+        <ul class="check-list">
+          <li>Solo operator or small team (1–10 employees)</li>
+          <li>Licensed and operating in the US</li>
+          <li>Has no website OR has a broken/outdated one</li>
+          <li>Getting most jobs from referrals — wants to add online leads</li>
+          <li>Frustrated by agency prices or previous bad experiences</li>
+          <li>Needs speed — can't wait 8 weeks for a site to go live</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight blue">
+    <p><strong>Geographic focus:</strong> United States — all 50 states, all markets. We specialize in local SEO targeting "[trade] in [city]" and "[trade] near me" searches. Every site is geo-targeted from day one.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-size:0.9rem;font-weight:700;color:var(--ink);margin:1.25rem 0 0.75rem;text-transform:uppercase;letter-spacing:0.05em;">Who We Do NOT Serve</h3>
+  <div class="grid-2">
+    <div class="info-block" style="border-color:rgba(239,68,68,0.25);background:rgba(239,68,68,0.03);">
+      <div class="info-block-label" style="color:#EF4444;">Not Our Client</div>
+      <div class="info-block-value">
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.375rem;">
+          <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Enterprise or franchise chains</li>
+          <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;E-commerce stores or product sellers</li>
+          <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Restaurants or hospitality</li>
+          <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;SaaS or tech companies</li>
+          <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Non-US based businesses</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label">Why We're Focused</div>
+      <div class="info-block-value" style="font-size:0.875rem;">Home services is a huge, underserved market. Trade contractors are among the highest-intent local searchers — someone searching "plumber near me" is ready to call. A well-built, locally optimized site converts at very high rates for these trades. We've built our entire process, templates, and keyword strategy around this niche.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ 04 — PACKAGES & PRICING ══════════════════════════ -->
+<section class="section" id="packages">
+  <div class="section-eyebrow"><span class="section-num">04</span> Packages & Pricing</div>
+  <h2 class="section-title">One-Time Build Packages</h2>
+  <p class="section-lead">All packages are flat-rate, one-time payments. No contracts. No retainers required. 1 year of managed WordPress hosting included in every package.</p>
+
+  <div class="grid-3" style="margin-bottom:1.5rem;align-items:start;">
+
+    <!-- Starter -->
+    <div class="pkg-card">
+      <div class="pkg-name">Starter</div>
+      <div><span class="pkg-price">$1,200</span> <span class="pkg-price-unit">flat rate</span></div>
+      <p class="pkg-desc">A clean, fast site that books jobs — click-to-call everywhere, photo gallery, on-page SEO baked in.</p>
+      <ul class="pkg-features">
+        <li>Up to <strong>5 pages</strong></li>
+        <li>Custom mobile-first design</li>
+        <li>On-page SEO (meta, schema, sitemap)</li>
+        <li>Contact form + click-to-call buttons</li>
+        <li>Photo gallery for work samples</li>
+        <li>Google Analytics setup</li>
+        <li>1 business email account</li>
+        <li>1 year managed WordPress hosting</li>
+        <li>Live within a week</li>
+        <li>You own all files</li>
+      </ul>
+    </div>
+
+    <!-- Growth -->
+    <div class="pkg-card featured">
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-name accent">Growth</div>
+      <div><span class="pkg-price">$1,699</span> <span class="pkg-price-unit">flat rate</span></div>
+      <p class="pkg-desc">More service-area pages, deeper local SEO, and Google Business Profile — built to win "[trade] near me" searches.</p>
+      <ul class="pkg-features">
+        <li>Up to <strong>10 pages</strong></li>
+        <li>Everything in Starter</li>
+        <li>Local SEO setup (keywords, geo-targeting)</li>
+        <li>Google Business Profile claim & optimization</li>
+        <li>Google Search Console setup</li>
+        <li>Service-area pages for target cities</li>
+        <li>Client site management portal</li>
+        <li>5 business email accounts</li>
+        <li>Handover package with full documentation</li>
+        <li>2 rounds of revisions</li>
+      </ul>
+    </div>
+
+    <!-- Pro -->
+    <div class="pkg-card">
+      <div class="pkg-name">Pro</div>
+      <div><span class="pkg-price">$1,999</span> <span class="pkg-price-unit">flat rate</span></div>
+      <p class="pkg-desc">Complete digital presence: multi-city pages, emergency messaging, Facebook page, competitor analysis — done for you.</p>
+      <ul class="pkg-features">
+        <li>Up to <strong>20 pages</strong></li>
+        <li>Everything in Growth</li>
+        <li>Multi-city service-area pages</li>
+        <li>Emergency-service messaging</li>
+        <li>Facebook Business Page setup</li>
+        <li>Comprehensive competitor analysis</li>
+        <li>Google Analytics + heat mapping</li>
+        <li>10 business email accounts</li>
+        <li>Priority 3-day turnaround</li>
+        <li>3 rounds of revisions</li>
+        <li>30-day post-launch support</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="highlight">
+    <p><strong>Industry comparison:</strong> Most agencies charge home services pros $5,000–$15,000 and lock them into a 12-month retainer. We deliver the same professional quality at flat-rate, no contracts — and they talk to the person actually building the site.</p>
+  </div>
+
+  <h3 style="font-size:0.9rem;font-weight:700;color:var(--ink);margin:2rem 0 1rem;text-transform:uppercase;letter-spacing:0.05em;">Full Feature Comparison</h3>
+  <table class="data-table">
+    <thead>
+      <tr><th>Feature</th><th style="text-align:center;">Starter<br><span style="color:var(--accent);font-size:0.85em;">$1,200</span></th><th style="text-align:center;">Growth<br><span style="color:var(--accent);font-size:0.85em;">$1,699</span></th><th style="text-align:center;">Pro<br><span style="color:var(--accent);font-size:0.85em;">$1,999</span></th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Custom website design</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Mobile-first responsive</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>On-page SEO (meta, schema, sitemap)</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Contact form & click-to-call</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Google Analytics setup</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>1 year managed WordPress hosting</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Business email accounts</td><td style="text-align:center;color:var(--accent);font-weight:600;">1</td><td style="text-align:center;color:var(--accent);font-weight:600;">5</td><td style="text-align:center;color:var(--accent);font-weight:600;">10</td></tr>
+      <tr><td>Local SEO setup</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Google Business Profile optimization</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Google Search Console setup</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Client site management portal</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Revision rounds</td><td style="text-align:center;color:var(--accent);font-weight:600;">1</td><td style="text-align:center;color:var(--accent);font-weight:600;">2</td><td style="text-align:center;color:var(--accent);font-weight:600;">3</td></tr>
+      <tr><td>Facebook Business Page setup</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Competitor analysis</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Heat mapping</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>Priority 3-day delivery</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td>30-day post-launch support</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══ 05 — RETAINER PLANS ══════════════════════════════ -->
+<section class="section" id="retainer">
+  <div class="section-eyebrow"><span class="section-num">05</span> Retainer Plans</div>
+  <h2 class="section-title">Monthly Ongoing Plans</h2>
+  <p class="section-lead">Optional monthly plans for clients who want ongoing hosting, SEO, or full management after the site is live. Not required — clients can self-host and walk away if they prefer.</p>
+
+  <div class="highlight">
+    <p><strong>Note:</strong> Every build includes 1 year of managed WordPress hosting at no extra charge. After year one, clients can move to the Care plan, migrate to their own host, or cancel. Their files are theirs — no lock-in.</p>
+  </div>
+
+  <div class="grid-3" style="margin-top:1.5rem;align-items:start;">
+
+    <div class="pkg-card">
+      <div class="pkg-name">Care</div>
+      <div><span class="pkg-price" style="font-size:1.75rem;">$299</span> <span class="pkg-price-unit">/ month</span></div>
+      <p class="pkg-desc">Hosting + maintenance in one plan. Keep the site live, secure, and up to date.</p>
+      <ul class="pkg-features">
+        <li>Managed WordPress hosting (Hostinger)</li>
+        <li>Monthly maintenance & updates</li>
+        <li>Security monitoring & malware scanning</li>
+        <li>Weekly automated backups</li>
+        <li>Plugin & CMS updates</li>
+        <li>Uptime monitoring (99.9% SLA)</li>
+        <li>Up to 1 hour content edits/month</li>
+        <li>Monthly health report</li>
+      </ul>
+    </div>
+
+    <div class="pkg-card featured">
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-name accent">SEO Growth</div>
+      <div><span class="pkg-price" style="font-size:1.75rem;">$699</span> <span class="pkg-price-unit">/ month</span></div>
+      <p class="pkg-desc">Ongoing local SEO and GBP management to improve rankings and drive organic calls every month.</p>
+      <ul class="pkg-features">
+        <li>Everything in Care</li>
+        <li>Monthly on-page SEO optimization</li>
+        <li>Keyword ranking tracking & reporting</li>
+        <li>GMB optimization & management</li>
+        <li>2 blog posts per month</li>
+        <li>Backlink outreach (5 links/month)</li>
+        <li>Google Search Console monitoring</li>
+        <li>Monthly SEO performance report</li>
+      </ul>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-name">Full Management</div>
+      <div><span class="pkg-price" style="font-size:1.75rem;">$1,499</span> <span class="pkg-price-unit">/ month</span></div>
+      <p class="pkg-desc">Complete digital presence — actively managed and optimized every month.</p>
+      <ul class="pkg-features">
+        <li>Everything in SEO Growth</li>
+        <li>Facebook page management</li>
+        <li>4 blog posts/content pieces/month</li>
+        <li>Email marketing (2 campaigns/month)</li>
+        <li>Conversion rate optimization (CRO)</li>
+        <li>Competitor analysis & strategy calls</li>
+        <li>Priority support (4-hour response)</li>
+        <li>Dedicated account manager</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p style="font-size:0.8125rem;color:var(--warm-stone);margin-top:1rem;padding:0.875rem 1.25rem;background:var(--elevated);border-radius:10px;border:1px solid var(--border);">
+    Retainer plans require an active Lantech website. Cancel anytime with 30 days notice. Billed monthly, no lock-in contracts. Discounts available for 6-month and 12-month commitments.
+  </p>
+</section>
+
+
+<!-- ══ 06 — BUILD PROCESS ════════════════════════════════ -->
+<section class="section" id="process">
+  <div class="section-eyebrow"><span class="section-num">06</span> Build Process</div>
+  <h2 class="section-title">How Every Site Gets Built</h2>
+  <p class="section-lead">Every Lantech site follows the same 10-step process. No shortcuts. No step is skipped regardless of package size.</p>
+
+  <div class="process-list">
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">01</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">First Contact & Intake</div>
+        <div class="process-desc">Client submits a free quote request. We respond within 24 hours — a real person, not a bot. If needed, we schedule a 30-minute intake call to collect: services offered, location(s), contact info, and target customer. This replaces any long onboarding forms.</div>
+        <span class="process-tag">All packages</span>
+        <span class="process-tag accent">24-hour response</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">02</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Keyword Research (Step 0)</div>
+        <div class="process-desc">Before any design work, we identify the exact search terms customers use in the client's market. Each page gets one primary keyword ("plumbing services Tampa") and 2–3 secondary keywords. This drives every title tag, H1, and meta description. Skipping this step is why most trade sites rank for nothing — we never skip it.</div>
+        <span class="process-tag">All packages</span>
+        <span class="process-tag accent">Produces: _keyword-map.md</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">03</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Design Brief & Photo Sourcing</div>
+        <div class="process-desc">We identify the right layout archetype for the trade (Urgency/Emergency for HVAC; Premium Credibility for Roofing; etc.) and source real-looking photography from Pexels for every section. No stock placeholder rectangles in the final build. If the client has their own photos, we use those instead.</div>
+        <span class="process-tag">All packages</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">04</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Build — Mobile-First, Then Desktop</div>
+        <div class="process-desc">We always design for 375px (mobile) first, then scale to desktop. Every page is semantic HTML with correct heading hierarchy (one H1 per page, logical H2/H3 structure), correct meta tags, canonical tags, OG tags, Twitter Card tags, image alt text on every img, and lazy loading on below-the-fold images.</div>
+        <span class="process-tag">All packages</span>
+        <span class="process-tag accent">Screenshots every round</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">05</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Schema Stack — Structured Data</div>
+        <div class="process-desc">Every page gets JSON-LD structured data in the head. Standard stack: Organization schema on every page, LocalBusiness schema (or trade-specific sub-type like Plumber, HVACBusiness, Electrician) on home + contact pages, BreadcrumbList on all inner pages, FAQPage schema on service pages with Q&A sections. Validated at schema.org with 0 errors.</div>
+        <span class="process-tag">All packages</span>
+        <span class="process-tag accent">Validated at validator.schema.org</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">06</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Quality Gate Check</div>
+        <div class="process-desc">Before showing the client anything, we run through a full checklist: primary keyword in title, H1, meta description, and first 100 words on every page; canonical tags present; robots.txt and sitemap.xml at site root; no 404 links; form submits correctly; no console errors; looks correct at both 1440px and 375px. Minimum 2 screenshot comparison rounds.</div>
+        <span class="process-tag">All packages</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">07</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Client Review & Revisions</div>
+        <div class="process-desc">We send a preview link. Client has 48 hours to review and request changes. Revisions are limited to the package scope (Starter: 1 round, Growth: 2 rounds, Pro: 3 rounds). Change requests outside the original scope are quoted separately. We don't ghost clients between revisions — response within 24 hours guaranteed.</div>
+        <span class="process-tag accent">Starter: 1 round</span>
+        <span class="process-tag accent">Growth: 2 rounds</span>
+        <span class="process-tag accent">Pro: 3 rounds</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">08</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Google Business Profile Setup</div>
+        <div class="process-desc">Growth and Pro packages include full GBP setup: claim/verify the profile, NAP exact match with website, primary + secondary categories, service area setup, minimum 5 photos (logo, exterior, work samples), services list with descriptions, first GBP post published, review request link generated and added to site. The GBP URL is added to the site's Organization schema sameAs array.</div>
+        <span class="process-tag accent">Growth + Pro only</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">09</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Deploy & Analytics Setup</div>
+        <div class="process-desc">Site goes live on managed WordPress hosting (Hostinger). Google Analytics 4 configured with conversion tracking (form submits, click-to-call). Google Search Console submitted and verified — sitemap submitted. DNS configured for custom domain. Client receives login credentials to their hosting dashboard, WordPress admin, GA4, and GSC.</div>
+        <span class="process-tag">All packages</span>
+        <span class="process-tag accent">Live within a week (Pro: 3 days)</span>
+      </div>
+    </div>
+
+    <div class="process-item">
+      <div class="process-num-wrap"><div class="process-num">10</div><div class="process-connector"></div></div>
+      <div>
+        <div class="process-title">Handover & Post-Launch Support</div>
+        <div class="process-desc">Client receives a full handover package: all file downloads, login credentials, a walkthrough of what was built, and guidance on what to do next (request reviews, keep GBP updated, share the site). Pro clients get 30-day post-launch support — any issues or questions answered within 4 hours.</div>
+        <span class="process-tag">All packages</span>
+        <span class="process-tag accent">Pro: 30-day support included</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ 07 — QUALITY STANDARDS ═══════════════════════════ -->
+<section class="section" id="quality">
+  <div class="section-eyebrow"><span class="section-num">07</span> Quality Standards</div>
+  <h2 class="section-title">What Every Site Must Have</h2>
+  <p class="section-lead">These are non-negotiable. Every site that leaves Lantech passes all of these. No exceptions for budget or timeline.</p>
+
+  <div class="grid-2" style="gap:1.25rem;">
+    <div class="info-block">
+      <div class="info-block-label" style="color:var(--accent);">On-Page SEO — Per Page</div>
+      <ul class="check-list">
+        <li>Primary keyword in title tag, meta description, H1, and first 100 words</li>
+        <li>Title tag 50–60 characters, unique per page</li>
+        <li>Meta description 150–160 characters, unique per page</li>
+        <li>One H1 per page — never two</li>
+        <li>Logical H2/H3 hierarchy, no skipped heading levels</li>
+        <li>Canonical tag on every page</li>
+        <li>Alt text on every img (descriptive, keyword-relevant where natural)</li>
+        <li>OG title, OG description, OG image, OG url on every page</li>
+        <li>Twitter Card meta tags on every page</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label" style="color:var(--accent);">Schema Markup — JSON-LD</div>
+      <ul class="check-list">
+        <li>Organization schema on every page</li>
+        <li>LocalBusiness or trade sub-type (Plumber, HVACBusiness, etc.) on home + contact</li>
+        <li>BreadcrumbList on every non-home page</li>
+        <li>FAQPage on any page with Q&A section</li>
+        <li>All schema validated at validator.schema.org — 0 errors</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label" style="color:var(--accent);">Technical SEO — Site Level</div>
+      <ul class="check-list">
+        <li>robots.txt at site root — allows crawl, references sitemap</li>
+        <li>sitemap.xml listing all pages with lastmod dates</li>
+        <li>No noindex on rankable pages</li>
+        <li>No 404 links — all nav and internal links resolve</li>
+        <li>No console errors on load</li>
+        <li>Google Search Console submitted + sitemap submitted</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label" style="color:var(--accent);">Performance & Mobile</div>
+      <ul class="check-list">
+        <li>Mobile PageSpeed score ≥ 80 (target 90+)</li>
+        <li>LCP under 2.5s, INP under 200ms, CLS under 0.1</li>
+        <li>Images with width + height attributes (prevents layout shift)</li>
+        <li>loading="lazy" on below-the-fold images</li>
+        <li>Hero images under 200KB, inline images under 100KB</li>
+        <li>No render-blocking scripts in head</li>
+        <li>Tested at 375px — no overflow, no broken layouts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ 08 — DELIVERABLES ══════════════════════════════════ -->
+<section class="section" id="deliverables">
+  <div class="section-eyebrow"><span class="section-num">08</span> Deliverables</div>
+  <h2 class="section-title">What Clients Receive</h2>
+  <p class="section-lead">At handover, every client receives the complete set of items below. Nothing is withheld. They own everything.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Deliverable</th><th>Description</th><th style="text-align:center;">Starter</th><th style="text-align:center;">Growth</th><th style="text-align:center;">Pro</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="td-label">All HTML/CSS/JS files</td><td>Complete site files, theirs to keep and host anywhere</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">robots.txt & sitemap.xml</td><td>At site root, crawlable and submitted to GSC</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Keyword map</td><td>_keyword-map.md documenting every page's primary + secondary keywords</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Google Analytics 4</td><td>Configured with conversion tracking; client given full access</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Hosting dashboard login</td><td>Client has full control of their WordPress install and hosting account</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Schema validation report</td><td>Confirmation every page passes validator.schema.org with 0 errors</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Handover walkthrough</td><td>Written guide explaining what was built, how to update it, what to do next</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Google Business Profile</td><td>Fully set up: categories, photos, services, first post, review link</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Google Search Console</td><td>Verified, sitemap submitted, client given Owner access</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Facebook Business Page</td><td>Fully configured with branding, about info, contact, first post</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Competitor analysis report</td><td>Top 3 local competitors — what they do well and where to beat them</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">Heat mapping setup</td><td>Visitor behavior tracking installed and configured</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+      <tr><td class="td-label">30-day post-launch support</td><td>4-hour response SLA on any site questions or fixes</td><td class="dash" style="text-align:center;">—</td><td class="dash" style="text-align:center;">—</td><td class="check" style="text-align:center;">✓</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ══ 09 — TIMELINE & COMMUNICATION ════════════════════ -->
+<section class="section" id="timeline">
+  <div class="section-eyebrow"><span class="section-num">09</span> Timeline & Communication</div>
+  <h2 class="section-title">What Clients Can Expect</h2>
+
+  <div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="info-block">
+      <div class="info-block-label">Response Time Promise</div>
+      <div class="info-block-value">
+        <ul class="check-list">
+          <li><strong>Quote requests:</strong> responded to within 24 hours</li>
+          <li><strong>Revision requests:</strong> turnaround within 48 hours</li>
+          <li><strong>General questions:</strong> replied to same business day</li>
+          <li><strong>Pro post-launch support:</strong> 4-hour response SLA</li>
+          <li>All responses come from a real person — no bot replies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-block-label">Delivery Timeline</div>
+      <div class="info-block-value">
+        <ul class="check-list">
+          <li><strong>Starter / Growth:</strong> live within 7 days of intake call</li>
+          <li><strong>Pro:</strong> priority 3-day turnaround</li>
+          <li><strong>Industry standard for comparison:</strong> 3–8 weeks</li>
+          <li>Client review time is not counted in our build time</li>
+          <li>If we miss the promised timeline, we notify proactively — no ghosting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:0.9rem;font-weight:700;color:var(--ink);margin:1.5rem 0 1rem;text-transform:uppercase;letter-spacing:0.05em;">Week-by-Week Client Journey</h3>
+  <table class="data-table">
+    <thead><tr><th>Day</th><th>What We Do</th><th>What the Client Does</th></tr></thead>
+    <tbody>
+      <tr><td class="td-label">Day 1</td><td>Respond to quote request; intake call if needed; confirm package</td><td>Fills out quote form or books intake call</td></tr>
+      <tr><td class="td-label">Day 1–2</td><td>Keyword research, design brief, photo sourcing</td><td>Nothing — we handle it</td></tr>
+      <tr><td class="td-label">Day 2–5</td><td>Build all pages; run quality gate; prepare preview</td><td>Nothing — we handle it</td></tr>
+      <tr><td class="td-label">Day 5–6</td><td>Send preview link to client</td><td>Reviews the preview, sends revision requests</td></tr>
+      <tr><td class="td-label">Day 6–7</td><td>Apply revisions; run quality gate again; confirm ready for launch</td><td>Approves final version</td></tr>
+      <tr><td class="td-label">Day 7</td><td>Deploy to live hosting; configure domain; submit to GSC</td><td>Receives login credentials + handover package</td></tr>
+      <tr><td class="td-label">Day 7+</td><td>GBP setup (Growth/Pro); analytics verified; handover docs delivered</td><td>Starts requesting Google reviews; shares site</td></tr>
+    </tbody>
+  </table>
+
+  <div class="highlight" style="margin-top:1.5rem;">
+    <p><strong>Client responsibility:</strong> The process is designed to need almost nothing from the client after the intake call. What we do need: confirmation of phone number / email / address, approval on the preview, and domain access for DNS configuration. Everything else — copy, photos, SEO, schema — we handle ourselves.</p>
+  </div>
+</section>
+
+
+<!-- ══ 10 — COMPETITIVE POSITIONING ══════════════════════ -->
+<section class="section" id="positioning">
+  <div class="section-eyebrow"><span class="section-num">10</span> Competitive Positioning</div>
+  <h2 class="section-title">How We're Different</h2>
+
+  <table class="data-table" style="margin-bottom:1.5rem;">
+    <thead><tr><th>Factor</th><th>Lantech</th><th>Big Agency ($5K–$15K)</th><th>DIY Builder (Wix/Squarespace)</th></tr></thead>
+    <tbody>
+      <tr><td class="td-label">Price</td><td style="color:var(--green);font-weight:600;">$1,200–$1,999 flat</td><td>$5,000–$15,000+ with retainer</td><td>$20–$50/month + DIY time</td></tr>
+      <tr><td class="td-label">Contract</td><td style="color:var(--green);font-weight:600;">None</td><td>12-month retainer common</td><td>Monthly subscription</td></tr>
+      <tr><td class="td-label">Who owns the files</td><td style="color:var(--green);font-weight:600;">You do — 100%</td><td>Often agency-owned / hosted-only</td><td>Platform-locked — can't export</td></tr>
+      <tr><td class="td-label">Turnaround time</td><td style="color:var(--green);font-weight:600;">1 week (Pro: 3 days)</td><td>3–8 weeks typical</td><td>Your own time</td></tr>
+      <tr><td class="td-label">SEO included</td><td style="color:var(--green);font-weight:600;">Yes — keyword research, schema, local SEO</td><td>Often billed as add-on</td><td>Basic only — no schema, no local SEO</td></tr>
+      <tr><td class="td-label">Trades expertise</td><td style="color:var(--green);font-weight:600;">Home services specialist — we know this niche</td><td>Generalist — not trade-focused</td><td>No niche knowledge</td></tr>
+      <tr><td class="td-label">Who you talk to</td><td style="color:var(--green);font-weight:600;">The person building the site</td><td>Account manager who hands off to designers</td><td>No one — you're on your own</td></tr>
+    </tbody>
+  </table>
+
+  <div class="quote-block">
+    <p>"Most agencies charge enterprise prices for small business work. We built Lantech to fix that. Every service we offer is designed to help local businesses get found online and turn visitors into real customers — at a price that actually makes sense."</p>
+    <cite>— Lantech elevator pitch</cite>
+  </div>
+</section>
+
+
+<!-- ══ 11 — BRAND VOICE ══════════════════════════════════ -->
+<section class="section" id="voice">
+  <div class="section-eyebrow"><span class="section-num">11</span> Brand Voice Rules</div>
+  <h2 class="section-title">How We Write & Speak</h2>
+
+  <div class="voice-grid" style="margin-bottom:1.5rem;">
+    <div class="voice-col is">
+      <div class="voice-col-label">Our voice IS</div>
+      <div class="voice-pair"><span class="voice-is">Warm</span><span style="font-size:0.8rem;color:var(--warm-stone);">not Gushing</span></div>
+      <div class="voice-pair"><span class="voice-is">Direct</span><span style="font-size:0.8rem;color:var(--warm-stone);">not Blunt</span></div>
+      <div class="voice-pair"><span class="voice-is">Honest</span><span style="font-size:0.8rem;color:var(--warm-stone);">not Brutal</span></div>
+      <div class="voice-pair"><span class="voice-is">Confident</span><span style="font-size:0.8rem;color:var(--warm-stone);">not Arrogant</span></div>
+      <div class="voice-pair"><span class="voice-is">Plain-spoken</span><span style="font-size:0.8rem;color:var(--warm-stone);">not Dumbed-down</span></div>
+      <div class="voice-pair"><span class="voice-is">On your side</span><span style="font-size:0.8rem;color:var(--warm-stone);">not Us-vs-them</span></div>
+      <div class="voice-pair"><span class="voice-is">Bold</span><span style="font-size:0.8rem;color:var(--warm-stone);">not Loud</span></div>
+    </div>
+    <div>
+      <div class="info-block" style="margin-bottom:1rem;">
+        <div class="info-block-label">Words We Use</div>
+        <div class="info-block-value" style="font-size:0.875rem;">build · launch · get found · convert · grow · fix · deliver · handle · take care of · affordable · fast · real · honest · clear · flat-rate · no contracts · live within a week</div>
+      </div>
+      <div class="info-block" style="border-color:rgba(239,68,68,0.2);background:rgba(239,68,68,0.03);">
+        <div class="info-block-label" style="color:#EF4444;">Words We NEVER Use</div>
+        <div class="info-block-value" style="font-size:0.875rem;color:#92400E;">synergy · leverage · ecosystem · holistic · seamless · solutions · deliverables · stakeholders · cutting-edge · state-of-the-art · innovative · empower · transform · revolutionize · best-in-class · world-class</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:0.9rem;font-weight:700;color:var(--ink);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;">Writing Rules</h3>
+  <div class="grid-2">
+    <div class="info-block">
+      <div class="info-block-label" style="color:var(--green);">Do</div>
+      <ul class="check-list">
+        <li>Use contractions freely — "we're", "you'll", "it's", "don't"</li>
+        <li>Lead with the client's problem, not our service feature</li>
+        <li>Use "you" and "your business" — not "clients" or "customers"</li>
+        <li>Short sentences. Then a longer one for rhythm.</li>
+        <li>Explain every technical term or remove it</li>
+        <li>Let prices be visible — transparency is a brand value</li>
+        <li>Name the enemy (overpriced agencies) when relevant</li>
+      </ul>
+    </div>
+    <div class="info-block" style="border-color:rgba(239,68,68,0.2);">
+      <div class="info-block-label" style="color:#EF4444;">Don't</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+        <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Start sentences with "We" — focus stays on the client</li>
+        <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Stack adjectives — "professional, affordable, fast" means nothing</li>
+        <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Use passive voice in CTAs</li>
+        <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Write long paragraphs on service pages</li>
+        <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Over-explain process — clients care about outcomes</li>
+        <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Say "we think" or "we believe" — own your claims</li>
+        <li style="font-size:0.875rem;color:var(--warm-stone);">✗ &nbsp;Use jargon without plain-language explanation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ 12 — KEY PROMISES ══════════════════════════════════ -->
+<section class="section" id="promises">
+  <div class="section-eyebrow"><span class="section-num">12</span> Key Promises</div>
+  <h2 class="section-title">What We Guarantee Every Client</h2>
+  <p class="section-lead">These are the non-negotiable commitments Lantech makes to every client. They go in every conversation, every proposal, every email.</p>
+
+  <div class="grid-2">
+    <div class="info-block" style="border-color:var(--accent-border);background:var(--accent-dim);">
+      <div class="info-block-label" style="color:var(--accent);">Promise 1 — Flat Rate</div>
+      <div class="info-block-value"><strong>You know the price before we start.</strong> No scope creep invoices. No surprise fees. The price we quote is the price you pay. If we mess up, we fix it at our cost — not yours.</div>
+    </div>
+    <div class="info-block" style="border-color:var(--accent-border);background:var(--accent-dim);">
+      <div class="info-block-label" style="color:var(--accent);">Promise 2 — Live Within a Week</div>
+      <div class="info-block-value"><strong>Most clients are live within 7 days.</strong> Industry average is 3–8 weeks. We're faster because we've built hundreds of trade sites — we know what works before we start. Pro clients get 3-day priority delivery.</div>
+    </div>
+    <div class="info-block" style="border-color:var(--accent-border);background:var(--accent-dim);">
+      <div class="info-block-label" style="color:var(--accent);">Promise 3 — No Contracts</div>
+      <div class="info-block-value"><strong>No lock-in. No required retainer.</strong> Pay once, own the site forever. Host it anywhere you want. We earn your business every engagement — we don't trap you in a 12-month contract.</div>
+    </div>
+    <div class="info-block" style="border-color:var(--accent-border);background:var(--accent-dim);">
+      <div class="info-block-label" style="color:var(--accent);">Promise 4 — You Own Everything</div>
+      <div class="info-block-value"><strong>All files are yours at handover.</strong> HTML, CSS, images, schema — everything. You can move to any host, hire another developer, or manage it yourself. We don't hold sites hostage.</div>
+    </div>
+    <div class="info-block" style="border-color:var(--accent-border);background:var(--accent-dim);">
+      <div class="info-block-label" style="color:var(--accent);">Promise 5 — SEO Included</div>
+      <div class="info-block-value"><strong>Not an add-on. Not a bolt-on.</strong> Every site gets keyword research, proper title tags and meta descriptions, schema markup, sitemap, and local geo-targeting built in from the start. This is why our sites rank — not because we sell SEO as a second invoice.</div>
+    </div>
+    <div class="info-block" style="border-color:var(--accent-border);background:var(--accent-dim);">
+      <div class="info-block-label" style="color:var(--accent);">Promise 6 — Real Person, Real Response</div>
+      <div class="info-block-value"><strong>Within 24 hours, always.</strong> Not a bot, not an automated ticket. A real person who knows your project will respond. If something needs more time, we tell you honestly — we don't ghost.</div>
+    </div>
+  </div>
+
+  <div class="quote-block" style="margin-top:2rem;">
+    <p>"We handle the website. You focus on your business. That's the whole deal."</p>
+    <cite>— Lantech promise statement</cite>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<footer class="doc-footer">
+  <div class="wrap">
+    <p>Lantech Agency Brief · Internal Use Only · Updated May 2026 · lantech.co · lantech016@gmail.com</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Client Onboarding Questionnaire
 > Lantech Web Design — sent to client after deal is closed
 > Takes ~15 minutes to complete. All fields marked * are required.
-> Return completed form to: hello@lantech.co
+> Return completed form to: lantech016@gmail.com
 
 ---
 
@@ -159,6 +159,10 @@
     - [ ] No — please set it up for me
     - [ ] Not sure
 
+27a. *What is your Google account email address?
+     (This is the Gmail / Google Workspace email we'll use to give you access to your Analytics and Search Console)
+     Google email: ___________________________
+
 28. Do you want us to set up or optimize your Google Business Profile?
     - [ ] Yes (included in Growth and Pro packages)
     - [ ] No thanks
@@ -241,7 +245,13 @@
 
 ## SECTION 9 — Final Notes
 
-39. Is there a specific launch deadline?
+39. After your site launches, would you like Lantech to maintain it monthly?
+    Monthly maintenance covers: speed checks, broken link fixes, content updates, and a performance report.
+    - [ ] Yes — tell me more about the plans after launch
+    - [ ] No — I'll handle it myself
+    - [ ] Not sure yet
+
+40. Is there a specific launch deadline?
     - [ ] Yes — Date: ___________________________
     - [ ] No — as soon as possible (we target 48 hours from brief completion)
 
@@ -261,4 +271,4 @@ Once we receive your completed questionnaire:
 5. We hand over the completed site with all logins and a how-to guide
 
 **Questions before submitting?** Reply to your welcome email.
-**Ready to submit?** Email this to: hello@lantech.co
+**Ready to submit?** Email this to: lantech016@gmail.com

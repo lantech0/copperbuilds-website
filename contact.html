@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact Lantech — Get a Free Quote for Your Home Services Website</title>
 <meta name="description" content="Tell us about your home services business — plumbing, HVAC, electrical, drain & sewer, water restoration, or another trade. Free flat-rate quote within an hour. No contracts, no commitment.">
 <link rel="canonical" href="https://lantech.co/contact">
@@ -16,7 +16,7 @@
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .grid-hero{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.gradient-text{color:var(--accent);-webkit-text-fill-color:var(--accent)}
+
 .faq-item{border-bottom:1px solid var(--rule)}
 .faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0;background:none;border:none;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:.9375rem;font-weight:600;text-align:left;cursor:pointer;transition:color .2s}
 .faq-btn:hover{color:var(--accent)}
@@ -60,11 +60,11 @@
       "@type": "Organization",
       "name": "Lantech",
       "url": "https://lantech.co",
-      "email": "hello@lantech.co",
+      "email": "lantech016@gmail.com",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
-        "email": "hello@lantech.co",
+        "email": "lantech016@gmail.com",
         "availableLanguage": "English",
         "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"}
       }
@@ -75,7 +75,7 @@
     "@type": "ProfessionalService",
     "name": "Lantech",
     "url": "https://lantech.co",
-    "email": "hello@lantech.co",
+    "email": "lantech016@gmail.com",
     "priceRange": "$1,200 - $1,999",
     "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"},
     "areaServed": {"@type": "Country", "name": "United States"}
@@ -84,58 +84,12 @@
 </script>
 </head>
 <body>
-<nav id="main-nav" aria-label="Main navigation" style="
-  position: sticky; top: 0; z-index: 50;
-  height: 64px;
-  background: rgba(250,250,247,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--rule);
-">
-  <div class="container" style="display:flex; align-items:center; justify-content:space-between; height:100%;">
-
-    <a href="index.html" aria-label="Lantech — go to homepage" style="display:flex; align-items:center; text-decoration:none; flex-shrink:0;">
-      <img src="/brand_assets/lantech-logo-new-light.png" alt="Lantech" width="89" height="32" style="display:block;">
-    </a>
-
-    <div id="nav-links" style="display:flex; align-items:center; gap:2rem;">
-      <a href="services.html" style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Services</a>
-      <a href="pricing.html"  style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Pricing</a>
-      <a href="about.html"    style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">About</a>
-      <a href="blog.html"     style="color:var(--warm-stone); font-size:0.9375rem; font-weight:500; text-decoration:none; transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Blog</a>
-      <a href="contact.html"  aria-current="page" style="color:var(--accent); font-size:0.9375rem; font-weight:600; text-decoration:none;">Contact</a>
-    </div>
-
-    <div style="display:flex; align-items:center; gap:0.875rem;">
-      <a href="contact.html" class="btn btn-primary" style="padding:0.625rem 1.125rem; font-size:0.875rem;" id="nav-cta">Get a Free Quote</a>
-      <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"
-        style="display:none; flex-direction:column; gap:5px; padding:0.5rem; background:none; border:none; cursor:pointer;">
-        <span class="hb" style="display:block; width:22px; height:1.5px; background:var(--ink); border-radius:2px; transition:transform 0.2s ease, opacity 0.2s ease;"></span>
-        <span class="hb" style="display:block; width:22px; height:1.5px; background:var(--ink); border-radius:2px; transition:opacity 0.2s ease;"></span>
-        <span class="hb" style="display:block; width:22px; height:1.5px; background:var(--ink); border-radius:2px; transition:transform 0.2s ease, opacity 0.2s ease;"></span>
-      </button>
-    </div>
-  </div>
-
-  <div id="mobile-menu" aria-label="Mobile navigation" style="
-    display:none; position:fixed; top:64px; left:0; right:0;
-    background:var(--bg); border-bottom:1px solid var(--rule);
-    padding:1.5rem 2rem 2rem; z-index:40; flex-direction:column; gap:1rem;
-  ">
-    <a href="services.html" style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">Services</a>
-    <a href="pricing.html"  style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">Pricing</a>
-    <a href="about.html"    style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">About</a>
-    <a href="blog.html"     style="color:var(--ink); font-size:1rem; font-weight:500; text-decoration:none; padding:0.25rem 0;">Blog</a>
-    <a href="contact.html"  aria-current="page" style="color:var(--accent); font-size:1rem; font-weight:600; text-decoration:none; padding:0.25rem 0;">Contact</a>
-    <hr class="rule" style="margin:0.25rem 0;">
-    <a href="contact.html" class="btn btn-primary" style="width:fit-content;">Get a Free Quote</a>
-  </div>
-</nav><section style="position:relative;padding:6rem 0 4rem;overflow:hidden" aria-label="Page hero">
+<script src="/js/nav.js"></script><section style="position:relative;padding:6rem 0 4rem;overflow:hidden" aria-label="Page hero">
   <div class="container">
     <div class="grid-hero">
       <div>
         <span class="tag"><svg width="7" height="7" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="3.5"/></svg> Get In Touch</span>
-        <h1 class="display" style="margin:1.5rem 0 1.25rem">Start your project — <span class="gradient-text">it's free to ask.</span></h1>
+        <h1 class="display" style="margin:1.5rem 0 1.25rem">Start your project — <span style="color:var(--accent)">it's free to ask.</span></h1>
         <p class="body-large" style="max-width:490px;margin-bottom:2rem">Tell us about your home services business — plumbing, HVAC, electrical, drain &amp; sewer, water restoration, or another trade. We'll reply with a flat-rate quote and a clear plan within an hour.</p>
         <div style="display:flex;flex-wrap:wrap;gap:.75rem"><a href="#form" class="btn btn-primary">Get a Free Quote <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="pricing.html" class="btn btn-ghost">See Pricing First</a></div>
       </div>
@@ -243,7 +197,7 @@
           </div>
           <div>
             <div style="font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem">Email Us</div>
-            <div style="font-weight:700;font-size:1rem;margin-bottom:.3rem">hello@lantech.co</div>
+            <div style="font-weight:700;font-size:1rem;margin-bottom:.3rem">lantech016@gmail.com</div>
             <div style="color:var(--muted);font-size:.85rem;line-height:1.55">Prefer email? Drop us a line anytime.</div>
           </div>
         </div>
@@ -392,7 +346,7 @@
         <a href="contact.html" class="btn btn-primary" style="font-size:0.875rem; padding:0.6875rem 1.25rem;">
           Free Quote
         </a>
-        <p style="color:var(--subtle); font-size:0.8125rem; margin-top:0.875rem;">hello@lantech.co</p>
+        <p style="color:var(--subtle); font-size:0.8125rem; margin-top:0.875rem;">lantech016@gmail.com</p>
       </div>
 
     </div>
@@ -412,11 +366,6 @@ document.querySelectorAll('.faq-btn').forEach(btn=>{
     if(!expanded){btn.setAttribute('aria-expanded','true');const p=document.getElementById(btn.getAttribute('aria-controls'));if(p)p.classList.add('open')}
   });
 });
-const T=document.getElementById('nav-toggle'),M=document.getElementById('mobile-menu'),HB=document.querySelectorAll('.hb');
-function closeMenu(){M.style.display='none';T.setAttribute('aria-expanded','false');T.setAttribute('aria-label','Open navigation menu');HB[0].style.transform='';HB[1].style.opacity='';HB[2].style.transform=''}
-function openMenu(){M.style.display='flex';T.setAttribute('aria-expanded','true');T.setAttribute('aria-label','Close navigation menu');HB[0].style.transform='translateY(6.5px) rotate(45deg)';HB[1].style.opacity='0';HB[2].style.transform='translateY(-6.5px) rotate(-45deg)'}
-T.addEventListener('click',()=>{M.style.display==='flex'?closeMenu():openMenu()});
-M.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMenu));
 </script>
 </body>
 </html>

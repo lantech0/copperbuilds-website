@@ -10,7 +10,7 @@ This Service Agreement ("Agreement") is entered into as of **[DATE]** between:
 
 **Service Provider:**
 Lantech ("Lantech", "we", "us")
-Email: hello@lantech.co
+Email: lantech016@gmail.com
 Website: lantech.co
 
 **Client:**

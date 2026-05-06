@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <!-- Phone / GBP listing frame -->
+  <rect x="5" y="2" width="14" height="20" rx="2.5" stroke="#1C1917" stroke-width="1.75"/>
+  <!-- Screen area -->
+  <rect x="7" y="5" width="10" height="12" rx="1" fill="#F5F0EA"/>
+  <!-- Map pin (orange) -->
+  <path d="M12 6.5C10.6 6.5 9.5 7.6 9.5 9c0 1.8 2.5 4.5 2.5 4.5S14.5 10.8 14.5 9c0-1.4-1.1-2.5-2.5-2.5z" fill="#E8600A"/>
+  <circle cx="12" cy="9" r="0.9" fill="#FAFAF7"/>
+  <!-- Stars row -->
+  <path d="M9 14.5h1.5M11 14.5h1.5M12.5 14.5H14" stroke="#FBBF24" stroke-width="1.25" stroke-linecap="round"/>
+  <!-- Home button -->
+  <circle cx="12" cy="19.5" r="1" stroke="#1C1917" stroke-width="1.2"/>
+</svg>

@@ -115,6 +115,7 @@
 }
 </script>
 
+<link rel="stylesheet" href="/css/foundation.css">
 <style>
 /* =============================================
    DESIGN TOKENS
@@ -182,8 +183,7 @@ body {
    UTILITY
    ============================================= */
 .gradient-text {
-  background: linear-gradient(135deg, #E8600A 0%, #E8600A 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  color: #E8600A;
 }
 .glow { position: absolute; border-radius: 50%; pointer-events: none; }
 .glow-cyan { background: radial-gradient(circle, rgba(232,96,10,0.06) 0%, transparent 70%); }
@@ -385,48 +385,7 @@ body {
 </head>
 <body>
 
-<!-- ============================================================
-     NAV
-     ============================================================ -->
-<nav style="position:sticky;top:0;z-index:50;height:64px;background:rgba(250,250,247,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)" aria-label="Main navigation">
-<div class="container" style="display:flex;align-items:center;justify-content:space-between;height:100%">
-  <a href="../index.html" aria-label="Lantech homepage" style="display:flex;align-items:center;gap:.625rem;text-decoration:none;flex-shrink:0">
-    <svg height="30" viewBox="0 0 272 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lantech" style="display:block;flex-shrink:0">
-      <text y="44" font-family="Calistoga, serif" font-weight="700" font-size="38" letter-spacing="-1">
-        <tspan fill="#1C1917">Lan</tspan><tspan fill="#E8600A">tech</tspan>
-      </text>
-      <rect x="2" y="51" width="98" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
-      <rect x="100" y="51" width="168" height="3" rx="1.5" fill="#E8600A"/>
-    </svg>
-  </a>
-  <div style="display:flex;align-items:center;gap:2rem" class="desktop-nav">
-    <a href="../index.html" class="nav-link">Home</a>
-    <a href="../services.html" class="nav-link">Services</a>
-    <a href="../pricing.html" class="nav-link">Pricing</a>
-    <a href="../blog.html" class="nav-link active">Blog</a>
-    <a href="../about.html" class="nav-link">About</a>
-    <a href="../contact.html" class="nav-link">Contact</a>
-  </div>
-  <div style="display:flex;align-items:center;gap:.875rem">
-    <a href="../contact.html" class="btn-primary" style="padding:.625rem 1.125rem">Get a Free Quote</a>
-    <button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" style="display:none;flex-direction:column;gap:5px;padding:.5rem;background:none;border:none;cursor:pointer">
-      <span id="hb1" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:transform .22s,opacity .22s"></span>
-      <span id="hb2" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:opacity .22s"></span>
-      <span id="hb3" style="display:block;width:22px;height:1.5px;background:var(--txt);border-radius:2px;transition:transform .22s,opacity .22s"></span>
-    </button>
-  </div>
-</div>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="../index.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Home</a>
-  <a href="../services.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Services</a>
-  <a href="../pricing.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Pricing</a>
-  <a href="../blog.html" class="nav-link active" style="font-size:1rem;padding:.25rem 0">Blog</a>
-  <a href="../about.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">About</a>
-  <a href="../contact.html" class="nav-link" style="font-size:1rem;padding:.25rem 0">Contact</a>
-  <hr class="rule" style="margin:.25rem 0">
-  <a href="../contact.html" class="btn-primary" style="width:fit-content">Get a Free Quote</a>
-</div>
-</nav>
+<script src="/js/nav.js"></script>
 
 <!-- ============================================================
      ARTICLE HEADER
@@ -491,9 +450,6 @@ body {
     The opportunity is real. Most small businesses haven't claimed their Google Business Profile, let alone optimized it. That's actually good news for you. The gap between the businesses showing up and the ones missing out isn't about ad budgets. It's about doing the basics right. This guide walks you through five concrete steps to rank your business in the local 3-pack without spending a dollar on ads.
   </p>
 
-  <!-- INTERNAL LINK ZONE: related pillar -->
-  <!-- [INTERNAL-LINK: local SEO for small businesses → services.html#local-seo] -->
-
   <!-- STEP 1 -->
   <h2 id="step-1">Step 1: Claim and Complete Your Google Business Profile</h2>
 
@@ -517,7 +473,6 @@ body {
   </ul>
 
   <!-- INTERNAL LINK ZONE -->
-  <!-- [INTERNAL-LINK: web design → ../services.html] -->
 
   <img
     src="https://images.unsplash.com/photo-1687422808248-f807f4ea2a2e?w=1200&h=630&fit=crop&q=80"
@@ -674,8 +629,6 @@ body {
   <p>
     Weekly is the ideal pace. It signals to Google that your business is active. Monthly is the minimum. Set a phone reminder on the first of each month to upload five new photos. That's it. Consistency matters more than quantity in any single upload session.
   </p>
-
-  <!-- [PERSONAL EXPERIENCE] -->
   <p>
     <em>In our experience working with local clients, profiles that add 2-3 new photos weekly tend to see engagement metrics climb within 60 days. The algorithm notices fresh activity.</em>
   </p>
@@ -715,7 +668,6 @@ body {
   </p>
 
   <!-- INTERNAL LINK ZONE -->
-  <!-- [INTERNAL-LINK: Google Business Profile setup → ../services.html#gbp] -->
 
   <img
     src="https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=1200&h=630&fit=crop&q=80"
@@ -734,8 +686,6 @@ body {
   <p>
     Yes, significantly. <strong>62% of consumers avoid businesses with incorrect online information</strong> (<a href="https://brightlocal.com" target="_blank" rel="noopener">BrightLocal</a>, 2023). Beyond the customer trust issue, inconsistent NAP data, your Name, Address, and Phone number, sends conflicting signals to Google's ranking algorithm and actively hurts your local visibility.
   </p>
-
-  <!-- [UNIQUE INSIGHT] -->
   <p>
     <em>Here's something most guides skip: Google doesn't just check that your NAP exists across directories. It checks whether all versions match character-for-character. "St." versus "Street" or "Suite 2B" versus "#2B" can register as a mismatch. Boring? Yes. Important? Completely.</em>
   </p>
@@ -760,7 +710,6 @@ body {
   </p>
 
   <!-- INTERNAL LINK ZONE -->
-  <!-- [INTERNAL-LINK: web design for small businesses → ../services.html] -->
 
 
   <!-- STEP 5 -->
@@ -769,8 +718,6 @@ body {
   <p>
     GBP Posts are one of the most underused ranking signals available. Google treats an active, posting profile as a healthier, more trustworthy business. Most small business owners either don't know Posts exist or posted twice and gave up. That's your opening.
   </p>
-
-  <!-- [ORIGINAL DATA] -->
   <p>
     <em>We've found that clients who post to GBP weekly see consistently higher engagement signals, including more direction requests and website clicks, compared to those who post monthly or not at all. The difference shows up in the Google Business Profile dashboard within 30 days.</em>
   </p>
@@ -792,7 +739,6 @@ body {
   </p>
 
   <!-- INTERNAL LINK ZONE -->
-  <!-- [INTERNAL-LINK: pricing packages → ../pricing.html] -->
 
 
   <!-- ============================================================
@@ -812,9 +758,6 @@ body {
        FAQ
        ============================================================ -->
   <h2 id="faq" style="margin:3rem 0 1.5rem">Frequently Asked Questions</h2>
-
-  <!-- INTERNAL LINK ZONE: FAQ links to deeper content -->
-  <!-- [INTERNAL-LINK: local SEO services → ../services.html#seo] -->
 
   <div class="faq-item">
     <button class="faq-btn" aria-expanded="false" aria-controls="faq-a1">
@@ -888,9 +831,6 @@ body {
     If you want help getting this set up the right way, <a href="../contact.html">contact us</a> and we'll walk you through it. Every website we build at Lantech includes GBP setup and optimization, because a great <a href="../services.html">web design</a> and a strong Maps presence work together.
   </p>
 
-  <!-- INTERNAL LINK ZONE: Conclusion -->
-  <!-- [INTERNAL-LINK: next logical content: "How to Get More Google Reviews" → blog/get-google-reviews.html] -->
-
   <!-- Author bio -->
   <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem 1.75rem;margin-top:3rem;display:flex;gap:1.25rem;align-items:flex-start">
     <div style="width:52px;height:52px;border-radius:50%;background:var(--elevated);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Calistoga',sans-serif;font-size:.875rem;font-weight:700;color:var(--accent)">LE</div>
@@ -953,8 +893,8 @@ body {
     <div>
       <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Contact</p>
       <div style="display:flex;flex-direction:column;gap:.625rem">
-        <a href="mailto:hello@lantech.co" class="footer-link">hello@lantech.co</a>
-        <a href="tel:+18000000000" class="footer-link">+1-800-000-0000</a>
+        <a href="mailto:lantech016@gmail.com" class="footer-link">lantech016@gmail.com</a>
+        <a href="tel:+639773293969" class="footer-link">+63 977 329 3969</a>
         <a href="../contact.html" class="footer-link" style="color:var(--accent);margin-top:.25rem">Get a Free Quote &rarr;</a>
       </div>
     </div>
@@ -988,53 +928,6 @@ document.querySelectorAll('.faq-btn').forEach(btn => {
   });
 });
 
-// Mobile nav
-const T = document.getElementById('nav-toggle');
-const M = document.getElementById('mobile-menu');
-const h1 = document.getElementById('hb1');
-const h2 = document.getElementById('hb2');
-const h3 = document.getElementById('hb3');
-
-// Show hamburger on small screens
-function handleNavResize() {
-  if (window.innerWidth < 768) {
-    T.style.display = 'flex';
-    document.querySelector('.desktop-nav').style.display = 'none';
-  } else {
-    T.style.display = 'none';
-    document.querySelector('.desktop-nav').style.display = 'flex';
-    M.classList.remove('open');
-  }
-}
-handleNavResize();
-window.addEventListener('resize', handleNavResize);
-
-T.addEventListener('click', () => {
-  const o = M.classList.contains('open');
-  M.classList.toggle('open', !o);
-  T.setAttribute('aria-expanded', String(!o));
-  T.setAttribute('aria-label', o ? 'Open navigation menu' : 'Close navigation menu');
-  if (!o) {
-    h1.style.transform = 'translateY(6.5px) rotate(45deg)';
-    h2.style.opacity = '0';
-    h3.style.transform = 'translateY(-6.5px) rotate(-45deg)';
-  } else {
-    h1.style.transform = '';
-    h2.style.opacity = '';
-    h3.style.transform = '';
-  }
-});
-
-M.querySelectorAll('a').forEach(l => {
-  l.addEventListener('click', () => {
-    M.classList.remove('open');
-    T.setAttribute('aria-expanded', 'false');
-    T.setAttribute('aria-label', 'Open navigation menu');
-    h1.style.transform = '';
-    h2.style.opacity = '';
-    h3.style.transform = '';
-  });
-});
 </script>
 </body>
 </html>

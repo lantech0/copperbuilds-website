@@ -6,7 +6,7 @@
 
 **To:** [CLIENT_EMAIL]
 **Subject:** Welcome to Lantech — your project starts now 🚀
-**From:** hello@lantech.co
+**From:** lantech016@gmail.com
 
 ---
 
@@ -38,7 +38,7 @@ Based on your package, your expected delivery date is: **[EXPECTED_DELIVERY_DATE
 | Includes | [LIST_KEY_INCLUSIONS] |
 | Delivery | [TIMELINE] after we receive your questionnaire |
 | Project Lead | [YOUR_NAME] |
-| Contact | hello@lantech.co |
+| Contact | lantech016@gmail.com |
 
 ---
 
@@ -61,7 +61,7 @@ Looking forward to building something great for [BUSINESS_NAME].
 
 — [YOUR_NAME]
 Lantech
-hello@lantech.co
+lantech016@gmail.com
 lantech.co
 
 ---

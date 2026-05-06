@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 960px; height: 600px;
+    overflow: hidden;
+    background: #0B1929;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ── BROWSER CHROME ── */
+  .browser {
+    width: 960px;
+    height: 600px;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Title bar */
+  .bar {
+    background: #2C2C2E;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 10px;
+  }
+  .dots { display: flex; gap: 7px; }
+  .dot  { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-r { background: #FF5F57; }
+  .dot-y { background: #FFBD2E; }
+  .dot-g { background: #28C840; }
+  .url-bar {
+    flex: 1;
+    background: rgba(255,255,255,0.10);
+    border-radius: 6px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 5px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .url-bar svg { opacity: 0.4; flex-shrink: 0; }
+  .url-text { font-size: 11.5px; color: rgba(255,255,255,0.5); letter-spacing: 0.01em; }
+
+  /* ── SITE CONTENT ── */
+  .site {
+    flex: 1;
+    background:
+      linear-gradient(to right, #0B1929 28%, rgba(11,25,41,0.55) 48%, rgba(11,25,41,0.05) 100%),
+      url('../portfolio/proflow-plumbing/plumber2.jpg') right center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* NAV */
+  .site-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px; height: 46px;
+    position: relative; z-index: 2;
+    flex-shrink: 0;
+  }
+  .site-logo {
+    display: flex; align-items: center; gap: 7px;
+  }
+  .logo-icon {
+    width: 26px; height: 26px;
+    background: #F97316; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: #fff; letter-spacing: -0.2px;
+  }
+  .logo-text span { color: #F97316; }
+  .site-links { display: flex; gap: 16px; }
+  .site-links span {
+    font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 500;
+  }
+  .site-phone {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 700;
+    color: #fff; font-family: 'Poppins', sans-serif;
+  }
+  .site-nav-cta {
+    background: #F97316; color: #fff;
+    font-size: 10.5px; font-weight: 600; font-family: 'Poppins', sans-serif;
+    padding: 5px 12px; border-radius: 5px;
+    margin-left: 8px;
+  }
+
+  /* HERO BODY */
+  .site-hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 20px;
+    position: relative; z-index: 2;
+  }
+  .hero-copy { flex: 0 0 auto; max-width: 320px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.28);
+    border-radius: 100px; padding: 3px 10px;
+    font-size: 9px; font-weight: 600; color: #FB923C;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .badge-dot { width: 5px; height: 5px; background: #FB923C; border-radius: 50%; }
+  .hero-h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px; font-weight: 800;
+    color: #fff; line-height: 1.1;
+    letter-spacing: -0.8px; margin-bottom: 10px;
+  }
+  .hero-h1 span { color: #F97316; }
+  .hero-sub {
+    font-size: 11px; line-height: 1.6;
+    color: rgba(255,255,255,0.52);
+    margin-bottom: 18px; max-width: 280px;
+  }
+  .hero-btns { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+  .btn-call {
+    display: flex; align-items: center; gap: 6px;
+    background: #F97316; color: #fff;
+    padding: 8px 16px; border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px; font-weight: 700;
+  }
+  .btn-book {
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.8);
+    padding: 8px 14px; border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px; font-weight: 600;
+  }
+  .hero-trust {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 10px; color: rgba(255,255,255,0.5); font-weight: 500;
+  }
+  .chk {
+    width: 14px; height: 14px;
+    background: rgba(34,197,94,0.14);
+    border: 1px solid rgba(34,197,94,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Stat cards */
+  .hero-stats {
+    display: flex; flex-direction: column; gap: 8px;
+    flex-shrink: 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.055);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px; padding: 14px 16px;
+    width: 160px;
+  }
+  .stat-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px; font-weight: 800;
+    color: #fff; letter-spacing: -0.8px;
+    line-height: 1; margin-bottom: 3px;
+  }
+  .stat-num span { color: #F97316; }
+  .stat-lbl { font-size: 10px; color: rgba(255,255,255,0.4); font-weight: 500; }
+  .stars-row { display: flex; gap: 2px; margin-bottom: 6px; }
+  .avail-dot {
+    width: 6px; height: 6px;
+    background: #22C55E; border-radius: 50%;
+    box-shadow: 0 0 6px #22C55E;
+    display: inline-block; margin-right: 5px;
+  }
+  .avail-text {
+    font-size: 10px; color: #4ADE80; font-weight: 600;
+    display: flex; align-items: center; gap: 3px;
+    margin-bottom: 6px;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: #F97316;
+    height: 34px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+    position: relative; z-index: 2;
+  }
+  .tb-item {
+    display: flex; align-items: center; gap: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px; font-weight: 600; color: #fff;
+  }
+  .tb-div { width: 1px; height: 16px; background: rgba(255,255,255,0.3); }
+
+  /* BADGE — lives in the title bar row */
+  .badge-live {
+    background: #22C55E; color: #fff;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
+    padding: 4px 10px; border-radius: 20px;
+    display: flex; align-items: center; gap: 4px;
+    box-shadow: 0 2px 8px rgba(34,197,94,0.4);
+    font-family: 'Inter', sans-serif;
+    flex-shrink: 0;
+  }
+  .live-dot { width: 5px; height: 5px; background: #fff; border-radius: 50%; opacity: 0.9; }
+
+  /* REVIEW BADGE */
+  .badge-review {
+    position: absolute;
+    bottom: 48px; right: 20px;
+    background: #fff; border: 1.5px solid #E7E0D8;
+    border-radius: 12px; padding: 10px 14px;
+    box-shadow: 0 8px 24px rgba(26,24,18,0.25);
+    z-index: 10;
+  }
+  .stars { color: #F59E0B; font-size: 12px; letter-spacing: 1px; }
+  .badge-text { font-size: 12px; font-weight: 700; color: #1C1917; }
+  .badge-sub  { font-size: 10px; color: #78716C; }
+</style>
+</head>
+<body>
+
+<div class="browser">
+    <!-- Title bar -->
+    <div class="bar">
+      <div class="dots">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+      </div>
+      <div class="url-bar">
+        <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11z" fill="rgba(255,255,255,.4)"/><path d="M8 4v4l2.5 2.5" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="url-text">proflowplumbing.com</span>
+      </div>
+      <div class="badge-live"><span class="live-dot"></span> LIVE SITE</div>
+    </div>
+
+    <!-- Site content -->
+    <div class="site">
+      <!-- Nav -->
+      <div class="site-nav">
+        <div class="site-logo">
+          <div class="logo-icon">
+            <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+              <path d="M9 1C6.5 4 3 6.5 3 10a6 6 0 0012 0C15 6.5 11.5 4 9 1z" fill="white" opacity="0.9"/>
+              <path d="M6 10a3 3 0 006 0" stroke="#F97316" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="logo-text">Pro<span>Flow</span> Plumbing</div>
+        </div>
+        <div class="site-links">
+          <span>Services</span><span>About Us</span><span>Service Areas</span><span>Reviews</span><span>Blog</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div class="site-phone">
+            <svg width="11" height="11" viewBox="0 0 15 15" fill="none"><path d="M3 2h2.8l1.4 3.3-1.7 1a8.5 8.5 0 004.2 4.2l1-1.7 3.3 1.4V13A1 1 0 0113 14C6.4 14 1 8.6 1 2a1 1 0 011-1h1z" fill="#F97316"/></svg>
+            (512) 847-3200
+          </div>
+          <div class="site-nav-cta">Book Online</div>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <div class="site-hero">
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <div class="badge-dot"></div>
+            Available 24/7 · Same-Day Service
+          </div>
+          <h1 class="hero-h1">Austin's Most<br>Trusted <span>Plumbers</span><br>Since 2006</h1>
+          <p class="hero-sub">Fast, reliable plumbing for homes and businesses. Licensed, insured, and backed by 4,900+ five-star reviews.</p>
+          <div class="hero-btns">
+            <div class="btn-call">
+              <svg width="11" height="11" viewBox="0 0 15 15" fill="none"><path d="M3 2h2.8l1.4 3.3-1.7 1a8.5 8.5 0 004.2 4.2l1-1.7 3.3 1.4V13A1 1 0 0113 14C6.4 14 1 8.6 1 2a1 1 0 011-1h1z" fill="white"/></svg>
+              Call (512) 847-3200
+            </div>
+            <div class="btn-book">
+              <svg width="10" height="10" viewBox="0 0 15 15" fill="none"><rect x="2" y="3" width="11" height="10" rx="1.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><path d="M5 1v3M10 1v3M2 6.5h11" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Book Online
+            </div>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <div class="chk"><svg width="7" height="7" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Licensed &amp; Insured
+            </div>
+            <div class="trust-item">
+              <div class="chk"><svg width="7" height="7" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              No Overtime Fees
+            </div>
+            <div class="trust-item">
+              <div class="chk"><svg width="7" height="7" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              Upfront Pricing
+            </div>
+            <div class="trust-item">
+              <div class="chk"><svg width="7" height="7" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              100% Guarantee
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat cards -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stars-row">
+              <svg width="11" height="11" viewBox="0 0 13 13" fill="#FBBF24"><path d="M6.5 1l1.4 3.3 3.6.5-2.6 2.5.6 3.6-3-1.6-3 1.6.6-3.6L2 4.8l3.6-.5L6.5 1z"/></svg>
+              <svg width="11" height="11" viewBox="0 0 13 13" fill="#FBBF24"><path d="M6.5 1l1.4 3.3 3.6.5-2.6 2.5.6 3.6-3-1.6-3 1.6.6-3.6L2 4.8l3.6-.5L6.5 1z"/></svg>
+              <svg width="11" height="11" viewBox="0 0 13 13" fill="#FBBF24"><path d="M6.5 1l1.4 3.3 3.6.5-2.6 2.5.6 3.6-3-1.6-3 1.6.6-3.6L2 4.8l3.6-.5L6.5 1z"/></svg>
+              <svg width="11" height="11" viewBox="0 0 13 13" fill="#FBBF24"><path d="M6.5 1l1.4 3.3 3.6.5-2.6 2.5.6 3.6-3-1.6-3 1.6.6-3.6L2 4.8l3.6-.5L6.5 1z"/></svg>
+              <svg width="11" height="11" viewBox="0 0 13 13" fill="#FBBF24"><path d="M6.5 1l1.4 3.3 3.6.5-2.6 2.5.6 3.6-3-1.6-3 1.6.6-3.6L2 4.8l3.6-.5L6.5 1z"/></svg>
+            </div>
+            <div class="stat-num">4.9<span>★</span></div>
+            <div class="stat-lbl">847 Google Reviews</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">12,4<span>00+</span></div>
+            <div class="stat-lbl">Jobs Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="avail-text">
+              <span class="avail-dot"></span>
+              Accepting Jobs Today
+            </div>
+            <div class="stat-num" style="font-size:15px;letter-spacing:-0.3px;line-height:1.3;">Same-Day<br>Available</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="trust-bar">
+        <div class="tb-item">
+          <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M9 1.5L2 4.5V9c0 4 2.7 7.5 7 8.5 4.3-1 7-4.5 7-8.5V4.5L9 1.5z" fill="white" opacity="0.9"/></svg>
+          TX State Licensed
+        </div>
+        <div class="tb-div"></div>
+        <div class="tb-item">
+          <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="10" rx="2" fill="white" opacity="0.85"/><path d="M6 5V4a3 3 0 016 0v1" stroke="white" stroke-width="1.8"/></svg>
+          $2M Liability Insurance
+        </div>
+        <div class="tb-div"></div>
+        <div class="tb-item">
+          <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.8"/><path d="M9 5.5V9l2.5 2.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+          60-Min Emergency Response
+        </div>
+        <div class="tb-div"></div>
+        <div class="tb-item">
+          <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4L15 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          100% Satisfaction Guaranteed
+        </div>
+        <div class="tb-div"></div>
+        <div class="tb-item">
+          <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="white" stroke-width="1.8"/><path d="M2 8h14" stroke="white" stroke-width="1.5"/></svg>
+          Upfront Flat-Rate Pricing
+        </div>
+      </div>
+    </div>
+  <!-- Review badge — now inside the browser canvas -->
+  <div class="badge-review">
+    <div class="stars">★★★★★</div>
+    <div class="badge-text">4.9 on Google</div>
+    <div class="badge-sub">847 reviews</div>
+  </div>
+</div>
+
+</body>
+</html>

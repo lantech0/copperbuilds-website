@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>How We Work — Our 7-Step Process | Lantech</title>
+  <meta name="description" content="From discovery call to live site in 7 clear steps. No guessing, no ghosting, no surprises. Here's exactly how Lantech builds your website and supports it every month.">
+  <link rel="canonical" href="https://lantech.co/how-we-work">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "How We Work",
+    "description": "Lantech's 7-step website building process for home services pros — from discovery call to monthly reporting.",
+    "url": "https://lantech.co/how-we-work",
+    "isPartOf": { "@type": "WebSite", "name": "Lantech", "url": "https://lantech.co" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/foundation.css">
+
+  <link rel="icon" type="image/png" sizes="512x512" href="/brand_assets/lantech-icon-800.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/lantech-icon-800.png">
+  <meta name="theme-color" content="#FAFAF7">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lantech">
+  <meta property="og:title" content="How We Work — Our Process | Lantech">
+  <meta property="og:description" content="7 steps from discovery call to a live, SEO-ready website. Here's exactly what to expect when you work with Lantech.">
+  <meta property="og:url" content="https://lantech.co/how-we-work">
+  <meta property="og:image" content="https://lantech.co/brand_assets/lantech-fb-banner-820x312.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How We Work — Lantech">
+  <meta name="twitter:description" content="7 steps from discovery call to live site. No surprises. Here's exactly what happens.">
+  <meta name="twitter:image" content="https://lantech.co/brand_assets/lantech-fb-banner-820x312.png">
+
+  <style>
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+
+    /* Footer grid */
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+
+    /* ── Hero ── */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 5rem;
+      align-items: center;
+    }
+    .trust-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
+    .trust-chip {
+      display: inline-flex; align-items: center; gap: 0.4375rem;
+      padding: 6px 14px; border-radius: 100px;
+      background: var(--surface); border: 1.5px solid var(--border);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.69rem;
+      font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--warm-stone);
+    }
+
+    /* ── Step rows ── */
+    .step-row {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 4rem;
+      align-items: center;
+      padding: 64px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .step-row.flip { grid-template-columns: 260px 1fr; }
+    .step-row.flip .step-text { order: 2; }
+    .step-row.flip .step-art  { order: 1; }
+    .step-row:last-child { border-bottom: none; }
+
+    .step-eyebrow {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); display: block; margin-bottom: 0.875rem;
+    }
+    .step-title {
+      font-family: 'DM Sans', sans-serif; font-size: 1.375rem;
+      font-weight: 700; line-height: 1.25; color: var(--ink);
+      margin-bottom: 0.875rem;
+    }
+    .step-body {
+      font-size: 1rem; line-height: 1.72; color: var(--warm-stone);
+      max-width: 520px;
+    }
+    .step-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 1.25rem; padding: 5px 14px; border-radius: 100px;
+      background: rgba(232,96,10,0.08); border: 1px solid rgba(232,96,10,0.20);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+      font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* Step art */
+    .step-art {
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .step-bg-num {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Calistoga', Georgia, serif; font-size: 7rem;
+      font-weight: 400; color: rgba(232,96,10,0.05); line-height: 1;
+      user-select: none; pointer-events: none;
+    }
+    .step-icon-card {
+      width: 128px; height: 128px; border-radius: 24px;
+      background: var(--surface); border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(28,25,23,0.06);
+      position: relative; z-index: 1;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+                  box-shadow 0.3s ease, border-color 0.2s ease;
+    }
+    .step-row:hover .step-icon-card {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(28,25,23,0.10), 0 4px 12px rgba(28,25,23,0.06);
+      border-color: rgba(232,96,10,0.30);
+    }
+
+    /* ── Launch step — special full-width treatment ── */
+    .step-launch {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .launch-inner {
+      background: rgba(232,96,10,0.05);
+      border: 1.5px solid rgba(232,96,10,0.18);
+      border-radius: 20px;
+      padding: 56px 64px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .launch-icon-card {
+      width: 144px; height: 144px; border-radius: 28px;
+      background: rgba(232,96,10,0.10); border: 2px solid rgba(232,96,10,0.25);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 32px rgba(232,96,10,0.15);
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease;
+    }
+    .launch-inner:hover .launch-icon-card {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(232,96,10,0.22);
+    }
+    .launch-checklist {
+      list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .launch-checklist li {
+      display: flex; align-items: flex-start; gap: 0.625rem;
+      font-size: 0.9375rem; line-height: 1.5; color: var(--warm-stone);
+    }
+    .check-dot {
+      width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(232,96,10,0.15); display: flex; align-items: center;
+      justify-content: center; margin-top: 2px;
+    }
+
+    /* ── Trust strip ── */
+    .trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .trust-item { padding: 52px 44px; border-right: 1px solid var(--rule); }
+    .trust-item:last-child { border-right: none; }
+    .trust-val {
+      font-family: 'Calistoga', Georgia, serif;
+      font-size: clamp(2.75rem, 4vw, 3.75rem);
+      font-weight: 400; line-height: 1; color: var(--ink); margin-bottom: 0.5rem;
+    }
+    .trust-val em { color: var(--accent); font-style: normal; }
+    .trust-lbl {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+      font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase;
+      color: var(--warm-stone); margin-bottom: 0.75rem; display: block;
+    }
+
+    /* ── Support callout ── */
+    .support-block {
+      background: var(--elevated); border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 52px 60px;
+      display: grid; grid-template-columns: 72px 1fr; gap: 2.5rem;
+      align-items: flex-start;
+    }
+    .support-icon {
+      width: 72px; height: 72px; border-radius: 16px;
+      background: var(--surface); border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    /* ── CTA ── */
+    .cta-inner {
+      background: var(--elevated); border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 64px 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 3rem; flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-flow-wrap { display: none; }
+      .step-row { grid-template-columns: 1fr; gap: 2.5rem; }
+      .step-row.flip { grid-template-columns: 1fr; }
+      .step-row.flip .step-text { order: 0; }
+      .step-row.flip .step-art  { order: 0; }
+      .step-art { justify-content: flex-start; }
+      .launch-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .launch-icon-card { width: 100px; height: 100px; }
+    }
+    @media (max-width: 768px) {
+      .trust-strip { grid-template-columns: 1fr; }
+      .trust-item { border-right: none; border-bottom: 1px solid var(--rule); }
+      .trust-item:last-child { border-bottom: none; }
+      .trust-item { padding: 40px 0; }
+      .support-block { grid-template-columns: 1fr; padding: 40px 32px; gap: 1.5rem; }
+      .cta-inner { padding: 3rem 1.5rem; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+      .launch-inner { padding: 40px 32px; }
+      .step-row { padding: 48px 0; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════ NAV ══════════════════════ -->
+<script src="/js/nav.js"></script>
+
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<header style="padding:88px 0 80px; border-bottom:1px solid var(--rule);" aria-label="How we work overview">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Text column -->
+      <div>
+        <span class="section-label fade-up d1">Our Process</span>
+        <h1 class="display fade-up d2" style="margin-bottom:1.25rem;">
+          No guessing.<br>No ghosting.<br>No surprises.
+        </h1>
+        <p class="body-large fade-up d3" style="max-width:520px;">
+          Here's exactly what happens from the moment you reach out to the day your site goes live — and every month after that.
+        </p>
+        <div class="trust-chips fade-up d3">
+          <span class="trust-chip">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#78716C" stroke-width="1.5"/><path d="M8 5v3.5l2 2" stroke="#78716C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            48&ndash;72 hrs to first draft
+          </span>
+          <span class="trust-chip">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3.5 7-7" stroke="#78716C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            2 revision rounds
+          </span>
+          <span class="trust-chip">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2a5 5 0 100 10A5 5 0 008 2z" stroke="#78716C" stroke-width="1.5"/><path d="M8 5v3h3" stroke="#78716C" stroke-width="1.5" stroke-linecap="round"/></svg>
+            30 days free support
+          </span>
+        </div>
+        <div class="fade-up d3" style="margin-top:2rem;">
+          <a href="contact.html" class="btn btn-primary" style="font-size:1rem; padding:0.875rem 1.75rem;">
+            Start the conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Process map — HTML step list -->
+      <div class="hero-flow-wrap fade-up d2" aria-hidden="true" style="position:relative; padding-left:20px;">
+
+        <!-- Vertical connecting line -->
+        <div style="position:absolute; left:36px; top:24px; bottom:24px; width:1.5px; background:linear-gradient(to bottom, rgba(232,96,10,0.30) 0%, rgba(232,96,10,0.08) 100%); z-index:0;"></div>
+
+        <!-- Step list -->
+        <ol style="list-style:none; display:flex; flex-direction:column; gap:0; position:relative; z-index:1;">
+
+          <li style="display:flex; align-items:flex-start; gap:1.125rem; padding-bottom:1.5rem;">
+            <div style="flex-shrink:0; width:34px; height:34px; border-radius:50%; background:rgba(232,96,10,0.14); border:1.5px solid rgba(232,96,10,0.35); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; color:var(--accent); background:rgba(232,96,10,0.18); margin-top:2px;">01</div>
+            <div style="padding-top:3px;">
+              <div style="font-size:0.9375rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:2px;">Discovery Call</div>
+              <div style="font-size:0.8125rem; color:var(--warm-stone); line-height:1.4;">15 min &middot; free</div>
+            </div>
+          </li>
+
+          <li style="display:flex; align-items:flex-start; gap:1.125rem; padding-bottom:1.5rem;">
+            <div style="flex-shrink:0; width:34px; height:34px; border-radius:50%; background:rgba(232,96,10,0.10); border:1.5px solid rgba(232,96,10,0.28); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; color:var(--accent); margin-top:2px;">02</div>
+            <div style="padding-top:3px;">
+              <div style="font-size:0.9375rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:2px;">Keyword Research</div>
+              <div style="font-size:0.8125rem; color:var(--warm-stone); line-height:1.4;">before we write a line of code</div>
+            </div>
+          </li>
+
+          <li style="display:flex; align-items:flex-start; gap:1.125rem; padding-bottom:1.5rem;">
+            <div style="flex-shrink:0; width:34px; height:34px; border-radius:50%; background:rgba(232,96,10,0.10); border:1.5px solid rgba(232,96,10,0.28); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; color:var(--accent); margin-top:2px;">03</div>
+            <div style="padding-top:3px;">
+              <div style="font-size:0.9375rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:2px;">We Build Your Site</div>
+              <div style="font-size:0.8125rem; color:var(--warm-stone); line-height:1.4;">48&ndash;72 hrs to staging link</div>
+            </div>
+          </li>
+
+          <li style="display:flex; align-items:flex-start; gap:1.125rem; padding-bottom:1.5rem;">
+            <div style="flex-shrink:0; width:34px; height:34px; border-radius:50%; background:rgba(232,96,10,0.10); border:1.5px solid rgba(232,96,10,0.28); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; color:var(--accent); margin-top:2px;">04</div>
+            <div style="padding-top:3px;">
+              <div style="font-size:0.9375rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:2px;">Preview &amp; Revisions</div>
+              <div style="font-size:0.8125rem; color:var(--warm-stone); line-height:1.4;">2 rounds included</div>
+            </div>
+          </li>
+
+          <!-- Step 5: LAUNCH — highlighted -->
+          <li style="display:flex; align-items:flex-start; gap:1.125rem; padding-bottom:1.5rem;">
+            <div style="flex-shrink:0; width:40px; height:40px; border-radius:50%; background:rgba(232,96,10,0.22); border:2px solid var(--accent); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; color:var(--accent); box-shadow:0 4px 16px rgba(232,96,10,0.18); margin-left:-3px; margin-top:0px;">05</div>
+            <div style="padding-top:4px;">
+              <div style="font-size:1rem; font-weight:700; color:var(--accent); line-height:1.3; margin-bottom:2px;">Launch Day</div>
+              <div style="font-size:0.8125rem; color:var(--warm-stone); line-height:1.4;">your site goes live</div>
+            </div>
+          </li>
+
+          <li style="display:flex; align-items:flex-start; gap:1.125rem; padding-bottom:1.5rem;">
+            <div style="flex-shrink:0; width:34px; height:34px; border-radius:50%; background:rgba(232,96,10,0.08); border:1.5px solid rgba(232,96,10,0.22); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; color:var(--accent); margin-top:2px;">06</div>
+            <div style="padding-top:3px;">
+              <div style="font-size:0.9375rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:2px;">Analytics Setup</div>
+              <div style="font-size:0.8125rem; color:var(--warm-stone); line-height:1.4;">GSC + GA4 connected same day</div>
+            </div>
+          </li>
+
+          <li style="display:flex; align-items:flex-start; gap:1.125rem;">
+            <div style="flex-shrink:0; width:34px; height:34px; border-radius:50%; background:rgba(232,96,10,0.08); border:1.5px solid rgba(232,96,10,0.22); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; color:var(--accent); margin-top:2px;">07</div>
+            <div style="padding-top:3px;">
+              <div style="font-size:0.9375rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:2px;">Monthly Reports</div>
+              <div style="font-size:0.8125rem; color:var(--warm-stone); line-height:1.4;">Growth &amp; Pro plans</div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════ PROCESS STEPS ══════════════════════ -->
+<section aria-labelledby="process-heading" style="padding:80px 0 0;">
+  <div class="container">
+
+    <div class="reveal" style="max-width:600px; margin-bottom:64px;">
+      <span class="section-label">Step by step</span>
+      <h2 id="process-heading" class="headline" style="margin-bottom:0.875rem;">Seven steps. One smooth run.</h2>
+      <p class="body-large">Most clients go from first call to a live, SEO-ready site in 7&ndash;10 days. Here's how that happens.</p>
+    </div>
+
+    <!-- ─── Step 01: Discovery Call ─── -->
+    <div class="step-row reveal">
+      <div class="step-text">
+        <span class="step-eyebrow">Step 01</span>
+        <h3 class="step-title">Discovery Call</h3>
+        <p class="step-body">We start with a 15-minute call. You tell us about your business, your location, the services you offer, and what you want your site to do. We listen — no sales script, no pressure, no "package upsell" talk. If we're a good fit, we move forward the same day.</p>
+        <span class="step-badge">
+          <svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M7 4.5v3l1.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          15 min &middot; Free
+        </span>
+      </div>
+      <div class="step-art">
+        <div class="step-bg-num" aria-hidden="true">01</div>
+        <div class="step-icon-card" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Primary bubble -->
+            <rect x="4" y="6" width="30" height="20" rx="6" fill="rgba(232,96,10,0.14)" stroke="#E8600A" stroke-width="1.5"/>
+            <path d="M10 14h20M10 19.5h13" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M7 26l-3 6h8" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Secondary bubble -->
+            <rect x="22" y="22" width="30" height="20" rx="6" fill="rgba(120,113,108,0.10)" stroke="#A8A29E" stroke-width="1.5"/>
+            <path d="M28 30h18M28 35.5h12" stroke="#A8A29E" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M49 42l3 6h-8" stroke="#A8A29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Step 02: Keyword Research ─── -->
+    <div class="step-row flip reveal reveal-d1">
+      <div class="step-text">
+        <span class="step-eyebrow">Step 02</span>
+        <h3 class="step-title">Keyword Research</h3>
+        <p class="step-body">Before we write a single line of code, we find the exact phrases your customers type to find a business like yours. "Plumber in Austin" or "HVAC repair near me" — we identify the terms with real search volume in your city and build your site around them from day one. Not retrofitted after. Built in.</p>
+        <span class="step-badge">Included on every build</span>
+      </div>
+      <div class="step-art">
+        <div class="step-bg-num" aria-hidden="true">02</div>
+        <div class="step-icon-card" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Search circle -->
+            <circle cx="24" cy="24" r="16" fill="rgba(232,96,10,0.10)" stroke="#E8600A" stroke-width="1.5"/>
+            <!-- Top result highlight -->
+            <rect x="13" y="18" width="22" height="6" rx="2" fill="rgba(232,96,10,0.22)"/>
+            <!-- Check on top result -->
+            <path d="M15 21l2.5 2.5 4.5-4" stroke="#E8600A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Other result lines -->
+            <path d="M13 28h22M13 33h16" stroke="rgba(232,96,10,0.40)" stroke-width="1.4" stroke-linecap="round"/>
+            <!-- Handle -->
+            <path d="M36 36l14 14" stroke="#E8600A" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Sparkle -->
+            <path d="M44 8l1.5 3.5 3.5 1.5-3.5 1.5L44 18l-1.5-3.5L39 13l3.5-1.5z" fill="rgba(232,96,10,0.30)" stroke="#E8600A" stroke-width="1" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Step 03: We Build ─── -->
+    <div class="step-row reveal">
+      <div class="step-text">
+        <span class="step-eyebrow">Step 03</span>
+        <h3 class="step-title">We Build Your Site</h3>
+        <p class="step-body">We design and build your site using the keyword map from Step 2. Mobile-first. Fast-loading. Every page has a clear call-to-action. Within 48&ndash;72 hours you get a private staging link so you can see exactly what you're getting — before a single dollar more changes hands.</p>
+        <span class="step-badge">
+          <svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M7 4.5v3l1.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          48&ndash;72 hrs to staging link
+        </span>
+      </div>
+      <div class="step-art">
+        <div class="step-bg-num" aria-hidden="true">03</div>
+        <div class="step-icon-card" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Browser frame -->
+            <rect x="3" y="8" width="50" height="38" rx="6" fill="none" stroke="#E8600A" stroke-width="1.5"/>
+            <!-- Chrome top bar -->
+            <path d="M3 20h50" stroke="#E8600A" stroke-width="1.2"/>
+            <!-- Traffic light dots -->
+            <circle cx="11" cy="14" r="2.5" fill="rgba(232,96,10,0.70)"/>
+            <circle cx="19" cy="14" r="2.5" fill="rgba(232,96,10,0.35)"/>
+            <circle cx="27" cy="14" r="2.5" fill="rgba(232,96,10,0.18)"/>
+            <!-- URL bar -->
+            <rect x="34" y="11" width="14" height="6" rx="3" fill="rgba(232,96,10,0.10)" stroke="rgba(232,96,10,0.25)" stroke-width="1"/>
+            <!-- Page content — hero block -->
+            <rect x="8" y="25" width="40" height="9" rx="3" fill="rgba(232,96,10,0.22)"/>
+            <!-- Two content blocks -->
+            <rect x="8" y="37" width="18" height="5" rx="2" fill="rgba(232,96,10,0.10)"/>
+            <rect x="30" y="37" width="18" height="5" rx="2" fill="rgba(232,96,10,0.10)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Step 04: Preview & Revisions ─── -->
+    <div class="step-row flip reveal reveal-d1">
+      <div class="step-text">
+        <span class="step-eyebrow">Step 04</span>
+        <h3 class="step-title">Preview &amp; Revisions</h3>
+        <p class="step-body">You review the staging site on your own time. Change copy, swap photos, move sections — tell us what you want. Every plan includes 2 full revision rounds. We keep going until it's right. You approve it in writing before anything goes live.</p>
+        <span class="step-badge">2 revision rounds included</span>
+      </div>
+      <div class="step-art">
+        <div class="step-bg-num" aria-hidden="true">04</div>
+        <div class="step-icon-card" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Desktop monitor -->
+            <rect x="2" y="9" width="32" height="22" rx="4" fill="none" stroke="#E8600A" stroke-width="1.5"/>
+            <path d="M2 16h32" stroke="#E8600A" stroke-width="1"/>
+            <rect x="6" y="20" width="24" height="8" rx="2" fill="rgba(232,96,10,0.18)"/>
+            <!-- Monitor stand -->
+            <path d="M12 31l-2 7h16l-2-7" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Phone -->
+            <rect x="37" y="11" width="17" height="28" rx="4" fill="none" stroke="#78716C" stroke-width="1.5"/>
+            <path d="M37 17h17M37 33h17" stroke="#78716C" stroke-width="1"/>
+            <rect x="39.5" y="20" width="12" height="10" rx="2" fill="rgba(120,113,108,0.14)"/>
+            <path d="M43 36h6" stroke="#78716C" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Pencil (edit) -->
+            <path d="M30 4l5 5-10 10-6 1 1-6z" fill="rgba(232,96,10,0.25)" stroke="#E8600A" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M30 4l5 5" stroke="#E8600A" stroke-width="1.2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+</section>
+
+
+<!-- ══════════════════════ STEP 05: LAUNCH DAY ══════════════════════ -->
+<section style="padding:0 0 0;" aria-label="Launch day">
+  <div class="container" style="padding-top:0; padding-bottom:0;">
+    <div class="step-launch reveal">
+      <div class="launch-inner">
+        <div class="launch-icon-card" aria-hidden="true">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rocket body fill -->
+            <path d="M36 6C28 14 22 24 20 36h32C50 24 44 14 36 6z" fill="rgba(232,96,10,0.22)"/>
+            <!-- Rocket outline -->
+            <path d="M36 6C36 6 22 16 20 36" stroke="#E8600A" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M36 6C36 6 50 16 52 36" stroke="#E8600A" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M20 36h32" stroke="#E8600A" stroke-width="1.5" fill="none"/>
+            <!-- Window -->
+            <circle cx="36" cy="22" r="7" fill="rgba(232,96,10,0.30)" stroke="#E8600A" stroke-width="1.5"/>
+            <circle cx="36" cy="22" r="3" fill="rgba(232,96,10,0.60)"/>
+            <!-- Left fin -->
+            <path d="M20 36l-9 9 9-1.5" fill="rgba(232,96,10,0.25)" stroke="#E8600A" stroke-width="1.5" stroke-linejoin="round"/>
+            <!-- Right fin -->
+            <path d="M52 36l9 9-9-1.5" fill="rgba(232,96,10,0.25)" stroke="#E8600A" stroke-width="1.5" stroke-linejoin="round"/>
+            <!-- Exhaust flame outer -->
+            <path d="M24 36C24 48 28 56 36 60C44 56 48 48 48 36z" fill="rgba(232,96,10,0.18)" stroke="rgba(232,96,10,0.35)" stroke-width="1"/>
+            <!-- Exhaust flame inner -->
+            <path d="M28 36C28 46 31 52 36 55C41 52 44 46 44 36z" fill="rgba(232,96,10,0.40)"/>
+            <!-- Stars -->
+            <circle cx="12" cy="14" r="2" fill="rgba(232,96,10,0.60)"/>
+            <circle cx="60" cy="10" r="2" fill="rgba(232,96,10,0.60)"/>
+            <circle cx="8" cy="28" r="1.3" fill="rgba(232,96,10,0.40)"/>
+            <circle cx="64" cy="24" r="1.3" fill="rgba(232,96,10,0.40)"/>
+          </svg>
+        </div>
+        <div>
+          <span class="step-eyebrow" style="margin-bottom:0.75rem;">Step 05 &mdash; The Big One</span>
+          <h3 style="font-family:'Calistoga',Georgia,serif; font-size:clamp(1.75rem,3vw,2.25rem); font-weight:400; line-height:1.15; color:var(--ink); margin-bottom:0.875rem;">
+            Launch Day
+          </h3>
+          <p style="font-size:1rem; line-height:1.72; color:var(--warm-stone); max-width:560px; margin-bottom:1.25rem;">
+            Before your site goes live, we run a full pre-launch checklist. Every item must pass — no exceptions. Then we flip the switch, verify everything loads correctly on real devices, and send you the confirmation.
+          </p>
+          <ul class="launch-checklist" aria-label="Pre-launch checks">
+            <li>
+              <span class="check-dot">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.5l3 3 5-5" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              SSL certificate active — green padlock in the address bar
+            </li>
+            <li>
+              <span class="check-dot">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.5l3 3 5-5" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Contact form tested — submissions confirmed working
+            </li>
+            <li>
+              <span class="check-dot">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.5l3 3 5-5" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Mobile layout checked at 375px — no broken anything
+            </li>
+            <li>
+              <span class="check-dot">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.5l3 3 5-5" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              No console errors, no broken links, no placeholder text
+            </li>
+            <li>
+              <span class="check-dot">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.5l3 3 5-5" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Sitemap submitted to Google — indexing begins immediately
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ STEPS 06 & 07 ══════════════════════ -->
+<section aria-label="Post-launch steps" style="padding:0 0 80px;">
+  <div class="container">
+
+    <!-- ─── Step 06: Analytics Setup ─── -->
+    <div class="step-row reveal">
+      <div class="step-text">
+        <span class="step-eyebrow">Step 06</span>
+        <h3 class="step-title">Analytics Setup</h3>
+        <p class="step-body">On launch day, we connect Google Analytics 4 and Google Search Console to your site. You'll see how many people visit, how long they stay, and which searches brought them to you. No guessing about whether your site is working — the numbers tell you straight.</p>
+        <span class="step-badge">Included on every build</span>
+      </div>
+      <div class="step-art">
+        <div class="step-bg-num" aria-hidden="true">06</div>
+        <div class="step-icon-card" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Chart background -->
+            <rect x="4" y="8" width="38" height="32" rx="4" fill="rgba(232,96,10,0.06)" stroke="rgba(232,96,10,0.18)" stroke-width="1.5"/>
+            <!-- Grid line -->
+            <path d="M4 28h38" stroke="rgba(232,96,10,0.12)" stroke-width="1" stroke-dasharray="3 2"/>
+            <!-- Growing bars -->
+            <rect x="10" y="32" width="7" height="7" rx="2" fill="rgba(232,96,10,0.28)"/>
+            <rect x="21" y="24" width="7" height="15" rx="2" fill="rgba(232,96,10,0.50)"/>
+            <rect x="32" y="14" width="7" height="25" rx="2" fill="rgba(232,96,10,0.78)"/>
+            <!-- Trend dots on bar tops -->
+            <circle cx="13.5" cy="32" r="3" fill="#E8600A"/>
+            <circle cx="24.5" cy="24" r="3" fill="#E8600A"/>
+            <circle cx="35.5" cy="14" r="3.5" fill="#E8600A"/>
+            <!-- Trend dashes connecting -->
+            <path d="M13.5 32 L24.5 24 L35.5 14" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2.5 2"/>
+            <!-- Gear (analytics setup) -->
+            <circle cx="46" cy="15" r="8" fill="var(--bg,#FAFAF7)" stroke="rgba(232,96,10,0.22)" stroke-width="1"/>
+            <circle cx="46" cy="15" r="4.5" fill="none" stroke="#E8600A" stroke-width="1.5"/>
+            <circle cx="46" cy="15" r="1.8" fill="#E8600A"/>
+            <path d="M46 8v2.5M46 19.5V22M39 15h2.5M50.5 15H53M41 10l1.8 1.8M49.2 18.2l1.8 1.8M41 20l1.8-1.8M49.2 11.8l1.8-1.8" stroke="#E8600A" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Step 07: Monthly Reporting ─── -->
+    <div class="step-row flip reveal reveal-d1" style="border-bottom:none;">
+      <div class="step-text">
+        <span class="step-eyebrow">Step 07 &mdash; Growth &amp; Pro Plans</span>
+        <h3 class="step-title">Monthly Reporting</h3>
+        <p class="step-body">On Growth and Pro plans, you get a written performance report every month. Keyword rankings, organic traffic, Google Business Profile stats, Core Web Vitals — all in plain English, with one clear headline: what moved this month, and what's next. No jargon, no fluffy metrics. Just the numbers that matter to your business.</p>
+        <span class="step-badge">Growth &amp; Pro plans</span>
+      </div>
+      <div class="step-art">
+        <div class="step-bg-num" aria-hidden="true">07</div>
+        <div class="step-icon-card" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Calendar body -->
+            <rect x="5" y="10" width="40" height="38" rx="5" fill="none" stroke="#E8600A" stroke-width="1.5"/>
+            <!-- Calendar header fill -->
+            <rect x="5" y="10" width="40" height="13" rx="5" fill="rgba(232,96,10,0.14)"/>
+            <path d="M5 23h40" stroke="#E8600A" stroke-width="1"/>
+            <!-- Binding rings -->
+            <path d="M16 7v8" stroke="#E8600A" stroke-width="2" stroke-linecap="round"/>
+            <path d="M34 7v8" stroke="#E8600A" stroke-width="2" stroke-linecap="round"/>
+            <!-- Month dots row -->
+            <circle cx="13" cy="29" r="1.8" fill="rgba(232,96,10,0.30)"/>
+            <circle cx="21" cy="29" r="1.8" fill="rgba(232,96,10,0.30)"/>
+            <circle cx="29" cy="29" r="1.8" fill="rgba(232,96,10,0.30)"/>
+            <circle cx="37" cy="29" r="1.8" fill="rgba(232,96,10,0.30)"/>
+            <!-- Trend line inside calendar lower area -->
+            <path d="M10 43 L18 37 L26 39 L34 32 L42 27" stroke="#E8600A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Data points -->
+            <circle cx="10" cy="43" r="2.2" fill="var(--bg,#FAFAF7)" stroke="#E8600A" stroke-width="1.5"/>
+            <circle cx="26" cy="39" r="2.2" fill="var(--bg,#FAFAF7)" stroke="#E8600A" stroke-width="1.5"/>
+            <circle cx="42" cy="27" r="3" fill="#E8600A"/>
+            <!-- Arrow at chart peak -->
+            <path d="M40 25l4-2 0.5 4" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════ TRUST STRIP ══════════════════════ -->
+<section aria-label="What's always included" style="border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="container" style="padding-left:0; padding-right:0; max-width:none;">
+    <div class="trust-strip">
+
+      <div class="trust-item reveal">
+        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+          <div class="trust-val">48<em>&ndash;</em>72</div>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.8rem; font-weight:500; color:var(--warm-stone); text-transform:uppercase; letter-spacing:0.06em; line-height:1.2;">hrs<br>to draft</span>
+        </div>
+        <span class="trust-lbl">First draft timeline</span>
+        <p style="font-size:0.9375rem; line-height:1.6; color:var(--warm-stone);">You see your site on a staging link within 2&ndash;3 business days. Not weeks. Days.</p>
+      </div>
+
+      <div class="trust-item reveal reveal-d1">
+        <div class="trust-val" style="margin-bottom:0.5rem;">2 <em style="font-family:'DM Sans',sans-serif; font-size:1.5rem; font-weight:700; color:var(--accent);">rounds</em></div>
+        <span class="trust-lbl">Revision rounds included</span>
+        <p style="font-size:0.9375rem; line-height:1.6; color:var(--warm-stone);">Tell us what to change — twice. No charge, no drama, no hour-counting.</p>
+      </div>
+
+      <div class="trust-item reveal reveal-d2">
+        <div class="trust-val" style="margin-bottom:0.5rem;">30 <em style="font-family:'DM Sans',sans-serif; font-size:1.5rem; font-weight:700; color:var(--accent);">days</em></div>
+        <span class="trust-lbl">Free post-launch support</span>
+        <p style="font-size:0.9375rem; line-height:1.6; color:var(--warm-stone);">Something looks off after launch? We fix it. No ticket required, no invoice sent.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ SUPPORT CALLOUT ══════════════════════ -->
+<section style="padding:var(--section-py) 0;" aria-label="30 days free support">
+  <div class="container">
+    <div class="support-block reveal">
+
+      <div class="support-icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Shield -->
+          <path d="M20 4L6 10v10c0 8.28 5.94 16.03 14 18 8.06-1.97 14-9.72 14-18V10L20 4z" fill="rgba(232,96,10,0.12)" stroke="#E8600A" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Check inside shield -->
+          <path d="M13 20l5 5 9-9" stroke="#E8600A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; letter-spacing:0.10em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:0.75rem;">Included With Every Build</span>
+        <h2 style="font-family:'Calistoga',Georgia,serif; font-size:clamp(1.5rem,2.5vw,1.875rem); font-weight:400; line-height:1.2; color:var(--ink); margin-bottom:0.875rem;">
+          30 days of free support after launch.
+        </h2>
+        <p style="font-size:1rem; line-height:1.72; color:var(--warm-stone); max-width:600px;">
+          Every build includes a 30-day support window. If something breaks, looks wrong, or you need a quick copy change — just message us. We respond within one business day. No support tickets, no hourly billing, no making you feel bad for asking.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ CTA ══════════════════════ -->
+<section style="padding:0 0 var(--section-py);" aria-label="Get started">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div style="max-width:520px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; font-weight:500; letter-spacing:0.10em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:0.875rem;">Ready When You Are</span>
+        <h2 class="headline" style="margin-bottom:0.875rem;">Let's build something that works for your business.</h2>
+        <p class="body-large" style="margin:0;">Tell us about your business and we'll kick off Step 1 within 24 hours. No commitment, no pressure.</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="flex-shrink:0; font-size:1rem; padding:1rem 2rem;">
+        Get a Free Quote
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer style="background:var(--bg); border-top:1px solid var(--rule); padding:3.5rem 0 2rem;" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <a href="index.html" aria-label="Lantech homepage" style="display:inline-block; margin-bottom:1rem;">
+          <img src="/brand_assets/lantech-logo-new-light.png" alt="Lantech" width="78" height="28" style="display:block;">
+        </a>
+        <p style="color:var(--warm-stone); font-size:0.875rem; line-height:1.72; max-width:260px; margin-bottom:1.25rem;">
+          Websites and local SEO for home services pros across the United States.
+        </p>
+        <div style="display:flex; gap:0.625rem;">
+          <a href="https://facebook.com/lantechco" aria-label="Lantech on Facebook" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1.5px solid var(--border);color:var(--warm-stone);text-decoration:none;transition:border-color 0.15s ease,background 0.15s ease,color 0.15s ease;" onmouseover="this.style.borderColor='var(--accent-border)';this.style.background='var(--accent-dim)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.background='transparent';this.style.color='var(--warm-stone)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com/lantechco" aria-label="Lantech on Instagram" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1.5px solid var(--border);color:var(--warm-stone);text-decoration:none;transition:border-color 0.15s ease,background 0.15s ease,color 0.15s ease;" onmouseover="this.style.borderColor='var(--accent-border)';this.style.background='var(--accent-dim)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.background='transparent';this.style.color='var(--warm-stone)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size:0.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:0.04em;text-transform:uppercase;">Services</h3>
+        <nav aria-label="Services footer links" style="display:flex;flex-direction:column;gap:0.625rem;">
+          <a href="services.html" style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Web Design</a>
+          <a href="services.html" style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">SEO Optimization</a>
+          <a href="services.html" style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Google Business Profile</a>
+          <a href="services.html" style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Social Media</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 style="font-size:0.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:0.04em;text-transform:uppercase;">Company</h3>
+        <nav aria-label="Company footer links" style="display:flex;flex-direction:column;gap:0.625rem;">
+          <a href="about.html"        style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">About</a>
+          <a href="how-we-work.html" aria-current="page" style="color:var(--accent);font-size:0.875rem;text-decoration:none;">How We Work</a>
+          <a href="pricing.html"      style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Pricing</a>
+          <a href="blog.html"         style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Blog</a>
+          <a href="contact.html"      style="color:var(--warm-stone);font-size:0.875rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Contact</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 style="font-size:0.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:0.04em;text-transform:uppercase;">Get Started</h3>
+        <p style="color:var(--warm-stone);font-size:0.875rem;line-height:1.65;margin-bottom:1rem;">Ready to get your business online?</p>
+        <a href="contact.html" class="btn btn-primary" style="font-size:0.875rem;padding:0.6875rem 1.25rem;">Free Quote</a>
+        <p style="color:var(--subtle);font-size:0.8125rem;margin-top:0.875rem;">lantech016@gmail.com</p>
+      </div>
+
+    </div>
+
+    <hr class="rule">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;">
+      <p style="color:var(--subtle);font-size:0.8125rem;">&copy; 2026 Lantech. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;">
+        <a href="privacy.html" style="color:var(--subtle);font-size:0.8125rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--subtle)'">Privacy Policy</a>
+        <a href="terms.html"   style="color:var(--subtle);font-size:0.8125rem;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--subtle)'">Terms of Service</a>
+        <p style="color:var(--subtle);font-size:0.8125rem;">Built for small businesses. Not enterprise.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════ JS ══════════════════════ -->
+<script>
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Puppeteer fallback — reveal all after brief delay
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 150);
+</script>
+
+</body>
+</html>

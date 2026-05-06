@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #FAFAF7; font-family: 'DM Sans', sans-serif; padding: 48px; }
+  h1 { font-size: 14px; font-weight: 600; color: #78716C; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; margin-bottom: 32px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 720px; }
+  .cell {
+    background: #fff; border: 1px solid #E7E0D8; border-radius: 12px;
+    padding: 24px 20px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .cell img { width: 48px; height: 48px; }
+  .cell-label { font-size: 11px; color: #78716C; font-weight: 500; text-align: center; }
+  .cell-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #E8600A; }
+
+  .dark { background: #1C1917; margin-top: 16px; }
+  .dark .cell { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
+  .dark .cell-label { color: rgba(250,250,247,0.45); }
+  .dark h1 { color: rgba(250,250,247,0.3); }
+</style>
+</head>
+<body>
+
+<h1>Lantech Icon Set — Light</h1>
+<div class="grid">
+  <div class="cell">
+    <img src="icon-web.svg" alt="Web Design">
+    <div>
+      <div class="cell-label">Web Design</div>
+      <div class="cell-name">icon-web</div>
+    </div>
+  </div>
+  <div class="cell">
+    <img src="icon-seo.svg" alt="Local SEO">
+    <div>
+      <div class="cell-label">Local SEO</div>
+      <div class="cell-name">icon-seo</div>
+    </div>
+  </div>
+  <div class="cell">
+    <img src="icon-gbp.svg" alt="Google Business">
+    <div>
+      <div class="cell-label">Google Business</div>
+      <div class="cell-name">icon-gbp</div>
+    </div>
+  </div>
+  <div class="cell">
+    <img src="icon-social.svg" alt="Social Media">
+    <div>
+      <div class="cell-label">Social Media</div>
+      <div class="cell-name">icon-social</div>
+    </div>
+  </div>
+  <div class="cell">
+    <img src="icon-speed.svg" alt="Fast Delivery">
+    <div>
+      <div class="cell-label">Fast Delivery</div>
+      <div class="cell-name">icon-speed</div>
+    </div>
+  </div>
+  <div class="cell">
+    <img src="icon-no-contract.svg" alt="No Contract">
+    <div>
+      <div class="cell-label">No Contract</div>
+      <div class="cell-name">icon-no-contract</div>
+    </div>
+  </div>
+  <div class="cell">
+    <img src="icon-ownership.svg" alt="You Own It">
+    <div>
+      <div class="cell-label">You Own It</div>
+      <div class="cell-name">icon-ownership</div>
+    </div>
+  </div>
+  <div class="cell">
+    <img src="icon-custom.svg" alt="Custom Design">
+    <div>
+      <div class="cell-label">Custom Design</div>
+      <div class="cell-name">icon-custom</div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="dark" style="padding:32px;border-radius:16px;display:inline-block;">
+  <h1>On Dark Background</h1>
+  <div class="grid">
+    <div class="cell"><img src="icon-web.svg" alt="Web Design"><div class="cell-label" style="color:rgba(250,250,247,0.45)">Web Design</div></div>
+    <div class="cell"><img src="icon-seo.svg" alt="SEO"><div class="cell-label" style="color:rgba(250,250,247,0.45)">Local SEO</div></div>
+    <div class="cell"><img src="icon-gbp.svg" alt="GBP"><div class="cell-label" style="color:rgba(250,250,247,0.45)">Google Business</div></div>
+    <div class="cell"><img src="icon-social.svg" alt="Social"><div class="cell-label" style="color:rgba(250,250,247,0.45)">Social Media</div></div>
+    <div class="cell"><img src="icon-speed.svg" alt="Speed"><div class="cell-label" style="color:rgba(250,250,247,0.45)">Fast Delivery</div></div>
+    <div class="cell"><img src="icon-no-contract.svg" alt="No Contract"><div class="cell-label" style="color:rgba(250,250,247,0.45)">No Contract</div></div>
+    <div class="cell"><img src="icon-ownership.svg" alt="Ownership"><div class="cell-label" style="color:rgba(250,250,247,0.45)">You Own It</div></div>
+    <div class="cell"><img src="icon-custom.svg" alt="Custom"><div class="cell-label" style="color:rgba(250,250,247,0.45)">Custom Design</div></div>
+  </div>
+</div>
+
+</body>
+</html>
