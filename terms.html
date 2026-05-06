@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07070E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAFAF7">
 <title>Terms of Service — Lantech</title>
 <meta name="description" content="Lantech's Terms of Service govern the use of our website and the web design, SEO, and digital marketing services we provide to small businesses.">
 <link rel="canonical" href="https://lantech.co/terms">
@@ -22,108 +22,66 @@
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/foundation.css">
 <style>
-:root{--bg:#07070E;--surface:#0D0D1A;--elevated:#141428;--accent:#00E5FF;--accent2:#7C5CFC;--txt:#EAEAF5;--muted:#8A8AAA;--border:rgba(255,255,255,0.06);--accent-dim:rgba(0,229,255,0.06);--accent-border:rgba(0,229,255,0.18)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.7}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
+.footer-link{color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s ease;display:block}
+.footer-link:hover{color:var(--ink)}
+.social-btn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9px;border:1px solid var(--border);color:var(--warm-stone);transition:border-color .15s ease,background .15s ease,color .15s ease}
+.social-btn:hover{border-color:var(--accent-border);background:var(--accent-dim);color:var(--accent)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 
-/* Nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(7,7,14,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;width:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.nav-logo{font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:800;color:var(--txt);text-decoration:none;display:flex;align-items:center;gap:.5rem}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:1.75rem}
-.nav-link{color:var(--muted);font-size:.875rem;font-weight:500;text-decoration:none;transition:color .2s}
-.nav-link:hover{color:var(--txt);text-decoration:none}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#07070E;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem;padding:.65rem 1.25rem;border-radius:8px;text-decoration:none;transition:background .2s,transform .18s cubic-bezier(.34,1.56,.64,1)}
-.btn-primary:hover{background:#26eeff;transform:translateY(-2px);text-decoration:none}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none}
-.hamburger span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px;transition:transform .2s,opacity .2s}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:1.5rem 2rem 2rem;z-index:40;flex-direction:column;gap:1rem}
-.mobile-menu.open{display:flex}
+/* Legal page layout */
+.legal-wrap{max-width:740px;margin:0 auto;padding:5rem 2rem 6rem}
+.legal-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.875rem}
+.legal-title{font-family:'Calistoga',serif;font-size:clamp(1.875rem,4vw,2.75rem);color:var(--ink);line-height:1.15;margin-bottom:.625rem}
+.legal-meta{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--warm-stone);margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
+.summary-box{background:var(--surface);border:1.5px solid var(--accent-border);border-radius:14px;padding:1.375rem 1.625rem;margin-bottom:2.5rem}
+.summary-box p{color:var(--warm-stone);font-size:.9125rem;line-height:1.75;margin:0}
+.summary-box strong{color:var(--ink)}
 
-/* Page */
-.page-wrap{max-width:780px;margin:0 auto;padding:5rem 2rem 6rem}
-.page-label{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem}
-.page-title{font-family:'Unbounded',sans-serif;font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:.75rem}
-.last-updated{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--muted);margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
-
-/* Content */
-.prose h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.125rem;font-weight:700;color:var(--txt);margin:2.5rem 0 .75rem;padding-top:.25rem}
-.prose h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:600;color:var(--txt);margin:1.5rem 0 .5rem}
-.prose p{color:#C8C8E0;font-size:.9375rem;line-height:1.75;margin-bottom:1rem}
-.prose ul,.prose ol{color:#C8C8E0;font-size:.9375rem;line-height:1.75;margin-bottom:1rem;padding-left:1.5rem}
+/* Prose */
+.prose h2{font-family:'Calistoga',serif;font-size:1.25rem;color:var(--ink);margin:2.75rem 0 .625rem;padding-top:.125rem}
+.prose h3{font-family:'DM Sans',sans-serif;font-size:.9375rem;font-weight:700;color:var(--ink);margin:1.5rem 0 .375rem}
+.prose p{color:var(--warm-stone);font-size:.9125rem;line-height:1.75;margin-bottom:1rem}
+.prose ul,.prose ol{color:var(--warm-stone);font-size:.9125rem;line-height:1.75;margin-bottom:1rem;padding-left:1.375rem}
 .prose li{margin-bottom:.375rem}
-.prose strong{color:var(--txt);font-weight:600}
-.prose a{color:var(--accent)}
-.prose a:hover{text-decoration:underline}
-.highlight-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0}
-.highlight-box p{margin-bottom:0;font-size:.875rem}
+.prose strong{color:var(--ink);font-weight:600}
+.prose a{color:var(--accent);text-decoration:none;transition:color .15s ease}
+.prose a:hover{color:var(--accent-hover)}
 
-/* Footer */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 2rem}
-.footer-inner{max-width:1200px;margin:0 auto;padding:0 2rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
-.footer-logo{font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:800;color:var(--txt);margin-bottom:.75rem}
-.footer-logo span{color:var(--accent)}
-.footer-tagline{color:var(--muted);font-size:.85rem;line-height:1.6;max-width:240px}
-.footer-col h4{font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
-.footer-link{color:var(--muted);font-size:.875rem;text-decoration:none;transition:color .2s;display:block;margin-bottom:.5rem}
-.footer-link:hover{color:var(--txt)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-copy{color:var(--muted);font-size:.8rem}
-.footer-legal{display:flex;gap:1.5rem}
-.footer-legal a{color:var(--muted);font-size:.8rem;text-decoration:none;transition:color .2s}
-.footer-legal a:hover{color:var(--txt)}
-
-@media(max-width:900px){.nav-links,.btn-primary{display:none}.hamburger{display:flex}}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}.page-wrap{padding:3rem 1.25rem 4rem}}
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}.legal-wrap{padding:3.5rem 1.25rem 4rem}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Terms of Service — Lantech",
+  "url": "https://lantech.co/terms",
+  "description": "Terms governing Lantech's web design, SEO, and digital marketing services.",
+  "isPartOf": {"@type": "WebSite", "name": "Lantech", "url": "https://lantech.co"},
+  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://lantech.co"},
+    {"@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://lantech.co/terms"}
+  ]}
+}
+</script>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Lan<span>tech</span></a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-    <a href="contact.html" class="btn-primary">Get a Free Quote</a>
-    <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" class="nav-link">Home</a>
-  <a href="services.html" class="nav-link">Services</a>
-  <a href="pricing.html" class="nav-link">Pricing</a>
-  <a href="blog.html" class="nav-link">Blog</a>
-  <a href="about.html" class="nav-link">About</a>
-  <a href="contact.html" class="nav-link">Contact</a>
-  <a href="contact.html" class="btn-primary" style="margin-top:.5rem;justify-content:center">Get a Free Quote</a>
-</div>
+<script src="/js/nav.js"></script>
 
-<main class="page-wrap">
-  <span class="page-label">Legal</span>
-  <h1 class="page-title">Terms of Service</h1>
-  <p class="last-updated">Last updated: April 23, 2026</p>
+<main class="legal-wrap">
+  <span class="legal-label">Legal</span>
+  <h1 class="legal-title">Terms of Service</h1>
+  <p class="legal-meta">Last updated: May 7, 2026</p>
+
+  <div class="summary-box">
+    <p><strong>The short version:</strong> You pay 50% to start, we build your website within 48–72 hours, you get revision rounds depending on your package, and the finished site is yours once the balance is paid. Read the full terms below for specifics on scope, intellectual property, and liability.</p>
+  </div>
 
   <div class="prose">
-
-    <div class="highlight-box">
-      <p><strong>The short version:</strong> You pay 50% to start, we build your website within 48 hours, you get two rounds of revisions, and the final site is yours once the balance is paid. Read the full terms below for specifics on scope, intellectual property, and liability.</p>
-    </div>
 
     <h2>1. Agreement to Terms</h2>
     <p>These Terms of Service ("Terms") are a legal agreement between you ("Client," "you," or "your") and Lantech ("we," "our," or "us"), a web design and digital marketing agency founded by Luis Echarri, operating at <a href="https://lantech.co">lantech.co</a>.</p>
@@ -134,10 +92,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 2r
     <p>Lantech provides web design, search engine optimization (SEO), Google Business Profile management, and social media services to small businesses in the United States. The specific services, deliverables, and timeline for your project are defined in the project proposal or package description you receive before payment.</p>
     <p>Current packages include:</p>
     <ul>
-      <li><strong>Starter — $1,200:</strong> Up to 5 pages, standard SEO, 2 revision rounds, 48-hour delivery target</li>
-      <li><strong>Growth — $1,699:</strong> Up to 10 pages, local SEO, Google Business Profile setup, 3 revision rounds</li>
-      <li><strong>Pro — $1,999:</strong> Up to 20 pages, full SEO, social media profile setup, priority support</li>
+      <li><strong>Starter — $1,200:</strong> Up to 5 pages, standard SEO, 2 revision rounds, 48-hour delivery target, 1 year of hosting included</li>
+      <li><strong>Growth — $1,699:</strong> Up to 10 pages, local SEO, Google Business Profile setup, 3 revision rounds, 1 year of hosting included</li>
+      <li><strong>Pro — $1,999:</strong> Up to 20 pages, full SEO, social media profile setup, priority support, 1 year of hosting included</li>
     </ul>
+    <p>After the first year, hosting can be continued through our Care plan at $120/month, or you can move the site to any host you choose. You own the files either way.</p>
     <p>Add-on services (additional pages, blog setup, e-commerce, ongoing maintenance) may be scoped separately and priced accordingly.</p>
 
     <h2>3. Payment Terms</h2>
@@ -195,11 +154,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 2r
     <p>We reserve the right to display your completed website in our portfolio, case studies, and marketing materials unless you request in writing that we do not. We will never share confidential business information without your consent.</p>
 
     <h3>Third-party components</h3>
-    <p>Websites may use open-source libraries, fonts, or stock images that carry their own licenses (e.g. MIT, Creative Commons). These components are not exclusively yours — they're shared under their original license terms.</p>
+    <p>Websites may use open-source libraries, fonts, or stock images that carry their own licenses (e.g. MIT, Creative Commons). These components are not exclusively yours — they are shared under their original license terms.</p>
 
     <h2>7. Scope Changes</h2>
     <p>The project scope is defined by the package you purchased and the onboarding questionnaire. Requests that fall outside that scope — additional pages, new features, significant redesigns after approval — are treated as new work and priced separately.</p>
-    <p>We'll always tell you when a request is out of scope before doing any additional work. We won't surprise you with extra charges.</p>
+    <p>We will always tell you when a request is out of scope before doing any additional work. We will not surprise you with extra charges.</p>
 
     <h2>8. Cancellation and Refunds</h2>
 
@@ -214,13 +173,13 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 2r
     <p>If you are genuinely unsatisfied with the delivered work and we cannot resolve the issue through revisions, contact us at <a href="mailto:lantech016@gmail.com">lantech016@gmail.com</a> and we will work with you in good faith to find a fair resolution. We stand behind our work.</p>
 
     <h2>9. Hosting and Ongoing Maintenance</h2>
-    <p>Website delivery includes the completed site files. Hosting is the client's responsibility unless a hosting or maintenance add-on is included in your package or agreed separately.</p>
-    <p>We are not responsible for downtime, data loss, or security issues that occur on hosting platforms you control after project handover.</p>
+    <p>Every package includes <strong>1 year of free hosting</strong>. After year one, you can continue with our Care plan at $120/month — which covers hosting, maintenance, and backups — or transfer the site to any host you choose. You own all files either way.</p>
+    <p>We are not responsible for downtime, data loss, or security issues that occur on hosting platforms you control after a site transfer or after the included hosting period ends.</p>
     <p>If you purchase an ongoing maintenance or care plan from us, that plan is governed by a separate service agreement.</p>
 
     <h2>10. Third-Party Services</h2>
     <p>Your website may integrate with or depend on third-party services (Google Analytics, Google Business Profile, social media platforms, email providers, payment processors). We are not affiliated with or responsible for these services, their terms, availability, or changes to their platforms.</p>
-    <p>If a third-party service changes its API or policies in a way that breaks your website after handover, fixing it may require additional work billed at our standard rate.</p>
+    <p>If a third-party service changes its API or policies in a way that affects your website after handover, fixing it may require additional work billed at our standard rate.</p>
 
     <h2>11. Warranties and Disclaimers</h2>
     <p>We deliver our work with professional care and skill. We warrant that:</p>
@@ -255,57 +214,67 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 2r
     <p>These Terms are governed by the laws of the United States. Any dispute arising from these Terms or our services shall first be attempted to be resolved through good-faith negotiation. If that fails, disputes shall be resolved through binding arbitration or in the courts of competent jurisdiction in the United States.</p>
 
     <h2>15. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. When we do, we'll update the "Last updated" date at the top of this page. Continued use of our website or services after a change constitutes acceptance of the updated Terms. We will notify active clients of significant changes by email.</p>
+    <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of our website or services after a change constitutes acceptance of the updated Terms. We will notify active clients of significant changes by email.</p>
 
     <h2>16. Contact Us</h2>
     <p>Questions about these Terms? Reach out any time:</p>
     <ul>
       <li><strong>Email:</strong> <a href="mailto:lantech016@gmail.com">lantech016@gmail.com</a></li>
-      <li><strong>Business:</strong> Lantech, United States</li>
+      <li><strong>Phone:</strong> <a href="tel:+639773293969">+63 977 329 3969</a></li>
+      <li><strong>Business:</strong> Lantech — lantech.co</li>
     </ul>
     <p>We aim to respond to all inquiries within 2 business days.</p>
 
   </div>
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Lan<span>tech</span></div>
-        <p class="footer-tagline">Professional websites and local SEO for small businesses across the United States.</p>
-      </div>
-      <div>
-        <h4>Pages</h4>
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="services.html" class="footer-link">Services</a>
-        <a href="pricing.html" class="footer-link">Pricing</a>
-        <a href="blog.html" class="footer-link">Blog</a>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="contact.html" class="footer-link">Contact</a>
-        <a href="help.html" class="footer-link">Help</a>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="services.html" class="footer-link">Web Design</a>
-        <a href="services.html" class="footer-link">SEO</a>
-        <a href="services.html" class="footer-link">Google Business</a>
-        <a href="services.html" class="footer-link">Social Media</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="mailto:lantech016@gmail.com" class="footer-link">lantech016@gmail.com</a>
-        <p style="color:var(--muted);font-size:.875rem;margin-top:.25rem">Mon–Fri, 9am–6pm EST</p>
+<footer aria-label="Site footer" style="border-top:1px solid var(--border);padding:4.5rem 0 2rem">
+<div class="container">
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" aria-label="Lantech homepage" style="display:inline-flex;align-items:center;text-decoration:none;margin-bottom:1.125rem">
+        <img src="/brand_assets/lantech-logo-new-light.png" alt="Lantech" width="78" height="28" style="display:block;">
+      </a>
+      <p style="color:var(--warm-stone);font-size:.875rem;line-height:1.7;max-width:240px;margin-bottom:1.5rem">Websites and local SEO for home services pros across the USA. Built for small businesses. Not enterprise.</p>
+      <div style="display:flex;gap:.625rem">
+        <a href="https://facebook.com/lantechco" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 2h-2a3 3 0 00-3 3v2H5v3h2v4h3v-4h2l.5-3H10V5a.5.5 0 01.5-.5H12V2z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg></a>
+        <a href="https://instagram.com/lantechco" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.25"/><circle cx="8" cy="8" r="2.75" stroke="currentColor" stroke-width="1.25"/><circle cx="11.5" cy="4.5" r=".75" fill="currentColor"/></svg></a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Lantech. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
+    <div>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Services</p>
+      <div style="display:flex;flex-direction:column;gap:.625rem">
+        <a href="services.html" class="footer-link">Web Design</a>
+        <a href="services.html" class="footer-link">SEO Optimization</a>
+        <a href="services.html" class="footer-link">Google Business Profile</a>
+        <a href="services.html" class="footer-link">Social Media</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Company</p>
+      <div style="display:flex;flex-direction:column;gap:.625rem">
+        <a href="about.html" class="footer-link">About</a>
+        <a href="pricing.html" class="footer-link">Pricing</a>
+        <a href="blog.html" class="footer-link">Blog</a>
+        <a href="help.html" class="footer-link">Help</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Contact</p>
+      <div style="display:flex;flex-direction:column;gap:.625rem">
+        <a href="mailto:lantech016@gmail.com" class="footer-link">lantech016@gmail.com</a>
+        <a href="tel:+639773293969" class="footer-link">+63 977 329 3969</a>
+        <a href="contact.html" class="footer-link" style="color:var(--accent);margin-top:.25rem">Get a Free Quote &rarr;</a>
       </div>
     </div>
   </div>
+  <hr class="rule" style="margin-bottom:1.625rem">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem">
+    <p style="color:var(--muted);font-size:.8rem">&copy; 2026 Lantech. All rights reserved.</p>
+    <div style="display:flex;gap:1.5rem"><a href="privacy.html" style="color:var(--muted);font-size:.8rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--txt)'" onmouseout="this.style.color='var(--muted)'">Privacy Policy</a><a href="terms.html" style="color:var(--muted);font-size:.8rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--txt)'" onmouseout="this.style.color='var(--muted)'">Terms of Service</a></div>
+  </div>
+</div>
 </footer>
 
 </body>
