@@ -72,7 +72,7 @@ Using the information from the prospect file (`projects/prospects/[file].md`), p
 - Identified digital gaps
 
 **Determine and set:**
-- Expected delivery date: today + [2 business days for Starter / 5 days for Growth / 7 days for Pro]
+- Expected delivery date: today + [7 business days for Starter / 10 business days for Growth / 14 business days for Pro]
 - Support expiry date: launch date + 30 days
 - Project lead: Luis Echarri
 
@@ -115,22 +115,44 @@ When the completed questionnaire arrives:
 
 1. Review all answers. Flag any gaps (missing logo, no photos, incomplete address).
 2. Fill in `06-client-brief.md` from the questionnaire answers.
-3. If any required fields are missing: send one clarifying email listing exactly what's needed. Do not start the build until the brief is complete.
-4. Upload both files to the client's Drive folder:
-   - Completed `02-onboarding-questionnaire.md`
-   - Completed `06-client-brief.md`
-5. Confirm receipt to the client: *"We've received your questionnaire and we're starting your build now. You'll have a preview link within [TIMELINE]."*
+3. **Populate `client.env` from the questionnaire answers:**
+   - Copy `clients/templates/client.env` into the client folder
+   - Fill every field Claude can derive from the questionnaire:
+     - Business info: name, phone, email, address, hours
+     - Services list (SERVICE_1..N)
+     - Cities served (CITY_1..N)
+     - Emergency service flag
+     - Years in business, license number, review count
+     - External links: GMB, Facebook, Yelp, Nextdoor, BBB, Instagram
+     - TRADE_KEYWORD: derive from SERVICE_1 (e.g. "Drain Cleaning" -> "plumber")
+     - WEBSITE_URL: client's existing domain if they have one
+   - Generate SEO fields using the formula in `docs/superpowers/specs/2026-05-10-client-config-build-system-design.md`
+   - Generate internal links using the SEO strategy in that same spec
+   - Leave `WEB3FORMS_KEY=` blank — collected after account setup
+4. Show the populated `client.env` to the user for review and confirmation.
+5. If any required fields are missing, send one clarifying email. Do not start the build until confirmed.
+6. Upload completed `02-onboarding-questionnaire.md` and `06-client-brief.md` to the client's Drive folder.
+7. Confirm receipt to the client.
 
 ---
 
 ## Step 6 — Trigger the Build
 
-With the brief complete, invoke the build process:
+With `client.env` confirmed and the brief complete:
 
-1. **Read `DESIGN.md`** in the lantech-website workstation
-2. **Invoke `frontend-design` skill**
-3. **Run `/impeccable craft`** with the completed `06-client-brief.md`
-4. Follow the full build → screenshot → QA process in `CLAUDE.md`
+1. **Run `/lantech-build`** using `client.env` and `06-client-brief.md` as data sources.
+   - Build all HTML pages using `{{PLACEHOLDER}}` syntax for every variable value
+     (phone numbers, SEO fields, nav links, external links, colors, form key).
+   - Save all source files to `clients/active/[slug]/_source/`.
+   - Required source files: `index.html`, `services.html`, `about.html`,
+     `contact.html`, `blog.html`, `city.html`, `blog-post.html`.
+2. **Render the final site:**
+   ```
+   python build.py clients/active/[slug]-[YYYY-MM]/
+   ```
+3. Review the build output. Warnings about missing source files must be resolved before QA.
+4. Run the full QA process in `workflows/client-build-standards.md`.
+5. **Post-launch changes:** edit `client.env` -> rerun `python build.py` -> FTP upload changed files.
 
 ---
 
@@ -155,13 +177,14 @@ When the build passes all quality gates in `CLAUDE.md`, run `workflows/revisions
 
 ---
 
-## Package Reference
+## Plan Reference
 
-| Package | Price | Pages | Includes | Delivery |
-|---|---|---|---|---|
-| Starter | $1,200 | Up to 5 | Website + on-page SEO + contact form + SSL + GSC submission | 48–72 hours |
-| Growth | $1,699 | Up to 10 | Starter + local SEO + Google Business Profile optimization | 5 business days |
-| Pro | $1,999 | Up to 20 | Growth + full SEO + social media profile setup + blog setup | 7 business days |
+| Plan | Price | City Pages | Key Inclusions |
+|---|---|---|---|
+| Local Presence | $997/mo | Up to 3 | City pages maintained monthly, emergency page, GBP managed, 150 directory listings, call tracking, review requests, monthly report |
+| Lead Machine | $1,997/mo | Up to 8 | Everything in Local Presence + GBP monthly posts, 2 articles/mo, seasonal content, 4 links/mo, 10 competitors tracked, monthly strategy call |
+| Market Leader | $3,497/mo | Up to 20 | Everything in Lead Machine + 6 articles/mo, 8 links/mo, Google LSA management, AI search optimization, revenue reporting, 20 competitors tracked, dedicated account manager, 2 strategy calls/mo |
 
-**Revisions included:** 2 rounds for all packages. Additional rounds: $75–150/round.
-**Post-launch support:** 30 days free bug fixes. After that: billed at hourly rate.
+**Billing:** Month-to-month. Cancel anytime with 30 days notice. No annual contracts.
+**Revisions:** Initial site build includes 2 revision rounds. Monthly content updates do not require revision rounds.
+**Ownership:** Client owns all site files and can move to any host at any time.
