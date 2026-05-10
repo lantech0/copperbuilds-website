@@ -6,7 +6,7 @@ def parse_config(client_folder) -> dict:
     if not config_path.exists():
         raise FileNotFoundError(f"client.env not found in {client_folder}")
     config = {}
-    with open(config_path, encoding="utf-8") as f:
+    with open(config_path, encoding="utf-8-sig") as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith("#"):
