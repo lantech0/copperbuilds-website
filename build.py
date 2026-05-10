@@ -11,7 +11,7 @@ def main():
 
     client_folder = Path(sys.argv[1])
     if not client_folder.is_dir():
-        print(f"Error: folder not found — {client_folder}")
+        print(f"Error: folder not found: {client_folder}")
         sys.exit(1)
     if not (client_folder / "client.env").exists():
         print(f"Error: no client.env found in {client_folder}")
@@ -30,7 +30,7 @@ def main():
         for w in warnings:
             print(f"  !  {w}")
 
-    print(f"\nDone — {len(generated)} file(s) generated in {client_folder}/")
+    print(f"\nDone - {len(generated)} file(s) generated in {client_folder}/")
 
 
 if __name__ == "__main__":
