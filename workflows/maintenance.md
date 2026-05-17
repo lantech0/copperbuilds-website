@@ -17,15 +17,17 @@ Run at the start of each calendar month for every active maintenance retainer cl
 
 ---
 
-## Maintenance Plans
+## Maintenance Plan
+
+This workflow covers the **Care plan — $120/mo**. The Care plan applies to clients who have completed a one-time website build (Starter / Growth / Pro) and want ongoing hosting and maintenance without an SEO retainer.
+
+Clients on a monthly SEO retainer (Local Presence / Lead Machine / Market Leader) do NOT run this workflow — their monthly work is handled by `workflows/monthly-report.md`, which already includes a speed check and link check as part of standard reporting.
 
 | Plan | Monthly Fee | Included |
 |---|---|---|
-| Basic | $99/mo | Broken link check · Speed check · 1 minor content update · Status email |
-| Standard | $199/mo | Basic + security headers check · monthly performance report · 2 hrs content/design updates |
-| Pro | $299/mo | Standard + full technical SEO re-audit · GBP post draft · blog post or page update |
+| Care | $120/mo | Managed hosting (Hostinger) · security updates + uptime monitoring · monthly backup · performance check (PageSpeed + CWV) · up to 1 hour bug fixes · status email |
 
-Confirm the client's plan from their folder before starting. Only do work included in their plan — log anything out of scope and quote it separately.
+Confirm the client is on the Care plan from their folder before starting. Log anything beyond 1 hour of bug fixes as out-of-scope and quote separately.
 
 ---
 
@@ -58,7 +60,7 @@ Run PageSpeed Insights on the homepage (and top landing page if different from h
 
 If any Core Web Vital has regressed by more than 10 points vs. last month: stop and investigate the cause before proceeding. Check for newly added large images, embed scripts, or third-party widgets.
 
-### Step 3 — Security Headers Check (Standard / Pro only)
+### Step 3 — Security Headers Check
 
 Check `https://securityheaders.com/` for the client's domain. Note any headers rated C or below. Log findings in the maintenance log.
 
@@ -71,26 +73,19 @@ Apply updates within the included plan scope:
 - New photos swapped in (if client provided them)
 - Copy errors or outdated information spotted during the check
 
-For Standard/Pro: track time spent on content updates. Do not exceed the included 2 hours without flagging it.
+Track time spent on content updates. The Care plan includes up to 1 hour of bug fixes and minor updates. Do not exceed 1 hour without flagging it and quoting separately.
 
-### Step 5 — Full Technical SEO Re-Audit (Pro only)
+### Step 5 — Spot-Check Key Pages
 
-Invoke `/seo-technical` on the client's site. Compare findings against last month's log entry. Fix any issues within scope (meta tags, heading structure, schema errors, sitemap issues). Log new issues and whether they were fixed or flagged.
+Open the live site and visually check: homepage, contact page, and the top service page.
+- All click-to-call links still work
+- Contact form submits without error
+- No obvious layout breaks on mobile (375px)
+- No outdated promotions or expired offers visible
 
-### Step 6 — GBP Post Draft (Pro only)
+Log any issues found in Step 6. Fix anything within scope (under 1 hour total for Step 4 + Step 5 combined).
 
-Draft one Google Business Profile post for the client to publish this month. Save to:
-`clients/active/[slug]/gbp-posts/YYYY-MM-gbp-post.md`
-
-Post topics (pick what's most relevant):
-- A seasonal tip related to their trade
-- A service highlight with a specific benefit
-- A recent result or customer outcome (without naming the client)
-- A local event or community connection
-
-The client publishes the post — we draft and recommend, we do not post directly to their GBP unless they have explicitly granted posting access.
-
-### Step 7 — Log the Work
+### Step 6 — Log the Work
 
 Add a maintenance log entry to: `clients/active/[slug]/maintenance-log.md`
 
@@ -98,22 +93,21 @@ Use this format exactly:
 
 ```
 ## [Month YYYY]
-Plan: [Basic / Standard / Pro]
+Plan: Care — $120/mo
 Date completed: YYYY-MM-DD
 
 Checks:
 - Broken links: [X found and fixed / 0 found]
 - Speed (mobile): [score] — LCP [Xs] / CLS [X] / INP [Xms] — [pass / flagged: detail]
-- Security headers: [pass / flagged: detail] (Standard/Pro only)
+- Security headers: [pass / flagged: detail]
 - Content updates: [what was changed, or "none this month"]
-- Technical SEO: [pass / issues found: detail / fixed or flagged] (Pro only)
-- GBP post: [saved to gbp-posts/YYYY-MM / n/a]
+- Key page spot-check: [pass / issues found: detail]
 
-Time spent: X minutes
+Time spent: X minutes (of 60 min included)
 Out-of-scope items flagged: [yes: detail / none]
 ```
 
-### Step 8 — Client Status Email
+### Step 7 — Client Status Email
 
 Send a brief update email:
 
@@ -126,7 +120,7 @@ Body:
 *— Links: [all clear / X fixed]*
 *— [Notable update if any: 'Updated your hours on the contact page' / 'Fixed a broken button on Services']*
 
-*[Standard/Pro: Your full monthly report is attached.]*
+*(Note: Full SEO performance reporting is part of the monthly retainer plans — Local Presence, Lead Machine, Market Leader. The Care plan covers hosting and maintenance only.)*
 
 *Let me know if anything needs attention. — Luis"*
 
@@ -138,13 +132,11 @@ Keep it under 100 words. The client wants to know their site is healthy — not 
 
 - [ ] Broken link check completed — all broken links fixed or noted
 - [ ] Speed check completed — mobile score and CWV values logged
-- [ ] Security headers checked and logged (Standard/Pro)
-- [ ] Content updates applied within plan scope — time logged
-- [ ] Technical SEO re-audit run (Pro only)
-- [ ] GBP post drafted and saved (Pro only)
+- [ ] Security headers checked and logged
+- [ ] Content updates applied within 1-hour scope — time logged
+- [ ] Key page spot-check completed (homepage, contact, top service page)
 - [ ] Maintenance log updated at `clients/active/[slug]/maintenance-log.md`
 - [ ] Client status email sent
-- [ ] Monthly report generated and attached (Standard/Pro — run `workflows/monthly-report.md`)
 
 ---
 

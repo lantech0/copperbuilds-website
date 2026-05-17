@@ -1,0 +1,16 @@
+extends: existence
+message: "Weak CTA phrase: '%s'. Use a specific action label — e.g., 'Get My Free Quote', 'Book a Same-Day Visit', 'Start My Estimate'. CTA text must name what happens when clicked."
+link: ''
+level: warning
+ignorecase: true
+tokens:
+  - '\bClick Here\b'
+  - '\bLearn More\b'
+  - '\bRead More\b'
+  - '\bFind Out More\b'
+  - '\bSee More\b'
+  - '\bGet Started\b'
+  - '\bContact Us\b'
+  - '\bBuy Now\b'
+  - '\bSign Up\b'
+  - '\bSubmit\b'

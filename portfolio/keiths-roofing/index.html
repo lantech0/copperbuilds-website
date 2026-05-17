@@ -35,6 +35,13 @@
         "image": "https://images.pexels.com/photos/33404248/pexels-photo-33404248.jpeg?auto=compress&cs=tinysrgb&w=800",
         "url": "https://keithsroofingtampa.com",
         "telephone": "(727) 555-0287",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "187",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5313 17th Ave S",
@@ -231,6 +238,82 @@
       .projects-grid { grid-template-columns: 1fr; }
       .hero-creds { gap: 20px; }
     }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .proof-bar { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 40px; }
+    .proof-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px; }
+    .proof-item { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; font-weight: 600; color: var(--dark); white-space: nowrap; }
+    .proof-item svg { flex-shrink: 0; }
+    .proof-divider { width: 1px; height: 24px; background: var(--border); }
+    @media (max-width: 640px) { .proof-divider { display: none; } }
+
+    /* ── STORM BAND ── */
+    .storm-band { background: var(--brick); padding: 56px 40px; }
+    .storm-inner { max-width: 1280px; margin: 0 auto; display: grid; gap: 48px; align-items: center; }
+    @media (min-width: 768px) { .storm-inner { grid-template-columns: 1fr auto; } }
+    .storm-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 12px; }
+    .storm-left p { font-size: 0.95rem; color: rgba(255,255,255,0.8); max-width: 500px; line-height: 1.75; }
+    .storm-features { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .storm-feature { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; color: rgba(255,255,255,0.9); }
+    .storm-feature svg { flex-shrink: 0; color: rgba(255,255,255,0.7); }
+    .storm-right { display: flex; flex-direction: column; gap: 12px; }
+    .btn-white-full { background: var(--white); color: var(--brick); font-size: 0.95rem; padding: 14px 28px; white-space: nowrap; }
+    .btn-white-full:hover { background: var(--cream-2); }
+    .btn-white-full:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+    .btn-outline-white-full { background: transparent; border: 1.5px solid rgba(255,255,255,0.5); color: var(--white); font-size: 0.95rem; padding: 14px 28px; white-space: nowrap; justify-content: center; }
+    .btn-outline-white-full:hover { border-color: var(--white); }
+    .btn-outline-white-full:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+
+    /* ── AGGREGATE REVIEW HEADER ── */
+    .review-aggregate { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin: 24px 0 48px; padding: 28px; border: 1px solid var(--border); background: var(--cream); }
+    .agg-score { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 700; color: var(--dark); line-height: 1; }
+    .agg-stars { color: var(--brick); font-size: 1.1rem; letter-spacing: 2px; }
+    .agg-count { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .agg-divider { width: 1px; height: 48px; background: var(--border); }
+    .agg-badge { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+    .agg-cta { margin-left: auto; }
+    .btn-outline-reviews { background: transparent; border: 1.5px solid var(--border); color: var(--dark); font-size: 0.85rem; padding: 10px 20px; }
+    .btn-outline-reviews:hover { border-color: var(--dark); }
+    .btn-outline-reviews:focus-visible { outline: 2px solid var(--dark); outline-offset: 3px; }
+
+    /* ── TESTIMONIALS EXPANDED ── */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 0; }
+    .review-verified { font-size: 0.72rem; color: var(--blue); font-weight: 600; margin-top: 6px; }
+
+    /* ── SERVICE AREAS ── */
+    .areas-section { background: var(--cream-2); padding: 72px 40px; }
+    .areas-inner { max-width: 1280px; margin: 0 auto; }
+    .areas-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .area-pill { display: flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); color: var(--dark); padding: 8px 18px; font-size: 0.84rem; font-weight: 500; transition: border-color 0.2s; }
+    .area-pill:hover { border-color: var(--brick); }
+    .area-pill svg { color: var(--brick); flex-shrink: 0; }
+
+    /* ── FOOTER 4-COL ── */
+    @media (min-width: 640px) { .footer-inner { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+
+    /* ── FOOTER RATING ── */
+    .footer-rating { display: flex; align-items: center; gap: 10px; margin-top: 20px; padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-rating-text { font-size: 0.8rem; font-weight: 600; color: var(--white); }
+    .footer-rating-sub { font-size: 0.68rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+    .footer-brick-star { color: var(--brick); }
+
+    /* ── MOBILE STICKY CTA ── */
+    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--white); border-top: 1px solid var(--border); padding: 12px 16px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+    .mobile-sticky-inner { display: flex; gap: 10px; }
+    .mobile-sticky .btn { flex: 1; justify-content: center; font-size: 0.92rem; padding: 13px 12px; }
+    .btn-brick-mobile { background: var(--brick); color: var(--white); }
+    .btn-brick-mobile:hover { background: var(--brick-dark); }
+    .btn-brick-mobile:focus-visible { outline: 2px solid var(--brick); outline-offset: 2px; }
+    .btn-outline-mobile { background: transparent; border: 1.5px solid var(--dark); color: var(--dark); }
+    .btn-outline-mobile:hover { background: var(--dark); color: var(--white); }
+    .btn-outline-mobile:focus-visible { outline: 2px solid var(--dark); outline-offset: 2px; }
+
+    @media (max-width: 767px) {
+      .mobile-sticky { display: block; }
+      body { padding-bottom: 72px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
@@ -294,6 +377,36 @@
       "After every hurricane, out-of-state crews flood Tampa with bad work and disappeared warranties. We live here. We'll be here next year when your roof needs us."
       <cite>— Keith Vandermeer, Owner · Keith's Roofing &amp; Repair</cite>
     </blockquote>
+  </div>
+
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar">
+    <div class="proof-inner">
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-label="Google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span>4.9★ · 187 Google Reviews</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1D7FB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>GAF Certified Contractor</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1D7FB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        <span>BBB Accredited · A+ Rating</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C85422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Tampa Bay Since 2005</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C85422" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <span>FL Lic. # CCC1334641</span>
+      </div>
+    </div>
   </div>
 
   <!-- SERVICES -->
@@ -368,6 +481,38 @@
       </div>
     </div>
   </section>
+
+  <!-- STORM DAMAGE BAND -->
+  <div class="storm-band">
+    <div class="storm-inner">
+      <div class="storm-left">
+        <h2>Storm Damage? Don't Wait.</h2>
+        <p>Florida weather doesn't give warnings. After any storm event — hurricane, tropical storm, or severe hail — call us first. We're on rooftops within 24 hours, emergency tarps up the same day.</p>
+        <div class="storm-features">
+          <div class="storm-feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Emergency tarping within 24 hours
+          </div>
+          <div class="storm-feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            We work directly with your insurance adjuster
+          </div>
+          <div class="storm-feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Free storm inspection — no obligation
+          </div>
+          <div class="storm-feature">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Licensed, local — not a storm chaser crew
+          </div>
+        </div>
+      </div>
+      <div class="storm-right">
+        <a href="contact.html" class="btn btn-white-full">Get Free Storm Inspection →</a>
+        <a href="tel:7275550287" class="btn btn-outline-white-full">(727) 555-0287</a>
+      </div>
+    </div>
+  </div>
 
   <!-- PROJECT GALLERY -->
   <section class="projects-bg">
@@ -452,13 +597,27 @@
     <div class="section-inner">
       <span class="eyebrow">Customer Reviews</span>
       <h2 class="section-heading">What Tampa Bay Homeowners Say</h2>
+      <div class="review-aggregate">
+        <div>
+          <div class="agg-score">4.9</div>
+          <div class="agg-stars">★★★★★</div>
+          <div class="agg-count">187 verified Google reviews</div>
+        </div>
+        <div class="agg-divider"></div>
+        <div class="agg-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-label="Google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Verified Google Reviews
+        </div>
+        <a href="contact.html" class="btn btn-outline-reviews agg-cta">Read All 187 Reviews →</a>
+      </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-quote" aria-hidden="true">"</div>
           <p class="testimonial-text">Hurricane Ian took out half our roof. Keith had tarps up within 18 hours, worked with our insurance adjuster directly, and had the full replacement completed in 4 days. Cannot recommend them enough to anyone in Tampa Bay.</p>
           <div class="testimonial-reviewer">
             <div class="reviewer-name">Tom &amp; Karen B.</div>
-            <div class="reviewer-loc">Tampa, FL &middot; Google Review</div>
+            <div class="reviewer-loc">Tampa, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
           </div>
         </div>
         <div class="testimonial-card">
@@ -466,7 +625,8 @@
           <p class="testimonial-text">Got three estimates for a full roof replacement. Keith came in $2,000 under the others and was the only contractor who actually got on my roof to inspect it. Work was perfect. Crew left the yard spotless.</p>
           <div class="testimonial-reviewer">
             <div class="reviewer-name">Rachel S.</div>
-            <div class="reviewer-loc">Gulfport, FL &middot; Google Review</div>
+            <div class="reviewer-loc">Gulfport, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
           </div>
         </div>
         <div class="testimonial-card">
@@ -474,7 +634,35 @@
           <p class="testimonial-text">Had a leak around a vent pipe. Most roofers wanted to replace the entire section. Keith fixed the flashing for $275 and it's been bone dry through three Tampa rainstorms. That kind of honesty is rare.</p>
           <div class="testimonial-reviewer">
             <div class="reviewer-name">Marco A.</div>
-            <div class="reviewer-loc">St. Petersburg, FL &middot; Google Review</div>
+            <div class="reviewer-loc">St. Petersburg, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote" aria-hidden="true">"</div>
+          <p class="testimonial-text">Used Keith's for a pre-purchase inspection on a home in Pinellas County. Written report was detailed, professional, and honest — he found two issues the listing agent conveniently hadn't mentioned. Saved us a lot of money.</p>
+          <div class="testimonial-reviewer">
+            <div class="reviewer-name">Amanda &amp; Pete R.</div>
+            <div class="reviewer-loc">Pinellas Park, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote" aria-hidden="true">"</div>
+          <p class="testimonial-text">Insurance denied our claim at first. Keith's team re-documented the damage, communicated directly with the adjuster, and got it approved. Entire replacement covered. This company went above and beyond.</p>
+          <div class="testimonial-reviewer">
+            <div class="reviewer-name">Deb H.</div>
+            <div class="reviewer-loc">Largo, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote" aria-hidden="true">"</div>
+          <p class="testimonial-text">We hired Keith's for a commercial flat roof. They finished on time, stayed under budget, and cleaned up the property every single evening. Our tenants never noticed they were there. That's how it should be done.</p>
+          <div class="testimonial-reviewer">
+            <div class="reviewer-name">NorthBay Property Group</div>
+            <div class="reviewer-loc">Tampa Bay, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
           </div>
         </div>
       </div>
@@ -511,6 +699,57 @@
     </div>
   </section>
 
+  <!-- SERVICE AREAS -->
+  <div class="areas-section">
+    <div class="areas-inner">
+      <span class="eyebrow">Coverage Area</span>
+      <h2 class="section-heading">Serving All of Tampa Bay</h2>
+      <p class="section-sub" style="margin-top:8px;">Licensed roofing contractor serving Hillsborough and Pinellas Counties — including Tampa, St. Pete, and the beaches.</p>
+      <div class="areas-pills">
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Tampa
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          St. Petersburg
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Gulfport
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Clearwater
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Largo
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Pinellas Park
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Brandon
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Riverview
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Dunedin
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Safety Harbor
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA -->
   <div class="cta-section">
     <div style="max-width:1280px; margin:0 auto;">
@@ -531,6 +770,13 @@
         <div class="footer-lic">Florida Lic. # CCC1334641</div>
         <p>Serving Hillsborough County, Pinellas County, Tampa, St. Petersburg, Gulfport, and surrounding Tampa Bay communities since 2005.</p>
         <p style="margin-top:12px; font-size:0.86rem;">5313 17th Ave S, Gulfport, FL 33707</p>
+        <div class="footer-rating">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-label="Google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <div>
+            <div class="footer-rating-text"><span class="footer-brick-star">★★★★★</span> 4.9 · 187 Reviews</div>
+            <div class="footer-rating-sub">Google Business Profile</div>
+          </div>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -541,6 +787,17 @@
           <li><a href="services.html#inspection">Roof Inspections</a></li>
           <li><a href="services.html#flat">Flat Roofing</a></li>
           <li><a href="services.html#gutters">Gutters</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="#">Tampa</a></li>
+          <li><a href="#">St. Petersburg</a></li>
+          <li><a href="#">Gulfport</a></li>
+          <li><a href="#">Clearwater</a></li>
+          <li><a href="#">Largo</a></li>
+          <li><a href="#">Brandon</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -558,6 +815,14 @@
       <span>Licensed Roofing Contractor &middot; Florida Lic. # CCC1334641</span>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky" role="complementary" aria-label="Quick contact">
+    <div class="mobile-sticky-inner">
+      <a href="contact.html" class="btn btn-brick-mobile">Free Estimate →</a>
+      <a href="tel:7275550287" class="btn btn-outline-mobile">Call Now</a>
+    </div>
+  </div>
 
 </body>
 </html>

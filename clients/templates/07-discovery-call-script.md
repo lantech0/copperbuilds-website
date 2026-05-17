@@ -51,7 +51,7 @@ If you have questions before deciding, reply here and I'll answer them straight.
 If you're ready to move forward, just reply "yes" and I'll send the agreement and invoice the same day.
 
 [YOUR NAME]
-Lantech | lantech016@gmail.com | lantech.co
+Lantech | lantech016@gmail.com | lantech-website.vercel.app
 
 ---
 
@@ -102,3 +102,34 @@ Lantech | lantech016@gmail.com
 | "I already have a website" | "[Specific finding from your audit]. That's costing you Google rankings right now." |
 | "Not in my budget right now" | "When does your situation change? I can note to follow up then." |
 | "I need to talk to my partner/accountant" | "Of course. When are you talking to them? I can follow up after that." |
+
+---
+
+## OPTIONAL ADD-ONS (offer if client brings it up — never push)
+
+| Add-on | One-line pitch | Price |
+|---|---|---|
+| **Google LSA** | Pay-per-verified-lead ads at the top of Google with a "Google Verified" badge — clients only pay for real leads, not clicks. | On standby — quote case by case |
+| **ADA compliance** | Makes the site usable for people with disabilities. Required under US law. Prevents ADA demand letters. | Baseline free in all builds · full audit quoted per site |
+
+> **Note:** SMS automation and call tracking are now bundled into Lead Machine and Market Leader via the automated lead system (GHL). No longer a separate add-on.
+
+---
+
+---
+
+### Google LSA — Full Detail
+
+**What it is:** Google Local Services Ads — separate from Google Ads. Shows at the very top of search results with a "Google Verified" badge. Pay-per-lead only (not per click). Google guarantees leads up to a weekly budget cap.
+**Requirements:** Background check, license verification, insurance verification, Google's approval process. Takes 2–4 weeks to get approved.
+**Status:** On standby — offer only if client asks about paid ads or already has an LSA account.
+**How to handle:** "Yes, we can help with that — it requires a setup process on Google's end first. Let me get you the details and quote it separately."
+
+---
+
+### ADA Compliance — Full Detail
+
+**What it is:** Websites must be usable by people with disabilities under the Americans with Disabilities Act. The technical standard is WCAG 2.1 AA. Covers: screen reader compatibility, keyboard navigation, color contrast, form labels, heading structure.
+**Risk:** Small businesses in the US have received ADA demand letters. Most settle for $5,000–$25,000. A compliant site eliminates this risk.
+**What Lantech does:** A baseline accessibility pass is included in every new build (8 checks — part of `client-build-standards.md`). For existing sites not built by Lantech: offer a one-time WCAG audit — quote per site.
+**When to offer:** If client asks about legal risk, if they serve elderly customers (higher accessibility awareness), or if they have an existing site they want audited.

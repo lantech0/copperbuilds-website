@@ -25,11 +25,11 @@ Run this workflow when:
 ## Required Inputs
 
 Before writing a word:
-- Prospect file at `clients/prospects/[file].md` — business name, owner name, contact info, gaps found, recommended package
+- Prospect file at `clients/prospects/[file].md` — business name, owner name, contact info, gaps found, recommended plan, Est. Tier from service area capture
 - Discovery call notes — objections raised, the revenue figure they mentioned, specific pain points in their words
-- Recommended package decided (Starter / Growth / Pro) — do not write the proposal without a clear recommendation
+- Recommended plan decided (Local Presence / Lead Machine / Market Leader) — do not write the proposal without a clear recommendation
 
-If the recommended package is not decided: decide it now based on the prospect's gaps and budget signals from the call. Do not present all three options.
+If the recommended plan is not decided: use the Est. Tier from the prospect file (based on city count). If still unclear, decide from budget signals on the call. Do not present all three options.
 
 ---
 
@@ -41,7 +41,7 @@ Read `clients/prospects/[file].md`. Confirm you have:
 - Business name and owner name
 - Top 2–3 specific gaps found during the audit (specific — not "your SEO needs work")
 - The revenue opportunity figure (from search volume research or the number they said on the call)
-- Recommended package and price
+- Recommended plan and monthly price
 - Any objection they raised on the call
 
 Fill any missing fields from your call notes before proceeding.
@@ -52,7 +52,7 @@ Invoke the `/market-proposal` skill with these inputs:
 - Business name and owner
 - The 2–3 specific gaps (be concrete: "your site loads in 7s on mobile" beats "site speed issues")
 - Revenue opportunity figure
-- Recommended package, price, and its key inclusions
+- Recommended plan, monthly price, and its key inclusions
 - Delivery timeline for the chosen package
 - What happens next: agreement + invoice → questionnaire → build starts within 24 hours
 

@@ -19,7 +19,29 @@
 
 2. *What does your business do? (2–3 sentences, as if explaining to a new customer)
 
-3. *What city, state, and area do you serve? (list all service areas if multiple)
+3. *What is your primary service city? (the city where most of your jobs come from)
+   Primary city, state: ___________________________
+
+   Do you serve additional cities or areas?
+   - [ ] Yes — list them below (one per line, add as many as you need):
+     1. ___________________________
+     2. ___________________________
+     3. ___________________________
+     4. ___________________________
+     5. ___________________________
+     6. ___________________________
+     7. ___________________________
+     8. ___________________________
+   - [ ] No — I only serve my primary city
+
+   How far do you typically travel for jobs?
+   - [ ] Within city limits only
+   - [ ] Up to 20 miles from my location
+   - [ ] Up to 50 miles
+   - [ ] 50+ miles / large regional coverage
+
+   *Total number of cities/areas you actively serve: _____
+   *(This is used to recommend the right plan tier — 1–3 cities, 4–8 cities, or 9–20 cities.)*
 
 4. *Business address (if you have a physical location or registered address):
    - Street: ___________________________
@@ -36,6 +58,18 @@
    - Closed on: ___________
 
 8. How long have you been in business?
+
+8a. How many service vehicles (trucks/vans) does your business currently operate?
+    - [ ] 1 — owner-operated
+    - [ ] 2–3 trucks
+    - [ ] 4–10 trucks
+    - [ ] 10+ trucks
+
+8b. How many jobs do you typically complete per month?
+    - [ ] Under 20
+    - [ ] 20–50
+    - [ ] 50–100
+    - [ ] 100+
 
 9. Do you have a Google Business Profile (Google Maps listing)?
    - [ ] Yes — verified and complete
@@ -111,6 +145,17 @@
     4. ___________________________
     5. ___________________________
     (add more if Growth or Pro package)
+
+20. Do you offer financing to your customers?
+    - [ ] Yes — I offer financing through: ___________________________
+    - [ ] No — I do not offer financing
+    - [ ] Not yet — I'd like to add it eventually
+
+    *If yes — do you have an embed code or apply link from your financing provider?*
+    - [ ] Yes — I'll email the embed code / link after submitting this form
+    - [ ] Not yet — I'm still enrolled / in process (send to me when ready)
+
+    *Financing provider examples: Hearth, GreenSky, Wisetack, Service Finance, Synchrony Home, other.*
 
 ---
 
@@ -229,21 +274,71 @@
 ## SECTION 8 — Your Package
 *Confirms what's included in your project.*
 
-37. *Which Lantech package did you purchase?
-    - [ ] Starter — $1,200 (up to 5 pages)
-    - [ ] Growth — $1,699 (up to 10 pages + local SEO + GBP)
-    - [ ] Pro — $1,999 (up to 20 pages + full SEO + social media setup)
+37. *Which Lantech monthly plan did you purchase?
+    - [ ] Local Presence — $997/mo (city pages refreshed monthly · GBP 4 posts/mo · Top 50 citations · call tracking · review automation · monthly report)
+    - [ ] Lead Machine — $1,997/mo (1 new city page built/mo · GBP weekly posts · 2 articles/mo · 4 links/mo · 10 competitors tracked · monthly strategy call)
+    - [ ] Market Leader — $3,497/mo (2 new city pages built/mo · 4 articles/mo · 5–8 links/mo · Google LSA management · AI search optimization · 20 competitors tracked · dedicated account manager · 1 strategy call/mo)
 
-38. Add-ons included in your package: (check what applies)
-    - [ ] SEO optimization
+38. Add-ons included in your plan: (check what applies)
     - [ ] Google Business Profile setup / optimization
-    - [ ] Social media profile setup
     - [ ] Blog setup
-    - [ ] E-commerce / online store
+    - [ ] Social media profile setup
+    - [ ] Google Local Services Ads management
+    - [ ] Emergency / service-specific landing pages
 
 ---
 
-## SECTION 9 — Final Notes
+## SECTION 9 — Lead Automation Setup
+*For Lead Machine and Market Leader clients only. Skip if you are on Local Presence.*
+
+**9A — SMS Compliance (Required for text message automation)**
+
+41. *What is your business EIN (Employer Identification Number)?
+    EIN: ___________________________
+    *(This must match your IRS records exactly — used to register your business for SMS sending.)*
+
+42. *Legal business name as registered with the IRS:
+    Legal name: ___________________________
+
+43. *Business structure:
+    - [ ] Sole Proprietor
+    - [ ] LLC
+    - [ ] Corporation (Inc.)
+    - [ ] Partnership
+    - [ ] Other: ___________________________
+
+**9B — Automation Setup**
+
+44. *Paste your Google review link below:
+    *(Go to your Google Business Profile → Share review form → copy the link)*
+    Google review link: ___________________________
+
+45. *What name should appear in automated text messages?
+    *(e.g. "Mike from ABC Plumbing" or "The ABC Plumbing Team")*
+    SMS sign-off name: ___________________________
+
+46. What are your main job/service types? (list up to 5 — used to tag leads in your pipeline)
+    1. ___________________________
+    2. ___________________________
+    3. ___________________________
+    4. ___________________________
+    5. ___________________________
+
+47. Do you use any existing booking or scheduling software?
+    - [ ] Yes — name: ___________________________
+    - [ ] No — we'll use the new booking calendar
+
+**9C — Existing Contacts (Optional)**
+
+48. Do you have an existing customer list you'd like imported?
+    *(Importing past customers unlocks re-engagement campaigns and seasonal blasts)*
+    - [ ] Yes — I'll send a CSV (name, phone, email, last service date)
+    - [ ] No
+    - [ ] I'll send it later once the system is live
+
+---
+
+## SECTION 10 — Final Notes
 
 39. After your site launches, would you like Lantech to maintain it monthly?
     Monthly maintenance covers: speed checks, broken link fixes, content updates, and a performance report.
@@ -253,7 +348,7 @@
 
 40. Is there a specific launch deadline?
     - [ ] Yes — Date: ___________________________
-    - [ ] No — as soon as possible (we target 48 hours from brief completion)
+    - [ ] No — as soon as possible (we target 14 days from brief completion)
 
 40. Is there anything else we should know before we start?
     (special requirements, things to avoid, past bad experiences with web agencies, anything sensitive)
@@ -265,7 +360,7 @@
 Once we receive your completed questionnaire:
 
 1. We review your answers and may follow up with 1–2 clarifying questions
-2. We build your first draft within **48 hours**
+2. We build your first draft within **14 days**
 3. We send you a preview link for review
 4. You give us feedback — we revise and finalize
 5. We hand over the completed site with all logins and a how-to guide

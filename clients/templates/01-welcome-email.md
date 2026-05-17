@@ -62,7 +62,7 @@ Looking forward to building something great for [BUSINESS_NAME].
 — [YOUR_NAME]
 Lantech
 lantech016@gmail.com
-lantech.co
+lantech-website.vercel.app
 
 ---
 *You're receiving this because you recently purchased a website design package from Lantech.*

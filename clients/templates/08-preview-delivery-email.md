@@ -53,7 +53,7 @@ After [REVIEW_DEADLINE], this round is considered approved and we move to the ne
 Looking forward to your feedback.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com | lantech.co
+Lantech | lantech016@gmail.com | lantech-website.vercel.app
 
 ---
 

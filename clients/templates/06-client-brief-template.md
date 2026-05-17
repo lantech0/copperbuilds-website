@@ -45,6 +45,7 @@
 | Google Business Profile | [URL or "not set up"] |
 | Years in business | [e.g. 12 years] |
 | Tagline / slogan | [If they have one] |
+| Financing offered | [Yes — Provider: ___ / Embed code received: Yes/No / Apply link: ___] or [No] |
 
 ---
 
@@ -187,6 +188,13 @@ What makes this business different from competitors:
     {"@type": "State", "name": "[State]"}
   ],
   "priceRange": "[$ / $$ / $$$ or price range]",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "[e.g. 4.9]",
+    "reviewCount": "[total review count]",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "image": "https://[domain]/og-image.jpg",
   "sameAs": [
     "[Facebook URL]",
@@ -285,3 +293,6 @@ Include in footer:
 - [ ] All images have descriptive alt text
 - [ ] No placeholder content visible (no lorem ipsum, no fake phone numbers)
 - [ ] Google Analytics tag installed (if client provided GA4 ID)
+- [ ] `aggregateRating` in LocalBusiness schema (pull rating + count from Google/Yelp reviews)
+- [ ] Financing band built if client offers financing — embed code or apply link inserted (not a placeholder)
+- [ ] If financing not offered — financing band omitted entirely (no empty section)

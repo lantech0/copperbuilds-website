@@ -34,6 +34,13 @@
         "image": "https://images.pexels.com/photos/6728925/pexels-photo-6728925.jpeg?auto=compress&cs=tinysrgb&w=800",
         "url": "https://seraphinlawnscape.com",
         "telephone": "(813) 555-0364",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "214",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "2107 E Hillsborough Ave",
@@ -247,6 +254,106 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .proof-bar { background: var(--white); border-top: 2px solid var(--forest); border-bottom: 1px solid var(--border); padding: 18px 40px; }
+    .proof-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px; }
+    .proof-item { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; font-weight: 600; color: var(--dark); white-space: nowrap; }
+    .proof-item svg { flex-shrink: 0; }
+    .proof-divider { width: 1px; height: 24px; background: var(--border); }
+    @media (max-width: 640px) { .proof-divider { display: none; } }
+
+    /* ── MAINTENANCE PLAN BAND ── */
+    .maintenance-band { background: var(--forest); padding: 56px 40px; }
+    .maintenance-inner { max-width: 1280px; margin: 0 auto; display: grid; gap: 48px; align-items: center; }
+    @media (min-width: 768px) { .maintenance-inner { grid-template-columns: 1fr 1fr; } }
+    .maintenance-left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+    .maintenance-left p { font-size: 0.95rem; color: rgba(255,255,255,0.78); line-height: 1.75; margin-bottom: 20px; }
+    .plan-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .plan-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 16px 20px; border-radius: 2px; }
+    .plan-item .plan-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .plan-item .plan-freq { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+    .plan-item .plan-price { font-size: 0.9rem; font-weight: 600; color: var(--sage); margin-top: 6px; }
+    .btn-sage { background: var(--sage); color: var(--dark); font-weight: 700; }
+    .btn-sage:hover { background: #6BA054; }
+    .btn-sage:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+    .btn-outline-white-maint { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: var(--white); margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; border: none; transition: background 0.2s; }
+    .btn-outline-white-maint { border: 1.5px solid rgba(255,255,255,0.4); }
+    .btn-outline-white-maint:hover { border-color: var(--white); }
+    .btn-outline-white-maint:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+    .maintenance-ctas { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+
+    /* ── AGGREGATE REVIEW HEADER ── */
+    .review-aggregate { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin: 20px 0 40px; padding: 24px; border: 1px solid var(--border); background: var(--cream); }
+    .agg-score { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 800; color: var(--dark); line-height: 1; }
+    .agg-stars { color: var(--earth); font-size: 1.1rem; letter-spacing: 2px; }
+    .agg-count { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+    .agg-divider { width: 1px; height: 48px; background: var(--border); }
+    .agg-badge { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+    .agg-cta { margin-left: auto; }
+    .btn-outline-agg { background: transparent; border: 1.5px solid var(--border); color: var(--dark); font-size: 0.85rem; padding: 10px 20px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 600; transition: border-color 0.2s; }
+    .btn-outline-agg:hover { border-color: var(--forest); color: var(--forest); }
+    .btn-outline-agg:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+
+    /* ── REVIEWS EXPANDED ── */
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 0; }
+    .review-verified { font-size: 0.72rem; color: var(--forest-mid); font-weight: 600; margin-top: 6px; }
+
+    /* ── FAQ SECTION ── */
+    .faq-section { background: var(--cream); padding: 88px 40px; }
+    .faq-layout { display: grid; gap: 48px; margin-top: 48px; }
+    @media (min-width: 768px) { .faq-layout { grid-template-columns: 1fr 320px; } }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-btn { width: 100%; background: none; border: none; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--dark); transition: color 0.2s; }
+    .faq-btn:hover { color: var(--forest); }
+    .faq-btn:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+    .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--earth-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--earth); font-size: 1rem; font-weight: 700; transition: transform 0.25s, background 0.2s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--forest); color: var(--white); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-answer-inner { padding-bottom: 18px; font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+    .faq-item.open .faq-answer { max-height: 200px; }
+    .faq-aside { background: var(--forest); padding: 32px; color: var(--white); border-radius: 2px; }
+    .faq-aside h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; margin-bottom: 10px; }
+    .faq-aside p { font-size: 0.88rem; color: rgba(255,255,255,0.72); margin-bottom: 24px; line-height: 1.7; }
+    .faq-aside-phone { display: block; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--sage); text-decoration: none; margin-bottom: 20px; }
+    .faq-aside-phone:hover { text-decoration: underline; }
+    .faq-aside-perks { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12); }
+    .faq-aside-perks li { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.85); }
+    .faq-aside-perks li svg { color: var(--sage); flex-shrink: 0; }
+
+    /* ── SERVICE AREAS ── */
+    .areas-section { background: var(--earth-light); padding: 72px 40px; }
+    .areas-inner { max-width: 1280px; margin: 0 auto; }
+    .areas-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .area-pill { display: flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--border); color: var(--dark); padding: 9px 18px; font-size: 0.84rem; font-weight: 500; transition: border-color 0.2s; }
+    .area-pill:hover { border-color: var(--forest); }
+    .area-pill svg { color: var(--forest); flex-shrink: 0; }
+
+    /* ── FOOTER 4-COL ── */
+    @media (min-width: 768px) { .footer-inner { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+
+    /* ── FOOTER RATING ── */
+    .footer-rating { display: flex; align-items: center; gap: 10px; margin-top: 20px; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+    .footer-rating-text { font-size: 0.8rem; font-weight: 600; color: var(--white); }
+    .footer-rating-sub { font-size: 0.68rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+    /* ── MOBILE STICKY CTA ── */
+    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--white); border-top: 2px solid var(--forest); padding: 12px 16px; box-shadow: 0 -4px 20px rgba(42,82,24,0.15); }
+    .mobile-sticky-inner { display: flex; gap: 10px; }
+    .mobile-sticky .btn { flex: 1; justify-content: center; font-size: 0.92rem; padding: 13px 12px; }
+    .btn-forest-mobile { background: var(--forest); color: var(--white); }
+    .btn-forest-mobile:hover { background: var(--forest-dark); }
+    .btn-forest-mobile:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+    .btn-outline-mobile { background: transparent; border: 1.5px solid var(--forest); color: var(--forest); }
+    .btn-outline-mobile:hover { background: var(--forest); color: var(--white); }
+    .btn-outline-mobile:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+    @media (max-width: 767px) {
+      .mobile-sticky { display: block; }
+      body { padding-bottom: 72px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
   </style>
 </head>
 <body>
@@ -293,6 +400,36 @@
     </div>
     <span class="scroll-hint">Scroll to see our work</span>
   </section>
+
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar">
+    <div class="proof-inner">
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-label="Google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span>4.9★ · 214 Google Reviews</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A5218" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>Woman-Owned Business</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A5218" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        <span>Licensed &amp; Insured</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B6419" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>300+ Active Clients</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B6419" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span>7+ Years in Tampa Bay</span>
+      </div>
+    </div>
+  </div>
 
   <!-- TRANSFORMATION GALLERY -->
   <div class="gallery-bg">
@@ -400,6 +537,43 @@
     </div>
   </section>
 
+  <!-- MAINTENANCE PLAN BAND -->
+  <div class="maintenance-band">
+    <div class="maintenance-inner">
+      <div class="maintenance-left">
+        <h2>Set It and Forget It.<br>We Show Up Every Week.</h2>
+        <p>Our maintenance plans mean you never have to think about your lawn again. We mow, edge, trim, and blow — every visit, no skipped weeks, no excuses. Pick the plan that fits your yard.</p>
+        <div class="plan-items">
+          <div class="plan-item">
+            <div class="plan-name">Basic Weekly</div>
+            <div class="plan-freq">Mow · Edge · Trim · Blow</div>
+            <div class="plan-price">From $39/week</div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-name">Full Maintenance</div>
+            <div class="plan-freq">Weekly + Fertilization + Weed</div>
+            <div class="plan-price">From $69/week</div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-name">Bi-Weekly</div>
+            <div class="plan-freq">Every 2 weeks, all services</div>
+            <div class="plan-price">From $55/visit</div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-name">Premium Care</div>
+            <div class="plan-freq">Full service + Irrigation check</div>
+            <div class="plan-price">From $99/week</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a href="contact.html" class="btn btn-sage" style="width:100%; justify-content:center; padding:14px 28px; margin-bottom:12px; text-decoration:none; display:flex; align-items:center; gap:8px;">Get a Maintenance Quote →</a>
+        <a href="tel:8135550364" class="btn btn-outline-white-maint" style="width:100%; justify-content:center; border:1.5px solid rgba(255,255,255,0.4); color:var(--white); display:flex; align-items:center; gap:8px; text-decoration:none;">(813) 555-0364</a>
+        <p style="font-size:0.82rem; color:rgba(255,255,255,0.5); margin-top:16px; text-align:center;">Free estimate · No contract required · Cancel anytime</p>
+      </div>
+    </div>
+  </div>
+
   <!-- BEFORE / AFTER TRANSFORMATION -->
   <section class="transform-bg">
     <div class="section-inner">
@@ -468,13 +642,27 @@
     <div class="section-inner">
       <span class="eyebrow">Customer Reviews</span>
       <h2 class="section-heading">What Tampa Homeowners Say</h2>
+      <div class="review-aggregate">
+        <div>
+          <div class="agg-score">4.9</div>
+          <div class="agg-stars">★★★★★</div>
+          <div class="agg-count">214 verified Google reviews</div>
+        </div>
+        <div class="agg-divider"></div>
+        <div class="agg-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-label="Google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Verified Google Reviews
+        </div>
+        <a href="contact.html" class="btn-outline-agg agg-cta">Read All 214 Reviews →</a>
+      </div>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="stars">★★★★★</div>
           <p class="review-text">"Seraphin has been maintaining our lawn for 2 years and it has never looked better. They show up every week without fail, never skip edging, and always text when they're done. Exactly what you want in a lawn service."</p>
           <div class="reviewer">
             <div class="reviewer-name">Lisa &amp; Patrick M.</div>
-            <div class="reviewer-loc">Tampa, FL &middot; Google Review</div>
+            <div class="reviewer-loc">Tampa, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
           </div>
         </div>
         <div class="review-card">
@@ -482,7 +670,8 @@
           <p class="review-text">"Jasmine redesigned our entire front yard from scratch. She listened to what we wanted, suggested plants that actually survive Tampa heat, and her crew installed everything in two days. It looks incredible."</p>
           <div class="reviewer">
             <div class="reviewer-name">Andrea T.</div>
-            <div class="reviewer-loc">Brandon, FL &middot; Google Review</div>
+            <div class="reviewer-loc">Brandon, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
           </div>
         </div>
         <div class="review-card">
@@ -490,12 +679,158 @@
           <p class="review-text">"Had a sprinkler system installed by Seraphin. Fair price, clean work, and they programmed it for our specific grass type. Other companies quoted me way more and couldn't start for three weeks. Jasmine had a crew here in 4 days."</p>
           <div class="reviewer">
             <div class="reviewer-name">Darnell W.</div>
-            <div class="reviewer-loc">Temple Terrace, FL &middot; Google Review</div>
+            <div class="reviewer-loc">Temple Terrace, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"We switched from a big lawn company that never showed up consistently. Seraphin has missed exactly zero visits in 11 months. The yard looks better than it ever did and I'm paying less. I don't know why I waited."</p>
+          <div class="reviewer">
+            <div class="reviewer-name">Marcus &amp; Tina R.</div>
+            <div class="reviewer-loc">Riverview, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Sod installation — new St. Augustine throughout the back yard. They prepared the ground properly, laid it tight, and gave us a watering schedule. Six weeks later it's fully rooted and looks beautiful."</p>
+          <div class="reviewer">
+            <div class="reviewer-name">Yolanda F.</div>
+            <div class="reviewer-loc">South Tampa, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Full seasonal cleanup — leaves, overgrown beds, dead plants removed. Crew was here 5 hours and the property looks completely different. Professional, fast, and they left zero mess. Highly recommend."</p>
+          <div class="reviewer">
+            <div class="reviewer-name">Carlos N.</div>
+            <div class="reviewer-loc">New Tampa, FL</div>
+            <div class="review-verified">✓ Google Verified</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section-inner">
+      <span class="eyebrow">Common Questions</span>
+      <h2 class="section-heading">Lawn Care Questions,<br>Answered</h2>
+      <div class="faq-layout">
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-btn" aria-expanded="true">
+              How much does weekly lawn care cost in Tampa FL?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Weekly maintenance typically runs $39–$85 per visit depending on lot size, services included, and access difficulty. We give you an exact quote after a free property walkthrough — no guessing.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do I need to be home when you service my lawn?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">No. Most of our clients are never home during service. We'll text you when we arrive and again when we're done with a before/after photo. Gate codes and pet notes are stored securely in your account.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you offer contracts?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">No contracts required. We earn your business every week. You can pause or cancel with 1 week's notice — no penalties, no fees. We keep clients through quality, not paperwork.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              What grass types do you work with in Tampa?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We maintain all grass types common to Tampa Bay including St. Augustine, Floratam, Bahia, Zoysia, and Bermuda. Each has different mowing heights and care requirements — we adjust to your specific lawn.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you do landscape design for new construction?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes. We work with homeowners on new construction landscaping from scratch — plant selection, layout plan, installation, irrigation, and sod. We design specifically for Tampa's climate and your HOA guidelines.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you offer irrigation repair and installation?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes. Full irrigation installation, zone repair, head replacement, controller programming, and seasonal adjustments. Tampa's seasonal shifts mean your schedule should change 2-3 times a year — we handle that automatically on all maintenance plans.</div>
+            </div>
+          </div>
+        </div>
+        <aside class="faq-aside">
+          <h3>Ready to Get Started?</h3>
+          <p>We'll come out, walk your property, and give you a straight quote — no pressure.</p>
+          <a href="tel:8135550364" class="faq-aside-phone">(813) 555-0364</a>
+          <a href="contact.html" class="btn btn-sage" style="width:100%; justify-content:center; display:flex; align-items:center; gap:8px; text-decoration:none; margin-bottom:20px; padding:13px 24px;">Request Free Estimate →</a>
+          <ul class="faq-aside-perks">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No contracts required</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Text updates every visit</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% satisfaction guaranteed</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE AREAS -->
+  <div class="areas-section">
+    <div class="areas-inner">
+      <span class="eyebrow">Where We Serve</span>
+      <h2 class="section-heading">Serving All of Hillsborough County</h2>
+      <p class="section-sub" style="margin-top:8px;">From Tampa proper to the suburbs — our crews are in your neighborhood.</p>
+      <div class="areas-pills">
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Tampa
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brandon
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Riverview
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Temple Terrace
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> South Tampa
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> New Tampa
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Lutz
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Wesley Chapel
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Carrollwood
+        </div>
+        <div class="area-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Valrico
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- CTA PHOTO BAND -->
   <div class="cta-photo-band">
@@ -521,6 +856,13 @@
         <div class="footer-sub">Tampa Bay, FL &middot; Woman-Owned &middot; Est. 2018</div>
         <p>Serving Tampa, Hillsborough County, Brandon, Riverview, and Temple Terrace. Licensed and fully insured.</p>
         <p style="margin-top:12px; font-size:0.86rem;">2107 E Hillsborough Ave, Tampa, FL 33610</p>
+        <div class="footer-rating">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-label="Google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <div>
+            <div class="footer-rating-text">★★★★★ 4.9 · 214 Reviews</div>
+            <div class="footer-rating-sub">Google Business Profile</div>
+          </div>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -531,6 +873,17 @@
           <li><a href="services.html#sod">Sod Installation</a></li>
           <li><a href="services.html#mulch">Mulching</a></li>
           <li><a href="services.html#cleanup">Seasonal Cleanups</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="#">Tampa</a></li>
+          <li><a href="#">Brandon</a></li>
+          <li><a href="#">Riverview</a></li>
+          <li><a href="#">Temple Terrace</a></li>
+          <li><a href="#">New Tampa</a></li>
+          <li><a href="#">Wesley Chapel</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -548,6 +901,31 @@
       <span>Woman-Owned &middot; Licensed &amp; Insured &middot; Tampa, FL</span>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky" role="complementary" aria-label="Quick contact">
+    <div class="mobile-sticky-inner">
+      <a href="contact.html" class="btn btn-forest-mobile">Free Estimate →</a>
+      <a href="tel:8135550364" class="btn btn-outline-mobile">Call Now</a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 
   <script>
     (function () {

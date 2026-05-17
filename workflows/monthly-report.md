@@ -2,7 +2,7 @@
 
 **Triggered by:** Start of each month for any client with an active retainer or recurring reporting agreement
 **Template used:** `clients/templates/10-monthly-report-template.md`
-**Handoff from:** `workflows/deploy.md` (sets the monthly cadence) / `workflows/maintenance.md` (Standard/Pro plans)
+**Handoff from:** `workflows/deploy.md` (sets the monthly cadence) / `workflows/maintenance.md` (Standard/Pro plans) / `workflows/seo-retainer.md` (SEO retainer clients — triggered at end of each month after Week 4 wrap-up)
 
 ---
 

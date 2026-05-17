@@ -43,6 +43,13 @@
     },
     "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-14:00"],
     "priceRange": "$$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "94",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "areaServed": ["Tampa", "South Tampa", "Carrollwood", "Wesley Chapel", "New Tampa", "Clearwater", "St. Petersburg"],
     "sameAs": [
       "https://www.houzz.com/hargrovebuildtampa",
@@ -614,6 +621,57 @@
     .houzz-link { font-size: 0.7rem; color: #555; text-decoration: none; }
     .houzz-link:hover { color: var(--gold); }
 
+    /* ── PROOF BAR ── */
+    .proof-bar { background: var(--white); border-bottom: 1px solid var(--rule); padding: 14px 40px; }
+    .proof-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .proof-item { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); padding: 6px 28px; display: flex; align-items: center; gap: 8px; }
+    .proof-item strong { color: var(--gold); font-weight: 600; }
+    .proof-divider { width: 1px; height: 18px; background: var(--rule); flex-shrink: 0; }
+    @media (max-width: 600px) { .proof-divider { display: none; } .proof-item { padding: 4px 12px; } }
+
+    /* ── REVIEW AGGREGATE ── */
+    .review-aggregate { display: flex; align-items: center; gap: 28px; padding: 24px 32px; background: var(--warm); border: 1px solid var(--rule); margin: 40px 0; flex-wrap: wrap; }
+    .agg-score { font-family: var(--head); font-size: 3.2rem; color: var(--gold); font-weight: 700; line-height: 1; }
+    .agg-detail { flex: 1; min-width: 140px; }
+    .agg-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 3px; }
+    .agg-count { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); margin-top: 5px; }
+    .agg-badge { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 5px 14px; white-space: nowrap; }
+
+    /* ── FAQ (LUXURY) ── */
+    .faq-section { background: var(--warm); padding: 100px 0; border-top: 1px solid var(--rule); }
+    .faq-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; margin-top: 56px; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--rule); }
+    .faq-item { border-bottom: 1px solid var(--rule); }
+    .faq-btn { width: 100%; background: none; border: none; padding: 20px 0; text-align: left; font-family: var(--head); font-size: 1.05rem; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-weight: 600; transition: color 0.2s; }
+    .faq-btn:hover { color: var(--gold); }
+    .faq-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .faq-chevron { font-size: 0.68rem; color: var(--gold); transition: transform 0.25s; flex-shrink: 0; letter-spacing: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 280px; }
+    .faq-answer-inner { padding: 0 0 20px; font-size: 0.9rem; color: var(--stone); line-height: 1.85; font-weight: 300; }
+    .faq-aside { background: var(--ink); padding: 44px; }
+    .faq-aside .section-eyebrow { color: var(--gold-lt); }
+    .faq-aside h3 { font-family: var(--head); font-size: 1.8rem; color: var(--white); font-weight: 600; line-height: 1.2; margin-bottom: 14px; }
+    .faq-aside h3 em { font-style: italic; color: var(--gold-lt); }
+    .faq-aside p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.85; font-weight: 300; margin-bottom: 28px; }
+    @media (max-width: 768px) { .faq-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* ── SERVICE AREAS ── */
+    .areas-section { background: var(--ink); border-top: 1px solid #2A2A2A; padding: 80px 0; }
+    .areas-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    .areas-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .area-pill { border: 1px solid #2A2A2A; color: #555; padding: 9px 22px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; transition: border-color 0.2s, color 0.2s; cursor: default; }
+    .area-pill:hover { border-color: var(--gold); color: var(--gold-lt); }
+
+    /* ── MOBILE STICKY ── */
+    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--gold); padding: 12px 20px; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid #9a7a48; }
+    .mobile-sticky-label { font-family: var(--body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); }
+    .mobile-sticky-label strong { display: block; font-family: var(--head); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em; text-transform: none; }
+    .btn-outline-gold-sm { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.7); font-family: var(--body); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 22px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+    .btn-outline-gold-sm:hover { background: rgba(255,255,255,0.15); }
+    @media (max-width: 767px) { .mobile-sticky { display: flex; } body { padding-bottom: 72px; } }
+
     /* ─── MOBILE ─── */
     @media (max-width: 767px) {
       .nav-links { display: none; }
@@ -689,6 +747,19 @@
         <div class="stat-num">$3<em>M+</em></div>
         <div class="stat-label">In Renovations Completed</div>
       </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar" aria-label="Credentials and ratings">
+    <div class="proof-inner">
+      <div class="proof-item"><strong>4.9 ★</strong>&nbsp;Google &amp; Houzz</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">94+ Verified Reviews</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">FL Lic. <strong>CBC1257841</strong></div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">In-house team — <strong>no subcontractors</strong></div>
     </div>
   </div>
 
@@ -819,6 +890,14 @@
       <div class="section-eyebrow">Client Reviews</div>
       <h2 class="section-title">What Tampa homeowners<br>say about <em>Hargrove</em></h2>
       <div class="gold-rule"></div>
+      <div class="review-aggregate" aria-label="Overall rating summary">
+        <div class="agg-score" aria-label="4.9 out of 5 stars">4.9</div>
+        <div class="agg-detail">
+          <div class="agg-stars" aria-hidden="true">★★★★★</div>
+          <div class="agg-count">Based on 94 Google &amp; Houzz reviews</div>
+        </div>
+        <div class="agg-badge">Verified Reviews</div>
+      </div>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-quote-mark">"</div>
@@ -844,6 +923,103 @@
           <div class="review-author">Tom &amp; Sandra V.</div>
           <div class="review-project">Kitchen Remodel — Wesley Chapel</div>
         </div>
+        <div class="review-card">
+          <div class="review-quote-mark">"</div>
+          <p class="review-text">They removed a load-bearing wall, opened the kitchen to the living room, and installed a 10-foot island with waterfall quartz. The design work was exceptional — it looks like it was always meant to be that way. Phenomenal team.</p>
+          <div class="review-gold-rule"></div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-author">Richard &amp; Gail M.</div>
+          <div class="review-project">Open Plan Conversion — New Tampa</div>
+        </div>
+        <div class="review-card">
+          <div class="review-quote-mark">"</div>
+          <p class="review-text">Our master bath renovation was a full gut — new shower system, freestanding tub, heated floors, custom vanity. Every selection we made was available in the Hargrove showroom. No guessing, no waiting on samples for weeks.</p>
+          <div class="review-gold-rule"></div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-author">Melissa F.</div>
+          <div class="review-project">Master Bath — South Tampa</div>
+        </div>
+        <div class="review-card">
+          <div class="review-quote-mark">"</div>
+          <p class="review-text">We've worked with two other remodel companies. Neither came close to the level of communication and craftsmanship Hargrove delivered. Weekly updates, every trade supervised. The result is simply better than anything we expected.</p>
+          <div class="review-gold-rule"></div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-author">John &amp; Patricia B.</div>
+          <div class="review-project">Kitchen + Bath + Laundry — Carrollwood</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <div class="section-eyebrow">Common Questions</div>
+      <h2 class="section-title">Before your first<br>consultation — <em>answers</em></h2>
+      <div class="gold-rule"></div>
+      <div class="faq-layout">
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              How much does a kitchen remodel cost in Tampa?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">A mid-range kitchen remodel in Tampa typically runs $45,000–$85,000. A full luxury renovation with custom cabinetry, quartz countertops, and high-end appliances can reach $100,000–$150,000+. We provide detailed written estimates after an in-home design consultation.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              How long does a kitchen renovation take?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Most kitchen renovations take 6–12 weeks from demo to final walkthrough. Timeline depends on scope, permit processing, and custom cabinet lead times. We provide a detailed project schedule before work begins — and we stick to it.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you use subcontractors?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">No. Our in-house crews handle every trade — demolition, framing, plumbing, electrical, tile, cabinetry, and paint. One team, one point of contact. No handoffs, no miscommunication between trades, no gaps in accountability.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              What does the design consultation involve?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We visit your home, listen to how you use the space, and walk through the scope together. We then present floor plans, material samples, and finish options — revising until the design reflects exactly what you want. No pressure, no obligation at the consultation stage.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              How much does a bathroom renovation cost?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">A master bath renovation in Tampa typically runs $25,000–$60,000 depending on the scope. A full spa-style renovation with walk-in shower, soaking tub, heated floors, and custom vanity can exceed $80,000. We don't shortcut materials to meet a number.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you handle permits and inspections?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes — we manage every permit and inspection from start to finish. Tampa requires permits for structural changes, electrical, plumbing, and HVAC work. We handle all of it as part of the project. You never deal with the permit office yourself.</div>
+            </div>
+          </div>
+        </div>
+        <div class="faq-aside">
+          <div class="section-eyebrow">Start Here</div>
+          <h3>Begin with a<br><em>consultation</em></h3>
+          <p>Every Hargrove project starts with an in-home visit — no pressure, no obligation. We listen to what you want, walk the space, and tell you honestly what's possible and what it costs.</p>
+          <a href="contact.html" class="btn-gold">Request a Consultation</a>
+        </div>
       </div>
     </div>
   </section>
@@ -862,6 +1038,28 @@
       </div>
     </div>
   </section>
+
+  <!-- SERVICE AREAS -->
+  <div class="areas-section">
+    <div class="areas-inner">
+      <div class="section-eyebrow" style="color:var(--gold);">Where We Work</div>
+      <h2 class="section-title on-dark" style="font-size:clamp(28px,3vw,40px); margin-bottom:0;">Tampa Bay Service Area</h2>
+      <div class="areas-pills">
+        <span class="area-pill">Tampa</span>
+        <span class="area-pill">South Tampa</span>
+        <span class="area-pill">Hyde Park</span>
+        <span class="area-pill">Carrollwood</span>
+        <span class="area-pill">Wesley Chapel</span>
+        <span class="area-pill">New Tampa</span>
+        <span class="area-pill">Seminole Heights</span>
+        <span class="area-pill">Clearwater</span>
+        <span class="area-pill">St. Petersburg</span>
+        <span class="area-pill">Riverview</span>
+        <span class="area-pill">Brandon</span>
+        <span class="area-pill">Hillsborough County</span>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -905,6 +1103,32 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky" role="complementary" aria-label="Quick contact">
+    <div class="mobile-sticky-label">
+      <strong>Hargrove Design + Build</strong>
+      Free in-home consultation
+    </div>
+    <a href="contact.html" class="btn-outline-gold-sm">Request Call</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

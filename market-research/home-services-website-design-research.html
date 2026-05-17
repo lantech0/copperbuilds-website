@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Top Home Services Agencies Design Websites — UX Research May 2026</title>
+<style>
+  :root {
+    --bg: #f0f4f8;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+    --navy: #0f172a;
+    --orange: #f97316;
+    --blue: #2563eb;
+    --green: #059669;
+    --red: #dc2626;
+    --purple: #7c3aed;
+    --yellow: #d97706;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy); padding: 0 2rem;
+    display: flex; align-items: center; gap: 0;
+    overflow-x: auto; scrollbar-width: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-brand { color: #fff; font-weight: 800; font-size: .9rem; padding: 1rem 1.5rem 1rem 0; white-space: nowrap; border-right: 1px solid rgba(255,255,255,.1); margin-right: 1rem; }
+  nav a {
+    color: rgba(255,255,255,.55); text-decoration: none;
+    font-size: .75rem; font-weight: 600; letter-spacing: .05em;
+    text-transform: uppercase; padding: 1rem .9rem;
+    white-space: nowrap; border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  nav a:hover { color: #fff; border-bottom-color: var(--orange); }
+
+  header {
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #0c1628 100%);
+    color: #fff; padding: 5rem 2rem 3.5rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: '🖥️🎨📱✦⚡';
+    position: absolute; font-size: 8rem; opacity: .04;
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    letter-spacing: 2rem; white-space: nowrap;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(249,115,22,.2); border: 1px solid rgba(249,115,22,.4);
+    color: #fb923c; font-size: .75rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: .3rem 1rem; border-radius: 999px; margin-bottom: 1.2rem;
+  }
+  header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.1; margin-bottom: .8rem; }
+  header h1 span { color: var(--orange); }
+  header p.sub { color: rgba(255,255,255,.6); max-width: 620px; margin: 0 auto 2.5rem; font-size: 1rem; }
+  .stats-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
+  .stat-box {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px; padding: .9rem 1.5rem; text-align: center; min-width: 130px;
+  }
+  .stat-box .num { font-size: 1.7rem; font-weight: 900; color: #fb923c; }
+  .stat-box .lbl { font-size: .65rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .07em; margin-top: .1rem; }
+
+  section { padding: 4rem 2rem; max-width: 1180px; margin: 0 auto; }
+  .alt-bg { background: #fff; max-width: 100%; padding: 4rem 0; }
+  .alt-bg > * { max-width: 1180px; margin-left: auto; margin-right: auto; padding-left: 2rem; padding-right: 2rem; }
+  .alt-bg > section { padding: 0 2rem; }
+  .alt-bg h2, .alt-bg .section-bar, .alt-bg .section-intro { margin-left: auto; margin-right: auto; max-width: 1180px; padding-left: 2rem; padding-right: 2rem; }
+
+  h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; color: var(--navy); margin-bottom: .5rem; text-align: center; }
+  h2 .accent { color: var(--orange); }
+  .section-bar { width: 3rem; height: 3px; background: var(--orange); border-radius: 2px; margin: .7rem auto 1.2rem; }
+  .section-intro { text-align: center; color: var(--muted); max-width: 700px; margin: 0 auto 2.5rem; font-size: .95rem; }
+
+  /* CARDS */
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; }
+  .card-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+  .card-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+
+  /* AGENCY CARDS */
+  .agency-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .agency-card-header { padding: 1.4rem 1.6rem 1.2rem; border-bottom: 1px solid var(--border); }
+  .agency-card-body { padding: 1.4rem 1.6rem; }
+  .agency-label { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: .3rem; }
+  .agency-name { font-size: 1.15rem; font-weight: 900; color: var(--navy); margin-bottom: .2rem; }
+  .agency-motto { font-size: .83rem; color: var(--muted); font-style: italic; }
+  .pill { display: inline-flex; font-size: .68rem; font-weight: 700; padding: .2rem .6rem; border-radius: 6px; margin: .1rem; }
+  .pill-blue { background: #eff6ff; color: #1d4ed8; }
+  .pill-orange { background: #fff7ed; color: #c2410c; }
+  .pill-green { background: #f0fdf4; color: #15803d; }
+  .pill-purple { background: #faf5ff; color: #6d28d9; }
+  .pill-red { background: #fef2f2; color: #b91c1c; }
+  .pill-gray { background: #f8fafc; color: #475569; }
+
+  /* PATTERN BLOCKS */
+  .pattern-block { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.6rem; }
+  .pattern-icon { font-size: 2rem; margin-bottom: .7rem; display: block; }
+  .pattern-title { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: .4rem; }
+  .pattern-desc { font-size: .85rem; color: #374151; line-height: 1.65; }
+
+  /* FEATURE CHIPS */
+  .feature-list { list-style: none; padding: 0; }
+  .feature-list li { font-size: .85rem; color: #374151; padding: .3rem 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start; gap: .5rem; line-height: 1.5; }
+  .feature-list li:last-child { border-bottom: none; }
+  .feature-list li::before { content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+
+  /* UX PATTERN TABLE */
+  .ptable-wrap { overflow-x: auto; margin-top: 1rem; }
+  table.ux { width: 100%; border-collapse: collapse; font-size: .83rem; min-width: 700px; }
+  table.ux th { background: var(--navy); color: #fff; padding: .75rem 1rem; text-align: left; font-size: .75rem; font-weight: 700; letter-spacing: .04em; }
+  table.ux th:first-child { border-radius: 8px 0 0 0; }
+  table.ux th:last-child { border-radius: 0 8px 0 0; }
+  table.ux td { padding: .65rem 1rem; border-bottom: 1px solid #f1f5f9; vertical-align: top; line-height: 1.5; }
+  table.ux tr:nth-child(even) td { background: #fafafa; }
+  table.ux .label-col { font-weight: 700; color: var(--navy); width: 200px; }
+  .tag-yes { background: #f0fdf4; color: #166534; font-size: .7rem; font-weight: 700; padding: .15rem .5rem; border-radius: 5px; }
+  .tag-advanced { background: #eff6ff; color: #1e40af; font-size: .7rem; font-weight: 700; padding: .15rem .5rem; border-radius: 5px; }
+  .tag-rarely { background: #fef9c3; color: #854d0e; font-size: .7rem; font-weight: 700; padding: .15rem .5rem; border-radius: 5px; }
+  .tag-no { background: #fef2f2; color: #991b1b; font-size: .7rem; font-weight: 700; padding: .15rem .5rem; border-radius: 5px; }
+
+  /* DUAL VISITOR DIAGRAM */
+  .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 640px) { .dual-grid { grid-template-columns: 1fr; } }
+  .visitor-card { border-radius: 16px; overflow: hidden; }
+  .visitor-header { padding: 1.4rem 1.6rem; }
+  .visitor-body { padding: 1.4rem 1.6rem; }
+  .visitor-emergency .visitor-header { background: #dc2626; }
+  .visitor-planned .visitor-header { background: #1d4ed8; }
+  .visitor-header h3 { color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: .3rem; }
+  .visitor-header p { color: rgba(255,255,255,.7); font-size: .82rem; }
+  .visitor-body { background: #fff; border: 1px solid var(--border); border-top: none; border-radius: 0 0 16px 16px; }
+
+  /* COLOR SWATCHES */
+  .swatch-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+  .swatch { border-radius: 10px; padding: 1rem 1.4rem; min-width: 140px; text-align: center; }
+  .swatch .swatch-name { font-size: .75rem; font-weight: 700; margin-top: .5rem; }
+  .swatch .swatch-note { font-size: .68rem; opacity: .7; }
+
+  /* STAT CALLOUT */
+  .stat-callout { background: linear-gradient(135deg, #0f172a, #1c2951); color: #fff; border-radius: 16px; padding: 2rem 2.5rem; text-align: center; margin: 2rem 0; }
+  .stat-callout .big-num { font-size: 3.5rem; font-weight: 900; color: #fb923c; line-height: 1; }
+  .stat-callout .big-label { font-size: 1rem; color: rgba(255,255,255,.7); margin-top: .4rem; }
+  .stat-callout .big-sub { font-size: .8rem; color: rgba(255,255,255,.4); margin-top: .2rem; }
+
+  /* TAKEAWAY CARDS */
+  .takeaway-card { border-left: 4px solid var(--orange); background: #fff; border-radius: 0 12px 12px 0; padding: 1.2rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .takeaway-card h4 { font-size: .95rem; font-weight: 800; color: var(--navy); margin-bottom: .4rem; }
+  .takeaway-card p { font-size: .85rem; color: #374151; line-height: 1.6; }
+  .takeaway-card .tier-tag { font-size: .68rem; font-weight: 700; padding: .15rem .55rem; border-radius: 5px; margin-left: .4rem; }
+
+  /* ADVANCED FEATURE CARDS */
+  .adv-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem 1.6rem; }
+  .adv-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: .9rem; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .8rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">Lantech Research</span>
+  <a href="#dual">Dual Visitor</a>
+  <a href="#agency-dna">Agency DNA</a>
+  <a href="#ux-patterns">UX Patterns</a>
+  <a href="#above-fold">Above the Fold</a>
+  <a href="#advanced">Advanced Features</a>
+  <a href="#design-system">Design System</a>
+  <a href="#takeaways">Lantech Takeaways</a>
+</nav>
+
+<header>
+  <div class="hero-tag">Deep Research · May 2026</div>
+  <h1>How Top Home Services Agencies<br><span>Design & Build Websites</span></h1>
+  <p class="sub">UX patterns, advanced features, design systems, and conversion architecture used by Hook, Scorpion, KickCharge, Rival Digital, Built-Right, and BlackStorm.</p>
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">2–5%</div><div class="lbl">Avg conversion rate</div></div>
+    <div class="stat-box"><div class="num">8–12%</div><div class="lbl">Top-performing sites</div></div>
+    <div class="stat-box"><div class="num">80%</div><div class="lbl">Searches from mobile</div></div>
+    <div class="stat-box"><div class="num">5 sec</div><div class="lbl">Decision window</div></div>
+    <div class="stat-box"><div class="num">40–60%</div><div class="lbl">Booking lift from online scheduling</div></div>
+    <div class="stat-box"><div class="num">42%</div><div class="lbl">More conversions: personalized CTAs</div></div>
+  </div>
+</header>
+
+<!-- THE CORE TRUTH -->
+<section>
+  <h2>The <span class="accent">Core Truth</span> About Home Services Web Design</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Every top agency in this niche agrees on one thing: home services websites are not about being beautiful — they're about winning a 5-second decision from a stressed homeowner on their phone.</p>
+
+  <div class="card-grid-3" style="margin-bottom:2rem;">
+    <div class="pattern-block">
+      <span class="pattern-icon">⚡</span>
+      <div class="pattern-title">Speed Is Revenue</div>
+      <div class="pattern-desc">A 1-second delay in mobile load time reduces conversions by up to 20%. Sites loading in 1 second convert 3× better than those taking 5 seconds. Core Web Vitals are mandatory — not optional — at every tier.</div>
+    </div>
+    <div class="pattern-block">
+      <span class="pattern-icon">📞</span>
+      <div class="pattern-title">Clarity Beats Creativity</div>
+      <div class="pattern-desc">Top agencies confirmed: trust signals, guarantees, and real photos outperform animations and trendy layouts every time. The phone number must be visible before the visitor scrolls even 1 pixel.</div>
+    </div>
+    <div class="pattern-block">
+      <span class="pattern-icon">🏠</span>
+      <div class="pattern-title">Two Visitors, One Site</div>
+      <div class="pattern-desc">Every home services site must serve two completely different visitors simultaneously: the emergency caller who needs help NOW and the planned-purchase visitor who is afraid of being ripped off. Both need distinct UX paths.</div>
+    </div>
+    <div class="pattern-block">
+      <span class="pattern-icon">⭐</span>
+      <div class="pattern-title">Trust Is the Product</div>
+      <div class="pattern-desc">80%+ of clients rely on reviews before calling. The average visitor reads 10 reviews minimum. Trust signals (Google rating, BBB, certifications, guarantees) must appear above the fold — not at the bottom of the page.</div>
+    </div>
+    <div class="pattern-block">
+      <span class="pattern-icon">📱</span>
+      <div class="pattern-title">Mobile-First Is Non-Negotiable</div>
+      <div class="pattern-desc">64–80% of all HVAC, plumbing, and roofing searches happen on mobile. Agencies that design desktop-first and scale down lose clients before they load. Every layout decision starts with mobile thumb reach.</div>
+    </div>
+    <div class="pattern-block">
+      <span class="pattern-icon">📍</span>
+      <div class="pattern-title">Local = Credibility</div>
+      <div class="pattern-desc">Service area mentions in the hero headline, city-specific landing pages, and "Serving [City Name] since [Year]" framing dramatically increase local trust signals and Map Pack rankings simultaneously.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL VISITOR ARCHITECTURE -->
+<div class="alt-bg">
+<section id="dual" style="padding:4rem 2rem;">
+  <h2>The <span class="accent">Dual Visitor Architecture</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Every high-converting home services website is built around two completely different visitor psychologies. Top agencies design separate UX flows for each — often on the same page.</p>
+
+  <div class="dual-grid" style="margin-bottom:2.5rem;">
+    <div class="visitor-card">
+      <div class="visitor-header visitor-emergency">
+        <h3>🚨 The Emergency Visitor</h3>
+        <p>"My AC died at 11pm. Basement is flooding. I need someone NOW."</p>
+      </div>
+      <div class="visitor-body">
+        <p style="font-size:.82rem;font-weight:700;color:#dc2626;margin-bottom:.8rem;">Design Behavior: Fast, panicked, one-thumbed, on mobile</p>
+        <ul class="feature-list">
+          <li>Phone number must be tap-to-call at the very top — always visible</li>
+          <li>"24/7 Emergency Service" badge above the fold, every page</li>
+          <li>One-tap path to reach a human — zero forms required</li>
+          <li>High-contrast button labeled specifically "Emergency Service" or "Call Now"</li>
+          <li>Dedicated emergency landing pages (e.g., "Emergency AC Repair [City]")</li>
+          <li>Response time guarantee prominently displayed ("We Answer 24/7")</li>
+          <li>Sticky header so the phone number follows them as they scroll</li>
+          <li>Zero cognitive load — no decisions, just one action</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="visitor-card">
+      <div class="visitor-header visitor-planned">
+        <h3>🔍 The Planned Purchase Visitor</h3>
+        <p>"I need a new AC unit installed. I'm comparing 3 companies this week."</p>
+      </div>
+      <div class="visitor-body">
+        <p style="font-size:.82rem;font-weight:700;color:#1d4ed8;margin-bottom:.8rem;">Design Behavior: Research-mode, fear-driven, comparison shopping</p>
+        <ul class="feature-list">
+          <li>Their fear: Overpaying, choosing the wrong contractor, being sold to</li>
+          <li>Project galleries and before/after photos reduce purchase anxiety</li>
+          <li>Transparent process section: "Here's what to expect step by step"</li>
+          <li>Detailed testimonials with names, locations, and specific jobs done</li>
+          <li>Financing options prominently displayed ("0% financing available")</li>
+          <li>Online quote form or booking tool — no phone required</li>
+          <li>Awards, certifications, and manufacturer authorizations above fold</li>
+          <li>Free estimate CTA + estimated timeline to hear back</li>
+          <li>FAQ section addressing price, process, and guarantee questions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:1.8rem 2rem;max-width:820px;margin:0 auto;">
+    <p style="font-weight:800;font-size:1rem;color:var(--navy);margin-bottom:.8rem;">How Top Agencies Handle Both On The Same Homepage</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:.85rem;">
+      <div>
+        <p style="font-weight:700;color:#dc2626;margin-bottom:.4rem;">Emergency Layer (always visible)</p>
+        <ul style="padding-left:1rem;color:#374151;line-height:1.9;">
+          <li>Sticky header with phone + "24/7" badge</li>
+          <li>Hero headline addresses emergency need</li>
+          <li>"Call Now" is always the primary CTA button</li>
+          <li>Live chat / AI receptionist available instantly</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:700;color:#1d4ed8;margin-bottom:.4rem;">Planned Layer (revealed on scroll)</p>
+        <ul style="padding-left:1rem;color:#374151;line-height:1.9;">
+          <li>Secondary "Get a Free Estimate" CTA button</li>
+          <li>Service pages with detailed process walkthroughs</li>
+          <li>Testimonials from similar projects with photos</li>
+          <li>Online booking form (non-urgent scheduling)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- AGENCY DESIGN DNA -->
+<section id="agency-dna">
+  <h2>Agency <span class="accent">Design DNA</span> — How Each One Builds</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Each agency has a distinct design philosophy, technology stack, and signature differentiator. Here's what makes each one's approach unique — and what you can borrow.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;">
+
+    <!-- Hook Agency -->
+    <div class="agency-card">
+      <div class="agency-card-header" style="border-top:4px solid #f97316;">
+        <div class="agency-label">Hook Agency</div>
+        <div class="agency-name">The Contractor's Agency</div>
+        <div class="agency-motto">"We only work with contractors. Period."</div>
+        <div style="margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+          <span class="pill pill-orange">WordPress</span>
+          <span class="pill pill-blue">Month-to-month</span>
+          <span class="pill pill-orange">$2M+ revenue required</span>
+        </div>
+      </div>
+      <div class="agency-card-body">
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Design Philosophy</p>
+        <p style="font-size:.85rem;color:#374151;margin-bottom:1rem;line-height:1.6;">Conversion-first above all else. Every design decision is filtered through one question: <em>does this make the phone ring?</em> Personality and storytelling are secondary to clarity and action.</p>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Signature UX Patterns</p>
+        <ul class="feature-list">
+          <li>Hero: Customer-focused headline + clear phone CTA + "Get a Quote" button — above fold always</li>
+          <li>Real team/crew photos instead of stock imagery — builds "mirror effect" trust</li>
+          <li>"Why Choose Us" section with 3–4 specific differentiators (not generic claims)</li>
+          <li>Local authority positioning in headline: "[City]'s #1 Roofing Company"</li>
+          <li>Service area map or city list visible without scrolling too far</li>
+          <li>Financing options displayed in hero or immediately below</li>
+          <li>Google Drive deliverables folder — clients see exactly what was done monthly</li>
+          <li>Certification/badge strip below hero (GAF Master Elite, BBB, NATE)</li>
+          <li>Customer testimonials with real profile photos + review platform logos</li>
+        </ul>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-top:1rem;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Typography & Color</p>
+        <p style="font-size:.85rem;color:#374151;">Bold sans-serif headlines at large scale. High-contrast CTAs (orange, red, or brand accent against dark/light backgrounds). Real photography — never illustrated or stock. Clean whitespace between sections.</p>
+      </div>
+    </div>
+
+    <!-- Scorpion -->
+    <div class="agency-card">
+      <div class="agency-card-header" style="border-top:4px solid #7c3aed;">
+        <div class="agency-label">Scorpion</div>
+        <div class="agency-name">The AI-Powered Machine</div>
+        <div class="agency-motto">"More experience building home services sites than anyone on Earth."</div>
+        <div style="margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+          <span class="pill pill-purple">Proprietary Platform</span>
+          <span class="pill pill-red">12-month contract</span>
+          <span class="pill pill-purple">AI-native</span>
+        </div>
+      </div>
+      <div class="agency-card-body">
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Design Philosophy</p>
+        <p style="font-size:.85rem;color:#374151;margin-bottom:1rem;line-height:1.6;">The website is the hub of a fully integrated AI marketing system. Scorpion doesn't just design sites — they build <em>revenue intelligence platforms</em> that happen to have a website at the front.</p>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">AI Systems Built Into Every Site</p>
+        <ul class="feature-list">
+          <li><strong>Leads AI</strong> — Automatic scoring and intelligence on every single lead</li>
+          <li><strong>Ranking AI</strong> — Continuous SEO optimization without manual updates</li>
+          <li><strong>Landing Page AI</strong> — Auto-generates and optimizes conversion pages</li>
+          <li><strong>Advertising AI</strong> — Self-refining PPC campaigns that learn and improve</li>
+          <li><strong>Scorpion Connect</strong> — 24/7 AI receptionist: answers, books, takes payment</li>
+          <li><strong>Scorpion Convert</strong> — AI intake system handling missed leads automatically</li>
+          <li>ServiceTitan CRM integration — booked jobs feed back into marketing data</li>
+          <li>Scorpion Platform — centralized dashboard: traffic + leads + revenue all in one view</li>
+        </ul>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-top:1rem;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Website Design Specifics</p>
+        <ul class="feature-list">
+          <li>Fast, mobile-optimized, "gives prospects everything in seconds"</li>
+          <li>Auto-optimized landing pages per campaign type</li>
+          <li>Online booking system with calendar integration built in</li>
+          <li>Comprehensive call tracking: recording, number pooling, source attribution</li>
+          <li>Sites rank well because SEO is baked into the architecture, not added later</li>
+        </ul>
+
+        <div style="margin-top:1rem;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:.7rem 1rem;font-size:.8rem;color:#991b1b;">
+          ⚠️ Caveat: Clients do NOT own their website. If you leave Scorpion, the site stays with them. Proprietary platform lock-in.
+        </div>
+      </div>
+    </div>
+
+    <!-- KickCharge Creative -->
+    <div class="agency-card">
+      <div class="agency-card-header" style="border-top:4px solid #2563eb;">
+        <div class="agency-label">KickCharge Creative</div>
+        <div class="agency-name">The Brand-First Agency</div>
+        <div class="agency-motto">"Rank. Engage. Convert. — Built from brand identity out."</div>
+        <div style="margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+          <span class="pill pill-blue">WordPress</span>
+          <span class="pill pill-blue">3,000+ logos built</span>
+          <span class="pill pill-green">Client owns site</span>
+        </div>
+      </div>
+      <div class="agency-card-body">
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Design Philosophy</p>
+        <p style="font-size:.85rem;color:#374151;margin-bottom:1rem;line-height:1.6;">Every pixel flows from the brand identity. KickCharge builds the logo, vehicle wrap, and brand voice FIRST — then builds the website as the brand's digital home. The site is never an afterthought.</p>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">5-Step Design Process</p>
+        <ul class="feature-list">
+          <li><strong>Step 1: Discovery &amp; Strategy</strong> — Brand positioning, competitive audit, target market analysis</li>
+          <li><strong>Step 2: Site Mapping &amp; UX Planning</strong> — Information architecture, user journey mapping, wireframes</li>
+          <li><strong>Step 3: SEO-Optimized Content Writing</strong> — Copy written before design starts, keyword-first</li>
+          <li><strong>Step 4: Design &amp; Development</strong> — Brand-aligned visuals, WordPress build, responsive code</li>
+          <li><strong>Step 5: Launch &amp; Optimization</strong> — Performance testing, GEO optimization (AI search), ongoing refinement</li>
+        </ul>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-top:1rem;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Advanced Capabilities</p>
+        <ul class="feature-list">
+          <li>Generative Engine Optimization (GEO) — sites built to rank in AI search results</li>
+          <li>Framework websites — proven conversion layouts, 10–12 week delivery</li>
+          <li>E-commerce and customer portals for membership/service plans</li>
+          <li>Hand-illustrated mascots and custom brand characters (signature differentiator)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Rival Digital -->
+    <div class="agency-card">
+      <div class="agency-card-header" style="border-top:4px solid #059669;">
+        <div class="agency-label">Rival Digital</div>
+        <div class="agency-name">The Full-Ownership Agency</div>
+        <div class="agency-motto">"You own everything. Always."</div>
+        <div style="margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+          <span class="pill pill-green">Client owns site</span>
+          <span class="pill pill-blue">8–12 week delivery</span>
+          <span class="pill pill-green">Pre-project audit</span>
+        </div>
+      </div>
+      <div class="agency-card-body">
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Design Philosophy</p>
+        <p style="font-size:.85rem;color:#374151;margin-bottom:1rem;line-height:1.6;">Every project begins with a pre-project audit identifying site strengths and weaknesses. Design is dictated by data, not by what looks good. 57% of users won't recommend a company with a poorly-designed site — that's the starting point.</p>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">10-Point Design Checklist</p>
+        <ul class="feature-list">
+          <li>Mobile optimization — 80% of searches from mobile; this is #1 priority</li>
+          <li>Clear navigation — max 5 items, service-focused labels, collapsible on mobile</li>
+          <li>Consistent branding — unified color, fonts, visual identity across all pages</li>
+          <li>Visual content — real photos, videos, infographics, project galleries</li>
+          <li>Fast loading — optimized hosting, compressed images, minimal plugins</li>
+          <li>SSL security — encrypted connections, anti-malware protection</li>
+          <li>SEO integration — keyword research, link strategy, content built in from day one</li>
+          <li>Conversion optimization — CTAs, chatbots, signup tools, strategic linking</li>
+          <li>Social proof — dedicated review sections throughout (not just on one page)</li>
+          <li>CRM integration — Podium, or similar tool for reviews + lead management</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Built-Right Digital -->
+    <div class="agency-card">
+      <div class="agency-card-header" style="border-top:4px solid #d97706;">
+        <div class="agency-label">Built-Right Digital</div>
+        <div class="agency-name">The HVAC Conversion Specialist</div>
+        <div class="agency-motto">"Emergency-first UX. Revenue attribution mandatory."</div>
+        <div style="margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+          <span class="pill pill-orange">HVAC specialists</span>
+          <span class="pill pill-green">Published tiers</span>
+          <span class="pill pill-blue">Core Web Vitals focus</span>
+        </div>
+      </div>
+      <div class="agency-card-body">
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Design Philosophy</p>
+        <p style="font-size:.85rem;color:#374151;margin-bottom:1rem;line-height:1.6;">HVAC homeowners searching during a system failure have "zero patience for slow or confusing websites." Every layout decision is made through the lens of a panicked homeowner at 11pm on a phone with one bar of signal.</p>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Signature Design Decisions</p>
+        <ul class="feature-list">
+          <li>Dual CTA architecture — urgent phone + scheduled booking as equal options</li>
+          <li>Emergency service badge above fold on every single page, every device</li>
+          <li>Dedicated emergency contact page for after-hours organic search</li>
+          <li>Individual landing pages per service (AC repair, heating install, duct cleaning, etc.)</li>
+          <li>Geographic service area pages per city and neighborhood</li>
+          <li>Google reviews displayed above the fold — star count + review total visible immediately</li>
+          <li>Real technician + truck photos — zero stock photography policy</li>
+          <li>EPA, NATE, and manufacturer authorization badges above fold</li>
+          <li>Online scheduling system (delivers 40–60% more non-emergency appointments)</li>
+        </ul>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-top:1rem;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Core Web Vitals Standards</p>
+        <ul class="feature-list">
+          <li>LCP (Largest Contentful Paint): under 2.5 seconds</li>
+          <li>CLS (Cumulative Layout Shift): under 0.1</li>
+          <li>INP (Interaction to Next Paint): under 200ms</li>
+          <li>Sites scoring below 50 on mobile "lose rankings and conversions"</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BlackStorm Design -->
+    <div class="agency-card">
+      <div class="agency-card-header" style="border-top:4px solid #dc2626;">
+        <div class="agency-label">BlackStorm Design</div>
+        <div class="agency-name">The Split-Testing Specialist</div>
+        <div class="agency-motto">"We've split-tested every subconscious cue that turns readers into leads."</div>
+        <div style="margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+          <span class="pill pill-red">Roofers / HVAC / Plumbing</span>
+          <span class="pill pill-blue">CRO split-tested</span>
+        </div>
+      </div>
+      <div class="agency-card-body">
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">Design Philosophy</p>
+        <p style="font-size:.85rem;color:#374151;margin-bottom:1rem;line-height:1.6;">Every design decision is backed by split-test data specific to roofing, HVAC, and plumbing visitors. Not assumptions — actual A/B test results from contractor sites. UX exists to generate positive experiences that convert visitors into buyers.</p>
+
+        <p style="font-weight:700;font-size:.82rem;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em;">10 Mandatory Website Features (Their Standard)</p>
+        <ul class="feature-list">
+          <li>Testimonials on every page — not just the testimonials page</li>
+          <li>Simple + attractive design — professional without being flashy</li>
+          <li>Clear CTAs — email, form, phone, and Google Maps on every page</li>
+          <li>Well-designed layout — uncluttered, high-quality imagery, adequate whitespace</li>
+          <li>Performance (page speed) — slow sites lose rankings and visitors immediately</li>
+          <li>Mobile optimization — smooth on all devices, responsive design enforced</li>
+          <li>Request-for-estimate form — accessible from every page, always</li>
+          <li>Fresh, high-quality content — accessible language, no jargon</li>
+          <li>Search + social optimization — meta tags, alt text, internal linking, clean HTML</li>
+          <li>Security — encrypted passwords, protected client data, industry standards</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- UX PATTERNS — THE MUST-HAVES -->
+<div class="alt-bg">
+<section id="ux-patterns" style="padding:4rem 2rem;">
+  <h2>Universal <span class="accent">UX Patterns</span> Across All Top Agencies</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">These are the non-negotiables that every top agency implements regardless of tier or budget. Missing any of these means losing calls.</p>
+
+  <div class="ptable-wrap">
+    <table class="ux">
+      <thead>
+        <tr>
+          <th style="width:220px;">UX Pattern</th>
+          <th>What It Is</th>
+          <th>Why It Matters</th>
+          <th>Implementation Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label-col">Sticky Header</td>
+          <td>Phone number + primary CTA follow the user as they scroll down any page</td>
+          <td>Emergency visitors scroll; if the number disappears, they leave</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Click-to-Call Phone</td>
+          <td>Mobile tap-to-dial — single tap starts a phone call directly</td>
+          <td>64–80% of searches are mobile; friction = lost calls</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Above-Fold Trust Strip</td>
+          <td>Google star rating + review count + BBB + certifications displayed in hero or just below</td>
+          <td>57% of users won't call a business with under 4★; show it immediately</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Real Team Photography</td>
+          <td>Actual crew, truck, and job site photos — zero stock images</td>
+          <td>"Mirror effect" — real faces build instant human trust. Stock photos actively hurt credibility.</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">4-Field Max Contact Form</td>
+          <td>Name, phone, service type, zip code — nothing more on the primary form</td>
+          <td>Every additional field drops form completions by ~11%</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Hero CTA Hierarchy</td>
+          <td>Primary: "Call Now" (phone). Secondary: "Get a Free Estimate" (form/booking). Both visible above fold.</td>
+          <td>Emergency and planned visitors need different paths — both must be visible immediately</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">5-Item Max Navigation</td>
+          <td>Home · Services · About · Service Areas · Contact — no dropdown maze</td>
+          <td>Navigation complexity directly correlates with bounce rate on mobile</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Service Area Pages</td>
+          <td>Dedicated landing page per city/neighborhood served ("HVAC Repair in Naperville, IL")</td>
+          <td>Dual purpose: ranks for local searches + reassures visitors you cover their area</td>
+          <td><span class="tag-yes">Standard — volume scales with tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Testimonials on Every Page</td>
+          <td>Reviews displayed on service pages, about page, contact page — not just a dedicated reviews page</td>
+          <td>80%+ rely on reviews before calling; they need to see them wherever they land</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Before/After Gallery</td>
+          <td>Side-by-side or scrolling gallery of completed jobs with location labels</td>
+          <td>Directly addresses planned-purchase fear of choosing the wrong contractor</td>
+          <td><span class="tag-yes">Standard at every tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Online Booking System</td>
+          <td>Calendar-integrated scheduling — no phone call required for non-urgent jobs</td>
+          <td>Delivers 40–60% more non-emergency appointments; captures leads outside business hours</td>
+          <td><span class="tag-advanced">Growth tier and above</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Call Tracking (Dynamic Number Insertion)</td>
+          <td>Different phone numbers shown per traffic source (Google Ads vs. organic vs. social)</td>
+          <td>Tells you exactly which marketing channels drive phone calls and revenue</td>
+          <td><span class="tag-advanced">Growth tier and above</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">AI Chat / Live Chat</td>
+          <td>Instant response widget — handles questions, captures leads, books appointments 24/7</td>
+          <td>Scorpion's Connect, Relentless' Bullseye Pro. Converts visitors who won't call at 2am.</td>
+          <td><span class="tag-advanced">Enterprise / premium tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Financing Widget</td>
+          <td>Prominently displayed financing options ("0% for 18 months") — clickable to apply</td>
+          <td>Big-ticket jobs ($5K–$15K installs) require financing. Showing it upfront increases quote requests.</td>
+          <td><span class="tag-rarely">Present at mid+ tier</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Cost Estimator Tool</td>
+          <td>Interactive calculator: "What will my AC replacement cost in [ZIP]?"</td>
+          <td>Captures leads in research mode; builds trust by being transparent about price ranges</td>
+          <td><span class="tag-rarely">Rare — differentiator opportunity</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Video Testimonials</td>
+          <td>Short video clips (30–90 seconds) of actual customers describing their experience</td>
+          <td>77% of people who watch a testimonial video say it influenced their purchase decision</td>
+          <td><span class="tag-rarely">Present at premium agencies</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">LocalBusiness Schema</td>
+          <td>JSON-LD structured data: business name, address, phone, hours, service area, reviews</td>
+          <td>Required for Google rich results, Map Pack visibility, and AI Overview citations</td>
+          <td><span class="tag-advanced">Growth tier and above</span></td>
+        </tr>
+        <tr>
+          <td class="label-col">GBP Review Feed</td>
+          <td>Live pull of Google reviews onto the website — automatically updated</td>
+          <td>Shows review recency; avoids stale testimonials that damage credibility</td>
+          <td><span class="tag-advanced">Growth tier and above</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</div>
+
+<!-- ABOVE THE FOLD -->
+<section id="above-fold">
+  <h2>The <span class="accent">Above-the-Fold Formula</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Research across Hook Agency, Built-Right, and BlackStorm confirmed a consistent hero section pattern used by 70%+ of top-converting home services sites.</p>
+
+  <div style="background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;max-width:900px;margin:0 auto 2.5rem;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+    <!-- Mock browser chrome -->
+    <div style="background:#e2e8f0;padding:.5rem .8rem;display:flex;align-items:center;gap:.4rem;">
+      <div style="width:10px;height:10px;border-radius:50%;background:#ef4444;"></div>
+      <div style="width:10px;height:10px;border-radius:50%;background:#f59e0b;"></div>
+      <div style="width:10px;height:10px;border-radius:50%;background:#22c55e;"></div>
+      <div style="flex:1;background:#fff;border-radius:6px;padding:.2rem .8rem;font-size:.7rem;color:#94a3b8;margin-left:.5rem;">yourhvaccompany.com</div>
+    </div>
+
+    <!-- Sticky header zone -->
+    <div style="background:#1e293b;padding:.6rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <div style="color:#fff;font-weight:800;font-size:.9rem;">AcmePlumbing <span style="color:#fb923c;">& HVAC</span></div>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <span style="color:rgba(255,255,255,.5);font-size:.75rem;">Services · Areas · About</span>
+        <span style="background:#dc2626;color:#fff;font-size:.7rem;font-weight:800;padding:.3rem .7rem;border-radius:6px;">📞 Call 24/7</span>
+      </div>
+    </div>
+
+    <!-- Hero section -->
+    <div style="background:linear-gradient(135deg,#0f172a,#1c3a5e);padding:2.5rem 2rem;">
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;">
+        <div>
+          <div style="background:rgba(220,38,38,.2);border:1px solid rgba(220,38,38,.4);color:#fca5a5;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;display:inline-block;margin-bottom:.7rem;">24/7 Emergency Service Available</div>
+          <div style="color:#fff;font-size:1.4rem;font-weight:900;line-height:1.15;margin-bottom:.6rem;">Springfield's #1 Trusted<br>Plumber & HVAC Contractor</div>
+          <div style="color:rgba(255,255,255,.6);font-size:.83rem;margin-bottom:1rem;">Fast response. Up-front pricing. 5-star rated by 400+ neighbors.</div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+            <div style="background:#dc2626;color:#fff;font-weight:800;font-size:.8rem;padding:.5rem 1.2rem;border-radius:8px;">📞 Call Now</div>
+            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.8rem;padding:.5rem 1.2rem;border-radius:8px;">Get Free Estimate →</div>
+          </div>
+          <div style="display:flex;gap:1rem;font-size:.72rem;color:rgba(255,255,255,.5);">
+            <span>⭐ 4.9 Google (412 reviews)</span>
+            <span>✓ Licensed &amp; Insured</span>
+            <span>✓ NATE Certified</span>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:1.2rem;font-size:.82rem;color:#fff;">
+          <div style="font-weight:700;margin-bottom:.7rem;color:#fb923c;">Schedule Service</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;">
+            <input style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:.4rem .7rem;color:#fff;font-size:.78rem;width:100%;" placeholder="Your Name" disabled>
+            <input style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:.4rem .7rem;color:#fff;font-size:.78rem;width:100%;" placeholder="Phone Number" disabled>
+            <select style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:.4rem .7rem;color:rgba(255,255,255,.5);font-size:.78rem;width:100%;" disabled><option>Service Needed</option></select>
+            <input style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:.4rem .7rem;color:#fff;font-size:.78rem;width:100%;" placeholder="ZIP Code" disabled>
+            <div style="background:#f97316;color:#fff;text-align:center;font-weight:800;font-size:.8rem;padding:.5rem;border-radius:6px;">Book Now — No Commitment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust strip -->
+    <div style="background:#fff;padding:.8rem 2rem;display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;justify-content:center;border-bottom:1px solid #f1f5f9;">
+      <span style="font-size:.75rem;color:#64748b;font-weight:700;">✓ BBB A+ Rated</span>
+      <span style="font-size:.75rem;color:#64748b;font-weight:700;">✓ NATE Certified</span>
+      <span style="font-size:.75rem;color:#64748b;font-weight:700;">✓ 10+ Years in Business</span>
+      <span style="font-size:.75rem;color:#64748b;font-weight:700;">✓ 100% Satisfaction Guarantee</span>
+      <span style="font-size:.75rem;color:#64748b;font-weight:700;">✓ Financing Available</span>
+    </div>
+  </div>
+
+  <div class="card-grid-3">
+    <div class="pattern-block">
+      <span class="pattern-icon">1️⃣</span>
+      <div class="pattern-title">Left: Headline + CTAs (60% of top sites)</div>
+      <div class="pattern-desc">Left column holds the value proposition, emergency badge, dual CTAs (Call Now + Free Estimate), and trust indicators. Headline naming the service AND the city — never generic.</div>
+    </div>
+    <div class="pattern-block">
+      <span class="pattern-icon">2️⃣</span>
+      <div class="pattern-title">Right: Lead Capture Form (70% of top sites)</div>
+      <div class="pattern-desc">4-field max form in the hero — name, phone, service, ZIP. Eliminates the need to navigate to a contact page. Above-fold form placement drives 30%+ more submissions than bottom-of-page forms.</div>
+    </div>
+    <div class="pattern-block">
+      <span class="pattern-icon">3️⃣</span>
+      <div class="pattern-title">Trust Strip Below Hero (universal)</div>
+      <div class="pattern-desc">Immediately below the hero: BBB, NATE, EPA, star rating, years in business, guarantees. Confirmed across all 6 agencies studied. Never below the scroll line.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANCED FEATURES -->
+<div class="alt-bg">
+<section id="advanced" style="padding:4rem 2rem;">
+  <h2>Advanced <span class="accent">Features & Technology</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">What separates a $997/mo website from a $4,800/mo one — the technology layer built on top of the design.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem;margin-bottom:2.5rem;">
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#fef3c7;">🤖</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">AI Receptionist (24/7)</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">Scorpion Connect, Relentless Bullseye Pro, ServiceTitan Titan Intelligence</div>
+      <ul class="feature-list">
+        <li>Answers questions and books appointments at 2am</li>
+        <li>Takes payment for service calls</li>
+        <li>Trained on call recordings from similar businesses</li>
+        <li>Handles missed calls with automated follow-up</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#fef9c3;border:1px solid #f59e0b;border-radius:6px;padding:.3rem .6rem;color:#92400e;">Currently only at enterprise tier ($10K+/mo agencies)</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#eff6ff;">📅</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">Online Booking System</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">Calendar integration, job type selection, service area validation</div>
+      <ul class="feature-list">
+        <li>40–60% increase in non-emergency appointment bookings</li>
+        <li>Captures leads outside business hours (nights + weekends)</li>
+        <li>Syncs directly with dispatch software</li>
+        <li>Confirms appointment via text/email automatically</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#eff6ff;border:1px solid #93c5fd;border-radius:6px;padding:.3rem .6rem;color:#1e40af;">Present at growth tier ($2,000+/mo). Recommended for all tiers.</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#f0fdf4;">📊</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">Call Tracking (Dynamic Number Insertion)</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">CallRail, Scorpion Platform, custom call tracking</div>
+      <ul class="feature-list">
+        <li>Different phone numbers shown per traffic source</li>
+        <li>Identifies which pages drive the most calls</li>
+        <li>Records calls for quality review and training</li>
+        <li>Connects website calls to actual booked jobs and revenue</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:.3rem .6rem;color:#166534;">Built-Right includes at Scale ($4,199). CallRail ~$45/mo standalone.</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#faf5ff;">🧠</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">AI-Powered SEO (Ranking AI)</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">Scorpion's Ranking AI, GEO optimization (KickCharge), DataPins (Plumbing Webmasters)</div>
+      <ul class="feature-list">
+        <li>Continuous SEO optimization without manual updates</li>
+        <li>DataPins: geo-tagged review validation at job completion</li>
+        <li>GEO: optimizes for Google AI Overviews and ChatGPT citations</li>
+        <li>Auto-generates optimized landing pages at scale</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#faf5ff;border:1px solid #c4b5fd;border-radius:6px;padding:.3rem .6rem;color:#6d28d9;">Emerging at mid-tier. Differentiator for any agency that implements in 2026.</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#fff7ed;">💰</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">Financing Widget</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">Acorn Finance, GreenSky, Service Finance — embedded on service pages</div>
+      <ul class="feature-list">
+        <li>Instantly shows "0% for 18 months" type offers in the hero</li>
+        <li>Clickable to apply — soft credit pull, instant decision</li>
+        <li>Critical for $5K–$15K HVAC installs and roof replacements</li>
+        <li>Handoff AI and One Click Contractor offer this in proposals</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#fff7ed;border:1px solid #fdba74;border-radius:6px;padding:.3rem .6rem;color:#c2410c;">Underused by most agencies. High impact on big-ticket job conversion.</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#fef2f2;">🔗</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">CRM Integration</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">ServiceTitan (Scorpion), Podium (Rival Digital), HouseCall Pro, Jobber</div>
+      <ul class="feature-list">
+        <li>Website form → auto-created job in CRM without manual entry</li>
+        <li>Booked jobs feed back into marketing attribution</li>
+        <li>Automated review request after job completion</li>
+        <li>Customer portal: view invoices, schedule follow-up service</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#fef2f2;border:1px solid #fca5a5;border-radius:6px;padding:.3rem .6rem;color:#991b1b;">Enterprise tier feature at most agencies. Scorpion includes ServiceTitan natively.</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#f0fdf4;">🧮</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">Cost Estimator / Calculator</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">Interactive tools: "What will my AC replacement cost?"</div>
+      <ul class="feature-list">
+        <li>Captures planned-purchase visitors in research mode</li>
+        <li>Builds trust by being transparent about price ranges</li>
+        <li>High engagement — visitors who use calculators convert 3× more</li>
+        <li>Lead capture: calculator shows results after email/phone entry</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:.3rem .6em;color:#166534;">Rare in this niche — major competitive differentiator available right now.</div>
+    </div>
+
+    <div class="adv-card">
+      <div class="adv-icon" style="background:#eff6ff;">🎬</div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:.4rem;">Video Testimonials</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.7rem;">Short-form video (30–90 sec) from actual customers</div>
+      <ul class="feature-list">
+        <li>77% of people who watch a testimonial video say it influenced their decision</li>
+        <li>Embedded on homepage hero, service pages, and about page</li>
+        <li>Before/after video walkthroughs perform especially well for roofing</li>
+        <li>Autoplay (muted) in hero section dramatically increases engagement</li>
+      </ul>
+      <div style="margin-top:.8rem;font-size:.75rem;background:#eff6ff;border:1px solid #93c5fd;border-radius:6px;padding:.3rem .6rem;color:#1e40af;">Used by KickCharge and premium Hook builds. Rare at entry level.</div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- DESIGN SYSTEM -->
+<section id="design-system">
+  <h2>Design <span class="accent">System Decisions</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">The visual language that top agencies use across contractor sites — colors, typography, layouts, and the decisions behind each choice.</p>
+
+  <!-- COLORS -->
+  <h3 style="font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:1rem;">Color Psychology in Home Services</h3>
+
+  <div class="swatch-row">
+    <div class="swatch" style="background:#dc2626;color:#fff;">
+      <div style="font-size:1.2rem;font-weight:900;">#DC2626</div>
+      <div class="swatch-name">Emergency Red</div>
+      <div class="swatch-note">24/7 badges, emergency CTAs, urgency</div>
+    </div>
+    <div class="swatch" style="background:#f97316;color:#fff;">
+      <div style="font-size:1.2rem;font-weight:900;">#F97316</div>
+      <div class="swatch-name">Action Orange</div>
+      <div class="swatch-note">Primary CTA buttons, accent — most-used by niche agencies</div>
+    </div>
+    <div class="swatch" style="background:#2563eb;color:#fff;">
+      <div style="font-size:1.2rem;font-weight:900;">#2563EB</div>
+      <div class="swatch-name">Trust Blue</div>
+      <div class="swatch-note">Secondary actions, HVAC/cooling services, reliability</div>
+    </div>
+    <div class="swatch" style="background:#0f172a;color:#fff;">
+      <div style="font-size:1.2rem;font-weight:900;">#0F172A</div>
+      <div class="swatch-name">Authority Navy</div>
+      <div class="swatch-note">Headers, hero backgrounds — premium positioning</div>
+    </div>
+    <div class="swatch" style="background:#d97706;color:#fff;">
+      <div style="font-size:1.2rem;font-weight:900;">#D97706</div>
+      <div class="swatch-name">Prestige Gold</div>
+      <div class="swatch-note">Certification badges, elite status, "Master Elite" branding</div>
+    </div>
+    <div class="swatch" style="background:#15803d;color:#fff;">
+      <div style="font-size:1.2rem;font-weight:900;">#15803D</div>
+      <div class="swatch-name">Growth Green</div>
+      <div class="swatch-note">Eco/energy-efficient services, positive confirmation states</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:2rem;">
+    <p style="font-weight:800;margin-bottom:.7rem;">Color Rules From Agency Research</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:.85rem;">
+      <ul style="padding-left:1rem;color:#374151;line-height:1.9;">
+        <li>80% of top HVAC sites use bold sans-serif headlines — not serif</li>
+        <li>60% use left-text, right-image hero layouts (desktop)</li>
+        <li>70% place the phone number or form in the hero section itself</li>
+        <li>CTAs must visually "pop" — never use the same color as the background</li>
+      </ul>
+      <ul style="padding-left:1rem;color:#374151;line-height:1.9;">
+        <li>Minimalist layouts dominate 70% of high-converting pages</li>
+        <li>Whitespace speeds up decisions — removes cognitive load</li>
+        <li>Vibrant yellow/blue and black/gold schemes show strong brand recognition</li>
+        <li>Soft neutrals evoke trust; bold accent evokes urgency</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <h3 style="font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:1rem;">Typography Patterns</h3>
+  <div class="card-grid-3" style="margin-bottom:2rem;">
+    <div class="pattern-block">
+      <div class="pattern-title" style="font-size:2rem;font-weight:900;">Headline Scale</div>
+      <div class="pattern-desc">Bold, heavy-weight (800–900) sans-serif at large scale (clamp 1.8rem – 3rem). Responsive so it reads on any device. KickCharge occasionally adds serif headlines for premium/elegant contrast.</div>
+    </div>
+    <div class="pattern-block">
+      <div class="pattern-title">Body Copy</div>
+      <div class="pattern-desc">Clean, readable system font or Google Font (Inter, DM Sans, Roboto). 16px minimum on mobile. Line height 1.6–1.7. No jargon or corporate language — written for a homeowner, not a contractor.</div>
+    </div>
+    <div class="pattern-block">
+      <div class="pattern-title">CTA Button Copy</div>
+      <div class="pattern-desc">Action-oriented and specific: "Schedule Free Estimate", "Get Help Now", "Call 24/7", "Book Online — No Commitment". Never generic: avoid "Learn More", "Submit", "Click Here" entirely.</div>
+    </div>
+  </div>
+
+  <!-- LAYOUT -->
+  <h3 style="font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:1rem;">Layout Patterns</h3>
+  <div class="ptable-wrap">
+    <table class="ux">
+      <thead>
+        <tr>
+          <th>Page Section</th>
+          <th>Layout Decision</th>
+          <th>Reasoning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label-col">Hero</td>
+          <td>Left headline + right form (desktop). Full-width headline + button (mobile).</td>
+          <td>Desktop: dual visitor served simultaneously. Mobile: one-thumb CTA always within reach.</td>
+        </tr>
+        <tr>
+          <td class="label-col">Trust Strip</td>
+          <td>Full-width horizontal band immediately below hero. 4–6 icons/text items.</td>
+          <td>Provides credibility confirmation the moment the hero value proposition lands.</td>
+        </tr>
+        <tr>
+          <td class="label-col">Services Section</td>
+          <td>3-column card grid (desktop), full-width stacked (mobile). Each card → service page.</td>
+          <td>Helps visitors self-identify their need quickly. Reduces clicks to relevant content.</td>
+        </tr>
+        <tr>
+          <td class="label-col">About / Why Us</td>
+          <td>2-column: text + real team photo. Never stock photography.</td>
+          <td>"Mirror effect" — faces trigger emotional trust. Team photo humanizes the brand.</td>
+        </tr>
+        <tr>
+          <td class="label-col">Testimonials</td>
+          <td>Card carousel or 3-column grid. Star rating + reviewer name + specific job mentioned.</td>
+          <td>Specificity drives trust. "John F. — AC replacement in Naperville" beats "Happy customer".</td>
+        </tr>
+        <tr>
+          <td class="label-col">Service Area Section</td>
+          <td>City list or map graphic. Linked city names to individual SAP landing pages.</td>
+          <td>Dual purpose: reassures visitors of coverage + passes link equity to local landing pages.</td>
+        </tr>
+        <tr>
+          <td class="label-col">Footer</td>
+          <td>Phone, address, hours, service areas, social links, licensing. Schema-marked up.</td>
+          <td>NAP consistency across the site is a local SEO ranking factor. Footer = repeat trust signal.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- LANTECH TAKEAWAYS -->
+<div class="alt-bg">
+<section id="takeaways" style="padding:4rem 2rem;">
+  <h2>Lantech <span class="accent">Takeaways</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">What to implement in Lantech client builds — prioritized by impact vs. effort, mapped to your 3 service tiers.</p>
+
+  <div style="margin-bottom:2rem;">
+    <div class="takeaway-card">
+      <h4>Implement Dual Visitor Architecture on Every Client Site <span class="tier-tag" style="background:#f0fdf4;color:#166534;">All Tiers</span></h4>
+      <p>Every homepage needs TWO paths built in: a "Call Now" path (emergency layer — always visible in sticky header) and a "Get Free Estimate" path (planned purchase layer — form in hero). This costs nothing extra to implement and separates top-converting sites from generic ones.</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>Zero Stock Photos Policy <span class="tier-tag" style="background:#f0fdf4;color:#166534;">All Tiers</span></h4>
+      <p>Require real photos from every client before building. Truck photos, crew photos, job site photos. This is the single biggest differentiator between a $500 template and a $2,000 custom site — and it costs the client zero dollars. Hook Agency built their entire reputation on this rule.</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>Trust Strip Below Hero — Non-Negotiable <span class="tier-tag" style="background:#f0fdf4;color:#166534;">All Tiers</span></h4>
+      <p>Every site gets a full-width trust strip: Google rating + BBB + certifications + satisfaction guarantee + financing. This is confirmed by Hook, Built-Right, BlackStorm, and Rival Digital as mandatory. It goes between the hero and the first content section — always.</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>4-Field Hero Form — Not Bottom-of-Page Contact <span class="tier-tag" style="background:#f0fdf4;color:#166534;">All Tiers</span></h4>
+      <p>Name, phone, service type, ZIP. Built into the hero section on desktop. A sticky "Book Now" button on mobile that expands the form. This eliminates the need to navigate to a contact page and dramatically increases form completions. Above-fold form placement is the #1 structural change with measurable conversion impact.</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>Online Booking Integration <span class="tier-tag" style="background:#eff6ff;color:#1e40af;">Lead Machine + Market Leader</span></h4>
+      <p>Integrate HouseCall Pro, Jobber, or a similar scheduling tool into mid and top tier client sites. This delivers 40–60% more non-emergency appointments and captures leads after hours — a massive advantage over competitors with phone-only contact. Pitch this as "your website works while you sleep."</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>Financing Widget on Big-Ticket Service Pages <span class="tier-tag" style="background:#eff6ff;color:#1e40af;">Lead Machine + Market Leader</span></h4>
+      <p>For HVAC installs, roof replacements, and full plumbing jobs: embed a financing option (Acorn Finance, GreenSky) prominently on service pages and in the hero for those services. This is severely underused by competitors — it's a differentiator that directly impacts big-job close rates.</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>Cost Estimator Tool <span class="tier-tag" style="background:#fef9c3;color:#92400e;">Market Leader — Differentiator</span></h4>
+      <p>Build a simple interactive cost calculator for HVAC replacement or roof repair. This is rare in this niche — none of the 11 agencies studied implement it at entry tier. It captures planned-purchase visitors in research mode and delivers 3× the conversion rate of a standard contact form. This alone can justify the Market Leader price premium.</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>LocalBusiness Schema on Every Page <span class="tier-tag" style="background:#f0fdf4;color:#166534;">All Tiers</span></h4>
+      <p>JSON-LD schema with business name, address, phone, hours, service area, and aggregate review rating. This is mandatory for Google rich results and Map Pack visibility. KickCharge builds it into their GEO optimization process. For Lantech it should be a standard deliverable — not an upsell — because it directly affects local rankings.</p>
+    </div>
+
+    <div class="takeaway-card">
+      <h4>Core Web Vitals Standards — Enforce Them <span class="tier-tag" style="background:#f0fdf4;color:#166534;">All Tiers</span></h4>
+      <p>Built-Right Digital mandates: LCP under 2.5s, CLS under 0.1, INP under 200ms. Sites below 50 on mobile PageSpeed lose rankings and conversions. Make this a launch gate on every project — don't ship a site that doesn't pass. Use it as a differentiator: most template agencies ship slow sites.</p>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#0f172a,#1c2951);border-radius:20px;padding:2.5rem;text-align:center;color:#fff;max-width:820px;margin:0 auto;">
+    <p style="font-size:1.3rem;font-weight:900;margin-bottom:.5rem;">The Lantech Competitive Position</p>
+    <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:1.5rem;">Offshore cost advantage + niche specialization + these UX standards = a site that outperforms what US generalist agencies build at 2–3× the price.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+      <div style="background:rgba(255,255,255,.08);border-radius:12px;padding:1rem;">
+        <p style="color:#fb923c;font-weight:800;font-size:.9rem;margin-bottom:.3rem;">Local Presence</p>
+        <p style="font-size:1.2rem;font-weight:900;">$997/mo</p>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.5);">Dual visitor + trust strip + 4-field form + schema + Core Web Vitals</p>
+      </div>
+      <div style="background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.3);border-radius:12px;padding:1rem;">
+        <p style="color:#fb923c;font-weight:800;font-size:.9rem;margin-bottom:.3rem;">Lead Machine</p>
+        <p style="font-size:1.2rem;font-weight:900;">$1,997/mo</p>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.5);">+ Online booking + financing widget + call tracking + service area pages</p>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border-radius:12px;padding:1rem;">
+        <p style="color:#fb923c;font-weight:800;font-size:.9rem;margin-bottom:.3rem;">Market Leader</p>
+        <p style="font-size:1.2rem;font-weight:900;">$3,497/mo</p>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.5);">+ Cost estimator + video testimonials + GEO optimization + CRM integration</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<footer>
+  <p>Lantech Agency — Home Services Website Design Research · May 2026</p>
+  <p style="margin-top:.4rem;">Sources: Hook Agency, Scorpion, KickCharge Creative, Rival Digital, Built-Right Digital, BlackStorm Design, WebFX, Solvis Media, Built-Right Digital HVAC Design Guide</p>
+</footer>
+
+</body>
+</html>

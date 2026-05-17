@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your SEO Guide — Lantech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF7;--surface:#FFFFFF;--ink:#1C1917;--muted:#78716C;
+  --accent:#E8600A;--accent-dim:rgba(232,96,10,0.08);--accent-mid:rgba(232,96,10,0.15);
+  --border:#E7E0D8;--rule:#EDE8E3;
+  --green:#16A34A;--blue:#1D4ED8;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.72;font-size:1rem}
+.container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:'Calistoga',serif;font-weight:400;line-height:1.2}
+.label{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.75rem}
+.section{padding:4rem 0;border-bottom:1px solid var(--rule)}
+.section:last-of-type{border-bottom:none}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem}
+.pill{display:inline-flex;align-items:center;gap:.375rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .75rem;border-radius:100px}
+.pill-orange{background:var(--accent-dim);color:var(--accent);border:1px solid rgba(232,96,10,0.2)}
+.pill-green{background:rgba(22,163,74,0.08);color:var(--green);border:1px solid rgba(22,163,74,0.2)}
+.pill-blue{background:rgba(29,78,216,0.08);color:var(--blue);border:1px solid rgba(29,78,216,0.2)}
+.check{color:var(--accent);flex-shrink:0;margin-top:3px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+@media(max-width:640px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+/* Hero */
+.hero{background:var(--ink);padding:4rem 0 3.5rem;margin-bottom:0}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:640px){.hero-inner{grid-template-columns:1fr}}
+
+/* Google mockup */
+.gmock{background:#fff;border-radius:12px;padding:1.25rem;font-family:'DM Sans',sans-serif;font-size:.8rem;box-shadow:0 4px 24px rgba(0,0,0,0.10)}
+.gmock-bar{background:#f1f3f4;border-radius:20px;padding:.5rem 1rem;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;font-size:.75rem;color:#5f6368}
+.gmock-ads{border-left:3px solid #fbbc04;padding-left:.625rem;margin-bottom:.875rem}
+.gmock-ad{margin-bottom:.5rem}
+.gmock-ad .url{color:#188038;font-size:.7rem}
+.gmock-ad .title{color:#1a0dab;font-size:.8rem;font-weight:500}
+.gmock-ad .label-ad{background:#fff;border:1px solid #dadce0;border-radius:2px;font-size:.6rem;color:#70757a;padding:1px 3px;margin-right:.25rem}
+.gmock-maps{border:1.5px solid var(--accent);border-radius:8px;padding:.75rem;margin-bottom:.875rem;background:#fff8f4}
+.gmock-maps-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.gmock-maps-item{display:flex;gap:.5rem;align-items:flex-start;padding:.375rem 0;border-bottom:1px solid #f0ede8}
+.gmock-maps-item:last-child{border-bottom:none;padding-bottom:0}
+.gmock-maps-num{background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;flex-shrink:0;margin-top:1px}
+.gmock-maps-name{font-weight:600;font-size:.75rem;color:#1a0dab}
+.gmock-maps-stars{color:#f59e0b;font-size:.65rem}
+.gmock-organic{margin-bottom:.5rem}
+.gmock-organic .url{color:#188038;font-size:.7rem}
+.gmock-organic .title{color:#1a0dab;font-size:.8rem;font-weight:500}
+.gmock-organic .desc{color:#4d5156;font-size:.72rem;line-height:1.4}
+
+/* Pillars */
+.pillar{text-align:center;padding:1.5rem 1rem}
+.pillar-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.pillar h3{font-size:1rem;margin-bottom:.5rem}
+.pillar p{font-size:.875rem;color:var(--muted);line-height:1.6}
+
+/* Timeline */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:.5rem;top:.5rem;bottom:.5rem;width:2px;background:var(--border)}
+.tl-item{position:relative;padding-bottom:2rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-1.5rem;top:.25rem;width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);z-index:1;display:flex;align-items:center;justify-content:center}
+.tl-dot-muted{background:var(--muted)}
+.tl-month{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem}
+.tl-month-muted{color:var(--muted)}
+.tl-title{font-family:'Calistoga',serif;font-size:1rem;margin-bottom:.375rem}
+.tl-desc{font-size:.875rem;color:var(--muted);line-height:1.65}
+
+/* Metric cards */
+.metric-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.125rem}
+.metric-num{font-family:'JetBrains Mono',monospace;font-size:1.75rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:.25rem}
+.metric-label{font-size:.8125rem;font-weight:600;color:var(--ink);margin-bottom:.375rem}
+.metric-def{font-size:.8125rem;color:var(--muted);line-height:1.55}
+
+/* Week cards */
+.week-card{border-left:3px solid var(--accent);padding:.875rem 1rem;background:var(--surface);border-radius:0 10px 10px 0;border:1px solid var(--border);border-left:3px solid var(--accent)}
+.week-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.375rem}
+.week-title{font-size:.9375rem;font-weight:600;margin-bottom:.5rem}
+.week-list{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.week-list li{font-size:.8375rem;color:var(--muted);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
+.week-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+@media(max-width:640px){.week-grid,.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+<div class="container">
+  <div class="hero-inner">
+    <div>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,96,10,0.85);display:block;margin-bottom:1rem">Your SEO Guide — From Lantech</span>
+      <h1 style="font-family:'Calistoga',serif;font-size:clamp(1.75rem,4vw,2.75rem);color:#FAFAF7;margin-bottom:1.125rem">How Google finds your business — and what we do about it.</h1>
+      <p style="color:rgba(250,250,247,0.60);font-size:1rem;line-height:1.72;max-width:420px">Plain English. No jargon. Just a clear picture of what SEO is, what we do every month, and what you can expect to see.</p>
+    </div>
+    <!-- Google mockup -->
+    <div class="gmock" style="max-width:320px">
+      <div class="gmock-bar">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#9aa0a6" stroke-width="1.25"/><path d="M10.5 10.5l2 2" stroke="#9aa0a6" stroke-width="1.25" stroke-linecap="round"/></svg>
+        plumber near me
+      </div>
+      <!-- Ads -->
+      <div class="gmock-ads">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;color:#70757a;margin-bottom:.375rem;letter-spacing:.04em">PAID ADS (not SEO)</div>
+        <div class="gmock-ad"><div class="gmock-ad title"><span class="gmock-ad label-ad">Ad</span> Fast Plumber Tampa — 24/7</div><div class="gmock-ad url">fastplumbertampa.com</div></div>
+      </div>
+      <!-- Maps 3-pack -->
+      <div class="gmock-maps">
+        <div class="gmock-maps-label">⭐ Google Maps Pack — This is where we aim to put you</div>
+        <div class="gmock-maps-item"><div class="gmock-maps-num">1</div><div><div class="gmock-maps-name">Your Business Here</div><div class="gmock-maps-stars">★★★★★ <span style="color:#4d5156;font-size:.65rem">(94 reviews)</span></div></div></div>
+        <div class="gmock-maps-item"><div class="gmock-maps-num" style="background:#9ca3af">2</div><div><div style="font-size:.75rem;color:#4d5156">Competitor A</div><div class="gmock-maps-stars" style="color:#d1d5db">★★★★☆ <span style="color:#4d5156;font-size:.65rem">(41 reviews)</span></div></div></div>
+        <div class="gmock-maps-item"><div class="gmock-maps-num" style="background:#9ca3af">3</div><div><div style="font-size:.75rem;color:#4d5156">Competitor B</div><div class="gmock-maps-stars" style="color:#d1d5db">★★★☆☆ <span style="color:#4d5156;font-size:.65rem">(12 reviews)</span></div></div></div>
+      </div>
+      <!-- Organic -->
+      <div class="gmock-organic"><div class="url">yourplumbingbiz.com</div><div class="title">Tampa Plumber — Fast, Affordable, Local</div><div class="desc">We've been serving Tampa homeowners for 12 years. Same-day service...</div></div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+<!-- SECTION 1: WHAT IS SEO -->
+<section class="section">
+<div class="container">
+  <span class="label">Section 1</span>
+  <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1rem">What is SEO, really?</h2>
+  <p style="max-width:640px;color:var(--muted);margin-bottom:2rem">SEO stands for "Search Engine Optimization" — but ignore the technical name. Here's what it actually means for your business:</p>
+
+  <div class="grid-3" style="margin-bottom:2rem">
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <div style="font-size:1.75rem;margin-bottom:.75rem">🔍</div>
+      <h3 style="font-size:1rem;margin-bottom:.5rem">Someone searches for your service</h3>
+      <p style="font-size:.875rem;color:var(--muted);line-height:1.6">"Plumber near me" · "AC repair Tampa" · "Emergency electrician" — these are the searches that matter.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <div style="font-size:1.75rem;margin-bottom:.75rem">📋</div>
+      <h3 style="font-size:1rem;margin-bottom:.5rem">Google shows them a list of businesses</h3>
+      <p style="font-size:.875rem;color:var(--muted);line-height:1.6">Google picks the businesses it trusts most to answer that search — and puts them at the top.</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <div style="font-size:1.75rem;margin-bottom:.75rem">📞</div>
+      <h3 style="font-size:1rem;margin-bottom:.5rem">They call whoever shows up first</h3>
+      <p style="font-size:.875rem;color:var(--muted);line-height:1.6">The #1 result gets roughly 5× more calls than #5. Position matters — a lot.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--ink);border-color:var(--ink);display:flex;gap:1.25rem;align-items:flex-start">
+    <div style="font-size:2rem;flex-shrink:0">💡</div>
+    <div>
+      <p style="color:#FAFAF7;font-weight:600;margin-bottom:.375rem">The simple version:</p>
+      <p style="color:rgba(250,250,247,0.65);font-size:.9375rem;line-height:1.72">SEO is everything we do to make Google trust your business enough to show it to people who are actively looking to hire someone in your trade, in your city, right now.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- SECTION 2: TWO PLACES -->
+<section class="section">
+<div class="container">
+  <span class="label">Section 2</span>
+  <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1rem">The two places customers find you on Google</h2>
+  <p style="max-width:640px;color:var(--muted);margin-bottom:2rem">When someone searches for your trade, Google shows two different types of results. We work on both.</p>
+
+  <div class="grid-2" style="margin-bottom:1.5rem">
+    <!-- Google Maps Pack -->
+    <div class="card" style="border:2px solid var(--accent)">
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+        <div style="width:40px;height:40px;background:var(--accent-dim);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#E8600A"/><circle cx="12" cy="9" r="2.5" fill="white"/></svg>
+        </div>
+        <div>
+          <span class="pill pill-orange" style="margin-bottom:.25rem">Where most calls come from</span>
+          <h3 style="font-size:1rem">The Google Maps Pack</h3>
+        </div>
+      </div>
+      <p style="font-size:.875rem;color:var(--muted);line-height:1.65;margin-bottom:1rem">The box with 3 local businesses that appears at the top of Google search results — right above the regular website links. When someone searches "plumber near me," this is what they see first.</p>
+      <div style="background:var(--accent-dim);border-radius:8px;padding:.875rem">
+        <p style="font-size:.8125rem;color:var(--ink);font-weight:600;margin-bottom:.25rem">Why it matters:</p>
+        <p style="font-size:.8125rem;color:var(--muted);line-height:1.6">Most people tap one of these 3 businesses and never scroll down. Getting into this box is the single biggest move for a home services business.</p>
+      </div>
+    </div>
+    <!-- Organic Results -->
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+        <div style="width:40px;height:40px;background:rgba(29,78,216,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="14" rx="2" stroke="#1D4ED8" stroke-width="1.75"/><path d="M7 21h10M12 17v4" stroke="#1D4ED8" stroke-width="1.75" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="pill pill-blue" style="margin-bottom:.25rem">Builds long-term traffic</span>
+          <h3 style="font-size:1rem">Organic Website Results</h3>
+        </div>
+      </div>
+      <p style="font-size:.875rem;color:var(--muted);line-height:1.65;margin-bottom:1rem">The regular blue links below the Maps box. These are websites Google trusts to answer specific searches — like "how much does a water heater replacement cost in Tampa?"</p>
+      <div style="background:rgba(29,78,216,0.06);border-radius:8px;padding:.875rem">
+        <p style="font-size:.8125rem;color:var(--ink);font-weight:600;margin-bottom:.25rem">Why it matters:</p>
+        <p style="font-size:.8125rem;color:var(--muted);line-height:1.6">People searching these terms are researching before they call. A helpful article on your site builds trust and often leads to a call days or weeks later.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--accent-dim);border-color:rgba(232,96,10,0.2)">
+    <p style="font-size:.9rem;color:var(--ink)"><strong>The key difference:</strong> Google Maps results are based on your <em>business profile and reviews</em>. Organic website results are based on your <em>website content and authority</em>. We manage both — because your competitors are working on both.</p>
+  </div>
+</div>
+</section>
+
+
+<!-- SECTION 3: HOW GOOGLE DECIDES -->
+<section class="section">
+<div class="container">
+  <span class="label">Section 3</span>
+  <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1rem">How Google decides who shows up first</h2>
+  <p style="max-width:640px;color:var(--muted);margin-bottom:2.5rem">Google doesn't pick randomly. It looks at three things — think of them as the three legs of a stool. All three need to be strong for your business to rank well.</p>
+
+  <div class="grid-3" style="margin-bottom:2rem">
+    <div class="pillar card">
+      <div class="pillar-icon" style="background:rgba(232,96,10,0.10)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#E8600A" stroke-width="1.75"/><path d="M10 8h2.5a1.5 1.5 0 010 3H10m0-3v6m0-3h1" stroke="#E8600A" stroke-width="1.5" stroke-linecap="round"/><path d="M16.5 16.5L20 20" stroke="#E8600A" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </div>
+      <span class="pill pill-orange" style="margin-bottom:.625rem">Leg 1</span>
+      <h3>Relevance</h3>
+      <p>Does your website clearly explain what you do and where you do it? Google needs to see "plumber in Tampa" — not just "quality service."</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.8125rem;color:var(--muted)"><strong style="color:var(--ink)">What we do:</strong> Write your pages to target the exact phrases your customers search for, in the cities you serve.</div>
+    </div>
+    <div class="pillar card">
+      <div class="pillar-icon" style="background:rgba(22,163,74,0.10)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#16A34A" stroke-width="1.75" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="pill pill-green" style="margin-bottom:.625rem">Leg 2</span>
+      <h3>Trust</h3>
+      <p>Does Google trust your business? Trust comes from reviews, how long you've been online, how many other websites link to yours, and accurate directory listings.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.8125rem;color:var(--muted)"><strong style="color:var(--ink)">What we do:</strong> Build citations (directory listings), earn reviews, and get links from credible local and industry sites.</div>
+    </div>
+    <div class="pillar card">
+      <div class="pillar-icon" style="background:rgba(29,78,216,0.10)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 20V10M17 20V4M7 20v-4" stroke="#1D4ED8" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </div>
+      <span class="pill pill-blue" style="margin-bottom:.625rem">Leg 3</span>
+      <h3>Activity</h3>
+      <p>Is your business active? Google favors businesses that post on their Google profile, respond to reviews, and add new content. Dormant businesses drop in rankings.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.8125rem;color:var(--muted)"><strong style="color:var(--ink)">What we do:</strong> Post weekly on your Google Business Profile, respond to all reviews, and publish regular articles on your site.</div>
+    </div>
+  </div>
+
+  <div class="card" style="display:flex;gap:1rem;align-items:flex-start">
+    <div style="font-size:1.75rem;flex-shrink:0">⚖️</div>
+    <p style="font-size:.9375rem;color:var(--muted);line-height:1.72"><strong style="color:var(--ink)">The honest truth about timing:</strong> Building all three legs takes time. Relevance is set up in the first month. Trust builds over 3–6 months as reviews accumulate and citations spread. Activity compounds — the longer we keep it up, the stronger it gets. There are no shortcuts that last.</p>
+  </div>
+</div>
+</section>
+
+
+<!-- SECTION 4: WHAT WE DO EVERY MONTH -->
+<section class="section">
+<div class="container">
+  <span class="label">Section 4</span>
+  <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem">What we do every month</h2>
+  <p style="max-width:640px;color:var(--muted);margin-bottom:2.5rem">Every month runs on the same engine. Here's what's happening behind the scenes — week by week.</p>
+
+  <div class="week-grid">
+    <div class="week-card">
+      <div class="week-label">Week 1</div>
+      <div class="week-title">Google Business Profile</div>
+      <ul class="week-list">
+        <li><span class="check">▸</span>New post published (job spotlight, seasonal tip, or local update)</li>
+        <li><span class="check">▸</span>All new reviews get a personal reply within 48 hours</li>
+        <li><span class="check">▸</span>Profile details checked — hours, phone, photos up to date</li>
+      </ul>
+    </div>
+    <div class="week-card">
+      <div class="week-label">Week 2</div>
+      <div class="week-title">Content &amp; Citations</div>
+      <ul class="week-list">
+        <li><span class="check">▸</span>New blog post published (Lead Machine &amp; Market Leader)</li>
+        <li><span class="check">▸</span>New directory listing verified or claimed (Yelp, BBB, Angi, and others)</li>
+        <li><span class="check">▸</span>Existing listings checked for accuracy — no conflicting info</li>
+      </ul>
+    </div>
+    <div class="week-card">
+      <div class="week-label">Week 3</div>
+      <div class="week-title">Rankings &amp; Competitor Check</div>
+      <ul class="week-list">
+        <li><span class="check">▸</span>Keyword rankings tracked — where do you appear for your main search terms?</li>
+        <li><span class="check">▸</span>Top 3 competitors checked — are they gaining or losing ground on you?</li>
+        <li><span class="check">▸</span>Second GBP post of the month goes live</li>
+      </ul>
+    </div>
+    <div class="week-card">
+      <div class="week-label">Week 4</div>
+      <div class="week-title">Report &amp; Review Velocity</div>
+      <ul class="week-list">
+        <li><span class="check">▸</span>Monthly report compiled — all data pulled, trends identified</li>
+        <li><span class="check">▸</span>Review request workflow confirmed running — are new reviews coming in?</li>
+        <li><span class="check">▸</span>Link building outreach (Market Leader) — local directories, trade associations</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--accent-dim);border-color:rgba(232,96,10,0.2)">
+    <p style="font-size:.9rem;color:var(--ink)"><strong>Why the same rhythm every month?</strong> Google rewards consistency. A business that posts every week for six months outranks one that posts 10 times in January and goes quiet. We stay consistent so you don't have to think about it.</p>
+  </div>
+</div>
+</section>
+
+
+<!-- SECTION 5: WHAT TO EXPECT — THE TIMELINE -->
+<section class="section">
+<div class="container">
+  <span class="label">Section 5</span>
+  <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem">What to expect — and when</h2>
+  <p style="max-width:640px;color:var(--muted);margin-bottom:2.5rem">SEO is not instant. Here's an honest, month-by-month picture of what happens and when you should start seeing results.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-month">Month 1</div>
+      <div class="tl-title">The Foundation</div>
+      <div class="tl-desc">Your site goes live. Google Business Profile is fully set up. Analytics and Search Console are connected. Citations start going out. Review requests begin. You won't see organic traffic yet — Google is still learning your site exists. <strong style="color:var(--ink)">What you will see:</strong> your business name appearing in Google results, your GBP showing on Maps, and your first monthly report as a baseline.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-month">Months 2–3</div>
+      <div class="tl-title">Google Starts Noticing</div>
+      <div class="tl-desc">Your GBP profile starts getting views and clicks. The first calls from people who didn't already know your name arrive — they found you on Google Maps. Keyword rankings begin appearing: you may be on page 2 or 3 for your main terms. That's normal and expected. <strong style="color:var(--ink)">The milestone to watch:</strong> is Google showing your business to people who don't already know you? Even a handful of new impressions means the machine is working.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-month">Months 4–6</div>
+      <div class="tl-title">Traction Builds</div>
+      <div class="tl-desc">Content, citations, reviews, and links are stacking on each other. Page 1 appearances start for some of your target keywords — typically the longer, more specific ones first ("emergency plumber Tampa" before "plumber Tampa"). Review count hits 10+ which meaningfully improves Maps visibility. Organic calls and contact form submissions start arriving from people who had never heard of you before.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot tl-dot-muted"></div>
+      <div class="tl-month tl-month-muted">Month 6+</div>
+      <div class="tl-title" style="color:var(--muted)">Compounding Returns</div>
+      <div class="tl-desc">This is where local SEO pays its biggest dividends. Each month of consistent activity compounds the months before it. Businesses that stay consistent through the first 6 months typically see ranking velocity accelerate — not plateau — in months 7–12. The businesses that quit at Month 3 because "it wasn't working yet" are the ones you'll outrank.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:2rem;display:flex;gap:1rem;align-items:flex-start">
+    <div style="font-size:1.75rem;flex-shrink:0">📅</div>
+    <p style="font-size:.9375rem;color:var(--muted);line-height:1.72"><strong style="color:var(--ink)">Healthy 90-day benchmarks.</strong> GBP profile views: 200–600/month · Website clicks from GBP: 30–100+/month · Calls from GBP: 10–40+/month · New reviews since launch: 10+ · Target keywords in top 20: 3–5. Every market is different — we'll show you your own numbers each month and explain what they mean.</p>
+  </div>
+</div>
+</section>
+
+
+<!-- SECTION 6: HOW TO READ YOUR MONTHLY REPORT -->
+<section class="section">
+<div class="container">
+  <span class="label">Section 6</span>
+  <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem">How to read your monthly report</h2>
+  <p style="max-width:640px;color:var(--muted);margin-bottom:2.5rem">Every month you get a report. Here's what each number means — in plain English.</p>
+
+  <div class="grid-2" style="margin-bottom:1.25rem">
+    <div class="metric-card">
+      <div class="metric-num" style="color:var(--accent)">2,410</div>
+      <div class="metric-label">Impressions</div>
+      <div class="metric-def">How many times Google showed your business in search results — whether someone clicked or not. Think of this as your <em>visibility</em>. It grows first, before clicks do.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num" style="color:var(--blue)">187</div>
+      <div class="metric-label">Clicks</div>
+      <div class="metric-def">How many people clicked on your website from a Google search result. A growing click number means Google is showing you for searches where people actually want what you offer.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num" style="color:var(--green)">6.4</div>
+      <div class="metric-label">Average Position</div>
+      <div class="metric-def">Your average rank across all search terms. Position 1–3 = top of page 1. Position 4–10 = page 1 but lower. Position 11+ = page 2 or beyond. Lower number = better rank.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">43</div>
+      <div class="metric-label">GBP Calls</div>
+      <div class="metric-def">Phone calls that came directly from your Google Business Profile listing. These are people who found your business on Google Maps and called you — not referrals, not repeat customers.</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="metric-card">
+      <div class="metric-num" style="color:var(--accent)">↑ 31%</div>
+      <div class="metric-label">Month-over-Month Growth</div>
+      <div class="metric-def">How this month compares to last month. Early months show big swings because the numbers are small — a jump from 10 to 15 clicks is +50%. Focus on the trend direction, not just the percentage.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">18</div>
+      <div class="metric-label">New Reviews</div>
+      <div class="metric-def">Reviews received since your last report. Reviews are tracked separately because they're the single biggest driver of Google Maps pack placement. Every new 5-star review moves the needle.</div>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--ink);border-color:var(--ink);margin-top:1.5rem;display:flex;gap:1.25rem;align-items:flex-start">
+    <div style="font-size:1.75rem;flex-shrink:0">💬</div>
+    <div>
+      <p style="color:#FAFAF7;font-weight:600;margin-bottom:.375rem">If a number looks strange, ask us.</p>
+      <p style="color:rgba(250,250,247,0.65);font-size:.9375rem;line-height:1.72">Every report comes with a plain-English summary at the top — the key win of the month, what we're watching, and what's next. You should never feel like you're reading a spreadsheet with no context. If something isn't clear, reply to the email and we'll explain it.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- SECTION 7: WHAT WE NEED FROM YOU -->
+<section class="section">
+<div class="container">
+  <span class="label">Section 7</span>
+  <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem">What we need from you — every month</h2>
+  <p style="max-width:640px;color:var(--muted);margin-bottom:2.5rem">We handle the strategy, posting, and reporting. But there are three things that make the work noticeably stronger — and only you can provide them.</p>
+
+  <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem">
+    <div class="card" style="display:flex;gap:1.25rem;align-items:flex-start">
+      <div style="width:48px;height:48px;background:var(--accent-dim);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.375rem">📸</div>
+      <div>
+        <h3 style="font-size:1rem;margin-bottom:.375rem">2–4 job site photos, any month you have them</h3>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.65">Phone photos are fine. Before/after shots are great. Real job photos outperform stock images on Google Business Profile every time — Google's algorithm and your customers both respond to them. Text them or send them via email whenever you finish a job you're proud of.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:1.25rem;align-items:flex-start">
+      <div style="width:48px;height:48px;background:rgba(22,163,74,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.375rem">⭐</div>
+      <div>
+        <h3 style="font-size:1rem;margin-bottom:.375rem">A heads-up if the review request workflow isn't running</h3>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.65">After every completed job, your customers get a review request via email or text. If you're not seeing new reviews most months, let us know — something in the workflow may need adjusting. Reviews are too important to let sit unchecked. Ten reviews in 90 days changes your Maps visibility meaningfully.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:1.25rem;align-items:flex-start">
+      <div style="width:48px;height:48px;background:rgba(29,78,216,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.375rem">📢</div>
+      <div>
+        <h3 style="font-size:1rem;margin-bottom:.375rem">Any business updates — the moment they happen</h3>
+        <p style="font-size:.875rem;color:var(--muted);line-height:1.65">New phone number. New service area. Changed hours. A seasonal promotion. A new service you're now offering. These need to go on your Google Business Profile the same week they happen — inconsistent info across the web hurts your rankings. Just email us and we'll update everything within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--accent-dim);border-color:rgba(232,96,10,0.2)">
+    <p style="font-size:.9rem;color:var(--ink)"><strong>The more specific you give us, the more specific we get.</strong> Your photos and job stories become next month's GBP posts and blog content. A generic "completed a roofing job" becomes a weak post. "We replaced a 22-year-old shingle roof in South Tampa after Hurricane Helene damage — here's how we matched the original tile color" becomes a post that actually converts.</p>
+  </div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="background:var(--bg);border-top:1px solid var(--rule);padding:3.5rem 0 2.5rem">
+<div class="container">
+  <div class="footer-grid">
+    <div>
+      <div style="font-family:'Calistoga',serif;font-size:1.375rem;color:var(--ink);margin-bottom:.625rem">Lantech</div>
+      <p style="font-size:.875rem;color:var(--muted);line-height:1.72;max-width:320px">Built for small businesses. Not enterprise. We build websites and run local SEO for home service businesses across the US.</p>
+    </div>
+    <div>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem">Questions?</p>
+      <p style="font-size:.875rem;color:var(--muted);margin-bottom:.5rem">Email us anytime — we reply within one business day.</p>
+      <a href="mailto:lantech016@gmail.com" style="color:var(--accent);font-size:.9375rem;font-weight:600;text-decoration:none">lantech016@gmail.com</a>
+      <br>
+      <a href="tel:+639773293969" style="color:var(--muted);font-size:.875rem;text-decoration:none;margin-top:.375rem;display:inline-block">+63 977 329 3969</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--rule);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <p style="font-size:.8125rem;color:var(--muted)">© 2025 Lantech. Your monthly report lands the first week of every month.</p>
+    <a href="https://lantech-website.vercel.app" style="font-size:.8125rem;color:var(--muted);text-decoration:none">lantech-website.vercel.app</a>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>

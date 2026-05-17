@@ -126,12 +126,32 @@ Your contact form is set up and working.
 
 ---
 
+## 8a. FINANCING WIDGET (if applicable)
+
+> *Delete this section if the client does not offer financing.*
+
+Your website includes a financing section powered by **[PROVIDER — e.g. Hearth / GreenSky / Wisetack]**.
+
+**How it works:** When a visitor clicks "Apply for Financing," they are sent to your lender's application page directly. Lantech does not manage the financing application — that is handled entirely by **[PROVIDER]**.
+
+**What you need to manage yourself:**
+- Log in to your **[PROVIDER]** account at **[PROVIDER_LOGIN_URL]** to view and manage applications
+- If you change financing providers, email lantech016@gmail.com — we will update the embed code or apply link on your website
+- If the financing section stops working (broken button, widget not loading), contact **[PROVIDER]** support first, then contact us if the issue is on the website side
+
+**Your financing provider contact:**
+- Provider: [PROVIDER]
+- Account email: [PROVIDER_ACCOUNT_EMAIL]
+- Support: [PROVIDER_SUPPORT_URL or phone]
+
+---
+
 ## 9. HOW TO UPDATE YOUR WEBSITE
 
 Your website is built with static HTML/CSS files. To make changes:
 
 **Option A — Hire Lantech** (recommended)
-Email lantech016@gmail.com with the changes you need. We quote small updates at $[RATE]/hour.
+Email lantech016@gmail.com with the changes you need. We'll send a flat project quote before any work begins.
 
 **Option B — Edit it yourself**
 1. Download your website files from the backup link in Section 4
@@ -165,7 +185,7 @@ This does NOT cover:
 - ❌ Content changes (copy, images, pricing updates)
 - ❌ Third-party service integrations added after launch
 
-**After 30 days:** Support is available at $[RATE]/hour. Just email lantech016@gmail.com.
+**After 30 days:** Additional support is available. Email lantech016@gmail.com and we'll quote it as a flat project fee — no surprises.
 
 ---
 
@@ -198,7 +218,7 @@ Here's what we recommend doing in your first month to get the most from your new
 **Phone:** +1-800-000-0000
 **Response time:** Within 1 business day
 
-For ongoing SEO, social media, or website updates, visit lantech.co or email us anytime.
+For ongoing SEO, social media, or website updates, visit lantech-website.vercel.app or email us anytime.
 
 ---
 

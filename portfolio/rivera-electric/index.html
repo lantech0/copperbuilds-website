@@ -50,7 +50,14 @@
           {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "08:00", "closes": "15:00"}
         ],
         "areaServed": ["Tampa", "Hillsborough County", "Carrollwood", "Westchase", "South Tampa", "Seminole Heights", "New Tampa", "Brandon"],
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "170",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
       },
       {
         "@type": "FAQPage",
@@ -249,6 +256,58 @@
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
       .hero-left { padding: 48px 20px; }
     }
+
+    /* ── PROOF BAR ── */
+    .proof-bar { background: var(--teal-pale); border-bottom: 1px solid var(--teal-light); padding: 14px 32px; }
+    .proof-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .proof-item { font-size: 0.82rem; font-weight: 600; color: var(--teal); padding: 6px 28px; display: flex; align-items: center; gap: 6px; }
+    .proof-divider { width: 1px; height: 20px; background: var(--teal-light); flex-shrink: 0; }
+    @media (max-width: 600px) { .proof-divider { display: none; } .proof-item { padding: 4px 12px; } }
+
+    /* ── SAFETY/PERMIT BAND ── */
+    .safety-band { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 72px 32px; }
+    .safety-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .safety-items { display: flex; flex-direction: column; gap: 12px; }
+    .safety-item { display: flex; align-items: center; gap: 12px; font-size: 0.93rem; font-weight: 600; color: var(--teal); padding: 14px 20px; background: var(--teal-pale); border-radius: 6px; border-left: 3px solid var(--teal-mid); }
+    .safety-item::before { content: '✓'; font-size: 1rem; font-weight: 800; flex-shrink: 0; }
+    @media (max-width: 768px) { .safety-inner { grid-template-columns: 1fr; gap: 36px; } }
+
+    /* ── REVIEW AGGREGATE ── */
+    .review-aggregate { display: flex; align-items: center; gap: 24px; padding: 20px 28px; background: var(--surface); border: 1.5px solid var(--border); border-radius: 8px; margin: 32px 0 40px; flex-wrap: wrap; }
+    .agg-score { font-family: 'Lora', serif; font-size: 3rem; font-weight: 700; color: var(--teal); line-height: 1; }
+    .agg-detail { flex: 1; min-width: 140px; }
+    .agg-stars { color: #F59E0B; font-size: 1.1rem; letter-spacing: 2px; }
+    .agg-count { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .agg-badge { font-size: 0.75rem; font-weight: 600; color: var(--teal); background: var(--teal-pale); border: 1px solid var(--teal-light); padding: 5px 14px; border-radius: 12px; white-space: nowrap; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--bg); padding: 88px 32px; border-top: 1px solid var(--rule); }
+    .faq-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 48px; }
+    .faq-list { display: flex; flex-direction: column; gap: 6px; }
+    .faq-item { border: 1.5px solid var(--border); border-radius: 6px; background: var(--surface); overflow: hidden; }
+    .faq-btn { width: 100%; background: none; border: none; padding: 18px 20px; text-align: left; font-family: 'Lora', serif; font-size: 0.97rem; font-weight: 600; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background 0.2s; }
+    .faq-btn:hover { background: var(--teal-pale); }
+    .faq-btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+    .faq-chevron { font-size: 0.72rem; color: var(--teal); transition: transform 0.25s; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 240px; }
+    .faq-answer-inner { padding: 0 20px 18px; font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+    .faq-aside { background: var(--teal); border-radius: 8px; padding: 36px; color: rgba(255,255,255,0.9); position: sticky; top: 96px; }
+    .faq-aside h3 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+    .faq-aside p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 24px; }
+    .faq-aside .btn-white { background: #fff; color: var(--teal); font-weight: 700; display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; font-size: 0.875rem; text-decoration: none; border-radius: 6px; transition: background 0.2s; }
+    .faq-aside .btn-white:hover { background: var(--teal-pale); }
+    @media (max-width: 768px) { .faq-layout { grid-template-columns: 1fr; gap: 36px; } .faq-aside { position: static; } }
+
+    /* ── FOOTER 4-COL ── */
+    @media (min-width: 769px) { .footer-inner { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+
+    /* ── MOBILE STICKY CTA ── */
+    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--teal); padding: 12px 20px; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 -4px 20px rgba(19,78,74,0.25); }
+    .mobile-sticky-label { color: rgba(255,255,255,0.8); font-size: 0.78rem; font-weight: 500; }
+    .mobile-sticky-label strong { color: #fff; display: block; font-size: 0.92rem; font-weight: 700; }
+    @media (max-width: 767px) { .mobile-sticky { display: flex; } body { padding-bottom: 72px; } }
   </style>
 </head>
 <body>
@@ -338,6 +397,19 @@
     </div>
   </div>
 
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar" aria-label="Credentials and ratings">
+    <div class="proof-inner">
+      <div class="proof-item">⭐ <strong>4.9</strong>&nbsp;Google Rating</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">🏆 170+ Verified Reviews</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">✅ Licensed EC13003421</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">🛡️ Fully Insured &amp; Bonded</div>
+    </div>
+  </div>
+
   <!-- SERVICES — ICON GRID (no photos, distinct from all other sites) -->
   <section class="services-bg">
     <div class="section-inner">
@@ -388,6 +460,23 @@
       </div>
     </div>
   </section>
+
+  <!-- SAFETY & PERMIT BAND -->
+  <div class="safety-band">
+    <div class="safety-inner">
+      <div>
+        <span class="eyebrow">Every Job Permitted &amp; Inspected</span>
+        <h2 class="section-heading">Electrical Work Done Right —<br>or Not at All</h2>
+        <p style="color:var(--muted); font-size:0.97rem; line-height:1.85; max-width:480px; margin-top:12px;">We don't cut corners with unpermitted shortcuts. Every job is filed with Hillsborough County, inspected, and signed off before we close up. Your homeowner's insurance stays valid — and your family stays safe.</p>
+      </div>
+      <div class="safety-items">
+        <div class="safety-item">All permits filed before work begins</div>
+        <div class="safety-item">Inspection scheduled same week</div>
+        <div class="safety-item">Homeowner's insurance compliance confirmed</div>
+        <div class="safety-item">EV charger utility rebate paperwork included</div>
+      </div>
+    </div>
+  </div>
 
   <!-- NEIGHBORHOOD SECTION -->
   <div class="neighborhood-bg">
@@ -448,6 +537,14 @@
     <div class="section-inner">
       <span class="eyebrow">What Our Customers Say</span>
       <h2 class="section-heading">Trusted by Tampa<br>Families for 17 Years</h2>
+      <div class="review-aggregate" aria-label="Overall rating summary">
+        <div class="agg-score" aria-label="4.9 out of 5 stars">4.9</div>
+        <div class="agg-detail">
+          <div class="agg-stars" aria-hidden="true">★★★★★</div>
+          <div class="agg-count">Based on 170 Google reviews</div>
+        </div>
+        <div class="agg-badge">Google Verified</div>
+      </div>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="stars">★★★★★</div>
@@ -466,6 +563,95 @@
           <p class="review-text">"Called Rivera Electric about a breaker that kept tripping. Every other company said replace the panel. Marco found the actual problem — a loose connection behind an outlet — fixed it in 20 minutes, and charged a fraction of what a panel replacement would've cost. Honest guys."</p>
           <div class="reviewer-name">Laura P.</div>
           <div class="reviewer-loc">South Tampa · Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"We had aluminum wiring throughout our 1970s home — a real fire risk. Rivera Electric re-wired the entire house in three days, coordinated the permit and inspection, and our insurance company was completely satisfied. Pricing was fair and everything came in as quoted."</p>
+          <div class="reviewer-name">Sandra &amp; Ray M.</div>
+          <div class="reviewer-loc">Carrollwood, Tampa · Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Added six recessed lights and a ceiling fan in our living room. The crew was on time, protected our floors, patched the drywall cleanly, and cleaned up before leaving. No surprises on the bill. We'll call Rivera Electric every time."</p>
+          <div class="reviewer-name">Mike T.</div>
+          <div class="reviewer-loc">Hyde Park, Tampa · Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Emergency call on a Saturday morning — sparks from an outlet near our kitchen sink. Marco arrived within the hour, identified a failed GFCI circuit wired incorrectly by a previous contractor, and replaced the whole run safely. Exactly what you need from a neighborhood electrician."</p>
+          <div class="reviewer-name">Theresa W.</div>
+          <div class="reviewer-loc">New Tampa · Google Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <span class="eyebrow">Common Questions</span>
+      <h2 class="section-heading">Electrical Questions,<br>Answered Straight</h2>
+      <div class="faq-layout">
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              How much does an electrician cost in Tampa FL?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Most residential jobs range from $150–$500 for repairs and installations. Panel upgrades typically run $1,800–$3,500 installed. Rivera Electric provides written upfront estimates before any work begins — no hourly billing surprises.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do I need a permit for electrical work in Tampa?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes — most electrical work in Tampa requires a permit from Hillsborough County. We handle every permit: file, schedule the inspection, and pass it. You never deal with the permit office yourself.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              How long does a panel upgrade take?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">A standard 200-amp panel upgrade typically takes 4–6 hours. Power is off only during the swap. We schedule the inspection same week so your permit closes quickly.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Can you install an EV charger at my home?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes. We install Level 2 (240V) home EV chargers for all major brands — Tesla, ChargePoint, Wallbox, and others. We check panel capacity, run the dedicated circuit, pull the permit, and handle TECO rebate paperwork where applicable.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Is aluminum wiring in my home dangerous?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Aluminum wiring from the 1960s–70s is a fire risk if connections have deteriorated. We can inspect, add COPALUM or AlumiConn connectors at outlets, or do a full copper rewire depending on the extent. We'll tell you honestly what's needed.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you offer emergency electrical service?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">We offer same-day service Mon–Fri 7am–6pm and Saturday 8am–3pm for urgent situations. For active electrical hazards — sparks, burning smell, or no power to critical systems — call us immediately at (813) 555-0847.</div>
+            </div>
+          </div>
+        </div>
+        <div class="faq-aside">
+          <h3>Not sure where to start?</h3>
+          <p>Describe what's happening — flickering lights, tripping breakers, a charger you want installed — and we'll tell you what it's likely to involve and what it costs before we ever show up.</p>
+          <a href="contact.html" class="btn-white">Get a Free Estimate &rarr;</a>
         </div>
       </div>
     </div>
@@ -517,12 +703,49 @@
           <li><a href="mailto:service@riveraelectrictampa.com">service@riveraelectrictampa.com</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="contact.html">Tampa</a></li>
+          <li><a href="contact.html">South Tampa</a></li>
+          <li><a href="contact.html">Carrollwood</a></li>
+          <li><a href="contact.html">Westchase</a></li>
+          <li><a href="contact.html">Seminole Heights</a></li>
+          <li><a href="contact.html">Brandon</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2025 Rivera Electric. All rights reserved.</span>
       <span>Licensed Electrical Contractor · Florida Lic. EC13003421</span>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky" role="complementary" aria-label="Quick contact">
+    <div class="mobile-sticky-label">
+      <strong>Rivera Electric</strong>
+      Tampa's trusted electrician
+    </div>
+    <a href="tel:8135550847" class="btn btn-amber">Call Now</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

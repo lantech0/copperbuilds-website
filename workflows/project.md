@@ -129,8 +129,16 @@ When the completed questionnaire arrives:
    - Generate SEO fields using the formula in `docs/superpowers/specs/2026-05-10-client-config-build-system-design.md`
    - Generate internal links using the SEO strategy in that same spec
    - Leave `WEB3FORMS_KEY=` blank — collected after account setup
-4. Show the populated `client.env` to the user for review and confirmation.
-5. If any required fields are missing, send one clarifying email. Do not start the build until confirmed.
+4. **Populate `styles/Client/Vocab.yml` for Vale:**
+   - Copy `clients/templates/vale-vocab-template.yml` to `lantech-website/styles/Client/Vocab.yml`
+   - Fill the `tokens:` list with banned/off-brand terms from the client's brief and brand voice:
+     - Competitor names (if client doesn't want them in copy)
+     - Outdated service names or old brand names
+     - Off-brand adjectives (e.g., "cheap" for a premium client)
+   - Remove the placeholder line `- 'REPLACE_THIS_WITH_ACTUAL_BANNED_TERMS'`
+   - If the client has no brand restrictions, leave the tokens list empty (delete the placeholder line)
+5. Show the populated `client.env` to the user for review and confirmation.
+6. If any required fields are missing, send one clarifying email. Do not start the build until confirmed.
 6. Upload completed `02-onboarding-questionnaire.md` and `06-client-brief.md` to the client's Drive folder.
 7. Confirm receipt to the client.
 
@@ -183,7 +191,7 @@ When the build passes all quality gates in `CLAUDE.md`, run `workflows/revisions
 |---|---|---|---|
 | Local Presence | $997/mo | Up to 3 | City pages maintained monthly, emergency page, GBP managed, 150 directory listings, call tracking, review requests, monthly report |
 | Lead Machine | $1,997/mo | Up to 8 | Everything in Local Presence + GBP monthly posts, 2 articles/mo, seasonal content, 4 links/mo, 10 competitors tracked, monthly strategy call |
-| Market Leader | $3,497/mo | Up to 20 | Everything in Lead Machine + 6 articles/mo, 8 links/mo, Google LSA management, AI search optimization, revenue reporting, 20 competitors tracked, dedicated account manager, 2 strategy calls/mo |
+| Market Leader | $3,497/mo | Up to 20 | Everything in Lead Machine + 4 articles/mo, 5–8 links/mo, Google LSA management, AI search optimization, 20 competitors tracked, dedicated account manager, 1 strategy call/mo |
 
 **Billing:** Month-to-month. Cancel anytime with 30 days notice. No annual contracts.
 **Revisions:** Initial site build includes 2 revision rounds. Monthly content updates do not require revision rounds.

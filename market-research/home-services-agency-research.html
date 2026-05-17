@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Services Web + SEO Agencies — Market Research May 2026</title>
+<style>
+  :root {
+    --bg: #f0f4f8;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+    --navy: #0f172a;
+    --orange: #f97316;
+    --blue: #2563eb;
+    --green: #059669;
+    --red: #dc2626;
+    --purple: #7c3aed;
+    --yellow: #d97706;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy); padding: 0 2rem;
+    display: flex; align-items: center; gap: 0;
+    overflow-x: auto; scrollbar-width: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-brand { color: #fff; font-weight: 800; font-size: .9rem; padding: 1rem 1.5rem 1rem 0; white-space: nowrap; border-right: 1px solid rgba(255,255,255,.1); margin-right: 1rem; }
+  nav a {
+    color: rgba(255,255,255,.55); text-decoration: none;
+    font-size: .75rem; font-weight: 600; letter-spacing: .05em;
+    text-transform: uppercase; padding: 1rem .9rem;
+    white-space: nowrap; border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  nav a:hover { color: #fff; border-bottom-color: var(--orange); }
+
+  /* HERO */
+  header {
+    background: linear-gradient(135deg, #0f172a 0%, #1c2951 50%, #0f2744 100%);
+    color: #fff; padding: 5rem 2rem 3.5rem; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: '🔧🔨🏠⚡🌡️💧';
+    position: absolute; font-size: 8rem; opacity: .04;
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    letter-spacing: 2rem; white-space: nowrap;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(249,115,22,.2); border: 1px solid rgba(249,115,22,.4);
+    color: #fb923c; font-size: .75rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: .3rem 1rem; border-radius: 999px; margin-bottom: 1.2rem;
+  }
+  header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.1; margin-bottom: .8rem; }
+  header h1 span { color: var(--orange); }
+  header p.sub { color: rgba(255,255,255,.6); max-width: 620px; margin: 0 auto 2.5rem; font-size: 1rem; }
+  .trade-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.5rem; }
+  .trade-pill {
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+    color: rgba(255,255,255,.8); font-size: .8rem; font-weight: 600;
+    padding: .4rem 1rem; border-radius: 999px;
+  }
+  .stats-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
+  .stat-box {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px; padding: .9rem 1.5rem; text-align: center; min-width: 110px;
+  }
+  .stat-box .num { font-size: 1.7rem; font-weight: 900; color: #fb923c; }
+  .stat-box .lbl { font-size: .65rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .07em; margin-top: .1rem; }
+
+  /* SECTIONS */
+  section { max-width: 1220px; margin: 0 auto; padding: 4rem 1.5rem; }
+  section.alt-bg { background: #fff; max-width: none; }
+  section.alt-bg > .inner { max-width: 1220px; margin: 0 auto; padding: 4rem 1.5rem; }
+  h2 { font-size: 1.7rem; font-weight: 900; margin-bottom: .4rem; }
+  h2 .accent { color: var(--orange); }
+  .section-bar { width: 42px; height: 4px; background: var(--orange); border-radius: 2px; margin: .4rem 0 .7rem; }
+  .section-intro { color: var(--muted); font-size: .9rem; margin-bottom: 2rem; max-width: 700px; }
+
+  /* CALLOUT */
+  .callout {
+    background: #fff7ed; border: 1px solid #fed7aa;
+    border-left: 5px solid var(--orange);
+    border-radius: 12px; padding: 1.2rem 1.4rem;
+    font-size: .88rem; color: #9a3412; margin-bottom: 2rem;
+  }
+  .callout strong { color: var(--orange); }
+
+  /* TRADE ICONS ROW */
+  .trade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+  .trade-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.2rem 1rem;
+    text-align: center;
+  }
+  .trade-card .icon { font-size: 2rem; margin-bottom: .5rem; }
+  .trade-card .name { font-size: .82rem; font-weight: 700; }
+  .trade-card .kw { font-size: .7rem; color: var(--muted); margin-top: .2rem; }
+
+  /* UNIQUE SERVICES */
+  .unique-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+  .unique-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.3rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .unique-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: .1rem; }
+  .unique-card h3 { font-size: .9rem; font-weight: 800; margin-bottom: .25rem; }
+  .unique-card p { font-size: .8rem; color: var(--muted); }
+  .unique-card .req { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-top: .5rem; display: inline-block; padding: .15rem .5rem; border-radius: 5px; }
+  .req.must { background: #ecfdf5; color: #065f46; }
+  .req.nice { background: #eff6ff; color: #1e40af; }
+  .req.new  { background: #fff7ed; color: #9a3412; }
+
+  /* PRICING TIERS */
+  .tier-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.3rem; }
+  .tier-box {
+    border-radius: 18px; padding: 1.8rem; border: 2px solid;
+    position: relative; overflow: hidden;
+  }
+  .tier-box::after {
+    content: ''; position: absolute; top: -20px; right: -20px;
+    width: 100px; height: 100px; border-radius: 50%;
+    opacity: .08;
+  }
+  .t-starter { background: #f8fafc; border-color: #cbd5e1; }
+  .t-starter::after { background: #64748b; }
+  .t-growth  { background: #eff6ff; border-color: #bfdbfe; }
+  .t-growth::after  { background: #2563eb; }
+  .t-compete { background: #fff7ed; border-color: #fed7aa; }
+  .t-compete::after { background: #f97316; }
+  .t-dominate { background: #fdf4ff; border-color: #e9d5ff; }
+  .t-dominate::after { background: #7c3aed; }
+
+  .tier-label {
+    font-size: .68rem; font-weight: 800; letter-spacing: .09em;
+    text-transform: uppercase; padding: .2rem .7rem;
+    border-radius: 999px; margin-bottom: .8rem; display: inline-block;
+  }
+  .t-starter .tier-label  { background: #64748b; color: #fff; }
+  .t-growth .tier-label   { background: #2563eb; color: #fff; }
+  .t-compete .tier-label  { background: #f97316; color: #fff; }
+  .t-dominate .tier-label { background: #7c3aed; color: #fff; }
+
+  .tier-price { font-size: 2rem; font-weight: 900; line-height: 1; margin-bottom: .15rem; }
+  .t-starter .tier-price  { color: #475569; }
+  .t-growth .tier-price   { color: #1d4ed8; }
+  .t-compete .tier-price  { color: #ea580c; }
+  .t-dominate .tier-price { color: #6d28d9; }
+  .tier-sub { font-size: .75rem; color: var(--muted); margin-bottom: .8rem; }
+  .tier-who { font-size: .78rem; font-style: italic; color: var(--muted); padding-bottom: .8rem; border-bottom: 1px solid rgba(0,0,0,.07); margin-bottom: .8rem; }
+
+  .dl { list-style: none; margin-top: .3rem; }
+  .dl li { display: flex; gap: .45rem; align-items: flex-start; font-size: .8rem; padding: .22rem 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+  .dl li:last-child { border: none; }
+  .dl li .c { color: #10b981; font-weight: 800; flex-shrink: 0; font-size: .85rem; }
+  .dl li .x { color: #94a3b8; flex-shrink: 0; }
+  .tier-note { font-size: .75rem; color: var(--muted); background: rgba(0,0,0,.04); border-radius: 8px; padding: .6rem .8rem; margin-top: .8rem; }
+
+  /* AGENCY CARDS */
+  .agency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.4rem; }
+  .ag-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; overflow: hidden;
+  }
+  .ag-header {
+    padding: 1.3rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .ag-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .5rem; }
+  .ag-name { font-size: 1.1rem; font-weight: 900; }
+  .ag-loc { font-size: .73rem; color: var(--muted); }
+  .ag-focus-bar { margin-top: .7rem; }
+  .focus-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: .3rem; }
+  .focus-track { height: 7px; background: #f1f5f9; border-radius: 99px; overflow: hidden; }
+  .focus-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #f97316, #fb923c); }
+  .focus-pct { font-size: .7rem; color: var(--orange); font-weight: 700; margin-top: .2rem; }
+
+  .star-row { display: flex; align-items: center; gap: .4rem; }
+  .stars { color: #f59e0b; font-size: .85rem; }
+  .review-ct { font-size: .73rem; color: var(--muted); }
+  .ag-badge {
+    font-size: .65rem; font-weight: 700; padding: .18rem .55rem;
+    border-radius: 5px; white-space: nowrap;
+  }
+  .badge-blue { background: #eff6ff; color: #1d4ed8; }
+  .badge-green { background: #ecfdf5; color: #065f46; }
+  .badge-orange { background: #fff7ed; color: #9a3412; }
+  .badge-purple { background: #f5f3ff; color: #5b21b6; }
+  .badge-red { background: #fff1f2; color: #991b1b; }
+  .badge-gray { background: #f1f5f9; color: #475569; }
+
+  .ag-body { padding: 1.1rem 1.5rem; }
+  .ag-pricing {
+    background: #f8fafc; border-radius: 10px;
+    padding: .8rem 1rem; margin-bottom: 1rem; font-size: .82rem;
+  }
+  .ag-pricing .price { font-weight: 800; color: var(--blue); }
+  .ag-pricing .label { color: var(--muted); font-size: .75rem; }
+
+  .svc-title { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: .5rem; }
+  .svc-wrap { display: flex; flex-wrap: wrap; gap: .3rem; }
+  .chip { font-size: .7rem; font-weight: 600; padding: .18rem .55rem; border-radius: 6px; border: 1px solid; }
+  .chip-blue   { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+  .chip-green  { background: #ecfdf5; color: #065f46; border-color: #a7f3d0; }
+  .chip-orange { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
+  .chip-purple { background: #f5f3ff; color: #5b21b6; border-color: #ddd6fe; }
+  .chip-red    { background: #fff1f2; color: #991b1b; border-color: #fecaca; }
+  .chip-gray   { background: #f8fafc; color: #475569; border-color: #e2e8f0; }
+
+  .ag-differentiator { margin-top: .8rem; background: #f0f9ff; border-left: 3px solid #2563eb; border-radius: 0 8px 8px 0; padding: .6rem .8rem; font-size: .78rem; color: #1e3a8a; }
+  .ag-differentiator strong { color: #1d4ed8; }
+  .ag-result { margin-top: .6rem; background: #f0fdf4; border-left: 3px solid #10b981; border-radius: 0 8px 8px 0; padding: .6rem .8rem; font-size: .78rem; color: #065f46; }
+
+  /* PRICING TABLE */
+  .ptable-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--border); }
+  table.pt { width: 100%; border-collapse: collapse; background: var(--card); font-size: .82rem; }
+  table.pt th { background: var(--navy); color: #fff; padding: .85rem 1.1rem; text-align: left; font-size: .75rem; font-weight: 700; }
+  table.pt th.center { text-align: center; }
+  table.pt td { padding: .7rem 1.1rem; border-bottom: 1px solid var(--border); }
+  table.pt td.center { text-align: center; }
+  table.pt tr:last-child td { border-bottom: none; }
+  table.pt tr:hover td { background: #f8fafc; }
+  table.pt .trade { font-weight: 700; color: var(--text); }
+  table.pt .lo  { color: #10b981; font-weight: 700; }
+  table.pt .hi  { color: #ef4444; font-weight: 700; }
+  table.pt .rng { color: #1d4ed8; font-weight: 700; }
+  table.pt .note { font-size: .73rem; color: var(--muted); }
+
+  /* WHAT THEY INCLUDE TABLE */
+  table.inc { width: 100%; border-collapse: collapse; background: var(--card); font-size: .8rem; }
+  table.inc th { background: var(--navy); color: #fff; padding: .8rem 1rem; text-align: center; font-size: .73rem; font-weight: 700; }
+  table.inc th.left { text-align: left; }
+  table.inc td { padding: .6rem 1rem; border-bottom: 1px solid var(--border); text-align: center; }
+  table.inc td.left { text-align: left; font-weight: 600; color: var(--text); font-size: .78rem; background: #f8fafc; }
+  table.inc tr.group td { background: #0f172a; color: rgba(255,255,255,.7); font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; text-align: left; padding: .5rem 1rem; }
+  table.inc tr:hover td:not(.left) { background: #f0f9ff; }
+  .yes { color: #10b981; font-size: 1.1rem; font-weight: 800; }
+  .no  { color: #e2e8f0; font-size: .9rem; }
+  .partial { color: #f59e0b; font-weight: 700; font-size: .75rem; }
+  .paid { color: #7c3aed; font-size: .72rem; font-weight: 700; }
+
+  /* GAPS */
+  .gap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+  .gap-card {
+    background: var(--card); border: 1px solid #ddd6fe;
+    border-left: 5px solid #7c3aed; border-radius: 14px; padding: 1.3rem;
+  }
+  .gap-n { font-size: 2.5rem; font-weight: 900; color: #ede9fe; float: right; line-height: 1; }
+  .gap-card h3 { font-size: .95rem; font-weight: 800; color: #5b21b6; margin-bottom: .4rem; }
+  .gap-card p { font-size: .82rem; color: #4c1d95; clear: both; }
+
+  /* LANTECH OFFER */
+  .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.4rem; }
+  .offer-card { border-radius: 20px; padding: 2rem; border: 2px solid; }
+  .offer-1 { background: #eff6ff; border-color: #bfdbfe; }
+  .offer-2 { background: #fff7ed; border-color: #fed7aa; }
+  .offer-3 { background: #f5f3ff; border-color: #ddd6fe; }
+
+  .offer-badge { display: inline-block; font-size: .67rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; padding: .2rem .7rem; border-radius: 999px; margin-bottom: .8rem; }
+  .offer-1 .offer-badge { background: #2563eb; color: #fff; }
+  .offer-2 .offer-badge { background: #f97316; color: #fff; }
+  .offer-3 .offer-badge { background: #7c3aed; color: #fff; }
+
+  .offer-name { font-size: 1.3rem; font-weight: 900; margin-bottom: .15rem; }
+  .offer-1 .offer-name { color: #1d4ed8; }
+  .offer-2 .offer-name { color: #c2410c; }
+  .offer-3 .offer-name { color: #5b21b6; }
+
+  .offer-price { font-size: 1.9rem; font-weight: 900; }
+  .offer-1 .offer-price { color: #2563eb; }
+  .offer-2 .offer-price { color: #f97316; }
+  .offer-3 .offer-price { color: #7c3aed; }
+
+  .offer-sub { font-size: .75rem; color: var(--muted); margin-bottom: 1rem; }
+  .offer-pitch { font-size: .82rem; font-style: italic; color: var(--muted); padding-bottom: .8rem; border-bottom: 1px solid rgba(0,0,0,.08); margin-bottom: .8rem; }
+
+  .edge-box { background: rgba(0,0,0,.04); border-radius: 8px; padding: .6rem .8rem; margin-top: .9rem; font-size: .77rem; font-weight: 600; color: var(--text); }
+  .edge-box::before { content: '⚡ Lantech Edge: '; color: #f97316; }
+
+  /* VS ROW */
+  .vs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 640px) { .vs-row { grid-template-columns: 1fr; } }
+  .vs-card { border-radius: 14px; padding: 1.3rem; }
+  .vs-them { background: #fff1f2; border: 1px solid #fecaca; }
+  .vs-us   { background: #f0fdf4; border: 1px solid #a7f3d0; }
+  .vs-label { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .7rem; }
+  .vs-them .vs-label { color: #dc2626; }
+  .vs-us   .vs-label { color: #059669; }
+  .vs-list { list-style: none; }
+  .vs-list li { font-size: .82rem; padding: .25rem 0; display: flex; gap: .5rem; }
+  .vs-them .vs-list li::before { content: '✗'; color: #dc2626; font-weight: 800; }
+  .vs-us   .vs-list li::before { content: '✓'; color: #059669; font-weight: 800; }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .78rem; }
+  footer strong { color: rgba(255,255,255,.7); }
+
+  /* UTIL */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+  .mb-sm { margin-bottom: .8rem; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .6rem; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">🏠 Home Services Research</span>
+  <a href="#trades">Trades</a>
+  <a href="#unique">Niche Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#agencies">Agencies</a>
+  <a href="#includes">What's Included</a>
+  <a href="#retainer">Retainer Details</a>
+  <a href="#gaps">Market Gaps</a>
+  <a href="#lantech">Lantech Offer</a>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="hero-tag">🔍 Deep Market Research · May 2026</div>
+  <h1>Web Dev + SEO Agencies That Serve<br><span>HVAC, Plumbers, Roofers & Contractors</span></h1>
+  <p class="sub">What they actually offer, what they charge, what's included per trade — and where Lantech can undercut and outperform every one of them.</p>
+  <div class="trade-pills">
+    <span class="trade-pill">🌡️ HVAC</span>
+    <span class="trade-pill">💧 Plumbing</span>
+    <span class="trade-pill">🏚️ Roofing</span>
+    <span class="trade-pill">⚡ Electrical</span>
+    <span class="trade-pill">🔨 General Contractors</span>
+    <span class="trade-pill">🪲 Pest Control</span>
+    <span class="trade-pill">🚪 Garage Doors</span>
+  </div>
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">11</div><div class="lbl">Agencies Analyzed</div></div>
+    <div class="stat-box"><div class="num">$750</div><div class="lbl">Market Floor/mo</div></div>
+    <div class="stat-box"><div class="num">$20K+</div><div class="lbl">Market Ceiling/mo</div></div>
+    <div class="stat-box"><div class="num">$4,800</div><div class="lbl">Hook SEO Price</div></div>
+    <div class="stat-box"><div class="num">6</div><div class="lbl">Market Gaps Found</div></div>
+  </div>
+</header>
+
+<!-- TRADES OVERVIEW -->
+<section id="trades">
+  <h2>The Home Services Trades</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">These are the exact businesses Lantech targets — and the same businesses every specialist agency in this research fights over. Understanding the trade-specific search patterns is what separates generic agencies from specialists.</p>
+
+  <div class="trade-grid">
+    <div class="trade-card">
+      <div class="icon">🌡️</div>
+      <div class="name">HVAC</div>
+      <div class="kw">"AC repair near me"<br>"furnace installation [city]"<br>"emergency AC service"</div>
+    </div>
+    <div class="trade-card">
+      <div class="icon">💧</div>
+      <div class="name">Plumbing</div>
+      <div class="kw">"plumber near me"<br>"emergency plumber 24/7"<br>"pipe repair [city]"</div>
+    </div>
+    <div class="trade-card">
+      <div class="icon">🏚️</div>
+      <div class="name">Roofing</div>
+      <div class="kw">"roof repair near me"<br>"storm damage roofing"<br>"roof replacement [city]"</div>
+    </div>
+    <div class="trade-card">
+      <div class="icon">⚡</div>
+      <div class="name">Electrical</div>
+      <div class="kw">"electrician near me"<br>"panel upgrade [city]"<br>"emergency electrician"</div>
+    </div>
+    <div class="trade-card">
+      <div class="icon">🔨</div>
+      <div class="name">Contractors</div>
+      <div class="kw">"home renovation [city]"<br>"general contractor near me"<br>"remodeling company"</div>
+    </div>
+    <div class="trade-card">
+      <div class="icon">🚪</div>
+      <div class="name">Garage Doors</div>
+      <div class="kw">"garage door repair"<br>"garage door installation"<br>"garage door opener"</div>
+    </div>
+    <div class="trade-card">
+      <div class="icon">🪲</div>
+      <div class="name">Pest Control</div>
+      <div class="kw">"pest control near me"<br>"exterminator [city]"<br>"termite treatment"</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Critical insight:</strong> Home services clients have two types of search intent — <strong>Emergency</strong> ("24/7 plumber now") and <strong>Planned</strong> ("HVAC tune-up before winter"). The best agencies build separate content strategies and landing pages for each intent. Agencies that treat them the same lose leads to specialists.
+  </div>
+</section>
+
+<!-- UNIQUE SERVICES FOR HOME SERVICES -->
+<section class="alt-bg" id="unique">
+<div class="inner">
+  <h2>Services Specific to <span class="accent">Home Services</span> Clients</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">These are NOT standard SEO services. These are deliverables that only exist in the home services niche — and what separates agencies that specialize from generalists who just "do SEO."</p>
+
+  <div class="unique-grid">
+
+    <div class="unique-card">
+      <div class="unique-icon">📍</div>
+      <div>
+        <h3>Service Area Pages (SAPs)</h3>
+        <p>One page per city served: "Plumber in Austin TX," "AC Repair in Round Rock TX." A 10-city contractor needs 10 optimized location pages, each with local keywords, map embed, and LocalBusiness schema. This is the #1 driver of local lead volume for home services.</p>
+        <span class="req must">Must-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">🚨</div>
+      <div>
+        <h3>Emergency Intent Optimization</h3>
+        <p>Separate landing pages and keyword strategy for "24/7 emergency [service] near me" searches. Emergency callers convert at 3–5× the rate of planned-service searchers — and nobody prices that call correctly unless they're optimized for it.</p>
+        <span class="req must">Must-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">🏆</div>
+      <div>
+        <h3>Google Local Services Ads (LSA) Management</h3>
+        <p>LSAs appear above everything — above regular Google Ads, above organic results. They come with the "Google Screened" or "Google Guaranteed" badge, which HVAC and plumbing clients trust heavily. Separate from PPC; most generalist agencies don't manage them.</p>
+        <span class="req must">Must-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">📅</div>
+      <div>
+        <h3>Seasonal Content Strategy</h3>
+        <p>AC tune-up content in March–April. Heating system checks in September–October. Storm damage roofing pages before hurricane season. Home services businesses live and die by seasonal demand — content that misses the timing window generates zero leads.</p>
+        <span class="req must">Must-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">⭐</div>
+      <div>
+        <h3>Automated Review Generation</h3>
+        <p>SMS + email follow-up sequences triggered after job completion. QR codes on invoices and service receipts. Response templates for Google reviews. Home services live on reviews — "best plumber near me" results are almost entirely driven by review count and recency.</p>
+        <span class="req must">Must-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">📞</div>
+      <div>
+        <h3>Click-to-Call + Call Tracking</h3>
+        <p>Mobile-first click-to-call buttons on every page and in the header. CallRail integration to track which keyword, page, and campaign generated each call. Home services clients don't fill out forms — they call. If you're not tracking calls, you can't prove SEO ROI.</p>
+        <span class="req must">Must-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">🗺️</div>
+      <div>
+        <h3>Google Map Pack Domination</h3>
+        <p>The 3-pack (map results) generates 44% of clicks for home services searches. GBP optimization, proximity signals, review velocity, and local citation consistency all drive Map Pack ranking. Some agencies (Contractor Webmasters) have proprietary software (DataPins) just for this.</p>
+        <span class="req must">Must-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">📸</div>
+      <div>
+        <h3>Before/After Gallery + Project Pages</h3>
+        <p>Photos of real work done — roof replacements, HVAC installs, pipe repairs. These build trust, add local SEO signals (geo-tagged images), and keep visitors on the site longer. Agencies that know home services build gallery functionality into the site architecture.</p>
+        <span class="req nice">Nice-to-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">🤖</div>
+      <div>
+        <h3>AI Receptionist / 24/7 Chat</h3>
+        <p>Scorpion's "Scorpion Connect" and Relentless Digital's "Bullseye Pro" both include AI that answers calls, qualifies leads, and books jobs directly into the contractor's calendar — 24/7. Emergency callers at 2am don't leave voicemails. This feature alone converts lost calls into booked jobs.</p>
+        <span class="req new">New 2025–2026</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">🔗</div>
+      <div>
+        <h3>Thumbtack / Angi / HomeAdvisor Management</h3>
+        <p>Beyond Google — managing profiles and reviews on lead aggregator platforms where homeowners search before choosing a contractor. Citation consistency across these platforms directly impacts local SEO rankings and lead volume.</p>
+        <span class="req nice">Nice-to-Have</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">📊</div>
+      <div>
+        <h3>ServiceTitan / Jobber CRM Integration</h3>
+        <p>Top agencies (Scorpion, Relentless Digital) connect marketing dashboards directly to the contractor's job-booking software. So the report shows not just "47 calls" but "47 calls → 31 booked jobs → $42,300 in revenue from SEO." This is the future of home services reporting.</p>
+        <span class="req new">New 2025–2026</span>
+      </div>
+    </div>
+
+    <div class="unique-card">
+      <div class="unique-icon">🏷️</div>
+      <div>
+        <h3>Brand + Truck Wrap Integration</h3>
+        <p>KickCharge Creative is the only agency that explicitly integrates visual branding (truck wraps, uniforms, door hangers) with digital marketing. Brand recognition on service vehicles drives direct searches and builds local brand equity that SEO compounds.</p>
+        <span class="req nice">Niche Differentiator</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PRICING BY TRADE & SIZE -->
+<section id="pricing">
+  <h2>Pricing by Trade & <span class="accent">Contractor Size</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Pricing varies by trade competition level, number of cities served, and contractor revenue size. This is what the market actually charges — not estimates.</p>
+
+  <!-- Per Trade Table -->
+  <h3 style="font-size:1rem; font-weight:800; margin-bottom:.8rem; color:var(--muted);">▸ Monthly SEO Pricing by Trade</h3>
+  <div class="ptable-wrap mb-sm" style="margin-bottom:2rem;">
+    <table class="pt">
+      <thead>
+        <tr>
+          <th>Trade</th>
+          <th>Entry (1 city)</th>
+          <th>Growth (3–5 cities)</th>
+          <th>Aggressive (10+ cities)</th>
+          <th>Key Driver of Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="trade">🌡️ HVAC</td>
+          <td><span class="lo">$1,000</span>–<span class="rng">$2,000</span>/mo</td>
+          <td><span class="rng">$2,000</span>–<span class="rng">$5,000</span>/mo</td>
+          <td><span class="hi">$5,000</span>–<span class="hi">$12,000</span>/mo</td>
+          <td class="note">Highly seasonal; emergency + planned split content; AC vs. heat campaigns</td>
+        </tr>
+        <tr>
+          <td class="trade">💧 Plumbing</td>
+          <td><span class="lo">$500</span>–<span class="rng">$1,500</span>/mo</td>
+          <td><span class="rng">$1,500</span>–<span class="rng">$4,000</span>/mo</td>
+          <td><span class="hi">$4,000</span>–<span class="hi">$10,000</span>/mo</td>
+          <td class="note">High emergency intent; "24/7 plumber" keywords very competitive; reviews critical</td>
+        </tr>
+        <tr>
+          <td class="trade">🏚️ Roofing</td>
+          <td><span class="lo">$750</span>–<span class="rng">$1,500</span>/mo</td>
+          <td><span class="rng">$1,500</span>–<span class="rng">$3,500</span>/mo</td>
+          <td><span class="hi">$3,500</span>–<span class="hi">$7,500</span>/mo</td>
+          <td class="note">Storm damage = spikes in demand; seasonal; insurance claim content a major differentiator</td>
+        </tr>
+        <tr>
+          <td class="trade">⚡ Electrical</td>
+          <td><span class="lo">$750</span>–<span class="rng">$1,500</span>/mo</td>
+          <td><span class="rng">$1,500</span>–<span class="rng">$3,500</span>/mo</td>
+          <td><span class="hi">$3,500</span>–<span class="hi">$8,000</span>/mo</td>
+          <td class="note">Mix of emergency and high-ticket planned (panels, EV chargers); technical content ranks well</td>
+        </tr>
+        <tr>
+          <td class="trade">🔨 Contractors</td>
+          <td><span class="lo">$1,000</span>–<span class="rng">$2,500</span>/mo</td>
+          <td><span class="rng">$2,500</span>–<span class="rng">$5,000</span>/mo</td>
+          <td><span class="hi">$5,000</span>–<span class="hi">$15,000</span>/mo</td>
+          <td class="note">Broad service range means more pages; longer sales cycles; before/after content critical</td>
+        </tr>
+        <tr>
+          <td class="trade">🚪 Garage Doors</td>
+          <td><span class="lo">$500</span>–<span class="rng">$1,200</span>/mo</td>
+          <td><span class="rng">$1,200</span>–<span class="rng">$2,500</span>/mo</td>
+          <td><span class="hi">$2,500</span>–<span class="hi">$5,000</span>/mo</td>
+          <td class="note">Highly emergency-driven; "broken spring" and "won't open" keywords dominate; lower competition</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- By Contractor Size -->
+  <h3 style="font-size:1rem; font-weight:800; margin-bottom:.8rem; color:var(--muted);">▸ Monthly Budget by Contractor Revenue / Size</h3>
+  <div class="tier-row">
+    <div class="tier-box t-starter">
+      <div class="tier-label">Small Contractor</div>
+      <div class="tier-price">$1,000–$3,000</div>
+      <div class="tier-sub">/ month</div>
+      <div class="tier-who">1–5 employees · Under $1M revenue · 1–3 service cities · Just getting into digital marketing</div>
+      <ul class="dl">
+        <li><span class="c">✓</span> Website (5–10 pages)</li>
+        <li><span class="c">✓</span> GBP optimization</li>
+        <li><span class="c">✓</span> Citation building</li>
+        <li><span class="c">✓</span> On-page SEO</li>
+        <li><span class="c">✓</span> 1–2 service area pages</li>
+        <li><span class="c">✓</span> Basic review strategy</li>
+        <li><span class="c">✓</span> Monthly report</li>
+        <li><span class="x">✗</span> Active link building</li>
+        <li><span class="x">✗</span> LSA management</li>
+        <li><span class="x">✗</span> Call tracking</li>
+      </ul>
+      <div class="tier-note">Expected leads: 10–20/month from organic + maps</div>
+    </div>
+    <div class="tier-box t-growth">
+      <div class="tier-label">Medium Contractor</div>
+      <div class="tier-price">$2,000–$5,000</div>
+      <div class="tier-sub">/ month</div>
+      <div class="tier-who">5–25 employees · $1M–$5M revenue · 5–10 service cities · Competing seriously for local market share</div>
+      <ul class="dl">
+        <li><span class="c">✓</span> Full website with SAPs for each city</li>
+        <li><span class="c">✓</span> Emergency + planned intent pages</li>
+        <li><span class="c">✓</span> Active GBP management</li>
+        <li><span class="c">✓</span> 4–8 blogs/month (seasonal included)</li>
+        <li><span class="c">✓</span> Link building (4–8 links/month)</li>
+        <li><span class="c">✓</span> LSA management</li>
+        <li><span class="c">✓</span> Call tracking (CallRail)</li>
+        <li><span class="c">✓</span> Automated review generation</li>
+        <li><span class="c">✓</span> Competitor tracking</li>
+        <li><span class="c">✓</span> Monthly strategy call</li>
+      </ul>
+      <div class="tier-note">Expected leads: 30–60/month · $2M+ revenue threshold needed to justify this spend</div>
+    </div>
+    <div class="tier-box t-compete">
+      <div class="tier-label">Large Contractor</div>
+      <div class="tier-price">$5,000–$12,000</div>
+      <div class="tier-sub">/ month</div>
+      <div class="tier-who">25+ employees · $5M+ revenue · 15+ cities or multi-state · SEO is primary growth channel</div>
+      <ul class="dl">
+        <li><span class="c">✓</span> Enterprise site architecture</li>
+        <li><span class="c">✓</span> 15–30+ service area pages</li>
+        <li><span class="c">✓</span> Full content calendar (daily/weekly)</li>
+        <li><span class="c">✓</span> Aggressive link acquisition (PR-level)</li>
+        <li><span class="c">✓</span> LSA + PPC + Google Ads all managed</li>
+        <li><span class="c">✓</span> CRM integration (ServiceTitan/Jobber)</li>
+        <li><span class="c">✓</span> AI receptionist / 24/7 call answering</li>
+        <li><span class="c">✓</span> Revenue attribution reporting</li>
+        <li><span class="c">✓</span> Dedicated account team</li>
+      </ul>
+      <div class="tier-note">Expected leads: 100+/month · Hook Agency and Scorpion operate at this tier</div>
+    </div>
+    <div class="tier-box t-dominate">
+      <div class="tier-label">Enterprise / Franchise</div>
+      <div class="tier-price">$12,000–$25,000+</div>
+      <div class="tier-sub">/ month</div>
+      <div class="tier-who">Multi-location franchise · $10M+ revenue · Franchise marketing across states · Scorpion / Blue Corona territory</div>
+      <ul class="dl">
+        <li><span class="c">✓</span> Franchise SEO framework</li>
+        <li><span class="c">✓</span> Hundreds of location pages managed</li>
+        <li><span class="c">✓</span> AI-driven budget optimization (RevenueMAX)</li>
+        <li><span class="c">✓</span> Capacity Marketing Engine</li>
+        <li><span class="c">✓</span> Full multi-channel ad management</li>
+        <li><span class="c">✓</span> Dedicated account teams per location</li>
+        <li><span class="c">✓</span> Full CRM, scheduling, reputation tools</li>
+      </ul>
+      <div class="tier-note">Scorpion: requires 12-month contract. Blue Corona/RYNO: $3,500–$20,000/month range.</div>
+    </div>
+  </div>
+
+  <!-- Built-Right Published Tiers -->
+  <div style="margin-top:2rem;">
+    <h3 style="font-size:1rem; font-weight:800; margin-bottom:.8rem; color:var(--muted);">▸ Built-Right Digital — Only Published HVAC Tier Pricing Found in Market</h3>
+    <div class="ptable-wrap">
+      <table class="pt">
+        <thead><tr><th>Plan</th><th>Monthly</th><th>Target Contractor</th><th>What's Included</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Essentials</strong></td><td><span class="rng">$1,199/mo</span></td><td>New businesses</td><td>Technical SEO, on-page, content creation, listing management, strategy session</td></tr>
+          <tr><td><strong>Launch</strong></td><td><span class="rng">$2,099/mo</span></td><td>Under $1M revenue</td><td>All Essentials + deeper content, more listings, link building begins</td></tr>
+          <tr><td><strong>Scale</strong></td><td><span class="rng">$4,199/mo</span></td><td>Under $5M revenue</td><td>All Launch + aggressive content, competitive link building, full reporting</td></tr>
+          <tr><td><strong>Pro</strong></td><td><span class="hi">$19,999/mo</span></td><td>$5M+ revenue</td><td>Enterprise — full team, multi-location, AI optimization, revenue attribution</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- AGENCIES -->
+<section class="alt-bg" id="agencies">
+<div class="inner">
+  <h2>Agency-by-Agency Deep Dive</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Every major agency that specifically serves HVAC, plumbers, roofers, and contractors — what they really offer, how they price it, and who they're built for.</p>
+
+  <div class="agency-grid">
+
+    <!-- Hook Agency -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Hook Agency</div>
+            <div class="ag-loc">📍 Minneapolis, MN · Est. 2016 · 8+ years</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★★</span><span class="review-ct">4.9 (174 reviews)</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:80%"></div></div>
+          <div class="focus-pct">80% — HVAC · Plumbing · Roofing · Electrical · Pest Control</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-orange">$2M+ Contractors Only</span>
+          <span class="ag-badge badge-green">You Own Everything</span>
+          <span class="ag-badge badge-blue">Google Marketing Only</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:.5rem;">
+            <div><div class="label">Website Design</div><div class="price">$1,750/mo</div></div>
+            <div><div class="label">SEO</div><div class="price">$4,800/mo</div></div>
+            <div><div class="label">PPC</div><div class="price">$2,000/mo</div></div>
+          </div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">Technical SEO</span>
+          <span class="chip chip-blue">Content Strategy</span>
+          <span class="chip chip-blue">Link Building</span>
+          <span class="chip chip-green">Custom Web Design</span>
+          <span class="chip chip-orange">PPC Management</span>
+          <span class="chip chip-blue">City Page Optimization</span>
+          <span class="chip chip-blue">Keyword Research</span>
+          <span class="chip chip-blue">CRO Testing</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Positioning:</strong> "We don't do social media, social ads, or video. We do one thing — Google marketing — and we're the best at it." Exclusively serves home service contractors. Podcast: HVAC & Plumbing Hustle.
+        </div>
+        <div class="ag-result">
+          <strong>Timeline:</strong> 7–12 months to see measurable organic results. Best fit for contractors already doing $2M+ revenue who want to scale.
+        </div>
+      </div>
+    </div>
+
+    <!-- Blue Corona / RYNO -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Blue Corona / RYNO Strategic Solutions</div>
+            <div class="ag-loc">📍 Gaithersburg, MD · Merged 2024 · 17+ years</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★★</span><span class="review-ct">4.8 (94 reviews)</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:70%"></div></div>
+          <div class="focus-pct">70% · HVAC · Plumbing · Pest Control · Roofing · Electrical</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-green">You Own All Assets</span>
+          <span class="ag-badge badge-green">No Contract Required</span>
+          <span class="ag-badge badge-blue">Google Premier Partner</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div><div class="label">SEO Audit (one-time)</div><div class="price">$2,500–$3,500</div></div>
+          <div style="margin-top:.4rem;"><div class="label">Full Package (monthly)</div><div class="price">$3,500–$10,000/mo</div></div>
+          <div style="margin-top:.4rem;"><div class="label">SEO Only (ongoing)</div><div class="price">$1,500–$20,000/mo</div></div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">SEO + Local SEO</span>
+          <span class="chip chip-green">Website Design</span>
+          <span class="chip chip-orange">PPC + LSA Management</span>
+          <span class="chip chip-blue">Email Marketing</span>
+          <span class="chip chip-purple">OTT Advertising</span>
+          <span class="chip chip-green">Blue Corona Chat (AI)</span>
+          <span class="chip chip-blue">Lead Recovery</span>
+          <span class="chip chip-orange">Yelp Advertising</span>
+          <span class="chip chip-blue">GBP Optimization</span>
+          <span class="chip chip-blue">Reputation Management</span>
+          <span class="chip chip-gray">Social Media</span>
+          <span class="chip chip-blue">Advanced Analytics</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Full team per client:</strong> Dedicated account manager + SEO analyst + web designer/developer + PPC analyst + professional copywriter. Detailed monthly reports tied to revenue, not just traffic.
+        </div>
+        <div class="ag-result">
+          <strong>Key advantage:</strong> You own everything — code, content, design. No lock-in. Inc. 5000 company. Data-driven with proprietary analytics platform.
+        </div>
+      </div>
+    </div>
+
+    <!-- Scorpion -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Scorpion</div>
+            <div class="ag-loc">📍 Valencia, CA · Enterprise-level · 20+ years</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★</span><span class="review-ct">Mixed reviews</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:65%"></div></div>
+          <div class="focus-pct">65% · HVAC · Plumbing · Roofing · Restoration · Pest Control</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-red">12-Month Contract Required</span>
+          <span class="ag-badge badge-red">You DON'T Own Website</span>
+          <span class="ag-badge badge-purple">AI-Powered (RevenueMAX)</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing only · No published rates</div>
+          <div style="margin-top:.3rem; font-size:.75rem; color:var(--muted);">Setup fees required. Website built on proprietary platform — cannot transfer if you leave.</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-purple">RevenueMAX AI Platform</span>
+          <span class="chip chip-purple">Capacity Marketing Engine</span>
+          <span class="chip chip-purple">Scorpion Connect (AI Receptionist)</span>
+          <span class="chip chip-purple">Ranking AI (SEO)</span>
+          <span class="chip chip-purple">Reputation AI</span>
+          <span class="chip chip-purple">Budgets AI (Ad Spend Optimizer)</span>
+          <span class="chip chip-green">Website Design</span>
+          <span class="chip chip-orange">Digital Advertising</span>
+          <span class="chip chip-blue">LSA Management</span>
+          <span class="chip chip-orange">Social Advertising</span>
+          <span class="chip chip-blue">GBP Management</span>
+          <span class="chip chip-blue">Reputation Management</span>
+          <span class="chip chip-gray">ServiceTitan Integration</span>
+          <span class="chip chip-orange">Video Advertising</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>RevenueMAX:</strong> AI that adjusts ad spend in real time based on your available job capacity (integrated with ServiceTitan). When your schedule is full, it throttles ads. When it's slow, it increases spend. No other agency does this.
+        </div>
+        <div class="ag-result" style="background:#fff1f2; border-left-color:#dc2626;">
+          <strong>⚠️ Key Risk:</strong> If you leave Scorpion, you lose your website — it's on their proprietary system. 12-month contract locks you in. Clients with $5M+ revenue justify this; smaller contractors are often overpaying.
+        </div>
+      </div>
+    </div>
+
+    <!-- Rival Digital -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Rival Digital</div>
+            <div class="ag-loc">📍 Chesapeake, VA · Est. 2022 · Boutique</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★★</span><span class="review-ct">5.0 (33 reviews)</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:85%"></div></div>
+          <div class="focus-pct">85% · HVAC · Plumbing · Electrical · Garage Doors · Roofing · Pest Control</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-green">Boutique — Fewer Clients</span>
+          <span class="ag-badge badge-purple">AI Search Optimization</span>
+          <span class="ag-badge badge-blue">Full Ownership</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing · No public rates · Accepting clients June 2026</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">Organic SEO</span>
+          <span class="chip chip-blue">Local SEO</span>
+          <span class="chip chip-purple">AI Search Optimization</span>
+          <span class="chip chip-green">Website Design</span>
+          <span class="chip chip-orange">LSA Management</span>
+          <span class="chip chip-orange">PPC Campaigns</span>
+          <span class="chip chip-blue">Digital PR</span>
+          <span class="chip chip-gray">Social Media</span>
+          <span class="chip chip-gray">Email Marketing</span>
+          <span class="chip chip-blue">CRO</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Boutique model:</strong> Takes fewer clients, gives each more attention. Home services only. Positions every service around one goal: booked jobs and compounding revenue.
+        </div>
+        <div class="ag-result">
+          <strong>Case study:</strong> Grasshopper Heating & Cooling — 225% organic traffic increase in 90 days.
+        </div>
+      </div>
+    </div>
+
+    <!-- Relentless Digital -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Relentless Digital</div>
+            <div class="ag-loc">📍 Queen Creek, AZ · 5+ years · Founded by HVAC tech</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★★</span><span class="review-ct">4.7 (40 reviews)</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:90%"></div></div>
+          <div class="focus-pct">90% · HVAC · Plumbing · Electrical · Garage Door · Pest Control · Septic · Roofing</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-orange">"Built by Trades for Trades"</span>
+          <span class="ag-badge badge-green">You Own All Assets</span>
+          <span class="ag-badge badge-purple">Bullseye Pro Platform</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing · Free strategy call required · Founder has 9-year HVAC field experience</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">Local SEO</span>
+          <span class="chip chip-blue">GBP Management</span>
+          <span class="chip chip-green">Website Design</span>
+          <span class="chip chip-orange">LSA Management</span>
+          <span class="chip chip-blue">SEO Services</span>
+          <span class="chip chip-gray">Email Marketing</span>
+          <span class="chip chip-blue">Reputation Management</span>
+          <span class="chip chip-purple">Bullseye Pro (CRM + Automation)</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Trade insider:</strong> Founder spent 9 years as an HVAC technician before starting the agency. Understands seasonal peaks, emergency call patterns, technician capacity — and builds marketing around them.
+        </div>
+        <div class="ag-result">
+          <strong>Bullseye Pro:</strong> Proprietary mobile-first platform for automated follow-ups, lead nurture, and booking — integrated with their marketing. Think "mini-ServiceTitan meets CRM meets marketing automation."
+        </div>
+      </div>
+    </div>
+
+    <!-- iMarket Solutions -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">iMarket Solutions</div>
+            <div class="ag-loc">📍 Burlington, VT · 14+ years · Inc. 5000</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★★</span><span class="review-ct">4.9 (27 reviews)</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:95%"></div></div>
+          <div class="focus-pct">95% · HVAC is the primary niche · Plumbing · Electrical</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-orange">"Built by Contractors"</span>
+          <span class="ag-badge badge-blue">Inc. 5000 (2018, 2019)</span>
+          <span class="ag-badge badge-gray">300+ Contractors Served</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing · 300+ contractor clients · No public rates</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-green">Website Design</span>
+          <span class="chip chip-blue">SEO</span>
+          <span class="chip chip-orange">PPC Advertising</span>
+          <span class="chip chip-gray">Social Media</span>
+          <span class="chip chip-blue">Local SEO</span>
+          <span class="chip chip-blue">Reputation Management</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>40+ years combined trade experience</strong> on the founding team. Understands the business of contracting, not just the marketing. Speaks contractor language in proposals and reporting.
+        </div>
+      </div>
+    </div>
+
+    <!-- KickCharge Creative -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">KickCharge Creative</div>
+            <div class="ag-loc">📍 Washington, NJ · 30+ years · Acquired Levergy 2024</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★★</span><span class="review-ct">4.9 (312 reviews)</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:80%"></div></div>
+          <div class="focus-pct">80% · HVAC · Plumbing · Electrical · Home Services</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-purple">Branding + Digital Combined</span>
+          <span class="ag-badge badge-blue">30 Years Experience</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing · No public rates · Comprehensive branding + digital packages</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-purple">Brand Strategy</span>
+          <span class="chip chip-purple">Truck Wrap Design</span>
+          <span class="chip chip-purple">Logo + Identity</span>
+          <span class="chip chip-green">Website Design</span>
+          <span class="chip chip-blue">SEO</span>
+          <span class="chip chip-orange">PPC Advertising</span>
+          <span class="chip chip-purple">Uniform + Vehicle Branding</span>
+          <span class="chip chip-gray">Door Hangers + Print</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Only agency that ties branding to digital:</strong> Truck wraps that drive direct search, uniforms that build local brand recognition, and digital campaigns that compound that visibility.
+        </div>
+        <div class="ag-result">
+          <strong>Case study:</strong> Balanced Comfort — $14.7M revenue increase after rebrand + digital campaign.
+        </div>
+      </div>
+    </div>
+
+    <!-- Contractor Webmasters -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Contractor Webmasters</div>
+            <div class="ag-loc">📍 USA · 11+ years · 200+ clients</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★</span><span class="review-ct">Verified ratings</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:100%"></div></div>
+          <div class="focus-pct">100% Contractors · HVAC · Plumbing · Roofing · Foundation · Many more</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-purple">DataPins Software</span>
+          <span class="ag-badge badge-orange">100% Contractor Focus</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing · Call for quote</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">SEO</span>
+          <span class="chip chip-green">Web Design</span>
+          <span class="chip chip-blue">Content Writing</span>
+          <span class="chip chip-purple">DataPins (Maps/3-Pack)</span>
+          <span class="chip chip-gray">Social Media</span>
+          <span class="chip chip-orange">PPC / Google Ads</span>
+          <span class="chip chip-blue">GBP Optimization</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>DataPins:</strong> Proprietary software specifically for Google Maps / 3-Pack ranking. Pins service photos and check-ins to specific neighborhoods, boosting map pack visibility by service area. Unique in the market.
+        </div>
+      </div>
+    </div>
+
+    <!-- Plumbing & HVAC SEO -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Plumbing & HVAC SEO</div>
+            <div class="ag-loc">📍 Pembroke Pines, FL · 15+ years · Inc. 5000</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★★</span><span class="review-ct">4.5 (108 reviews)</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:100%"></div></div>
+          <div class="focus-pct">100% · Plumbing + HVAC + Electrical (exclusively)</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-green">Exclusivity Per Territory</span>
+          <span class="ag-badge badge-blue">Inc. 5000 (333% growth)</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing · Won't sign competitor in same territory · 7.1M leads converted</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">SEO</span>
+          <span class="chip chip-blue">Google Maps Optimization</span>
+          <span class="chip chip-green">Website Design</span>
+          <span class="chip chip-orange">PPC + Google LSAs</span>
+          <span class="chip chip-blue">Review Management</span>
+          <span class="chip chip-green">Call Tracking (CallRail)</span>
+          <span class="chip chip-blue">Citation Building</span>
+          <span class="chip chip-gray">Social Media</span>
+          <span class="chip chip-blue">Reputation Management</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Territory exclusivity:</strong> Will not sign a competitor in the same market — so the contractor is the only client in their city. Josh Nelson is a known thought leader in home services digital marketing.
+        </div>
+      </div>
+    </div>
+
+    <!-- BlackStorm Design -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">BlackStorm Design + Marketing</div>
+            <div class="ag-loc">📍 USA · HVAC Specialist · Guaranteed Rankings</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★</span><span class="review-ct">Verified</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:75%"></div></div>
+          <div class="focus-pct">75% · HVAC primary · Contractors · Local Service Businesses</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-green">Ranking Guarantee</span>
+          <span class="ag-badge badge-orange">300+ SEO Tests Run</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <div class="label">Custom pricing · Guarantee: increase rankings or work free for 3 months</div>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">SEO + Keyword Research</span>
+          <span class="chip chip-green">Web Design + Dev</span>
+          <span class="chip chip-blue">Local SEO</span>
+          <span class="chip chip-orange">PPC Advertising</span>
+          <span class="chip chip-blue">Content Creation (300+ words/page)</span>
+          <span class="chip chip-gray">Social Media</span>
+          <span class="chip chip-blue">Citation Management</span>
+          <span class="chip chip-blue">Reputation Management</span>
+          <span class="chip chip-orange">Retargeting</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Process:</strong> Competitive analysis → keyword targeting (service + location + search volume) → content pages (300+ words each) → schema markup → H-tag optimization → citation building → review aggregation.
+        </div>
+      </div>
+    </div>
+
+    <!-- Built-Right Digital -->
+    <div class="ag-card">
+      <div class="ag-header">
+        <div class="ag-top">
+          <div>
+            <div class="ag-name">Built-Right Digital</div>
+            <div class="ag-loc">📍 USA · Published HVAC/Roofing tiers · Only transparent pricing in niche</div>
+          </div>
+          <div>
+            <div class="star-row"><span class="stars">★★★★</span><span class="review-ct">Verified</span></div>
+          </div>
+        </div>
+        <div class="ag-focus-bar">
+          <div class="focus-label">Home Services Focus</div>
+          <div class="focus-track"><div class="focus-fill" style="width:85%"></div></div>
+          <div class="focus-pct">85% · HVAC · Roofing · Electrician · Home Services</div>
+        </div>
+        <div class="tag-row">
+          <span class="ag-badge badge-green">✅ Public Pricing</span>
+          <span class="ag-badge badge-blue">Revenue-Based Tiers</span>
+        </div>
+      </div>
+      <div class="ag-body">
+        <div class="ag-pricing">
+          <table style="width:100%; font-size:.78rem; border-collapse:collapse;">
+            <tr><td style="padding:.25rem 0;"><strong>Essentials</strong></td><td style="text-align:right; color:#2563eb; font-weight:700;">$1,199/mo</td></tr>
+            <tr><td style="padding:.25rem 0;"><strong>Launch</strong> (under $1M rev)</td><td style="text-align:right; color:#2563eb; font-weight:700;">$2,099/mo</td></tr>
+            <tr><td style="padding:.25rem 0;"><strong>Scale</strong> (under $5M rev)</td><td style="text-align:right; color:#f97316; font-weight:700;">$4,199/mo</td></tr>
+            <tr><td style="padding:.25rem 0;"><strong>Pro</strong> ($5M+ rev)</td><td style="text-align:right; color:#dc2626; font-weight:700;">$19,999/mo</td></tr>
+          </table>
+        </div>
+        <div class="svc-title">Services</div>
+        <div class="svc-wrap">
+          <span class="chip chip-blue">Technical SEO</span>
+          <span class="chip chip-blue">On-Page SEO</span>
+          <span class="chip chip-blue">Content Creation</span>
+          <span class="chip chip-blue">Listing Management</span>
+          <span class="chip chip-blue">Link Building</span>
+          <span class="chip chip-green">Web Design</span>
+          <span class="chip chip-green">Call Tracking</span>
+          <span class="chip chip-blue">Strategy Sessions</span>
+        </div>
+        <div class="ag-differentiator">
+          <strong>Only niche-specialist with public pricing.</strong> Revenue-based tiers make it easy for contractors to self-select the right plan. Essentials at $1,199 is the most accessible entry point from a dedicated home services agency.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /agency-grid -->
+</div>
+</section>
+
+<!-- WHAT'S INCLUDED TABLE -->
+<section id="includes">
+  <h2>What's <span class="accent">Actually Included</span> — Side by Side</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Compared across the key agencies in the niche. Based on live page data and published service lists.</p>
+
+  <div class="ptable-wrap">
+    <table class="inc">
+      <thead>
+        <tr>
+          <th class="left" style="width:200px;">Service / Deliverable</th>
+          <th>Hook Agency<br><small>$4,800/mo SEO</small></th>
+          <th>Blue Corona<br><small>$3,500–$10K/mo</small></th>
+          <th>Scorpion<br><small>Custom / 12mo</small></th>
+          <th>Rival Digital<br><small>Custom</small></th>
+          <th>Relentless Digital<br><small>Custom</small></th>
+          <th>Built-Right<br><small>$1,199–$4,199/mo</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="group"><td colspan="7">🌐 Website</td></tr>
+        <tr>
+          <td class="left">Custom website build</td>
+          <td><span class="yes">✓</span><br><small>$1,750/mo add-on</small></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span><br><small>Proprietary platform</small></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="left">You own the website</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">✗</span><br><small style="color:#dc2626">Locked in</small></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="left">Mobile click-to-call</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr class="group"><td colspan="7">📍 Local SEO</td></tr>
+        <tr>
+          <td class="left">GBP management</td>
+          <td><span class="partial">Partial</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="left">Citation building</td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="left">Service Area Pages (per city)</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="partial">Higher tiers</span></td>
+        </tr>
+        <tr>
+          <td class="left">Google Map Pack optimization</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr class="group"><td colspan="7">✍️ Content</td></tr>
+        <tr>
+          <td class="left">Blog / content creation</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="left">Seasonal content strategy</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Varies</span></td>
+        </tr>
+        <tr>
+          <td class="left">Emergency intent pages</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Varies</span></td>
+        </tr>
+        <tr>
+          <td class="left">Link building</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Higher tiers</span></td>
+        </tr>
+        <tr class="group"><td colspan="7">📊 Tracking & Reporting</td></tr>
+        <tr>
+          <td class="left">Call tracking (CallRail)</td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="left">LSA (Local Services Ads)</td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+        </tr>
+        <tr>
+          <td class="left">Reputation / Review mgmt</td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+        </tr>
+        <tr>
+          <td class="left">Revenue / job attribution</td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="partial">Varies</span></td>
+          <td><span class="partial">Varies</span></td>
+          <td><span class="partial">Higher tiers</span></td>
+        </tr>
+        <tr class="group"><td colspan="7">🤖 AI / New Tech (2025–2026)</td></tr>
+        <tr>
+          <td class="left">AI Receptionist (24/7 booking)</td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span><br><small>Blue Corona Chat</small></td>
+          <td><span class="yes">✓</span><br><small>Scorpion Connect</small></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span><br><small>Bullseye Pro</small></td>
+          <td><span class="no">—</span></td>
+        </tr>
+        <tr>
+          <td class="left">AI Search / GEO Optimization</td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Emerging</span></td>
+          <td><span class="yes">✓</span><br><small>Ranking AI</small></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+        </tr>
+        <tr>
+          <td class="left">ServiceTitan integration</td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Bullseye Pro</span></td>
+          <td><span class="no">—</span></td>
+        </tr>
+        <tr>
+          <td class="left">CRM / Marketing Automation</td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Partial</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+        </tr>
+        <tr class="group"><td colspan="7">💰 Advertising</td></tr>
+        <tr>
+          <td class="left">Google Ads (PPC)</td>
+          <td><span class="paid">$2,000/mo add-on</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+        </tr>
+        <tr>
+          <td class="left">No long-term contract</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">✗</span><br><small style="color:#dc2626">12 months required</small></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="left">Transparent public pricing</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="no">✗</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- RETAINER BREAKDOWN -->
+<section class="alt-bg" id="retainer">
+  <h2>Monthly Retainer <span class="accent">Breakdown</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">What you actually get each month — and who's willing to tell you upfront. Only <strong>1 out of 11 agencies</strong> studied publishes a full deliverable breakdown by tier. The rest require a sales call.</p>
+
+  <!-- TRANSPARENCY ALERT -->
+  <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:12px;padding:1.5rem 2rem;margin-bottom:2.5rem;max-width:820px;margin-left:auto;margin-right:auto;">
+    <p style="font-weight:700;color:#92400e;margin-bottom:.5rem;">⚠️ Pricing Transparency in This Niche</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:.88rem;">
+      <div>
+        <p style="color:#059669;font-weight:700;margin-bottom:.4rem;">✓ Publishes full retainer tiers</p>
+        <ul style="color:#374151;padding-left:1.1rem;line-height:1.8;">
+          <li>Built-Right Digital</li>
+          <li>Hook Agency (partial — no pricing)</li>
+          <li>Plumbing Webmasters ($99 to start)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="color:#dc2626;font-weight:700;margin-bottom:.4rem;">✗ Custom quote only (no published pricing)</p>
+        <ul style="color:#374151;padding-left:1.1rem;line-height:1.8;">
+          <li>Scorpion · Rival Digital · Relentless Digital</li>
+          <li>iMarket Solutions · BlackStorm Design</li>
+          <li>Plumbing & HVAC SEO · KickCharge</li>
+          <li>Blue Corona / RYNO Strategic</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILT-RIGHT TIERS — FULL BREAKDOWN -->
+  <h3 style="text-align:center;font-size:1.15rem;font-weight:800;margin-bottom:.4rem;">Built-Right Digital — Only Agency With Published Deliverables</h3>
+  <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:2rem;">4 tiers, full line-item breakdown scraped from their live pricing page · May 2026</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem;">
+
+    <!-- TIER 1 -->
+    <div style="background:#fff;border:2px solid #e2e8f0;border-radius:16px;overflow:hidden;">
+      <div style="background:#475569;padding:1.2rem 1.5rem;">
+        <p style="color:rgba(255,255,255,.6);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Tier 1 · New Businesses</p>
+        <p style="color:#fff;font-size:1.5rem;font-weight:900;">$1,199<span style="font-size:.85rem;font-weight:500;">/mo</span></p>
+        <p style="color:rgba(255,255,255,.55);font-size:.8rem;margin-top:.2rem;">Essentials Plan</p>
+      </div>
+      <div style="padding:1.2rem 1.5rem;font-size:.83rem;line-height:2;">
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">🌐 Website</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Templated website</li>
+          <li>Essential hosting</li>
+          <li>Basic website updates</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📍 Local SEO</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>GBP setup &amp; optimization</li>
+          <li>Annual citation submissions</li>
+          <li>Basic crawl reports</li>
+          <li>Essential technical fixes</li>
+          <li>Search engine indexing</li>
+          <li>Essential keyword optimization</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">✍️ Content</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Monthly blog (500 words)</li>
+          <li>Basic keyword integration</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📢 Ads</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>LSA setup &amp; basic monitoring</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📊 Reporting</p>
+        <ul style="padding-left:1rem;color:#374151;">
+          <li>Monthly performance report</li>
+          <li>Basic conversion tracking</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div style="background:#fff;border:2px solid #2563eb;border-radius:16px;overflow:hidden;">
+      <div style="background:#1d4ed8;padding:1.2rem 1.5rem;">
+        <p style="color:rgba(255,255,255,.6);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Tier 2 · Up to $1M Revenue</p>
+        <p style="color:#fff;font-size:1.5rem;font-weight:900;">$2,099<span style="font-size:.85rem;font-weight:500;">/mo</span></p>
+        <p style="color:rgba(255,255,255,.55);font-size:.8rem;margin-top:.2rem;">Launch Plan</p>
+      </div>
+      <div style="padding:1.2rem 1.5rem;font-size:.83rem;line-height:2;">
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">🌐 Website</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Custom website design</li>
+          <li>Professional hosting</li>
+          <li>Regular maintenance</li>
+          <li>Enhanced security monitoring</li>
+          <li>Performance optimization</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📍 Local SEO</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>GBP setup + monthly posts</li>
+          <li>Annual citation submissions</li>
+          <li>Content &amp; architecture optimization</li>
+          <li>Meta tags &amp; header optimization</li>
+          <li>Enhanced rankings optimization</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">✍️ Content</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Monthly blog (800 words)</li>
+          <li>Comprehensive keyword research</li>
+          <li>Value-driven content creation</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📢 Ads</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>LSA management</li>
+          <li>Google Ads campaign setup</li>
+          <li>Strategic targeting</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📊 Reporting</p>
+        <ul style="padding-left:1rem;color:#374151;">
+          <li>Comprehensive monthly reporting</li>
+          <li>Quarterly strategy sessions</li>
+          <li>Advanced conversion tracking</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div style="background:#fff;border:2px solid var(--orange);border-radius:16px;overflow:hidden;position:relative;">
+      <div style="position:absolute;top:12px;right:12px;background:var(--orange);color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:999px;letter-spacing:.06em;">MOST POPULAR</div>
+      <div style="background:#c2410c;padding:1.2rem 1.5rem;">
+        <p style="color:rgba(255,255,255,.6);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Tier 3 · Up to $5M Revenue</p>
+        <p style="color:#fff;font-size:1.5rem;font-weight:900;">$4,199<span style="font-size:.85rem;font-weight:500;">/mo</span></p>
+        <p style="color:rgba(255,255,255,.55);font-size:.8rem;margin-top:.2rem;">Scale Plan</p>
+      </div>
+      <div style="padding:1.2rem 1.5rem;font-size:.83rem;line-height:2;">
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">🌐 Website</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Custom website design</li>
+          <li>Advanced UX optimization</li>
+          <li>Call tracking setup &amp; management</li>
+          <li>Security &amp; performance management</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📍 Local SEO</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>GBP setup + regular posts</li>
+          <li>Regular citation submissions</li>
+          <li>Comprehensive technical audits</li>
+          <li>Schema implementation</li>
+          <li>Keyword mapping &amp; content structure</li>
+          <li>Advanced title/meta/header optimization</li>
+          <li>Image optimization &amp; alt text</li>
+          <li>Internal &amp; external link optimization</li>
+          <li>FAQ page development</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">✍️ Content &amp; Links</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Monthly blog (3,200 words)</li>
+          <li>Strategic keyword research &amp; topic planning</li>
+          <li>Strategic link building campaigns</li>
+          <li>Industry authority content</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📢 Ads</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>LSA management</li>
+          <li>Google Ads optimization</li>
+          <li>Meta Ads management</li>
+          <li>Multi-platform coordination</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📊 Reporting &amp; Strategy</p>
+        <ul style="padding-left:1rem;color:#374151;">
+          <li>Monthly strategy meetings</li>
+          <li>Dedicated marketing specialist</li>
+          <li>Comprehensive analytics dashboard</li>
+          <li>Advanced conversion tracking</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TIER 4 -->
+    <div style="background:#fff;border:2px solid #7c3aed;border-radius:16px;overflow:hidden;">
+      <div style="background:#5b21b6;padding:1.2rem 1.5rem;">
+        <p style="color:rgba(255,255,255,.6);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Tier 4 · $5M+ Revenue</p>
+        <p style="color:#fff;font-size:1.5rem;font-weight:900;">$19,999<span style="font-size:.85rem;font-weight:500;">/mo</span></p>
+        <p style="color:rgba(255,255,255,.55);font-size:.8rem;margin-top:.2rem;">Pro Plan — Enterprise</p>
+      </div>
+      <div style="padding:1.2rem 1.5rem;font-size:.83rem;line-height:2;">
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">🌐 Website + Platform</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Custom website + advanced UX</li>
+          <li>Call tracking + CRM connection</li>
+          <li>Priority support + custom dev</li>
+          <li>Advanced first-party data tracking</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📍 Local + Profiles</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>GBP + Houzz + Yelp setup &amp; optimization</li>
+          <li>Ongoing citation submissions</li>
+          <li>Enterprise-level technical optimization</li>
+          <li>Advanced schema implementation</li>
+          <li>High-volume keyword campaigns</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">✍️ Content &amp; Links</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Monthly blog (6,400 words)</li>
+          <li>Advanced link building · medium-authority targets</li>
+          <li>Comprehensive topic coverage</li>
+          <li>Strategic content marketing campaigns</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📢 Ads — All Platforms</p>
+        <ul style="padding-left:1rem;color:#374151;margin-bottom:.8rem;">
+          <li>Google Ads premium optimization</li>
+          <li>Meta Ads advanced campaigns</li>
+          <li>Bing Ads management</li>
+          <li>LSA management</li>
+          <li>Email marketing campaigns</li>
+          <li>Banner ads</li>
+          <li>Streaming TV &amp; radio</li>
+        </ul>
+        <p style="font-weight:700;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;">📊 Reporting &amp; Strategy</p>
+        <ul style="padding-left:1rem;color:#374151;">
+          <li>Bi-weekly strategy consultations</li>
+          <li>Dedicated marketing team</li>
+          <li>Direct point-of-contact access</li>
+          <li>Quarterly reviews</li>
+          <li>Priority response &amp; support</li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- end built-right tiers grid -->
+
+  <!-- OTHER AGENCIES: WHAT'S KNOWN -->
+  <h3 style="text-align:center;font-size:1.1rem;font-weight:800;margin-bottom:.4rem;">What's Known About Other Agencies' Retainers</h3>
+  <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:1.8rem;">Based on live site data, published job listings, and verified client reports · May 2026</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto 2.5rem;">
+
+    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.4rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem;">
+        <div>
+          <p style="font-weight:800;font-size:.95rem;">Hook Agency</p>
+          <p style="color:var(--muted);font-size:.78rem;">$4,800/mo SEO · Month-to-month</p>
+        </div>
+        <span style="background:#fef9c3;color:#854d0e;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:6px;">PARTIAL DISCLOSURE</span>
+      </div>
+      <ul style="font-size:.83rem;line-height:1.9;color:#374151;padding-left:1rem;">
+        <li>Content writing (# of posts not published)</li>
+        <li>Link building (volume not disclosed)</li>
+        <li>Technical SEO &amp; website changes</li>
+        <li>Monthly reporting + live marketing dashboard</li>
+        <li>Google Drive folder with all monthly deliverables</li>
+        <li>Monthly strategy call</li>
+      </ul>
+      <p style="margin-top:.9rem;font-size:.78rem;background:#fef2f2;border:1px solid #fca5a5;border-radius:6px;padding:.4rem .7rem;color:#991b1b;">⚠️ Requires $2M+ contractor revenue to qualify</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.4rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem;">
+        <div>
+          <p style="font-weight:800;font-size:.95rem;">Scorpion</p>
+          <p style="color:var(--muted);font-size:.78rem;">$10,000–$25,000+/mo · 12-mo contract</p>
+        </div>
+        <span style="background:#fee2e2;color:#991b1b;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:6px;">CUSTOM ONLY</span>
+      </div>
+      <ul style="font-size:.83rem;line-height:1.9;color:#374151;padding-left:1rem;">
+        <li>Dedicated account manager</li>
+        <li>Custom marketing strategy</li>
+        <li>Website design + maintenance</li>
+        <li>SEO (content + technical)</li>
+        <li>PPC + LSA management via Rankings AI</li>
+        <li>Social media marketing</li>
+        <li>ServiceTitan CRM integration</li>
+        <li>Scorpion Connect AI receptionist</li>
+      </ul>
+      <p style="margin-top:.9rem;font-size:.78rem;background:#fef2f2;border:1px solid #fca5a5;border-radius:6px;padding:.4rem .7rem;color:#991b1b;">⚠️ 12–24 month contracts required. $5K–$50K setup fee reported.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.4rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem;">
+        <div>
+          <p style="font-weight:800;font-size:.95rem;">Plumbing Webmasters</p>
+          <p style="color:var(--muted);font-size:.78rem;">$99 to start · Month-to-month</p>
+        </div>
+        <span style="background:#fef9c3;color:#854d0e;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:6px;">PARTIAL DISCLOSURE</span>
+      </div>
+      <ul style="font-size:.83rem;line-height:1.9;color:#374151;padding-left:1rem;">
+        <li>Content marketing</li>
+        <li>SEO (on-page + technical)</li>
+        <li>AI SEO / AEO optimization</li>
+        <li>Web design</li>
+        <li>Facebook advertising</li>
+        <li>DataPins (proprietary geo-review tool)</li>
+      </ul>
+      <p style="margin-top:.9rem;font-size:.78rem;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:.4rem .7rem;color:#166534;">✓ No long-term contracts. Low barrier to entry.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.4rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem;">
+        <div>
+          <p style="font-weight:800;font-size:.95rem;">Rival Digital · Relentless · iMarket · BlackStorm</p>
+          <p style="color:var(--muted);font-size:.78rem;">All custom pricing · Quote required</p>
+        </div>
+        <span style="background:#fee2e2;color:#991b1b;font-size:.65rem;font-weight:700;padding:.2rem .5rem;border-radius:6px;">CUSTOM ONLY</span>
+      </div>
+      <p style="font-size:.83rem;color:#374151;margin-bottom:.7rem;">These agencies all use consultative sales — no published packages. General retainer categories based on their published service pages:</p>
+      <ul style="font-size:.83rem;line-height:1.9;color:#374151;padding-left:1rem;">
+        <li>Website design + hosting</li>
+        <li>On-page SEO + technical SEO</li>
+        <li>GBP management</li>
+        <li>Content creation (volume unspecified)</li>
+        <li>Link building (volume unspecified)</li>
+        <li>Monthly reporting</li>
+        <li>PPC / LSA (varies per agency)</li>
+      </ul>
+      <p style="margin-top:.9rem;font-size:.78rem;background:#fef9c3;border:1px solid #f59e0b;border-radius:6px;padding:.4rem .7rem;color:#92400e;">⚠️ Must book a discovery call to get any pricing or deliverable specifics.</p>
+    </div>
+
+  </div>
+
+  <!-- INDUSTRY BASELINE TABLE -->
+  <h3 style="text-align:center;font-size:1.1rem;font-weight:800;margin-bottom:.4rem;">Industry Baseline — What Each Price Range Buys</h3>
+  <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:1.5rem;">Synthesized from Built-Right published data + industry pricing guides · May 2026</p>
+
+  <div class="ptable-wrap">
+    <table class="inc">
+      <thead>
+        <tr>
+          <th class="left" style="width:220px;">Monthly Deliverable</th>
+          <th>$800–$1,200/mo<br><small>Entry / Local Presence</small></th>
+          <th>$1,500–$2,500/mo<br><small>Growth / Lead Machine</small></th>
+          <th>$3,000–$5,000/mo<br><small>Scale / Market Leader</small></th>
+          <th>$10,000+/mo<br><small>Enterprise / Scorpion tier</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="group"><td colspan="5">🌐 Website</td></tr>
+        <tr>
+          <td class="left">Website type</td>
+          <td>Templated</td>
+          <td>Custom</td>
+          <td>Custom + advanced UX</td>
+          <td>Custom + proprietary platform</td>
+        </tr>
+        <tr>
+          <td class="left">Client owns the site</td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">✗ Often locked in</span></td>
+        </tr>
+        <tr>
+          <td class="left">Call tracking setup</td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Add-on</span></td>
+          <td><span class="yes">✓ Included</span></td>
+          <td><span class="yes">✓ + CRM integration</span></td>
+        </tr>
+        <tr class="group"><td colspan="5">📍 Local SEO</td></tr>
+        <tr>
+          <td class="left">GBP management + posts</td>
+          <td>Setup only</td>
+          <td>Setup + monthly posts</td>
+          <td>Setup + regular posts</td>
+          <td>Full management + analytics</td>
+        </tr>
+        <tr>
+          <td class="left">Citation building</td>
+          <td>Annual batch</td>
+          <td>Annual batch</td>
+          <td>Regular ongoing</td>
+          <td>Ongoing + Houzz + Yelp</td>
+        </tr>
+        <tr>
+          <td class="left">Schema markup</td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">Basic</span></td>
+          <td><span class="yes">✓ Full implementation</span></td>
+          <td><span class="yes">✓ Advanced</span></td>
+        </tr>
+        <tr class="group"><td colspan="5">✍️ Content</td></tr>
+        <tr>
+          <td class="left">Monthly blog content</td>
+          <td>~500 words (1 post)</td>
+          <td>~800 words (1–2 posts)</td>
+          <td>3,200 words (4–5 posts)</td>
+          <td>6,400 words (8+ posts)</td>
+        </tr>
+        <tr>
+          <td class="left">Link building</td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓ Strategic campaigns</span></td>
+          <td><span class="yes">✓ Medium-authority targets</span></td>
+        </tr>
+        <tr>
+          <td class="left">Service Area Pages (SAPs)</td>
+          <td><span class="no">—</span></td>
+          <td><span class="partial">1–2/mo</span></td>
+          <td><span class="yes">✓ Ongoing</span></td>
+          <td><span class="yes">✓ High-volume campaigns</span></td>
+        </tr>
+        <tr class="group"><td colspan="5">📢 Advertising</td></tr>
+        <tr>
+          <td class="left">LSA management</td>
+          <td>Basic setup</td>
+          <td>✓ Managed</td>
+          <td>✓ Managed + optimized</td>
+          <td>✓ Premium optimization</td>
+        </tr>
+        <tr>
+          <td class="left">Google Ads (PPC)</td>
+          <td><span class="no">—</span></td>
+          <td>Campaign setup</td>
+          <td>✓ Full management</td>
+          <td>✓ Premium + Bing + Meta</td>
+        </tr>
+        <tr>
+          <td class="left">Meta / Social Ads</td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓ Included at Scale</span></td>
+          <td><span class="yes">✓ Advanced campaigns</span></td>
+        </tr>
+        <tr class="group"><td colspan="5">📊 Reporting &amp; Strategy</td></tr>
+        <tr>
+          <td class="left">Monthly report</td>
+          <td>Basic</td>
+          <td>Detailed</td>
+          <td>Comprehensive + dashboard</td>
+          <td>Custom analytics + BI</td>
+        </tr>
+        <tr>
+          <td class="left">Strategy sessions</td>
+          <td><span class="no">—</span></td>
+          <td>Quarterly</td>
+          <td>Monthly calls</td>
+          <td>Bi-weekly consultations</td>
+        </tr>
+        <tr>
+          <td class="left">Dedicated specialist</td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓ Dedicated team</span></td>
+        </tr>
+        <tr>
+          <td class="left">Contract required</td>
+          <td>Month-to-month</td>
+          <td>Month-to-month</td>
+          <td>Month-to-month</td>
+          <td>12–24 months (Scorpion)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- MARKET GAPS -->
+<section class="alt-bg" id="gaps">
+<div class="inner">
+  <h2>Market Gaps — <span class="accent">Where Competitors Fall Short</span></h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">After analyzing every major home services web + SEO agency in the market, these are the consistent patterns of what they do badly — your openings.</p>
+
+  <div class="gap-grid">
+    <div class="gap-card">
+      <div class="gap-n">01</div>
+      <h3>$2M+ Revenue Minimum Leaves Small Contractors Unserved</h3>
+      <p>Hook Agency explicitly says they're "best fit for contractors over $2M+." Scorpion and Blue Corona are priced for mid-to-large operations ($3,500–$10,000/mo). The <strong>small plumber doing $300K–$800K/year</strong> is completely abandoned by the specialists — and forced to use generalist agencies that don't understand their niche.</p>
+    </div>
+    <div class="gap-card">
+      <div class="gap-n">02</div>
+      <h3>Almost Nobody Publishes Pricing</h3>
+      <p>Of 11 agencies analyzed, only <strong>Hook Agency and Built-Right Digital</strong> publish actual numbers. Every other niche-specialist hides pricing behind a "free strategy call." Small contractors are already skeptical — they've been burned by marketing agencies before. Transparent pricing wins their trust before the call even happens.</p>
+    </div>
+    <div class="gap-card">
+      <div class="gap-n">03</div>
+      <h3>Long Contracts Scare Small Contractors Away</h3>
+      <p>Scorpion requires 12 months. Most agencies expect 6-month minimum commitments. A plumber who's been burned by a $2,000/month retainer that delivered zero calls is not signing 12 months with anyone. <strong>Month-to-month with performance milestones</strong> at an accessible entry price removes the biggest objection in this market.</p>
+    </div>
+    <div class="gap-card">
+      <div class="gap-n">04</div>
+      <h3>Web Build Speed — Nobody Talks Delivery Time</h3>
+      <p>An HVAC contractor whose site just went down or whose old site isn't generating calls <strong>needs revenue now</strong>. Not in 12 weeks. Agencies that can deliver a full SEO-ready website in 2–3 weeks — with service area pages, schema, GBP linked, click-to-call, and citations started — have a powerful pitch for urgency-driven contractors.</p>
+    </div>
+    <div class="gap-card">
+      <div class="gap-n">05</div>
+      <h3>Emergency Intent Pages Are Still Skipped</h3>
+      <p>Even specialist agencies mention emergency SEO but rarely build it as a separate, dedicated deliverable. "24/7 emergency plumber in [city]" and "AC repair emergency [city]" pages need different copy, CTAs, and schema than planned-service pages. The agencies that build these at entry tier will see conversion rates 3–5× higher than those that don't.</p>
+    </div>
+    <div class="gap-card">
+      <div class="gap-n">06</div>
+      <h3>Reporting Still in Vanity Metrics</h3>
+      <p>Most agencies report rankings and traffic. A plumber doesn't care if they're #4 for "plumber Austin TX" — they care how many calls came in. <strong>Call tracking from day one</strong>, even at entry tier, shifts reporting from "SEO is working" to "SEO generated 23 calls this month." That's the difference between a client who churns and one who upsells.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- LANTECH OFFER -->
+<section id="lantech">
+  <h2>Lantech's <span class="accent">Recommended Offer</span> for Home Services</h2>
+  <div class="section-bar"></div>
+  <p class="section-intro">Based on what every competitor offers, what they charge, who they ignore, and where they're weak — here's how Lantech should position specifically for HVAC, plumbing, roofing, and contractor clients.</p>
+
+  <!-- VS Box -->
+  <div class="vs-row" style="margin-bottom:2rem;">
+    <div class="vs-card vs-them">
+      <div class="vs-label">❌ What Competitors Do Wrong</div>
+      <ul class="vs-list">
+        <li>Require $2M+ revenue or $3,500+/mo to start</li>
+        <li>Hide pricing behind "free strategy calls"</li>
+        <li>Lock clients into 12-month contracts</li>
+        <li>Take 8–20 weeks to launch a website</li>
+        <li>Report on rankings, not calls booked</li>
+        <li>Skip emergency intent pages at entry tier</li>
+        <li>Miss small contractors under $1M revenue</li>
+        <li>Treat HVAC same as plumbing same as roofing</li>
+      </ul>
+    </div>
+    <div class="vs-card vs-us">
+      <div class="vs-label">✅ What Lantech Does Right</div>
+      <ul class="vs-list">
+        <li>Accessible entry at $800–$1,000/mo</li>
+        <li>Transparent published pricing — no games</li>
+        <li>Month-to-month, no lock-in contracts</li>
+        <li>SEO-ready site delivered in 2–3 weeks</li>
+        <li>Call tracking from day one, every tier</li>
+        <li>Emergency intent pages built at entry level</li>
+        <li>Serve the overlooked $300K–$1M contractor</li>
+        <li>Trade-specific strategy per niche</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="offer-grid">
+
+    <div class="offer-card offer-1">
+      <div class="offer-badge">Starter · Get Found</div>
+      <div class="offer-name">Local Presence</div>
+      <div class="offer-price">$800–$1,100/mo</div>
+      <div class="offer-sub">+ $500–$800 one-time setup · No contract · Month-to-month</div>
+      <div class="offer-pitch">For the small contractor (1–5 techs, under $1M revenue) who needs a professional, fast website that actually shows up when someone searches for their service in their city.</div>
+      <ul class="dl">
+        <li><span class="c">✓</span> 8–10 page SEO-ready website (delivered in 2–3 weeks)</li>
+        <li><span class="c">✓</span> 3 service area pages ("Plumber in [City1/2/3]")</li>
+        <li><span class="c">✓</span> 1 emergency intent page ("24/7 [Service] near me")</li>
+        <li><span class="c">✓</span> Google Business Profile setup + optimization</li>
+        <li><span class="c">✓</span> 150+ citation submissions (NAP consistency)</li>
+        <li><span class="c">✓</span> LocalBusiness schema + FAQ schema at launch</li>
+        <li><span class="c">✓</span> Mobile click-to-call on every page</li>
+        <li><span class="c">✓</span> Call tracking (basic — which page drives calls)</li>
+        <li><span class="c">✓</span> Technical audit + Core Web Vitals fix</li>
+        <li><span class="c">✓</span> Monthly report: calls, rankings, traffic</li>
+        <li><span class="c">✓</span> Review request strategy (SMS template)</li>
+      </ul>
+      <div class="edge-box">2–3 week site delivery + emergency intent page + call tracking at this price. No competitor offers all three at under $1,100/mo.</div>
+    </div>
+
+    <div class="offer-card offer-2">
+      <div class="offer-badge">Growth · Get Leads</div>
+      <div class="offer-name">Lead Machine</div>
+      <div class="offer-price">$1,500–$2,500/mo</div>
+      <div class="offer-sub">No contract · Month-to-month · Full SEO engine running</div>
+      <div class="offer-pitch">For the contractor competing in a busy market (2–10 techs, $500K–$2M revenue) who wants to dominate the map pack and book more calls from organic search.</div>
+      <ul class="dl">
+        <li><span class="c">✓</span> Everything in Starter</li>
+        <li><span class="c">✓</span> 8–10 service area pages (full coverage zone)</li>
+        <li><span class="c">✓</span> Seasonal content (spring AC, fall heating, storm roofing)</li>
+        <li><span class="c">✓</span> 2–4 blog posts/month (trade-specific topics)</li>
+        <li><span class="c">✓</span> Active GBP management: weekly posts, photo updates</li>
+        <li><span class="c">✓</span> Link building (4–6 local/industry links/month)</li>
+        <li><span class="c">✓</span> CallRail integration — track every call by source</li>
+        <li><span class="c">✓</span> Automated review request sequence (SMS + email)</li>
+        <li><span class="c">✓</span> 10–15 competitor tracking</li>
+        <li><span class="c">✓</span> Monthly technical audit</li>
+        <li><span class="c">✓</span> Before/after gallery page</li>
+        <li><span class="c">✓</span> Monthly strategy call</li>
+      </ul>
+      <div class="edge-box">Seasonal content + review automation + real call attribution at $1,500–$2,500. Built-Right charges $2,099–$4,199 for this same output.</div>
+    </div>
+
+    <div class="offer-card offer-3">
+      <div class="offer-badge">Dominate · Own Your Market</div>
+      <div class="offer-name">Market Leader</div>
+      <div class="offer-price">$2,800–$4,000/mo</div>
+      <div class="offer-sub">No contract · Month-to-month · Full market coverage</div>
+      <div class="offer-pitch">For the established contractor ($2M–$5M revenue, 10+ techs) who wants to dominate 10+ cities and make SEO their primary, most profitable lead channel.</div>
+      <ul class="dl">
+        <li><span class="c">✓</span> Everything in Lead Machine</li>
+        <li><span class="c">✓</span> 15–25 service area pages (full metro coverage)</li>
+        <li><span class="c">✓</span> Full content calendar (6–8 posts/month)</li>
+        <li><span class="c">✓</span> High-authority link outreach (8–12 links/month)</li>
+        <li><span class="c">✓</span> GEO + AI Overviews optimization</li>
+        <li><span class="c">✓</span> E-E-A-T: Author bios, credentials, trust signals</li>
+        <li><span class="c">✓</span> LSA (Google Local Services Ads) setup + management</li>
+        <li><span class="c">✓</span> Full revenue reporting: calls → booked jobs → revenue</li>
+        <li><span class="c">✓</span> 20 competitor tracking</li>
+        <li><span class="c">✓</span> 1 hr/month website dev time</li>
+        <li><span class="c">✓</span> Bi-monthly strategy calls</li>
+        <li><span class="c">✓</span> CRO review (conversion rate optimization)</li>
+      </ul>
+      <div class="edge-box">LSA management + GEO optimization + revenue attribution at $4,000. Hook Agency charges $4,800/mo for SEO alone — without LSA or AI search.</div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>
+    <strong>Home Services Web + SEO Agency Market Research — May 2026</strong><br>
+    Based on live agency pages, published pricing, and industry data<br>
+    Sources: Hook Agency · Blue Corona/RYNO · Scorpion · Rival Digital · Relentless Digital · iMarket Solutions · KickCharge Creative<br>
+    Contractor Webmasters · Plumbing & HVAC SEO · BlackStorm Design · Built-Right Digital<br><br>
+    Prepared for Lantech · Internal Use Only
+  </p>
+</footer>
+
+</body>
+</html>

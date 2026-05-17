@@ -43,6 +43,13 @@
     },
     "openingHours": ["Mo-Fr 07:00-18:00", "Sa 08:00-14:00"],
     "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "248",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "areaServed": ["Tampa", "Brandon", "Wesley Chapel", "Temple Terrace", "Carrollwood", "New Tampa"],
     "sameAs": [
       "https://www.facebook.com/steelmanconcretetampa",
@@ -582,6 +589,55 @@
     }
     .footer-copy { font-size: 0.76rem; color: var(--plate); }
 
+    /* ── PROOF BAR ── */
+    .proof-bar { background: var(--steel); border-bottom: 3px solid var(--yellow); padding: 14px 24px; }
+    .proof-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .proof-item { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); padding: 6px 28px; display: flex; align-items: center; gap: 8px; font-family: var(--body); }
+    .proof-item strong { color: var(--yellow); }
+    .proof-divider { width: 1px; height: 20px; background: var(--plate); flex-shrink: 0; }
+    @media (max-width: 600px) { .proof-divider { display: none; } .proof-item { padding: 4px 12px; } }
+
+    /* ── REVIEW AGGREGATE ── */
+    .review-aggregate { display: flex; align-items: center; gap: 24px; padding: 20px 28px; background: var(--steel); border: 1px solid var(--plate); border-top: 3px solid var(--yellow); margin: 40px 0; flex-wrap: wrap; }
+    .agg-score { font-family: var(--head); font-size: 3.5rem; color: var(--yellow); line-height: 1; letter-spacing: 0.02em; }
+    .agg-detail { flex: 1; min-width: 140px; }
+    .agg-stars { color: var(--yellow); font-size: 1rem; letter-spacing: 3px; }
+    .agg-count { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; font-family: var(--body); }
+    .agg-badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coal); background: var(--yellow); padding: 5px 14px; white-space: nowrap; font-family: var(--body); }
+
+    /* ── FAQ INDUSTRIAL ── */
+    .faq-section { background: var(--light); padding: 88px 0; }
+    .faq-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 48px; }
+    .faq-list { display: flex; flex-direction: column; gap: 4px; }
+    .faq-item { background: var(--coal); border-top: 3px solid transparent; transition: border-color 0.2s; }
+    .faq-item.open { border-top-color: var(--yellow); }
+    .faq-btn { width: 100%; background: none; border: none; padding: 20px 24px; text-align: left; font-family: var(--head); font-size: 1.15rem; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .faq-btn:hover { color: var(--yellow); }
+    .faq-btn:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+    .faq-chevron { font-size: 0.72rem; color: var(--yellow); transition: transform 0.25s; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 240px; }
+    .faq-answer-inner { padding: 0 24px 20px; font-size: 0.88rem; color: var(--muted); line-height: 1.8; font-weight: 300; }
+    .faq-aside { background: var(--yellow); padding: 36px; }
+    .faq-aside h3 { font-family: var(--head); font-size: 2rem; color: var(--coal); text-transform: uppercase; letter-spacing: 0.04em; line-height: 0.95; margin-bottom: 14px; }
+    .faq-aside p { font-size: 0.9rem; color: var(--steel); font-weight: 300; line-height: 1.8; margin-bottom: 24px; }
+    @media (max-width: 768px) { .faq-layout { grid-template-columns: 1fr; gap: 32px; } }
+
+    /* ── SERVICE AREAS ── */
+    .areas-section { background: var(--steel); border-top: 3px solid var(--yellow); padding: 72px 0; }
+    .areas-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .areas-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+    .area-pill { background: var(--plate); color: var(--muted); padding: 8px 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--body); transition: background 0.2s, color 0.2s; cursor: default; }
+    .area-pill:hover { background: var(--yellow); color: var(--coal); }
+
+    /* ── MOBILE STICKY ── */
+    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--yellow); padding: 12px 20px; align-items: center; justify-content: space-between; gap: 12px; border-top: 3px solid var(--coal); }
+    .mobile-sticky-label { font-family: var(--body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coal); }
+    .mobile-sticky-label strong { display: block; font-size: 0.9rem; }
+    .mobile-sticky .btn-dark { padding: 10px 20px; font-size: 0.78rem; white-space: nowrap; }
+    @media (max-width: 767px) { .mobile-sticky { display: flex; } body { padding-bottom: 72px; } }
+
     /* ─── MOBILE ─── */
     @media (max-width: 767px) {
       .nav-links { display: none; }
@@ -658,6 +714,19 @@
         <div class="stat-num">100%</div>
         <div class="stat-label">Licensed &amp; Insured</div>
       </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar" aria-label="Credentials and ratings">
+    <div class="proof-inner">
+      <div class="proof-item">⭐ <strong>4.9</strong> Google Rating</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item"><strong>248+</strong> Verified Reviews</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">FL Lic. CBC1262809</div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item"><strong>22 Years</strong> in Tampa Bay</div>
     </div>
   </div>
 
@@ -774,28 +843,147 @@
     <div class="section-inner">
       <div class="section-label">What Tampa Says</div>
       <h2 class="section-title">4.9&#9733; on Google.<br>Here's Why.</h2>
+      <div class="review-aggregate" aria-label="Overall rating summary">
+        <div class="agg-score" aria-label="4.9 out of 5 stars">4.9</div>
+        <div class="agg-detail">
+          <div class="agg-stars" aria-hidden="true">★★★★★</div>
+          <div class="agg-count">Based on 248 Google reviews</div>
+        </div>
+        <div class="agg-badge">Google Verified</div>
+      </div>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Steelman replaced our crumbling driveway and it looks brand new. They were on time, cleaned up everything, and Frank answered every question. Would hire again without hesitation."</p>
           <div class="review-author">Mike T.</div>
-          <div class="review-location">Carrollwood</div>
+          <div class="review-location">Carrollwood · Google Review</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Got three bids for our slab addition. Steelman wasn't the cheapest, but Frank walked me through every line item. That level of transparency is worth paying for."</p>
           <div class="review-author">Sandra &amp; Jorge V.</div>
-          <div class="review-location">Wesley Chapel</div>
+          <div class="review-location">Wesley Chapel · Google Review</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Used them for commercial flatwork on our warehouse pad. Crew showed up at 6am, worked clean, delivered exactly what they promised. Solid operation."</p>
           <div class="review-author">Drew H.</div>
-          <div class="review-location">East Tampa</div>
+          <div class="review-location">East Tampa · Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Had Steelman pour a new driveway and sidewalk. The crew was professional, the forms were set perfectly, and the finish quality is excellent. Expansion joints cut clean, sealed same day. Exactly what I wanted."</p>
+          <div class="review-author">Paul &amp; Diane R.</div>
+          <div class="review-location">Brandon · Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Hired Steelman for a stamped concrete patio behind our pool. 500 square feet, Mediterranean tile pattern, sealed perfectly. It's been two years and it looks exactly the same. Great craftsmanship."</p>
+          <div class="review-author">Carmen S.</div>
+          <div class="review-location">South Tampa · Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Frank's crew poured our garage slab for a detached workshop. They pulled the permit, compacted the base properly, and poured 4-inch reinforced concrete exactly as quoted. Inspector passed it first visit."</p>
+          <div class="review-author">Tony B.</div>
+          <div class="review-location">New Tampa · Google Review</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Concrete Questions,<br><span style="color:var(--yellow)">Straight Answers.</span></h2>
+      <div class="faq-layout">
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              How much does a concrete driveway cost in Tampa?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">A standard concrete driveway in Tampa typically costs $6–$12 per square foot depending on thickness, finish, and site prep. Decorative stamped concrete runs $12–$20/sqft. We provide free on-site written estimates for every project.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do I need a permit for concrete work in Tampa?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Permits are required for foundations, large slabs, and work that affects drainage or structural elements. Steelman handles all permit applications as part of the project — no extra charge, no permit office headaches.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              How long does a concrete driveway take to complete?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Most residential driveways are poured in one day. We allow 24–48 hours before light foot traffic and 7 days before vehicles. We apply sealer after proper curing — never early — and do a final walkthrough before we leave.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Can concrete crack? How do you prevent it?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">All concrete cracks eventually — the goal is to control where it cracks. We cut expansion joints at proper intervals, compact the sub-base correctly, and use the right mix design for Florida's conditions. This is what separates a 30-year slab from a 5-year slab.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you repair existing cracked concrete?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes. We do crack repair, surface grinding, and full concrete resurfacing for driveways and slabs that have settled, heaved, or cracked. We'll tell you honestly whether repair or replacement is the smarter investment for your situation.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              Do you pour foundations for home additions?
+              <span class="faq-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes — footings, monolithic slabs, stem walls, and floating foundations for garages, additions, workshops, and new construction. We work alongside builders and GCs across Tampa Bay and handle all structural concrete from dig to pour.</div>
+            </div>
+          </div>
+        </div>
+        <div class="faq-aside">
+          <h3>Get a Site Visit — It's Free</h3>
+          <p>We visit your property, measure the job, and give you a written quote. No estimates over the phone, no guesswork. Every project gets an on-site review before we price it.</p>
+          <a href="contact.html" class="btn-dark">Schedule Estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <div class="areas-section">
+    <div class="areas-inner">
+      <div class="section-label">Where We Work</div>
+      <h2 class="section-title on-dark">Tampa Bay Service Area</h2>
+      <div class="areas-pills">
+        <span class="area-pill">Tampa</span>
+        <span class="area-pill">South Tampa</span>
+        <span class="area-pill">Brandon</span>
+        <span class="area-pill">Wesley Chapel</span>
+        <span class="area-pill">Temple Terrace</span>
+        <span class="area-pill">Carrollwood</span>
+        <span class="area-pill">New Tampa</span>
+        <span class="area-pill">Seminole Heights</span>
+        <span class="area-pill">Riverview</span>
+        <span class="area-pill">Valrico</span>
+        <span class="area-pill">Ybor City</span>
+        <span class="area-pill">Hillsborough County</span>
+      </div>
+    </div>
+  </div>
 
   <!-- CTA BAND -->
   <div class="cta-band">
@@ -863,6 +1051,32 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky" role="complementary" aria-label="Quick contact">
+    <div class="mobile-sticky-label">
+      <strong>Steelman Concrete</strong>
+      Free on-site estimate
+    </div>
+    <a href="tel:8135550247" class="btn-dark">Call Now</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -37,7 +37,7 @@ If everything is running smoothly and you're ready to take the next step, here's
 Not pushing anything — just want to make sure you know what's available when you're ready.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com | lantech.co
+Lantech | lantech016@gmail.com | lantech-website.vercel.app
 
 ---
 

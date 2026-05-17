@@ -1,0 +1,22 @@
+# Per-client Vale vocabulary — copy to styles/Client/Vocab.yml before running vale-check
+# Populate from clients/active/[slug]/BRAND-VOICE.md and 06-client-brief.md
+#
+# REJECT: terms that are off-brand for this client (flagged as errors)
+# ACCEPT: terms that Vale might flag as errors but are correct for this client
+
+extends: existence
+message: "Term '%s' is off-brand for this client — see their BRAND-VOICE.md."
+link: ''
+level: error
+ignorecase: true
+tokens:
+  # Add banned client-specific terms below.
+  # Examples:
+  #   - 'cheap'           # off-brand if client is premium-positioned
+  #   - 'budget'          # off-brand if client is premium-positioned
+  #   - 'CompetitorName'  # if client doesn't want competitor mentioned
+  #   - 'old brand name'  # if client rebranded
+  #   - 'we''re the best' # unverifiable claim client wants to avoid
+  #
+  # Replace this comment block with actual terms before running.
+  - 'REPLACE_THIS_WITH_ACTUAL_BANNED_TERMS'

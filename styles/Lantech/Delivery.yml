@@ -1,0 +1,21 @@
+extends: substitution
+message: "Use '%s' — not '%s'. All delivery claims must match the pricing page (14 days)."
+link: ''
+level: error
+ignorecase: true
+swap:
+  '48-72 hours': '14 days'
+  '48–72 hours': '14 days'
+  '48 to 72 hours': '14 days'
+  'site within 48 hours': 'site within 14 days'
+  'site within 72 hours': 'site within 14 days'
+  'deliver within 48 hours': 'deliver within 14 days'
+  'deliver within 72 hours': 'deliver within 14 days'
+  'live in 48 hours': 'live in 14 days'
+  'in 48 hours': 'in 14 days'
+  'in 72 hours': 'in 14 days'
+  'launch in 48 hours': 'launch in 14 days'
+  'delivered in 48 hours': 'delivered in 14 days'
+  '48-hour launch': '14-day launch'
+  '48-hour turnaround': '14-day turnaround'
+  '72-hour launch': '14-day launch'

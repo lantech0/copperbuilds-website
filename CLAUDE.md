@@ -23,9 +23,12 @@ Read the relevant workflow before starting any process — it defines every requ
 | `workflows/portfolio-capture.md` | After every launch — screenshot, case study, portfolio page update |
 | `workflows/proposal.md` | When prospect wants a written proposal before signing — bridges discovery-call and project.md |
 | `workflows/offboarding.md` | When a client ends the relationship — file handover, access transfer, graceful close |
+| `workflows/copywriting.md` | When writing marketing copy from a brief — service pages, landing pages, homepage sections, about pages, hero copy — WITHOUT immediately building HTML |
 | `workflows/analytics-setup.md` | Immediately after live site smoke test — GA4 + GSC setup, tagging, conversions, access |
 | `workflows/monthly-report.md` | Start of each month — generate and deliver client performance report |
 | `workflows/maintenance.md` | Start of each month — run maintenance retainer checks and updates |
+| `workflows/seo-retainer.md` | Start of each month for any client on Local Presence, Lead Machine, or Market Leader retainer — collect client assets, execute GBP/blog/citations/links, feed into monthly-report.md |
+| `workflows/client-build-standards.md` | During every client site build — UX standards, Core Web Vitals gates, pre-launch smoke test |
 
 ---
 
@@ -35,21 +38,48 @@ Read the relevant workflow before starting any process — it defines every requ
 
 ## Page Rebuild Process — FOLLOW THIS EXACTLY
 
-This is the correct process for rebuilding any page. Do NOT skip to coding directly.
+This is the correct process for rebuilding any page — Lantech site and all client builds. Do NOT skip to coding directly.
+
+**Three-Layer Copy Framework:** Every page is built in this order — SEO Seed first, Marketing Copy second, Grammar & Structure third. Never reverse the order. Full framework documented in `COPY-STANDARDS.md`.
 
 1. **Invoke `frontend-design` skill** — required before any frontend work (every session)
-2. **Run `/impeccable craft`** for the specific page being rebuilt
-   - craft runs shape discovery first: interviews about purpose, key user action, content, scope
-   - User confirms the design brief before any code is written
-   - craft then builds using DESIGN.md as the token/system source
-3. **Start dev server** — `node serve.mjs` in background
-4. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
-5. **Run quality gates** — check every item in the DO-CONFIRM checklist below
-6. **Iterate** — minimum 2 screenshot rounds before calling a page done
+
+2. **Layer 1 — SEO Seed**: Establish the keyword target before writing a single word
+   - Client builds: run `/lantech-seo [client-slug]` — validates real keyword volumes via DataForSEO, outputs target phrases, titles, meta, schema, and SEO action plan
+   - Lantech site pages: identify the primary keyword cluster for this page (e.g., "web design for home service businesses", "local SEO for HVAC contractors")
+   - Every H1, H2, and first body paragraph must contain or directly support the seed keywords
+   - The seed is the thesis — the rest of the copy proves it
+
+3. **Layer 2 — Marketing Copy**: Draft copy using the SEO seed as the spine
+   - Read `COPY-STANDARDS.md` — readability targets, AIDA/PAS frameworks, headline rules, CTA rules
+   - Client builds: also read `clients/active/[slug]/BRAND-VOICE.md` — brand voice and vocabulary override Lantech defaults for client work
+   - Run `/impeccable craft` — shape discovery interviews establish page purpose and target reader, design brief is confirmed before code starts, copy is drafted using seed keywords + marketing framework + brand voice
+
+4. **Layer 3A — Mechanical Gate**: Run `/vale-check` on the copy draft
+   - Vale flags passive voice, weak CTAs, banned phrases, corporate jargon, terminology inconsistencies
+   - Fix every error before proceeding. Warnings require judgment — classify each one as genuine fix or false positive in context. Document reasoning for any warning left unfixed.
+
+5. **Layer 3B — Judgment Gate**: Run the manual checklist from `COPY-STANDARDS.md`
+   - Every item verified explicitly — not by gut feel, not by "looks fine"
+   - Key checks: no "We" sentence openers, no dangling modifiers, AIDA structure intact, headline passes Ogilvy test, all CTAs use first-person possessive ("Get My Free Quote" not "Get a Free Quote"), no incomplete comparisons
+
+6. **Build HTML** using DESIGN.md tokens
+
+7. **Start dev server** — `node serve.mjs` in background
+
+8. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
+
+9. **Run quality gates** — user reviews the page in browser; copy reads naturally in context of design
+
+10. **Iterate** — minimum 2 screenshot rounds before calling a page done
 
 **The old wrong process (banned):**
 - ~~Read old HTML → write new HTML directly → screenshot → iterate~~
-- Reading old HTML for content reference is fine. Jumping to code without `/impeccable craft` is not.
+- ~~Draft copy without running the three-layer framework~~
+- ~~Skip the SEO seed and start with marketing copy~~
+- ~~Skip Vale and the manual checklist because "the copy feels good"~~
+- ~~Copy handoff to .tmp/ for grammar approval — Vale + manual checklist replaces this~~
+- Reading old HTML for content reference is fine. Jumping to code without the framework is not.
 
 ## Brand
 - **Name:** Lantech
@@ -191,7 +221,10 @@ IMPORTANT: A page is not done until ALL of these pass:
 - `ai-graphic-design` — use for logo, brand identity, visual asset generation (5-phase briefing workflow)
 - `ui-ux-pro-max` — use for design system queries, color/typography recommendations, UX review
 - `market-brand` — brand voice analysis and guidelines (see `BRAND-VOICE.md` for Lantech's output)
-- `/seo page <url>` — audit a single page
-- `/seo schema <url>` — generate/validate structured data
-- `/seo technical <url>` — technical SEO audit
-- `/seo local` — local SEO for small biz clients
+- `/lantech-seo [client-slug]` — **pre-build SEO** for client builds: reads client.env, validates real keyword volumes via DataForSEO, generates titles/meta/schema/action plan. Run BEFORE `/lantech-build`.
+- `/vale-check [file]` — **copy quality gate**: runs Vale grammar/style check against Lantech rules + client brand voice. Mandatory before any page or blog post is marked done. Install once with `winget install --id errata-ai.Vale`, then `vale sync` from this folder.
+- `/seo-local <url>` — post-build local SEO audit (GBP, reviews, NAP, citations)
+- `/seo-page <url>` — post-build on-page SEO audit
+- `/seo-schema <url>` — generate/validate structured data on a live page
+- `/seo-technical <url>` — post-build technical SEO audit
+- `/seo-geo <url>` — AI search visibility audit (GEO, llms.txt, AI crawler access)

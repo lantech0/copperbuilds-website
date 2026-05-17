@@ -132,15 +132,46 @@ For each lead, grade each channel:
 - **LinkedIn:** ❌ No page / ✅ Has company page
 - **GMB:** ❌ Missing / ⚠️ Incomplete / ✅ Optimized
 
+**Service Area Capture — check these sources in order, stop when you have enough cities:**
+
+| Source | Where to look | What to grab |
+|--------|--------------|--------------|
+| **GMB** | Profile → "Service area" field | Every city listed |
+| **GMB reviews** | 10 most recent reviews | Any city/neighborhood mentioned by customers |
+| **Yelp** | Profile → "Areas Served" or "Location & Hours" | Listed service cities |
+| **Angi / HomeAdvisor** | Provider profile → service area section | Explicit radius or city list |
+| **Thumbtack** | Pro profile → "Serves" field | Exact radius they set |
+| **Facebook About tab** | Business Page → About → "Areas Served" | Listed cities |
+| **Houzz** | Pro profile → "Serves" | City list (contractors/remodelers) |
+| **BBB** | Business listing → service area | Address + any listed coverage |
+
+Combine all sources → deduplicate → record as comma-separated city list in `Service Area`.
+
+Count total unique cities → assign `Est. Tier`:
+   - 1–3 cities → **Local Presence** ($997/mo)
+   - 4–8 cities → **Lead Machine** ($1,997/mo)
+   - 9–20 cities → **Market Leader** ($3,497/mo)
+   - Can't determine after checking all sources → **Unknown** (note in cell)
+
+Use `Est. Tier` in the pitch angle and outreach — naming their plan tier shows you already understand their market scope before the first call.
+
 ### Step 8 — Lead Scoring
 Score each lead out of 100 using the scoring table in `/prospect`. Sort by score.
 - 🔥 Hot (70–100) — no website, no social. Go hard.
 - ⚡ Warm (40–69) — poor website or dormant social. Easy sell.
 - 🌱 Cold (under 40) — decent presence. Lower priority.
 
+**Est. Tier bonus — add to base score after digital presence scoring:**
+- Market Leader potential (9–20 cities) → **+15 pts** — large coverage, high contract value
+- Lead Machine potential (4–8 cities) → **+10 pts** — solid multi-city operator
+- Local Presence (1–3 cities) → **+5 pts** — standard single-area business
+- Unknown → **+0 pts**
+
+A business with a good digital presence but large service area can still be Hot. A single-city ghost lead stays warm unless gaps are severe.
+
 **Always show the scoring breakdown — point-by-point, not just the total:**
 ```
-No website (+40) | No Facebook (+20) | No Instagram (+15) | High rating 4.5★ (+5) | GMB incomplete (+5) = 85
+No website (+40) | No Facebook (+20) | No Instagram (+15) | High rating 4.5★ (+5) | GMB incomplete (+5) | Lead Machine tier (+10) = 95
 ```
 
 ### Step 9 — Revenue Opportunity Calculation
@@ -166,7 +197,17 @@ For every Hot and Warm lead, generate all 3 messages:
 - **Template B** — Facebook/Instagram DM
 - **Template C** — LinkedIn Message
 
-Rules: use owner name if found, reference Gold Standard by exact name, include exact revenue number and search volume, mention specific gap, no price in message 1, low-friction CTA. Sign as Lantech | lantech.co.
+Rules:
+- Use owner name if found
+- Reference Gold Standard by exact name
+- Include exact revenue number and search volume
+- Mention the specific digital gap (no website, dormant social, incomplete GMB)
+- **Reference their service area** — name how many cities they cover; frame the gap as lost leads across all of them, not just one city (e.g. "you serve 6 cities — that's [N × search volume] people a month who can't find you")
+- **Name their tier** only if it makes the pitch stronger; never lead with price — use it to show you've done your homework (e.g. "businesses your size typically need X city pages to show up where their customers search")
+- No price in message 1
+- Low-friction CTA — one question or a 15-min call offer, nothing more
+- Sign as: **Lantech | lantech-website.vercel.app**
+- Delivery claim: **14 days** (never "48–72 hours" — matches pricing page)
 
 ### Step 11 — Save Output
 
@@ -174,7 +215,7 @@ Rules: use owner name if found, reference Gold Standard by exact name, include e
 Create a new Google Sheet in "Lantech Agency → Prospects" Drive folder (ID: `1J8Of3xcIt8ZU0LTuPuafrpXVi4Vl2hQZ`). Name: `[Sector] [Location] — Prospect Tracker [YYYY-MM-DD]`
 
 **Tab 1: Leads** (one row per lead)
-`#` | `Business Name` | `Score` | `Scoring Breakdown` | `Tier` | `Sector` | `Owner` | `Phone` | `Email` | `Website` | `Website Grade` | `Google Rating` | `Reviews` | `Yrs in Biz` | `Facebook` | `Facebook URL` | `Instagram` | `Instagram URL` | `LinkedIn URL` | `GMB Status` | `Rev Opp/mo` | `Revenue Calculation` | `Outreach Sent` | `Replied` | `Call Booked` | `Closed` | `Notes` | `Pitch Angle` | `Address` | `Source`
+`#` | `Business Name` | `Score` | `Scoring Breakdown` | `Tier` | `Sector` | `Owner` | `Phone` | `Email` | `Website` | `Website Grade` | `Google Rating` | `Reviews` | `Yrs in Biz` | `Facebook` | `Facebook URL` | `Instagram` | `Instagram URL` | `LinkedIn URL` | `GMB Status` | `Service Area` | `Est. Tier` | `Rev Opp/mo` | `Revenue Calculation` | `Outreach Sent` | `Replied` | `Call Booked` | `Closed` | `Notes` | `Pitch Angle` | `Address` | `Source`
 
 **Tab 2: Outreach Messages** (3 rows per lead: Email / FB DM / LinkedIn)
 `#` | `Business Name` | `Tier` | `Template` | `Email Subject` | `Message`
@@ -211,6 +252,7 @@ Display in chat: sector, location, date, totals (Hot/Warm/Cold), total revenue o
 - [ ] For every lead: owner lookup result (✅ / ⚠️ / ❌)
 - [ ] For every lead: contact info (email, Facebook URL, Instagram URL, LinkedIn URL)
 - [ ] For every lead: full digital presence audit (Website, Facebook, Instagram, LinkedIn, GMB)
+- [ ] For every lead with a GMB: `Service Area` (city list from GMB + reviews) and `Est. Tier` recorded
 - [ ] For every HOT/WARM lead: **Pitch Angle** (3–5 sentences, specific to this lead)
 - [ ] For every HOT/WARM lead: **revenue calculation shown as full formula**
 - [ ] For every HOT/WARM lead: 3 outreach messages (Email with subject + DM + LinkedIn)

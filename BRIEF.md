@@ -7,9 +7,9 @@ Fill in the [BRACKETED] fields before sending.
 
 ## Who This Is For
 
-**Lantech** is a US-based web design agency founded by Luis Echarri. We build fast,
-affordable websites and local SEO for small businesses across the United States.
-Flat-rate packages: Starter $1,200 · Growth $1,699 · Pro $1,999.
+**Lantech** is a web design agency founded by Luis Echarri, serving small businesses
+across the United States. We build fast, affordable websites and local SEO for home
+service contractors and local businesses. Monthly retainer plans: Local Presence $997/mo · Lead Machine $1,997/mo · Market Leader $3,497/mo.
 
 ---
 
@@ -17,7 +17,7 @@ Flat-rate packages: Starter $1,200 · Growth $1,699 · Pro $1,999.
 
 - **Page name:** [e.g. Services, About, Pricing, Contact, Blog, Help, Landing Page]
 - **File name:** [e.g. services.html]
-- **URL:** https://lantech.co/[slug] [e.g. https://lantech.co/services]
+- **URL:** https://lantech-website.vercel.app/[slug] [e.g. https://lantech-website.vercel.app/services]
 - **Purpose:** [One sentence — what this page does for visitors]
 - **Primary keyword:** [e.g. "web design for small businesses"]
 - **Content to include:** [List the sections, copy, or reference any existing content]
@@ -30,31 +30,28 @@ Use these EXACT values. Do not substitute Tailwind defaults or generic colors.
 
 ### Colors
 ```
-Background:   #07070E
-Surface:      #0D0D1A
-Elevated:     #141428
-Cyan accent:  #00E5FF
-Purple:       #7C5CFC
-Body text:    #EAEAF5
-Muted text:   #8A8AAA
-Border:       rgba(255,255,255,0.06)
+Background:   #FAFAF7  (warm off-white — NEVER dark, NEVER pure white)
+Surface:      #FFFFFF  (cards)
+Text:         #1C1917  (warm near-black)
+Muted text:   #78716C  (warm stone gray)
+Accent:       #E8600A  (warm orange — the Rebel signal)
+Accent hover: #C2500A
+Blue:         #1D4ED8  (supporting blue for links only)
+Border:       #E7E0D8  (warm border)
 ```
 
 ### CSS Variables (copy into every page's `<style>` block)
 ```css
 :root {
-  --bg: #07070E;
-  --surface: #0D0D1A;
-  --elevated: #141428;
-  --accent: #00E5FF;
-  --accent2: #7C5CFC;
-  --txt: #EAEAF5;
-  --muted: #8A8AAA;
-  --border: rgba(255,255,255,0.06);
-  --accent-dim: rgba(0,229,255,0.06);
-  --accent-border: rgba(0,229,255,0.18);
-  --purple-dim: rgba(124,92,252,0.08);
-  --purple-border: rgba(124,92,252,0.22);
+  --bg: #FAFAF7;
+  --surface: #FFFFFF;
+  --txt: #1C1917;
+  --muted: #78716C;
+  --accent: #E8600A;
+  --accent-hover: #C2500A;
+  --blue: #1D4ED8;
+  --border: #E7E0D8;
+  --ink: #1C1917;
 }
 ```
 
@@ -62,25 +59,26 @@ Border:       rgba(255,255,255,0.06)
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 ```
-- **Headings (H1, H2):** Unbounded, 700–800
-- **Body text:** Plus Jakarta Sans, 400–700
-- **Labels, tags, code:** IBM Plex Mono, 400–500
+- **Headings (H1, H2, H3):** Calistoga, weight 400 (it's a display serif — do NOT use bold)
+- **Body text:** DM Sans, 400–600
+- **Labels, tags, code, prices:** JetBrains Mono, 400–500
 
 ### Typography Rules
-- Large headings: `letter-spacing: -0.025em`, `line-height: 1.1`
-- Body text: `line-height: 1.7`, `font-size: 0.9375rem`
-- Section labels (uppercase tags): IBM Plex Mono, 0.68rem, letter-spacing 0.12em
+- Large headings: `line-height: 1.15`, no letter-spacing override needed
+- Body text: `line-height: 1.72`, `font-size: 1rem`, max-width 680px (65–75 chars/line)
+- Section labels (uppercase eyebrow tags): JetBrains Mono, 0.68–0.72rem, letter-spacing 0.12em, color var(--accent)
+- Body text: NO letter-spacing. Labels only get tracking.
 
 ### Styling Rules
-- **Shadows:** Layered with color tint — `0 16px 48px rgba(0,0,0,.35), 0 0 0 1px var(--accent-border)`
-- **Gradients:** `linear-gradient(135deg, #00E5FF 0%, #7C5CFC 100%)` for gradient text
-- **Animations:** Only animate `transform` and `opacity`. NEVER use `transition-all`
-- **Cards:** background `var(--surface)`, border `1px solid var(--border)`, border-radius 14px
-- **Buttons:** Primary = cyan bg `#00E5FF` + dark text. Ghost = transparent + white border
-- **Hover states:** Every clickable element needs hover + focus-visible + active states
-- **Background depth:** Use radial gradient glows (cyan and purple) + dot-grid texture
+- **Shadows:** Warm-tinted — `0 2px 12px rgba(28,25,23,.07)` (card rest), `0 8px 40px rgba(28,25,23,.10)` (hover lift). Never cold black shadows.
+- **Gradients:** NO gradient text (`background-clip: text` is banned). No cyan-to-purple gradients.
+- **Animations:** Only animate `transform` and `opacity`. NEVER `transition-all`. NEVER animate width/height/padding.
+- **Cards:** background `var(--surface)` (#FFFFFF), border `1px solid var(--border)`, border-radius 8–16px, shadow on hover only (not at rest).
+- **Buttons:** Primary = `var(--accent)` (#E8600A) bg + white text. Ghost = transparent + `var(--border)` border + `var(--txt)` text.
+- **Hover states:** Every clickable element needs hover + focus-visible + active states. Focus ring: 2px solid `var(--accent)`, 3px offset.
+- **Background:** Always `var(--bg)` (#FAFAF7). NEVER dark backgrounds for page body. NO glassmorphism, dot-grid textures, or ambient glow blobs.
 - **No default Tailwind colors** (no indigo-500, blue-600, etc.)
 
 ---
@@ -100,15 +98,15 @@ Nav links (in order):
 - About       → about.html
 - Contact     → contact.html
 
-Active link: highlight in var(--accent) cyan
-CTA button: "Get a Free Quote" → contact.html (cyan background, dark text)
+Active link: highlight in var(--accent) (#E8600A orange)
+CTA button: "Get a Free Quote" → contact.html (var(--accent) orange background, white text)
 ```
 
 Mobile: hamburger menu that reveals the links as a vertical stack.
 
-Logo: Use the Lantech wordmark in Unbounded font. The real logo files are in `/brand_assets/`:
-- Light backgrounds: `lantech-logo-dark.png`
-- Dark backgrounds: `lantech-logo-white.png`
+Logo: Use the Lantech wordmark. The real logo files are in `/brand_assets/`:
+- Light backgrounds (page body): `lantech-logo-dark.png`
+- Dark backgrounds (dark header/footer): `lantech-logo-white.png`
 - Icon only: `lantech-icon-800.png`
 
 ---
@@ -120,8 +118,8 @@ Every page must have this footer:
 ```
 [Lantech logo + tagline]    [Pages]           [Services]         [Contact]
                             Home              Web Design         lantech016@gmail.com
-                            Services          SEO                [Phone — TBD]
-                            Pricing           Google Business    [City, State — TBD]
+                            Services          SEO                +63 977 329 3969
+                            Pricing           Google Business    
                             Blog              Social Media
                             About
                             Contact
@@ -131,11 +129,11 @@ Every page must have this footer:
 
 © 2026 Lantech. All rights reserved. | Privacy Policy | Terms of Service
 
-Background: #07070E, top border: 1px solid var(--border)
+Background: var(--ink) (#1C1917), top border: 1px solid rgba(255,255,255,0.06)
 ```
 
-**IMPORTANT:** Do NOT invent a phone number or address. If those are not provided, omit them.
-Use `lantech016@gmail.com` for email.
+**IMPORTANT:** Use `lantech016@gmail.com` for email and `+63 977 329 3969` (tel:+639773293969) for phone.
+Do NOT use lantech016@gmail.com on live pages — that is the internal/Gmail address only.
 
 ---
 
@@ -148,14 +146,14 @@ with the actual page data. Do not skip any tag.
 <!-- Core -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07070E">
+<meta name="theme-color" content="#FAFAF7">
 
 <!-- Title & Description -->
 <title>[Page Title — 50–60 characters, include primary keyword]</title>
 <meta name="description" content="[150–160 characters. Include one specific stat or benefit. No generic copy.]">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://lantech.co/[slug]">
+<link rel="canonical" href="https://lantech-website.vercel.app/[slug]">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="512x512" href="/brand_assets/lantech-icon-800.png">
@@ -166,14 +164,14 @@ with the actual page data. Do not skip any tag.
 <meta property="og:site_name" content="Lantech">
 <meta property="og:title" content="[Same as title tag]">
 <meta property="og:description" content="[Same as meta description]">
-<meta property="og:url" content="https://lantech.co/[slug]">
-<meta property="og:image" content="https://lantech.co/brand_assets/lantech-fb-banner-820x312.png">
+<meta property="og:url" content="https://lantech-website.vercel.app/[slug]">
+<meta property="og:image" content="https://lantech-website.vercel.app/brand_assets/lantech-fb-banner-820x312.png">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="[Same as title tag]">
 <meta name="twitter:description" content="[Same as meta description]">
-<meta name="twitter:image" content="https://lantech.co/brand_assets/lantech-fb-banner-820x312.png">
+<meta name="twitter:image" content="https://lantech-website.vercel.app/brand_assets/lantech-fb-banner-820x312.png">
 ```
 
 ---
@@ -190,11 +188,12 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Lantech",
-    "url": "https://lantech.co",
-    "logo": "https://lantech.co/brand_assets/lantech-logo-white.png",
-    "image": "https://lantech.co/brand_assets/lantech-fb-banner-820x312.png",
-    "description": "Web design, SEO, Google Business Profile optimization, and social media services for small businesses across the United States.",
+    "url": "https://lantech-website.vercel.app",
+    "logo": "https://lantech-website.vercel.app/brand_assets/lantech-logo-dark.png",
+    "image": "https://lantech-website.vercel.app/brand_assets/lantech-fb-banner-1640x624.png",
+    "description": "Web design, SEO, and Google Business Profile optimization for home service contractors and local businesses across the United States.",
     "email": "lantech016@gmail.com",
+    "telephone": "+639773293969",
     "priceRange": "$1,200 - $1,999",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -209,7 +208,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Lantech",
-    "url": "https://lantech.co"
+    "url": "https://lantech-website.vercel.app"
   }
 ]
 </script>
@@ -222,12 +221,12 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Lantech Services",
-  "url": "https://lantech.co/services",
+  "url": "https://lantech-website.vercel.app/services",
   "itemListElement": [
-    {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Web Design & Development","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"SEO Optimization","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
+    {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Website Design & Development","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Local SEO Optimization","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
     {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Google Business Profile Optimization","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
-    {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Social Media Optimization","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}}
+    {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Monthly SEO Retainer","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}}
   ]
 }
 </script>
@@ -240,7 +239,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Lantech Pricing Plans",
-  "url": "https://lantech.co/pricing",
+  "url": "https://lantech-website.vercel.app/pricing",
   "itemListElement": [
     {"@type":"ListItem","position":1,"item":{"@type":"Offer","name":"Starter Package","price":"1200","priceCurrency":"USD","seller":{"@type":"Organization","name":"Lantech"}}},
     {"@type":"ListItem","position":2,"item":{"@type":"Offer","name":"Growth Package","price":"1699","priceCurrency":"USD","seller":{"@type":"Organization","name":"Lantech"}}},
@@ -257,11 +256,12 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Lantech",
-  "url": "https://lantech.co/about",
-  "logo": "https://lantech.co/brand_assets/lantech-logo-white.png",
-  "description": "A dedicated web design studio helping US small businesses grow online with fast, affordable websites and SEO. Founded by Luis Echarri.",
+  "url": "https://lantech-website.vercel.app/about",
+  "logo": "https://lantech-website.vercel.app/brand_assets/lantech-logo-white.png",
+  "description": "A web design studio helping home service businesses rank on Google and turn local searches into booked jobs. Founded by Luis Echarri.",
   "founder": {"@type": "Person", "name": "Luis Echarri"},
   "email": "lantech016@gmail.com",
+  "telephone": "+639773293969",
   "areaServed": {"@type": "Country", "name": "United States"}
 }
 </script>
@@ -274,11 +274,12 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Lantech",
-  "url": "https://lantech.co/contact",
+  "url": "https://lantech-website.vercel.app/contact",
   "mainEntity": {
     "@type": "Organization",
     "name": "Lantech",
     "email": "lantech016@gmail.com",
+    "telephone": "+639773293969",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "sales",
@@ -302,8 +303,8 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Lantech Blog",
-  "url": "https://lantech.co/blog",
-  "publisher": {"@type":"Organization","name":"Lantech","url":"https://lantech.co"},
+  "url": "https://lantech-website.vercel.app/blog",
+  "publisher": {"@type":"Organization","name":"Lantech","url":"https://lantech-website.vercel.app"},
   "inLanguage": "en-US"
 }
 </script>
@@ -317,15 +318,15 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@type": "BlogPosting",
   "headline": "[Article title]",
   "description": "[Article meta description]",
-  "url": "https://lantech.co/blog/[slug]",
+  "url": "https://lantech-website.vercel.app/blog/[slug]",
   "datePublished": "[YYYY-MM-DD]",
   "dateModified": "[YYYY-MM-DD]",
   "author": {"@type":"Person","name":"Luis Echarri"},
   "publisher": {
     "@type": "Organization",
     "name": "Lantech",
-    "url": "https://lantech.co",
-    "logo": "https://lantech.co/brand_assets/lantech-logo-white.png"
+    "url": "https://lantech-website.vercel.app",
+    "logo": "https://lantech-website.vercel.app/brand_assets/lantech-logo-white.png"
   },
   "image": "[Cover image URL]",
   "inLanguage": "en-US"
@@ -340,13 +341,13 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Help Center — Lantech",
-  "url": "https://lantech.co/help",
-  "isPartOf": {"@type":"WebSite","name":"Lantech","url":"https://lantech.co"},
+  "url": "https://lantech-website.vercel.app/help",
+  "isPartOf": {"@type":"WebSite","name":"Lantech","url":"https://lantech-website.vercel.app"},
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://lantech.co"},
-      {"@type":"ListItem","position":2,"name":"Help Center","item":"https://lantech.co/help"}
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://lantech-website.vercel.app"},
+      {"@type":"ListItem","position":2,"name":"Help Center","item":"https://lantech-website.vercel.app/help"}
     ]
   }
 }
@@ -400,13 +401,15 @@ These values must match exactly everywhere they appear:
 |---|---|
 | Business name | Lantech (not "LanTech", not "LANTECH") |
 | Founder | Luis Echarri |
-| Email | lantech016@gmail.com |
+| Public email | lantech016@gmail.com |
+| Internal email | lantech016@gmail.com (never show on live pages) |
+| Phone | +63 977 329 3969 |
 | Starter price | $1,200 |
 | Growth price | $1,699 |
 | Pro price | $1,999 |
-| Delivery time | 48 hours (not "48h", not "2 days", not "5 days") |
-| Business hours | Mon–Fri, 9am–6pm EST |
-| Website URL | https://lantech.co |
+| Delivery time | Live within a week (not "48 hours" — that claim was removed) |
+| Business hours | Mon–Fri, 9am–6pm |
+| Website URL | https://lantech-website.vercel.app |
 
 ---
 
@@ -456,14 +459,14 @@ All brand assets live in `/brand_assets/`:
 
 | Page | File | Canonical URL |
 |---|---|---|
-| Homepage | index.html | https://lantech.co/ |
-| Services | services.html | https://lantech.co/services |
-| Pricing | pricing.html | https://lantech.co/pricing |
-| About | about.html | https://lantech.co/about |
-| Contact | contact.html | https://lantech.co/contact |
-| Blog index | blog.html | https://lantech.co/blog |
-| Help | help.html | https://lantech.co/help |
-| Blog articles | blog/[slug].html | https://lantech.co/blog/[slug] |
+| Homepage | index.html | https://lantech-website.vercel.app/ |
+| Services | services.html | https://lantech-website.vercel.app/services |
+| Pricing | pricing.html | https://lantech-website.vercel.app/pricing |
+| About | about.html | https://lantech-website.vercel.app/about |
+| Contact | contact.html | https://lantech-website.vercel.app/contact |
+| Blog index | blog.html | https://lantech-website.vercel.app/blog |
+| Help | help.html | https://lantech-website.vercel.app/help |
+| Blog articles | blog/[slug].html | https://lantech-website.vercel.app/blog/[slug] |
 
 ---
 

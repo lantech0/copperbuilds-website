@@ -54,6 +54,16 @@ If a case study hasn't been written yet:
 
 ---
 
+## Step 6 — Retainer Handoff (if client converts)
+
+If the client commits to a Local Presence, Lead Machine, or Market Leader retainer at or after the 30-day check-in:
+
+- [ ] Create `clients/active/[slug]/maintenance-log.md` (blank, first month entry will come from `seo-retainer.md`)
+- [ ] Queue `workflows/seo-retainer.md` for the first of the following calendar month
+- [ ] Confirm client's `client.env` has `PACKAGE_TIER` set to the correct retainer package
+
+---
+
 ## Required Outputs Before Considering Post-Launch Done
 
 - [ ] 30-day check-in email sent
@@ -63,3 +73,4 @@ If a case study hasn't been written yet:
 - [ ] Upsell follow-up sent if client showed interest
 - [ ] 90-day reminder set if no upsell bought
 - [ ] `workflows/portfolio-capture.md` triggered
+- [ ] If retainer sold: `maintenance-log.md` created and `seo-retainer.md` queued for next month

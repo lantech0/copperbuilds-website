@@ -11,7 +11,7 @@ This Service Agreement ("Agreement") is entered into as of **[DATE]** between:
 **Service Provider:**
 Lantech ("Lantech", "we", "us")
 Email: lantech016@gmail.com
-Website: lantech.co
+Website: lantech-website.vercel.app
 
 **Client:**
 [CLIENT_FULL_NAME or BUSINESS_NAME] ("Client", "you")
@@ -26,8 +26,8 @@ Address: [CLIENT_ADDRESS]
 
 Lantech agrees to provide the following services as selected:
 
-**Package:** [STARTER / GROWTH / PRO]
-**Price:** $[AMOUNT]
+**Plan:** [LOCAL PRESENCE / LEAD MACHINE / MARKET LEADER]
+**Monthly rate:** $[AMOUNT]/mo
 
 **Scope of work includes:**
 
@@ -51,7 +51,7 @@ Any work outside this scope requires a separate written agreement and additional
 ## 2. TIMELINE
 
 - **Project start date:** Upon receipt of completed onboarding questionnaire and full payment
-- **Expected delivery:** [48–72 hours / 1 week / custom] from project start
+- **Expected delivery:** [14 days / custom] from project start
 - **Client review period:** [3] business days after delivery of preview link
 - **Revisions turnaround:** [24] hours per revision round
 
@@ -78,7 +78,7 @@ Timelines are estimates. Delays caused by Client failure to provide required mat
 
 ## 4. REVISIONS
 
-- The [STARTER / GROWTH / PRO] package includes **[2] rounds of revisions**.
+- The [LOCAL PRESENCE / LEAD MACHINE / MARKET LEADER] plan includes **[2] rounds of revisions**.
 - A revision round = one consolidated list of changes submitted by the Client after reviewing the preview.
 - Each additional revision round beyond the included rounds is billed at **$[75–150]/round**.
 - Revisions must be submitted within [3] business days of receiving the preview link. After this period, the project is considered approved.
@@ -139,7 +139,7 @@ Lantech does not warrant:
 
 - Lantech provides **[30] days** of post-launch support for bug fixes at no additional charge
 - Support covers bugs and errors in the delivered work — not new features or content changes
-- After [30] days, support is available at Lantech's standard hourly rate of $[RATE]/hour
+- After [30] days, additional support and changes are available and quoted as a flat project fee — email lantech016@gmail.com and we'll send a quote before any work begins
 
 ---
 

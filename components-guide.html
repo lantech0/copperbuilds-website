@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lantech — Website Components Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Brand tokens ── */
+    :root {
+      --accent: #E8600A; --accent-hover: #C2500A; --accent-dim: #E8600A14;
+      --accent-border: #E8600A38; --warm-parchment: #FAFAF7; --surface: #FFFFFF;
+      --elevated: #F5F0EA; --ink: #1C1917; --warm-stone: #78716C; --subtle: #A8A29E;
+      --blue: #1D4ED8; --parchment-border: #E7E0D8; --rule: #1C191714;
+      --font-d: 'Calistoga', Georgia, serif; --font-b: 'DM Sans', sans-serif;
+      --font-m: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-b); background: var(--warm-parchment); color: var(--ink); }
+
+    /* ── Guide chrome ── */
+    .g-header { background: var(--ink); color: #fff; padding: 48px 40px 32px; border-bottom: 3px solid var(--accent); }
+    .g-header h1 { font-family: var(--font-d); font-size: 2.2rem; font-weight: 400; margin-bottom: 8px; }
+    .g-header p { color: #a8a29e; font-size: 0.95rem; line-height: 1.6; max-width: 620px; }
+    .g-legend { background: #2a2522; padding: 16px 40px; display: flex; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid #3a3330; }
+    .g-legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: #a8a29e; }
+    .g-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-classic { background: #78716c; }
+    .dot-bold { background: var(--accent); }
+    .dot-minimal { background: var(--blue); }
+    .dot-modern { background: #16a34a; }
+    .toc { background: var(--surface); border-bottom: 1px solid var(--parchment-border); padding: 18px 40px; display: flex; flex-wrap: wrap; gap: 6px 20px; }
+    .toc a { font-size: 0.78rem; font-family: var(--font-m); letter-spacing: 0.06em; color: var(--warm-stone); text-decoration: none; text-transform: uppercase; }
+    .toc a:hover { color: var(--accent); }
+    .comp-section { padding: 48px 40px 0; }
+    .comp-section:last-child { padding-bottom: 64px; }
+    .section-head { margin-bottom: 28px; }
+    .section-head h2 { font-family: var(--font-d); font-size: 1.6rem; font-weight: 400; margin-bottom: 4px; }
+    .section-head p { color: var(--warm-stone); font-size: 0.88rem; }
+    .vars-row { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; }
+    .vars-row::-webkit-scrollbar { height: 4px; }
+    .vars-row::-webkit-scrollbar-track { background: var(--elevated); border-radius: 2px; }
+    .vars-row::-webkit-scrollbar-thumb { background: var(--parchment-border); border-radius: 2px; }
+
+    /* ── Variation card ── */
+    .var-card { flex: 0 0 340px; scroll-snap-align: start; background: var(--surface); border: 1px solid var(--parchment-border); border-radius: 12px; overflow: hidden; }
+    .var-label { padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--rule); }
+    .var-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .var-name { font-size: 0.78rem; font-weight: 700; }
+    .var-desc { font-size: 0.7rem; color: var(--warm-stone); margin-left: auto; }
+    .preview { background: var(--elevated); padding: 16px; overflow: hidden; pointer-events: none; user-select: none; min-height: 130px; display: flex; align-items: center; justify-content: stretch; border-bottom: 1px solid var(--parchment-border); }
+    .preview > * { width: 100%; }
+    .prompt-block { padding: 14px 16px; }
+    .prompt-label { font-family: var(--font-m); font-size: 0.6rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--subtle); margin-bottom: 6px; }
+    .prompt-text { background: #1C1917; color: #e7e0d8; font-family: var(--font-m); font-size: 0.68rem; line-height: 1.65; padding: 12px 14px; border-radius: 6px; border: 1px solid #333; white-space: pre-wrap; word-break: break-word; }
+    .copy-btn { display: block; margin-top: 7px; background: transparent; border: 1px solid var(--accent-border); color: var(--accent); font-family: var(--font-m); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 4px; cursor: pointer; transition: background 0.15s; }
+    .copy-btn:hover { background: var(--accent-dim); }
+    .copy-btn.copied { background: var(--accent); color: #fff; border-color: var(--accent); }
+    hr.divider { border: none; border-top: 1px solid var(--parchment-border); margin: 48px 40px 0; }
+    .g-footer { padding: 40px; text-align: center; color: var(--subtle); font-family: var(--font-m); font-size: 0.7rem; letter-spacing: 0.06em; border-top: 1px solid var(--parchment-border); margin-top: 48px; }
+
+    /* ════════════════════════════════════════
+       MINI COMPONENT PREVIEW STYLES
+    ════════════════════════════════════════ */
+
+    /* ── shared atoms ── */
+    .m-tag { display:inline-block; background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); font-family:var(--font-m); font-size:0.55rem; letter-spacing:.1em; text-transform:uppercase; padding:2px 7px; border-radius:3px; }
+    .m-tag-blue { display:inline-block; background:#1D4ED814; color:var(--blue); border:1px solid #1D4ED838; font-family:var(--font-m); font-size:0.55rem; letter-spacing:.1em; text-transform:uppercase; padding:2px 7px; border-radius:3px; }
+    .m-d { font-family:var(--font-d); }
+    .m-btn-o { display:inline-block; background:var(--accent); color:#fff; font-size:0.65rem; font-weight:700; padding:6px 14px; border-radius:4px; }
+    .m-btn-ghost { display:inline-block; background:transparent; border:1px solid rgba(255,255,255,.3); color:#fff; font-size:0.65rem; padding:5px 12px; border-radius:4px; }
+    .m-btn-dark { display:inline-block; background:var(--ink); color:#fff; font-size:0.65rem; font-weight:700; padding:6px 14px; border-radius:4px; }
+    .m-btn-outline { display:inline-block; background:transparent; border:1px solid var(--parchment-border); color:var(--ink); font-size:0.65rem; padding:5px 12px; border-radius:4px; }
+    .m-btn-wh { display:inline-block; background:#fff; color:var(--accent); font-size:0.65rem; font-weight:700; padding:6px 14px; border-radius:4px; }
+    .m-stars { color:var(--accent); font-size:0.65rem; }
+
+    /* ═══════ NAVIGATION ═══════ */
+    /* Classic */
+    .nav-classic { background:#fff; border:1px solid var(--parchment-border); border-radius:6px; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+    .nc-logo { font-family:var(--font-d); font-size:0.9rem; }
+    .nc-links { display:flex; gap:14px; }
+    .nc-link { font-size:0.62rem; color:var(--warm-stone); }
+    .nc-cta { background:var(--accent); color:#fff; font-size:0.62rem; font-weight:700; padding:5px 12px; border-radius:4px; }
+
+    /* Dark Floating */
+    .nav-float { display:flex; justify-content:center; }
+    .nav-float-inner { background:var(--ink); border-radius:100px; padding:8px 20px; display:flex; align-items:center; gap:20px; }
+    .nf-logo { font-family:var(--font-d); font-size:0.8rem; color:#fff; }
+    .nf-links { display:flex; gap:14px; }
+    .nf-link { font-size:0.6rem; color:#a8a29e; }
+    .nf-cta { background:var(--accent); color:#fff; font-size:0.6rem; font-weight:700; padding:4px 10px; border-radius:100px; }
+
+    /* Transparent / Minimal */
+    .nav-minimal { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--rule); }
+    .nm-logo { font-family:var(--font-d); font-size:0.9rem; }
+    .nm-links { display:flex; gap:18px; }
+    .nm-link { font-size:0.62rem; color:var(--warm-stone); padding-bottom:2px; }
+    .nm-link.active { color:var(--ink); border-bottom:1px solid var(--ink); }
+    .nm-cta { font-size:0.62rem; font-weight:700; color:var(--accent); }
+
+    /* ═══════ HERO ═══════ */
+    /* Centered Full */
+    .hero-center { background:var(--ink); padding:24px 20px; border-radius:8px; text-align:center; color:#fff; }
+    .hc-tag { margin-bottom:8px; }
+    .hc-display { font-family:var(--font-d); font-size:1.3rem; line-height:1.1; margin-bottom:8px; }
+    .hc-body { font-size:0.7rem; color:#a8a29e; line-height:1.6; max-width:320px; margin:0 auto 14px; }
+    .hc-btns { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+
+    /* Left/Split */
+    .hero-split { display:grid; grid-template-columns:1fr 1fr; gap:12px; background:var(--warm-parchment); border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; }
+    .hs-text { padding:20px 16px; }
+    .hs-tag { margin-bottom:8px; }
+    .hs-display { font-family:var(--font-d); font-size:1.15rem; line-height:1.1; margin-bottom:8px; }
+    .hs-body { font-size:0.65rem; color:var(--warm-stone); line-height:1.6; margin-bottom:12px; }
+    .hs-btns { display:flex; gap:8px; flex-wrap:wrap; }
+    .hs-visual { background:linear-gradient(135deg,#2a2522 0%,#E8600A22 100%); display:flex; align-items:center; justify-content:center; }
+    .hs-visual-inner { text-align:center; }
+    .hs-img-ph { width:60px; height:60px; background:rgba(255,255,255,.08); border-radius:8px; margin:0 auto 6px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; }
+    .hs-img-label { font-size:0.58rem; color:#78716c; }
+
+    /* Bento Hero */
+    .hero-bento { background:var(--ink); padding:16px; border-radius:8px; color:#fff; position:relative; }
+    .hb-headline { font-family:var(--font-d); font-size:1.7rem; line-height:1.0; margin-bottom:10px; }
+    .hb-headline span { color:var(--accent); }
+    .hb-row { display:flex; gap:10px; align-items:flex-start; flex-wrap:wrap; }
+    .hb-body { font-size:0.65rem; color:#a8a29e; line-height:1.55; flex:1; min-width:120px; }
+    .hb-cards { display:flex; flex-direction:column; gap:6px; }
+    .hb-card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:6px; padding:8px 10px; }
+    .hb-card-val { font-family:var(--font-d); font-size:1rem; color:var(--accent); }
+    .hb-card-label { font-size:0.55rem; color:#78716c; margin-top:1px; }
+
+    /* ═══════ SERVICES ═══════ */
+    /* Classic Card Grid */
+    .svc-classic { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .scc { background:#fff; border:1px solid var(--parchment-border); padding:12px; border-radius:8px; }
+    .scc-icon { width:26px; height:26px; background:var(--accent-dim); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; margin-bottom:7px; }
+    .scc-title { font-size:0.68rem; font-weight:700; margin-bottom:3px; }
+    .scc-desc { font-size:0.58rem; color:var(--warm-stone); line-height:1.5; }
+
+    /* Numbered List */
+    .svc-numbered { display:flex; flex-direction:column; gap:10px; }
+    .sn { display:flex; gap:12px; align-items:flex-start; padding-bottom:10px; border-bottom:1px solid var(--rule); }
+    .sn:last-child { border-bottom:none; padding-bottom:0; }
+    .sn-num { font-family:var(--font-d); font-size:1.4rem; color:var(--accent); line-height:1; flex-shrink:0; min-width:28px; }
+    .sn-title { font-size:0.72rem; font-weight:700; margin-bottom:3px; }
+    .sn-desc { font-size:0.6rem; color:var(--warm-stone); line-height:1.5; }
+
+    /* Bento Grid */
+    .svc-bento { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:8px; }
+    .sb-wide { grid-column:1 / 3; background:var(--ink); color:#fff; padding:14px; border-radius:8px; display:flex; align-items:center; gap:12px; }
+    .sb-wide-icon { font-size:1.4rem; flex-shrink:0; }
+    .sb-wide-title { font-size:0.78rem; font-weight:700; margin-bottom:3px; }
+    .sb-wide-desc { font-size:0.6rem; color:#a8a29e; line-height:1.5; }
+    .sb-half { background:#fff; border:1px solid var(--parchment-border); padding:12px; border-radius:8px; }
+    .sb-half-icon { font-size:1.1rem; margin-bottom:6px; }
+    .sb-half-title { font-size:0.68rem; font-weight:700; margin-bottom:3px; }
+    .sb-half-desc { font-size:0.58rem; color:var(--warm-stone); line-height:1.5; }
+
+    /* ═══════ TESTIMONIALS ═══════ */
+    /* Card Grid */
+    .testi-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .tg { background:#fff; border:1px solid var(--parchment-border); padding:12px; border-radius:8px; }
+    .tg-stars { color:var(--accent); font-size:0.6rem; margin-bottom:5px; }
+    .tg-quote { font-size:0.63rem; color:var(--ink); line-height:1.55; margin-bottom:6px; font-style:italic; }
+    .tg-name { font-size:0.6rem; font-weight:700; }
+    .tg-biz { font-size:0.58rem; color:var(--warm-stone); }
+
+    /* Scrolling Marquee */
+    .testi-marquee { overflow:hidden; }
+    .marquee-row { display:flex; gap:10px; margin-bottom:8px; animation:scroll-left 14s linear infinite; width:max-content; }
+    .marquee-row.reverse { animation:scroll-right 16s linear infinite; }
+    @keyframes scroll-left { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes scroll-right { 0%{transform:translateX(-50%)} 100%{transform:translateX(0)} }
+    .marquee-card { background:#fff; border:1px solid var(--parchment-border); padding:10px 12px; border-radius:8px; min-width:160px; flex-shrink:0; }
+    .mc-stars { font-size:0.55rem; color:var(--accent); margin-bottom:4px; }
+    .mc-quote { font-size:0.58rem; line-height:1.5; margin-bottom:5px; font-style:italic; }
+    .mc-name { font-size:0.55rem; font-weight:700; color:var(--warm-stone); }
+
+    /* Featured Large Quote */
+    .testi-featured { background:var(--ink); padding:20px; border-radius:8px; text-align:center; color:#fff; }
+    .tf-mark { font-family:var(--font-d); font-size:3rem; color:var(--accent); line-height:.8; margin-bottom:4px; }
+    .tf-quote { font-family:var(--font-d); font-size:0.95rem; line-height:1.4; margin-bottom:12px; }
+    .tf-author { font-size:0.65rem; color:#78716c; }
+    .tf-author strong { color:#a8a29e; display:block; font-size:0.7rem; }
+
+    /* ═══════ STATS ═══════ */
+    /* Dark Row */
+    .stats-dark { background:var(--ink); padding:18px 14px; border-radius:8px; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; text-align:center; }
+    .sd-val { font-family:var(--font-d); font-size:1.2rem; color:var(--accent); margin-bottom:2px; }
+    .sd-label { font-size:0.56rem; color:#78716c; text-transform:uppercase; letter-spacing:.06em; line-height:1.4; }
+
+    /* Oversized Minimal */
+    .stats-minimal { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:18px 14px; text-align:center; }
+    .sm-val { font-family:var(--font-d); font-size:1.5rem; color:var(--ink); margin-bottom:2px; }
+    .sm-rule { width:20px; height:2px; background:var(--accent); margin:4px auto 4px; }
+    .sm-label { font-size:0.56rem; color:var(--warm-stone); line-height:1.4; }
+
+    /* Inline with text */
+    .stats-inline { display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:center; }
+    .si-text .si-tag { margin-bottom:7px; }
+    .si-text .si-headline { font-family:var(--font-d); font-size:0.95rem; margin-bottom:6px; line-height:1.2; }
+    .si-text .si-body { font-size:0.62rem; color:var(--warm-stone); line-height:1.6; }
+    .si-nums { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .si-num { background:var(--elevated); border-radius:8px; padding:10px; text-align:center; }
+    .si-num-val { font-family:var(--font-d); font-size:1.1rem; color:var(--accent); }
+    .si-num-label { font-size:0.55rem; color:var(--warm-stone); }
+
+    /* ═══════ PORTFOLIO ═══════ */
+    /* Classic Grid */
+    .port-classic { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .pc { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; }
+    .pc-img { background:linear-gradient(135deg,#c8c0b8,#e0d8d0); height:50px; display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:#9a9088; }
+    .pc-body { padding:8px; }
+    .pc-badge { display:inline-block; background:var(--elevated); font-size:0.52rem; color:var(--warm-stone); padding:1px 5px; border-radius:3px; margin-bottom:3px; }
+    .pc-title { font-size:0.63rem; font-weight:700; }
+
+    /* Bento Mosaic */
+    .port-bento { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:8px; }
+    .pb-big { grid-row:1/3; background:linear-gradient(160deg,#2a2522,#1C1917); border-radius:8px; padding:14px; color:#fff; display:flex; flex-direction:column; justify-content:flex-end; min-height:110px; }
+    .pb-big-badge { display:inline-block; background:rgba(255,255,255,.1); font-size:0.52rem; color:#a8a29e; padding:2px 6px; border-radius:3px; margin-bottom:6px; }
+    .pb-big-title { font-family:var(--font-d); font-size:0.85rem; }
+    .pb-small { background:#fff; border:1px solid var(--parchment-border); padding:10px; border-radius:8px; }
+    .pb-small-badge { font-size:0.52rem; color:var(--warm-stone); background:var(--elevated); display:inline-block; padding:1px 5px; border-radius:3px; margin-bottom:4px; }
+    .pb-small-title { font-size:0.63rem; font-weight:700; }
+
+    /* Minimal List */
+    .port-list { display:flex; flex-direction:column; gap:0; background:#fff; border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; }
+    .pl { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid var(--rule); }
+    .pl:last-child { border-bottom:none; }
+    .pl-left { display:flex; align-items:center; gap:10px; }
+    .pl-num { font-family:var(--font-m); font-size:0.58rem; color:var(--subtle); min-width:16px; }
+    .pl-title { font-size:0.68rem; font-weight:700; }
+    .pl-badge { font-size:0.55rem; color:var(--warm-stone); background:var(--elevated); padding:1px 6px; border-radius:3px; }
+    .pl-arrow { font-size:0.7rem; color:var(--accent); }
+
+    /* ═══════ CTA BANNER ═══════ */
+    /* Orange solid */
+    .cta-orange { background:var(--accent); padding:22px 20px; border-radius:8px; text-align:center; color:#fff; }
+    .co-headline { font-family:var(--font-d); font-size:1.05rem; margin-bottom:6px; }
+    .co-body { font-size:0.65rem; opacity:.85; margin-bottom:14px; line-height:1.5; }
+
+    /* Dark Bold */
+    .cta-dark { background:var(--ink); padding:22px 20px; border-radius:8px; color:#fff; }
+    .cd-small { font-family:var(--font-m); font-size:0.55rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+    .cd-headline { font-family:var(--font-d); font-size:1.3rem; line-height:1.1; margin-bottom:14px; }
+    .cd-row { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .cd-body { font-size:0.62rem; color:#78716c; flex:1; line-height:1.5; }
+
+    /* Split CTA */
+    .cta-split { display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--ink); border-radius:8px; overflow:hidden; }
+    .cs-left { padding:18px 16px; }
+    .cs-tag { margin-bottom:8px; }
+    .cs-headline { font-family:var(--font-d); font-size:1rem; color:#fff; line-height:1.2; margin-bottom:6px; }
+    .cs-body { font-size:0.62rem; color:#78716c; line-height:1.5; }
+    .cs-right { background:rgba(255,255,255,.04); border-left:1px solid rgba(255,255,255,.08); padding:18px 16px; display:flex; flex-direction:column; justify-content:center; gap:8px; }
+    .cs-input { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:4px; padding:7px 10px; font-size:0.62rem; color:#fff; width:100%; }
+    .cs-input::placeholder { color:#4a4542; }
+
+    /* ═══════ FOOTER ═══════ */
+    /* Classic 4-col */
+    .footer-classic { background:var(--ink); color:#fff; padding:18px 16px; border-radius:8px; }
+    .fc-cols { display:grid; grid-template-columns:2fr 1fr 1fr; gap:14px; margin-bottom:14px; }
+    .fc-logo { font-family:var(--font-d); font-size:0.85rem; margin-bottom:4px; }
+    .fc-tag { font-size:0.6rem; color:#78716c; line-height:1.5; }
+    .fc-col-title { font-size:0.58rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:#a8a29e; margin-bottom:5px; }
+    .fc-link { display:block; font-size:0.58rem; color:#78716c; margin-bottom:3px; }
+    .fc-bar { border-top:1px solid #2d2926; padding-top:10px; display:flex; justify-content:space-between; font-size:0.56rem; color:#4a4542; }
+
+    /* Minimal Centered */
+    .footer-minimal { background:#fff; border:1px solid var(--parchment-border); padding:24px 16px; border-radius:8px; text-align:center; }
+    .fm-logo { font-family:var(--font-d); font-size:0.95rem; margin-bottom:10px; }
+    .fm-links { display:flex; justify-content:center; gap:16px; margin-bottom:14px; flex-wrap:wrap; }
+    .fm-link { font-size:0.6rem; color:var(--warm-stone); }
+    .fm-divider { width:30px; height:1px; background:var(--parchment-border); margin:0 auto 10px; }
+    .fm-copy { font-size:0.58rem; color:var(--subtle); }
+
+    /* Dark + top CTA strip */
+    .footer-cta { background:var(--ink); border-radius:8px; overflow:hidden; }
+    .fct-strip { background:var(--accent); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+    .fct-strip-text { font-family:var(--font-d); font-size:0.85rem; color:#fff; }
+    .fct-strip-btn { background:#fff; color:var(--accent); font-size:0.62rem; font-weight:700; padding:5px 12px; border-radius:4px; white-space:nowrap; }
+    .fct-body { padding:14px 16px; }
+    .fct-cols { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; margin-bottom:10px; }
+    .fct-logo { font-family:var(--font-d); font-size:0.82rem; color:#fff; margin-bottom:3px; }
+    .fct-tagline { font-size:0.58rem; color:#4a4542; line-height:1.5; }
+    .fct-col-title { font-size:0.56rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:#a8a29e; margin-bottom:4px; }
+    .fct-col-link { display:block; font-size:0.56rem; color:#78716c; margin-bottom:3px; }
+    .fct-bar { border-top:1px solid #2d2926; padding-top:8px; font-size:0.54rem; color:#4a4542; }
+
+    /* ═══════ FAQ ═══════ */
+    /* Classic Accordion */
+    .faq-classic { display:flex; flex-direction:column; gap:6px; }
+    .fa { background:#fff; border:1px solid var(--parchment-border); border-radius:6px; padding:9px 12px; }
+    .fa-q { font-size:0.65rem; font-weight:700; display:flex; justify-content:space-between; }
+    .fa-toggle { color:var(--accent); font-weight:400; font-size:0.85rem; }
+    .fa-a { font-size:0.58rem; color:var(--warm-stone); line-height:1.5; margin-top:6px; padding-top:6px; border-top:1px solid var(--rule); }
+    .fa.closed .fa-a { display:none; }
+
+    /* Two-column */
+    .faq-twocol { display:grid; grid-template-columns:1fr 1.4fr; gap:10px; }
+    .ft-qs { display:flex; flex-direction:column; gap:4px; }
+    .ft-q { font-size:0.62rem; padding:7px 10px; border-radius:5px; color:var(--warm-stone); cursor:default; }
+    .ft-q.active { background:var(--accent-dim); color:var(--accent); font-weight:700; border:1px solid var(--accent-border); }
+    .ft-answer { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px; }
+    .ft-ans-q { font-size:0.65rem; font-weight:700; margin-bottom:6px; }
+    .ft-ans-a { font-size:0.6rem; color:var(--warm-stone); line-height:1.6; }
+
+    /* Minimal underline */
+    .faq-minimal { display:flex; flex-direction:column; gap:0; }
+    .fm-faq { padding:10px 0; border-bottom:1px solid var(--parchment-border); display:flex; justify-content:space-between; align-items:center; }
+    .fm-faq:first-child { border-top:1px solid var(--parchment-border); }
+    .fm-q { font-size:0.65rem; font-weight:700; }
+    .fm-icon { color:var(--accent); font-size:0.8rem; }
+    .fm-answer { padding:6px 0 10px; border-bottom:1px solid var(--parchment-border); font-size:0.6rem; color:var(--warm-stone); line-height:1.55; }
+
+    /* ═══════ NAV — Extra Styles ═══════ */
+    .nav-centered { background:#fff; border:1px solid var(--parchment-border); border-radius:6px; padding:10px 16px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:8px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+    .ncen-left { display:flex; gap:12px; }
+    .ncen-logo { font-family:var(--font-d); font-size:0.9rem; text-align:center; }
+    .ncen-right { display:flex; gap:10px; align-items:center; justify-content:flex-end; }
+    .ncen-link { font-size:0.62rem; color:var(--warm-stone); }
+    .ncen-cta { background:var(--accent); color:#fff; font-size:0.6rem; font-weight:700; padding:4px 10px; border-radius:4px; }
+    .nav-tworow { border:1px solid var(--parchment-border); border-radius:6px; overflow:hidden; }
+    .ntr-top { background:var(--ink); padding:5px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .ntr-top-text { font-size:0.55rem; color:#78716c; }
+    .ntr-top-contact { font-size:0.55rem; color:var(--accent); font-weight:600; }
+    .ntr-main { background:#fff; padding:8px 14px; display:flex; align-items:center; justify-content:space-between; }
+    .ntr-logo { font-family:var(--font-d); font-size:0.85rem; }
+    .ntr-links { display:flex; gap:12px; }
+    .ntr-link { font-size:0.6rem; color:var(--warm-stone); }
+    .ntr-cta { background:var(--accent); color:#fff; font-size:0.6rem; font-weight:700; padding:4px 10px; border-radius:4px; }
+
+    /* ═══════ HERO — Extra Styles ═══════ */
+    .hero-cycling { background:var(--ink); padding:24px 20px; border-radius:8px; color:#fff; text-align:center; }
+    .hcy-pre { font-family:var(--font-d); font-size:1.4rem; line-height:1.1; }
+    .hcy-cycle { font-family:var(--font-d); font-size:1.4rem; line-height:1.1; color:var(--accent); animation:hcy-in 2.5s ease-in-out infinite; display:inline-block; }
+    @keyframes hcy-in { 0%,60%{opacity:1;transform:translateY(0)} 80%{opacity:0;transform:translateY(-8px)} 85%{opacity:0;transform:translateY(8px)} 100%{opacity:1;transform:translateY(0)} }
+    .hcy-body { font-size:0.67rem; color:#a8a29e; line-height:1.6; max-width:280px; margin:10px auto 14px; }
+    .hero-imgoverlay { position:relative; border-radius:8px; overflow:hidden; min-height:140px; display:flex; align-items:flex-end; }
+    .hio-bg { position:absolute; inset:0; background:linear-gradient(150deg,#3d3530 0%,#1C1917 100%); }
+    .hio-gradient { position:absolute; inset:0; background:linear-gradient(to top, rgba(28,25,23,.95) 0%, rgba(28,25,23,.2) 70%, transparent 100%); }
+    .hio-content { position:relative; z-index:1; padding:16px 18px 18px; color:#fff; width:100%; }
+    .hio-tag { margin-bottom:8px; }
+    .hio-display { font-family:var(--font-d); font-size:1.15rem; line-height:1.1; margin-bottom:5px; }
+    .hio-body { font-size:0.63rem; color:#a8a29e; line-height:1.5; margin-bottom:10px; }
+
+    /* ═══════ SERVICES — Extra Styles ═══════ */
+    .svc-prow { display:flex; flex-direction:column; gap:0; background:#fff; border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; }
+    .spr { display:flex; align-items:center; gap:12px; padding:10px 14px; border-bottom:1px solid var(--rule); }
+    .spr:last-child { border-bottom:none; }
+    .spr-icon { width:28px; height:28px; background:var(--accent-dim); border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; flex-shrink:0; }
+    .spr-content { flex:1; }
+    .spr-title { font-size:0.68rem; font-weight:700; margin-bottom:1px; }
+    .spr-desc { font-size:0.58rem; color:var(--warm-stone); }
+    .spr-price { font-family:var(--font-m); font-size:0.65rem; color:var(--accent); font-weight:500; }
+    .svc-editorial { padding:4px 0; }
+    .sed-item { padding:10px 0; border-bottom:1px solid var(--rule); display:grid; grid-template-columns:22px 1fr 16px; gap:10px; align-items:center; }
+    .sed-item:last-child { border-bottom:none; padding-bottom:0; }
+    .sed-num { font-family:var(--font-m); font-size:0.55rem; color:var(--subtle); }
+    .sed-title { font-family:var(--font-d); font-size:1.0rem; color:var(--ink); line-height:1.1; }
+    .sed-arrow { font-size:0.7rem; color:var(--accent); }
+
+    /* ═══════ TESTIMONIALS — Extra Styles ═══════ */
+    .testi-cs { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; }
+    .tcs-hdr { background:var(--ink); padding:12px 14px; display:flex; align-items:center; gap:10px; }
+    .tcs-badge { width:26px; height:26px; background:rgba(255,255,255,.1); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:0.65rem; color:#fff; font-weight:700; flex-shrink:0; }
+    .tcs-company { font-size:0.68rem; font-weight:700; color:#fff; }
+    .tcs-type { font-size:0.55rem; color:#78716c; }
+    .tcs-bd { padding:12px 14px; }
+    .tcs-quote { font-size:0.63rem; color:var(--ink); line-height:1.55; font-style:italic; margin-bottom:10px; padding-left:8px; border-left:2px solid var(--accent); }
+    .tcs-mets { display:flex; gap:16px; }
+    .tcs-met-val { font-family:var(--font-d); font-size:1.1rem; color:var(--accent); line-height:1; }
+    .tcs-met-label { font-size:0.5rem; color:var(--warm-stone); }
+    .testi-avstrip { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px 16px; }
+    .tavs-quote { font-family:var(--font-d); font-size:0.9rem; line-height:1.3; text-align:center; margin-bottom:12px; color:var(--ink); }
+    .tavs-strip { display:flex; justify-content:center; padding-top:10px; border-top:1px solid var(--rule); }
+    .tavs-person { display:flex; flex-direction:column; align-items:center; padding:0 10px; border-right:1px solid var(--rule); }
+    .tavs-person:last-child { border-right:none; }
+    .tavs-av { width:26px; height:26px; border-radius:50%; background:var(--elevated); border:2px solid var(--accent); display:flex; align-items:center; justify-content:center; font-size:0.65rem; margin-bottom:3px; }
+    .tavs-name { font-size:0.55rem; font-weight:700; text-align:center; white-space:nowrap; }
+    .tavs-biz { font-size:0.5rem; color:var(--warm-stone); text-align:center; }
+
+    /* ═══════ STATS — Extra Styles ═══════ */
+    .stats-progress { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:16px; }
+    .spb-item { margin-bottom:10px; }
+    .spb-item:last-child { margin-bottom:0; }
+    .spb-row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; }
+    .spb-label { font-size:0.63rem; font-weight:700; }
+    .spb-val { font-family:var(--font-m); font-size:0.6rem; color:var(--accent); }
+    .spb-track { height:5px; background:var(--elevated); border-radius:100px; overflow:hidden; }
+    .spb-fill { height:100%; background:var(--accent); border-radius:100px; }
+    .stats-milestones { background:var(--ink); border-radius:8px; padding:16px; }
+    .stm-label { font-family:var(--font-m); font-size:0.55rem; letter-spacing:.08em; text-transform:uppercase; color:#78716c; margin-bottom:12px; }
+    .stm-items { display:flex; flex-direction:column; }
+    .stm-item { display:flex; gap:10px; padding-bottom:10px; }
+    .stm-item:last-child { padding-bottom:0; }
+    .stm-spine { display:flex; flex-direction:column; align-items:center; width:18px; }
+    .stm-dot { width:8px; height:8px; border-radius:50%; background:var(--accent); flex-shrink:0; margin-top:3px; }
+    .stm-line { flex:1; width:1px; background:rgba(255,255,255,.1); margin:3px 0; }
+    .stm-item:last-child .stm-line { display:none; }
+    .stm-info { flex:1; }
+    .stm-year { font-family:var(--font-m); font-size:0.55rem; color:var(--accent); letter-spacing:.05em; }
+    .stm-fact { font-size:0.63rem; color:#e7e0d8; font-weight:600; margin-bottom:1px; }
+    .stm-detail { font-size:0.56rem; color:#78716c; }
+
+    /* ═══════ PORTFOLIO — Extra Styles ═══════ */
+    .port-metric { display:flex; flex-direction:column; gap:8px; }
+    .pmet { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; display:flex; }
+    .pmet-img { width:56px; background:linear-gradient(135deg,#c8c0b8,#d8d0c8); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#9a9088; }
+    .pmet-body { flex:1; padding:9px 11px; }
+    .pmet-badge { display:inline-block; background:var(--elevated); font-size:0.5rem; color:var(--warm-stone); padding:1px 5px; border-radius:3px; margin-bottom:2px; }
+    .pmet-title { font-size:0.65rem; font-weight:700; margin-bottom:2px; }
+    .pmet-outcome { font-size:0.58rem; color:var(--warm-stone); }
+    .pmet-result { padding:9px 11px; display:flex; flex-direction:column; justify-content:center; align-items:flex-end; border-left:1px solid var(--rule); flex-shrink:0; }
+    .pmet-val { font-family:var(--font-d); font-size:1.1rem; color:var(--accent); line-height:1; }
+    .pmet-rlabel { font-size:0.48rem; color:var(--warm-stone); white-space:nowrap; }
+    .port-reveal { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .prev-card { position:relative; border-radius:8px; overflow:hidden; min-height:75px; }
+    .prev-bg { position:absolute; inset:0; background:linear-gradient(135deg,#c8c0b8,#d8d0c8); }
+    .prev-overlay { position:absolute; inset:0; background:rgba(28,25,23,.85); display:flex; flex-direction:column; justify-content:flex-end; padding:8px 10px; }
+    .prev-overlay.preview-hidden { background:rgba(28,25,23,.15); }
+    .prev-type { font-family:var(--font-m); font-size:0.5rem; color:var(--accent); letter-spacing:.05em; margin-bottom:2px; }
+    .prev-title { font-size:0.65rem; font-weight:700; color:#fff; }
+    .prev-cta { font-size:0.55rem; color:#a8a29e; margin-top:2px; }
+
+    /* ═══════ CTA — Extra Styles ═══════ */
+    .cta-angled { position:relative; background:var(--accent); border-radius:8px; padding:20px 20px 28px; overflow:hidden; }
+    .can-slash { position:absolute; bottom:-1px; left:0; right:0; height:28px; background:var(--warm-parchment); clip-path:polygon(0 100%,100% 0,100% 100%); }
+    .can-label { font-family:var(--font-m); font-size:0.55rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.65); margin-bottom:6px; }
+    .can-headline { font-family:var(--font-d); font-size:1.0rem; color:#fff; margin-bottom:6px; }
+    .can-body { font-size:0.63rem; color:rgba(255,255,255,.82); line-height:1.5; margin-bottom:12px; }
+    .cta-float-wrap { background:var(--warm-parchment); border-radius:8px; padding:12px; display:flex; justify-content:center; }
+    .cta-float-card { background:#fff; border:1px solid var(--parchment-border); border-radius:12px; padding:20px; max-width:240px; width:100%; text-align:center; box-shadow:0 6px 24px rgba(28,25,23,.1); }
+    .cfc-icon { width:34px; height:34px; background:var(--accent-dim); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; margin:0 auto 10px; }
+    .cfc-headline { font-family:var(--font-d); font-size:0.95rem; margin-bottom:5px; }
+    .cfc-body { font-size:0.6rem; color:var(--warm-stone); line-height:1.55; margin-bottom:12px; }
+
+    /* ═══════ FAQ — Extra Styles ═══════ */
+    .faq-cardgrid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .fqcg { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:11px; }
+    .fqcg-q { font-size:0.63rem; font-weight:700; margin-bottom:4px; color:var(--ink); }
+    .fqcg-a { font-size:0.58rem; color:var(--warm-stone); line-height:1.5; }
+    .faq-chat { display:flex; flex-direction:column; gap:8px; }
+    .fch-user { align-self:flex-end; max-width:88%; }
+    .fch-user-bubble { background:var(--ink); color:#fff; padding:7px 11px; border-radius:10px 10px 2px 10px; font-size:0.63rem; font-weight:600; }
+    .fch-bot { align-self:flex-start; max-width:88%; display:flex; gap:6px; align-items:flex-end; }
+    .fch-av { width:18px; height:18px; border-radius:50%; background:var(--accent-dim); border:1px solid var(--accent-border); display:flex; align-items:center; justify-content:center; font-size:0.55rem; flex-shrink:0; }
+    .fch-bot-bubble { background:#fff; border:1px solid var(--parchment-border); padding:7px 11px; border-radius:10px 10px 10px 2px; font-size:0.6rem; color:var(--warm-stone); line-height:1.5; }
+
+    /* ═══════ PRICING ═══════ */
+    .pricing-classic { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
+    .prc { background:#fff; border:1.5px solid var(--parchment-border); border-radius:10px; padding:11px; }
+    .prc.prc-featured { border-color:var(--accent); }
+    .prc-badge { display:inline-block; background:var(--accent); color:#fff; font-size:0.5rem; font-family:var(--font-m); letter-spacing:.07em; text-transform:uppercase; padding:2px 6px; border-radius:100px; margin-bottom:6px; }
+    .prc-name { font-size:0.65rem; font-weight:700; margin-bottom:3px; }
+    .prc-price { font-family:var(--font-d); font-size:1.3rem; line-height:1; margin-bottom:2px; }
+    .prc-price-sub { font-size:0.56rem; color:var(--warm-stone); }
+    .prc-desc { font-size:0.54rem; color:var(--warm-stone); margin-bottom:7px; line-height:1.4; }
+    .prc-feats { display:flex; flex-direction:column; gap:3px; margin-bottom:8px; }
+    .prc-feat { font-size:0.54rem; display:flex; gap:4px; }
+    .prc-check { color:var(--accent); flex-shrink:0; }
+    .prc-x { color:var(--subtle); flex-shrink:0; }
+    .pricing-featured { display:grid; grid-template-columns:1fr 1.1fr 1fr; gap:7px; align-items:start; }
+    .prf { background:#fff; border:1.5px solid var(--parchment-border); border-radius:10px; padding:10px; }
+    .prf-center { background:var(--ink); border-color:var(--ink); border-radius:12px; padding:14px; }
+    .prf-name { font-size:0.65rem; font-weight:700; margin-bottom:3px; }
+    .prf-center .prf-name { color:#fff; }
+    .prf-price { font-family:var(--font-d); font-size:1.3rem; line-height:1; margin-bottom:2px; }
+    .prf-center .prf-price { color:var(--accent); }
+    .prf-desc { font-size:0.54rem; color:var(--warm-stone); margin-bottom:7px; }
+    .prf-center .prf-desc { color:#78716c; }
+    .prf-feats { display:flex; flex-direction:column; gap:3px; margin-bottom:8px; }
+    .prf-feat { font-size:0.54rem; display:flex; gap:4px; color:var(--warm-stone); }
+    .prf-center .prf-feat { color:#a8a29e; }
+    .prf-checkmark { color:var(--accent); flex-shrink:0; }
+    .pricing-table { background:#fff; border:1px solid var(--parchment-border); border-radius:10px; overflow:hidden; }
+    .pt-head { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; background:var(--ink); }
+    .pt-hcell { padding:7px 8px; font-size:0.55rem; font-weight:700; color:#fff; text-align:center; }
+    .pt-hcell:first-child { text-align:left; color:#78716c; }
+    .pt-hcell.hl { color:var(--accent); }
+    .pt-row { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; border-bottom:1px solid var(--rule); }
+    .pt-row:last-child { border-bottom:none; }
+    .pt-cell { padding:6px 8px; font-size:0.56rem; color:var(--warm-stone); text-align:center; display:flex; align-items:center; justify-content:center; }
+    .pt-cell:first-child { text-align:left; justify-content:flex-start; font-weight:600; color:var(--ink); }
+    .pt-cell .ck { color:var(--accent); font-size:0.6rem; }
+    .pt-cell .xx { color:var(--subtle); font-size:0.6rem; }
+
+    /* ═══════ PROCESS ═══════ */
+    .process-hsteps { display:grid; grid-template-columns:repeat(3,1fr); gap:0; position:relative; }
+    .phs { padding:12px 10px; position:relative; }
+    .phs-num { font-family:var(--font-d); font-size:1.8rem; color:var(--accent); opacity:.25; line-height:1; margin-bottom:4px; }
+    .phs-title { font-size:0.68rem; font-weight:700; margin-bottom:3px; }
+    .phs-desc { font-size:0.56rem; color:var(--warm-stone); line-height:1.5; }
+    .phs-arrow { position:absolute; right:-7px; top:30%; color:var(--accent); font-size:0.8rem; z-index:1; }
+    .phs:last-child .phs-arrow { display:none; }
+    .process-vtl { display:flex; flex-direction:column; gap:0; }
+    .pvt { display:flex; gap:12px; padding-bottom:10px; }
+    .pvt:last-child { padding-bottom:0; }
+    .pvt-spine { display:flex; flex-direction:column; align-items:center; width:26px; flex-shrink:0; }
+    .pvt-circle { width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-m); font-size:0.58rem; color:#fff; font-weight:700; flex-shrink:0; }
+    .pvt-line { flex:1; width:1px; background:var(--parchment-border); margin:3px 0; }
+    .pvt:last-child .pvt-line { display:none; }
+    .pvt-content { flex:1; padding-top:2px; }
+    .pvt-title { font-size:0.68rem; font-weight:700; margin-bottom:2px; }
+    .pvt-desc { font-size:0.57rem; color:var(--warm-stone); line-height:1.5; }
+    .process-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .pc-step { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:11px; text-align:center; }
+    .pc-step-icon { width:30px; height:30px; background:var(--accent-dim); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.8rem; margin:0 auto 5px; }
+    .pc-step-num { font-family:var(--font-m); font-size:0.52rem; color:var(--accent); letter-spacing:.06em; margin-bottom:3px; }
+    .pc-step-title { font-size:0.65rem; font-weight:700; margin-bottom:2px; }
+    .pc-step-desc { font-size:0.55rem; color:var(--warm-stone); line-height:1.4; }
+
+    /* ═══════ ABOUT / TEAM ═══════ */
+    .about-split { display:grid; grid-template-columns:1fr 1.4fr; gap:0; align-items:stretch; background:#fff; border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; }
+    .abs-photo { background:linear-gradient(160deg,#3d3530,#1C1917); display:flex; align-items:center; justify-content:center; padding:14px; min-height:110px; }
+    .abs-photo-inner { text-align:center; }
+    .abs-avatar { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,.1); border:2px solid var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:1.1rem; color:#fff; margin:0 auto 5px; }
+    .abs-photo-name { font-size:0.6rem; color:#a8a29e; font-weight:600; }
+    .abs-photo-role { font-size:0.52rem; color:#78716c; }
+    .abs-content { padding:14px; }
+    .abs-tag { margin-bottom:7px; }
+    .abs-headline { font-family:var(--font-d); font-size:0.9rem; line-height:1.2; margin-bottom:5px; }
+    .abs-body { font-size:0.58rem; color:var(--warm-stone); line-height:1.6; margin-bottom:8px; }
+    .about-centered { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:18px; text-align:center; }
+    .abc-tag { margin-bottom:8px; }
+    .abc-headline { font-family:var(--font-d); font-size:1.05rem; line-height:1.2; margin-bottom:7px; }
+    .abc-body { font-size:0.6rem; color:var(--warm-stone); line-height:1.65; max-width:260px; margin:0 auto 12px; }
+    .abc-stats { display:flex; justify-content:center; gap:16px; padding-top:10px; border-top:1px solid var(--rule); }
+    .abc-stat-val { font-family:var(--font-d); font-size:1.0rem; color:var(--accent); }
+    .abc-stat-label { font-size:0.5rem; color:var(--warm-stone); }
+    .about-team { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .atm { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:12px; text-align:center; }
+    .atm-av { width:34px; height:34px; border-radius:50%; background:var(--elevated); border:2px solid var(--parchment-border); display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:0.85rem; color:var(--ink); margin:0 auto 6px; }
+    .atm-name { font-size:0.65rem; font-weight:700; margin-bottom:2px; }
+    .atm-role { font-size:0.53rem; color:var(--warm-stone); }
+
+    /* ═══════ TRUST / LOGOS ═══════ */
+    .trust-logos { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px 16px; }
+    .trl-label { font-family:var(--font-m); font-size:0.54rem; letter-spacing:.1em; text-transform:uppercase; color:var(--subtle); text-align:center; margin-bottom:12px; }
+    .trl-row { display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap; }
+    .trl-logo { background:var(--elevated); border-radius:5px; padding:5px 10px; font-size:0.6rem; font-weight:700; color:var(--subtle); letter-spacing:.04em; }
+    .trust-reviews { background:var(--ink); border-radius:8px; padding:14px; }
+    .trv-center { display:flex; flex-direction:column; align-items:center; margin-bottom:12px; }
+    .trv-stars { font-size:1.0rem; color:var(--accent); letter-spacing:1px; margin-bottom:3px; }
+    .trv-count { font-family:var(--font-d); font-size:1.3rem; color:#fff; line-height:1; }
+    .trv-sublabel { font-size:0.56rem; color:#78716c; margin-top:2px; }
+    .trv-badges { display:flex; justify-content:center; gap:7px; }
+    .trv-badge { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:7px; padding:7px 10px; text-align:center; }
+    .trv-badge-val { font-family:var(--font-d); font-size:0.95rem; color:var(--accent); line-height:1; }
+    .trv-badge-label { font-size:0.48rem; color:#78716c; }
+    .trust-badges { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px; }
+    .trb-label { font-family:var(--font-m); font-size:0.54rem; letter-spacing:.1em; text-transform:uppercase; color:var(--subtle); text-align:center; margin-bottom:12px; }
+    .trb-row { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
+    .trb-badge { background:var(--elevated); border-radius:7px; padding:10px; text-align:center; }
+    .trb-icon { font-size:1.0rem; margin-bottom:4px; }
+    .trb-text { font-size:0.56rem; font-weight:700; color:var(--ink); margin-bottom:1px; }
+    .trb-sub { font-size:0.48rem; color:var(--warm-stone); }
+
+    /* ═══════ CONTACT FORM ═══════ */
+    .contact-classic { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px; }
+    .cf-headline { font-family:var(--font-d); font-size:0.9rem; margin-bottom:10px; }
+    .cf-fields { display:flex; flex-direction:column; gap:7px; }
+    .cf-row { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+    .cf-label { font-size:0.56rem; font-weight:700; color:var(--ink); margin-bottom:2px; display:block; }
+    .cf-input { background:var(--warm-parchment); border:1.5px solid var(--parchment-border); border-radius:5px; padding:5px 8px; font-size:0.6rem; color:var(--ink); width:100%; }
+    .cf-textarea { background:var(--warm-parchment); border:1.5px solid var(--parchment-border); border-radius:5px; padding:5px 8px; font-size:0.6rem; color:var(--ink); min-height:44px; resize:none; width:100%; }
+    .contact-split { display:grid; grid-template-columns:1fr 1.4fr; gap:0; background:var(--ink); border-radius:8px; overflow:hidden; }
+    .csp-left { padding:14px; }
+    .csp-headline { font-family:var(--font-d); font-size:0.85rem; color:#fff; margin-bottom:7px; line-height:1.2; }
+    .csp-items { display:flex; flex-direction:column; gap:7px; margin-top:8px; }
+    .csp-item { display:flex; gap:7px; align-items:flex-start; }
+    .csp-icon { width:18px; height:18px; background:rgba(255,255,255,.08); border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:0.55rem; flex-shrink:0; margin-top:1px; }
+    .csp-item-title { font-size:0.6rem; font-weight:700; color:#fff; }
+    .csp-item-detail { font-size:0.55rem; color:#78716c; }
+    .csp-right { background:rgba(255,255,255,.04); border-left:1px solid rgba(255,255,255,.08); padding:14px; display:flex; flex-direction:column; gap:7px; justify-content:center; }
+    .csp-input { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:4px; padding:5px 8px; font-size:0.6rem; color:#fff; }
+    .csp-input::placeholder { color:#4a4542; }
+    .csp-textarea { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:4px; padding:5px 8px; font-size:0.6rem; color:#fff; min-height:38px; resize:none; }
+    .contact-minimal-wrap { background:var(--warm-parchment); border-radius:8px; padding:10px; display:flex; justify-content:center; }
+    .contact-minimal { background:#fff; border:1px solid var(--parchment-border); border-radius:12px; padding:16px; max-width:230px; width:100%; box-shadow:0 4px 20px rgba(28,25,23,.08); }
+    .cm-tag { margin-bottom:6px; }
+    .cm-headline { font-family:var(--font-d); font-size:0.88rem; margin-bottom:9px; }
+    .cm-fields { display:flex; flex-direction:column; gap:5px; }
+    .cm-input { background:var(--warm-parchment); border:1.5px solid var(--parchment-border); border-radius:5px; padding:5px 8px; font-size:0.6rem; color:var(--ink); }
+    .cm-textarea { background:var(--warm-parchment); border:1.5px solid var(--parchment-border); border-radius:5px; padding:5px 8px; font-size:0.6rem; color:var(--ink); min-height:40px; resize:none; }
+
+    /* ═══════ POPUP / MODAL ═══════ */
+    .popup-modal-wrap { position:relative; background:linear-gradient(160deg,#2a2522,#1C1917); border-radius:8px; padding:14px; display:flex; align-items:center; justify-content:center; min-height:140px; }
+    .popup-backdrop { position:absolute; inset:0; border-radius:8px; background:rgba(0,0,0,.45); }
+    .popup-card { position:relative; z-index:1; background:#fff; border-radius:12px; padding:16px; max-width:210px; width:100%; text-align:center; }
+    .pop-close { position:absolute; top:7px; right:10px; font-size:0.75rem; color:var(--subtle); }
+    .pop-icon { width:30px; height:30px; background:var(--accent-dim); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.8rem; margin:0 auto 7px; }
+    .pop-headline { font-family:var(--font-d); font-size:0.85rem; margin-bottom:4px; }
+    .pop-body { font-size:0.56rem; color:var(--warm-stone); line-height:1.5; margin-bottom:9px; }
+    .pop-input { background:var(--warm-parchment); border:1.5px solid var(--parchment-border); border-radius:4px; padding:5px 8px; font-size:0.6rem; color:var(--ink); width:100%; margin-bottom:5px; box-sizing:border-box; }
+    .pop-fine { font-size:0.48rem; color:var(--subtle); margin-top:4px; }
+    .popup-exit-wrap { position:relative; background:linear-gradient(160deg,#3d3530,#1C1917); border-radius:8px; padding:14px; display:flex; align-items:center; justify-content:center; min-height:140px; }
+    .popup-exit-card { position:relative; z-index:1; background:#fff; border-radius:12px; padding:14px 16px; max-width:210px; width:100%; }
+    .pex-close { position:absolute; top:7px; right:10px; font-size:0.75rem; color:var(--subtle); }
+    .pex-eyebrow { font-family:var(--font-m); font-size:0.5rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:4px; }
+    .pex-headline { font-family:var(--font-d); font-size:0.85rem; line-height:1.2; margin-bottom:4px; }
+    .pex-body { font-size:0.56rem; color:var(--warm-stone); line-height:1.5; margin-bottom:9px; }
+    .pex-yes { background:var(--accent); color:#fff; font-size:0.62rem; font-weight:700; padding:6px; border-radius:4px; text-align:center; margin-bottom:4px; }
+    .pex-no { font-size:0.54rem; color:var(--subtle); text-align:center; }
+    .popup-bar-wrap { background:var(--warm-parchment); border-radius:8px; overflow:hidden; border:1px solid var(--parchment-border); }
+    .popup-bar { background:var(--accent); padding:7px 14px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .pbar-text { font-size:0.63rem; color:#fff; flex:1; }
+    .pbar-cta { background:#fff; color:var(--accent); font-size:0.58rem; font-weight:700; padding:4px 9px; border-radius:4px; white-space:nowrap; flex-shrink:0; }
+    .pbar-close { font-size:0.72rem; color:rgba(255,255,255,.7); flex-shrink:0; }
+    .popup-bar-page { padding:18px 16px; text-align:center; color:var(--warm-stone); font-size:0.65rem; }
+
+    /* ═══════ PRICING — Extra Styles ═══════ */
+    .pricing-toggle { padding:2px 0; }
+    .pt-switch { display:flex; justify-content:center; background:var(--elevated); border-radius:100px; padding:3px; width:fit-content; margin:0 auto 12px; }
+    .pt-sw-opt { font-family:var(--font-m); font-size:0.54rem; letter-spacing:.05em; padding:4px 10px; border-radius:100px; color:var(--warm-stone); }
+    .pt-sw-opt.active { background:#fff; color:var(--ink); box-shadow:0 1px 4px rgba(0,0,0,.08); }
+    .pt-save { background:var(--accent-dim); color:var(--accent); font-size:0.47rem; padding:1px 4px; border-radius:100px; margin-left:2px; }
+    .pt-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+    .ptc { background:#fff; border:1.5px solid var(--parchment-border); border-radius:9px; padding:9px; }
+    .ptc-name { font-size:0.63rem; font-weight:700; margin-bottom:2px; }
+    .ptc-price { font-family:var(--font-d); font-size:1.15rem; line-height:1; margin-bottom:5px; }
+    .pricing-rows { display:flex; flex-direction:column; gap:0; background:#fff; border:1px solid var(--parchment-border); border-radius:8px; overflow:hidden; }
+    .prrow { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:9px 12px; border-bottom:1px solid var(--rule); }
+    .prrow:last-child { border-bottom:none; }
+    .prrow.prrow-featured { background:var(--ink); }
+    .prrow-name { font-size:0.67rem; font-weight:700; margin-bottom:1px; }
+    .prrow.prrow-featured .prrow-name { color:#fff; }
+    .prrow-feature { font-size:0.55rem; color:var(--warm-stone); }
+    .prrow.prrow-featured .prrow-feature { color:#78716c; }
+    .prrow-right { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+    .prrow-price { font-family:var(--font-d); font-size:0.95rem; color:var(--accent); white-space:nowrap; }
+
+    /* ═══════ PROCESS — Extra Styles ═══════ */
+    .process-dark { background:var(--ink); border-radius:8px; padding:14px; }
+    .pds-label { font-family:var(--font-m); font-size:0.52rem; letter-spacing:.08em; text-transform:uppercase; color:#78716c; margin-bottom:10px; text-align:center; }
+    .pds-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
+    .pds { border:1px solid rgba(255,255,255,.08); border-radius:7px; padding:10px; }
+    .pds-num { font-family:var(--font-d); font-size:1.5rem; color:var(--accent); opacity:.5; line-height:1; margin-bottom:3px; }
+    .pds-title { font-size:0.63rem; font-weight:700; color:#fff; margin-bottom:2px; }
+    .pds-desc { font-size:0.53rem; color:#78716c; line-height:1.4; }
+    .process-zigzag { display:flex; flex-direction:column; gap:7px; }
+    .pzz { display:grid; gap:8px; align-items:center; }
+    .pzz:nth-child(odd) { grid-template-columns:40px 1fr; }
+    .pzz:nth-child(even) { grid-template-columns:1fr 40px; }
+    .pzz-num { width:36px; height:36px; border-radius:8px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:0.95rem; color:#fff; flex-shrink:0; }
+    .pzz-content { background:#fff; border:1px solid var(--parchment-border); border-radius:7px; padding:9px; }
+    .pzz:nth-child(even) .pzz-content { text-align:right; order:-1; }
+    .pzz-title { font-size:0.66rem; font-weight:700; margin-bottom:2px; }
+    .pzz-desc { font-size:0.55rem; color:var(--warm-stone); line-height:1.4; }
+
+    /* ═══════ ABOUT — Extra Styles ═══════ */
+    .about-dark { background:var(--ink); border-radius:8px; padding:18px; }
+    .abd-eyebrow { font-family:var(--font-m); font-size:0.52rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+    .abd-quote { font-family:var(--font-d); font-size:1.0rem; line-height:1.3; color:#fff; margin-bottom:12px; }
+    .abd-quote span { color:var(--accent); }
+    .abd-author { display:flex; align-items:center; gap:10px; }
+    .abd-av { width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,.1); border:1.5px solid var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:0.7rem; color:#fff; flex-shrink:0; }
+    .abd-name { font-size:0.63rem; font-weight:700; color:#fff; }
+    .abd-role { font-size:0.53rem; color:#78716c; }
+    .about-values { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px; }
+    .abv-head { margin-bottom:10px; }
+    .abv-headline { font-family:var(--font-d); font-size:0.9rem; margin-bottom:3px; }
+    .abv-desc { font-size:0.56rem; color:var(--warm-stone); line-height:1.5; }
+    .abv-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+    .abv-item { background:var(--elevated); border-radius:7px; padding:9px; }
+    .abv-icon { font-size:0.85rem; margin-bottom:3px; }
+    .abv-title { font-size:0.62rem; font-weight:700; margin-bottom:1px; }
+    .abv-text { font-size:0.53rem; color:var(--warm-stone); line-height:1.4; }
+
+    /* ═══════ TRUST — Extra Styles ═══════ */
+    .trust-marquee-wrap { overflow:hidden; background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px 0; }
+    .trust-marquee-label { font-family:var(--font-m); font-size:0.52rem; letter-spacing:.1em; text-transform:uppercase; color:var(--subtle); text-align:center; margin-bottom:10px; }
+    .trust-mq-row { display:flex; gap:8px; animation:scroll-left 14s linear infinite; width:max-content; padding:0 8px; }
+    .trustmq-item { background:var(--elevated); border-radius:5px; padding:4px 10px; font-size:0.6rem; font-weight:700; color:var(--subtle); letter-spacing:.04em; flex-shrink:0; white-space:nowrap; }
+    .trust-press { background:var(--ink); border-radius:8px; padding:14px; }
+    .trp-label { font-family:var(--font-m); font-size:0.52rem; letter-spacing:.1em; text-transform:uppercase; color:#78716c; text-align:center; margin-bottom:12px; }
+    .trp-row { display:flex; gap:7px; align-items:center; justify-content:center; flex-wrap:wrap; }
+    .trp-item { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:5px; padding:5px 9px; font-size:0.58rem; font-weight:700; color:#a8a29e; letter-spacing:.04em; }
+
+    /* ═══════ CONTACT — Extra Styles ═══════ */
+    .contact-multistep { background:#fff; border:1px solid var(--parchment-border); border-radius:8px; padding:14px; }
+    .cms-progress { display:flex; gap:4px; margin-bottom:10px; }
+    .cms-pstep { flex:1; height:3px; background:var(--elevated); border-radius:100px; }
+    .cms-pstep.active { background:var(--accent); }
+    .cms-label { font-family:var(--font-m); font-size:0.5rem; color:var(--warm-stone); letter-spacing:.05em; text-transform:uppercase; margin-bottom:6px; }
+    .cms-headline { font-family:var(--font-d); font-size:0.85rem; margin-bottom:9px; }
+    .cms-opts { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+    .cms-opt { background:var(--warm-parchment); border:1.5px solid var(--parchment-border); border-radius:6px; padding:8px; }
+    .cms-opt.selected { border-color:var(--accent); background:var(--accent-dim); }
+    .cms-opt-icon { font-size:0.8rem; margin-bottom:3px; }
+    .cms-opt-label { font-size:0.6rem; font-weight:700; }
+    .contact-booking { background:var(--ink); border-radius:8px; overflow:hidden; }
+    .cbk-top { padding:12px 14px; }
+    .cbk-headline { font-family:var(--font-d); font-size:0.85rem; color:#fff; margin-bottom:3px; }
+    .cbk-sub { font-size:0.56rem; color:#78716c; }
+    .cbk-cal { background:rgba(255,255,255,.04); border-top:1px solid rgba(255,255,255,.08); padding:12px 14px; }
+    .cbk-cal-label { font-size:0.52rem; color:#a8a29e; font-weight:700; text-align:center; margin-bottom:8px; font-family:var(--font-m); letter-spacing:.05em; text-transform:uppercase; }
+    .cbk-slots { display:grid; grid-template-columns:repeat(3,1fr); gap:5px; }
+    .cbk-slot { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:5px; padding:5px; text-align:center; font-size:0.54rem; color:#78716c; }
+    .cbk-slot.available { border-color:var(--accent-border); color:var(--accent); background:rgba(232,96,10,.08); }
+
+    /* ═══════ POPUP — Extra Styles ═══════ */
+    .popup-cookie-wrap { background:var(--warm-parchment); border-radius:8px; overflow:hidden; border:1px solid var(--parchment-border); }
+    .popup-cookie-page { padding:16px; text-align:center; color:var(--warm-stone); font-size:0.62rem; line-height:1.55; }
+    .popup-cookie { background:var(--ink); padding:9px 12px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .pck-text { font-size:0.58rem; color:#a8a29e; flex:1; line-height:1.5; min-width:100px; }
+    .pck-accept { background:var(--accent); color:#fff; font-size:0.58rem; font-weight:700; padding:4px 9px; border-radius:4px; white-space:nowrap; flex-shrink:0; }
+    .pck-decline { font-size:0.56rem; color:#78716c; white-space:nowrap; flex-shrink:0; }
+    .popup-video-wrap { position:relative; background:linear-gradient(160deg,#2a2522,#1C1917); border-radius:8px; padding:14px; display:flex; align-items:center; justify-content:center; min-height:140px; }
+    .popup-video-card { position:relative; z-index:1; background:#fff; border-radius:12px; padding:14px; max-width:210px; width:100%; text-align:center; }
+    .pv-close { position:absolute; top:7px; right:10px; font-size:0.75rem; color:var(--subtle); }
+    .pv-thumb { background:var(--elevated); border-radius:8px; height:52px; display:flex; align-items:center; justify-content:center; margin-bottom:9px; }
+    .pv-play { width:26px; height:26px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:0.6rem; color:#fff; }
+    .pv-title { font-size:0.65rem; font-weight:700; margin-bottom:3px; }
+    .pv-desc { font-size:0.55rem; color:var(--warm-stone); margin-bottom:8px; }
+
+    /* ═══════ FOOTER — Extra Styles ═══════ */
+    .footer-nletter { background:var(--ink); border-radius:8px; overflow:hidden; }
+    .fnl-top { border-bottom:1px solid #2d2926; padding:14px 16px; text-align:center; }
+    .fnl-eyebrow { font-family:var(--font-m); font-size:0.55rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:5px; }
+    .fnl-headline { font-family:var(--font-d); font-size:0.85rem; color:#fff; margin-bottom:10px; }
+    .fnl-form { display:flex; gap:6px; max-width:240px; margin:0 auto; }
+    .fnl-input { flex:1; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:4px; padding:5px 8px; font-size:0.6rem; color:#fff; min-width:0; }
+    .fnl-input::placeholder { color:#4a4542; }
+    .fnl-btn { background:var(--accent); color:#fff; font-size:0.6rem; font-weight:700; padding:5px 10px; border-radius:4px; white-space:nowrap; }
+    .fnl-body { padding:12px 14px; }
+    .fnl-cols { display:grid; grid-template-columns:2fr 1fr 1fr; gap:10px; margin-bottom:8px; }
+    .fnl-logo { font-family:var(--font-d); font-size:0.8rem; color:#fff; margin-bottom:2px; }
+    .fnl-tagline { font-size:0.56rem; color:#4a4542; line-height:1.4; }
+    .fnl-col-title { font-size:0.55rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:#a8a29e; margin-bottom:3px; }
+    .fnl-col-link { display:block; font-size:0.55rem; color:#78716c; margin-bottom:2px; }
+    .fnl-bar { border-top:1px solid #2d2926; padding-top:8px; font-size:0.53rem; color:#4a4542; }
+    .footer-warm { background:var(--elevated); border:1px solid var(--parchment-border); border-radius:8px; padding:16px; }
+    .fwm-cols { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; margin-bottom:12px; }
+    .fwm-logo { font-family:var(--font-d); font-size:0.85rem; margin-bottom:4px; }
+    .fwm-tagline { font-size:0.58rem; color:var(--warm-stone); line-height:1.5; margin-bottom:6px; }
+    .fwm-socials { display:flex; gap:5px; }
+    .fwm-social { width:20px; height:20px; background:#fff; border:1px solid var(--parchment-border); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:0.55rem; }
+    .fwm-col-title { font-size:0.56rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--warm-stone); margin-bottom:4px; }
+    .fwm-link { display:block; font-size:0.56rem; color:var(--warm-stone); margin-bottom:2px; }
+    .fwm-bar { border-top:1px solid var(--parchment-border); padding-top:10px; display:flex; justify-content:space-between; font-size:0.54rem; color:var(--subtle); }
+  </style>
+</head>
+<body>
+
+<div class="g-header">
+  <h1>Website Components Guide</h1>
+  <p>Every major website section with 5 style variations each — scroll each row to see them all. Find the look you want, copy the prompt, paste to Claude.</p>
+</div>
+
+<div class="g-legend">
+  <span style="font-size:0.72rem;color:#78716c;font-family:var(--font-m);letter-spacing:.06em;text-transform:uppercase;margin-right:6px;">Style Key:</span>
+  <div class="g-legend-item"><div class="g-legend-dot dot-classic"></div> Classic — Safe, structured, always works</div>
+  <div class="g-legend-item"><div class="g-legend-dot dot-bold"></div> Bold / Dark — High contrast, strong personality</div>
+  <div class="g-legend-item"><div class="g-legend-dot dot-minimal"></div> Minimal — Clean, whitespace-heavy, elegant</div>
+  <div class="g-legend-item"><div class="g-legend-dot dot-modern"></div> Modern / Bento — Asymmetric, card-based, 2025 trending</div>
+</div>
+
+<nav class="toc">
+  <a href="#nav">Navigation</a>
+  <a href="#hero">Hero</a>
+  <a href="#services">Services</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#stats">Stats</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#cta">CTA Banner</a>
+  <a href="#faq">FAQ</a>
+  <a href="#footer">Footer</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#process">Process</a>
+  <a href="#about">About / Team</a>
+  <a href="#trust">Trust / Logos</a>
+  <a href="#contact">Contact Form</a>
+  <a href="#popup">Popup / Modal</a>
+</nav>
+
+
+<!-- ════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════ -->
+<div class="comp-section" id="nav">
+  <div class="section-head">
+    <h2>Navigation / Header</h2>
+    <p>The bar at the top of every page. Stays visible as the user scrolls.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Classic</div><div class="var-desc">Most common</div></div>
+      <div class="preview">
+        <div class="nav-classic">
+          <div class="nc-logo">Lantech</div>
+          <div class="nc-links"><span class="nc-link">Home</span><span class="nc-link">Services</span><span class="nc-link">Portfolio</span><span class="nc-link">Blog</span></div>
+          <div class="nc-cta">Get a Quote →</div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="n1">Build the navigation for [page]. Style: Classic. Logo left, nav links center (Home, Services, Portfolio, About, Blog, Contact), orange CTA button right "[button text]". Make it sticky — stays at top when scrolling. White background with a subtle bottom border.</div>
+        <button class="copy-btn" onclick="copyPrompt('n1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Dark Floating Pill</div><div class="var-desc">Modern & bold</div></div>
+      <div class="preview" style="background:#FAFAF7;">
+        <div class="nav-float">
+          <div class="nav-float-inner">
+            <div class="nf-logo">Lantech</div>
+            <div class="nf-links"><span class="nf-link">Services</span><span class="nf-link">Portfolio</span><span class="nf-link">About</span><span class="nf-link">Blog</span></div>
+            <div class="nf-cta">Get a Quote</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="n2">Build the navigation for [page]. Style: Dark Floating Pill. The nav is a dark rounded capsule (pill shape) that floats centered at the top of the page with some top margin — it doesn't touch the edges. Logo on the left inside the pill, links in the center, small orange CTA on the right. No full-width background. Sticky on scroll.</div>
+        <button class="copy-btn" onclick="copyPrompt('n2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Minimal / Transparent</div><div class="var-desc">Elegant, understated</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="nav-minimal">
+          <div class="nm-logo">Lantech</div>
+          <div class="nm-links"><span class="nm-link active">Services</span><span class="nm-link">Portfolio</span><span class="nm-link">About</span><span class="nm-link">Blog</span></div>
+          <div class="nm-cta">Contact →</div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="n3">Build the navigation for [page]. Style: Minimal/Transparent. No background color — the nav overlays the hero. Logo left, links center with the active page underlined, text CTA link right ("Contact →") in the accent color. On scroll, add a subtle white background that fades in. No heavy borders or shadows.</div>
+        <button class="copy-btn" onclick="copyPrompt('n3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Centered Logo</div><div class="var-desc">Balanced & symmetric</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="nav-centered">
+          <div class="ncen-left"><span class="ncen-link">Services</span><span class="ncen-link">Portfolio</span></div>
+          <div class="ncen-logo">Lantech</div>
+          <div class="ncen-right"><span class="ncen-link">About</span><span class="ncen-link">Blog</span><span class="ncen-cta">Quote →</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="n4">Build the navigation for [page]. Style: Centered Logo. The logo sits centered in the nav. Navigation links split evenly on both sides — [2 links] on the left, [2 links] + CTA button on the right. White background, subtle bottom border, sticky on scroll. Great for branding-forward pages where the logo is the visual anchor.</div>
+        <button class="copy-btn" onclick="copyPrompt('n4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Two-Row</div><div class="var-desc">Announcement bar + main nav</div></div>
+      <div class="preview" style="background:#f5f5f5;">
+        <div class="nav-tworow">
+          <div class="ntr-top"><span class="ntr-top-text">📞 Free website audit — limited spots</span><span class="ntr-top-contact">Claim yours →</span></div>
+          <div class="ntr-main"><div class="ntr-logo">Lantech</div><div class="ntr-links"><span class="ntr-link">Services</span><span class="ntr-link">Portfolio</span><span class="ntr-link">About</span></div><div class="ntr-cta">Get a Quote</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="n5">Build the navigation for [page]. Style: Two-Row. Top row: a dark announcement bar with a short promo message "[promo text]" on the left and a text link "[link text]" on the right. Bottom row: standard nav — logo left, links center, CTA button right. Both rows sticky on scroll. Good for pages where you want to lead with an offer above the main nav.</div>
+        <button class="copy-btn" onclick="copyPrompt('n5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<div class="comp-section" id="hero">
+  <div class="section-head">
+    <h2>Hero Section</h2>
+    <p>The first thing visitors see. Sets the tone for the whole page.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Centered / Full Dark</div><div class="var-desc">Most common for agencies</div></div>
+      <div class="preview">
+        <div class="hero-center">
+          <div class="hc-tag"><span class="m-tag">Web Agency</span></div>
+          <div class="hc-display">Websites That Win<br>Local Customers</div>
+          <div class="hc-body">Custom sites for contractors and home service pros — fast, mobile-ready, and built to rank on Google.</div>
+          <div class="hc-btns"><span class="m-btn-o">Get My Free Quote →</span><span class="m-btn-ghost">See Our Work</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="h1">Add a hero section to [page]. Style: Centered/Full Dark. Dark background, all content centered. Include: tag/label "[label]", large display headline "[headline]", supporting paragraph "[description]", two buttons — primary "[CTA text]" and secondary "[secondary text]". Full viewport height.</div>
+        <button class="copy-btn" onclick="copyPrompt('h1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Left / Split Screen</div><div class="var-desc">Trending in 2025</div></div>
+      <div class="preview">
+        <div class="hero-split">
+          <div class="hs-text">
+            <div class="hs-tag"><span class="m-tag">For Home Services</span></div>
+            <div class="hs-display">More Calls.<br>Less Chasing.</div>
+            <div class="hs-body">We build sites that bring customers to you — not the other way around.</div>
+            <div class="hs-btns"><span class="m-btn-o">Get Started</span><span class="m-btn-outline">View Work</span></div>
+          </div>
+          <div class="hs-visual">
+            <div class="hs-visual-inner">
+              <div class="hs-img-ph">🏠</div>
+              <div class="hs-img-label">Project screenshot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="h2">Add a hero section to [page]. Style: Left/Split Screen. Left half (55%): tag "[label]", bold headline "[headline]", short paragraph "[description]", two buttons — "[primary]" and "[secondary]". Right half (45%): [image/screenshot/illustration — describe it]. Light warm background on the left, darker or gradient on the right. Full viewport height.</div>
+        <button class="copy-btn" onclick="copyPrompt('h2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Bento / Bold Asymmetric</div><div class="var-desc">Big trend in 2025</div></div>
+      <div class="preview">
+        <div class="hero-bento">
+          <div class="hb-headline">Get Found.<br><span>Get Called.</span></div>
+          <div class="hb-row">
+            <div class="hb-body">Professional websites and local SEO for contractors who want to grow — without the corporate price tag.</div>
+            <div class="hb-cards">
+              <div class="hb-card"><div class="hb-card-val">150+</div><div class="hb-card-label">Clients served</div></div>
+              <div class="hb-card"><div class="hb-card-val">14 days</div><div class="hb-card-label">Avg. delivery</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="h3">Add a hero section to [page]. Style: Bento/Bold Asymmetric. Dark background. Large left-aligned display headline takes up most of the top — make it big and bold. Below the headline: supporting text on the left, and 2–3 floating stat cards on the right (e.g. "[stat 1 value]" / "[stat 1 label]", "[stat 2 value]" / "[stat 2 label]"). No centered layout — everything is left-aligned and grid-based. CTA button at the bottom left.</div>
+        <button class="copy-btn" onclick="copyPrompt('h3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Cycling Headline</div><div class="var-desc">Animated — shows your range</div></div>
+      <div class="preview">
+        <div class="hero-cycling">
+          <div class="hcy-pre">We Build Sites That</div>
+          <div class="hcy-cycle">Win More Calls</div>
+          <div class="hcy-body">Web design and local SEO for home service businesses ready to grow.</div>
+          <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;"><span class="m-btn-o">Get Started →</span><span class="m-btn-ghost">See Our Work</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="h4">Add a hero section to [page]. Style: Cycling Headline. Dark background, centered layout. The headline splits into: a static first line "[static part]" and a cycling animated phrase below it that fades between [3] different words/phrases — "[word 1]", "[word 2]", "[word 3]". The cycling word is in the accent orange. Below: supporting text "[description]", then two buttons — "[primary CTA]" and "[secondary CTA]". Use CSS animation only — no JavaScript library.</div>
+        <button class="copy-btn" onclick="copyPrompt('h4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Image Overlay</div><div class="var-desc">Photo with text on top</div></div>
+      <div class="preview">
+        <div class="hero-imgoverlay">
+          <div class="hio-bg"></div>
+          <div class="hio-gradient"></div>
+          <div class="hio-content">
+            <div class="hio-tag"><span class="m-tag">Home Services</span></div>
+            <div class="hio-display">Your Best Website<br>Starts Here</div>
+            <div class="hio-body">Local pros deserve a site that works as hard as they do.</div>
+            <div style="display:flex;gap:8px;"><span class="m-btn-o">Get My Free Quote →</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="h5">Add a hero section to [page]. Style: Image Overlay. Full background image with text overlaid. Image: "[image path or placeholder]". Add a dark gradient overlay — transparent at the top, dark at the bottom — so the text is readable. Text sits left-aligned near the bottom: tag "[label]", display headline "[headline]", short description "[desc]", primary CTA button "[CTA text]". Full viewport height.</div>
+        <button class="copy-btn" onclick="copyPrompt('h5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     SERVICES
+════════════════════════════════════ -->
+<div class="comp-section" id="services">
+  <div class="section-head">
+    <h2>Services Section</h2>
+    <p>Shows what you offer. One of the most important sections on any agency site.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Icon Card Grid</div><div class="var-desc">Safe, universally understood</div></div>
+      <div class="preview">
+        <div>
+          <div style="text-align:center;margin-bottom:12px;"><div class="m-d" style="font-size:0.95rem;">Our Services</div></div>
+          <div class="svc-classic">
+            <div class="scc"><div class="scc-icon">🌐</div><div class="scc-title">Website Design</div><div class="scc-desc">Custom sites for your trade.</div></div>
+            <div class="scc"><div class="scc-icon">📍</div><div class="scc-title">Local SEO</div><div class="scc-desc">Rank higher on Maps.</div></div>
+            <div class="scc"><div class="scc-icon">⭐</div><div class="scc-title">Google Reviews</div><div class="scc-desc">More 5-star reviews.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="s1">Add a services section to [page]. Style: Icon Card Grid. Section headline: "[heading]". Show [number] services in a [2/3]-column card grid. Each card: emoji or icon at top, service name as title, 1–2 sentence description. Services: 1."[name]"—"[desc]" 2."[name]"—"[desc]" 3."[name]"—"[desc]". Optional CTA button below the grid.</div>
+        <button class="copy-btn" onclick="copyPrompt('s1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Numbered Feature List</div><div class="var-desc">Editorial, high-end feel</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="svc-numbered">
+          <div class="sn"><div class="sn-num">01</div><div><div class="sn-title">Website Design</div><div class="sn-desc">Custom-built for home service pros.</div></div></div>
+          <div class="sn"><div class="sn-num">02</div><div><div class="sn-title">Local SEO</div><div class="sn-desc">Dominate Google Maps in your city.</div></div></div>
+          <div class="sn"><div class="sn-num">03</div><div><div class="sn-title">Google Reviews</div><div class="sn-desc">Automated review-getting system.</div></div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="s2">Add a services section to [page]. Style: Numbered Feature List. Section headline: "[heading]". Show [number] services as full-width horizontal rows separated by thin lines. Each row: large bold number (01, 02, 03...) on the left in the accent color, service title and description on the right. No cards, no icons — just clean typography with numbers.</div>
+        <button class="copy-btn" onclick="copyPrompt('s2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Bento Grid</div><div class="var-desc">Top trend in 2025</div></div>
+      <div class="preview">
+        <div class="svc-bento">
+          <div class="sb-wide"><div class="sb-wide-icon">🌐</div><div><div class="sb-wide-title">Website Design</div><div class="sb-wide-desc">Custom sites built for local businesses — mobile-first, fast, and designed to convert.</div></div></div>
+          <div class="sb-half"><div class="sb-half-icon">📍</div><div class="sb-half-title">Local SEO</div><div class="sb-half-desc">Rank on Google Maps where your customers search.</div></div>
+          <div class="sb-half"><div class="sb-half-icon">⭐</div><div class="sb-half-title">Google Reviews</div><div class="sb-half-desc">More 5-star reviews on autopilot.</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="s3">Add a services section to [page]. Style: Bento Grid. Asymmetric layout — one featured service card spans the full width at the top (dark background, icon + title + description), and [2] smaller service cards sit below it side by side. Section headline: "[heading]". Services: 1. Featured: "[name]"—"[desc]" (full-width, dark) 2."[name]"—"[desc]" (half-width) 3."[name]"—"[desc]" (half-width).</div>
+        <button class="copy-btn" onclick="copyPrompt('s3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Icon + Price Row</div><div class="var-desc">Clear, direct, price-forward</div></div>
+      <div class="preview" style="background:#fff;">
+        <div>
+          <div style="text-align:center;margin-bottom:10px;"><div class="m-d" style="font-size:0.95rem;">What We Offer</div></div>
+          <div class="svc-prow">
+            <div class="spr"><div class="spr-icon">🌐</div><div class="spr-content"><div class="spr-title">Website Design</div><div class="spr-desc">Custom site built for your trade.</div></div><div class="spr-price">From $999</div></div>
+            <div class="spr"><div class="spr-icon">📍</div><div class="spr-content"><div class="spr-title">Local SEO</div><div class="spr-desc">Rank higher on Google Maps.</div></div><div class="spr-price">$299/mo</div></div>
+            <div class="spr"><div class="spr-icon">⭐</div><div class="spr-content"><div class="spr-title">Google Reviews</div><div class="spr-desc">More 5-star reviews on autopilot.</div></div><div class="spr-price">$149/mo</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="s4">Add a services section to [page]. Style: Icon + Price Row. Each service is a full-width horizontal row with: icon on the left, service name + short description in the middle, starting price on the right. Rows separated by thin lines. Section headline: "[heading]". Services: 1."[name]"/"[desc]"/"[price]" 2."[name]"/"[desc]"/"[price]" 3."[name]"/"[desc]"/"[price]". CTA button below the list: "[button text]".</div>
+        <button class="copy-btn" onclick="copyPrompt('s4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Editorial List</div><div class="var-desc">Magazine-style, typography-led</div></div>
+      <div class="preview" style="background:#fff;">
+        <div>
+          <div style="margin-bottom:10px;"><div class="m-d" style="font-size:0.95rem;">Services</div></div>
+          <div class="svc-editorial">
+            <div class="sed-item"><div class="sed-num">01</div><div class="sed-title">Website Design</div><div class="sed-arrow">→</div></div>
+            <div class="sed-item"><div class="sed-num">02</div><div class="sed-title">Local SEO</div><div class="sed-arrow">→</div></div>
+            <div class="sed-item"><div class="sed-num">03</div><div class="sed-title">Google Reviews</div><div class="sed-arrow">→</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="s5">Add a services section to [page]. Style: Editorial List. Large full-width rows — each service is a big display-font title with a small number on the far left and an arrow on the far right. No descriptions, no icons — pure typography. On hover, the row highlights with the accent color. Think editorial magazine, not a card grid. Section headline: "[heading]". Services: 1."[name]" 2."[name]" 3."[name]" 4."[name]".</div>
+        <button class="copy-btn" onclick="copyPrompt('s5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════ -->
+<div class="comp-section" id="testimonials">
+  <div class="section-head">
+    <h2>Testimonials / Social Proof</h2>
+    <p>Client quotes that build trust. One of the highest-converting sections on any site.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Card Grid</div><div class="var-desc">Balanced and trustworthy</div></div>
+      <div class="preview">
+        <div>
+          <div style="text-align:center;margin-bottom:12px;"><div class="m-d" style="font-size:0.95rem;">What Clients Say</div></div>
+          <div class="testi-grid">
+            <div class="tg"><div class="tg-stars">★★★★★</div><div class="tg-quote">"Our phone started ringing within two weeks of launch."</div><div class="tg-name">Mike Torres</div><div class="tg-biz">ProFlow Plumbing</div></div>
+            <div class="tg"><div class="tg-stars">★★★★★</div><div class="tg-quote">"Best investment I've made for my business this year."</div><div class="tg-name">Sarah Kim</div><div class="tg-biz">Elite Air Services</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="t1">Add a testimonials section to [page]. Style: Card Grid. Section headline: "[heading]". Show [number] testimonials in a [2/3]-column card grid. Each card: 5-star rating, quote text, client name, business name. Testimonials: 1. Name:"[name]" Biz:"[biz]" Quote:"[quote]" 2. Name:"[name]" Biz:"[biz]" Quote:"[quote]".</div>
+        <button class="copy-btn" onclick="copyPrompt('t1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Scrolling Marquee</div><div class="var-desc">Huge in 2025 — shows volume</div></div>
+      <div class="preview" style="overflow:hidden;">
+        <div class="testi-marquee">
+          <div class="marquee-row">
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Calls doubled in 3 weeks."</div><div class="mc-name">Mike T. — Plumbing</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Best investment this year."</div><div class="mc-name">Sarah K. — HVAC</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Site looks amazing on mobile."</div><div class="mc-name">James R. — Roofing</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Calls doubled in 3 weeks."</div><div class="mc-name">Mike T. — Plumbing</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Best investment this year."</div><div class="mc-name">Sarah K. — HVAC</div></div>
+          </div>
+          <div class="marquee-row reverse">
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Ranked #1 in our city fast."</div><div class="mc-name">Carla M. — Landscaping</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Setup was incredibly easy."</div><div class="mc-name">Tom B. — Electric</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Worth every penny."</div><div class="mc-name">Ana L. — Painting</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Ranked #1 in our city fast."</div><div class="mc-name">Carla M. — Landscaping</div></div>
+            <div class="marquee-card"><div class="mc-stars">★★★★★</div><div class="mc-quote">"Setup was incredibly easy."</div><div class="mc-name">Tom B. — Electric</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="t2">Add a testimonials section to [page]. Style: Scrolling Marquee. Two rows of testimonial cards that auto-scroll horizontally — row 1 scrolls left, row 2 scrolls right. Cards pause on hover. Section headline above: "[heading]". Each card: star rating, short quote, client name, business type. Testimonials: [list at least 6 — they'll repeat to fill both rows]. Use CSS animation for the scrolling, no JavaScript library needed.</div>
+        <button class="copy-btn" onclick="copyPrompt('t2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Featured Large Quote</div><div class="var-desc">Quality over quantity</div></div>
+      <div class="preview">
+        <div class="testi-featured">
+          <div class="tf-mark">"</div>
+          <div class="tf-quote">Our phone hasn't stopped ringing since the new site went live. Best money I've spent on my business.</div>
+          <div class="tf-author"><strong>Mike Torres</strong>ProFlow Plumbing · Austin, TX</div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="t3">Add a testimonials section to [page]. Style: Featured Large Quote. One large featured quote, centered, dark background. Oversized quotation mark at the top in the accent color, then the quote in a large display font, then the client name and business below. Below the featured quote, show [2–3] smaller secondary quotes in a row. Primary quote: "[quote]" — "[name]", "[business]". Secondary quotes: [list them].</div>
+        <button class="copy-btn" onclick="copyPrompt('t3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Case Study Card</div><div class="var-desc">Results-first, high credibility</div></div>
+      <div class="preview">
+        <div class="testi-cs">
+          <div class="tcs-hdr"><div class="tcs-badge">PF</div><div><div class="tcs-company">ProFlow Plumbing</div><div class="tcs-type">Plumbing · Austin, TX</div></div></div>
+          <div class="tcs-bd">
+            <div class="tcs-quote">"Within two weeks of launch our phones wouldn't stop ringing. Best investment I've made."</div>
+            <div class="tcs-mets">
+              <div class="tcs-met"><div class="tcs-met-val">3×</div><div class="tcs-met-label">More Calls</div></div>
+              <div class="tcs-met"><div class="tcs-met-val">7d</div><div class="tcs-met-label">To Launch</div></div>
+              <div class="tcs-met"><div class="tcs-met-val">5★</div><div class="tcs-met-label">Rating</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="t4">Add a testimonials section to [page]. Style: Case Study Card. Each card has a dark header bar showing company initials + company name + business type, then a quote with an accent left border, then a row of 2–3 result metrics below (e.g. "3× More Calls", "7 Days to Launch"). Section headline: "[heading]". Testimonials: Company:"[name]" Type:"[type]" Quote:"[quote]" Metrics:"[val1]"/"[label1]" / "[val2]"/"[label2]" / "[val3]"/"[label3]".</div>
+        <button class="copy-btn" onclick="copyPrompt('t4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Avatar + Quote Strip</div><div class="var-desc">Shows many clients at once</div></div>
+      <div class="preview">
+        <div class="testi-avstrip">
+          <div class="tavs-quote">"Best website decision we've made."</div>
+          <div class="tavs-strip">
+            <div class="tavs-person"><div class="tavs-av">M</div><div class="tavs-name">Mike T.</div><div class="tavs-biz">Plumbing</div></div>
+            <div class="tavs-person"><div class="tavs-av">S</div><div class="tavs-name">Sarah K.</div><div class="tavs-biz">HVAC</div></div>
+            <div class="tavs-person"><div class="tavs-av">J</div><div class="tavs-name">James R.</div><div class="tavs-biz">Roofing</div></div>
+            <div class="tavs-person"><div class="tavs-av">C</div><div class="tavs-name">Carla M.</div><div class="tavs-biz">Landscape</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="t5">Add a testimonials section to [page]. Style: Avatar + Quote Strip. One large centered quote at the top. Below it, a horizontal strip of client avatars (initials in a circle with accent-color border), first name, and business type — separated by thin vertical lines. Section headline: "[heading]". Featured quote: "[quote]". Clients shown: "[name]"/"[business]" (repeat for [4–6] people).</div>
+        <button class="copy-btn" onclick="copyPrompt('t5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     STATS
+════════════════════════════════════ -->
+<div class="comp-section" id="stats">
+  <div class="section-head">
+    <h2>Stats / Numbers Section</h2>
+    <p>Big numbers that show your results at a glance. High-trust, low-word-count.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Dark Row</div><div class="var-desc">High impact, most popular</div></div>
+      <div class="preview">
+        <div class="stats-dark">
+          <div><div class="sd-val">150+</div><div class="sd-label">Clients Served</div></div>
+          <div><div class="sd-val">5★</div><div class="sd-label">Average Rating</div></div>
+          <div><div class="sd-val">14 Days</div><div class="sd-label">Avg. Delivery</div></div>
+          <div><div class="sd-val">8 Yrs</div><div class="sd-label">Experience</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="st1">Add a stats section to [page]. Style: Dark Row. Dark background, [4] stats in a horizontal row. Each stat: large bold number in the accent color, short label below. Stats: 1."[value]"/"[label]" 2."[value]"/"[label]" 3."[value]"/"[label]" 4."[value]"/"[label]". Full-width section, no cards — just numbers in a row with dividers between them.</div>
+        <button class="copy-btn" onclick="copyPrompt('st1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Oversized Minimal</div><div class="var-desc">Elegant and editorial</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="stats-minimal">
+          <div><div class="sm-val">150+</div><div class="sm-rule"></div><div class="sm-label">Clients<br>Served</div></div>
+          <div><div class="sm-val">5★</div><div class="sm-rule"></div><div class="sm-label">Average<br>Rating</div></div>
+          <div><div class="sm-val">7d</div><div class="sm-rule"></div><div class="sm-label">Avg.<br>Delivery</div></div>
+          <div><div class="sm-val">8yr</div><div class="sm-rule"></div><div class="sm-label">In<br>Business</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="st2">Add a stats section to [page]. Style: Oversized Minimal. White/light background, [4] stats in a row. Each stat: very large display number in the ink color (dark, not orange), a short orange accent rule/line below it, then a small label. Lots of whitespace. No dark backgrounds, no cards — pure typography. Stats: 1."[value]"/"[label]" 2."[value]"/"[label]" 3."[value]"/"[label]" 4."[value]"/"[label]".</div>
+        <button class="copy-btn" onclick="copyPrompt('st2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Inline with About Text</div><div class="var-desc">Stats woven into a split layout</div></div>
+      <div class="preview">
+        <div class="stats-inline">
+          <div class="si-text">
+            <div class="si-tag"><span class="m-tag">Track Record</span></div>
+            <div class="si-headline">Real Results for Real Businesses</div>
+            <div class="si-body">Every number below comes from real clients we've worked with — no inflated stats, no agency fluff.</div>
+          </div>
+          <div class="si-nums">
+            <div class="si-num"><div class="si-num-val">150+</div><div class="si-num-label">Clients</div></div>
+            <div class="si-num"><div class="si-num-val">5★</div><div class="si-num-label">Rating</div></div>
+            <div class="si-num"><div class="si-num-val">7d</div><div class="si-num-label">Delivery</div></div>
+            <div class="si-num"><div class="si-num-val">8yr</div><div class="si-num-label">Experience</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="st3">Add a stats section to [page]. Style: Inline with About Text. Two-column layout — left side has a tag "[label]", a headline "[heading]", and a supporting paragraph "[description]". Right side shows [4] stats in a 2×2 grid of small rounded cards. Each card: large number and a short label. Stats: 1."[value]"/"[label]" 2."[value]"/"[label]" 3."[value]"/"[label]" 4."[value]"/"[label]".</div>
+        <button class="copy-btn" onclick="copyPrompt('st3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Progress Bars</div><div class="var-desc">Visual, shows strength clearly</div></div>
+      <div class="preview" style="background:#fff;">
+        <div>
+          <div style="margin-bottom:10px;"><div class="m-d" style="font-size:0.95rem;">Our Track Record</div></div>
+          <div class="stats-progress">
+            <div class="spb-item"><div class="spb-row"><span class="spb-label">Client Satisfaction</span><span class="spb-val">98%</span></div><div class="spb-track"><div class="spb-fill" style="width:98%;"></div></div></div>
+            <div class="spb-item"><div class="spb-row"><span class="spb-label">Sites Delivered On Time</span><span class="spb-val">94%</span></div><div class="spb-track"><div class="spb-fill" style="width:94%;"></div></div></div>
+            <div class="spb-item"><div class="spb-row"><span class="spb-label">Clients Who Refer Us</span><span class="spb-val">72%</span></div><div class="spb-track"><div class="spb-fill" style="width:72%;"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="st4">Add a stats section to [page]. Style: Progress Bars. Light background. Section headline: "[heading]". Show [3–4] stats as labeled horizontal bars. Each: label on the left, percentage value on the right, filled bar below that animates in when the section scrolls into view. Stats: 1."[label]"/"[%]" 2."[label]"/"[%]" 3."[label]"/"[%]". Accent orange fill color on the bars.</div>
+        <button class="copy-btn" onclick="copyPrompt('st4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Milestone Timeline</div><div class="var-desc">Shows company history/growth</div></div>
+      <div class="preview">
+        <div class="stats-milestones">
+          <div class="stm-label">Our Story</div>
+          <div class="stm-items">
+            <div class="stm-item"><div class="stm-spine"><div class="stm-dot"></div><div class="stm-line"></div></div><div class="stm-info"><div class="stm-year">2018</div><div class="stm-fact">Founded in Cebu</div><div class="stm-detail">First 5 clients — all plumbers</div></div></div>
+            <div class="stm-item"><div class="stm-spine"><div class="stm-dot"></div><div class="stm-line"></div></div><div class="stm-info"><div class="stm-year">2021</div><div class="stm-fact">50+ clients served</div><div class="stm-detail">Expanded to HVAC and roofing</div></div></div>
+            <div class="stm-item"><div class="stm-spine"><div class="stm-dot"></div></div><div class="stm-info"><div class="stm-year">2025</div><div class="stm-fact">150+ sites launched</div><div class="stm-detail">Across 12 US states</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="st5">Add a stats section to [page]. Style: Milestone Timeline. Dark background. A vertical list of key milestones connected by a thin line with orange dot markers. Each entry: year label, bold headline, short detail. Eyebrow label: "[label]". Milestones: 1. Year:"[year]" Fact:"[fact]" Detail:"[detail]" 2. Year:"[year]" Fact:"[fact]" Detail:"[detail]" 3. Year:"[year]" Fact:"[fact]" Detail:"[detail]".</div>
+        <button class="copy-btn" onclick="copyPrompt('st5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     PORTFOLIO
+════════════════════════════════════ -->
+<div class="comp-section" id="portfolio">
+  <div class="section-head">
+    <h2>Portfolio / Work Gallery</h2>
+    <p>Showcases past projects. One of the first things serious buyers look for.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Uniform Card Grid</div><div class="var-desc">Clean and browseable</div></div>
+      <div class="preview">
+        <div>
+          <div style="text-align:center;margin-bottom:12px;"><div class="m-d" style="font-size:0.95rem;">Recent Work</div></div>
+          <div class="port-classic">
+            <div class="pc"><div class="pc-img">📷</div><div class="pc-body"><div class="pc-badge">Plumbing</div><div class="pc-title">ProFlow</div></div></div>
+            <div class="pc"><div class="pc-img">📷</div><div class="pc-body"><div class="pc-badge">HVAC</div><div class="pc-title">Elite Air</div></div></div>
+            <div class="pc"><div class="pc-img">📷</div><div class="pc-body"><div class="pc-badge">Roofing</div><div class="pc-title">Keith's</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="po1">Add a portfolio section to [page]. Style: Uniform Card Grid. Section headline: "[heading]". Show [number] project cards in a [2/3]-column grid — all same size. Each card: project screenshot at top, service-type badge, project name, optional short outcome. Projects: 1."[name]"/"[type]"/image:"[path or placeholder]" 2."[name]"/"[type]" 3."[name]"/"[type]". Add "View All Work →" link below.</div>
+        <button class="copy-btn" onclick="copyPrompt('po1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Bento / Mosaic</div><div class="var-desc">Dynamic, high-end feel</div></div>
+      <div class="preview">
+        <div class="port-bento">
+          <div class="pb-big"><div class="pb-big-badge">Featured · Plumbing</div><div class="pb-big-title">ProFlow Plumbing</div></div>
+          <div class="pb-small"><div class="pb-small-badge">HVAC</div><div class="pb-small-title">Elite Air</div></div>
+          <div class="pb-small"><div class="pb-small-badge">Roofing</div><div class="pb-small-title">Keith's Roofing</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="po2">Add a portfolio section to [page]. Style: Bento/Mosaic. Asymmetric grid layout: one large "featured" project card on the left (dark background, spans full height, 2 rows tall), and [2–3] smaller cards stacked on the right. Featured project: "[name]" / "[service type]". Other projects: "[name]"/[type], "[name]"/[type]. Section headline: "[heading]".</div>
+        <button class="copy-btn" onclick="copyPrompt('po2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Minimal Text List</div><div class="var-desc">Sophisticated, no-image option</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="port-list">
+          <div class="pl"><div class="pl-left"><span class="pl-num">01</span><span class="pl-title">ProFlow Plumbing</span></div><span class="pl-badge">Plumbing</span><span class="pl-arrow">→</span></div>
+          <div class="pl"><div class="pl-left"><span class="pl-num">02</span><span class="pl-title">Elite Air Services</span></div><span class="pl-badge">HVAC</span><span class="pl-arrow">→</span></div>
+          <div class="pl"><div class="pl-left"><span class="pl-num">03</span><span class="pl-title">Keith's Roofing</span></div><span class="pl-badge">Roofing</span><span class="pl-arrow">→</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="po3">Add a portfolio section to [page]. Style: Minimal Text List. No images — just numbered rows. Each row: project number, project name, service-type badge, and an arrow. Rows separated by thin lines. On hover, highlight the row with a subtle background. Section headline: "[heading]". Projects: 1."[name]"/"[type]" 2."[name]"/"[type]" 3."[name]"/"[type]". Each row links to the project page.</div>
+        <button class="copy-btn" onclick="copyPrompt('po3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Case Study + Result</div><div class="var-desc">Proof-first, shows outcomes</div></div>
+      <div class="preview">
+        <div>
+          <div style="text-align:center;margin-bottom:10px;"><div class="m-d" style="font-size:0.95rem;">Recent Work</div></div>
+          <div class="port-metric">
+            <div class="pmet"><div class="pmet-img">📷</div><div class="pmet-body"><div class="pmet-badge">Plumbing</div><div class="pmet-title">ProFlow Plumbing</div><div class="pmet-outcome">New site + local SEO</div></div><div class="pmet-result"><div class="pmet-val">3×</div><div class="pmet-rlabel">More calls</div></div></div>
+            <div class="pmet"><div class="pmet-img">📷</div><div class="pmet-body"><div class="pmet-badge">HVAC</div><div class="pmet-title">Elite Air Services</div><div class="pmet-outcome">Website redesign + reviews</div></div><div class="pmet-result"><div class="pmet-val">#1</div><div class="pmet-rlabel">On Google Maps</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="po4">Add a portfolio section to [page]. Style: Case Study + Result. Each project is a horizontal row: small screenshot on the left, project name + service badge + one-line description in the middle, and a key result metric on the far right (e.g. "3× More Calls", "#1 on Maps"). Section headline: "[heading]". Projects: 1."[name]"/"[type]"/"[desc]"/"[result value]"/"[result label]" 2."[name]"/"[type]"/"[desc]"/"[result value]"/"[result label]".</div>
+        <button class="copy-btn" onclick="copyPrompt('po4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Hover Reveal</div><div class="var-desc">Image grid, details on hover</div></div>
+      <div class="preview">
+        <div>
+          <div style="text-align:center;margin-bottom:10px;"><div class="m-d" style="font-size:0.95rem;">Recent Work</div></div>
+          <div class="port-reveal">
+            <div class="prev-card"><div class="prev-bg"></div><div class="prev-overlay"><div class="prev-type">Plumbing</div><div class="prev-title">ProFlow</div><div class="prev-cta">View project →</div></div></div>
+            <div class="prev-card"><div class="prev-bg" style="background:linear-gradient(135deg,#b8b0c0,#d0c8d8);"></div><div class="prev-overlay preview-hidden"><div class="prev-type">HVAC</div><div class="prev-title">Elite Air</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="po5">Add a portfolio section to [page]. Style: Hover Reveal. A grid of project images — at rest, just the photos. On hover, a dark overlay fades in revealing the project type, name, and a "View project →" link. No text visible without hovering. Section headline: "[heading]". [2]-column grid on desktop, [1] column on mobile. Projects: 1."[name]"/"[type]"/image:"[path]" 2."[name]"/"[type]"/image:"[path]" 3."[name]"/"[type]"/image:"[path]" 4."[name]"/"[type]"/image:"[path]".</div>
+        <button class="copy-btn" onclick="copyPrompt('po5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════ -->
+<div class="comp-section" id="cta">
+  <div class="section-head">
+    <h2>CTA Banner / Call to Action</h2>
+    <p>A standalone section whose only job is to get a click. Usually placed between content sections.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Orange Solid</div><div class="var-desc">High visibility, classic agency</div></div>
+      <div class="preview">
+        <div class="cta-orange">
+          <div class="co-headline">Ready to Get More Customers?</div>
+          <div class="co-body">Get a free website audit and see what's holding your business back online.</div>
+          <span class="m-btn-wh">Get Your Free Quote →</span>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="c1">Add a CTA banner section to [page]. Style: Orange Solid. Accent orange background, all text white, centered. Headline: "[heading]". Supporting sentence: "[description]". Button: "[button text]" in white with orange text → links to [url]. Full width, generous padding.</div>
+        <button class="copy-btn" onclick="copyPrompt('c1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Dark Bold</div><div class="var-desc">Premium, confident feel</div></div>
+      <div class="preview">
+        <div class="cta-dark">
+          <div class="cd-small">Ready when you are</div>
+          <div class="cd-headline">Let's Build Your<br>Best Website.</div>
+          <div class="cd-row">
+            <div class="cd-body">No contracts. No fluff. Just a site that brings you more customers.</div>
+            <span class="m-btn-o">Start Today →</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="c2">Add a CTA banner section to [page]. Style: Dark Bold. Dark background, left-aligned content (not centered). Small mono label at top: "[label]". Large display headline: "[headline]". Below that, a two-column row: supporting text "[description]" on the left, orange CTA button "[button text]" on the right. Minimal, editorial feel.</div>
+        <button class="copy-btn" onclick="copyPrompt('c2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Split with Form</div><div class="var-desc">Captures leads inline</div></div>
+      <div class="preview">
+        <div class="cta-split">
+          <div class="cs-left">
+            <div class="cs-tag"><span class="m-tag" style="font-size:.52rem;">Free Audit</span></div>
+            <div class="cs-headline">See What's Holding Your Site Back</div>
+            <div class="cs-body">Enter your site URL and we'll send a free review within 24 hours.</div>
+          </div>
+          <div class="cs-right">
+            <input class="cs-input" placeholder="yourwebsite.com">
+            <input class="cs-input" placeholder="Your email address">
+            <span class="m-btn-o" style="font-size:.62rem;padding:6px;text-align:center;display:block;">Get My Free Audit →</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="c3">Add a CTA banner section to [page]. Style: Split with Inline Form. Dark background, two columns. Left side: tag "[label]", headline "[heading]", short description "[description]". Right side: a small inline form with [fields: e.g. website URL + email] and a submit button "[button text]". On submit: show a thank-you message. No page reload.</div>
+        <button class="copy-btn" onclick="copyPrompt('c3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Diagonal / Angled</div><div class="var-desc">Bold, breaks the page flow</div></div>
+      <div class="preview">
+        <div class="cta-angled">
+          <div class="can-slash"></div>
+          <div class="can-label">Limited spots available</div>
+          <div class="can-headline">Ready to Get More Customers?</div>
+          <div class="can-body">Free audit, no commitment. We'll show you exactly what's holding your site back.</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="m-btn-wh" style="font-size:.63rem;padding:6px 12px;">Get Free Audit →</span><span style="display:inline-block;color:rgba(255,255,255,.75);font-size:.62rem;padding:6px 12px;border:1px solid rgba(255,255,255,.3);border-radius:4px;">See Our Work</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="c4">Add a CTA banner section to [page]. Style: Diagonal / Angled. Orange accent background. The bottom edge is cut at a diagonal angle using CSS clip-path so the section below "peeks through" behind a slanted edge. Content: small mono label "[urgency text]", headline "[heading]", short paragraph "[description]", two buttons — white primary "[button text]" and a ghost secondary "[secondary text]". Left-aligned content, generous padding.</div>
+        <button class="copy-btn" onclick="copyPrompt('c4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Floating Card</div><div class="var-desc">Elevated, stands out cleanly</div></div>
+      <div class="preview">
+        <div class="cta-float-wrap">
+          <div class="cta-float-card">
+            <div class="cfc-icon">🚀</div>
+            <div class="cfc-headline">Ready to Grow?</div>
+            <div class="cfc-body">Get your free website audit. We'll spot what's hurting your rankings and fix it.</div>
+            <span class="m-btn-o" style="display:block;text-align:center;font-size:.65rem;padding:8px 14px;">Get Free Audit →</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="c5">Add a CTA banner section to [page]. Style: Floating Card. A centered white card that floats with a soft shadow against a warm parchment background — not a full-width banner. The card has: icon or emoji at top "[icon]", short headline "[heading]", 1–2 sentence description "[description]", large primary button "[button text]". Centered, max-width ~380px, generous internal padding.</div>
+        <button class="copy-btn" onclick="copyPrompt('c5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     FAQ
+════════════════════════════════════ -->
+<div class="comp-section" id="faq">
+  <div class="section-head">
+    <h2>FAQ Section</h2>
+    <p>Answers to common questions. Reduces sales friction and helps with SEO.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Classic Accordion</div><div class="var-desc">Most familiar to users</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="faq-classic">
+          <div class="fa"><div class="fa-q">How long does a site take to build? <span class="fa-toggle">−</span></div><div class="fa-a">Most sites are live within 14 days from the time we receive your content.</div></div>
+          <div class="fa closed"><div class="fa-q">Do you require a contract? <span class="fa-toggle">+</span></div><div class="fa-a">No long-term contracts. Month-to-month only.</div></div>
+          <div class="fa closed"><div class="fa-q">Can I update the site myself? <span class="fa-toggle">+</span></div><div class="fa-a">Yes — we provide a simple editing guide after launch.</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="f1">Add an FAQ section to [page]. Style: Classic Accordion. Clicking a question expands the answer; clicking again collapses it. First question open by default. +/− toggle icon on the right. Section headline: "[heading]". Questions: 1. Q:"[q]" A:"[a]" 2. Q:"[q]" A:"[a]" 3. Q:"[q]" A:"[a]" 4. Q:"[q]" A:"[a]".</div>
+        <button class="copy-btn" onclick="copyPrompt('f1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Two-Column Select</div><div class="var-desc">Good for many questions</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="faq-twocol">
+          <div class="ft-qs">
+            <div class="ft-q active">How long does it take?</div>
+            <div class="ft-q">Do you need a contract?</div>
+            <div class="ft-q">Can I edit the site?</div>
+            <div class="ft-q">What's included?</div>
+          </div>
+          <div class="ft-answer">
+            <div class="ft-ans-q">How long does it take?</div>
+            <div class="ft-ans-a">Most sites are live within 14 days from the time we receive your content and branding.</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="f2">Add an FAQ section to [page]. Style: Two-Column Select. Left column: a list of all questions — clicking a question highlights it. Right column: shows the full answer for the selected question. First question selected by default. Section headline: "[heading]". Questions: 1. Q:"[q]" A:"[a]" 2. Q:"[q]" A:"[a]" 3. Q:"[q]" A:"[a]" 4. Q:"[q]" A:"[a]".</div>
+        <button class="copy-btn" onclick="copyPrompt('f2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Minimal Underline</div><div class="var-desc">Clean, editorial, no boxes</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="faq-minimal">
+          <div class="fm-faq"><span class="fm-q">How long does it take?</span><span class="fm-icon">+</span></div>
+          <div class="fm-answer">Most sites are live within 14 days.</div>
+          <div class="fm-faq"><span class="fm-q">Do you require a contract?</span><span class="fm-icon">+</span></div>
+          <div class="fm-faq"><span class="fm-q">Can I update the site myself?</span><span class="fm-icon">+</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="f3">Add an FAQ section to [page]. Style: Minimal Underline. No boxes or cards — just a list of questions separated by thin horizontal lines. Clicking a question reveals the answer below it inline. +/× toggle on the right. No background colors, lots of whitespace. Section headline: "[heading]". Questions: 1. Q:"[q]" A:"[a]" 2. Q:"[q]" A:"[a]" 3. Q:"[q]" A:"[a]".</div>
+        <button class="copy-btn" onclick="copyPrompt('f3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Card Grid (All Visible)</div><div class="var-desc">No clicking — all answers showing</div></div>
+      <div class="preview" style="background:#fff;">
+        <div>
+          <div style="margin-bottom:10px;"><div class="m-d" style="font-size:0.95rem;">Common Questions</div></div>
+          <div class="faq-cardgrid">
+            <div class="fqcg"><div class="fqcg-q">How long does it take?</div><div class="fqcg-a">Most sites live within 14 days.</div></div>
+            <div class="fqcg"><div class="fqcg-q">Do you require a contract?</div><div class="fqcg-a">No contracts — month-to-month only.</div></div>
+            <div class="fqcg"><div class="fqcg-q">Can I edit the site?</div><div class="fqcg-a">Yes — simple editing guide included.</div></div>
+            <div class="fqcg"><div class="fqcg-q">What's your price?</div><div class="fqcg-a">Sites start at $999 all-in. No hidden fees.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="f4">Add an FAQ section to [page]. Style: Card Grid (All Visible). No accordion — all questions and answers are shown at once in a [2]-column card grid. Each card: question as the bold title, answer as body text below it. No toggle icons. Section headline: "[heading]". Questions: 1. Q:"[q]" A:"[a]" 2. Q:"[q]" A:"[a]" 3. Q:"[q]" A:"[a]" 4. Q:"[q]" A:"[a]". Good when answers are short and you want zero friction.</div>
+        <button class="copy-btn" onclick="copyPrompt('f4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Chat Bubble Style</div><div class="var-desc">Conversational & memorable</div></div>
+      <div class="preview" style="background:#f5f0ea;">
+        <div class="faq-chat">
+          <div class="fch-user"><div class="fch-user-bubble">How long does it take?</div></div>
+          <div class="fch-bot"><div class="fch-av">L</div><div class="fch-bot-bubble">Most sites are live within 14 days once we have your content.</div></div>
+          <div class="fch-user"><div class="fch-user-bubble">Do you need a contract?</div></div>
+          <div class="fch-bot"><div class="fch-av">L</div><div class="fch-bot-bubble">No long-term contracts — month-to-month only.</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="f5">Add an FAQ section to [page]. Style: Chat Bubble. Questions appear as dark user message bubbles on the right, answers as light bot-response bubbles on the left with a small avatar showing your initials "[initials]". Creates a friendly, conversational feel — like a real chat. Section headline: "[heading]". Q&A pairs: 1. Q:"[q]" A:"[a]" 2. Q:"[q]" A:"[a]" 3. Q:"[q]" A:"[a]".</div>
+        <button class="copy-btn" onclick="copyPrompt('f5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<div class="comp-section" id="footer">
+  <div class="section-head">
+    <h2>Footer</h2>
+    <p>The bottom of every page — navigation, contact info, and copyright.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Classic 4-Column Dark</div><div class="var-desc">Standard agency footer</div></div>
+      <div class="preview">
+        <div class="footer-classic">
+          <div class="fc-cols">
+            <div><div class="fc-logo">Lantech</div><div class="fc-tag">Professional websites for local businesses across the US.</div></div>
+            <div><div class="fc-col-title">Pages</div><span class="fc-link">Home</span><span class="fc-link">Services</span><span class="fc-link">Portfolio</span><span class="fc-link">Blog</span></div>
+            <div><div class="fc-col-title">Contact</div><span class="fc-link">+63 977 329 3969</span><span class="fc-link">lantech016@gmail.com</span></div>
+          </div>
+          <div class="fc-bar"><span>© 2025 Lantech. All rights reserved.</span><span>Privacy · Terms</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="fo1">Build the footer for [page]. Style: Classic 4-Column Dark. Dark background. Four columns: 1. Logo + tagline "[tagline]" 2. Pages: [list links] 3. Services: [list services] 4. Contact: phone, email. Bottom bar: copyright + Privacy/Terms links.</div>
+        <button class="copy-btn" onclick="copyPrompt('fo1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Minimal Centered</div><div class="var-desc">Clean and uncluttered</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="footer-minimal">
+          <div class="fm-logo">Lantech</div>
+          <div class="fm-links"><span class="fm-link">Home</span><span class="fm-link">Services</span><span class="fm-link">Portfolio</span><span class="fm-link">Blog</span><span class="fm-link">Contact</span></div>
+          <div class="fm-divider"></div>
+          <div class="fm-copy">© 2025 Lantech · Privacy · Terms</div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="fo2">Build the footer for [page]. Style: Minimal Centered. White or light background, everything centered. Logo at top, navigation links below it in a single row, thin divider line, then copyright text. No columns, no contact details — just clean links. Optional: small social media icons before the copyright.</div>
+        <button class="copy-btn" onclick="copyPrompt('fo2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Dark + CTA Strip on Top</div><div class="var-desc">Converts before they leave</div></div>
+      <div class="preview">
+        <div class="footer-cta">
+          <div class="fct-strip"><div class="fct-strip-text">Ready to grow your business?</div><div class="fct-strip-btn">Get My Free Quote →</div></div>
+          <div class="fct-body">
+            <div class="fct-cols">
+              <div><div class="fct-logo">Lantech</div><div class="fct-tagline">Professional websites for local businesses.</div></div>
+              <div><div class="fct-col-title">Pages</div><span class="fct-col-link">Home</span><span class="fct-col-link">Services</span><span class="fct-col-link">Portfolio</span></div>
+              <div><div class="fct-col-title">Contact</div><span class="fct-col-link">lantech016@gmail.com</span></div>
+            </div>
+            <div class="fct-bar">© 2025 Lantech · Privacy · Terms</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="fo3">Build the footer for [page]. Style: Dark with CTA Strip on Top. At the very top of the footer, a full-width orange accent strip that says "[CTA headline]" on the left and a white CTA button "[button text]" on the right. Below that, the standard dark 3–4 column footer with logo, page links, contact info. Bottom bar: copyright + Privacy/Terms.</div>
+        <button class="copy-btn" onclick="copyPrompt('fo3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Newsletter-First</div><div class="var-desc">Lead capture before links</div></div>
+      <div class="preview">
+        <div class="footer-nletter">
+          <div class="fnl-top">
+            <div class="fnl-eyebrow">Stay in the loop</div>
+            <div class="fnl-headline">Tips for growing your business online</div>
+            <div class="fnl-form"><input class="fnl-input" placeholder="Your email address"><div class="fnl-btn">Subscribe</div></div>
+          </div>
+          <div class="fnl-body">
+            <div class="fnl-cols">
+              <div><div class="fnl-logo">Lantech</div><div class="fnl-tagline">Professional websites for local businesses.</div></div>
+              <div><div class="fnl-col-title">Pages</div><span class="fnl-col-link">Home</span><span class="fnl-col-link">Services</span></div>
+              <div><div class="fnl-col-title">Contact</div><span class="fnl-col-link">lantech016@gmail.com</span></div>
+            </div>
+            <div class="fnl-bar">© 2025 Lantech · Privacy · Terms</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="fo4">Build the footer for [page]. Style: Newsletter-First. Dark footer. Top section: eyebrow label "[label]", newsletter headline "[headline]", email input + subscribe button "[button text]" — all centered. Below that, standard footer columns: logo + tagline, page links, contact info. Bottom bar: copyright + Privacy/Terms.</div>
+        <button class="copy-btn" onclick="copyPrompt('fo4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Light / Warm</div><div class="var-desc">Friendly — not corporate-dark</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="footer-warm">
+          <div class="fwm-cols">
+            <div><div class="fwm-logo">Lantech</div><div class="fwm-tagline">Professional websites for local businesses across the US.</div><div class="fwm-socials"><div class="fwm-social">f</div><div class="fwm-social">in</div><div class="fwm-social">g</div></div></div>
+            <div><div class="fwm-col-title">Pages</div><span class="fwm-link">Home</span><span class="fwm-link">Services</span><span class="fwm-link">Portfolio</span></div>
+            <div><div class="fwm-col-title">Contact</div><span class="fwm-link">lantech016@gmail.com</span><span class="fwm-link">+63 977 329 3969</span></div>
+          </div>
+          <div class="fwm-bar"><span>© 2025 Lantech. All rights reserved.</span><span>Privacy · Terms</span></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="fo5">Build the footer for [page]. Style: Light / Warm. Warm off-white background (NOT dark). Three columns: 1. Logo + tagline "[tagline]" + small social icons (Facebook, LinkedIn, Google) 2. Pages: [list links] 3. Contact: phone + email. Bottom bar: copyright + Privacy/Terms. Use for pages where a heavy dark footer feels wrong — same information, lighter tone.</div>
+        <button class="copy-btn" onclick="copyPrompt('fo5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     PRICING
+════════════════════════════════════ -->
+<div class="comp-section" id="pricing">
+  <div class="section-head">
+    <h2>Pricing / Packages</h2>
+    <p>Shows what things cost. One of the first things serious buyers look for — hiding price kills trust.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">3-Column Cards</div><div class="var-desc">Most common pricing layout</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="pricing-classic">
+          <div class="prc">
+            <div class="prc-name">Starter</div>
+            <div class="prc-price">$999<br><span class="prc-price-sub">one-time</span></div>
+            <div class="prc-desc">Perfect for getting started online.</div>
+            <div class="prc-feats">
+              <div class="prc-feat"><span class="prc-check">✓</span>5-page site</div>
+              <div class="prc-feat"><span class="prc-check">✓</span>Mobile-ready</div>
+              <div class="prc-feat"><span class="prc-x">✗</span>SEO setup</div>
+            </div>
+            <span class="m-btn-outline" style="display:block;text-align:center;font-size:.58rem;padding:5px;">Get Started</span>
+          </div>
+          <div class="prc prc-featured">
+            <div class="prc-badge">Most Popular</div>
+            <div class="prc-name">Pro</div>
+            <div class="prc-price">$1,499<br><span class="prc-price-sub">one-time</span></div>
+            <div class="prc-desc">For businesses ready to grow.</div>
+            <div class="prc-feats">
+              <div class="prc-feat"><span class="prc-check">✓</span>8-page site</div>
+              <div class="prc-feat"><span class="prc-check">✓</span>Local SEO</div>
+              <div class="prc-feat"><span class="prc-check">✓</span>Google setup</div>
+            </div>
+            <span class="m-btn-o" style="display:block;text-align:center;font-size:.58rem;padding:5px;">Get Started</span>
+          </div>
+          <div class="prc">
+            <div class="prc-name">Custom</div>
+            <div class="prc-price">Let's<br><span class="prc-price-sub">talk</span></div>
+            <div class="prc-desc">Multi-location or complex needs.</div>
+            <div class="prc-feats">
+              <div class="prc-feat"><span class="prc-check">✓</span>Unlimited pages</div>
+              <div class="prc-feat"><span class="prc-check">✓</span>Full strategy</div>
+              <div class="prc-feat"><span class="prc-check">✓</span>Priority support</div>
+            </div>
+            <span class="m-btn-dark" style="display:block;text-align:center;font-size:.58rem;padding:5px;">Contact Us</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pr1">Add a pricing section to [page]. Style: 3-Column Cards. Three side-by-side pricing tiers. Middle card is "Most Popular" — highlighted with an accent border and a badge. Each card: plan name, price, one-sentence description, feature list (3–4 items with ✓/✗), CTA button. Plans: 1."[name]"/"[price]"/"[desc]"/features:"[list]"/button:"[text]" 2."[name]"/"[price]"/"[desc]"/features:"[list]" (featured) 3."[name]"/"[price]"/"[desc]"/features:"[list]". Section headline: "[heading]".</div>
+        <button class="copy-btn" onclick="copyPrompt('pr1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Dark Featured Center</div><div class="var-desc">Premium — center tier stands out</div></div>
+      <div class="preview">
+        <div class="pricing-featured">
+          <div class="prf">
+            <div class="prf-name">Starter</div>
+            <div class="prf-price">$999</div>
+            <div class="prf-desc">5-page site, mobile-ready.</div>
+            <div class="prf-feats">
+              <div class="prf-feat"><span class="prf-checkmark">✓</span>5 pages</div>
+              <div class="prf-feat"><span class="prf-checkmark">✓</span>Mobile</div>
+            </div>
+            <span class="m-btn-outline" style="display:block;text-align:center;font-size:.56rem;padding:5px;">Start</span>
+          </div>
+          <div class="prf prf-center">
+            <div class="prc-badge" style="font-size:.48rem;padding:2px 5px;margin-bottom:5px;">Popular</div>
+            <div class="prf-name">Pro</div>
+            <div class="prf-price">$1,499</div>
+            <div class="prf-desc">8 pages + SEO setup.</div>
+            <div class="prf-feats">
+              <div class="prf-feat"><span class="prf-checkmark">✓</span>8 pages</div>
+              <div class="prf-feat"><span class="prf-checkmark">✓</span>Local SEO</div>
+              <div class="prf-feat"><span class="prf-checkmark">✓</span>Google</div>
+            </div>
+            <span class="m-btn-o" style="display:block;text-align:center;font-size:.56rem;padding:5px;">Get Pro</span>
+          </div>
+          <div class="prf">
+            <div class="prf-name">Custom</div>
+            <div class="prf-price" style="font-size:1rem;">Talk to us</div>
+            <div class="prf-desc">Everything included.</div>
+            <div class="prf-feats">
+              <div class="prf-feat"><span class="prf-checkmark">✓</span>Unlimited</div>
+              <div class="prf-feat"><span class="prf-checkmark">✓</span>Strategy</div>
+            </div>
+            <span class="m-btn-dark" style="display:block;text-align:center;font-size:.56rem;padding:5px;">Contact</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pr2">Add a pricing section to [page]. Style: Dark Featured Center. Three pricing tiers — outer two are white cards, the middle/featured tier is a dark card that sits slightly taller and more prominent. Middle card shows the price in the accent color. Plans: 1."[name]"/"[price]"/features:"[list]" 2."[name]"/"[price]"/features:"[list]" (FEATURED — dark) 3."[name]"/"[price]"/features:"[list]". Section headline: "[heading]".</div>
+        <button class="copy-btn" onclick="copyPrompt('pr2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Comparison Table</div><div class="var-desc">Side-by-side feature comparison</div></div>
+      <div class="preview">
+        <div class="pricing-table">
+          <div class="pt-head">
+            <div class="pt-hcell">Feature</div>
+            <div class="pt-hcell">Starter</div>
+            <div class="pt-hcell hl">Pro</div>
+            <div class="pt-hcell">Custom</div>
+          </div>
+          <div class="pt-row"><div class="pt-cell">Pages</div><div class="pt-cell">5</div><div class="pt-cell hl" style="color:var(--accent);font-weight:700;">8</div><div class="pt-cell">∞</div></div>
+          <div class="pt-row"><div class="pt-cell">Local SEO</div><div class="pt-cell"><span class="xx">✗</span></div><div class="pt-cell"><span class="ck">✓</span></div><div class="pt-cell"><span class="ck">✓</span></div></div>
+          <div class="pt-row"><div class="pt-cell">Google Setup</div><div class="pt-cell"><span class="xx">✗</span></div><div class="pt-cell"><span class="ck">✓</span></div><div class="pt-cell"><span class="ck">✓</span></div></div>
+          <div class="pt-row"><div class="pt-cell">Price</div><div class="pt-cell">$999</div><div class="pt-cell" style="color:var(--accent);font-weight:700;">$1,499</div><div class="pt-cell">Custom</div></div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pr3">Add a pricing section to [page]. Style: Comparison Table. A feature comparison table — rows are features, columns are plan tiers. Featured column has accent-color header. Checkmarks (✓) for included, ✗ for not included. Last row shows the price. Plans: "[plan 1]", "[plan 2]" (featured), "[plan 3]". Features: "[feature 1]", "[feature 2]", "[feature 3]", "[feature 4]". Prices: "$[X]", "$[X]", "$[X]". Add CTA buttons below each column.</div>
+        <button class="copy-btn" onclick="copyPrompt('pr3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Toggle Pricing</div><div class="var-desc">Monthly vs one-time switch</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="pricing-toggle">
+          <div class="pt-switch">
+            <div class="pt-sw-opt active">Monthly</div>
+            <div class="pt-sw-opt">One-Time <span class="pt-save">Save 20%</span></div>
+          </div>
+          <div class="pt-cards">
+            <div class="ptc">
+              <div class="ptc-name">Starter</div>
+              <div class="ptc-price" style="color:var(--ink);">$79<span style="font-size:.55rem;color:var(--warm-stone)">/mo</span></div>
+              <div style="font-size:.52rem;color:var(--warm-stone);">5-page site</div>
+            </div>
+            <div class="ptc" style="border-color:var(--accent);">
+              <div class="ptc-name" style="color:var(--accent);">Pro</div>
+              <div class="ptc-price" style="color:var(--accent);">$129<span style="font-size:.55rem;color:var(--warm-stone)">/mo</span></div>
+              <div style="font-size:.52rem;color:var(--warm-stone);">8 pages + SEO</div>
+            </div>
+            <div class="ptc">
+              <div class="ptc-name">Custom</div>
+              <div class="ptc-price" style="font-size:.8rem;color:var(--ink);">Talk</div>
+              <div style="font-size:.52rem;color:var(--warm-stone);">Unlimited</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pr4">Add a pricing section to [page]. Style: Toggle Pricing. A pill-style toggle switch at the top lets users flip between "[option A, e.g. Monthly]" and "[option B, e.g. One-Time]" pricing. Use JavaScript to swap displayed prices on toggle. Show [2–3] plan cards below in a grid. Each card: plan name, price, tagline. Featured card gets an accent-colored border and name. Plans: 1."[name]" — A:"[price]" / B:"[price]" — "[tagline]" 2."[name]" — A:"[price]" / B:"[price]" — "[tagline]" (featured) 3."[name]" — "[custom/talk]" — "[tagline]". Optional: add a small "Save X%" badge on option B. Section headline: "[heading]".</div>
+        <button class="copy-btn" onclick="copyPrompt('pr4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Row List</div><div class="var-desc">Stacked rows — clean &amp; scannable</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="pricing-rows">
+          <div class="prrow">
+            <div>
+              <div class="prrow-name">Starter</div>
+              <div class="prrow-feature">5 pages · Mobile-ready</div>
+            </div>
+            <div class="prrow-right">
+              <div class="prrow-price">$999</div>
+            </div>
+          </div>
+          <div class="prrow prrow-featured">
+            <div>
+              <div class="prrow-name">Pro ★</div>
+              <div class="prrow-feature">8 pages · Local SEO · Google</div>
+            </div>
+            <div class="prrow-right">
+              <div class="prrow-price">$1,499</div>
+            </div>
+          </div>
+          <div class="prrow">
+            <div>
+              <div class="prrow-name">Custom</div>
+              <div class="prrow-feature">Unlimited · Full strategy</div>
+            </div>
+            <div class="prrow-right">
+              <div class="prrow-price" style="font-size:.75rem;color:var(--ink);">Let's talk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pr5">Add a pricing section to [page]. Style: Row List. Pricing plans stacked as horizontal rows inside a single bordered container. Each row: left side = plan name + short feature summary. Right side = price. The featured tier uses a dark (#1C1917) filled row with white text. No icons, no decorative cards — pure scannable rows. Plans: 1."[name]"/"$[price]"/"[feature summary]" 2."[name]"/"$[price]"/"[feature summary]" (featured/dark row) 3."[name]"/"custom pricing"/"[feature summary]". Section headline: "[heading]". Optional: add a CTA button below the container.</div>
+        <button class="copy-btn" onclick="copyPrompt('pr5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     PROCESS
+════════════════════════════════════ -->
+<div class="comp-section" id="process">
+  <div class="section-head">
+    <h2>Process / How It Works</h2>
+    <p>Shows the steps to working with you. Reduces friction — buyers want to know what happens after they say yes.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Horizontal Steps</div><div class="var-desc">Most common layout</div></div>
+      <div class="preview">
+        <div>
+          <div style="text-align:center;margin-bottom:12px;"><div class="m-d" style="font-size:0.95rem;">How It Works</div></div>
+          <div class="process-hsteps">
+            <div class="phs"><div class="phs-num">01</div><div class="phs-title">Discovery Call</div><div class="phs-desc">We learn your business and goals.</div><div class="phs-arrow">→</div></div>
+            <div class="phs"><div class="phs-num">02</div><div class="phs-title">We Build</div><div class="phs-desc">Your site is ready in 14 days.</div><div class="phs-arrow">→</div></div>
+            <div class="phs"><div class="phs-num">03</div><div class="phs-title">Go Live</div><div class="phs-desc">You review, approve, and launch.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="proc1">Add a process section to [page]. Style: Horizontal Steps. [3] steps in a row left to right, connected by arrows. Each step: large faded number, bold title, short description. Section headline: "[heading]". Steps: 1."[title]"/"[desc]" 2."[title]"/"[desc]" 3."[title]"/"[desc]". No cards — just numbers, titles, and descriptions with connecting arrows.</div>
+        <button class="copy-btn" onclick="copyPrompt('proc1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Vertical Timeline</div><div class="var-desc">Detailed, good for mobile</div></div>
+      <div class="preview" style="background:#fff;">
+        <div>
+          <div style="margin-bottom:12px;"><div class="m-d" style="font-size:0.95rem;">How We Work</div></div>
+          <div class="process-vtl">
+            <div class="pvt"><div class="pvt-spine"><div class="pvt-circle">1</div><div class="pvt-line"></div></div><div class="pvt-content"><div class="pvt-title">Discovery Call</div><div class="pvt-desc">We learn your business, goals, and competitors.</div></div></div>
+            <div class="pvt"><div class="pvt-spine"><div class="pvt-circle">2</div><div class="pvt-line"></div></div><div class="pvt-content"><div class="pvt-title">We Build Your Site</div><div class="pvt-desc">Design, copy, and launch in 14 days.</div></div></div>
+            <div class="pvt"><div class="pvt-spine"><div class="pvt-circle">3</div></div><div class="pvt-content"><div class="pvt-title">You Approve & Go Live</div><div class="pvt-desc">Review, request changes, then launch.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="proc2">Add a process section to [page]. Style: Vertical Timeline. Steps stacked top-to-bottom connected by a vertical line. Each step: numbered circle on the left (accent orange), title and description on the right. Good for mobile. Section headline: "[heading]". Steps: 1."[title]"/"[desc]" 2."[title]"/"[desc]" 3."[title]"/"[desc]".</div>
+        <button class="copy-btn" onclick="copyPrompt('proc2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Icon Cards</div><div class="var-desc">Visual, scannable</div></div>
+      <div class="preview">
+        <div>
+          <div style="text-align:center;margin-bottom:12px;"><div class="m-d" style="font-size:0.95rem;">3 Simple Steps</div></div>
+          <div class="process-cards">
+            <div class="pc-step"><div class="pc-step-icon">📞</div><div class="pc-step-num">Step 01</div><div class="pc-step-title">Discovery</div><div class="pc-step-desc">Quick call to understand your goals.</div></div>
+            <div class="pc-step"><div class="pc-step-icon">🛠️</div><div class="pc-step-num">Step 02</div><div class="pc-step-title">We Build</div><div class="pc-step-desc">Your site live in 14 days.</div></div>
+            <div class="pc-step"><div class="pc-step-icon">🚀</div><div class="pc-step-num">Step 03</div><div class="pc-step-title">Launch</div><div class="pc-step-desc">Review, approve, go live.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="proc3">Add a process section to [page]. Style: Icon Cards. [3] equal-width cards in a row. Each: icon/emoji at top, "Step 0X" mono label, bold title, short description. Light warm background, subtle card border. Section headline: "[heading]". Steps: 1. Icon:"[emoji]" Title:"[title]" Desc:"[desc]" 2. Icon:"[emoji]" Title:"[title]" Desc:"[desc]" 3. Icon:"[emoji]" Title:"[title]" Desc:"[desc]".</div>
+        <button class="copy-btn" onclick="copyPrompt('proc3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Dark Steps</div><div class="var-desc">Dark background — premium feel</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="process-dark">
+          <div class="pds-label">How It Works</div>
+          <div class="pds-steps">
+            <div class="pds">
+              <div class="pds-num">01</div>
+              <div class="pds-title">Discovery</div>
+              <div class="pds-desc">We learn your goals and market.</div>
+            </div>
+            <div class="pds">
+              <div class="pds-num">02</div>
+              <div class="pds-title">Build</div>
+              <div class="pds-desc">Custom site, no templates.</div>
+            </div>
+            <div class="pds">
+              <div class="pds-num">03</div>
+              <div class="pds-title">Launch</div>
+              <div class="pds-desc">Live in 5 business days.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="proc4">Add a process section to [page]. Style: Dark Steps. Full dark-background section (#1C1917). Section label centered in muted monospace above the steps grid. [3] step cards in a row — each with a semi-transparent border, large faded accent-orange step number, bold white title, and short gray description. This style works for premium or night-mode aesthetics. Section label: "[label]". Steps: 1. Number:"01" Title:"[title]" Desc:"[desc]" 2. Number:"02" Title:"[title]" Desc:"[desc]" 3. Number:"03" Title:"[title]" Desc:"[desc]".</div>
+        <button class="copy-btn" onclick="copyPrompt('proc4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Zigzag Steps</div><div class="var-desc">Alternating number + content rows</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="process-zigzag">
+          <div class="pzz">
+            <div class="pzz-num">1</div>
+            <div class="pzz-content">
+              <div class="pzz-title">Discovery Call</div>
+              <div class="pzz-desc">We ask the right questions to understand your goals.</div>
+            </div>
+          </div>
+          <div class="pzz">
+            <div class="pzz-num">2</div>
+            <div class="pzz-content">
+              <div class="pzz-title">Design &amp; Build</div>
+              <div class="pzz-desc">Custom site built from scratch — no templates.</div>
+            </div>
+          </div>
+          <div class="pzz">
+            <div class="pzz-num">3</div>
+            <div class="pzz-content">
+              <div class="pzz-title">Go Live</div>
+              <div class="pzz-desc">Launch day — we hand you the keys.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="proc5">Add a process section to [page]. Style: Zigzag Steps. Each step is a two-column row — accent-orange number square on one side, white content card on the other. Odd steps: number left, card right. Even steps: card left, number right (reversed). Each card: bold title, short description. This creates a visual rhythm and breaks the template feel. Steps: 1. Title:"[title]" Desc:"[desc]" 2. Title:"[title]" Desc:"[desc]" 3. Title:"[title]" Desc:"[desc]". Section headline: "[heading]".</div>
+        <button class="copy-btn" onclick="copyPrompt('proc5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     ABOUT / TEAM
+════════════════════════════════════ -->
+<div class="comp-section" id="about">
+  <div class="section-head">
+    <h2>About / Team</h2>
+    <p>Tells the human story behind the business. Builds trust — clients buy from people, not companies.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Founder Split</div><div class="var-desc">Photo + story side by side</div></div>
+      <div class="preview">
+        <div class="about-split">
+          <div class="abs-photo">
+            <div class="abs-photo-inner">
+              <div class="abs-avatar">L</div>
+              <div class="abs-photo-name">Luis Echarri</div>
+              <div class="abs-photo-role">Founder, Lantech</div>
+            </div>
+          </div>
+          <div class="abs-content">
+            <div class="abs-tag"><span class="m-tag">Our Story</span></div>
+            <div class="abs-headline">Built by a Local Business Lover</div>
+            <div class="abs-body">I got tired of watching local businesses get overcharged by agencies that didn't care. So I started Lantech.</div>
+            <span class="m-btn-o" style="font-size:.6rem;padding:5px 12px;">Meet the Team →</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ab1">Add an about section to [page]. Style: Founder Split. Two columns: left column has a dark background with the founder's avatar/photo, name, and role. Right column: tag "[label]", bold headline "[headline]", short personal story paragraph "[story]", CTA button "[button text]". This section should feel personal and warm — not corporate. Founder name: "[name]", role: "[role]".</div>
+        <button class="copy-btn" onclick="copyPrompt('ab1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Centered Story</div><div class="var-desc">Personal, no photo needed</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="about-centered">
+          <div class="abc-tag"><span class="m-tag">Our Story</span></div>
+          <div class="abc-headline">We're on Your Side</div>
+          <div class="abc-body">We started Lantech because local businesses deserve great websites without agency-level price tags. Every site we build, we build like it's our own.</div>
+          <div class="abc-stats">
+            <div><div class="abc-stat-val">150+</div><div class="abc-stat-label">Clients</div></div>
+            <div><div class="abc-stat-val">7yr</div><div class="abc-stat-label">Experience</div></div>
+            <div><div class="abc-stat-val">5★</div><div class="abc-stat-label">Rating</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ab2">Add an about section to [page]. Style: Centered Story. No photo — just centered text and stats. Tag "[label]", headline "[headline]", 2–3 sentence story paragraph "[story]", then a row of 3 stats below a thin divider. Stats: "[val1]"/"[label1]", "[val2]"/"[label2]", "[val3]"/"[label3]". Good when you don't have a great photo ready, or want a cleaner, more editorial feel.</div>
+        <button class="copy-btn" onclick="copyPrompt('ab2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Team Grid</div><div class="var-desc">Shows the people behind the work</div></div>
+      <div class="preview" style="background:#fff;">
+        <div>
+          <div style="text-align:center;margin-bottom:12px;"><div class="m-d" style="font-size:0.95rem;">Meet the Team</div></div>
+          <div class="about-team">
+            <div class="atm"><div class="atm-av">L</div><div class="atm-name">Luis</div><div class="atm-role">Founder & Design</div></div>
+            <div class="atm"><div class="atm-av">M</div><div class="atm-name">Maria</div><div class="atm-role">SEO Specialist</div></div>
+            <div class="atm"><div class="atm-av">J</div><div class="atm-name">Jake</div><div class="atm-role">Dev Lead</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ab3">Add an about section to [page]. Style: Team Grid. Section headline: "[heading]". A grid of team member cards — each card: avatar (initials or photo), name, and role. [3]-column layout on desktop. Team members: 1. Name:"[name]" Role:"[role]" 2. Name:"[name]" Role:"[role]" 3. Name:"[name]" Role:"[role]". Optional: add a one-line quote per person below their role.</div>
+        <button class="copy-btn" onclick="copyPrompt('ab3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Dark Editorial</div><div class="var-desc">Founder quote on dark background</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="about-dark">
+          <div class="abd-eyebrow">Our Story</div>
+          <div class="abd-quote">"I built this because small businesses deserve the same <span>quality websites</span> big companies get — without the agency markup."</div>
+          <div class="abd-author">
+            <div class="abd-av">JD</div>
+            <div>
+              <div class="abd-name">James D.</div>
+              <div class="abd-role">Founder, Lantech</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ab4">Add an about section to [page]. Style: Dark Editorial. Full dark background (#1C1917). Eyebrow label in accent orange monospace at top. A large founder quote in Calistoga (the heading font) — one key phrase inside the quote can be highlighted in the accent color using a span. Below: founder avatar circle (initials, accent border), name in white, role in muted text. Eyebrow: "[label]". Quote: "[founder quote — wrap the most powerful phrase in accent color]". Founder: Name:"[name]" Role:"[role]" Initials:"[initials]". Use this when the founder's voice IS the brand differentiator.</div>
+        <button class="copy-btn" onclick="copyPrompt('ab4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Values Grid</div><div class="var-desc">2×2 values with icon + text</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="about-values">
+          <div class="abv-head">
+            <div class="abv-headline">What we stand for</div>
+            <div class="abv-desc">Every decision we make comes back to these four principles.</div>
+          </div>
+          <div class="abv-grid">
+            <div class="abv-item">
+              <div class="abv-icon">🤝</div>
+              <div class="abv-title">Honest pricing</div>
+              <div class="abv-text">No hidden fees, ever.</div>
+            </div>
+            <div class="abv-item">
+              <div class="abv-icon">⚡</div>
+              <div class="abv-title">Fast delivery</div>
+              <div class="abv-text">Live in 5 days.</div>
+            </div>
+            <div class="abv-item">
+              <div class="abv-icon">🎯</div>
+              <div class="abv-title">Local focus</div>
+              <div class="abv-text">Built for your market.</div>
+            </div>
+            <div class="abv-item">
+              <div class="abv-icon">🔒</div>
+              <div class="abv-title">You own it</div>
+              <div class="abv-text">Code, domain, hosting.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ab5">Add an about section to [page]. Style: Values Grid. White card container with a short headline + one-line description above a 2×2 icon grid. Each grid item: emoji icon, bold title, one-sentence description — on a warm elevated background. Section headline: "[heading]". Description: "[one line]". Values: 1. Icon:"[emoji]" Title:"[title]" Desc:"[desc]" 2. Icon:"[emoji]" Title:"[title]" Desc:"[desc]" 3. Icon:"[emoji]" Title:"[title]" Desc:"[desc]" 4. Icon:"[emoji]" Title:"[title]" Desc:"[desc]". Use this to anchor trust with your operating principles rather than your team.</div>
+        <button class="copy-btn" onclick="copyPrompt('ab5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     TRUST / LOGOS
+════════════════════════════════════ -->
+<div class="comp-section" id="trust">
+  <div class="section-head">
+    <h2>Trust / Logos / Badges</h2>
+    <p>Signals credibility fast. Client logos, review counts, and certifications tell buyers "others already chose these people."</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Client Logo Bar</div><div class="var-desc">Shows who you've worked with</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="trust-logos">
+          <div class="trl-label">Trusted by local businesses</div>
+          <div class="trl-row">
+            <div class="trl-logo">ProFlow</div>
+            <div class="trl-logo">Elite Air</div>
+            <div class="trl-logo">Keith's Roofing</div>
+            <div class="trl-logo">GreenLeaf</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="tr1">Add a trust/logos section to [page]. Style: Client Logo Bar. A horizontal row of client business names or logos — shown in a subtle, muted style (not full color). Short label above: "[label]". Clients: "[name 1]", "[name 2]", "[name 3]", "[name 4]", "[name 5]". If you have logo image files, use them — otherwise show the business name in a styled text block. Light background, centered layout.</div>
+        <button class="copy-btn" onclick="copyPrompt('tr1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Review Count Badge</div><div class="var-desc">Social proof front and center</div></div>
+      <div class="preview">
+        <div class="trust-reviews">
+          <div class="trv-center">
+            <div class="trv-stars">★★★★★</div>
+            <div class="trv-count">4.9 / 5.0</div>
+            <div class="trv-sublabel">from 80+ Google Reviews</div>
+          </div>
+          <div class="trv-badges">
+            <div class="trv-badge"><div class="trv-badge-val">150+</div><div class="trv-badge-label">Clients served</div></div>
+            <div class="trv-badge"><div class="trv-badge-val">7yr</div><div class="trv-badge-label">In business</div></div>
+            <div class="trv-badge"><div class="trv-badge-val">7d</div><div class="trv-badge-label">Avg delivery</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="tr2">Add a trust section to [page]. Style: Review Count Badge. Dark background. Center: 5-star rating visual, large average score (e.g. "4.9 / 5.0"), and a label "from [N]+ Google Reviews". Below that, 3 supporting stat badges — each with a big value and a short label. Stats: "[val1]"/"[label1]", "[val2]"/"[label2]", "[val3]"/"[label3]". This section's only job is to show proof of volume and quality.</div>
+        <button class="copy-btn" onclick="copyPrompt('tr2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Trust Badges</div><div class="var-desc">Guarantees and credentials</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="trust-badges">
+          <div class="trb-label">Why choose Lantech</div>
+          <div class="trb-row">
+            <div class="trb-badge"><div class="trb-icon">🔒</div><div class="trb-text">No Contracts</div><div class="trb-sub">Month-to-month only</div></div>
+            <div class="trb-badge"><div class="trb-icon">⚡</div><div class="trb-text">14-Day Delivery</div><div class="trb-sub">Or we work for free</div></div>
+            <div class="trb-badge"><div class="trb-icon">💬</div><div class="trb-text">US Support</div><div class="trb-sub">Reply within 4 hours</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="tr3">Add a trust section to [page]. Style: Trust Badges. A row of [3] guarantee/credential badges — each with an icon, a bold short title, and a supporting one-liner. Light background. Eyebrow label: "[label]". Badges: 1. Icon:"[emoji]" Title:"[title]" Sub:"[sub]" 2. Icon:"[emoji]" Title:"[title]" Sub:"[sub]" 3. Icon:"[emoji]" Title:"[title]" Sub:"[sub]". Use this to reinforce the purchase decision — these should answer common objections.</div>
+        <button class="copy-btn" onclick="copyPrompt('tr3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Scrolling Marquee</div><div class="var-desc">Infinite logo scroll — social proof</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="trust-marquee-wrap">
+          <div class="trust-marquee-label">Trusted by businesses across the US</div>
+          <div class="trust-mq-row">
+            <div class="trustmq-item">All-Pro Plumbing</div>
+            <div class="trustmq-item">Greenleaf Lawn</div>
+            <div class="trustmq-item">Peak Realty</div>
+            <div class="trustmq-item">Volt Electric</div>
+            <div class="trustmq-item">Swift HVAC</div>
+            <div class="trustmq-item">All-Pro Plumbing</div>
+            <div class="trustmq-item">Greenleaf Lawn</div>
+            <div class="trustmq-item">Peak Realty</div>
+            <div class="trustmq-item">Volt Electric</div>
+            <div class="trustmq-item">Swift HVAC</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="tr4">Add a trust section to [page]. Style: Scrolling Marquee. A continuous auto-scrolling row of client name badges moving left using CSS animation (scroll-left keyframe, ~14s linear infinite). Each badge: business name (optionally prefixed with an emoji). White background container with a parchment border. Short label centered above the row in small monospace: "[label, e.g. Trusted by businesses across the US]". Duplicate the badge list so the scroll loops seamlessly. Clients: 1."[name]" 2."[name]" 3."[name]" 4."[name]" 5."[name]". Duplicate all items for seamless loop.</div>
+        <button class="copy-btn" onclick="copyPrompt('tr4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Featured In</div><div class="var-desc">Press &amp; media mentions — dark bg</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="trust-press">
+          <div class="trp-label">As seen in</div>
+          <div class="trp-row">
+            <div class="trp-item">Local Gazette</div>
+            <div class="trp-item">Home Show Podcast</div>
+            <div class="trp-item">Channel 7 News</div>
+            <div class="trp-item">Best of 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="tr5">Add a trust section to [page]. Style: Featured In / Press. Dark warm background (#1C1917). Centered muted monospace label at top: "[label, e.g. As seen in]". A centered row/grid of press mention badges — semi-transparent white backgrounds with subtle borders. Each badge: just the outlet name (optionally with an emoji prefix). Outlets: 1."[outlet name]" 2."[outlet name]" 3."[outlet name]" 4."[outlet name]". Use this when the business has been featured in local news, podcasts, directories, or awards — it anchors credibility with third-party proof even if the publications are local or niche.</div>
+        <button class="copy-btn" onclick="copyPrompt('tr5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     CONTACT FORM
+════════════════════════════════════ -->
+<div class="comp-section" id="contact">
+  <div class="section-head">
+    <h2>Contact Form</h2>
+    <p>The conversion endpoint. Every serious buyer ends up here. Make it easy and low-friction.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Classic Form</div><div class="var-desc">Simple, familiar, high-converting</div></div>
+      <div class="preview" style="background:#fff;">
+        <div class="contact-classic">
+          <div class="cf-headline">Let's Talk</div>
+          <div class="cf-fields">
+            <div class="cf-row">
+              <div class="cf-field"><label class="cf-label">Name</label><input class="cf-input" placeholder="Your name"></div>
+              <div class="cf-field"><label class="cf-label">Email</label><input class="cf-input" placeholder="your@email.com"></div>
+            </div>
+            <div class="cf-field"><label class="cf-label">Phone</label><input class="cf-input" placeholder="(555) 000-0000"></div>
+            <div class="cf-field"><label class="cf-label">Message</label><textarea class="cf-textarea" placeholder="Tell us about your business..."></textarea></div>
+            <span class="m-btn-o" style="display:block;text-align:center;font-size:.65rem;padding:8px;">Send Message →</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ct1">Add a contact form section to [page]. Style: Classic Form. White card. Headline: "[heading]". Fields: Name + Email on the same row, then Phone, then a Message textarea. Submit button: "[button text]". On submit: show a thank-you message and hide the form — no page reload. Light warm background behind the form card.</div>
+        <button class="copy-btn" onclick="copyPrompt('ct1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Split — Info + Form</div><div class="var-desc">Contact details and form together</div></div>
+      <div class="preview">
+        <div class="contact-split">
+          <div class="csp-left">
+            <div class="csp-headline">Ready to Get Started?</div>
+            <div class="csp-items">
+              <div class="csp-item"><div class="csp-icon">📞</div><div><div class="csp-item-title">Phone</div><div class="csp-item-detail">+63 977 329 3969</div></div></div>
+              <div class="csp-item"><div class="csp-icon">✉️</div><div><div class="csp-item-title">Email</div><div class="csp-item-detail">lantech016@gmail.com</div></div></div>
+              <div class="csp-item"><div class="csp-icon">⏱️</div><div><div class="csp-item-title">Response</div><div class="csp-item-detail">Within 4 hours</div></div></div>
+            </div>
+          </div>
+          <div class="csp-right">
+            <input class="csp-input" placeholder="Your name">
+            <input class="csp-input" placeholder="Your email">
+            <textarea class="csp-textarea" placeholder="Tell us about your project..."></textarea>
+            <span class="m-btn-o" style="font-size:.62rem;padding:6px;text-align:center;display:block;">Send →</span>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ct2">Add a contact form section to [page]. Style: Split — Info + Form. Dark background, two columns. Left side: headline "[heading]", then 3 contact info rows — each with an icon, a label, and a value (phone, email, response time). Right side: name input, email input, message textarea, submit button "[button text]". Contact info: Phone:"[phone]", Email:"[email]", Response time:"[e.g. Within 4 hours]".</div>
+        <button class="copy-btn" onclick="copyPrompt('ct2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-minimal"></div><div class="var-name">Minimal Floating Card</div><div class="var-desc">Clean, low-friction, elegant</div></div>
+      <div class="preview">
+        <div class="contact-minimal-wrap">
+          <div class="contact-minimal">
+            <div class="cm-tag"><span class="m-tag">Free Consultation</span></div>
+            <div class="cm-headline">Let's Talk</div>
+            <div class="cm-fields">
+              <input class="cm-input" placeholder="Your name">
+              <input class="cm-input" placeholder="Email or phone">
+              <textarea class="cm-textarea" placeholder="What do you need?"></textarea>
+              <span class="m-btn-o" style="display:block;text-align:center;font-size:.65rem;padding:8px;">Send Message →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ct3">Add a contact form section to [page]. Style: Minimal Floating Card. A centered white card with a soft shadow sitting against a warm parchment background. Tag "[label]", short headline "[heading]", then just 3 fields: name, email/phone, message. Large CTA button "[button text]". Keep it short — fewer fields = more submissions. Max-width ~400px, centered.</div>
+        <button class="copy-btn" onclick="copyPrompt('ct3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Multi-Step Wizard</div><div class="var-desc">Step-by-step — higher completion</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="contact-multistep">
+          <div class="cms-progress">
+            <div class="cms-pstep active"></div>
+            <div class="cms-pstep active"></div>
+            <div class="cms-pstep"></div>
+          </div>
+          <div class="cms-label">Step 2 of 3</div>
+          <div class="cms-headline">What's your biggest challenge?</div>
+          <div class="cms-opts">
+            <div class="cms-opt selected">
+              <div class="cms-opt-icon">📉</div>
+              <div class="cms-opt-label">Not enough customers</div>
+            </div>
+            <div class="cms-opt">
+              <div class="cms-opt-icon">🔍</div>
+              <div class="cms-opt-label">Hard to find on Google</div>
+            </div>
+            <div class="cms-opt">
+              <div class="cms-opt-icon">🖥️</div>
+              <div class="cms-opt-label">Old or broken website</div>
+            </div>
+            <div class="cms-opt">
+              <div class="cms-opt-icon">💰</div>
+              <div class="cms-opt-label">Too expensive before</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ct4">Add a contact form section to [page]. Style: Multi-Step Wizard. Break the form into 3 steps shown one at a time. Progress bar (3 segments) at top fills as user advances. Step 1: qualify the lead — question with 4 clickable option tiles (2×2 grid). Each tile: emoji icon + short label. Step 2: capture details — name field, email or phone field, brief message textarea. Step 3: confirmation screen — checkmark icon, "We'll be in touch" heading, sub-message. Next/Back buttons between steps. Section headline: "[heading]". Step 1 question: "[question]". Options: Icon:"[emoji]" Label:"[label]" ×4. Step 2 fields: Name, [Email or Phone], Message. Step 3 message: "[confirmation text]".</div>
+        <button class="copy-btn" onclick="copyPrompt('ct4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Book a Call</div><div class="var-desc">Scheduling widget — dark, premium</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="contact-booking">
+          <div class="cbk-top">
+            <div class="cbk-headline">Book a Free Call</div>
+            <div class="cbk-sub">15 minutes · No sales pitch · Pick a time below</div>
+          </div>
+          <div class="cbk-cal">
+            <div class="cbk-cal-label">Available slots — June</div>
+            <div class="cbk-slots">
+              <div class="cbk-slot available">Mon 9 · 10am</div>
+              <div class="cbk-slot">Mon 9 · 2pm</div>
+              <div class="cbk-slot available">Tue 10 · 11am</div>
+              <div class="cbk-slot available">Wed 11 · 3pm</div>
+              <div class="cbk-slot">Thu 12 · 9am</div>
+              <div class="cbk-slot available">Fri 13 · 1pm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="ct5">Add a contact section to [page]. Style: Book a Call. Dark warm background (#1C1917). Top section: heading "[e.g. Book a Free Call]" in white, sub-line "[duration · what to expect]" in muted text. Bottom section (slightly lighter dark): a label "[e.g. Available slots — Month]" in small monospace, then a 3-column grid of time slot buttons. Available slots: accent-orange border + tinted background. Unavailable: default muted style. On slot click: highlight selected, show a "Confirm" CTA. Note: for a real booking tool, replace the grid with a Calendly or Cal.com embed iframe. Heading: "[heading]". Sub: "[sub]". Slots: "[day + time]" ×[4–6].</div>
+        <button class="copy-btn" onclick="copyPrompt('ct5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     POPUP / MODAL
+════════════════════════════════════ -->
+<div class="comp-section" id="popup">
+  <div class="section-head">
+    <h2>Popup / Modal</h2>
+    <p>Appears over the page to capture attention. Use sparingly — one popup per site, timed or exit-triggered.</p>
+  </div>
+  <div class="vars-row">
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-classic"></div><div class="var-name">Lead Capture Modal</div><div class="var-desc">Offer in exchange for email</div></div>
+      <div class="preview">
+        <div class="popup-modal-wrap">
+          <div class="popup-backdrop"></div>
+          <div class="popup-card">
+            <div class="pop-close">✕</div>
+            <div class="pop-icon">🎁</div>
+            <div class="pop-headline">Get a Free Audit</div>
+            <div class="pop-body">Enter your site URL and we'll send a full review within 24 hours — no strings attached.</div>
+            <input class="pop-input" placeholder="yourwebsite.com">
+            <span class="m-btn-o" style="display:block;text-align:center;font-size:.65rem;padding:8px;">Send My Free Audit →</span>
+            <div class="pop-fine">We'll never spam you. Unsubscribe anytime.</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pp1">Add a lead capture popup to [page]. Style: Lead Capture Modal. A centered white card overlaid on a dark semi-transparent backdrop. Icon "[emoji]", headline "[heading]", short description "[description]", one input field "[placeholder]", submit button "[button text]", close X button in the corner. Trigger: appears [10] seconds after page load, or when the user first visits. Don't show again if they close or submit. Small fine print below button: "[fine print]".</div>
+        <button class="copy-btn" onclick="copyPrompt('pp1',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Exit Intent</div><div class="var-desc">Shows when user moves to leave</div></div>
+      <div class="preview">
+        <div class="popup-exit-wrap">
+          <div class="popup-exit-card">
+            <div class="pex-close">✕</div>
+            <div class="pex-eyebrow">Wait — before you go</div>
+            <div class="pex-headline">Get a Free Website Audit First</div>
+            <div class="pex-body">Takes 2 minutes. We'll show you exactly what's holding your site back on Google.</div>
+            <div class="pex-yes">Yes — send me the free audit →</div>
+            <div class="pex-no">No thanks, I'll pass on free help</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pp2">Add an exit intent popup to [page]. Style: Exit Intent. Triggered when the user's mouse moves toward the top of the browser (about to close the tab). White card on dark overlay. Eyebrow label "[urgency label]", bold headline "[heading]", short paragraph "[description]". Two actions: a large primary CTA button "[yes text]" and a small dismissal text link below it "[no text]" — make the "no" feel like declining something good. Close X in corner.</div>
+        <button class="copy-btn" onclick="copyPrompt('pp2',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Announcement Bar</div><div class="var-desc">Thin bar — least intrusive</div></div>
+      <div class="preview">
+        <div class="popup-bar-wrap">
+          <div class="popup-bar">
+            <div class="pbar-text"><strong>🔥 Limited offer:</strong> Free SEO audit with every new site build this month.</div>
+            <div class="pbar-cta">Claim Offer →</div>
+            <div class="pbar-close">✕</div>
+          </div>
+          <div class="popup-bar-page">Page content continues below...</div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pp3">Add an announcement bar to [page]. Style: Sticky Top Bar. A thin full-width accent orange bar fixed at the very top of the page (above the nav). Message: "[announcement text]". CTA link/button: "[link text]" → links to "[url]". A close X button on the right. Once closed, hide it for the session. Keep it to one line — this is for urgency or promos, not long explanations.</div>
+        <button class="copy-btn" onclick="copyPrompt('pp3',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-modern"></div><div class="var-name">Cookie Banner</div><div class="var-desc">GDPR-style bottom consent bar</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="popup-cookie-wrap">
+          <div class="popup-cookie-page">Page content here…</div>
+          <div class="popup-cookie">
+            <div class="pck-text">🍪 We use cookies to improve your experience. By continuing, you agree to our Privacy Policy.</div>
+            <div style="display:flex;gap:6px;flex-shrink:0;">
+              <div class="pck-accept">Accept</div>
+              <div class="pck-decline">Decline</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pp4">Add a cookie consent banner to [page]. Style: Bottom Bar. A slim bar fixed at the bottom of the viewport (#1C1917 background). Left side: short notice — "[message, e.g. We use cookies to improve your experience. See our Privacy Policy.]". Right side: "Accept" button (accent orange filled) and "Decline" (plain text link). On Accept: set a localStorage flag, hide the bar. On Decline: set flag, hide bar, disable non-essential tracking. Check flag on page load — only show on first visit. Message: "[your message]". Accept label: "[text]". Decline label: "[text]". Privacy Policy link: "[url]".</div>
+        <button class="copy-btn" onclick="copyPrompt('pp4',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+    <div class="var-card">
+      <div class="var-label"><div class="var-dot dot-bold"></div><div class="var-name">Video Modal</div><div class="var-desc">Play button triggers video overlay</div></div>
+      <div class="preview" style="pointer-events:none;user-select:none;">
+        <div class="popup-video-wrap">
+          <div class="popup-video-card">
+            <div class="pv-close">✕</div>
+            <div class="pv-thumb">
+              <div class="pv-play">▶</div>
+            </div>
+            <div class="pv-title">How Lantech builds your site in 5 days</div>
+            <div class="pv-desc">Watch the full process — from first call to launch.</div>
+            <div style="font-size:.52rem;color:var(--accent);font-weight:700;">▶ Watch now</div>
+          </div>
+        </div>
+      </div>
+      <div class="prompt-block">
+        <div class="prompt-label">Prompt</div>
+        <div class="prompt-text" id="pp5">Add a video modal to [page]. Style: Video Thumbnail + Modal. Show a white card with a thumbnail placeholder (warm elevated box), a centered accent-orange play button circle (▶), a title, a short description, and a "Watch now" link. On click: open a full-screen modal overlay (dark semi-transparent backdrop) containing a centered white card with the video iframe (YouTube or Vimeo embed) and a close button (✕) in the top-right corner. On close: remove the iframe so the video stops. Video URL: "[embed URL]". Title: "[title]". Description: "[desc]". Play button label: "[label, e.g. Watch now]". This is ideal for testimonial videos, explainer reels, or process walkthroughs.</div>
+        <button class="copy-btn" onclick="copyPrompt('pp5',this)">Copy Prompt</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="g-footer">
+  Lantech Components Guide — 15 components · 75 variations · Scroll each row to see all styles · Copy the prompt, paste to Claude
+</div>
+
+<script>
+  function copyPrompt(id, btn) {
+    const text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy Prompt'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

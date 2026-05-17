@@ -1,0 +1,18 @@
+extends: substitution
+message: "Stale tier name '%s' — use '%s' to match the pricing page."
+link: ''
+level: error
+ignorecase: true
+swap:
+  'Basic plan': 'Starter ($1,200)'
+  'Basic package': 'Starter package'
+  'Starter plan': 'Starter'
+  'Professional plan': 'Pro ($1,999)'
+  'Professional package': 'Pro package'
+  'Enterprise plan': 'Market Leader ($3,497/mo)'
+  'Premium plan': 'Lead Machine ($1,997/mo) or Market Leader ($3,497/mo)'
+  'Growth plan': 'Growth ($1,699)'
+  '12-month contract': 'month-to-month'
+  '12 month contract': 'month-to-month'
+  'annual contract': 'month-to-month — no annual contracts'
+  'locked in': 'no contract required'

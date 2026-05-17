@@ -47,14 +47,19 @@
         "openingHoursSpecification": [
           {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}
         ],
-        "areaServed": ["Tampa", "Hillsborough County", "Brandon", "Riverview", "Temple Terrace", "New Tampa"],
+        "areaServed": ["Tampa", "Hillsborough County", "Brandon", "Riverview", "Temple Terrace", "New Tampa", "Carrollwood", "Wesley Chapel", "Plant City", "Valrico"],
+        "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247"},
         "priceRange": "$$"
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "How much does a plumber cost in Tampa FL?", "acceptedAnswer": {"@type": "Answer", "text": "Most plumbing repairs in Tampa range from $150–$600 depending on the job. Emergency calls after hours may include a service fee. We provide upfront pricing before any work begins — no surprise charges."}},
-          {"@type": "Question", "name": "Do you offer 24/7 emergency plumbing in Tampa?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Priority Plumbing & Drain answers calls 24 hours a day, 7 days a week including holidays. We aim to have a licensed plumber on-site within 60 minutes for emergencies in the Tampa area."}}
+          {"@type": "Question", "name": "How much does a plumber cost in Tampa FL?", "acceptedAnswer": {"@type": "Answer", "text": "Most plumbing repairs in Tampa range from $150–$600 depending on the job. Emergency calls after hours may include a service fee. We provide upfront flat-rate pricing before any work begins — no surprise charges."}},
+          {"@type": "Question", "name": "Do you offer 24/7 emergency plumbing in Tampa?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Priority Plumbing & Drain answers calls 24 hours a day, 7 days a week including holidays. We aim to have a licensed plumber on-site within 60 minutes for emergencies in the Tampa area."}},
+          {"@type": "Question", "name": "How long does drain cleaning take?", "acceptedAnswer": {"@type": "Answer", "text": "Most standard drain cleanings take 45–90 minutes. Hydro-jetting for severe blockages or grease buildup may take 2–3 hours. We give you a time estimate when we diagnose the clog."}},
+          {"@type": "Question", "name": "Do you offer financing on plumbing work?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We offer 0% interest financing for 18 months on approved credit for larger jobs including water heater replacements and whole-home repiping. Ask us about financing when you call."}},
+          {"@type": "Question", "name": "Are you licensed and insured in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Priority Plumbing & Drain holds Florida plumbing license # CFC1431872. We carry full general liability insurance and workers' compensation coverage on every technician."}},
+          {"@type": "Question", "name": "What areas do you serve in Tampa Bay?", "acceptedAnswer": {"@type": "Answer", "text": "We serve Tampa, Brandon, Riverview, Temple Terrace, New Tampa, Carrollwood, Wesley Chapel, Plant City, Valrico, and all of Hillsborough County."}}
         ]
       }
     ]
@@ -75,6 +80,7 @@
       --bg: #F9FAFB;
       --white: #FFFFFF;
       --border: #E5E7EB;
+      --gold: #F59E0B;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Open Sans', sans-serif; color: var(--txt); background: var(--bg); line-height: 1.6; }
@@ -88,12 +94,14 @@
     nav { background: var(--navy); position: sticky; top: 0; z-index: 100; }
     .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
     .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-    .logo-icon { width: 40px; height: 40px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .logo-icon { width: 40px; height: 40px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-icon svg { width: 22px; height: 22px; }
     .logo-text .name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; }
     .logo-text .sub { font-size: 0.65rem; color: rgba(255,255,255,0.55); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
     .nav-links a { padding: 7px 14px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.8); text-decoration: none; border-radius: 4px; transition: color 0.2s, background 0.2s; }
     .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav-links a[aria-current="page"] { color: var(--white); }
     .nav-links a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
     .nav-phone { display: flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); padding: 10px 20px; border-radius: 4px; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; flex-shrink: 0; transition: background 0.2s; }
     .nav-phone:hover { background: var(--orange-dark); }
@@ -122,14 +130,27 @@
     .btn-outline-white:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
     .btn-navy { background: var(--navy); color: var(--white); }
     .btn-navy:hover { background: var(--navy-dark); }
-    .btn-navy:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
     .hero-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
     .trust-badge { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); padding: 8px 18px; border-radius: 2px; font-size: 0.8rem; font-weight: 600; }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .social-proof-bar { background: var(--white); border-bottom: 2px solid var(--border); padding: 0 32px; }
+    .social-proof-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0; }
+    .proof-item { display: flex; align-items: center; gap: 12px; padding: 18px 32px; border-right: 1px solid var(--border); }
+    .proof-item:last-child { border-right: none; }
+    .proof-logo { display: flex; align-items: center; gap: 7px; }
+    .google-g { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #4285F4 25%, #EA4335 50%, #FBBC05 75%, #34A853 100%); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 900; color: white; font-family: sans-serif; flex-shrink: 0; }
+    .bbb-badge { width: 32px; height: 32px; background: #003087; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 900; color: white; font-family: sans-serif; letter-spacing: 0.05em; flex-shrink: 0; }
+    .ha-badge { width: 32px; height: 32px; background: #F07340; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; font-weight: 900; color: white; font-family: sans-serif; letter-spacing: 0.02em; text-align: center; line-height: 1.2; flex-shrink: 0; }
+    .proof-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; line-height: 1; }
+    .proof-text-main { font-weight: 700; font-size: 0.88rem; color: var(--dark); }
+    .proof-text-sub { font-size: 0.75rem; color: var(--muted); }
+    .proof-text { display: flex; flex-direction: column; gap: 1px; }
 
     /* ── RESPONSE STRIP ── */
     .response-strip { background: var(--orange); padding: 18px 32px; }
     .response-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
-    .response-item { display: flex; align-items: center; gap: 10px; color: var(--white); font-weight: 700; font-size: 0.88rem; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .response-item { display: flex; align-items: center; gap: 10px; color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
     .response-dot { width: 8px; height: 8px; background: rgba(255,255,255,0.5); border-radius: 50%; flex-shrink: 0; }
 
     /* ── SECTIONS ── */
@@ -153,8 +174,19 @@
     .service-body { padding: 22px 24px 26px; }
     .service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
     .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
-    .service-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-top: 12px; text-decoration: none; }
+    .service-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; }
+    .service-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: var(--navy); text-decoration: none; }
     .service-link:hover { text-decoration: underline; }
+    .service-price-hint { font-size: 0.75rem; font-weight: 600; color: var(--muted); background: var(--bg); border: 1px solid var(--border); padding: 3px 10px; border-radius: 2px; }
+
+    /* ── FINANCING BAND ── */
+    .financing-band { background: var(--navy); padding: 48px 32px; }
+    .financing-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .financing-icon { width: 56px; height: 56px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .financing-copy h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 6px; }
+    .financing-copy p { font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 520px; }
+    .financing-copy strong { color: var(--orange); }
+    .financing-left { display: flex; align-items: center; gap: 20px; }
 
     /* ── PROCESS ── */
     .process-bg { background: var(--navy-dark); }
@@ -171,21 +203,91 @@
     /* ── WHY US ── */
     .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
     .why-photo img { width: 100%; height: 500px; object-fit: cover; display: block; border-radius: 4px; }
-    .why-points { display: flex; flex-direction: column; gap: 28px; margin-top: 32px; }
-    .why-point { display: flex; gap: 18px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .why-stat-row { display: flex; gap: 0; margin-bottom: 36px; border: 1.5px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .why-stat { flex: 1; text-align: center; padding: 20px 16px; border-right: 1.5px solid var(--border); }
+    .why-stat:last-child { border-right: none; }
+    .why-stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; color: var(--navy); line-height: 1; }
+    .why-stat-label { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+    .why-points { display: flex; flex-direction: column; gap: 0; }
+    .why-point { display: flex; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+    .why-point:first-child { padding-top: 0; }
     .why-point:last-child { border-bottom: none; padding-bottom: 0; }
-    .why-icon { width: 44px; height: 44px; background: var(--orange-light); border: 1.5px solid rgba(232,93,4,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--orange); font-size: 1.2rem; }
+    .why-icon { width: 44px; height: 44px; background: var(--orange-light); border: 1.5px solid rgba(232,93,4,0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .why-point h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--dark); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.02em; }
     .why-point p { font-size: 0.87rem; color: var(--muted); line-height: 1.75; }
 
+    /* ── SERVICE AREAS ── */
+    .areas-bg { background: var(--bg); }
+    .areas-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 40px; }
+    .area-pill { background: var(--white); border: 1.5px solid var(--border); border-radius: 4px; padding: 14px 18px; text-align: center; transition: border-color 0.2s, box-shadow 0.2s; }
+    .area-pill:hover { border-color: var(--navy); box-shadow: 0 2px 12px rgba(26,58,110,0.08); }
+    .area-pill .city { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; color: var(--dark); text-transform: uppercase; letter-spacing: 0.03em; }
+    .area-pill .state { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+    .areas-note { margin-top: 20px; font-size: 0.88rem; color: var(--muted); }
+    .areas-note a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    .areas-note a:hover { text-decoration: underline; }
+
     /* ── REVIEWS ── */
-    .reviews-bg { background: var(--bg); }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-    .review-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 4px; padding: 28px; border-top: 3px solid var(--orange); }
-    .stars { color: #F59E0B; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 14px; }
-    .review-text { font-size: 0.91rem; color: var(--txt); line-height: 1.8; margin-bottom: 22px; font-style: italic; }
+    .reviews-bg { background: var(--white); }
+    .reviews-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 40px; }
+    .reviews-aggregate { display: flex; align-items: center; gap: 20px; background: var(--bg); border: 1.5px solid var(--border); border-radius: 4px; padding: 18px 24px; }
+    .agg-score { font-family: 'Barlow Condensed', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--dark); line-height: 1; }
+    .agg-right { display: flex; flex-direction: column; gap: 4px; }
+    .agg-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+    .agg-count { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+    .agg-source { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+    .reviews-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; font-weight: 700; color: var(--navy); text-decoration: none; border: 1.5px solid var(--navy); padding: 10px 20px; border-radius: 4px; transition: background 0.2s, color 0.2s; }
+    .reviews-link:hover { background: var(--navy); color: var(--white); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review-card { background: var(--bg); border: 1.5px solid var(--border); border-radius: 4px; padding: 28px; border-top: 3px solid var(--orange); }
+    .stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .review-text { font-size: 0.9rem; color: var(--txt); line-height: 1.8; margin-bottom: 22px; font-style: italic; }
+    .reviewer-info { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
     .reviewer-name { font-weight: 700; font-size: 0.88rem; color: var(--dark); }
     .reviewer-loc { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .review-verified { display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; font-weight: 700; color: #1a73e8; margin-top: 10px; }
+
+    /* ── FAQ ── */
+    .faq-bg { background: var(--bg); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; text-align: left; }
+    .faq-q-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--dark); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.3; }
+    .faq-q:hover .faq-q-text { color: var(--navy); }
+    .faq-q:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+    .faq-icon { width: 24px; height: 24px; background: var(--orange-light); border: 1.5px solid rgba(232,93,4,0.25); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.25s, background 0.2s; }
+    .faq-icon svg { width: 10px; height: 10px; color: var(--orange); }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--orange); }
+    .faq-item.open .faq-icon svg { color: var(--white); }
+    .faq-a { display: none; padding: 0 0 20px; font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-aside { background: var(--navy); border-radius: 4px; padding: 40px 36px; }
+    .faq-aside h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 12px; }
+    .faq-aside p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 24px; }
+    .faq-phone { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--orange); text-decoration: none; letter-spacing: 0.04em; margin-bottom: 20px; transition: opacity 0.2s; }
+    .faq-phone:hover { opacity: 0.85; }
+    .faq-guarantee { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 18px 20px; }
+    .faq-guarantee-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--white); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .faq-guarantee-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .faq-guarantee-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+    .faq-guarantee-list li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── GUARANTEE BAND ── */
+    .guarantee-band { background: var(--dark); padding: 64px 32px; }
+    .guarantee-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center; }
+    .guarantee-badge-wrap { text-align: center; flex-shrink: 0; }
+    .guarantee-badge-outer { width: 140px; height: 140px; border: 2px solid rgba(232,93,4,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+    .guarantee-badge-inner { width: 114px; height: 114px; background: var(--orange); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+    .guarantee-badge-inner .g-top { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.12em; }
+    .guarantee-badge-inner .g-main { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: 0.04em; line-height: 1; }
+    .guarantee-badge-inner .g-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; font-weight: 700; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 0.1em; }
+    .guarantee-badge-label { font-size: 0.68rem; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; }
+    .guarantee-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .g-item h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .g-item h4 svg { flex-shrink: 0; }
+    .g-item p { font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
 
     /* ── EMERGENCY CTA ── */
     .cta-band { background: var(--navy); padding: 88px 32px; }
@@ -198,16 +300,27 @@
 
     /* ── FOOTER ── */
     footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 64px 32px 32px; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
     .footer-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--white); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
     .footer-lic { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
     .footer-brand p { font-size: 0.86rem; line-height: 1.75; }
+    .footer-rating { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; width: fit-content; }
+    .footer-rating .g { font-size: 0.72rem; color: var(--gold); letter-spacing: 1px; }
+    .footer-rating .rc { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
     .footer-col h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
     .footer-col a:hover { color: var(--white); }
     .footer-col a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; border-radius: 1px; }
     .footer-bottom { max-width: 1280px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 0.78rem; }
+
+    /* ── MOBILE STICKY CTA ── */
+    .mobile-cta-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--navy-dark); border-top: 3px solid var(--orange); padding: 10px 16px; }
+    .mobile-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .mobile-cta-call { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--orange); color: var(--white); padding: 14px 16px; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s; }
+    .mobile-cta-call:hover { background: var(--orange-dark); }
+    .mobile-cta-estimate { display: flex; align-items: center; justify-content: center; gap: 8px; background: transparent; color: var(--white); padding: 14px 16px; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.3); transition: border-color 0.2s; }
+    .mobile-cta-estimate:hover { border-color: var(--white); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -217,19 +330,36 @@
       .why-grid { grid-template-columns: 1fr; gap: 40px; }
       .why-photo { order: -1; }
       .why-photo img { height: 360px; }
+      .areas-grid { grid-template-columns: repeat(3, 1fr); }
+      .faq-grid { grid-template-columns: 1fr; }
+      .guarantee-inner { grid-template-columns: 1fr; gap: 40px; }
+      .guarantee-badge-wrap { display: flex; align-items: center; gap: 24px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
       .services-grid { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
+      .guarantee-items { grid-template-columns: 1fr; gap: 20px; }
       .footer-inner { grid-template-columns: 1fr; gap: 32px; }
       .nav-links { display: none; }
       .nav-toggle { display: block; }
       .nav-inner { padding: 0 20px; }
       section { padding: 64px 20px; }
       .hero { padding: 64px 20px 72px; }
+      .social-proof-bar { padding: 0 16px; }
+      .proof-item { padding: 16px 20px; }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+      .mobile-cta-bar { display: block; }
+      body { padding-bottom: 80px; }
+      .financing-inner { flex-direction: column; align-items: flex-start; }
+      .reviews-header { flex-direction: column; align-items: flex-start; }
+      .proof-item:nth-child(3), .proof-item:nth-child(4) { display: none; }
     }
     @media (max-width: 640px) {
       .process-grid { grid-template-columns: 1fr; }
+      .social-proof-inner { flex-direction: column; }
+      .proof-item { border-right: none; border-bottom: 1px solid var(--border); width: 100%; justify-content: center; }
+      .proof-item:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -242,32 +372,40 @@
   </div>
 
   <!-- NAV -->
-  <nav>
+  <nav aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="logo" aria-label="Priority Plumbing & Drain — home">
-        <div class="logo-icon" aria-hidden="true">🔧</div>
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4.5C8 3.12 9.12 2 10.5 2C11.88 2 13 3.12 13 4.5V5H15V7H13V9H15.5C16.33 9 17 9.67 17 10.5V16C17 17.1 16.1 18 15 18H7C5.9 18 5 17.1 5 16V10.5C5 9.67 5.67 9 6.5 9H9V7H8V4.5Z" fill="white" opacity="0.9"/>
+            <rect x="9" y="11" width="4" height="5" rx="1" fill="rgba(255,255,255,0.4)"/>
+          </svg>
+        </div>
         <div class="logo-text">
           <div class="name">Priority Plumbing</div>
           <div class="sub">& Drain · Tampa, FL</div>
         </div>
       </a>
-      <button class="nav-toggle" aria-label="Open navigation" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='flex'?'none':'flex'">☰</button>
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" onclick="const ul=this.nextElementSibling;const open=ul.style.display==='flex';ul.style.display=open?'none':'flex';ul.style.flexDirection='column';ul.style.position='absolute';ul.style.top='68px';ul.style.left='0';ul.style.right='0';ul.style.background='var(--navy)';ul.style.padding='12px 20px 20px';this.setAttribute('aria-expanded',!open)">☰</button>
       <ul class="nav-links">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="tel:8135550194" class="nav-phone">📞 (813) 555-0194</a>
+      <a href="tel:8135550194" class="nav-phone" aria-label="Call Priority Plumbing">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.65 2h2.5l1 3-1.5 1.5c.7 1.4 1.85 2.55 3.25 3.25L10.4 8.3l3 1v2.5C13.4 13 12.3 14 11 14 5.95 14 2 10.05 2 5 2 3.7 3 2.6 3.65 2Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        (813) 555-0194
+      </a>
     </div>
   </nav>
 
   <!-- HERO — PHONE AS FOCAL POINT -->
-  <section class="hero" style="padding-bottom:88px;">
+  <section class="hero" aria-labelledby="hero-h1">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">Licensed Plumber · Tampa FL · Available 24/7</div>
-      <h1>Tampa's Emergency<br>Plumbing Services</h1>
+      <h1 id="hero-h1">Tampa's Emergency<br>Plumbing Services</h1>
       <p class="hero-sub">Same-day plumbing service across Tampa Bay — from a burst pipe at midnight to a water heater replacement on a Saturday. Licensed, insured, and always available.</p>
       <a href="tel:8135550194" class="hero-phone" aria-label="Call Priority Plumbing at (813) 555-0194">(813) 555-0194</a>
       <div class="hero-phone-label">Tap to call — we answer 24 hours a day, 7 days a week</div>
@@ -285,6 +423,46 @@
     </div>
   </section>
 
+  <!-- SOCIAL PROOF BAR -->
+  <div class="social-proof-bar" aria-label="Reviews and certifications">
+    <div class="social-proof-inner">
+      <div class="proof-item">
+        <div class="proof-logo">
+          <div class="google-g" aria-hidden="true">G</div>
+        </div>
+        <div class="proof-text">
+          <div class="proof-stars" aria-label="4.9 out of 5 stars">★★★★★</div>
+          <div class="proof-text-main">4.9 Stars on Google</div>
+          <div class="proof-text-sub">247 verified reviews</div>
+        </div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-logo">
+          <div class="bbb-badge" aria-label="BBB">BBB<br>A+</div>
+        </div>
+        <div class="proof-text">
+          <div class="proof-text-main">BBB Accredited</div>
+          <div class="proof-text-sub">A+ Rating · Since 2011</div>
+        </div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-logo">
+          <div class="ha-badge" aria-label="HomeAdvisor">Top<br>Rated</div>
+        </div>
+        <div class="proof-text">
+          <div class="proof-text-main">HomeAdvisor</div>
+          <div class="proof-text-sub">Top Rated Pro</div>
+        </div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-text">
+          <div class="proof-text-main" style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;letter-spacing:.02em;text-transform:uppercase;">15+ Years</div>
+          <div class="proof-text-sub">Serving Tampa Bay</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- RESPONSE STRIP -->
   <div class="response-strip" aria-label="Key service guarantees">
     <div class="response-inner">
@@ -296,12 +474,12 @@
   </div>
 
   <!-- SERVICES -->
-  <section class="services-bg">
+  <section class="services-bg" aria-labelledby="services-h2">
     <div class="section-inner">
       <div class="services-header">
         <div>
           <span class="eyebrow">What We Do</span>
-          <h2 class="section-heading">Plumbing Services<br><span>Tampa FL</span></h2>
+          <h2 class="section-heading" id="services-h2">Plumbing Services<br><span>Tampa FL</span></h2>
         </div>
         <p class="section-sub">Every residential plumbing job across Hillsborough County — from a simple clog to a full repiping. One call handles it.</p>
       </div>
@@ -313,7 +491,10 @@
           <div class="service-body">
             <h3>Emergency Plumbing</h3>
             <p>Burst pipes, major leaks, sewage backups, no water. We dispatch within 60 minutes, 24/7 — including weekends and holidays.</p>
-            <span class="service-link">Learn more &rarr;</span>
+            <div class="service-card-footer">
+              <span class="service-link">Learn more &rarr;</span>
+              <span class="service-price-hint">From $150</span>
+            </div>
           </div>
         </a>
         <a href="services.html#drains" class="service-card">
@@ -323,7 +504,10 @@
           <div class="service-body">
             <h3>Drain Cleaning</h3>
             <p>Clogged kitchen, bathroom, or floor drains cleared fast. Hydro-jetting available for stubborn blockages and grease buildup.</p>
-            <span class="service-link">Learn more &rarr;</span>
+            <div class="service-card-footer">
+              <span class="service-link">Learn more &rarr;</span>
+              <span class="service-price-hint">From $99</span>
+            </div>
           </div>
         </a>
         <a href="services.html#water-heater" class="service-card">
@@ -333,7 +517,10 @@
           <div class="service-body">
             <h3>Water Heater Service</h3>
             <p>Repair and replacement for tank and tankless water heaters. Same-day service on most jobs — hot water back today.</p>
-            <span class="service-link">Learn more &rarr;</span>
+            <div class="service-card-footer">
+              <span class="service-link">Learn more &rarr;</span>
+              <span class="service-price-hint">From $189</span>
+            </div>
           </div>
         </a>
         <a href="services.html#pipe-repair" class="service-card">
@@ -343,7 +530,10 @@
           <div class="service-body">
             <h3>Pipe Repair &amp; Repiping</h3>
             <p>Leak repairs, burst pipe replacement, and whole-home repiping. We work on copper, PEX, and CPVC systems.</p>
-            <span class="service-link">Learn more &rarr;</span>
+            <div class="service-card-footer">
+              <span class="service-link">Learn more &rarr;</span>
+              <span class="service-price-hint">Free estimate</span>
+            </div>
           </div>
         </a>
         <a href="services.html#leak-detection" class="service-card">
@@ -353,7 +543,10 @@
           <div class="service-body">
             <h3>Leak Detection</h3>
             <p>Non-invasive electronic leak detection to find hidden water leaks behind walls, under slabs, and beneath floors before damage spreads.</p>
-            <span class="service-link">Learn more &rarr;</span>
+            <div class="service-card-footer">
+              <span class="service-link">Learn more &rarr;</span>
+              <span class="service-price-hint">From $149</span>
+            </div>
           </div>
         </a>
         <a href="services.html#sewer" class="service-card">
@@ -363,18 +556,41 @@
           <div class="service-body">
             <h3>Sewer Line Service</h3>
             <p>Sewer cleaning, camera inspection, and line repair. We locate the problem first so you're not paying for guesswork.</p>
-            <span class="service-link">Learn more &rarr;</span>
+            <div class="service-card-footer">
+              <span class="service-link">Learn more &rarr;</span>
+              <span class="service-price-hint">Free camera inspection</span>
+            </div>
           </div>
         </a>
       </div>
     </div>
   </section>
 
+  <!-- FINANCING BAND -->
+  <div class="financing-band" aria-label="Financing options">
+    <div class="financing-inner">
+      <div class="financing-left">
+        <div class="financing-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="3" y="7" width="22" height="15" rx="3" stroke="rgba(255,255,255,0.7)" stroke-width="1.6"/>
+            <line x1="3" y1="12" x2="25" y2="12" stroke="rgba(255,255,255,0.7)" stroke-width="1.6"/>
+            <rect x="7" y="16" width="5" height="2" rx="1" fill="rgba(255,255,255,0.5)"/>
+          </svg>
+        </div>
+        <div class="financing-copy">
+          <h3>Financing Available — <strong>$0 Down, 0% Interest for 18 Months</strong></h3>
+          <p>Don't delay a necessary repair because of cost. On approved credit for water heater replacements, repiping, and major repairs. Ask us when you call — we'll walk you through options in minutes.</p>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-orange" style="white-space:nowrap;flex-shrink:0;">Check Financing &rarr;</a>
+    </div>
+  </div>
+
   <!-- PROCESS -->
-  <section class="process-bg" style="padding:72px 32px;">
+  <section class="process-bg" style="padding:72px 32px;" aria-labelledby="process-h2">
     <div class="section-inner">
       <span class="eyebrow">How It Works</span>
-      <h2 class="section-heading" style="color:var(--white);">From Your Call to <span style="color:var(--orange);">Problem Solved</span></h2>
+      <h2 class="section-heading" id="process-h2" style="color:var(--white);">From Your Call to <span style="color:var(--orange);">Problem Solved</span></h2>
       <div class="process-grid">
         <div class="process-step">
           <div class="step-num">1</div>
@@ -394,14 +610,14 @@
         <div class="process-step">
           <div class="step-num">4</div>
           <h3>Problem Fixed</h3>
-          <p>We fix it right the first time and clean up completely. Work is backed by our parts and labor warranty.</p>
+          <p>We fix it right the first time and clean up completely. Work is backed by our 1-year parts and labor warranty.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHY US -->
-  <section>
+  <section aria-labelledby="why-h2">
     <div class="section-inner">
       <div class="why-grid">
         <div class="why-photo">
@@ -409,31 +625,57 @@
         </div>
         <div>
           <span class="eyebrow">Why Priority</span>
-          <h2 class="section-heading">Tampa's Plumber<br>Since <span>2009</span></h2>
+          <h2 class="section-heading" id="why-h2">Tampa's Plumber<br>Since <span>2009</span></h2>
+          <div class="why-stat-row" role="list">
+            <div class="why-stat" role="listitem">
+              <div class="why-stat-num">4.9★</div>
+              <div class="why-stat-label">Google Rating</div>
+            </div>
+            <div class="why-stat" role="listitem">
+              <div class="why-stat-num">247</div>
+              <div class="why-stat-label">Reviews</div>
+            </div>
+            <div class="why-stat" role="listitem">
+              <div class="why-stat-num">15+</div>
+              <div class="why-stat-label">Years in Tampa</div>
+            </div>
+            <div class="why-stat" role="listitem">
+              <div class="why-stat-num">60min</div>
+              <div class="why-stat-label">Emergency ETA</div>
+            </div>
+          </div>
           <div class="why-points">
             <div class="why-point">
-              <div class="why-icon" aria-hidden="true">⚡</div>
+              <div class="why-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L12.09 7.26L18 7.27L13.45 10.97L15.18 16.18L10 13L4.82 16.18L6.55 10.97L2 7.27L7.91 7.26L10 2Z" fill="none" stroke="#E85D04" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
               <div>
                 <h4>60-Minute Emergency Response</h4>
                 <p>When a pipe bursts at 2am, every minute matters. We guarantee a licensed plumber on-site within 60 minutes for emergencies anywhere in Tampa Bay.</p>
               </div>
             </div>
             <div class="why-point">
-              <div class="why-icon" aria-hidden="true">💰</div>
+              <div class="why-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#E85D04" stroke-width="1.5"/><line x1="3" y1="9" x2="17" y2="9" stroke="#E85D04" stroke-width="1.5"/><circle cx="6.5" cy="12.5" r="1" fill="#E85D04"/></svg>
+              </div>
               <div>
                 <h4>Flat-Rate Upfront Pricing</h4>
                 <p>You get a written price before we start. No hourly billing, no surprise charges when the job takes longer. The quote is the price, period.</p>
               </div>
             </div>
             <div class="why-point">
-              <div class="why-icon" aria-hidden="true">🏠</div>
+              <div class="why-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C8 6 3 7 3 12C3 15.31 6.13 18 10 18C13.87 18 17 15.31 17 12C17 7 12 6 10 2Z" stroke="#E85D04" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
               <div>
                 <h4>Family-Owned, Tampa-Based</h4>
                 <p>We've been local since 2009. We live here, our kids go to school here, and our reputation in this neighborhood is everything to us.</p>
               </div>
             </div>
             <div class="why-point">
-              <div class="why-icon" aria-hidden="true">🛡️</div>
+              <div class="why-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5V10C3 14.42 6.08 18.6 10 19.6C13.92 18.6 17 14.42 17 10V5L10 2Z" stroke="#E85D04" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 10L9 12L13 8" stroke="#E85D04" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
               <div>
                 <h4>Licensed, Bonded &amp; Insured</h4>
                 <p>Florida license # CFC1431872. Fully bonded. General liability and workers' comp — you're completely covered if anything unexpected happens.</p>
@@ -445,33 +687,254 @@
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="reviews-bg">
+  <!-- SERVICE AREAS -->
+  <section class="areas-bg" aria-labelledby="areas-h2">
     <div class="section-inner">
-      <span class="eyebrow">Customer Reviews</span>
-      <h2 class="section-heading">What Tampa Homeowners Say</h2>
+      <span class="eyebrow">Service Area</span>
+      <h2 class="section-heading" id="areas-h2">We Come to <span>You</span></h2>
+      <p class="section-sub">Serving all of Hillsborough County and surrounding communities. Not sure if we cover your area? Call — we'll let you know in seconds.</p>
+      <div class="areas-grid" role="list">
+        <div class="area-pill" role="listitem"><div class="city">Tampa</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Brandon</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Riverview</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Temple Terrace</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">New Tampa</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Carrollwood</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Wesley Chapel</div><div class="state">Pasco Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Valrico</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Plant City</div><div class="state">Hillsborough Co.</div></div>
+        <div class="area-pill" role="listitem"><div class="city">Lutz</div><div class="state">Hillsborough Co.</div></div>
+      </div>
+      <p class="areas-note">Don't see your city? <a href="contact.html">Contact us</a> — we may still be able to help.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-bg" aria-labelledby="reviews-h2">
+    <div class="section-inner">
+      <div class="reviews-header">
+        <div>
+          <span class="eyebrow">Customer Reviews</span>
+          <h2 class="section-heading" id="reviews-h2">What Tampa Homeowners Say</h2>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+          <div class="reviews-aggregate">
+            <div class="agg-score" aria-label="4.9 out of 5">4.9</div>
+            <div class="agg-right">
+              <div class="agg-stars" aria-label="5 stars">★★★★★</div>
+              <div class="agg-count">247 Google Reviews</div>
+              <div class="agg-source">
+                <div class="google-g" style="width:16px;height:16px;font-size:.5rem;" aria-hidden="true">G</div>
+                <span>Verified by Google</span>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="reviews-link" aria-label="Read all reviews">Read All Reviews &rarr;</a>
+        </div>
+      </div>
       <div class="reviews-grid">
         <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">"Main line backed up at 11pm on a Sunday. I called Priority Plumbing expecting to leave a voicemail. They answered, had a guy here by 12:15am, and had it cleared by 1:30. Charged exactly what they quoted. Absolutely saved us."</p>
-          <div class="reviewer-name">James &amp; Denise T.</div>
-          <div class="reviewer-loc">Tampa, FL · Google Review</div>
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-text">"Main line backed up at 11pm on a Sunday. I called Priority expecting to leave a voicemail. They answered, had a guy here by 12:15am, and had it cleared by 1:30. Charged exactly what they quoted. Absolutely saved us."</p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" aria-hidden="true">JT</div>
+            <div>
+              <div class="reviewer-name">James &amp; Denise T.</div>
+              <div class="reviewer-loc">Tampa, FL</div>
+            </div>
+          </div>
+          <div class="review-verified">
+            <div class="google-g" style="width:14px;height:14px;font-size:.45rem;" aria-hidden="true">G</div>
+            Google Review
+          </div>
         </div>
         <div class="review-card">
-          <div class="stars">★★★★★</div>
+          <div class="stars" aria-label="5 stars">★★★★★</div>
           <p class="review-text">"Water heater died on a Thursday morning. Called Priority, they gave me a quote over the phone, showed up by noon, and had a new unit installed and running by 3pm. Fair price, clean work, explained everything. Won't call anyone else."</p>
-          <div class="reviewer-name">Sandra M.</div>
-          <div class="reviewer-loc">Brandon, FL · Google Review</div>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" aria-hidden="true">SM</div>
+            <div>
+              <div class="reviewer-name">Sandra M.</div>
+              <div class="reviewer-loc">Brandon, FL</div>
+            </div>
+          </div>
+          <div class="review-verified">
+            <div class="google-g" style="width:14px;height:14px;font-size:.45rem;" aria-hidden="true">G</div>
+            Google Review
+          </div>
         </div>
         <div class="review-card">
-          <div class="stars">★★★★★</div>
+          <div class="stars" aria-label="5 stars">★★★★★</div>
           <p class="review-text">"Had a slow leak behind our bathroom wall for months — other plumbers couldn't find it without tearing the whole wall open. Priority used their electronic detection equipment, found it in 20 minutes, and made a 4-inch repair. Incredible."</p>
-          <div class="reviewer-name">Marcus W.</div>
-          <div class="reviewer-loc">Temple Terrace, FL · Google Review</div>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" aria-hidden="true">MW</div>
+            <div>
+              <div class="reviewer-name">Marcus W.</div>
+              <div class="reviewer-loc">Temple Terrace, FL</div>
+            </div>
+          </div>
+          <div class="review-verified">
+            <div class="google-g" style="width:14px;height:14px;font-size:.45rem;" aria-hidden="true">G</div>
+            Google Review
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-text">"Sewer line camera inspection found a root intrusion that two other companies missed completely. They gave me a clear video, explained the repair options, and finished the job in one day. These guys actually know what they're doing."</p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" aria-hidden="true">RK</div>
+            <div>
+              <div class="reviewer-name">Robert K.</div>
+              <div class="reviewer-loc">Riverview, FL</div>
+            </div>
+          </div>
+          <div class="review-verified">
+            <div class="google-g" style="width:14px;height:14px;font-size:.45rem;" aria-hidden="true">G</div>
+            Google Review
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-text">"Used the financing option for a full repiping job — $0 down and no interest. Made a $4,200 job manageable. The crew was professional, done in two days, and cleaned up every room they worked in. Can't say enough good things."</p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" aria-hidden="true">AC</div>
+            <div>
+              <div class="reviewer-name">Angela C.</div>
+              <div class="reviewer-loc">Carrollwood, FL</div>
+            </div>
+          </div>
+          <div class="review-verified">
+            <div class="google-g" style="width:14px;height:14px;font-size:.45rem;" aria-hidden="true">G</div>
+            Google Review
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-text">"Called at 7am for a clogged kitchen drain that had been backing up for days. Tech was here by 9am, had it done by 10. Showed me on camera exactly what the problem was. Upfront price, no pressure, zero mess left behind. My go-to from now on."</p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" aria-hidden="true">PH</div>
+            <div>
+              <div class="reviewer-name">Patricia H.</div>
+              <div class="reviewer-loc">New Tampa, FL</div>
+            </div>
+          </div>
+          <div class="review-verified">
+            <div class="google-g" style="width:14px;height:14px;font-size:.45rem;" aria-hidden="true">G</div>
+            Google Review
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="faq-bg" aria-labelledby="faq-h2">
+    <div class="section-inner">
+      <span class="eyebrow">Common Questions</span>
+      <h2 class="section-heading" id="faq-h2">Answers Before <span>You Call</span></h2>
+      <div class="faq-grid">
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-q" aria-expanded="true" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">
+              <span class="faq-q-text">How much does a plumber cost in Tampa?</span>
+              <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            </button>
+            <div class="faq-a">Most plumbing repairs in Tampa range from <strong>$150–$600</strong> depending on the job. Emergency calls may include a service fee. We always provide a flat-rate quote before starting — no hourly surprises.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">
+              <span class="faq-q-text">Do you offer 24/7 emergency plumbing service?</span>
+              <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            </button>
+            <div class="faq-a">Yes. We answer calls 24 hours a day, 7 days a week including holidays. Our goal is to have a licensed plumber on-site within <strong>60 minutes</strong> for emergencies anywhere in Tampa Bay.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">
+              <span class="faq-q-text">How long does drain cleaning take?</span>
+              <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            </button>
+            <div class="faq-a">Most standard drain cleanings take <strong>45–90 minutes</strong>. Hydro-jetting for severe blockages may take 2–3 hours. We give you a time estimate when we diagnose the clog so you're not waiting around all day.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">
+              <span class="faq-q-text">Do you offer financing on plumbing work?</span>
+              <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            </button>
+            <div class="faq-a">Yes. We offer <strong>0% interest financing for 18 months</strong> on approved credit for larger jobs including water heater replacements and whole-home repiping. Ask us when you call and we'll walk you through options in minutes.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">
+              <span class="faq-q-text">Are you licensed and insured in Florida?</span>
+              <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            </button>
+            <div class="faq-a">Yes. We hold Florida plumbing license <strong># CFC1431872</strong> and carry full general liability insurance and workers' compensation on every technician. You're completely covered.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">
+              <span class="faq-q-text">What areas do you serve in Tampa Bay?</span>
+              <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1V9M1 5H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            </button>
+            <div class="faq-a">We serve <strong>Tampa, Brandon, Riverview, Temple Terrace, New Tampa, Carrollwood, Wesley Chapel, Plant City, Valrico, Lutz,</strong> and all of Hillsborough County. Call us if you're unsure — we'll tell you in seconds.</div>
+          </div>
+        </div>
+        <div class="faq-aside">
+          <h3>Still Have Questions?</h3>
+          <p>We answer calls 24/7. Most questions take 60 seconds on the phone — faster than any FAQ can be.</p>
+          <a href="tel:8135550194" class="faq-phone" aria-label="Call Priority Plumbing">(813) 555-0194</a>
+          <div class="faq-guarantee">
+            <div class="faq-guarantee-title">Our Promise to You</div>
+            <ul class="faq-guarantee-list">
+              <li>Upfront flat-rate price before we touch anything</li>
+              <li>Licensed, insured technicians on every job</li>
+              <li>1-year parts and labor warranty on all repairs</li>
+              <li>We clean up completely before we leave</li>
+              <li>60-minute response on emergencies, 24/7</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE BAND -->
+  <div class="guarantee-band" aria-label="Our guarantees">
+    <div class="guarantee-inner">
+      <div class="guarantee-badge-wrap">
+        <div class="guarantee-badge-outer">
+          <div class="guarantee-badge-inner">
+            <span class="g-top">Priority</span>
+            <span class="g-main">100%</span>
+            <span class="g-sub">Satisfaction</span>
+            <span class="g-sub">Guaranteed</span>
+          </div>
+        </div>
+        <div class="guarantee-badge-label">Or We Make It Right</div>
+      </div>
+      <div class="guarantee-items">
+        <div class="g-item">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L2 4.5V9C2 13 5.13 17 9 18C12.87 17 16 13 16 9V4.5L9 1Z" fill="none" stroke="#E85D04" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 9L8 11L12 7" stroke="#E85D04" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            1-Year Warranty
+          </h4>
+          <p>All parts and labor are backed for a full year. If something we repaired fails, we come back and fix it — no charge, no argument.</p>
+        </div>
+        <div class="g-item">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#E85D04" stroke-width="1.4"/><line x1="2" y1="8" x2="16" y2="8" stroke="#E85D04" stroke-width="1.4"/><circle cx="5.5" cy="11.5" r="1" fill="#E85D04"/></svg>
+            Price Match Promise
+          </h4>
+          <p>Get a written quote from a licensed competitor for the same job and we'll match it. Fair pricing — not because we have to, but because it's right.</p>
+        </div>
+        <div class="g-item">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#E85D04" stroke-width="1.4"/><path d="M6 9L8 11L12 7" stroke="#E85D04" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Clean Job Site
+          </h4>
+          <p>We treat your home like our own. Shoe covers, drop cloths, and a complete cleanup before we leave. You won't know we were there — except the problem is fixed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- CTA -->
   <div class="cta-band">
@@ -494,6 +957,11 @@
         <div class="footer-lic">Florida Lic. # CFC1431872 · Licensed &amp; Insured</div>
         <p>Serving Tampa, Hillsborough County, Brandon, Riverview, Temple Terrace, and New Tampa. Available 24/7 for emergency plumbing service.</p>
         <p style="margin-top:12px; font-size:0.86rem;">4218 N Nebraska Ave, Tampa, FL 33603</p>
+        <div class="footer-rating">
+          <div class="google-g" style="width:20px;height:20px;font-size:.6rem;" aria-hidden="true">G</div>
+          <span class="g" aria-label="4.9 stars">★★★★★ 4.9</span>
+          <span class="rc">· 247 Reviews</span>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -507,12 +975,23 @@
         </ul>
       </div>
       <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="services.html">Tampa, FL</a></li>
+          <li><a href="services.html">Brandon, FL</a></li>
+          <li><a href="services.html">Riverview, FL</a></li>
+          <li><a href="services.html">Temple Terrace, FL</a></li>
+          <li><a href="services.html">New Tampa, FL</a></li>
+          <li><a href="services.html">Wesley Chapel, FL</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h4>Company</h4>
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Free Estimate</a></li>
           <li><a href="tel:8135550194">(813) 555-0194</a></li>
-          <li><a href="mailto:info@priorityplumbingtampa.com">info@priorityplumbingtampa.com</a></li>
+          <li><a href="mailto:info@priorityplumbingtampa.com">Email Us</a></li>
         </ul>
       </div>
     </div>
@@ -521,6 +1000,17 @@
       <span>Licensed Plumbing Contractor · Florida Lic. # CFC1431872</span>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA BAR -->
+  <div class="mobile-cta-bar" aria-label="Quick contact">
+    <div class="mobile-cta-grid">
+      <a href="tel:8135550194" class="mobile-cta-call" aria-label="Call Priority Plumbing">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.65 2h2.5l1 3-1.5 1.5c.7 1.4 1.85 2.55 3.25 3.25L10.4 8.3l3 1v2.5C13.4 13 12.3 14 11 14 5.95 14 2 10.05 2 5 2 3.7 3 2.6 3.65 2Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Call Now
+      </a>
+      <a href="contact.html" class="mobile-cta-estimate">Get Estimate</a>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -2,6 +2,9 @@ node_modules/
 .claude/
 memory/
 .env
+lantech.env
+dist/
 temporary screenshots/
+__pycache__/
 
 .tmp/

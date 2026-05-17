@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How We Work — Lantech Internal Process Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAF7;--surface:#FFFFFF;--ink:#1C1917;--muted:#78716C;--accent:#E8600A;--accent-dim:rgba(232,96,10,.08);--accent-border:rgba(232,96,10,.2);--border:#E7E0D8;--rule:#E7E0D8;--sidebar-w:268px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:2rem}
+body{font-family:'DM Sans',sans-serif;font-size:.9375rem;line-height:1.72;color:var(--ink);background:var(--bg)}
+.layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh}
+/* Sidebar */
+.sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--surface);border-right:1px solid var(--border);padding:0 0 2rem}
+.sidebar::-webkit-scrollbar{width:4px}.sidebar::-webkit-scrollbar-thumb{background:var(--border)}
+.sidebar-logo{padding:1.5rem 1.5rem 1.25rem;border-bottom:1px solid var(--border);margin-bottom:.75rem}
+.sidebar-logo .brand{font-family:'Calistoga',serif;font-size:1.125rem;color:var(--ink);line-height:1}
+.sidebar-logo .sub{font-size:.75rem;color:var(--muted);margin-top:.3rem}
+.nav-group{margin-top:.875rem}
+.nav-label{padding:.2rem 1.5rem;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block}
+.nav-link{display:block;padding:.35rem 1.5rem;font-size:.8rem;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:color .15s,border-color .15s,background .15s;line-height:1.4}
+.nav-link:hover{color:var(--accent);border-left-color:var(--accent);background:var(--accent-dim)}
+/* Content */
+.content{padding:3.5rem 4.5rem 8rem;max-width:860px}
+/* Page header */
+.pg-header{margin-bottom:4rem;padding-bottom:2.5rem;border-bottom:2px solid var(--border)}
+.pg-badge{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);padding:.25rem .75rem;border-radius:100px;display:inline-block;margin-bottom:1rem}
+.pg-header h1{font-family:'Calistoga',serif;font-size:2.75rem;color:var(--ink);margin-bottom:1rem;line-height:1.15}
+.pg-header p{color:var(--muted);font-size:1rem;max-width:560px;line-height:1.72}
+/* Sections */
+.sec{margin-bottom:4.5rem;scroll-margin-top:2rem}
+.sec-head{display:flex;align-items:flex-start;gap:1.125rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);width:34px;height:34px;min-width:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-top:.15rem}
+.sec-head h2{font-family:'Calistoga',serif;font-size:1.75rem;color:var(--ink);line-height:1.2;margin-bottom:.375rem}
+.sec-head .desc{color:var(--muted);font-size:.9rem;line-height:1.65;max-width:580px}
+h3{font-weight:700;font-size:.9375rem;color:var(--ink);margin:2rem 0 .875rem;letter-spacing:-.01em}
+h4{font-weight:600;font-size:.875rem;color:var(--ink);margin:1.25rem 0 .5rem}
+p{color:var(--muted);margin-bottom:.875rem;line-height:1.72}
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:.875rem}
+.step{display:flex;gap:1rem;align-items:flex-start}
+.sn{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);width:24px;height:24px;min-width:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-top:.2rem}
+.step-body{flex:1}
+.step-title{font-weight:600;color:var(--ink);font-size:.9375rem;margin-bottom:.25rem}
+.step-desc{color:var(--muted);font-size:.875rem;line-height:1.65}
+/* Checklist */
+.checklist{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.375rem 1.625rem;display:flex;flex-direction:column;gap:.625rem;margin-top:1.5rem}
+.checklist-title{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.ci{display:flex;align-items:flex-start;gap:.75rem;font-size:.875rem;color:var(--muted);line-height:1.55}
+.cb{width:16px;height:16px;min-width:16px;border:1.5px solid var(--border);border-radius:4px;margin-top:.15rem;flex-shrink:0;background:var(--bg)}
+/* Callouts */
+.callout{border-radius:10px;padding:1rem 1.25rem;margin:1.25rem 0;display:flex;gap:.875rem;font-size:.875rem;line-height:1.65}
+.callout-warn{background:#FFF8F0;border:1px solid rgba(232,96,10,.25);color:var(--muted)}
+.callout-tip{background:#F0FAF4;border:1px solid rgba(22,163,74,.25);color:var(--muted)}
+.callout-note{background:var(--surface);border:1px solid var(--border);color:var(--muted)}
+.callout strong{display:block;color:var(--ink);margin-bottom:.2rem;font-size:.875rem}
+.callout-icon{flex-shrink:0;font-size:.9rem;margin-top:.1rem}
+/* Tier tags */
+.tier{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;white-space:nowrap;display:inline-block}
+.t-all{color:var(--muted);background:rgba(120,113,108,.08);border:1px solid rgba(120,113,108,.25)}
+.t-lp{color:#1D4ED8;background:rgba(29,78,216,.07);border:1px solid rgba(29,78,216,.2)}
+.t-lm{color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border)}
+.t-ml{color:#7C3AED;background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.2)}
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:.85rem;margin:1rem 0 1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.tbl th{text-align:left;padding:.625rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;background:var(--bg);font-weight:500}
+.tbl td{padding:.625rem 1rem;border-bottom:1px solid var(--rule);color:var(--muted);vertical-align:top;line-height:1.55}
+.tbl tr:last-child td{border-bottom:none}
+.tbl strong{color:var(--ink);font-weight:600}
+/* Divider */
+hr{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+@media(max-width:800px){.layout{display:block}.sidebar{display:none}.content{padding:2rem 1.5rem 5rem;max-width:100%}}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ══ SIDEBAR ══ -->
+<nav class="sidebar" aria-label="Process guide navigation">
+  <div class="sidebar-logo">
+    <div class="brand">Lantech</div>
+    <div class="sub">Internal Process Guide</div>
+  </div>
+  <div class="nav-group">
+    <span class="nav-label">Overview</span>
+    <a class="nav-link" href="#overview">How It All Fits Together</a>
+    <a class="nav-link" href="#plans">Our Plans at a Glance</a>
+  </div>
+  <div class="nav-group">
+    <span class="nav-label">Finding Clients</span>
+    <a class="nav-link" href="#prospecting">Finding Leads</a>
+    <a class="nav-link" href="#discovery">The Discovery Call</a>
+    <a class="nav-link" href="#proposal">Sending a Proposal</a>
+  </div>
+  <div class="nav-group">
+    <span class="nav-label">Onboarding</span>
+    <a class="nav-link" href="#intake">Client Intake</a>
+    <a class="nav-link" href="#build">Building the Website</a>
+    <a class="nav-link" href="#revisions">Preview &amp; Revisions</a>
+    <a class="nav-link" href="#deploy">Going Live</a>
+    <a class="nav-link" href="#analytics">Setting Up Analytics</a>
+  </div>
+  <div class="nav-group">
+    <span class="nav-label">Ongoing Work</span>
+    <a class="nav-link" href="#postlaunch">30-Day Follow-Up</a>
+    <a class="nav-link" href="#retainer">Monthly SEO Retainer</a>
+    <a class="nav-link" href="#lsa">LSA Setup (Market Leader)</a>
+    <a class="nav-link" href="#report">Monthly Report</a>
+    <a class="nav-link" href="#maintenance">Site Maintenance</a>
+  </div>
+  <div class="nav-group">
+    <span class="nav-label">Wrapping Up</span>
+    <a class="nav-link" href="#portfolio">Portfolio Capture</a>
+    <a class="nav-link" href="#offboarding">When a Client Leaves</a>
+  </div>
+</nav>
+
+<!-- ══ CONTENT ══ -->
+<main class="content">
+
+<!-- PAGE HEADER -->
+<div class="pg-header">
+  <div class="pg-badge">Internal Use Only</div>
+  <h1>How We Work</h1>
+  <p>This is Lantech's complete process guide — every step from finding a new client all the way to offboarding them. Written so anyone on the team can pick up and do the work correctly, even without prior experience.</p>
+</div>
+
+<!-- ══ 0. OVERVIEW ══ -->
+<section class="sec" id="overview">
+  <div class="sec-head">
+    <div class="sec-num">0</div>
+    <div>
+      <h2>How It All Fits Together</h2>
+      <p class="desc">Every client goes through the same journey. Here's the big picture before we get into the details.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Find leads</div><div class="step-desc">Research businesses that need a website or better Google presence, then reach out with a personalized message.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Run a discovery call</div><div class="step-desc">A 20-minute phone call to understand the business, show them what we found, and present our recommendation.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Send a proposal (if they ask)</div><div class="step-desc">If they want something in writing before deciding, we send a short, specific, one-page proposal.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Client signs → intake</div><div class="step-desc">Create the client folder, send the service agreement and invoice, then collect all the information we need to build.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Build the website</div><div class="step-desc">Build all pages following our quality standards. Run checks before showing anything to the client.</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">Preview and revisions</div><div class="step-desc">Show the client the site, collect feedback, apply up to 2 rounds of revisions, get written approval.</div></div></div>
+    <div class="step"><div class="sn">7</div><div class="step-body"><div class="step-title">Go live</div><div class="step-desc">Upload to Hostinger, verify everything works, send the client their handover package.</div></div></div>
+    <div class="step"><div class="sn">8</div><div class="step-body"><div class="step-title">Set up analytics</div><div class="step-desc">Set up Google Analytics and Google Search Console so we can track results and produce monthly reports.</div></div></div>
+    <div class="step"><div class="sn">9</div><div class="step-body"><div class="step-title">30-day follow-up</div><div class="step-desc">Check in at the 30-day mark, ask for a testimonial, and offer the right upsell if it makes sense.</div></div></div>
+    <div class="step"><div class="sn">10</div><div class="step-body"><div class="step-title">Monthly SEO work</div><div class="step-desc">Every month: GBP posts, articles, link building, citation checks, competitor monitoring — based on their plan.</div></div></div>
+    <div class="step"><div class="sn">11</div><div class="step-body"><div class="step-title">Monthly report</div><div class="step-desc">Send a clear performance report every month. One key win at the top, real numbers, specific next steps.</div></div></div>
+    <div class="step"><div class="sn">12</div><div class="step-body"><div class="step-title">Offboarding (when needed)</div><div class="step-desc">If a client leaves, hand over all their files cleanly, remove our access, and send a warm goodbye.</div></div></div>
+  </div>
+</section>
+
+<!-- ══ PLANS ══ -->
+<section class="sec" id="plans">
+  <div class="sec-head">
+    <div class="sec-num">—</div>
+    <div>
+      <h2>Our Plans at a Glance</h2>
+      <p class="desc">Every client is on one of these plans. Know which plan they're on before doing any work — it determines what's included.</p>
+    </div>
+  </div>
+  <table class="tbl">
+    <thead><tr><th>Plan</th><th>Price</th><th>Best for</th><th>Key difference</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Local Presence</strong></td><td>$997/mo</td><td>Small businesses just getting started online</td><td>Foundation work — city pages, GBP, citations, no content production</td></tr>
+      <tr><td><strong>Lead Machine</strong></td><td>$1,997/mo</td><td>Growing businesses ready to drive more leads</td><td>Adds 2 articles/mo, GBP posts, link building, competitor tracking</td></tr>
+      <tr><td><strong>Market Leader</strong></td><td>$3,497/mo</td><td>Established contractors who want to dominate their area</td><td>More pages, 4 articles/mo, LSA ads management, dedicated account manager</td></tr>
+      <tr><td><strong>Care</strong></td><td>$120/mo</td><td>Clients who just want their site kept alive</td><td>Hosting, maintenance, and security only — no SEO work</td></tr>
+    </tbody>
+  </table>
+  <div class="callout callout-note"><div class="callout-icon">ℹ</div><div><strong>Important billing rule</strong>All plans are month-to-month. Clients can cancel with 30 days notice — no annual contracts, no penalties. Always remind clients of this if they ask.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 1. PROSPECTING ══ -->
+<section class="sec" id="prospecting">
+  <div class="sec-head">
+    <div class="sec-num">1</div>
+    <div>
+      <h2>Finding Leads</h2>
+      <p class="desc">We find small businesses that need help with their online presence and reach out with a specific, personal message — not a generic pitch.</p>
+    </div>
+  </div>
+
+  <h3>What we're looking for</h3>
+  <p>Target businesses in home services (plumbers, HVAC, electricians, roofers, landscapers, etc.) that have one or more of these problems:</p>
+  <div class="steps">
+    <div class="step"><div class="sn">A</div><div class="step-body"><div class="step-desc">No website at all — highest priority, easiest sell</div></div></div>
+    <div class="step"><div class="sn">B</div><div class="step-body"><div class="step-desc">Has a website but it's outdated, not mobile-friendly, or loads slowly</div></div></div>
+    <div class="step"><div class="sn">C</div><div class="step-body"><div class="step-desc">No Facebook or Instagram page, or their social accounts are completely inactive</div></div></div>
+    <div class="step"><div class="sn">D</div><div class="step-body"><div class="step-desc">Good Google reviews but no online presence to capture the demand</div></div></div>
+  </div>
+
+  <h3>How to find them</h3>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Search Google Maps for the trade and city</div><div class="step-desc">Example: "plumbers in Tampa FL." Go through every result and note their website status, GBP completeness, and review count.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Find the "Gold Standard" competitor first</div><div class="step-desc">Before reaching out to anyone, find the best-ranked business in that trade and city. This is the business you'll reference in every outreach message — "Your competitor [Name] is pulling in all the searches you're missing."</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Score each lead</div><div class="step-desc">No website = 40 pts. No Facebook = 20 pts. No Instagram = 15 pts. High rating with low visibility = 5 pts. Hot leads (70+ pts) get outreach first.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Find the owner's name</div><div class="step-desc">Search Google, Facebook, or LinkedIn for the owner's first name. "Hi John" converts much better than "Hi Team." Mark ❌ if you can't find it after 2–3 searches — don't guess.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Write 3 outreach messages per hot/warm lead</div><div class="step-desc">One email, one Facebook/Instagram DM, one LinkedIn message. Each one must mention the Gold Standard competitor by name and include the revenue opportunity number. Never send a generic message.</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">Save everything to the prospect file</div><div class="step-desc">All leads, scores, contact info, and outreach messages go into one file in <code>projects/prospects/</code>. Never leave leads scattered in notes or memory.</div></div></div>
+  </div>
+
+  <div class="callout callout-warn"><div class="callout-icon">⚠</div><div><strong>Before starting any session</strong>Check the existing prospect file for this trade + city. Do not research or contact any business that's already on the list. Duplicates waste time and damage our credibility if we reach out twice.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 2. DISCOVERY CALL ══ -->
+<section class="sec" id="discovery">
+  <div class="sec-head">
+    <div class="sec-num">2</div>
+    <div>
+      <h2>The Discovery Call</h2>
+      <p class="desc">A 20-minute structured call that qualifies the prospect, surfaces their real problem, and closes them on a Lantech plan — or identifies why they're not a fit right now.</p>
+    </div>
+  </div>
+
+  <h3>Before the call (5 minutes of prep)</h3>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-desc">Pull up the prospect's entry in <code>projects/prospects/</code> — review their score, gaps, and revenue opportunity figure.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-desc">Open their website (if any) and Google Business Profile. Know specifically what's wrong before the call starts.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-desc"><strong>Decide which plan you're recommending before the call.</strong> Do not figure it out on the call — it makes you look unprepared.</div></div></div>
+  </div>
+
+  <h3>Call structure (20 minutes)</h3>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Opening — 2 minutes</div><div class="step-desc">Introduce yourself, set the agenda: "I wanted to spend about 20 minutes learning about your business and showing you what we found. Sound good?"</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Discovery — 8 minutes</div><div class="step-desc">Ask these 4 questions and listen more than you talk:<br><br><em>"How are customers finding you right now?"</em><br><em>"Have you tried any marketing before? How did that go?"</em><br><em>"If you had 5 new customers a month from Google, what would that mean for your business?"</em><br><em>"What's holding you back from having a proper web presence right now?"</em></div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">The pitch — 6 minutes</div><div class="step-desc">Lead with the specific gap you found. Name the Gold Standard competitor and the revenue they're capturing. Then introduce the solution and present one plan — not all three. Show one portfolio demo that matches their trade. One direction only — showing options creates doubt.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Handle objections — 2 minutes</div><div class="step-desc">See the objection guide below. Stay calm — objections mean they're thinking about it, not that they're saying no.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Close — 2 minutes</div><div class="step-desc">If they're ready: "I'll send the agreement and invoice today. Once signed and paid, you'll get the onboarding questionnaire and we start building within 24 hours."<br><br>If they want to think: book a specific follow-up time before hanging up. Send a follow-up email within 1 hour.</div></div></div>
+  </div>
+
+  <h3>Handling common objections</h3>
+  <table class="tbl">
+    <thead><tr><th>What they say</th><th>What you say</th></tr></thead>
+    <tbody>
+      <tr><td>"Too expensive"</td><td>"Compare it to what [competitor] is making off those [N,NNN] monthly searches — $[price] is one or two jobs you're already losing every month."</td></tr>
+      <tr><td>"I'll think about it"</td><td>"Totally fair — what specifically do you want to think over? I want to make sure you have the right information." Then book a follow-up before hanging up.</td></tr>
+      <tr><td>"I'll do it myself"</td><td>"Most of our clients tried that first. The issue isn't building the site — it's getting it to rank on Google. That's where we add the real value."</td></tr>
+      <tr><td>"I don't trust online agencies"</td><td>"That's exactly why we're month-to-month — no annual contracts, cancel anytime with 30 days notice. You own all your files and can move them anywhere."</td></tr>
+      <tr><td>"I already have a website"</td><td>"I took a look at it. [Specific finding — e.g., 'It's not loading on mobile' / 'It loads in 6 seconds']. That's costing you Google rankings right now."</td></tr>
+    </tbody>
+  </table>
+
+  <h3>After the call</h3>
+  <div class="steps">
+    <div class="step"><div class="sn">✓</div><div class="step-body"><div class="step-title">If they said yes</div><div class="step-desc">Send the service agreement and invoice the same day. Run the Client Intake process (Section 4).</div></div></div>
+    <div class="step"><div class="sn">✓</div><div class="step-body"><div class="step-title">If they need time</div><div class="step-desc">Send a follow-up email within 1 hour. Note their specific objection. Set a calendar reminder for the follow-up date you agreed on.</div></div></div>
+    <div class="step"><div class="sn">✓</div><div class="step-body"><div class="step-title">If they're not a fit</div><div class="step-desc">Mark the lead as Dead with a reason note. No further contact.</div></div></div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ══ 3. PROPOSAL ══ -->
+<section class="sec" id="proposal">
+  <div class="sec-head">
+    <div class="sec-num">3</div>
+    <div>
+      <h2>Sending a Proposal</h2>
+      <p class="desc">When a prospect asks for something in writing before deciding — we send a short, specific, one-page proposal within 24 hours of the call. Speed matters here. The faster the follow-up, the higher the close rate.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-warn"><div class="callout-icon">⚠</div><div><strong>Decide the plan before you write anything</strong>The proposal recommends one specific plan — not a menu of options. Three options create indecision. Pick the right one based on the prospect's city count and budget signals from the call.</div></div>
+
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Pull the prospect file</div><div class="step-desc">Open <code>clients/prospects/[file].md</code> and confirm you have: the business name and owner name, the top 2–3 specific gaps you found, the revenue opportunity figure, and the recommended plan and price.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Write the proposal</div><div class="step-desc">Maximum 2 pages. No agency jargon. Written to the business owner, not a boardroom. Include: what's wrong right now (specific), what we'll build, what it costs, what happens next, and the delivery timeline. They should be able to read it in 2 minutes and know exactly what they're getting.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Save the proposal</div><div class="step-desc">Save as <code>clients/prospects/[slug]-proposal-YYYY-MM-DD.md</code>. Update the prospect file status to "Proposal Sent — [date]".</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Send the email</div><div class="step-desc">Subject: "Your Lantech Proposal — [Business Name]." Keep the email body under 6 lines. Paste the proposal inline or attach as PDF. Same day is ideal. Next morning is acceptable. Beyond 24 hours, momentum is gone.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Set follow-up reminders</div><div class="step-desc">If no reply in 3 business days: check in. If still no reply at 7 business days: one final follow-up. After 14 days of silence: mark as cold. No further contact unless they reach out.</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">When they say yes</div><div class="step-desc">Send the service agreement and invoice the same day. Run Client Intake (Section 4). Update the prospect file to "Closed — [date]".</div></div></div>
+  </div>
+
+  <h3>Common situations</h3>
+  <table class="tbl">
+    <thead><tr><th>Situation</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr><td>They want to see multiple package options</td><td>Show maximum two — the recommended plan and the one above it. Never list all three.</td></tr>
+      <tr><td>They ask for a discount</td><td>Do not discount the price. Adjust scope instead: "I can start with Local Presence and we add Lead Machine features in Phase 2 once you see results."</td></tr>
+      <tr><td>They got a cheaper quote elsewhere</td><td>"Our sites include on-page SEO, proper schema markup, and Core Web Vitals from day one. A $400 site that doesn't rank doesn't save you money."</td></tr>
+      <tr><td>They want a proposal before the discovery call</td><td>Send a brief pricing overview only. Full proposals need the call first — they're personalized to what we found in the audit.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<hr>
+
+<!-- ══ 4. CLIENT INTAKE ══ -->
+<section class="sec" id="intake">
+  <div class="sec-head">
+    <div class="sec-num">4</div>
+    <div>
+      <h2>Client Intake</h2>
+      <p class="desc">The moment a client says yes, we move fast. Every new client gets a folder, a service agreement, an invoice, and an onboarding questionnaire — all sent within 24 hours of closing.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Create the client folder</div><div class="step-desc">Inside <code>clients/active/</code>, create a folder named <code>[client-slug]/</code> (e.g., <code>keiths-roofing/</code>). Copy all template files from <code>clients/templates/</code> into the folder. Fill in the business name, contact info, and plan details in <code>client.env</code>.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Send the service agreement</div><div class="step-desc">Use the template in <code>clients/templates/03-service-agreement.md</code>. Fill in the client's name, business name, plan name, price, and start date. Send via email with subject: "Lantech Service Agreement — [Business Name]."</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Send the invoice</div><div class="step-desc">Send the first invoice immediately. For monthly plans: invoice the first month now, then the same date every month. For one-time website builds only: 50% deposit upfront, 50% on final approval — state this in the agreement before signing.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Send the onboarding questionnaire</div><div class="step-desc">Send <code>clients/templates/02-onboarding-questionnaire.md</code>. This collects logo files, photos, service list, service areas, hours, phone number, and any existing assets. Tell the client: "The faster you get this back to me, the faster we start building."</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Run the onboarding checklist</div><div class="step-desc">Open <code>clients/templates/12-onboarding-checklist.md</code> and go through every item. Do not start building until every required input is collected — a half-complete questionnaire always leads to a half-built site.</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">Confirm payment before building</div><div class="step-desc">Do not start building until the invoice is paid (or the deposit is confirmed). No exceptions. Once payment is confirmed, add the client to the active tracker and set a build start date.</div></div></div>
+  </div>
+  <div class="callout callout-tip"><div class="callout-icon">✓</div><div><strong>The 24-hour rule</strong>Send the agreement, invoice, and questionnaire within 24 hours of the client saying yes. Momentum is highest right after the call. Waiting a day or two often kills deals that were already won.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 5. BUILD ══ -->
+<section class="sec" id="build">
+  <div class="sec-head">
+    <div class="sec-num">5</div>
+    <div>
+      <h2>Building the Website</h2>
+      <p class="desc">We build static HTML sites that load fast, rank on Google, and look professional on every device. Every build follows the same quality standards — no exceptions based on plan size.</p>
+    </div>
+  </div>
+
+  <h3>Before writing a single line of code</h3>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Run keyword research</div><div class="step-desc">Find the exact terms people in the client's city type into Google for their service. Examples: "plumber Tampa FL", "emergency HVAC repair Tampa", "best roofer near me." This determines the page titles, headings, and content. Do this before anything else.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Map every page to a keyword</div><div class="step-desc">Homepage → primary city + service. Service pages → each service type. City pages → each target city. Write down the target keyword for every page before building it. Never build a page without knowing its keyword first.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Set up the project folder</div><div class="step-desc">Create the build folder at <code>portfolio/[client-slug]/</code>. All HTML, CSS, images, and assets go here. Do not mix client files with Lantech's own site files.</div></div></div>
+  </div>
+
+  <h3>Every page must pass these checks before the client sees anything</h3>
+  <div class="checklist">
+    <div class="checklist-title">Page Quality Gate</div>
+    <div class="ci"><div class="cb"></div><span>Target keyword is in the &lt;title&gt; tag, the main heading (H1), and the first paragraph</span></div>
+    <div class="ci"><div class="cb"></div><span>Meta description is written — 150 to 160 characters, one clear sentence, includes the keyword</span></div>
+    <div class="ci"><div class="cb"></div><span>Every image has an alt text description (example: alt="Tampa plumber fixing kitchen sink")</span></div>
+    <div class="ci"><div class="cb"></div><span>Phone number is clickable on mobile — tapping it starts a call</span></div>
+    <div class="ci"><div class="cb"></div><span>Contact form works — fill it out yourself and check that it sends</span></div>
+    <div class="ci"><div class="cb"></div><span>No broken links — every nav link opens a real page</span></div>
+    <div class="ci"><div class="cb"></div><span>Loads in under 3 seconds on a regular 4G connection</span></div>
+    <div class="ci"><div class="cb"></div><span>Looks correct on mobile (375px wide) — no horizontal scrolling, no cut-off text</span></div>
+    <div class="ci"><div class="cb"></div><span>Business name, phone, and address are spelled exactly as they appear on Google Maps</span></div>
+    <div class="ci"><div class="cb"></div><span>Schema markup (LocalBusiness JSON-LD) is in the &lt;head&gt; of the homepage</span></div>
+  </div>
+
+  <h3>Pages required per plan</h3>
+  <table class="tbl">
+    <thead><tr><th>Pages</th><th><span class="tier t-lp">Local Presence</span></th><th><span class="tier t-lm">Lead Machine</span></th><th><span class="tier t-ml">Market Leader</span></th></tr></thead>
+    <tbody>
+      <tr><td>Homepage</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Services overview page</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Individual service pages</td><td>3–5</td><td>5–7</td><td>7–10</td></tr>
+      <tr><td>City landing pages</td><td>3–5</td><td>5–10</td><td>10–20</td></tr>
+      <tr><td>About page</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Contact page</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Blog (for monthly articles)</td><td>—</td><td>✓</td><td>✓</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-note"><div class="callout-icon">ℹ</div><div><strong>Screenshot before you call the client</strong>Always take a screenshot of the finished site on both desktop (1280px wide) and mobile (375px wide) before the preview call. You need to see exactly what the client is about to see — don't assume it looks right.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 6. REVISIONS ══ -->
+<section class="sec" id="revisions">
+  <div class="sec-head">
+    <div class="sec-num">6</div>
+    <div>
+      <h2>Preview &amp; Revisions</h2>
+      <p class="desc">Once the site is built, we show the client a preview, collect feedback, and apply up to 2 rounds of revisions — then get written approval to go live.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Send the preview</div><div class="step-desc">Share the staging URL or a screenshot walkthrough by email. Subject: "Your Lantech Site Preview — [Business Name]." Give the client 48 hours to review, then follow up if you haven't heard back.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Collect all feedback in one batch</div><div class="step-desc">Ask the client to send all feedback in a single email — not in pieces over several days. This keeps the scope of Round 1 clear and prevents endless back-and-forth.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Apply Round 1 revisions</div><div class="step-desc">Fix everything clearly requested: wrong phone numbers, typos, incorrect service names, photo swaps. If a request would change the design direction significantly, confirm with the client before changing. Send updated preview within 48 hours.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Apply Round 2 revisions (if needed)</div><div class="step-desc">Collect and apply a second round. After Round 2, the site is considered approved. Anything else beyond this point is out of scope and billed hourly.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Get written approval before going live</div><div class="step-desc">The client must reply by email confirming approval. "Looks great, go ahead" in an email is sufficient. Do not go live based on a phone call — email confirmation only, always.</div></div></div>
+  </div>
+  <div class="callout callout-warn"><div class="callout-icon">⚠</div><div><strong>2 rounds is the limit — make it clear early</strong>The service agreement covers 2 revision rounds. If a client wants more, remind them politely before starting Round 3 so there are no billing surprises. Say: "We've used both revision rounds included in your plan. I can make these additional changes for $X/hour."</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 7. DEPLOY ══ -->
+<section class="sec" id="deploy">
+  <div class="sec-head">
+    <div class="sec-num">7</div>
+    <div>
+      <h2>Going Live</h2>
+      <p class="desc">After written approval, we upload the site to Hostinger, run a final smoke test, and send the client their handover package. Target: live within 24 hours of approval.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Upload to Hostinger</div><div class="step-desc">Log into Hostinger hPanel → File Manager. Upload all site files to the domain's root folder (usually <code>public_html/</code>). Make sure every HTML file, CSS file, image, and asset is uploaded — not just the homepage.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Run the launch smoke test</div><div class="step-desc">Open the live URL and go through the checklist below. Do this before contacting the client. Do not skip items — launch problems are much harder to fix after the client has already seen the site live.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Send the handover package</div><div class="step-desc">Use the template at <code>clients/templates/05-handover-package.md</code>. Send by email. It includes the live URL, what's included in their plan, how to reach us, and what happens next (monthly work, reports, etc.).</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Update the client folder</div><div class="step-desc">Mark the project as Live in the client tracker. Note the launch date. Move to analytics setup (Section 8) within 24 hours of going live.</div></div></div>
+  </div>
+  <h3>Launch smoke test — check every item</h3>
+  <div class="checklist">
+    <div class="checklist-title">Before You Call It Live</div>
+    <div class="ci"><div class="cb"></div><span>Live URL loads — no 404 page, no blank screen, no "coming soon" placeholder</span></div>
+    <div class="ci"><div class="cb"></div><span>Every navigation link works — click each one</span></div>
+    <div class="ci"><div class="cb"></div><span>Contact form submits — fill it out and confirm it sends</span></div>
+    <div class="ci"><div class="cb"></div><span>Phone number is clickable on mobile</span></div>
+    <div class="ci"><div class="cb"></div><span>Site looks correct on desktop and mobile</span></div>
+    <div class="ci"><div class="cb"></div><span>No browser console errors (right-click the page → Inspect → Console tab)</span></div>
+    <div class="ci"><div class="cb"></div><span>Page titles and meta descriptions are correct on every page</span></div>
+    <div class="ci"><div class="cb"></div><span>All images load — no broken image icons</span></div>
+    <div class="ci"><div class="cb"></div><span>SSL is active — the URL shows https:// and the padlock icon</span></div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ══ 8. ANALYTICS ══ -->
+<section class="sec" id="analytics">
+  <div class="sec-head">
+    <div class="sec-num">8</div>
+    <div>
+      <h2>Setting Up Analytics</h2>
+      <p class="desc">We set up Google Analytics 4 and Google Search Console immediately after go-live. These tools are how we track results and produce monthly reports. Without them, we have no data to show.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Use the client's Google account</div><div class="step-desc">The client must own their own analytics — never set this up under your personal Google account. Ask for access to their account during onboarding. If they already have GA4 or Search Console, ask for Editor access instead of starting fresh.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Set up Google Analytics 4 (GA4)</div><div class="step-desc">Go to analytics.google.com → Create property → enter the business name and website URL. Copy the tracking snippet (it looks like "G-XXXXXXXXXX") and paste it into the &lt;head&gt; of every page on the site.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Set up Google Search Console (GSC)</div><div class="step-desc">Go to search.google.com/search-console → Add property → enter the full site URL. Verify ownership by uploading the HTML verification file Google gives you (place it in the site's root folder on Hostinger), then click Verify.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Link GA4 to Search Console</div><div class="step-desc">In GA4 → Admin → Property settings → Search Console links → Add. This connects the two tools so you can see which search terms are bringing visitors to the site. Takes 48–72 hours to start showing data.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Set up conversion tracking</div><div class="step-desc">In GA4 → Configure → Events → mark "form_submit" and "phone_call_click" as Key Events. This tells GA4 what a lead looks like. Without this, monthly reports can only show visitors — not actual enquiries.</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">Add your Lantech account as Editor</div><div class="step-desc">In both GA4 and Search Console, add your Lantech Google account as an Editor. This gives you access for monthly reporting without needing the client's login every time.</div></div></div>
+    <div class="step"><div class="sn">7</div><div class="step-body"><div class="step-title">Submit the sitemap</div><div class="step-desc">In Search Console → Sitemaps → enter <code>sitemap.xml</code> and submit. This tells Google to crawl all the site's pages. The sitemap file should already be in the site root — if not, create one listing every page URL.</div></div></div>
+  </div>
+  <div class="callout callout-tip"><div class="callout-icon">✓</div><div><strong>GA4 takes 24–48 hours to show data</strong>The dashboard will look empty for the first day or two. That's normal. The first monthly report will cover the full first month — not just the first few days.</div></div>
+</section>
+
+
+<hr>
+
+<!-- ══ 9. POST-LAUNCH ══ -->
+<section class="sec" id="postlaunch">
+  <div class="sec-head">
+    <div class="sec-num">9</div>
+    <div>
+      <h2>30-Day Follow-Up</h2>
+      <p class="desc">At the 30-day mark, we check in with the client, ask for a testimonial, and offer the right upsell if it makes sense. This is also when the first real performance data starts to appear.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Set the reminder on launch day</div><div class="step-desc">When the site goes live, set a calendar reminder for exactly 30 days later. Don't rely on memory — if this follow-up slips, the client feels forgotten.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Pull the first data</div><div class="step-desc">Open GA4 and Search Console. Look for: total visitors in the first 30 days, which search terms the site is appearing for, any form submissions or phone call clicks recorded. Even small numbers are a conversation starter.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Send the check-in email</div><div class="step-desc">Keep it short. Lead with one positive number. Ask how the phone has been. Ask if there's anything they want to adjust on the site. Example: "Your site showed up in Google Search 420 times in the first 30 days — how has the phone been?"</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Ask for a Google review</div><div class="step-desc">Every client gets one review request. Send the Google review link in the same email. Keep it simple: "If you're happy with the work so far, a quick Google review means the world to us — here's the link." Don't push — one ask only.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Offer the upsell if it makes sense</div><div class="step-desc">If the client is on Local Presence and the site is performing, mention Lead Machine. If they're on Lead Machine and seeing traction, mention Market Leader. Only offer if it genuinely makes sense — don't upsell just to upsell.</div></div></div>
+  </div>
+  <div class="callout callout-note"><div class="callout-icon">ℹ</div><div><strong>You don't need big numbers to make this call worth it</strong>Even "Your site has been indexed and is showing up for 12 different searches" is a meaningful update for someone who had no web presence a month ago. The follow-up is about making them feel looked after — not impressing them with traffic reports.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 10. SEO RETAINER ══ -->
+<section class="sec" id="retainer">
+  <div class="sec-head">
+    <div class="sec-num">10</div>
+    <div>
+      <h2>Monthly SEO Retainer</h2>
+      <p class="desc">This is the ongoing monthly work for clients on Local Presence, Lead Machine, or Market Leader. Each plan has a different scope — always check which plan the client is on before doing anything.</p>
+    </div>
+  </div>
+
+  <h3>What's included per plan</h3>
+  <table class="tbl">
+    <thead><tr><th>Monthly task</th><th><span class="tier t-lp">LP</span></th><th><span class="tier t-lm">LM</span></th><th><span class="tier t-ml">ML</span></th></tr></thead>
+    <tbody>
+      <tr><td>Google Business Profile management</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>GBP posts (updates on their Google profile)</td><td>4/mo</td><td>4/mo</td><td>4/mo</td></tr>
+      <tr><td>Citation audit (checking directory listings for accuracy)</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      <tr><td>Blog articles written for the site</td><td>—</td><td>2/mo</td><td>4/mo</td></tr>
+      <tr><td>Link building (getting other sites to link to the client)</td><td>—</td><td>Up to 4/mo</td><td>5–8/mo</td></tr>
+      <tr><td>Competitor monitoring</td><td>—</td><td>✓</td><td>✓</td></tr>
+      <tr><td>LSA (Google Local Services Ads) management</td><td>—</td><td>—</td><td>✓</td></tr>
+      <tr><td>Site pages added monthly</td><td>—</td><td>—</td><td>2/mo</td></tr>
+      <tr><td>Strategy call</td><td>—</td><td>—</td><td>1/mo</td></tr>
+      <tr><td>Monthly performance report</td><td>✓</td><td>✓</td><td>✓</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Week-by-week workflow</h3>
+  <div class="steps">
+    <div class="step"><div class="sn">W1</div><div class="step-body"><div class="step-title">GBP check and post</div><div class="step-desc">Log into the client's Google Business Profile. Check for unanswered reviews (respond to all of them). Post 1 GBP update this week — a seasonal tip, a job spotlight, a service callout, or a recent photo. All plans.</div></div></div>
+    <div class="step"><div class="sn">W2</div><div class="step-body"><div class="step-title">Write first article <span class="tier t-lm">LM</span> <span class="tier t-ml">ML</span></div><div class="step-desc">Pick the target keyword (from the keyword map), write 800–1,200 words, include an image, add internal links to service pages. Publish to the client's blog. Market Leader clients also get a second article this month — write it in Week 4.</div></div></div>
+    <div class="step"><div class="sn">W2</div><div class="step-body"><div class="step-title">Citation audit</div><div class="step-desc">Check the client's name, phone, and address on the top 10 directories: Google, Yelp, Facebook, BBB, Angi, HomeAdvisor, Thumbtack, Yellow Pages, Foursquare, Apple Maps. Fix any that are wrong or outdated.</div></div></div>
+    <div class="step"><div class="sn">W3</div><div class="step-body"><div class="step-title">Link building <span class="tier t-lm">LM</span> <span class="tier t-ml">ML</span></div><div class="step-desc">Submit the client to local directories, industry listing sites, and relevant local websites. Aim for quality placements where the business name, website, and phone appear consistently. Local Presence plan: skip this step.</div></div></div>
+    <div class="step"><div class="sn">W3</div><div class="step-body"><div class="step-title">LSA lead review <span class="tier t-ml">ML</span></div><div class="step-desc">Log into the client's LSA dashboard. Review all leads from the past week. Dispute any that don't qualify (see LSA Setup section below for the rules). Report lead count and spend to the client this week.</div></div></div>
+    <div class="step"><div class="sn">W4</div><div class="step-body"><div class="step-title">Competitor check <span class="tier t-lm">LM</span> <span class="tier t-ml">ML</span></div><div class="step-desc">Search the client's top 2–3 keywords on Google. Note who's ranking above them and what those competitors are doing differently (more reviews, newer content, more pages, better GBP). Flag anything worth acting on.</div></div></div>
+    <div class="step"><div class="sn">W4</div><div class="step-body"><div class="step-title">Second GBP post, data pull, and monthly report</div><div class="step-desc">Post the 4th GBP update for the month. Pull GA4 and Search Console data for the full month. Write and send the monthly report (Section 11). All plans.</div></div></div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ══ LSA SETUP ══ -->
+<section class="sec" id="lsa">
+  <div class="sec-head">
+    <div class="sec-num">—</div>
+    <div>
+      <h2>LSA Setup — Market Leader Only</h2>
+      <p class="desc">LSA (Google Local Services Ads) are the ads that appear at the very top of Google with a "Google Guaranteed" badge. This setup is a first-month task for every new Market Leader client.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-warn"><div class="callout-icon">⚠</div><div><strong>The client pays Google directly — this is not part of our fee</strong>LSA ad spend is charged by Google to the client's credit card — it is NOT included in the $3,497/month Lantech fee. Our fee covers the setup and the monthly management. The actual cost per lead (typically $20–80 for home services) is between the client and Google. Always explain this before setting anything up.</div></div>
+
+  <h3>What LSA is (in plain English)</h3>
+  <p>When someone in the client's city searches "plumber near me" or "HVAC repair Tampa," LSA ads appear at the very top of Google — above the regular paid ads, above the map, above everything. Businesses with the green "Google Guaranteed" badge appear here. The client only pays when a verified customer calls through the ad. Google screens out spam calls and wrong numbers — the client can also dispute bad leads inside the dashboard.</p>
+
+  <h3>How to get the client Google Guaranteed (first month only)</h3>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Create or access the client's Google account</div><div class="step-desc">The Google account used for LSA should be the same one tied to their Google Business Profile. If they don't have one, create it with their business email.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Apply at ads.google.com/local-services-ads</div><div class="step-desc">Click "Get started" and select "Local Services Ads." Sign in with the client's Google account. Select their business category (e.g., Plumber, HVAC, Roofer, Electrician, Landscaper).</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Enter the service area and business hours</div><div class="step-desc">Set the cities and zip codes where the client works. Set their hours of availability. These control when and where the ads show up.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Upload the business license</div><div class="step-desc">Google requires proof of a valid business license. Ask the client for a photo or PDF of their current license. Upload it directly in the LSA application portal.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Upload proof of insurance</div><div class="step-desc">Google also requires a current Certificate of Liability Insurance (COI). Ask the client for this document — their insurance agent can provide it. Upload it in the portal. The minimum coverage requirement varies by trade.</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">Pass the background check</div><div class="step-desc">Google runs a background check on the business owner and any employees listed. The client will receive an email from a third-party screener (usually Pinkerton or Evident). Tell the client to watch for this email and complete it within a few days — delays here hold up the whole verification.</div></div></div>
+    <div class="step"><div class="sn">7</div><div class="step-body"><div class="step-title">Set the weekly budget</div><div class="step-desc">Help the client set a realistic starting budget. A safe starting point for most home services trades is $200–400/week. They can adjust it any time in the dashboard. Remind them again: this is their money going to Google — separate from the Lantech fee.</div></div></div>
+    <div class="step"><div class="sn">8</div><div class="step-body"><div class="step-title">Wait for Google to approve</div><div class="step-desc">After all documents are submitted, Google typically takes 3–10 business days to review and approve. The client will get an email when approved. Once live, the "Google Guaranteed" badge appears on their listing.</div></div></div>
+  </div>
+
+  <h3>Ongoing LSA management (every month)</h3>
+  <p>Once live, check the LSA dashboard every week as part of the Week 3 workflow. Look for:</p>
+
+  <table class="tbl">
+    <thead><tr><th>Situation</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Valid lead</strong> — A real customer called about the right service in the right area</td><td>No action. This is what we want. Count it in the monthly report.</td></tr>
+      <tr><td><strong>Wrong number / accidental call</strong></td><td>Dispute it. Google will credit the cost back to the client's account.</td></tr>
+      <tr><td><strong>Service not offered</strong> — They called asking for something the client doesn't do</td><td>Dispute it.</td></tr>
+      <tr><td><strong>Outside service area</strong> — Call came from a city not in the target area</td><td>Dispute it.</td></tr>
+      <tr><td><strong>Spam or robocall</strong></td><td>Dispute it.</td></tr>
+      <tr><td><strong>Budget running out too fast</strong></td><td>Lower the daily cap in the dashboard, or narrow the service area to reduce call volume.</td></tr>
+      <tr><td><strong>Too few leads</strong></td><td>Raise the budget, or expand the service area. Also check that the GBP profile is complete — LSA pulls from it.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-note"><div class="callout-icon">ℹ</div><div><strong>How to dispute a lead</strong>Inside the LSA dashboard → Lead History → find the lead → click "Report a problem" → choose the reason. Google reviews disputes and credits the cost back if approved. Disputes must be filed within 30 days of the lead.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 11. MONTHLY REPORT ══ -->
+<section class="sec" id="report">
+  <div class="sec-head">
+    <div class="sec-num">11</div>
+    <div>
+      <h2>Monthly Report</h2>
+      <p class="desc">Every client on a retainer gets a monthly report — sent in the last week of the month. One key win at the top, real numbers, and specific plans for next month. No fluff.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Pull data from GA4 and Search Console</div><div class="step-desc">Log into both tools. Record: total visitors this month vs. last month, top search terms the site appeared for, how many clicks from Google, and how many form submissions or call clicks were tracked. Take note of any significant changes — up or down.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Pull GBP insights</div><div class="step-desc">In the client's Google Business Profile → Performance. Record: how many people viewed the profile, how many clicked to call, how many asked for directions. This shows local visibility independent of the website.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Pull GHL dashboard data</div><div class="step-desc">Log into the client's GoHighLevel sub-account. Pull: total inbound calls, missed calls, missed call text-back responses, leads in pipeline, review requests sent vs. responded. Note patterns — busiest call days, pipeline conversion rate, review response rate.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Identify the one key win</div><div class="step-desc">Find the single most positive result from the month — a traffic increase, a new keyword ranking, a spike in calls, a citation fixed. Lead the report with this. It sets the tone for everything that follows.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Write the report</div><div class="step-desc">Use the template in <code>clients/active/[slug]/monthly-reports/</code>. Fill every section — no blank fields, no "data pending." If a metric isn't available, explain why briefly. Keep the language plain: "Your site showed up in Google 1,840 times this month" beats "impressions totalled 1,840 across organic channels."</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">List what's planned for next month</div><div class="step-desc">End the report with 3–5 specific actions for next month — not vague things like "continue optimizing." Specific: "Write a blog post targeting 'emergency HVAC repair Tampa'", "Submit to 3 new local directories", "Dispute 2 LSA leads from last week."</div></div></div>
+    <div class="step"><div class="sn">7</div><div class="step-body"><div class="step-title">Send by the last day of the month</div><div class="step-desc">Email subject: "Your Lantech Monthly Report — [Month] [Year]." Send to the client contact on file. Save a copy to <code>clients/active/[slug]/monthly-reports/YYYY-MM-report.md</code>.</div></div></div>
+  </div>
+  <div class="callout callout-warn"><div class="callout-icon">⚠</div><div><strong>No blank fields, ever</strong>A report with empty sections looks worse than no report at all. If you don't have data for a metric, write one sentence explaining why (e.g., "GA4 access was set up mid-month — full data available in next month's report"). Then fix the access issue so it doesn't happen again.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 12. MAINTENANCE ══ -->
+<section class="sec" id="maintenance">
+  <div class="sec-head">
+    <div class="sec-num">12</div>
+    <div>
+      <h2>Site Maintenance — Care Plan</h2>
+      <p class="desc">The Care plan ($120/mo) is for clients who just want their site kept alive — no SEO work, just hosting, security, and occasional content updates. Run these checks once a month for every Care client.</p>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">Monthly Care Checklist</div>
+    <div class="ci"><div class="cb"></div><span>Site loads — visit every page and confirm nothing is broken</span></div>
+    <div class="ci"><div class="cb"></div><span>Broken link check — scan for any 404 errors and fix them</span></div>
+    <div class="ci"><div class="cb"></div><span>Speed check — run a PageSpeed Insights test, note the mobile score</span></div>
+    <div class="ci"><div class="cb"></div><span>Security headers — confirm SSL is still active (padlock in the browser address bar)</span></div>
+    <div class="ci"><div class="cb"></div><span>Contact form — submit a test enquiry and confirm it sends</span></div>
+    <div class="ci"><div class="cb"></div><span>Apply any content updates the client has requested this month (within plan scope)</span></div>
+    <div class="ci"><div class="cb"></div><span>Log all checks and time spent in the maintenance log at <code>clients/active/[slug]/maintenance-log.md</code></span></div>
+    <div class="ci"><div class="cb"></div><span>Send the client a one-line status email: "Your site check for [Month] is done — everything looks good."</span></div>
+  </div>
+
+  <h3>What's in scope vs. out of scope for Care</h3>
+  <table class="tbl">
+    <thead><tr><th>In scope (included)</th><th>Out of scope (extra charge)</th></tr></thead>
+    <tbody>
+      <tr><td>Fixing broken links</td><td>Adding new pages</td></tr>
+      <tr><td>Updating phone numbers, addresses, hours</td><td>Redesigning any section of the site</td></tr>
+      <tr><td>Fixing form errors</td><td>Writing new content</td></tr>
+      <tr><td>Hosting and SSL maintenance</td><td>SEO work of any kind</td></tr>
+      <tr><td>Minor text corrections (typos, old prices)</td><td>Adding new services or sections</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-note"><div class="callout-icon">ℹ</div><div><strong>When a Care client asks for something out of scope</strong>Quote it as an hourly add-on before doing the work. "That's outside the Care plan — I can do it for [time estimate] at our hourly rate of $[rate]. Want me to go ahead?" Always get a yes in writing before starting.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 13. PORTFOLIO ══ -->
+<section class="sec" id="portfolio">
+  <div class="sec-head">
+    <div class="sec-num">13</div>
+    <div>
+      <h2>Portfolio Capture</h2>
+      <p class="desc">After every client launch, we capture the work for our portfolio. This is how we get more clients — prospective clients look at the portfolio before deciding. Treat it as part of the launch process, not an optional extra.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Take screenshots within 48 hours of launch</div><div class="step-desc">Screenshot the homepage on desktop (1280px) and mobile (375px). Also screenshot one interior page (typically the main service page). Save all images to <code>portfolio/[client-slug]/screenshots/</code>.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Write the case study</div><div class="step-desc">Keep it short — 3 to 5 sentences. Cover: what business it is and where, what problem they had (no website, outdated site, no Google presence), what we built, and one result if available (traffic, ranking, or calls). Plain English — no agency jargon.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Add to the Lantech portfolio page</div><div class="step-desc">Create the portfolio entry at <code>portfolio/[client-slug]/index.html</code>. Link it from the main portfolio section on the Lantech website. Include the business name, trade, city, and the best screenshot.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Ask the client for a testimonial</div><div class="step-desc">At the 30-day follow-up (Section 9), ask if they'd be willing to give a short quote about their experience. Even a one-sentence quote is valuable. Add it to the portfolio entry once received.</div></div></div>
+  </div>
+  <div class="callout callout-tip"><div class="callout-icon">✓</div><div><strong>Don't skip this step even when busy</strong>Portfolio entries are our best sales tool. Every new lead looks at the portfolio before agreeing to a call. A portfolio with 10 real examples will close more clients than any amount of cold outreach.</div></div>
+</section>
+
+<hr>
+
+<!-- ══ 14. OFFBOARDING ══ -->
+<section class="sec" id="offboarding">
+  <div class="sec-head">
+    <div class="sec-num">14</div>
+    <div>
+      <h2>When a Client Leaves</h2>
+      <p class="desc">When a client cancels, we handle it professionally. They own their site, their data, and their accounts — we hand everything over cleanly and part on good terms. A graceful exit often leads to a referral.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div class="step-body"><div class="step-title">Confirm the cancellation</div><div class="step-desc">When a client says they want to cancel, ask one question to make sure: "Just to confirm — you'd like to end your plan with 30 days notice starting today. Is that right?" Get a yes in writing before doing anything else.</div></div></div>
+    <div class="step"><div class="sn">2</div><div class="step-body"><div class="step-title">Check for any outstanding balance</div><div class="step-desc">Confirm all invoices are paid before closing the account. If there's an outstanding balance, address it now — do not hand over files while money is still owed.</div></div></div>
+    <div class="step"><div class="sn">3</div><div class="step-body"><div class="step-title">Package and deliver the site files</div><div class="step-desc">Zip all HTML, CSS, image, and asset files for their site. Send the zip file to the client by email. They now own a full copy of everything we built.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="step-body"><div class="step-title">Transfer Google Analytics and Search Console</div><div class="step-desc">In GA4: promote the client to Admin, then remove the Lantech account. In Search Console: add the client as Owner, then remove the Lantech account. Do this in the same email as the file delivery.</div></div></div>
+    <div class="step"><div class="sn">5</div><div class="step-body"><div class="step-title">Transfer hosting access</div><div class="step-desc">If the site is hosted on Hostinger under our account: provide the client with FTP credentials and instructions for downloading the files, or initiate a hosting transfer if they want to stay on the same server. If they're moving to their own host, provide an upload-ready zip and basic instructions.</div></div></div>
+    <div class="step"><div class="sn">6</div><div class="step-body"><div class="step-title">Transfer domain access (if applicable)</div><div class="step-desc">If the domain is registered under our Hostinger or Namecheap account, initiate a domain transfer to the client's registrar account. Send the transfer authorization code. This takes 5–7 business days.</div></div></div>
+    <div class="step"><div class="sn">7</div><div class="step-body"><div class="step-title">Capture the portfolio entry</div><div class="step-desc">Run the Portfolio Capture process (Section 13) if you haven't already. Take screenshots of the live site before any access is removed. The work is done — it belongs in the portfolio regardless of the reason for leaving.</div></div></div>
+    <div class="step"><div class="sn">8</div><div class="step-body"><div class="step-title">Send the goodbye email</div><div class="step-desc">Send a warm, professional closing email. Thank them for the time together. Include all the transfer details in one place. Offer to answer any questions. End with: "If you ever need us again, we're here." This email determines whether they refer us to someone else.</div></div></div>
+    <div class="step"><div class="sn">9</div><div class="step-body"><div class="step-title">Archive the client folder</div><div class="step-desc">Move <code>clients/active/[slug]/</code> to <code>clients/completed/[slug]/</code>. Add a final note to the client file with the cancellation date and reason (if known). Do not delete anything.</div></div></div>
+  </div>
+  <div class="callout callout-tip"><div class="callout-icon">✓</div><div><strong>How you handle the exit matters as much as the work</strong>Most clients who leave do so for budget reasons, not because of bad service. A clean, generous handover keeps the door open for when they come back — and they often do.</div></div>
+</section>
+
+</main>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--surface);border-top:1px solid var(--border);padding:2rem 4.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+  <div>
+    <div style="font-family:'Calistoga',serif;font-size:1rem;color:var(--ink);">Lantech</div>
+    <div style="font-size:.78rem;color:var(--muted);margin-top:.2rem;">Internal Process Guide — for team use only</div>
+  </div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.06em;">lantech016@gmail.com &nbsp;·&nbsp; +63 977 329 3969</div>
+</footer>
+
+</body>
+</html>

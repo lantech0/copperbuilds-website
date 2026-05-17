@@ -1,0 +1,30 @@
+extends: substitution
+message: "Use '%s' instead of '%s' for consistency across all pages."
+link: ''
+level: warning
+ignorecase: false
+swap:
+  'Google My Business': 'Google Business Profile'
+  'google my business': 'Google Business Profile'
+  'GMB listing': 'Google Business Profile listing'
+  'GMB profile': 'Google Business Profile'
+  'web site': 'website'
+  'web-site': 'website'
+  'e-mail': 'email'
+  'E-mail': 'email'
+  'home page': 'homepage'
+  'home-page': 'homepage'
+  'click to call': 'click-to-call'
+  'call to action': 'CTA'
+  'Search Engine Optimization': 'SEO'
+  'search engine optimization': 'SEO'
+  'Search Engine Optimisation': 'SEO'
+  'local search engine optimization': 'local SEO'
+  'pay per click': 'PPC'
+  'pay-per-click': 'PPC'
+  'social media marketing': 'social media'
+  'HVAC company': 'HVAC contractor'
+  'plumbing company': 'plumber'
+  'roofing company': 'roofing contractor'
+  'electrical company': 'electrician'
+  'landscaping company': 'landscaping contractor'

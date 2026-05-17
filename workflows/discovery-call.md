@@ -53,10 +53,10 @@ Then introduce the solution:
 
 Present one recommended package. Don't offer all three at once.
 
-*"For your situation, I'd recommend our [PACKAGE] at $[PRICE]. That includes [KEY INCLUSIONS]. It's a one-time fee — you own the site outright, no monthly fees to us."*
+*"For your situation, I'd recommend our [PLAN] at $[PRICE]/mo. That includes [KEY INCLUSIONS]. It's month-to-month — cancel anytime with 30 days notice, no annual contract."*
 
 **Show the design demo (30 seconds):**
-Before moving to objections, pull up the portfolio demo that matches their trade. The Trade Design Map in `lantech-build/SKILL.md → Trade Design Map` tells you exactly which demo to show for each trade. One sentence:
+Before moving to objections, pull up the portfolio demo that matches their trade. Browse `lantech-website/portfolio/` for the closest trade match. One sentence:
 *"Here's an example of a [trade] site we built — this is the style we'd use for you."*
 Do not show more than one demo. One direction, one demo, move on. Showing options creates doubt.
 
@@ -67,7 +67,7 @@ Do not show more than one demo. One direction, one demo, move on. Showing option
 | "Too expensive" | *"I hear you. Compare it to what [competitor] is making off those [N,NNN] monthly searches — $[PRICE] is one or two jobs you're already losing every month."* |
 | "I'll think about it" | *"Totally fair. What specifically do you want to think over? I want to make sure you have the right information."* — then book a follow-up before hanging up |
 | "I'll do it myself" | *"Most of our clients tried that first. The issue isn't building the site — it's getting it to rank on Google. That's where we add the real value."* |
-| "I don't trust online agencies" | *"That's exactly why we charge one flat fee, you own all the files, and we offer 30 days of free bug fixes after launch. We don't do retainers or monthly fees that lock you in."* |
+| "I don't trust online agencies" | *"That's exactly why we're month-to-month — no annual contracts, cancel with 30 days notice. You pay for results every month. You own all your site files and can move them anywhere. We don't survive on lock-in."* |
 | "I already have a website" | *"I took a look at it. [Specific finding — e.g. 'It's not mobile-friendly' / 'It's missing local schema' / 'It loads in 6 seconds on mobile']. That's costing you Google rankings right now."* |
 | "Not right now" | See follow-up sequence below |
 
