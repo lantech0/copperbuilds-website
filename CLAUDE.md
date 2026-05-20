@@ -214,6 +214,19 @@ IMPORTANT: A page is not done until ALL of these pass:
 - [ ] No console errors on load
 - [ ] Page looks correct on both desktop (1280px) and mobile (375px)
 
+## Wiki Knowledge Base
+
+**Path:** `C:\Users\User\LantechAI\claude-obsidian`
+
+At session start, `workflows/session-start.md` loads `wiki/hot.md` automatically. For deeper context:
+1. Read `wiki/hot.md` first — ~500 words of recent context across all sessions
+2. If more context needed, read `wiki/index.md`
+3. For domain-specific knowledge, read `wiki/<domain>/_index.md`
+
+After every monthly SEO retainer session, run `/save` to file key findings. Knowledge compounds across all clients.
+
+---
+
 ## Relevant Skills
 - `frontend-design` — invoke before any frontend work (every session, no exceptions)
 - `anti-ai-design` — **invoke before any brand or design work** — universal anti-pattern reference; works alongside DESIGN.md

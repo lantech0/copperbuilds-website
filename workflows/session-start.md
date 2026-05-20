@@ -7,6 +7,12 @@
 
 ## Steps
 
+### Step 0 — Load Wiki Context
+
+Read `C:\Users\User\LantechAI\claude-obsidian\wiki\hot.md` — this is the persistent knowledge base hot cache (~500 words of recent context across all sessions and workstations). Load it silently before building the dashboard. If the file is missing or unreadable, skip and continue.
+
+---
+
 ### Step 1 — Read Active Client Builds
 List all folders in `clients/active/`. For each:
 - Client name and slug

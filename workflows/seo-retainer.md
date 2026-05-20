@@ -345,6 +345,10 @@ In `maintenance-log.md`:
 - [ ] Geo-grid scan run and map added to monthly report
 - [ ] Strategy call agenda prepared (2nd call of the month)
 
+**All tiers — after monthly report is delivered:**
+
+- [ ] Run `/save` — files this month's key findings and patterns as a structured wiki note in the knowledge base (`C:\Users\User\LantechAI\claude-obsidian`). The wiki compounds across all clients — what worked for one HVAC client informs the next.
+
 ---
 
 ## Maintenance Log Format
