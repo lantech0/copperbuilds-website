@@ -20,8 +20,8 @@
     --text-1:       #1C1917;
     --text-2:       #78716C;
     --text-3:       #A8A29E;
-    --accent:       #E8600A;
-    --accent-bg:    rgba(232,96,10,0.08);
+    --accent:       #B87333;
+    --accent-bg:    rgba(184,115,51,0.08);
     --green:        #22C55E;
     --green-bg:     rgba(34,197,94,0.10);
     --amber:        #F59E0B;
@@ -729,8 +729,8 @@
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L4.5 6.5 7 8.5 10 4 11 2"/></svg>
               Total Sessions
             </div>
-            <div class="stat-icon" style="background:rgba(232,96,10,.10)">
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#E8600A" stroke-width="1.5"><path d="M1.5 10L4 6.5 6.5 8.5 9.5 4 11.5 2"/></svg>
+            <div class="stat-icon" style="background:rgba(184,115,51,.10)">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#B87333" stroke-width="1.5"><path d="M1.5 10L4 6.5 6.5 8.5 9.5 4 11.5 2"/></svg>
             </div>
           </div>
           <div class="stat-value">4,218</div>
@@ -799,7 +799,7 @@
             </div>
             <div class="legend">
               <div class="legend-item">
-                <div class="legend-dot" style="background:#E8600A"></div> Sessions
+                <div class="legend-dot" style="background:#B87333"></div> Sessions
               </div>
               <div class="legend-item">
                 <div class="legend-dot" style="background:#22C55E"></div> Organic
@@ -824,7 +824,7 @@
                 <span class="src-name">🔍 Organic Search</span>
                 <span class="src-pct">67.5%</span>
               </div>
-              <div class="src-bar-bg"><div class="src-bar-fill" style="width:67.5%;background:#E8600A"></div></div>
+              <div class="src-bar-bg"><div class="src-bar-fill" style="width:67.5%;background:#B87333"></div></div>
               <div class="src-count">2,847 sessions</div>
             </div>
             <div class="src-row">
@@ -840,7 +840,7 @@
                 <span class="src-name">🔗 Referral</span>
                 <span class="src-pct">8.9%</span>
               </div>
-              <div class="src-bar-bg"><div class="src-bar-fill" style="width:8.9%;background:#C2500A"></div></div>
+              <div class="src-bar-bg"><div class="src-bar-fill" style="width:8.9%;background:#96602A"></div></div>
               <div class="src-count">375 sessions</div>
             </div>
             <div class="src-row">
@@ -1023,18 +1023,18 @@ new Chart(ctx, {
       {
         label: 'Sessions',
         data: sessions,
-        borderColor: '#E8600A',
+        borderColor: '#B87333',
         backgroundColor: (ctx) => {
           const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
-          g.addColorStop(0, 'rgba(232,96,10,0.15)');
-          g.addColorStop(1, 'rgba(232,96,10,0.0)');
+          g.addColorStop(0, 'rgba(184,115,51,0.15)');
+          g.addColorStop(1, 'rgba(184,115,51,0.0)');
           return g;
         },
         fill: true,
         tension: 0.42,
         pointRadius: 0,
         pointHoverRadius: 4,
-        pointHoverBackgroundColor: '#E8600A',
+        pointHoverBackgroundColor: '#B87333',
         pointHoverBorderColor: '#FFFFFF',
         pointHoverBorderWidth: 2,
         borderWidth: 2,

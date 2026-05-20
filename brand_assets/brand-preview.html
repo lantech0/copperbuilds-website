@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CopperBuilds — Brand Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent:          #B87333;
+    --accent-hover:    #96602A;
+    --accent-dim:      #B8733314;
+    --accent-border:   #B8733338;
+    --patina:          #4E9F7D;
+    --patina-hover:    #3D8B6C;
+    --patina-dim:      #4E9F7D14;
+    --patina-border:   #4E9F7D38;
+    --bg:              #FAFAF7;
+    --surface:         #FFFFFF;
+    --elevated:        #F5F0EA;
+    --txt:             #1C1917;
+    --muted:           #78716C;
+    --subtle:          #A8A29E;
+    --border:          #E7E0D8;
+    --shadow-lift:     0 4px 16px rgba(28,25,23,0.10), 0 2px 6px rgba(28,25,23,0.06);
+    --shadow-def:      0 1px 3px rgba(28,25,23,0.08), 0 1px 2px rgba(28,25,23,0.06);
+    --accent-glow:     0 8px 24px rgba(184,115,51,0.22);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--txt); font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.72; padding: 48px 32px; max-width: 900px; margin: 0 auto; }
+  section { margin-bottom: 64px; }
+  h2 { font-family: 'Calistoga', Georgia, serif; font-size: 1.5rem; font-weight: 400; color: var(--txt); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1.5px solid var(--border); }
+  .label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+
+  /* ── Color Palette ── */
+  .palette { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 120px; }
+  .swatch-block { height: 64px; border-radius: 8px; border: 1.5px solid var(--border); margin-bottom: 8px; }
+  .swatch-name { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: var(--txt); display: block; }
+  .swatch-hex  { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--muted); display: block; }
+
+  /* ── Type Scale ── */
+  .type-display  { font-family: 'Calistoga', Georgia, serif; font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 400; line-height: 1.08; margin-bottom: 16px; }
+  .type-headline { font-family: 'Calistoga', Georgia, serif; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.12; margin-bottom: 16px; }
+  .type-title    { font-family: 'DM Sans', sans-serif; font-size: 1.25rem; font-weight: 700; line-height: 1.3; margin-bottom: 16px; }
+  .type-body-lg  { font-family: 'DM Sans', sans-serif; font-size: 1.0625rem; font-weight: 400; line-height: 1.7; margin-bottom: 16px; }
+  .type-body     { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.72; margin-bottom: 16px; }
+  .type-label    { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; }
+
+  /* ── Logo ── */
+  .logo-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-bottom: 24px; }
+  .logo-bg-dark { background: var(--txt); padding: 16px 24px; border-radius: 8px; display: inline-flex; align-items: center; }
+
+  /* ── Buttons ── */
+  .btn-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; padding: 12px 24px; border-radius: 6px; border: none; cursor: pointer; transition: background 0.15s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.15s ease, border-color 0.15s ease; text-decoration: none; display: inline-flex; align-items: center; }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: var(--accent-glow); }
+  .btn-primary:active { transform: translateY(0); box-shadow: none; }
+  .btn-patina { background: var(--patina); color: #fff; }
+  .btn-patina:hover { background: var(--patina-hover); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--txt); border: 1.5px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--accent-border); background: var(--accent-dim); transform: translateY(-2px); }
+
+  /* ── Tags ── */
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; padding: 5px 13px; border-radius: 100px; display: inline-block; }
+  .tag-copper { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); }
+  .tag-patina { background: var(--patina-dim); color: var(--patina); border: 1px solid var(--patina-border); }
+
+  /* ── Cards ── */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 28px; transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease, border-color 0.15s ease; }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); border-color: var(--accent-border); }
+  .card-icon { width: 40px; height: 40px; background: var(--accent-dim); border-radius: 8px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
+  .card-icon svg { width: 20px; height: 20px; }
+  .card h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── Tagline strip ── */
+  .tagline-strip { background: var(--accent); color: #fff; padding: 24px 32px; border-radius: 12px; margin-top: 32px; }
+  .tagline-strip p { font-family: 'Calistoga', Georgia, serif; font-size: 1.5rem; font-weight: 400; line-height: 1.3; }
+  .tagline-strip span { color: var(--bg); opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<!-- ── LOGO ── -->
+<section>
+  <h2>Logo</h2>
+  <span class="label">Light background</span>
+  <div class="logo-row">
+    <img src="logo.svg" height="44" alt="CopperBuilds">
+    <img src="logo.svg" height="32" alt="CopperBuilds">
+    <img src="logo.svg" height="24" alt="CopperBuilds">
+  </div>
+  <span class="label" style="margin-top:24px;">Dark background</span>
+  <div class="logo-bg-dark" style="margin-top:8px; gap:24px; flex-wrap:wrap; display:inline-flex;">
+    <img src="logo-dark.svg" height="44" alt="CopperBuilds dark">
+    <img src="logo-dark.svg" height="32" alt="CopperBuilds dark">
+    <img src="logo-dark.svg" height="24" alt="CopperBuilds dark">
+  </div>
+  <div style="margin-top:24px;">
+    <span class="label">Mark only</span>
+    <div style="display:flex; gap:20px; align-items:center; margin-top:8px; flex-wrap:wrap;">
+      <img src="logo-mark.svg" height="48" alt="CopperBuilds mark">
+      <img src="logo-mark.svg" height="32" alt="CopperBuilds mark">
+      <img src="logo-mark.svg" height="24" alt="CopperBuilds mark">
+      <img src="logo-mark.svg" height="16" alt="CopperBuilds mark">
+    </div>
+  </div>
+</section>
+
+<!-- ── COLOR PALETTE ── -->
+<section>
+  <h2>Color Palette</h2>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-block" style="background:#B87333;"></div>
+      <span class="swatch-name">Fresh Copper</span>
+      <span class="swatch-hex">#B87333</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#96602A;"></div>
+      <span class="swatch-name">Copper Hover</span>
+      <span class="swatch-hex">#96602A</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#B8733314; border:1.5px solid #B8733338;"></div>
+      <span class="swatch-name">Copper Dim</span>
+      <span class="swatch-hex">#B8733314</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#4E9F7D;"></div>
+      <span class="swatch-name">Aged Patina</span>
+      <span class="swatch-hex">#4E9F7D</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#3D8B6C;"></div>
+      <span class="swatch-name">Patina Hover</span>
+      <span class="swatch-hex">#3D8B6C</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#4E9F7D14; border:1.5px solid #4E9F7D38;"></div>
+      <span class="swatch-name">Patina Dim</span>
+      <span class="swatch-hex">#4E9F7D14</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FAFAF7;"></div>
+      <span class="swatch-name">Morning Parchment</span>
+      <span class="swatch-hex">#FAFAF7</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#FFFFFF;"></div>
+      <span class="swatch-name">Clean Canvas</span>
+      <span class="swatch-hex">#FFFFFF</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#1C1917;"></div>
+      <span class="swatch-name">Warm Ink</span>
+      <span class="swatch-hex">#1C1917</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#78716C;"></div>
+      <span class="swatch-name">River Stone</span>
+      <span class="swatch-hex">#78716C</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-block" style="background:#E7E0D8;"></div>
+      <span class="swatch-name">Parchment Edge</span>
+      <span class="swatch-hex">#E7E0D8</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── TYPE SCALE ── -->
+<section>
+  <h2>Type Scale</h2>
+  <span class="label">Display — Calistoga 400</span>
+  <p class="type-display">Built for the trades.</p>
+  <span class="label">Headline — Calistoga 400</span>
+  <p class="type-headline">Wired for leads.</p>
+  <span class="label">Title — DM Sans 700</span>
+  <p class="type-title">Your website. Live in 14 days.</p>
+  <span class="label">Body Large — DM Sans 400</span>
+  <p class="type-body-lg">Contractors in your area are losing jobs to competitors with better websites. We fix that — fast, without the agency markup.</p>
+  <span class="label">Body — DM Sans 400</span>
+  <p class="type-body">Every trade uses copper. Every contractor deserves a website that works as hard as they do.</p>
+  <span class="label">Label — JetBrains Mono 500</span>
+  <p class="type-label" style="color:var(--accent);">Live in 14 days · No contracts · Built for trades</p>
+</section>
+
+<!-- ── BUTTONS ── -->
+<section>
+  <h2>Buttons</h2>
+  <div class="btn-row">
+    <a href="#" class="btn btn-primary">Get My Free Quote</a>
+    <a href="#" class="btn btn-patina">See Our Work</a>
+    <a href="#" class="btn btn-ghost">Learn More</a>
+  </div>
+</section>
+
+<!-- ── TAGS ── -->
+<section>
+  <h2>Tags</h2>
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <span class="tag tag-copper">HVAC</span>
+    <span class="tag tag-copper">Plumbing</span>
+    <span class="tag tag-copper">Electrical</span>
+    <span class="tag tag-patina">14-Day Delivery</span>
+    <span class="tag tag-patina">Lead Machine</span>
+    <span class="tag tag-patina">No Contracts</span>
+  </div>
+</section>
+
+<!-- ── CARDS ── -->
+<section>
+  <h2>Cards</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">
+        <!-- Pipe elbow icon (copper) -->
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 10 3 A 7 7 0 1 0 10 17" stroke="#B87333" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="10" cy="3" r="1.5" fill="#4E9F7D"/>
+          <circle cx="10" cy="17" r="1.5" fill="#4E9F7D"/>
+        </svg>
+      </div>
+      <span class="tag tag-copper" style="margin-bottom:12px;">HVAC</span>
+      <h3>Built for HVAC Contractors</h3>
+      <p>Rank in every city you serve. Never miss a seasonal rush again.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--patina-dim);">
+        <!-- Lightning bolt (electrical) -->
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 2L4 11h6l-1 7 7-9h-6l1-7z" stroke="#4E9F7D" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="tag tag-patina" style="margin-bottom:12px;">Electrical</span>
+      <h3>Wired for Leads</h3>
+      <p>Every page built to convert. Every search a potential job.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <!-- Wrench (plumbing/general) -->
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5 3a3.5 3.5 0 00-3.4 4.3L3.3 15a1.5 1.5 0 002.1 2.1l7.7-7.8A3.5 3.5 0 1014.5 3z" stroke="#B87333" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="tag tag-copper" style="margin-bottom:12px;">Plumbing</span>
+      <h3>Live in 14 Days</h3>
+      <p>Professional site, custom to your trade. No templates, no fluff.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TAGLINE STRIP ── -->
+<section>
+  <h2>Brand Voice</h2>
+  <div class="tagline-strip">
+    <p>Built for the trades. <span>Wired for leads.</span></p>
+  </div>
+  <div style="margin-top:16px; background:var(--txt); color:#fff; padding:24px 32px; border-radius:12px;">
+    <img src="logo-dark.svg" height="36" alt="CopperBuilds" style="display:block; margin-bottom:16px;">
+    <p style="color:var(--muted); font-size:0.875rem;">copperbuilds.com · Built for small businesses. Not enterprise.</p>
+  </div>
+</section>
+
+</body>
+</html>

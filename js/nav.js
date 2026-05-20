@@ -19,8 +19,8 @@
 
   var navHTML = '<nav id="main-nav" aria-label="Main navigation" style="position:sticky;top:0;z-index:50;height:64px;background:rgba(250,250,247,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);">'
     + '<div class="container" style="display:flex;align-items:center;justify-content:space-between;height:100%;">'
-      + '<a href="/index.html" aria-label="Lantech — go to homepage" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">'
-        + '<img src="/brand_assets/lantech-logo-new-light.png" alt="Lantech" width="89" height="32" style="display:block;">'
+      + '<a href="/index.html" aria-label="CopperBuilds — go to homepage" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">'
+        + '<img src="/brand_assets/logo.svg" alt="CopperBuilds" height="36" style="display:block;">'
       + '</a>'
       + '<div id="nav-links" style="display:flex;align-items:center;gap:2rem;">'
         + link('/services.html', 'Services')
