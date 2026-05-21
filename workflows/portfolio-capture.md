@@ -1,4 +1,4 @@
-# Workflow: Portfolio Capture → Case Study → Update Portfolio Page
+﻿# Workflow: Portfolio Capture → Case Study → Update Portfolio Page
 
 **Triggered by:** `workflows/deploy.md` (at launch) and `workflows/post-launch.md` (at 30 days)
 
@@ -12,13 +12,13 @@ Capture the completed client site as a portfolio entry — screenshot, write the
 
 ## Step 1 — Screenshot the Live Site
 
-1. Navigate to `lantech-website/` (the Lantech workstation)
+1. Navigate to `copperbuilds/` (the Lantech workstation)
 2. Take full-page screenshots of the client's live site at 1280px and 375px:
    ```
    node screenshot.mjs https://[CLIENT_DOMAIN] desktop
    node screenshot.mjs https://[CLIENT_DOMAIN] mobile
    ```
-3. Save screenshots to: `lantech-website/portfolio/[client-slug]/`
+3. Save screenshots to: `copperbuilds/portfolio/[client-slug]/`
    - `desktop-homepage.png`
    - `mobile-homepage.png`
    - Screenshot additional pages if they're visually strong
@@ -64,13 +64,13 @@ Format:
 [Screenshot embed]
 ```
 
-Save to: `lantech-website/portfolio/[client-slug]/case-study.md`
+Save to: `copperbuilds/portfolio/[client-slug]/case-study.md`
 
 ---
 
 ## Step 4 — Add to Lantech Portfolio Page
 
-1. Open `lantech-website/portfolio.html` (or the portfolio section of `index.html` if not a separate page)
+1. Open `copperbuilds/portfolio.html` (or the portfolio section of `index.html` if not a separate page)
 2. Add the new case study entry following the existing card format
 3. Link to the live site and embed the desktop screenshot
 4. Run the build → screenshot → QA process for the portfolio page before considering this done

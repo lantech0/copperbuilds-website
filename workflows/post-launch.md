@@ -1,4 +1,4 @@
-# Workflow: Post-Launch Follow-Up
+﻿# Workflow: Post-Launch Follow-Up
 
 **Triggered by:** 30-day calendar reminder set in `workflows/deploy.md`
 **Templates used:** `clients/templates/09-post-launch-emails.md`
@@ -26,7 +26,7 @@ Check in at the 30-day mark, close out the support window, collect a testimonial
 If the client confirms everything is working well in their reply:
 - Send the **testimonial request email** from `09-post-launch-emails.md` in the same thread or as a follow-up within 24 hours
 - Save any testimonial they provide to `clients/completed/[slug]/TESTIMONIAL.md`
-- Copy it to `lantech-website/brand_assets/testimonials.md` (create if it doesn't exist) so it's available for the Lantech site
+- Copy it to `copperbuilds/brand_assets/testimonials.md` (create if it doesn't exist) so it's available for the Lantech site
 
 ---
 

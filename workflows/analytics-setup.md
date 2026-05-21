@@ -218,6 +218,43 @@ In `clients/templates/05-handover-package.md`, confirm these fields are filled:
 
 ---
 
+## Part D — GBP Instant Verification via GSC
+
+**When to run:** Immediately after GSC ownership is verified (Part B, Step B2). If the same Google Account owns both the GSC property and the GBP listing, Google can verify the GBP in seconds — no postcard, no phone call, no DNS record.
+
+### Why This Works
+
+Google trusts the GSC ownership signal. If `lantech016@gmail.com` is a verified GSC owner for `https://[clientdomain].com` and the same account manages the GBP listing, Google confirms the business controls the domain and approves GBP verification instantly.
+
+**Prerequisite:** The GBP listing must be claimed and managed under the same Google Account used for GSC (`lantech016@gmail.com` for CopperBuilds-managed clients). If the client manages their own GBP under a different account, this method doesn't apply — use postcard or phone verification instead.
+
+### Steps
+
+1. **Verify the domain in GSC first** (Part B, Steps B1–B2) — GSC ownership must be confirmed before GBP will accept it as a verification signal
+2. **Open GBP** — go to [business.google.com](https://business.google.com), sign in with `lantech016@gmail.com`
+3. **Start the verification flow** for the listing → when prompted for a verification method, look for **"Google Search Console"** or **"Instant Verification"** as an option
+   - This option only appears if: (a) you're signed in with the same Google Account that owns the GSC property, and (b) the website URL on the GBP listing matches the verified GSC property exactly
+4. **Select it** — Google cross-checks the GSC ownership record and approves verification immediately (no waiting period)
+5. **Confirm** — the GBP listing status changes to "Verified" within seconds. Screenshot the verified state and note it in `LAUNCH-SUMMARY.md`
+
+### If the Instant Verification Option Doesn't Appear
+
+Check these in order:
+- GBP listing URL and GSC property URL must match exactly (both `https://`, consistent trailing slash)
+- Both must be the same Google Account — not two accounts associated with the same business
+- The GSC property must be a URL-prefix property, not a Domain property — Domain-type properties don't trigger the instant verification signal in GBP
+- If all checks pass and the option still doesn't appear: fall back to phone or postcard verification
+
+### Log It
+
+Add to `LAUNCH-SUMMARY.md`:
+```
+GBP verification method: GSC instant verification (same Google Account)
+GBP verified: yes — [date]
+```
+
+---
+
 ## Required Outputs Before Considering Analytics Setup Done
 
 - [ ] GA4 property created — Measurement ID saved to `LAUNCH-SUMMARY.md`

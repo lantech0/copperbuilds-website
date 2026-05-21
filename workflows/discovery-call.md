@@ -1,4 +1,4 @@
-# Workflow: Discovery Call → Close
+﻿# Workflow: Discovery Call → Close
 
 **Triggered by:** A prospect replies to outreach and agrees to a call (from `workflows/prospect.md`)
 **Template used:** `clients/templates/07-discovery-call-script.md`
@@ -56,7 +56,7 @@ Present one recommended package. Don't offer all three at once.
 *"For your situation, I'd recommend our [PLAN] at $[PRICE]/mo. That includes [KEY INCLUSIONS]. It's month-to-month — cancel anytime with 30 days notice, no annual contract."*
 
 **Show the design demo (30 seconds):**
-Before moving to objections, pull up the portfolio demo that matches their trade. Browse `lantech-website/portfolio/` for the closest trade match. One sentence:
+Before moving to objections, pull up the portfolio demo that matches their trade. Browse `copperbuilds/portfolio/` for the closest trade match. One sentence:
 *"Here's an example of a [trade] site we built — this is the style we'd use for you."*
 Do not show more than one demo. One direction, one demo, move on. Showing options creates doubt.
 

@@ -2,55 +2,185 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { background: transparent; }
+  body { background: #FAFAF7; font-family: 'DM Sans', sans-serif; padding: 56px; display: flex; flex-direction: column; gap: 56px; }
 
-  .wrap {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-    gap: 0;
+  .label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #78716C; margin-bottom: 18px;
   }
 
-  .wordmark {
+  /* ── Logo lockup ── */
+  .logo { display: inline-flex; align-items: center; gap: 12px; }
+
+  .wordmark { display: flex; align-items: baseline; line-height: 1; }
+
+  .copper {
     font-family: 'Calistoga', Georgia, serif;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-  }
-
-  .part-lan {
-    color: #1C1917;
-  }
-
-  .part-tech {
     color: #B87333;
+    letter-spacing: -0.01em;
+  }
+  .builds {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-weight: 700;
+    color: #4E9F7D;
+    letter-spacing: -0.03em;
   }
 
-  /* Underline sits only under "Lan" — inline so bounding box includes it */
-  .lan-wrap {
-    display: inline-block;
-    border-bottom: 4px solid #B87333;
-    padding-bottom: 0px;
-    line-height: 1;
-  }
+  /* ── Slabs ── */
+  .slab { padding: 32px 40px; border-radius: 12px; display: inline-block; }
+  .light { border: 1px solid #E7E0D8; background: #FAFAF7; }
+  .dark  { background: #1C1917; }
 
-  /* White variant — for dark backgrounds */
-  body.white .part-lan { color: #FAFAF7; }
-  body.white .part-tech { color: #B87333; }
-  body.white .lan-wrap { border-bottom-color: #B87333; }
+  .dark .copper { color: #B87333; }
+  .dark .builds { color: #4E9F7D; }
 </style>
 </head>
 <body>
-  <div class="wrap" id="logo">
-    <div class="wordmark">
-      <span class="lan-wrap"><span class="part-lan">Lan</span></span><span class="part-tech">tech</span>
+
+<!-- ═══ PRIMARY — LIGHT ═══════════════════════════ -->
+<div>
+  <div class="label">Primary — Light</div>
+  <div class="slab light">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="38" height="40" aria-hidden="true">
+        <!-- Body -->
+        <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+        <!-- Roof -->
+        <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+        <!-- Door (arched) -->
+        <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+        <!-- Signal dot at peak -->
+        <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+        <!-- Signal arc 1 -->
+        <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <!-- Signal arc 2 -->
+        <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="wordmark">
+        <span class="copper" style="font-size:28px">Copper</span><span class="builds" style="font-size:28px">Builds</span>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- ═══ REVERSED — DARK ════════════════════════════ -->
+<div>
+  <div class="label">Reversed — Dark Background</div>
+  <div class="slab dark">
+    <div class="logo dark">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="38" height="40" aria-hidden="true">
+        <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+        <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+        <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#1C1917"/>
+        <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+        <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="wordmark">
+        <span class="copper" style="font-size:28px">Copper</span><span class="builds" style="font-size:28px">Builds</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MARK — SIZES ═══════════════════════════════ -->
+<div>
+  <div class="label">Mark — Sizes (80 / 48 / 32 / 20px)</div>
+  <div style="display:flex;gap:32px;align-items:flex-end;">
+    <!-- 80px -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="80" height="84" aria-label="CopperBuilds mark">
+      <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+      <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+      <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+      <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+      <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </svg>
+    <!-- 48px -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="48" height="51" aria-label="CopperBuilds mark">
+      <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+      <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+      <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+      <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+      <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </svg>
+    <!-- 32px -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="32" height="34" aria-label="CopperBuilds mark">
+      <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+      <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+      <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+      <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+      <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </svg>
+    <!-- 20px -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="20" height="21" aria-label="CopperBuilds mark">
+      <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+      <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+      <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+      <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+      <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══ LOCKUP — SIZES ════════════════════════════ -->
+<div>
+  <div class="label">Lockup — Sizes</div>
+  <div style="display:flex;flex-direction:column;gap:24px;align-items:flex-start;">
+
+    <!-- Nav (18px) -->
+    <div class="logo" style="gap:8px">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="22" height="23" aria-hidden="true">
+        <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+        <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+        <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+        <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+        <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="wordmark">
+        <span class="copper" style="font-size:18px">Copper</span><span class="builds" style="font-size:18px">Builds</span>
+      </div>
+    </div>
+
+    <!-- Standard (28px) -->
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="38" height="40" aria-hidden="true">
+        <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+        <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+        <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+        <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+        <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="wordmark">
+        <span class="copper" style="font-size:28px">Copper</span><span class="builds" style="font-size:28px">Builds</span>
+      </div>
+    </div>
+
+    <!-- Hero (42px) -->
+    <div class="logo" style="gap:14px">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 40" width="52" height="55" aria-hidden="true">
+        <rect x="3" y="26" width="32" height="14" rx="1" fill="#B87333"/>
+        <polygon points="19,13 38,26 0,26" fill="#B87333"/>
+        <path d="M 14 40 L 14 31 A 5 5 0 0 1 24 31 L 24 40 Z" fill="#FAFAF7"/>
+        <circle cx="19" cy="13" r="2.2" fill="#4E9F7D"/>
+        <path d="M 14.9 9.5 A 5.5 5.5 0 0 1 23.1 9.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M 11.4 6.5 A 9.5 9.5 0 0 1 26.6 6.5" stroke="#4E9F7D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="wordmark">
+        <span class="copper" style="font-size:42px">Copper</span><span class="builds" style="font-size:42px">Builds</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>

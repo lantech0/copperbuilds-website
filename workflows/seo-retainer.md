@@ -93,6 +93,7 @@ Work through these steps in order. Log completion of each in `maintenance-log.md
 
 - [ ] **Confirm the client has a Google account** — they need one to access the LSA dashboard. Help them create one if not.
 - [ ] **Verify GBP is linked, verified, and in good standing** — a suspended or unverified GBP pauses all LSA ad delivery immediately. Fix any GBP issues before starting the LSA application.
+  - **Fast path:** if the GBP listing and GSC property are both under the same Google Account, use GSC instant verification — no postcard or phone call needed. Full steps in `workflows/analytics-setup.md` Part D.
 - [ ] **Open the LSA application** — go to `ads.google.com/localservices` and start the setup for the client's business.
 - [ ] **Select the correct business category** — choose the primary trade (Plumber, HVAC Technician, Electrician, Roofer, Landscaper, etc.). The category determines which verification documents Google requires.
 - [ ] **Upload the business license** — a copy of the contractor's active state or local trade license. The name on the license must match the business name exactly.

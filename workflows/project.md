@@ -1,7 +1,7 @@
-# Workflow: /project — New Client Project Intake
+﻿# Workflow: /project — New Client Project Intake
 
 **Triggered by:** Lead closes on a discovery call (`workflows/discovery-call.md`)
-**Skill:** Run as `/project "[Business Name]"` from the lantech-website workstation
+**Skill:** Run as `/project "[Business Name]"` from the copperbuilds workstation
 **Handoff to:** `workflows/revisions.md` after build is complete
 
 ---
@@ -130,7 +130,7 @@ When the completed questionnaire arrives:
    - Generate internal links using the SEO strategy in that same spec
    - Leave `WEB3FORMS_KEY=` blank — collected after account setup
 4. **Populate `styles/Client/Vocab.yml` for Vale:**
-   - Copy `clients/templates/vale-vocab-template.yml` to `lantech-website/styles/Client/Vocab.yml`
+   - Copy `clients/templates/vale-vocab-template.yml` to `copperbuilds/styles/Client/Vocab.yml`
    - Fill the `tokens:` list with banned/off-brand terms from the client's brief and brand voice:
      - Competitor names (if client doesn't want them in copy)
      - Outdated service names or old brand names

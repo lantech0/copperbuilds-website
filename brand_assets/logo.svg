@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 36" height="36" width="210" role="img" aria-label="CopperBuilds">
-  <!-- Circuit node at chimney top — signals digital/web -->
-  <circle cx="15" cy="4" r="2.5" fill="#4E9F7D"/>
-  <!-- Chimney -->
-  <rect x="12" y="6" width="6" height="10" fill="#B87333"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" height="40" width="220" role="img" aria-label="CopperBuilds">
+  <!-- Signal node (digital / web) -->
+  <circle cx="17" cy="5" r="3" fill="#4E9F7D"/>
+  <!-- Connector -->
+  <line x1="17" y1="8" x2="17" y2="14" stroke="#4E9F7D" stroke-width="1.5" stroke-linecap="round"/>
   <!-- Roof -->
-  <polygon points="18,12 31,22 5,22" fill="#B87333"/>
-  <!-- House body -->
-  <rect x="7" y="22" width="22" height="12" fill="#B87333"/>
-  <!-- Door cutout -->
-  <rect x="14" y="25" width="8" height="9" fill="white"/>
-  <!-- Wordmark -->
-  <text x="40" y="28" font-family="Calistoga,Georgia,serif" font-size="25" font-weight="400" fill="#B87333">Copper</text>
-  <text x="130" y="28" font-family="'DM Sans',Arial,sans-serif" font-size="25" font-weight="700" fill="#4E9F7D">Builds</text>
+  <polygon points="17,14 34,26 0,26" fill="#B87333"/>
+  <!-- Body -->
+  <rect x="3" y="26" width="28" height="14" fill="#B87333"/>
+  <!-- Arched door -->
+  <path d="M 11 40 L 11 33 A 6 6 0 0 1 23 33 L 23 40 Z" fill="#FAFAF7"/>
+  <!-- Wordmark — fonts loaded by parent page CSS -->
+  <text x="44" y="30" font-family="Calistoga,Georgia,serif" font-size="26" font-weight="400" fill="#B87333">Copper</text>
+  <text x="151" y="30" font-family="'DM Sans',Arial,sans-serif" font-size="26" font-weight="700" fill="#4E9F7D">Builds</text>
 </svg>

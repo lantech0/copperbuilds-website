@@ -1,4 +1,4 @@
-# Workflow: copywriting — Standalone Marketing Copy Production
+﻿# Workflow: copywriting — Standalone Marketing Copy Production
 
 **Triggered by:** Any copy-only request — service page, landing page, homepage section, about page, CTA block, or hero copy — when HTML building is NOT the immediate next step.
 **Handoff to:** `workflows/client-build-standards.md` (or `workflows/project.md`) when copy is approved and HTML build begins.
@@ -134,16 +134,16 @@ BODY: [paragraph(s)]
 Run Vale on the draft copy:
 
 ```powershell
-vale --config="C:\Users\User\LantechAI\lantech-website\.vale.ini" --input [paste copy or point to .tmp file]
+vale --config="C:\Users\User\LantechAI\copperbuilds\.vale.ini" --input [paste copy or point to .tmp file]
 ```
 
 If the copy draft is in a `.tmp/` file:
 ```powershell
-vale --config="C:\Users\User\LantechAI\lantech-website\.vale.ini" "lantech-website/.tmp/copy-[slug]-[page].txt"
+vale --config="C:\Users\User\LantechAI\copperbuilds\.vale.ini" "copperbuilds/.tmp/copy-[slug]-[page].txt"
 ```
 
 **Save the draft to `.tmp/` first if it isn't already:**
-Write the copy to `lantech-website/.tmp/copy-[slug]-[page].txt` (e.g., `.tmp/copy-joes-plumbing-services.txt`) before running Vale.
+Write the copy to `copperbuilds/.tmp/copy-[slug]-[page].txt` (e.g., `.tmp/copy-joes-plumbing-services.txt`) before running Vale.
 
 **Fix every error before proceeding.** Warnings require judgment:
 - Classify each warning as genuine fix or false positive in context
@@ -214,7 +214,7 @@ Derive from the client brief (service + location + most common transactional que
 Start at Layer 3A — run Vale on their draft first, then Layer 3B. State at the top: "Client draft received — running quality gates only, not writing from scratch." If the client draft requires heavy revision, flag it before editing extensively.
 
 **Vale is not installed or fails:**
-Run `winget install --id errata-ai.Vale` then `vale sync` from `lantech-website/`. If still failing, run the Layer 3B manual checklist manually and note: "Vale gate skipped — tool unavailable; manual checklist run instead."
+Run `winget install --id errata-ai.Vale` then `vale sync` from `copperbuilds/`. If still failing, run the Layer 3B manual checklist manually and note: "Vale gate skipped — tool unavailable; manual checklist run instead."
 
 **Copy is for an unfamiliar trade or sector:**
 Read the relevant trade section in `memory/research_home_services_marketing.md`. If the trade isn't in memory, run `/deep-research [trade] local marketing buyer psychology` before drafting.

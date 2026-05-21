@@ -1,11 +1,11 @@
-# CLAUDE.md — Lantech Agency Website
+# CLAUDE.md — CopperBuilds Agency Website
 
 ## Session Start — Run This First
 **On the first message of every session, before responding to anything else:**
 Run `workflows/session-start.md` — read client and prospect files, check page rebuild status, then display the session dashboard. Do this automatically. Do not wait to be asked.
 
 ## Workstation Purpose
-Building and maintaining the **Lantech** web agency website targeting small local businesses.
+Building and maintaining the **CopperBuilds** web agency website targeting small local businesses.
 Stack: Static HTML/CSS/JS · Hosted on Hostinger · `serve.mjs` dev server at localhost:3000
 
 ## WAT Workflows
@@ -82,22 +82,23 @@ This is the correct process for rebuilding any page — Lantech site and all cli
 - Reading old HTML for content reference is fine. Jumping to code without the framework is not.
 
 ## Brand
-- **Name:** Lantech
-- **Archetype:** Friend (primary) · Rebel (secondary) — warm, on the client's side, quietly angry at agency overcharging
+- **Name:** CopperBuilds
+- **Archetype:** Friend (primary) · Craftsman (secondary) — warm, on the client's side, built with care
 - **Style:** Clean editorial · Light mode · Warm tones · Anti-corporate
-- **Colors (NEW — erase all old tokens):**
+- **Colors:**
   - `--bg: #FAFAF7` (warm off-white background)
   - `--surface: #FFFFFF` (cards)
   - `--txt: #1C1917` (warm near-black)
   - `--muted: #78716C` (warm stone gray)
-  - `--accent: #E8600A` (warm orange — THE Rebel signal)
-  - `--accent-hover: #C2500A`
-  - `--blue: #1D4ED8` (supporting blue for links)
+  - `--copper: #B87333` (copper — primary brand color, headings and logo mark)
+  - `--copper-hover: #9A6129`
+  - `--teal: #4E9F7D` (teal — secondary accent, "Builds" wordmark, CTAs)
   - `--border: #E7E0D8` (warm border)
-- **Fonts (NEW):**
+- **Fonts:**
   - Headings: `Calistoga` (warm editorial serif — NOT Unbounded, NOT Space Grotesk)
   - Body: `DM Sans` (approachable sans — NOT Inter, NOT Plus Jakarta Sans)
   - Mono: `JetBrains Mono` (stats, labels, prices)
+- **Logo:** `brand_assets/logo.svg` — house mark (copper) + wifi arcs (teal) + "Copper" (Calistoga, copper) + "Builds" (DM Sans bold, teal)
 - **Tagline:** "Built for small businesses. Not enterprise." — protect this, use on every page
 - **Pages:** index.html, services.html, about.html, contact.html, blog.html, help.html
 
@@ -141,7 +142,8 @@ This is the correct process for rebuilding any page — Lantech site and all cli
 ### Colors
 - Use ONLY tokens from `DESIGN.md` — never hardcode hex in components
 - Background is `#FAFAF7` — NOT dark, NOT pure white
-- Accent is `#E8600A` orange — NEVER cyan, NEVER purple, NEVER blue-600 as primary
+- Primary is `#B87333` copper — NEVER pure orange, NEVER cyan, NEVER purple
+- Secondary is `#4E9F7D` teal — for CTAs, highlights, "Builds" wordmark
 - Shadows are warm-tinted `rgba(28,25,23,...)` at max 0.12 alpha — never cold black shadows
 
 ### Typography
@@ -190,7 +192,7 @@ IMPORTANT: A page is not done until ALL of these pass:
 
 **Visual (run after every screenshot round):**
 - [ ] Background is `#FAFAF7` — NOT dark, NOT pure white
-- [ ] Accent is `#E8600A` — no cyan, no purple anywhere on page
+- [ ] Primary is `#B87333` copper, secondary is `#4E9F7D` teal — no raw orange, no cyan, no purple
 - [ ] Headings use Calistoga — NOT Inter, NOT Unbounded, NOT Space Grotesk
 - [ ] Body uses DM Sans — NOT Inter, NOT Plus Jakarta Sans
 - [ ] Zero gradient text via `background-clip`

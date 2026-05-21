@@ -1,6 +1,6 @@
-# Workflow: Session Start Dashboard
+﻿# Workflow: Session Start Dashboard
 
-**Triggered by:** Opening the lantech-website workstation (first message of every session)
+**Triggered by:** Opening the copperbuilds workstation (first message of every session)
 **Output:** Displayed in chat — not saved to a file
 
 ---
