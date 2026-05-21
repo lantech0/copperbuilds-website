@@ -110,6 +110,19 @@ This is the correct process for rebuilding any page — Lantech site and all cli
 - Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
 - If assets exist there, use them. Do not use placeholders where real assets are available.
 
+## Logo — LOCKED. Read Before Touching.
+
+**Before any logo or brand-kit work — read `brand_assets/logo.svg` first. Every time. No exceptions.**
+
+- If it is the wordmark ("Copper" + "Builds" text), the design is locked. Do NOT redesign. Do NOT propose alternatives. Proceed to export only.
+- The logo has been rejected and restored multiple times. Every house mark, badge, wifi arc, pipe elbow, or standalone icon was explicitly rejected by the user. None of these will ever come back.
+- Rejected designs (permanent): house + wifi arcs, heritage badge, pipe elbow C, any standalone icon or mark of any kind.
+
+**After any LogoLoom export or brand-kit generation:**
+- Read at least 2 output files before declaring done — specifically `brand-kit/icon-16.png` (favicon scale) and one SVG variant.
+- Verify: no house mark, no split wordmark (no hardcoded `x="107"`), full brand name "CopperBuilds" not single letter.
+- If anything is wrong: fix it before reporting done.
+
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
 - If no reference image: design from scratch with high craft (see guardrails below).
@@ -167,6 +180,9 @@ This is the correct process for rebuilding any page — Lantech site and all cli
 - Use spacing scale from `DESIGN.md`: 8/16/24/32/48/80/120px — no arbitrary values
 
 ## Hard NEVER Rules (Impeccable Anti-Patterns — Zero Exceptions)
+- **NEVER** add a house mark, wifi arcs, badge, or any icon to the CopperBuilds logo — user removed these permanently
+- **NEVER** export or build from a logo file without reading `brand_assets/logo.svg` first
+- **NEVER** declare a brand-kit export done without reading at least 2 output files to verify correctness
 - **NEVER** dark mode as default — site is light mode always
 - **NEVER** gradient text via `background-clip: text` on headings
 - **NEVER** glassmorphism (blurred translucent cards, glass-border effects)
