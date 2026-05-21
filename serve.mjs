@@ -46,5 +46,5 @@ http.createServer((req, res) => {
     res.end(data);
   });
 }).listen(PORT, () => {
-  console.log(`Lantech dev server running at http://localhost:${PORT}`);
+  console.log(`CopperBuilds dev server running at http://localhost:${PORT}`);
 });
