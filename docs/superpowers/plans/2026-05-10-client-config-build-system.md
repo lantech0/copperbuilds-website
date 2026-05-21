@@ -1,4 +1,4 @@
-# Client Config + Build System Implementation Plan
+﻿# Client Config + Build System Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -13,7 +13,7 @@
 ## File Structure
 
 ```
-lantech-website/
+copperbuilds/
   build.py                          ← CLI entry point
   build/
     __init__.py                     ← makes build a package
@@ -54,25 +54,25 @@ clients/active/[slug]-[YYYY-MM]/   ← per-client folder
 ### Task 1: Config Parser
 
 **Files:**
-- Create: `lantech-website/build/__init__.py`
-- Create: `lantech-website/build/parser.py`
-- Create: `lantech-website/tests/__init__.py`
-- Create: `lantech-website/tests/test_parser.py`
+- Create: `copperbuilds/build/__init__.py`
+- Create: `copperbuilds/build/parser.py`
+- Create: `copperbuilds/tests/__init__.py`
+- Create: `copperbuilds/tests/test_parser.py`
 
 - [ ] **Step 1: Create empty package init files**
 
-`lantech-website/build/__init__.py` — empty file:
+`copperbuilds/build/__init__.py` — empty file:
 ```python
 ```
 
-`lantech-website/tests/__init__.py` — empty file:
+`copperbuilds/tests/__init__.py` — empty file:
 ```python
 ```
 
 - [ ] **Step 2: Write the failing tests**
 
 ```python
-# lantech-website/tests/test_parser.py
+# copperbuilds/tests/test_parser.py
 import pytest
 from pathlib import Path
 from build.parser import parse_config
@@ -111,7 +111,7 @@ def test_missing_config_file_raises(tmp_path):
 
 - [ ] **Step 3: Run tests to confirm they fail**
 
-Run from `lantech-website/`:
+Run from `copperbuilds/`:
 ```bash
 python -m pytest tests/test_parser.py -v
 ```
@@ -120,7 +120,7 @@ Expected: `ImportError` or `ModuleNotFoundError` — `build.parser` does not exi
 - [ ] **Step 4: Write the implementation**
 
 ```python
-# lantech-website/build/parser.py
+# copperbuilds/build/parser.py
 from pathlib import Path
 
 
@@ -159,13 +159,13 @@ git commit -m "feat: add client.env config parser"
 ### Task 2: Template Renderer
 
 **Files:**
-- Create: `lantech-website/build/renderer.py`
-- Create: `lantech-website/tests/test_renderer.py`
+- Create: `copperbuilds/build/renderer.py`
+- Create: `copperbuilds/tests/test_renderer.py`
 
 - [ ] **Step 1: Write the failing tests**
 
 ```python
-# lantech-website/tests/test_renderer.py
+# copperbuilds/tests/test_renderer.py
 from build.renderer import render
 
 
@@ -206,7 +206,7 @@ Expected: `ImportError` — `build.renderer` does not exist yet.
 - [ ] **Step 3: Write the implementation**
 
 ```python
-# lantech-website/build/renderer.py
+# copperbuilds/build/renderer.py
 import re
 
 _PATTERN = re.compile(r"\{\{(\w+)\}\}")
@@ -235,13 +235,13 @@ git commit -m "feat: add {{VAR}} template renderer"
 ### Task 3: Page Builder
 
 **Files:**
-- Create: `lantech-website/build/builder.py`
-- Create: `lantech-website/tests/test_builder.py`
+- Create: `copperbuilds/build/builder.py`
+- Create: `copperbuilds/tests/test_builder.py`
 
 - [ ] **Step 1: Write the failing tests**
 
 ```python
-# lantech-website/tests/test_builder.py
+# copperbuilds/tests/test_builder.py
 from pathlib import Path
 from build.builder import build
 
@@ -336,7 +336,7 @@ Expected: `ImportError` — `build.builder` does not exist yet.
 - [ ] **Step 3: Write the implementation**
 
 ```python
-# lantech-website/build/builder.py
+# copperbuilds/build/builder.py
 from pathlib import Path
 from .parser import parse_config
 from .renderer import render
@@ -458,12 +458,12 @@ git commit -m "feat: add page builder — standard pages, city pages, blog wrapp
 ### Task 4: CLI Entry Point
 
 **Files:**
-- Create: `lantech-website/build.py`
+- Create: `copperbuilds/build.py`
 
 - [ ] **Step 1: Write the implementation**
 
 ```python
-# lantech-website/build.py
+# copperbuilds/build.py
 import sys
 from pathlib import Path
 from build.builder import build
@@ -554,7 +554,7 @@ git commit -m "feat: add build.py CLI entry point"
 ### Task 5: Blank Config Template
 
 **Files:**
-- Create: `lantech-website/clients/templates/client.env`
+- Create: `copperbuilds/clients/templates/client.env`
 
 - [ ] **Step 1: Write the blank config template**
 
@@ -697,7 +697,7 @@ git commit -m "feat: add blank client.env config template"
 ### Task 6: Update Project Workflow
 
 **Files:**
-- Modify: `lantech-website/workflows/project.md` — Step 5 and Step 6 only
+- Modify: `copperbuilds/workflows/project.md` — Step 5 and Step 6 only
 
 - [ ] **Step 1: In `workflows/project.md`, replace the Step 5 body with this**
 

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis SMM — Brand Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #e5e5e5; }
+
+/* LAYOUT */
+.page-label {
+  text-align: center;
+  padding: 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  background: #e5e5e5;
+}
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: #ccc;
+}
+.side {
+  background: #fff;
+  overflow: hidden;
+}
+.side-label {
+  padding: 12px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+.side-label.old { background: #1C2333; color: #fff; }
+.side-label.new { background: #1D5C8A; color: #fff; }
+
+/* ===================== */
+/* OLD BRAND             */
+/* ===================== */
+.old-brand { font-family: 'Inter', sans-serif; background: #F5F7FA; color: #0D1B2A; }
+
+.old-header {
+  background: #0D1B2A;
+  padding: 16px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.old-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px; color: #fff; }
+.old-logo span { color: #1E90FF; }
+.old-nav { display: flex; gap: 20px; align-items: center; }
+.old-nav a { color: rgba(255,255,255,0.65); font-size: 13px; text-decoration: none; }
+.old-nav-cta { background: #1E90FF; color: #fff !important; padding: 7px 16px; border-radius: 6px; font-weight: 500; }
+
+.old-hero {
+  background: #0D1B2A;
+  padding: 60px 32px 56px;
+  text-align: center;
+}
+.old-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: #1E90FF; margin-bottom: 14px; }
+.old-hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 38px; font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px; }
+.old-hero h1 span { color: #1E90FF; }
+.old-hero p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 420px; margin: 0 auto 28px; line-height: 1.7; }
+.old-btns { display: flex; gap: 10px; justify-content: center; }
+.old-btn-p { background: #1E90FF; color: #fff; padding: 12px 22px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 14px; border: none; }
+.old-btn-g { background: transparent; color: #fff; padding: 12px 22px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 14px; border: 1px solid rgba(255,255,255,0.25); }
+
+.old-section { padding: 48px 32px; background: #F5F7FA; }
+.old-section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #1E90FF; margin-bottom: 8px; }
+.old-section h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 26px; color: #0D1B2A; letter-spacing: -0.02em; margin-bottom: 6px; }
+.old-section p { font-size: 14px; color: #4A5568; margin-bottom: 28px; }
+.old-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.old-card { background: #fff; border-radius: 10px; padding: 22px; border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.old-card-icon { width: 40px; height: 40px; background: rgba(30,144,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 18px; }
+.old-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; color: #0D1B2A; margin-bottom: 6px; }
+.old-card p { font-size: 13px; color: #4A5568; line-height: 1.5; margin-bottom: 0; }
+
+.old-pricing { background: #0D1B2A; padding: 48px 32px; text-align: center; }
+.old-pricing h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 26px; color: #fff; margin-bottom: 6px; }
+.old-pricing p { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+.old-price-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(30,144,255,0.3); border-radius: 14px; padding: 32px; max-width: 320px; margin: 0 auto; }
+.old-amount { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 48px; font-weight: 800; color: #1E90FF; line-height: 1; }
+.old-period { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 22px; }
+.old-list { list-style: none; text-align: left; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
+.old-list li { font-size: 13px; color: rgba(255,255,255,0.75); display: flex; gap: 8px; }
+.old-check { color: #38A169; flex-shrink: 0; }
+.old-cta { background: #1E90FF; color: #fff; padding: 14px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 14px; border: none; width: 100%; }
+
+.old-testimonial { background: #EAE0D5; padding: 48px 32px; text-align: center; }
+.old-quote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 20px; color: #0D1B2A; max-width: 480px; margin: 0 auto 16px; line-height: 1.5; }
+.old-author { font-size: 13px; color: #4A5568; font-weight: 500; }
+
+.old-palette { padding: 28px 32px; background: #fff; border-top: 1px solid #E2E8F0; }
+.old-palette h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px; color: #0D1B2A; margin-bottom: 14px; }
+.swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+.swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.swatch-block { width: 48px; height: 48px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.08); }
+.swatch-label { font-size: 10px; color: #4A5568; text-align: center; line-height: 1.3; }
+
+/* ===================== */
+/* NEW BRAND             */
+/* ===================== */
+.new-brand { font-family: 'DM Sans', sans-serif; background: #F8F7F3; color: #1C1917; }
+
+.new-header {
+  background: #F8F7F3;
+  border-bottom: 1px solid #E5E0D6;
+  padding: 16px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.new-logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; color: #1C1917; letter-spacing: -0.02em; }
+.new-logo span { color: #1D5C8A; }
+.new-nav { display: flex; gap: 20px; align-items: center; }
+.new-nav a { color: #64748B; font-size: 13px; font-weight: 500; text-decoration: none; }
+.new-nav-cta { background: #1D5C8A; color: #fff !important; padding: 8px 18px; border-radius: 8px; font-weight: 600; }
+
+.new-hero {
+  background: #F8F7F3;
+  padding: 64px 32px 56px;
+  text-align: center;
+  border-bottom: 1px solid #E5E0D6;
+}
+.new-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: rgba(29,92,138,0.08); border: 1px solid rgba(29,92,138,0.15); border-radius: 20px; padding: 5px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #1D5C8A; margin-bottom: 20px; }
+.new-hero h1 { font-family: 'Fraunces', serif; font-size: 42px; font-weight: 700; color: #1C1917; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+.new-hero h1 em { font-style: italic; color: #1D5C8A; }
+.new-hero p { font-size: 16px; color: #64748B; max-width: 420px; margin: 0 auto 32px; line-height: 1.7; }
+.new-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.new-btn-p { background: #1D5C8A; color: #fff; padding: 13px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; border: none; cursor: pointer; }
+.new-btn-p:hover { background: #174d75; }
+.new-btn-g { background: transparent; color: #1C1917; padding: 13px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; border: 1.5px solid #E5E0D6; cursor: pointer; }
+.new-proof { display: flex; gap: 24px; justify-content: center; margin-top: 36px; }
+.new-proof-item { text-align: center; }
+.new-proof-num { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: #1C1917; line-height: 1; }
+.new-proof-label { font-size: 12px; color: #64748B; margin-top: 2px; }
+
+.new-section { padding: 52px 32px; background: #F8F7F3; }
+.new-section-label { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #1D5C8A; margin-bottom: 10px; }
+.new-section h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px; color: #1C1917; letter-spacing: -0.02em; margin-bottom: 6px; line-height: 1.2; }
+.new-section > p { font-size: 15px; color: #64748B; margin-bottom: 32px; }
+.new-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.new-card { background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #E5E0D6; }
+.new-card-icon { width: 42px; height: 42px; background: rgba(29,92,138,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 18px; }
+.new-card h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px; color: #1C1917; margin-bottom: 8px; }
+.new-card p { font-size: 13px; color: #64748B; line-height: 1.6; }
+
+.new-pricing { background: #1D5C8A; padding: 52px 32px; text-align: center; position: relative; overflow: hidden; }
+.new-pricing::before { content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+.new-pricing-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+.new-pricing h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px; color: #fff; margin-bottom: 6px; letter-spacing: -0.02em; }
+.new-pricing p { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+.new-price-card { background: rgba(255,255,255,0.97); border-radius: 16px; padding: 32px; max-width: 320px; margin: 0 auto; text-align: left; }
+.new-amount { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 700; color: #1D5C8A; line-height: 1; letter-spacing: -0.03em; }
+.new-period { font-size: 13px; color: #64748B; margin-bottom: 22px; }
+.new-list { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
+.new-list li { font-size: 13px; color: #1C1917; display: flex; gap: 8px; align-items: flex-start; }
+.new-check { color: #059669; font-weight: 700; flex-shrink: 0; }
+.new-cta { background: #1D5C8A; color: #fff; padding: 14px; border-radius: 8px; font-weight: 700; font-size: 14px; border: none; width: 100%; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+.new-testimonial { background: #fff; padding: 52px 32px; text-align: center; border-top: 1px solid #E5E0D6; border-bottom: 1px solid #E5E0D6; }
+.new-stars { font-size: 18px; color: #F59E0B; margin-bottom: 16px; letter-spacing: 2px; }
+.new-quote { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; color: #1C1917; max-width: 480px; margin: 0 auto 16px; line-height: 1.55; font-weight: 400; }
+.new-author { font-size: 13px; color: #64748B; font-weight: 600; }
+
+.new-palette { padding: 28px 32px; background: #F8F7F3; border-top: 1px solid #E5E0D6; }
+.new-palette h4 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 13px; color: #1C1917; margin-bottom: 14px; }
+
+/* Fonts strip */
+.font-strip { padding: 20px 32px; border-top: 1px solid #E5E0D6; background: #fff; }
+.font-strip h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 10px; }
+.font-sample-old { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 800; color: #0D1B2A; }
+.font-sample-new { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: #1C1917; }
+.font-body-old { font-family: 'Inter', sans-serif; font-size: 13px; color: #4A5568; margin-top: 4px; }
+.font-body-new { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #64748B; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="page-label">Luis Echarri SMM — Brand Comparison &nbsp;|&nbsp; Before (left) vs After (right)</div>
+
+<div class="comparison">
+
+  <!-- LEFT: OLD BRAND -->
+  <div class="side">
+    <div class="side-label old">Before — Corporate Navy + Electric Blue</div>
+    <div class="old-brand">
+
+      <div class="old-header">
+        <div class="old-logo">Luis<span>SMM</span></div>
+        <div class="old-nav">
+          <a href="#">Services</a>
+          <a href="#">Results</a>
+          <a href="#">About</a>
+          <a href="#" class="old-nav-cta">Book a Call</a>
+        </div>
+      </div>
+
+      <div class="old-hero">
+        <div class="old-eyebrow">Facebook Social Media Management</div>
+        <h1>Your customers are on <span>Facebook.</span><br>Are you showing up?</h1>
+        <p>5 posts a week. Graphics done. Captions written. You just approve — we handle the rest.</p>
+        <div class="old-btns">
+          <button class="old-btn-p">Get Started — $500/mo</button>
+          <button class="old-btn-g">See What's Included</button>
+        </div>
+      </div>
+
+      <div class="old-section">
+        <div class="old-section-label">What You Get</div>
+        <h2>Everything handled.<br>Nothing to figure out.</h2>
+        <p>You run your business. We make sure Facebook is working for it.</p>
+        <div class="old-cards">
+          <div class="old-card">
+            <div class="old-card-icon">✍️</div>
+            <h3>5 Posts Per Week</h3>
+            <p>Consistent content keeps your page active and visible.</p>
+          </div>
+          <div class="old-card">
+            <div class="old-card-icon">🎨</div>
+            <h3>Graphics + Captions</h3>
+            <p>Professional graphics and scroll-stopping copy.</p>
+          </div>
+          <div class="old-card">
+            <div class="old-card-icon">📊</div>
+            <h3>Monthly Report</h3>
+            <p>Clear numbers showing reach, engagement, what's working.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="old-pricing">
+        <div class="old-section-label" style="display:block;margin-bottom:8px;">Simple Pricing</div>
+        <h2>One plan. Everything included.</h2>
+        <p>No hidden fees. No long-term contracts. Cancel anytime.</p>
+        <div class="old-price-card">
+          <div class="old-amount">$500</div>
+          <div class="old-period">per month</div>
+          <ul class="old-list">
+            <li><span class="old-check">✓</span> 5 Facebook posts per week</li>
+            <li><span class="old-check">✓</span> Custom graphics for every post</li>
+            <li><span class="old-check">✓</span> Captions written and ready</li>
+            <li><span class="old-check">✓</span> You approve before it goes live</li>
+            <li><span class="old-check">✓</span> Monthly performance report</li>
+          </ul>
+          <button class="old-cta">Book a Free Discovery Call</button>
+        </div>
+      </div>
+
+      <div class="old-testimonial">
+        <div class="old-quote">"I didn't have time to post. Now my page is consistent every week and I'm getting calls from people who found me on Facebook."</div>
+        <div class="old-author">— Maria R., Local Restaurant Owner</div>
+      </div>
+
+      <div class="old-palette">
+        <h4>Brand Palette</h4>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-block" style="background:#0D1B2A"></div><div class="swatch-label">Deep Navy<br>#0D1B2A</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#1E90FF"></div><div class="swatch-label">Electric Blue<br>#1E90FF</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#F5F7FA"></div><div class="swatch-label">Soft White<br>#F5F7FA</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#4A5568"></div><div class="swatch-label">Slate Gray<br>#4A5568</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#EAE0D5"></div><div class="swatch-label">Warm Sand<br>#EAE0D5</div></div>
+        </div>
+      </div>
+
+      <div class="font-strip">
+        <h4>Typography</h4>
+        <div class="font-sample-old">Plus Jakarta Sans Bold</div>
+        <div class="font-body-old">Inter Regular — body text, captions, reports</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: NEW BRAND -->
+  <div class="side">
+    <div class="side-label new">After — Warm Expert + Trustworthy Blue</div>
+    <div class="new-brand">
+
+      <div class="new-header">
+        <div class="new-logo">Luis <span>Echarri</span></div>
+        <div class="new-nav">
+          <a href="#">Services</a>
+          <a href="#">Results</a>
+          <a href="#">About</a>
+          <a href="#" class="new-nav-cta">Book a Call</a>
+        </div>
+      </div>
+
+      <div class="new-hero">
+        <div class="new-eyebrow">📘 Facebook Management for Local Business</div>
+        <h1>Your page should work<br>as hard as <em>you do.</em></h1>
+        <p>5 posts a week. Graphics done. Captions written. You approve — Luis handles the rest.</p>
+        <div class="new-btns">
+          <button class="new-btn-p">Get Started — $500/mo</button>
+          <button class="new-btn-g">See What's Included</button>
+        </div>
+        <div class="new-proof">
+          <div class="new-proof-item">
+            <div class="new-proof-num">5</div>
+            <div class="new-proof-label">Posts/week</div>
+          </div>
+          <div class="new-proof-item">
+            <div class="new-proof-num">48h</div>
+            <div class="new-proof-label">Turnaround</div>
+          </div>
+          <div class="new-proof-item">
+            <div class="new-proof-num">100%</div>
+            <div class="new-proof-label">Done for you</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-section">
+        <div class="new-section-label">What You Get</div>
+        <h2>Everything handled.<br>Nothing to figure out.</h2>
+        <p>You run your business. Luis makes sure Facebook is working for it.</p>
+        <div class="new-cards">
+          <div class="new-card">
+            <div class="new-card-icon">✍️</div>
+            <h3>5 Posts Per Week</h3>
+            <p>Consistent content keeps your page active and visible to local customers.</p>
+          </div>
+          <div class="new-card">
+            <div class="new-card-icon">🎨</div>
+            <h3>Graphics + Captions</h3>
+            <p>Professional graphics and scroll-stopping copy, done every week.</p>
+          </div>
+          <div class="new-card">
+            <div class="new-card-icon">📊</div>
+            <h3>Monthly Report</h3>
+            <p>Clear numbers. Reach, engagement, what's working — no jargon.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-pricing">
+        <div class="new-pricing-label">Simple Pricing</div>
+        <h2>One plan. Everything included.</h2>
+        <p>No hidden fees. No lock-in contracts. Cancel anytime.</p>
+        <div class="new-price-card">
+          <div class="new-amount">$500</div>
+          <div class="new-period">per month — everything included</div>
+          <ul class="new-list">
+            <li><span class="new-check">✓</span> 5 Facebook posts per week</li>
+            <li><span class="new-check">✓</span> Custom graphics for every post</li>
+            <li><span class="new-check">✓</span> Captions written and ready</li>
+            <li><span class="new-check">✓</span> You approve before it goes live</li>
+            <li><span class="new-check">✓</span> Monthly performance report</li>
+          </ul>
+          <button class="new-cta">Book a Free Discovery Call</button>
+        </div>
+      </div>
+
+      <div class="new-testimonial">
+        <div class="new-stars">★★★★★</div>
+        <div class="new-quote">"I didn't have time to post. Now my page is consistent every week and I'm getting calls from people who found me on Facebook."</div>
+        <div class="new-author">Maria R. — Local Restaurant Owner</div>
+      </div>
+
+      <div class="new-palette">
+        <h4>New Brand Palette</h4>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-block" style="background:#F8F7F3"></div><div class="swatch-label">Warm Cream<br>#F8F7F3</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#1D5C8A"></div><div class="swatch-label">Trust Blue<br>#1D5C8A</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#1C1917"></div><div class="swatch-label">Warm Black<br>#1C1917</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#64748B"></div><div class="swatch-label">Slate<br>#64748B</div></div>
+          <div class="swatch"><div class="swatch-block" style="background:#E5E0D6"></div><div class="swatch-label">Warm Border<br>#E5E0D6</div></div>
+        </div>
+      </div>
+
+      <div class="font-strip">
+        <h4>Typography</h4>
+        <div class="font-sample-new">Fraunces — warm editorial serif</div>
+        <div class="font-body-new">DM Sans Regular — body text, captions, reports</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

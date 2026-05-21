@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 
 const aboutSVG = `<svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px">
 <rect width="480" height="360" rx="20" fill="#FAFAF7"/>
@@ -115,7 +115,7 @@ const contactSVG = `<svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.
 </svg>`;
 
 const apply = (file, oldSrc, newSVG) => {
-  const path = 'C:/Users/User/LantechAI/lantech-website/' + file;
+  const path = 'C:/Users/User/LantechAI/copperbuilds/' + file;
   let c = fs.readFileSync(path, 'utf8');
   const escaped = oldSrc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const updated = c.replace(new RegExp('<img src="' + escaped + '"[^>]*/?>'), newSVG);

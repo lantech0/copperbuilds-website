@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis Brand — Before vs After</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: #F0EFE9; color: #1C1917; }
+
+.header {
+  padding: 32px 48px 24px;
+  text-align: center;
+}
+.header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1C1917;
+  letter-spacing: -0.01em;
+}
+.header p {
+  font-size: 13px;
+  color: #78716C;
+  margin-top: 4px;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 100vh;
+}
+
+/* LEFT — OLD BRAND */
+.col-old {
+  background: #0D1B2A;
+  padding: 40px 40px 60px;
+}
+.col-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 24px;
+}
+.col-old .col-label { color: rgba(255,255,255,0.4); }
+.col-new .col-label { color: #78716C; }
+
+/* Old brand card mock */
+.old-header {
+  background: #0D1B2A;
+  padding: 16px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 32px;
+}
+.old-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.old-logo span { color: #1E90FF; }
+.old-hero {
+  text-align: center;
+  padding: 40px 24px 36px;
+  background: #0D1B2A;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 24px;
+}
+.old-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #1E90FF;
+  margin-bottom: 12px;
+}
+.old-hero h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.old-hero h1 span { color: #1E90FF; }
+.old-hero p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.old-btns { display: flex; gap: 8px; justify-content: center; }
+.old-btn-p { background: #1E90FF; color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; border: none; font-family: 'DM Sans'; }
+.old-btn-g { background: transparent; color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; border: 1px solid rgba(255,255,255,0.25); font-family: 'DM Sans'; }
+
+.old-price {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(30,144,255,0.3);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.old-amount { font-size: 48px; font-weight: 800; color: #1E90FF; line-height: 1; margin-bottom: 4px; }
+.old-period { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 18px; }
+.old-list { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.old-list li { font-size: 12px; color: rgba(255,255,255,0.75); display: flex; gap: 8px; }
+.old-check { color: #38A169; flex-shrink: 0; }
+.old-cta { background: #1E90FF; color: #fff; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 13px; border: none; width: 100%; font-family: 'DM Sans'; }
+
+.old-palette { display: flex; gap: 8px; flex-wrap: wrap; }
+.swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.swatch-block { width: 44px; height: 44px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); }
+.swatch-label { font-size: 9px; color: rgba(255,255,255,0.45); text-align: center; line-height: 1.3; }
+
+/* RIGHT — NEW BRAND */
+.col-new {
+  background: #FAFAF7;
+  padding: 40px 40px 60px;
+  border-left: 1px solid #E7E0D8;
+}
+
+.new-header {
+  padding: 0 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E7E0D8;
+  margin-bottom: 32px;
+}
+.new-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1C1917;
+}
+.new-logo span { color: #1D5C8A; }
+
+.cards-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #78716C;
+  margin-bottom: 16px;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.card-item img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 2px 12px rgba(28,25,23,0.10);
+}
+.card-tag {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #78716C;
+  margin-bottom: 6px;
+}
+
+.new-palette { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+.new-swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.new-swatch-block { width: 44px; height: 44px; border-radius: 6px; border: 1px solid #E7E0D8; }
+.new-swatch-label { font-size: 9px; color: #78716C; text-align: center; line-height: 1.3; }
+
+.section-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin: 28px 0 20px;
+}
+.new-divider {
+  border: none;
+  border-top: 1px solid #E7E0D8;
+  margin: 28px 0 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Luis Echarri — Brand Before vs After</h1>
+  <p>Old: Deep Navy + Electric Blue &nbsp;·&nbsp; New: Warm Cream + Trust Blue + Fraunces</p>
+</div>
+
+<div class="cols">
+
+  <!-- LEFT — OLD BRAND -->
+  <div class="col-old">
+    <div class="col-label">Before — Old Brand</div>
+
+    <div class="old-header">
+      <div class="old-logo">Luis<span>SMM</span></div>
+      <div style="display:flex;gap:16px">
+        <span style="color:rgba(255,255,255,0.6);font-size:13px">Services</span>
+        <span style="color:rgba(255,255,255,0.6);font-size:13px">Results</span>
+        <span style="background:#1E90FF;color:#fff;padding:6px 14px;border-radius:5px;font-size:12px;font-weight:600">Book a Call</span>
+      </div>
+    </div>
+
+    <div class="old-hero">
+      <div class="old-eyebrow">Facebook Social Media Management</div>
+      <h1>Your customers are on <span>Facebook.</span><br>Are you showing up?</h1>
+      <p>5 posts a week. Graphics done. Captions written. You just approve — we handle the rest.</p>
+      <div class="old-btns">
+        <button class="old-btn-p">Get Started — $500/mo</button>
+        <button class="old-btn-g">See What's Included</button>
+      </div>
+    </div>
+
+    <div class="old-price">
+      <div class="old-amount">$500</div>
+      <div class="old-period">per month</div>
+      <ul class="old-list">
+        <li><span class="old-check">✓</span> 5 Facebook posts per week</li>
+        <li><span class="old-check">✓</span> Custom graphics for every post</li>
+        <li><span class="old-check">✓</span> Captions written and ready to post</li>
+        <li><span class="old-check">✓</span> You approve before anything goes live</li>
+        <li><span class="old-check">✓</span> Monthly performance report</li>
+      </ul>
+      <button class="old-cta">Book a Free Discovery Call</button>
+    </div>
+
+    <hr class="section-divider">
+    <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-bottom:12px">Color Palette</div>
+    <div class="old-palette">
+      <div class="swatch"><div class="swatch-block" style="background:#0D1B2A"></div><div class="swatch-label">Deep Navy<br>#0D1B2A</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#1E90FF"></div><div class="swatch-label">Electric Blue<br>#1E90FF</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#F5F7FA;border-color:rgba(0,0,0,0.15)"></div><div class="swatch-label">Soft White<br>#F5F7FA</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#4A5568"></div><div class="swatch-label">Slate Gray<br>#4A5568</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#EAE0D5;border-color:rgba(0,0,0,0.15)"></div><div class="swatch-label">Warm Sand<br>#EAE0D5</div></div>
+    </div>
+    <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.4);line-height:1.6">
+      Fonts: <strong style="color:rgba(255,255,255,0.65)">Plus Jakarta Sans</strong> (headings) · <strong style="color:rgba(255,255,255,0.65)">Inter</strong> (body)
+    </div>
+  </div>
+
+  <!-- RIGHT — NEW BRAND -->
+  <div class="col-new">
+    <div class="col-label">After — New Brand</div>
+
+    <div class="new-header">
+      <div class="new-logo">Luis <span>Echarri</span></div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <span style="color:#78716C;font-size:13px">Services</span>
+        <span style="color:#78716C;font-size:13px">Results</span>
+        <span style="background:#1D5C8A;color:#fff;padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600">Book a Call</span>
+      </div>
+    </div>
+
+    <div class="cards-label">Generated Cards (smm_card_generator.py)</div>
+    <div class="cards-grid">
+      <div class="card-item">
+        <div class="card-tag">T1 — Quote</div>
+        <img src="luis-new-t1.png" alt="Quote card" loading="eager">
+      </div>
+      <div class="card-item">
+        <div class="card-tag">T2 — Promo</div>
+        <img src="luis-new-t2.png" alt="Promo card" loading="eager">
+      </div>
+      <div class="card-item">
+        <div class="card-tag">T3 — Tip</div>
+        <img src="luis-new-t3.png" alt="Tip card" loading="eager">
+      </div>
+    </div>
+
+    <hr class="new-divider">
+    <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#78716C;margin-bottom:12px">Color Palette</div>
+    <div class="new-palette">
+      <div class="new-swatch"><div class="new-swatch-block" style="background:#F8F7F3"></div><div class="new-swatch-label">Warm Cream<br>#F8F7F3</div></div>
+      <div class="new-swatch"><div class="new-swatch-block" style="background:#1D5C8A"></div><div class="new-swatch-label">Trust Blue<br>#1D5C8A</div></div>
+      <div class="new-swatch"><div class="new-swatch-block" style="background:#1C1917"></div><div class="new-swatch-label">Warm Black<br>#1C1917</div></div>
+      <div class="new-swatch"><div class="new-swatch-block" style="background:#64748B"></div><div class="new-swatch-label">Slate<br>#64748B</div></div>
+      <div class="new-swatch"><div class="new-swatch-block" style="background:#E5E0D6;border-color:#ccc"></div><div class="new-swatch-label">Warm Border<br>#E5E0D6</div></div>
+    </div>
+    <div style="margin-top:16px;font-size:11px;color:#78716C;line-height:1.6">
+      Fonts: <strong style="color:#1C1917">Fraunces</strong> (headings, editorial serif) · <strong style="color:#1C1917">DM Sans</strong> (body)
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
