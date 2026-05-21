@@ -1,4 +1,5 @@
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 186 36' width='186' height='36' role='img' aria-label='CopperBuilds'>
-  <text x='0' y='28' font-family='Calistoga,Georgia,serif' font-size='26' font-weight='400' fill='#B87333'>Copper</text>
-  <text x='107' y='28' font-family='DM Sans,Arial,sans-serif' font-size='26' font-weight='700' fill='#4E9F7D'>Builds</text>
+  <text y='28' font-size='26' font-family='Calistoga,Georgia,serif'>
+    <tspan fill='#D4944A' font-family='Calistoga,Georgia,serif' font-weight='400'>Copper</tspan><tspan fill='#6DBB96' font-family='DM Sans,Arial,sans-serif' font-weight='700'>Builds</tspan>
+  </text>
 </svg>

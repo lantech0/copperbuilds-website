@@ -98,7 +98,7 @@ This is the correct process for rebuilding any page — Lantech site and all cli
   - Headings: `Calistoga` (warm editorial serif — NOT Unbounded, NOT Space Grotesk)
   - Body: `DM Sans` (approachable sans — NOT Inter, NOT Plus Jakarta Sans)
   - Mono: `JetBrains Mono` (stats, labels, prices)
-- **Logo:** `brand_assets/logo.svg` — house mark (copper) + wifi arcs (teal) + "Copper" (Calistoga, copper) + "Builds" (DM Sans bold, teal)
+- **Logo:** `brand_assets/logo.svg` — wordmark only: "Copper" (Calistoga, #B87333) + "Builds" (DM Sans Bold, #4E9F7D). NO mark, NO house, NO wifi arcs — user removed these permanently.
 - **Tagline:** "Built for small businesses. Not enterprise." — protect this, use on every page
 - **Pages:** index.html, services.html, about.html, contact.html, blog.html, help.html
 
