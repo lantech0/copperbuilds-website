@@ -23,6 +23,7 @@
   }
   </script>
 
+  <link rel="preload" as="image" href="/portfolio/hargrove-design-build/preview.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -612,7 +613,8 @@
 <body>
 
 <!-- NAV -->
-<script src="/js/nav.js"></script>
+<script src="/js/nav.js" defer></script>
+<main id="main-content">
 
 
 <!-- ═══════════════════════════════════
@@ -647,37 +649,37 @@
     <div class="hero-cards-row" aria-label="Portfolio samples">
       <a class="hcard" href="portfolio.html" aria-label="View Hargrove Design+Build">
         <div class="hcard-inner">
-          <img src="portfolio/hargrove-design-build/preview.png" alt="Hargrove Design+Build website" loading="eager">
+          <img src="portfolio/hargrove-design-build/preview.webp" alt="Hargrove Design+Build website" loading="eager" fetchpriority="high" width="1440" height="900">
         </div>
       </a>
       <a class="hcard" href="portfolio.html" aria-label="View Elite Air Services">
         <div class="hcard-inner">
-          <img src="portfolio/elite-air-services/preview.png" alt="Elite Air Services HVAC website" loading="eager">
+          <img src="portfolio/elite-air-services/preview.webp" alt="Elite Air Services HVAC website" loading="lazy" width="1440" height="900">
         </div>
       </a>
       <a class="hcard" href="portfolio.html" aria-label="View Keith's Roofing">
         <div class="hcard-inner">
-          <img src="portfolio/keiths-roofing/preview.png" alt="Keith's Roofing &amp; Repair website" loading="eager">
+          <img src="portfolio/keiths-roofing/preview.webp" alt="Keith's Roofing &amp; Repair website" loading="lazy" width="1440" height="900">
         </div>
       </a>
       <a class="hcard" href="portfolio.html" aria-label="View Seraphin Landscaping">
         <div class="hcard-inner">
-          <img src="portfolio/seraphin-landscaping/preview.png" alt="Seraphin Lawn &amp; Landscape website" loading="eager">
+          <img src="portfolio/seraphin-landscaping/preview.webp" alt="Seraphin Lawn &amp; Landscape website" loading="lazy" width="1440" height="900">
         </div>
       </a>
       <a class="hcard" href="portfolio.html" aria-label="View Priority Plumbing">
         <div class="hcard-inner">
-          <img src="portfolio/priority-plumbing/preview.png" alt="Priority Plumbing website" loading="eager">
+          <img src="portfolio/priority-plumbing/preview.webp" alt="Priority Plumbing website" loading="lazy" width="1440" height="900">
         </div>
       </a>
       <a class="hcard" href="portfolio.html" aria-label="View Rivera Electric">
         <div class="hcard-inner">
-          <img src="portfolio/rivera-electric/preview.png" alt="Rivera Electric website" loading="eager">
+          <img src="portfolio/rivera-electric/preview.webp" alt="Rivera Electric website" loading="lazy" width="1440" height="900">
         </div>
       </a>
       <a class="hcard" href="portfolio.html" aria-label="View Steelman Concrete">
         <div class="hcard-inner">
-          <img src="portfolio/steelman-concrete/preview.png" alt="Steelman Concrete website" loading="eager">
+          <img src="portfolio/steelman-concrete/preview.webp" alt="Steelman Concrete website" loading="lazy" width="1440" height="900">
         </div>
       </a>
     </div>
@@ -787,7 +789,7 @@
       <!-- Tall: Hargrove -->
       <div class="proof-card proof-card-tall">
         <a href="portfolio/hargrove-design-build/index.html" aria-label="View Hargrove Design and Build website">
-          <img src="portfolio/hargrove-design-build/preview.png" alt="Hargrove Design and Build—luxury renovation website" loading="lazy" width="600" height="480">
+          <img src="portfolio/hargrove-design-build/preview.webp" alt="Hargrove Design and Build—luxury renovation website" loading="lazy" width="600" height="480">
           <div class="proof-foot">
             <div class="proof-foot-l">
               <div class="proof-dot" aria-hidden="true"></div>
@@ -804,7 +806,7 @@
       <!-- Small top: Keith's Roofing -->
       <div class="proof-card proof-card-sm">
         <a href="portfolio/keiths-roofing/index.html" aria-label="View Keith's Roofing website">
-          <img src="portfolio/keiths-roofing/preview.png" alt="Keith's Roofing and Repair—roofing contractor website" loading="lazy" width="440" height="180">
+          <img src="portfolio/keiths-roofing/preview.webp" alt="Keith's Roofing and Repair—roofing contractor website" loading="lazy" width="440" height="180">
           <div class="proof-foot">
             <div class="proof-foot-l">
               <div class="proof-dot" aria-hidden="true"></div>
@@ -821,7 +823,7 @@
       <!-- Small bottom: Rivera Electric -->
       <div class="proof-card proof-card-sm">
         <a href="portfolio/rivera-electric/index.html" aria-label="View Rivera Electric website">
-          <img src="portfolio/rivera-electric/preview.png" alt="Rivera Electric—local electrician website" loading="lazy" width="440" height="180">
+          <img src="portfolio/rivera-electric/preview.webp" alt="Rivera Electric—local electrician website" loading="lazy" width="440" height="180">
           <div class="proof-foot">
             <div class="proof-foot-l">
               <div class="proof-dot" aria-hidden="true"></div>
@@ -1053,6 +1055,7 @@
 <!-- ═══════════════════════════════════
      FOOTER
 ═══════════════════════════════════ -->
+</main>
 <footer style="background:var(--bg); border-top:1px solid var(--rule); padding:3.5rem 0 2rem;" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
