@@ -119,9 +119,32 @@ Every page must pass these Google performance standards before launch:
 | **CLS** (Cumulative Layout Shift) | < 0.1 | How much the layout shifts during load |
 | **INP** (Interaction to Next Paint) | < 200ms | How fast the page responds to taps/clicks |
 
-**How to check:** Run PageSpeed Insights or Lighthouse on the staging URL before delivery.
-**If failing LCP:** Compress hero images (target < 150KB), use `loading="eager"` on hero image, add explicit `width` and `height` attributes.
-**If failing CLS:** Add explicit dimensions to all images and embeds. Avoid injecting content above existing content on load.
+**How to check:** Run PageSpeed Insights on the staging URL before delivery (mobile tab, Slow 4G).
+
+**Mandatory performance implementation — apply these during build, not as a fix-up:**
+
+**Images (biggest LCP factor):**
+- Convert every image to WebP before adding it to the site — use PIL (`img.save(dst, "WEBP", quality=82, method=6)`) or Squoosh
+- Full-page screenshots used as card thumbnails must be cropped to the visible above-fold area (max 1440×900) before converting
+- The first above-fold image (hero or LCP candidate) gets: `loading="eager" fetchpriority="high"` and a matching `<link rel="preload" as="image" href="..." fetchpriority="high">` in `<head>`
+- Every other image gets `loading="lazy"`
+- Every `<img>` tag must have explicit `width` and `height` matching the intrinsic image dimensions
+- Target: total homepage payload under 1 MB
+
+**Fonts:**
+- Never link Google Fonts externally — it adds 2–4 external round-trips (DNS + TLS × 2 hosts) before any text renders
+- Self-host all fonts: download WOFF2 files from Google Fonts, save to `/fonts/`, serve via a local `fonts.css` with `@font-face` rules
+- Use the script at `copperbuilds/.tmp/selfhost_fonts.py` as the reference pattern
+- Include `font-display: swap` in every `@font-face` rule
+
+**JavaScript:**
+- Every `<script src="...">` tag in `<head>` or early `<body>` must have `defer` — no render-blocking JS
+
+**Accessibility (contrast + landmark):**
+- Every page must have a `<main>` element wrapping the primary content (between nav and footer)
+- Text colors must achieve ≥ 4.5:1 contrast ratio on the background — `#6B6560` on `#FAFAF7` passes (4.97:1); `#A8A29E` on `#FAFAF7` fails (2.3:1)
+
+**If still failing LCP after the above:** check for render-blocking CSS, third-party embeds, or unoptimized web fonts. Do not launch with a failing LCP.
 
 ---
 
@@ -184,10 +207,17 @@ The monthly retainer then **maintains** these pages (keeps them current, adds ke
 Before marking any page done, run every item in this checklist:
 
 **Performance:**
-- [ ] LCP < 2.5s (PageSpeed Insights)
+- [ ] LCP < 2.5s on mobile — PageSpeed Insights, Slow 4G throttling (must be green, not orange or red)
 - [ ] CLS < 0.1
 - [ ] INP < 200ms
-- [ ] Hero image < 150KB
+- [ ] All images are WebP format (no JPG or PNG in production except favicon/OG image)
+- [ ] Hero/LCP image has `loading="eager" fetchpriority="high"` + `<link rel="preload">` in `<head>`
+- [ ] All non-hero images have `loading="lazy"`
+- [ ] Every `<img>` has explicit `width` and `height` attributes
+- [ ] Fonts are self-hosted from `/fonts/` — no `fonts.googleapis.com` link in any page
+- [ ] Every `<script src>` has `defer` attribute
+- [ ] Every page has a `<main>` landmark element
+- [ ] Total homepage payload < 1 MB (check Network tab in DevTools)
 
 **UX:**
 - [ ] Phone number in header, click-to-call works on mobile

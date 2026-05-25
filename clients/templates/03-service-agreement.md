@@ -29,18 +29,21 @@ Lantech agrees to provide the following services as selected:
 **Plan:** [LOCAL PRESENCE / LEAD MACHINE / MARKET LEADER]
 **Monthly rate:** $[AMOUNT]/mo
 
-**Scope of work includes:**
+**Deliverables by plan:**
 
-- [ ] Website design and development — [NUMBER] pages
-- [ ] Mobile-first responsive design
-- [ ] On-page SEO setup (meta titles, descriptions, schema markup, sitemap)
-- [ ] Contact form integration
-- [ ] SSL setup (HTTPS)
-- [ ] Google Search Console submission
-- [ ] SEO Optimization (if included)
-- [ ] Google Business Profile Optimization (if included)
-- [ ] Social Media Setup (if included)
-- [ ] Ecommerce Integration (if included)
+| Deliverable | Local Presence $997/mo | Lead Machine $1,997/mo | Market Leader $3,497/mo |
+|---|:---:|:---:|:---:|
+| Website (mobile-first, on-page SEO, schema, sitemap) | Up to 5 pages | Up to 7 pages | Up to 10 pages |
+| Google Search Console setup | ✓ | ✓ | ✓ |
+| GBP management (4 posts/mo, photo uploads, review responses) | ✓ | ✓ | ✓ |
+| Citation monitoring (2 directories/mo) | ✓ | ✓ | ✓ |
+| Monthly SEO performance report | ✓ | ✓ | ✓ |
+| Blog content (SEO-optimized posts) | — | 2/mo | 6/mo |
+| Link building | — | 4 links/mo | 8 links/mo |
+| Competitor monitoring | — | 10 competitors | 20 competitors |
+| AI search visibility monitoring | — | ✓ | ✓ |
+| Geo-grid rank tracking | — | — | Monthly |
+| Strategy calls | — | — | 2/mo |
 
 **Pages included:** [LIST PAGES]
 

@@ -29,6 +29,8 @@ Read the relevant workflow before starting any process — it defines every requ
 | `workflows/maintenance.md` | Start of each month — run maintenance retainer checks and updates |
 | `workflows/seo-retainer.md` | Start of each month for any client on Local Presence, Lead Machine, or Market Leader retainer — collect client assets, execute GBP/blog/citations/links, feed into monthly-report.md |
 | `workflows/client-build-standards.md` | During every client site build — UX standards, Core Web Vitals gates, pre-launch smoke test |
+| `workflows/gmb-setup.md` | When setting up GBP for CopperBuilds or any client with no existing listing — includes GSC instant verification method and full profile optimization |
+| `workflows/offpage-strategy.md` | When starting or executing off-page SEO — citations, reviews, link building, "best of" lists, brand mentions; used alongside seo-retainer.md for retainer clients |
 
 ---
 
@@ -220,10 +222,16 @@ IMPORTANT: A page is not done until ALL of these pass:
 - [ ] At least 2 screenshot comparison rounds completed
 
 **Performance (run before calling a page "launch-ready"):**
-- [ ] LCP < 2.5s (Core Web Vital — use Lighthouse or PageSpeed Insights)
-- [ ] CLS < 0.1 (no layout shift on load)
-- [ ] No render-blocking scripts in `<head>` (defer or async all non-critical JS)
-- [ ] Images have explicit `width` and `height` attributes
+- [ ] LCP < 2.5s mobile — PageSpeed Insights Slow 4G (green zone, not orange)
+- [ ] CLS < 0.1
+- [ ] All images converted to WebP — no JPG/PNG in production (favicon and OG image excepted)
+- [ ] Hero/LCP image: `loading="eager" fetchpriority="high"` + `<link rel="preload" as="image" fetchpriority="high">` in `<head>`
+- [ ] All other images: `loading="lazy"`
+- [ ] Every `<img>` has explicit `width` and `height` attributes
+- [ ] Fonts self-hosted from `/fonts/fonts.css` — zero `fonts.googleapis.com` links
+- [ ] Every `<script src>` has `defer` — no render-blocking JS
+- [ ] Every page has `<main>` landmark wrapping primary content
+- [ ] Text contrast ≥ 4.5:1 on background (use `#6B6560` for muted/subtle text on `#FAFAF7`)
 
 **Launch smoke test (5 items — run on final localhost before any deploy):**
 - [ ] All nav links resolve (no 404s)

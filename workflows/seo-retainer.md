@@ -73,7 +73,7 @@ If the client can't provide job stories: use the blog topic formula from `seo-br
 
 ## Step 1.5 — Market Leader Only: LSA Setup (First Month)
 
-Run this block once when a client first signs up for Market Leader, before the regular weekly execution begins. Skip in subsequent months — go straight to Step 2.
+> **⚠️ PARKED — Do not execute.** LSA is on standby — quote case by case only. This block is kept for reference when a client specifically requests LSA. Do not include LSA in any retainer proposal or service agreement unless the client asks and Luis approves the quote.
 
 ### What LSA Is
 
