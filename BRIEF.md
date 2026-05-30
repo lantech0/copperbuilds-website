@@ -17,7 +17,7 @@ service contractors and local businesses. Monthly retainer plans: Local Presence
 
 - **Page name:** [e.g. Services, About, Pricing, Contact, Blog, Help, Landing Page]
 - **File name:** [e.g. services.html]
-- **URL:** https://lantech-website.vercel.app/[slug] [e.g. https://lantech-website.vercel.app/services]
+- **URL:** https://copperbuilds.com/[slug] [e.g. https://copperbuilds.com/services]
 - **Purpose:** [One sentence — what this page does for visitors]
 - **Primary keyword:** [e.g. "web design for small businesses"]
 - **Content to include:** [List the sections, copy, or reference any existing content]
@@ -106,7 +106,7 @@ Mobile: hamburger menu that reveals the links as a vertical stack.
 
 Logo: Use the Lantech wordmark. The real logo files are in `/brand_assets/`:
 - Light backgrounds (page body): `lantech-logo-dark.png`
-- Dark backgrounds (dark header/footer): `lantech-logo-white.png`
+- Dark backgrounds (dark header/footer): `logo.svg`
 - Icon only: `lantech-icon-800.png`
 
 ---
@@ -127,13 +127,12 @@ Every page must have this footer:
 
 [Social icons: Facebook, Instagram, LinkedIn]
 
-© 2026 Lantech. All rights reserved. | Privacy Policy | Terms of Service
+© 2026 CopperBuilds. All rights reserved. | Privacy Policy | Terms of Service
 
 Background: var(--ink) (#1C1917), top border: 1px solid rgba(255,255,255,0.06)
 ```
 
-**IMPORTANT:** Use `lantech016@gmail.com` for email and `+63 977 329 3969` (tel:+639773293969) for phone.
-Do NOT use lantech016@gmail.com on live pages — that is the internal/Gmail address only.
+**IMPORTANT:** Use `lantech016@gmail.com` for email and `+63 977 329 3969` (tel:+639773293969) for phone. This IS the public business email — use it on live pages.
 
 ---
 
@@ -153,25 +152,25 @@ with the actual page data. Do not skip any tag.
 <meta name="description" content="[150–160 characters. Include one specific stat or benefit. No generic copy.]">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://lantech-website.vercel.app/[slug]">
+<link rel="canonical" href="https://copperbuilds.com/[slug]">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="512x512" href="/brand_assets/lantech-icon-800.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/lantech-icon-800.png">
+<link rel="icon" type="image/x-icon" href="/brand_assets/brand-kit/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/brand-kit/icon-180.png">
 
 <!-- Open Graph (social sharing) -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Lantech">
+<meta property="og:site_name" content="CopperBuilds">
 <meta property="og:title" content="[Same as title tag]">
 <meta property="og:description" content="[Same as meta description]">
-<meta property="og:url" content="https://lantech-website.vercel.app/[slug]">
-<meta property="og:image" content="https://lantech-website.vercel.app/brand_assets/lantech-fb-banner-820x312.png">
+<meta property="og:url" content="https://copperbuilds.com/[slug]">
+<meta property="og:image" content="https://copperbuilds.com/brand_assets/brand-kit/og-image.png">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="[Same as title tag]">
 <meta name="twitter:description" content="[Same as meta description]">
-<meta name="twitter:image" content="https://lantech-website.vercel.app/brand_assets/lantech-fb-banner-820x312.png">
+<meta name="twitter:image" content="https://copperbuilds.com/brand_assets/brand-kit/og-image.png">
 ```
 
 ---
@@ -187,10 +186,10 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
-    "name": "Lantech",
-    "url": "https://lantech-website.vercel.app",
-    "logo": "https://lantech-website.vercel.app/brand_assets/lantech-logo-dark.png",
-    "image": "https://lantech-website.vercel.app/brand_assets/lantech-fb-banner-1640x624.png",
+    "name": "CopperBuilds",
+    "url": "https://copperbuilds.com",
+    "logo": "https://copperbuilds.com/brand_assets/logo.svg",
+    "image": "https://copperbuilds.com/brand_assets/brand-kit/og-image.png",
     "description": "Web design, SEO, and Google Business Profile optimization for home service contractors and local businesses across the United States.",
     "email": "lantech016@gmail.com",
     "telephone": "+639773293969",
@@ -202,13 +201,13 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     },
     "areaServed": {"@type": "Country", "name": "United States"},
     "founder": {"@type": "Person", "name": "Luis Echarri"},
-    "sameAs": ["https://facebook.com/lantechco", "https://instagram.com/lantechco"]
+    "sameAs": ["https://facebook.com/copperbuilds", "https://instagram.com/copperbuilds"]
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Lantech",
-    "url": "https://lantech-website.vercel.app"
+    "name": "CopperBuilds",
+    "url": "https://copperbuilds.com"
   }
 ]
 </script>
@@ -220,13 +219,13 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Lantech Services",
-  "url": "https://lantech-website.vercel.app/services",
+  "name": "CopperBuilds Services",
+  "url": "https://copperbuilds.com/services",
   "itemListElement": [
-    {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Website Design & Development","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Local SEO Optimization","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
-    {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Google Business Profile Optimization","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}},
-    {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Monthly SEO Retainer","provider":{"@type":"Organization","name":"Lantech"},"areaServed":{"@type":"Country","name":"United States"}}}
+    {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Website Design & Development","provider":{"@type":"Organization","name":"CopperBuilds"},"areaServed":{"@type":"Country","name":"United States"}}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Local SEO Optimization","provider":{"@type":"Organization","name":"CopperBuilds"},"areaServed":{"@type":"Country","name":"United States"}}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Google Business Profile Optimization","provider":{"@type":"Organization","name":"CopperBuilds"},"areaServed":{"@type":"Country","name":"United States"}}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Monthly SEO Retainer","provider":{"@type":"Organization","name":"CopperBuilds"},"areaServed":{"@type":"Country","name":"United States"}}}
   ]
 }
 </script>
@@ -238,8 +237,8 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Lantech Pricing Plans",
-  "url": "https://lantech-website.vercel.app/pricing",
+  "name": "CopperBuilds Pricing Plans",
+  "url": "https://copperbuilds.com/pricing",
   "itemListElement": [
     {"@type":"ListItem","position":1,"item":{"@type":"Offer","name":"Launch Package","price":"499","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
     {"@type":"ListItem","position":2,"item":{"@type":"Offer","name":"Starter Package","price":"1200","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
@@ -256,9 +255,9 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Lantech",
-  "url": "https://lantech-website.vercel.app/about",
-  "logo": "https://lantech-website.vercel.app/brand_assets/lantech-logo-white.png",
+  "name": "CopperBuilds",
+  "url": "https://copperbuilds.com/about",
+  "logo": "https://copperbuilds.com/brand_assets/logo.svg",
   "description": "A web design studio helping home service businesses rank on Google and turn local searches into booked jobs. Founded by Luis Echarri.",
   "founder": {"@type": "Person", "name": "Luis Echarri"},
   "email": "lantech016@gmail.com",
@@ -274,11 +273,11 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact Lantech",
-  "url": "https://lantech-website.vercel.app/contact",
+  "name": "Contact CopperBuilds",
+  "url": "https://copperbuilds.com/contact",
   "mainEntity": {
     "@type": "Organization",
-    "name": "Lantech",
+    "name": "CopperBuilds",
     "email": "lantech016@gmail.com",
     "telephone": "+639773293969",
     "contactPoint": {
@@ -303,9 +302,9 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "Lantech Blog",
-  "url": "https://lantech-website.vercel.app/blog",
-  "publisher": {"@type":"Organization","name":"Lantech","url":"https://lantech-website.vercel.app"},
+  "name": "CopperBuilds Blog",
+  "url": "https://copperbuilds.com/blog",
+  "publisher": {"@type":"Organization","name":"CopperBuilds","url":"https://copperbuilds.com"},
   "inLanguage": "en-US"
 }
 </script>
@@ -319,15 +318,15 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "@type": "BlogPosting",
   "headline": "[Article title]",
   "description": "[Article meta description]",
-  "url": "https://lantech-website.vercel.app/blog/[slug]",
+  "url": "https://copperbuilds.com/blog/[slug]",
   "datePublished": "[YYYY-MM-DD]",
   "dateModified": "[YYYY-MM-DD]",
   "author": {"@type":"Person","name":"Luis Echarri"},
   "publisher": {
     "@type": "Organization",
-    "name": "Lantech",
-    "url": "https://lantech-website.vercel.app",
-    "logo": "https://lantech-website.vercel.app/brand_assets/lantech-logo-white.png"
+    "name": "CopperBuilds",
+    "url": "https://copperbuilds.com",
+    "logo": "https://copperbuilds.com/brand_assets/logo.svg"
   },
   "image": "[Cover image URL]",
   "inLanguage": "en-US"
@@ -341,14 +340,14 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Help Center — Lantech",
-  "url": "https://lantech-website.vercel.app/help",
-  "isPartOf": {"@type":"WebSite","name":"Lantech","url":"https://lantech-website.vercel.app"},
+  "name": "Help Center — CopperBuilds",
+  "url": "https://copperbuilds.com/help",
+  "isPartOf": {"@type":"WebSite","name":"CopperBuilds","url":"https://copperbuilds.com"},
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://lantech-website.vercel.app"},
-      {"@type":"ListItem","position":2,"name":"Help Center","item":"https://lantech-website.vercel.app/help"}
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://copperbuilds.com"},
+      {"@type":"ListItem","position":2,"name":"Help Center","item":"https://copperbuilds.com/help"}
     ]
   }
 }
@@ -410,7 +409,7 @@ These values must match exactly everywhere they appear:
 | Pro price | $1,999 |
 | Delivery time | Live within a week (not "48 hours" — that claim was removed) |
 | Business hours | Mon–Fri, 9am–6pm |
-| Website URL | https://lantech-website.vercel.app |
+| Website URL | https://copperbuilds.com |
 
 ---
 
@@ -449,7 +448,7 @@ All brand assets live in `/brand_assets/`:
 
 | File | Use |
 |---|---|
-| `lantech-logo-white.png` | Logo on dark backgrounds |
+| `logo.svg` | Logo on dark backgrounds |
 | `lantech-logo-dark.png` | Logo on light backgrounds |
 | `lantech-icon-800.png` | Favicon, app icon, small logo |
 | `lantech-fb-banner-820x312.png` | OG/social share image |
@@ -460,14 +459,14 @@ All brand assets live in `/brand_assets/`:
 
 | Page | File | Canonical URL |
 |---|---|---|
-| Homepage | index.html | https://lantech-website.vercel.app/ |
-| Services | services.html | https://lantech-website.vercel.app/services |
-| Pricing | pricing.html | https://lantech-website.vercel.app/pricing |
-| About | about.html | https://lantech-website.vercel.app/about |
-| Contact | contact.html | https://lantech-website.vercel.app/contact |
-| Blog index | blog.html | https://lantech-website.vercel.app/blog |
-| Help | help.html | https://lantech-website.vercel.app/help |
-| Blog articles | blog/[slug].html | https://lantech-website.vercel.app/blog/[slug] |
+| Homepage | index.html | https://copperbuilds.com/ |
+| Services | services.html | https://copperbuilds.com/services |
+| Pricing | pricing.html | https://copperbuilds.com/pricing |
+| About | about.html | https://copperbuilds.com/about |
+| Contact | contact.html | https://copperbuilds.com/contact |
+| Blog index | blog.html | https://copperbuilds.com/blog |
+| Help | help.html | https://copperbuilds.com/help |
+| Blog articles | blog/[slug].html | https://copperbuilds.com/blog/[slug] |
 
 ---
 
