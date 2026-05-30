@@ -67,12 +67,12 @@ Using the information from the prospect file (`projects/prospects/[file].md`), p
 - Phone number
 - Website URL (if any)
 - Google Business Profile URL (if any)
-- Recommended package (Starter / Growth / Pro)
+- Recommended package (Launch / Starter / Growth / Pro)
 - Package price
 - Identified digital gaps
 
 **Determine and set:**
-- Expected delivery date: today + [7 business days for Starter / 10 business days for Growth / 14 business days for Pro]
+- Expected delivery date: today + [7 business days for Launch / 7 business days for Starter / 10 business days for Growth / 14 business days for Pro]
 - Support expiry date: launch date + 30 days
 - Project lead: Luis Echarri
 

@@ -5,7 +5,7 @@
 > Source of answers: `02-onboarding-questionnaire.md` (completed by client)
 
 **Client:** ___________________________
-**Package:** [ ] Starter &nbsp; [ ] Growth &nbsp; [ ] Pro
+**Package:** [ ] Launch &nbsp; [ ] Starter &nbsp; [ ] Growth &nbsp; [ ] Pro
 **Date checklist completed:** ___________________________
 
 ---

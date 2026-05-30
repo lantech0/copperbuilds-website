@@ -182,6 +182,7 @@ Service-area pages are built as part of the one-time website build, not the mont
 
 | Build tier | City pages included |
 |---|---|
+| Launch ($499 setup + $79/mo) | None — Gallery or Service Area page instead |
 | Starter ($1,200) | None — just the core service page |
 | Growth ($1,699) | 3 city pages — one per top city the client serves |
 | Pro ($1,999) | Full city coverage — one dedicated page per city served |

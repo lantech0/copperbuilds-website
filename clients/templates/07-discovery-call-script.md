@@ -98,9 +98,10 @@ Lantech | lantech016@gmail.com
 | "Too expensive" | "Compare it to one job you're losing every month to [COMPETITOR]. $[PRICE] is less than that." |
 | "I'll think about it" | "What specifically? I want to make sure you have the right info." Then get a specific follow-up date. |
 | "I'll do it myself" | "Most of our clients tried that first. Getting it to rank on Google is where we add the real value." |
-| "I don't trust online agencies" | "Fair. That's why it's a flat fee, you own all the files, and there's no monthly lock-in." |
+| "I don't trust online agencies" | "Fair. That's why you own all the files — no lock-in, no disappearing act. If you want out, take your site and go." |
 | "I already have a website" | "[Specific finding from your audit]. That's costing you Google rankings right now." |
-| "Not in my budget right now" | "When does your situation change? I can note to follow up then." |
+| "Not in my budget right now" | "We have a Launch plan — $499 to get your site live, then $79/mo. Most owners cover that in one job." |
+| "I can't afford $1,200" | "The Launch plan is built for that — $499 upfront, $79/mo. You get a real custom site, hosting included, and you own everything after 12 months." |
 | "I need to talk to my partner/accountant" | "Of course. When are you talking to them? I can follow up after that." |
 
 ---

@@ -194,7 +194,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     "description": "Web design, SEO, and Google Business Profile optimization for home service contractors and local businesses across the United States.",
     "email": "lantech016@gmail.com",
     "telephone": "+639773293969",
-    "priceRange": "$1,200 - $1,999",
+    "priceRange": "$499 - $1,999",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
@@ -241,9 +241,10 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "name": "Lantech Pricing Plans",
   "url": "https://lantech-website.vercel.app/pricing",
   "itemListElement": [
-    {"@type":"ListItem","position":1,"item":{"@type":"Offer","name":"Starter Package","price":"1200","priceCurrency":"USD","seller":{"@type":"Organization","name":"Lantech"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Offer","name":"Growth Package","price":"1699","priceCurrency":"USD","seller":{"@type":"Organization","name":"Lantech"}}},
-    {"@type":"ListItem","position":3,"item":{"@type":"Offer","name":"Pro Package","price":"1999","priceCurrency":"USD","seller":{"@type":"Organization","name":"Lantech"}}}
+    {"@type":"ListItem","position":1,"item":{"@type":"Offer","name":"Launch Package","price":"499","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Offer","name":"Starter Package","price":"1200","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Offer","name":"Growth Package","price":"1699","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Offer","name":"Pro Package","price":"1999","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}}
   ]
 }
 </script>
