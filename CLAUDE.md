@@ -1,12 +1,48 @@
 # CLAUDE.md — CopperBuilds Agency Website
 
-## Session Start — Run This First
-**On the first message of every session, before responding to anything else:**
-Run `workflows/session-start.md` — read client and prospect files, check page rebuild status, then display the session dashboard. Do this automatically. Do not wait to be asked.
+## MANDATORY SESSION START — Run This Before Anything Else
+
+Every session, before any response, code, or action:
+
+1. **Read `C:\Users\User\.claude\projects\C--Users-User-LantechAI\memory\MEMORY.md`** — the index. Pull any memory files relevant to the current task. This takes 30 seconds and prevents hours of mistakes.
+2. **Read `C:\Users\User\LantechAI\claude-obsidian\wiki\hot.md`** — recent cross-session context.
+3. **Run `workflows/session-start.md`** — client builds, prospects, dashboard.
+
+Do not skip any of these. Do not wait to be asked. "I already know the context" is never a valid reason to skip.
+
+---
+
+## ⚠️ DEAD FOLDER — NEVER TOUCH
+
+**`lantech-website/` is the OLD brand. It is dead. Do not open, edit, or reference it.**
+
+The agency is **CopperBuilds**. The live site is **https://copperbuilds.com/**. All work goes in this folder (`copperbuilds/`).
+
+---
+
+## Deploy
+
+`git push origin main` from inside this folder (`copperbuilds/`). Cloudflare Pages auto-deploys.
+Remote: `https://github.com/lantech0/copperbuilds-website.git`
+**Never push from the LantechAI root — that is a different repo.**
+
+---
+
+## Client Registry
+
+Every site managed by CopperBuilds is listed here. Read this before any web work. Confirm the target out loud before touching any file.
+
+| Client | Folder | Repo | Deploy | Status |
+|---|---|---|---|---|
+| CopperBuilds (agency site) | `copperbuilds/` | `lantech0/copperbuilds-website.git` | Cloudflare Pages — `git push origin main` | ✅ Live |
+
+**When a new client is onboarded:** add a row here immediately. When offboarded: mark status as `archived`.
+
+---
 
 ## Workstation Purpose
 Building and maintaining the **CopperBuilds** web agency website targeting small local businesses.
-Stack: Static HTML/CSS/JS · Hosted on Hostinger · `serve.mjs` dev server at localhost:3000
+Stack: Static HTML/CSS/JS · Deployed on Cloudflare Pages · `serve.mjs` dev server at localhost:3000
 
 ## WAT Workflows
 Read the relevant workflow before starting any process — it defines every required output.

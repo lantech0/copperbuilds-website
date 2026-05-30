@@ -7,9 +7,10 @@
 
 ## Steps
 
-### Step 0 — Load Wiki Context
+### Step 0 — Load Memory + Wiki Context
 
-Read `C:\Users\User\LantechAI\claude-obsidian\wiki\hot.md` — this is the persistent knowledge base hot cache (~500 words of recent context across all sessions and workstations). Load it silently before building the dashboard. If the file is missing or unreadable, skip and continue.
+1. Read `C:\Users\User\.claude\projects\C--Users-User-LantechAI\memory\MEMORY.md` — scan the index, pull any entries relevant to today's work.
+2. Read `C:\Users\User\LantechAI\claude-obsidian\wiki\hot.md` — recent cross-session context. Load silently. Skip if missing.
 
 ---
 
@@ -36,10 +37,10 @@ Scan `clients/active/` and `clients/completed/` for clients with ongoing service
 
 ---
 
-### Step 3 — Check Lantech Site Page Status
-The Lantech site has 7 pages: `index.html`, `services.html`, `about.html`, `contact.html`, `blog.html`, `help.html`, `pricing.html`.
-Check which have been rebuilt under the new brand (look for `--bg: #FAFAF7` or `Calistoga` in each file — if present, it's been rebranded).
-Report each as: ✅ Rebuilt | ⚠️ Needs rebuild
+### Step 3 — Check CopperBuilds Site Page Status
+The CopperBuilds site has 7 pages: `index.html`, `services.html`, `about.html`, `contact.html`, `blog.html`, `help.html`, `pricing.html`.
+Check which are present and up to date (look for `--bg: #FAFAF7` and `CopperBuilds` in each file).
+Report each as: ✅ OK | ⚠️ Needs attention
 
 ### Step 4 — Check Recent Completions
 List the most recently modified folder in `clients/completed/`. Note client name and what was delivered.
@@ -48,7 +49,7 @@ List the most recently modified folder in `clients/completed/`. Note client name
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  LANTECH AGENCY — SESSION DASHBOARD
+  COPPERBUILDS AGENCY — SESSION DASHBOARD
   [Today's date]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -95,7 +96,7 @@ RECURRING CLIENTS
   [If nothing in any of the 3 sub-sections: "No recurring tasks this month"]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-LANTECH SITE — PAGE STATUS
+COPPERBUILDS SITE — PAGE STATUS
 
   index.html      [✅ Rebuilt / ⚠️ Needs rebuild]
   services.html   [✅ Rebuilt / ⚠️ Needs rebuild]
