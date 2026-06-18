@@ -24,12 +24,10 @@
       + '</a>'
       + '<div id="nav-links" style="display:flex;align-items:center;gap:2rem;">'
         + link('/services.html', 'Services')
-        + link('/how-we-work.html', 'How We Work')
-        + link('/pricing.html', 'Pricing')
         + link('/portfolio.html', 'Portfolio')
+        + link('/pricing.html', 'Pricing')
         + link('/about.html', 'About')
         + link('/blog.html', 'Blog')
-        + link('/contact.html', 'Contact')
       + '</div>'
       + '<div style="display:flex;align-items:center;gap:1rem;">'
         + '<a href="/contact.html" class="btn btn-primary" id="nav-cta" style="white-space:nowrap;">Get a Free Quote</a>'
@@ -42,12 +40,10 @@
     + '</div>'
     + '<div id="mobile-menu" style="display:none;flex-direction:column;gap:0;background:var(--bg);border-top:1px solid var(--rule);padding:1rem 0;">'
       + '<a href="/services.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Services</a>'
-      + '<a href="/how-we-work.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">How We Work</a>'
-      + '<a href="/pricing.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Pricing</a>'
       + '<a href="/portfolio.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Portfolio</a>'
+      + '<a href="/pricing.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Pricing</a>'
       + '<a href="/about.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">About</a>'
       + '<a href="/blog.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Blog</a>'
-      + '<a href="/contact.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Contact</a>'
       + '<hr style="margin:.75rem 1.5rem;border:none;border-top:1px solid var(--rule);">'
       + '<a href="/contact.html" class="btn btn-primary" style="margin:.5rem 1.5rem 1rem;display:block;text-align:center;">Get a Free Quote</a>'
     + '</div>'
