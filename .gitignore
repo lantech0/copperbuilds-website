@@ -2,7 +2,7 @@ node_modules/
 .claude/
 memory/
 .env
-lantech.env
+copperbuilds.env
 dist/
 temporary screenshots/
 __pycache__/

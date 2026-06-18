@@ -203,7 +203,65 @@ The monthly retainer then **maintains** these pages (keeps them current, adds ke
 
 ---
 
-### Step 10 — Run the Pre-Launch Smoke Test
+### Step 10 — Implement the Schema Stack
+
+Structured data is mandatory on every client site. It is not optional and not a post-launch task. Add schema during the build, validate before delivery, fix all errors before launch.
+
+**Schema by page type:**
+
+| Page type | Required schema types |
+|---|---|
+| Every page | `Organization` · `BreadcrumbList` |
+| Homepage | `LocalBusiness` (or trade sub-type — see below) |
+| Service page | `Service` · `FAQPage` (if FAQ section present) |
+| Service-area page | `LocalBusiness` with `areaServed` · `Service` |
+| Blog post | `BlogPosting` · `FAQPage` (if FAQ section) · `HowTo` (if step-by-step guide) |
+| Contact page | `ContactPage` |
+| About page | `Organization` (expanded with `foundingDate`, `numberOfEmployees` if known) |
+
+**Trade-specific LocalBusiness sub-types (use the most specific match):**
+
+| Trade | Schema sub-type |
+|---|---|
+| Plumbing | `Plumber` |
+| HVAC | `HVACBusiness` |
+| Electrical | `Electrician` |
+| Roofing | `RoofingContractor` |
+| General contracting | `GeneralContractor` |
+| Landscaping / lawn | `LandscapeService` |
+| Painting | `Painter` |
+| Pool service | `PoolService` |
+| Pest control | `PestControlService` |
+| Cleaning | `HousePainter` → use `HomeAndConstructionBusiness` if no exact match |
+
+Always use the most specific sub-type available. `LocalBusiness` alone is a fallback, not a first choice.
+
+**FAQPage — when to add it:**
+Add `FAQPage` JSON-LD whenever a page has a Q&A section with 2+ questions. Each question must have a corresponding `acceptedAnswer`. Add it to:
+- Any service page with an FAQ accordion
+- Any blog post with a FAQ section
+- The homepage if it has a "Common Questions" or "FAQ" block
+
+**HowTo — when to add it:**
+Add `HowTo` JSON-LD whenever a page walks through numbered or sequential steps. This is the highest-value schema for featured snippet capture on how-to queries. Add it to:
+- Blog posts structured as step-by-step guides (e.g., "How to get Google reviews", "How to choose an HVAC contractor")
+- Service pages that explain a multi-step process
+
+**Featured snippet implementation — mandatory on blog posts and service pages:**
+Featured snippets are captured by content structure, not just schema. Both elements are required:
+
+1. **Question-format headings:** Phrase H2s and H3s as questions where the page is targeting informational queries (e.g., "How long does a roof replacement take?" not "Roof Replacement Timeline")
+2. **Direct answer paragraph:** The first paragraph after a question-format heading must be a direct, complete answer in 40–60 words. No preamble, no "it depends" opener — answer first.
+3. **Schema confirms the structure:** `FAQPage` or `HowTo` schema should mirror what the content already says. Do not add schema for Q&A that doesn't exist in the visible HTML.
+
+**Validation — mandatory before launch:**
+- Validate every page's schema at `https://validator.schema.org/` — zero errors required
+- Warnings are acceptable if they are about optional recommended fields
+- Errors block launch — fix them before the smoke test
+
+---
+
+### Step 11 — Run the Pre-Launch Smoke Test
 
 Before marking any page done, run every item in this checklist:
 
@@ -233,8 +291,21 @@ Before marking any page done, run every item in this checklist:
 - [ ] Unique meta description per page (160 chars max)
 - [ ] H1 present exactly once per page
 - [ ] All images have `alt` attributes
-- [ ] LocalBusiness schema on homepage
-- [ ] sitemap.xml present and linked in `robots.txt`
+- [ ] `sitemap.xml` present and linked in `robots.txt`
+- [ ] Canonical tag on every page
+
+**Schema (must pass `validator.schema.org` with 0 errors before launch):**
+- [ ] `Organization` schema on every page
+- [ ] `BreadcrumbList` schema on every page (except homepage)
+- [ ] `LocalBusiness` (or trade sub-type) on homepage — use most specific sub-type (Plumber, HVACBusiness, etc.)
+- [ ] `Service` schema on every service page
+- [ ] `LocalBusiness` + `areaServed` on every service-area page
+- [ ] `FAQPage` schema on any page with a visible Q&A section (2+ questions)
+- [ ] `HowTo` schema on any blog post or page structured as a step-by-step guide
+- [ ] `BlogPosting` schema on every blog post
+- [ ] All schema validated at `https://validator.schema.org/` — zero errors
+- [ ] Question-format H2s present on pages targeting informational queries
+- [ ] Direct 40–60 word answer paragraph immediately follows each question-format heading
 
 **Copy Quality — Vale (mechanical gate):**
 - [ ] `vale --config=.vale-client.ini [client-source-dir]` returns 0 errors
@@ -282,7 +353,7 @@ Before marking any page done, run every item in this checklist:
 
 Before closing any build, confirm every item below exists:
 
-- [ ] All pages pass the Step 10 pre-launch smoke test
+- [ ] All pages pass the Step 11 pre-launch smoke test
 - [ ] Real photos used (or placeholder flag added to handover notes)
 - [ ] Dual visitor architecture confirmed on Home and all Service pages
 - [ ] Above-fold formula confirmed on every page
@@ -290,8 +361,9 @@ Before closing any build, confirm every item below exists:
 - [ ] Click-to-call confirmed on mobile (floating button + header)
 - [ ] Trust strip present on every page
 - [ ] Service-area pages built (Lead Machine+ only)
-- [ ] LocalBusiness schema validated
-- [ ] Accessibility baseline passes (all 8 WCAG checks in Step 10)
+- [ ] Full schema stack implemented per Step 10 — all required types present for each page type
+- [ ] All schema validated at `validator.schema.org` — zero errors across every page
+- [ ] Accessibility baseline passes (all 8 WCAG checks in Step 11)
 - [ ] Handover notes document any placeholders or deferred items
 
 ---

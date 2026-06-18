@@ -103,13 +103,22 @@ This is the correct process for rebuilding any page — Lantech site and all cli
 
 6. **Build HTML** using DESIGN.md tokens
 
-7. **Start dev server** — `node serve.mjs` in background
+7. **Implement schema** — mandatory, not optional, not post-launch
+   - Determine page type and add all required JSON-LD blocks per the schema stack in `workflows/client-build-standards.md` Step 10
+   - Every page minimum: `Organization` + `BreadcrumbList` (inner pages)
+   - Homepage: `LocalBusiness` (or trade sub-type) + `WebSite`
+   - Service pages: `Service` + `FAQPage` (if FAQ section present)
+   - Blog posts: `BlogPosting` + `FAQPage` (if FAQ section) + `HowTo` (if step-by-step)
+   - Question-format H2s + 40–60 word direct answer paragraphs for featured snippet eligibility
+   - Validate at `https://validator.schema.org/` — zero errors before continuing
 
-8. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
+8. **Start dev server** — `node serve.mjs` in background
 
-9. **Run quality gates** — user reviews the page in browser; copy reads naturally in context of design
+9. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
 
-10. **Iterate** — minimum 2 screenshot rounds before calling a page done
+10. **Run quality gates** — user reviews the page in browser; copy reads naturally in context of design
+
+11. **Iterate** — minimum 2 screenshot rounds before calling a page done
 
 **The old wrong process (banned):**
 - ~~Read old HTML → write new HTML directly → screenshot → iterate~~
@@ -117,6 +126,7 @@ This is the correct process for rebuilding any page — Lantech site and all cli
 - ~~Skip the SEO seed and start with marketing copy~~
 - ~~Skip Vale and the manual checklist because "the copy feels good"~~
 - ~~Copy handoff to .tmp/ for grammar approval — Vale + manual checklist replaces this~~
+- ~~Add schema "later" or "after launch" — schema is built during step 7, never deferred~~
 - Reading old HTML for content reference is fine. Jumping to code without the framework is not.
 
 ## Brand
@@ -181,6 +191,51 @@ This is the correct process for rebuilding any page — Lantech site and all cli
 - After screenshotting, read the PNG from `.tmp/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
+
+## File Organization — Mandatory on Every Build
+
+Every file created during a build must go in the correct folder with a clear, descriptive name. No generic names (`image.png`, `test.html`, `new-logo.svg`). No leftover files from old versions. No client assets mixed with brand assets.
+
+### Folder Rules
+
+| What | Where |
+|---|---|
+| Live brand files (logos, icons, illustrations) | `brand_assets/` root |
+| Brand kit exports (all sizes, mono variants, OG, social headers) | `brand_assets/brand-kit/` |
+| Custom icons used in the site UI | `brand_assets/icons/` |
+| Team photos | `brand_assets/` root — named `team-[firstname].jpg` |
+| Client portfolio screenshots and assets | `brand_assets/portfolio/[client-slug]/` |
+| Dev/generation utilities (render scripts, preview HTMLs, export scripts) | `brand_assets/_dev/` — never in root |
+| Intermediate files, temp exports, build artifacts | `.tmp/` — cleaned up after each session |
+| Fonts | `fonts/` |
+| Page scripts | `js/` |
+| Shared CSS | `css/` |
+| Blog posts | `blog/` |
+| Client site builds | `clients/active/[client-slug]/` |
+
+### File Naming Rules
+
+- **Always descriptive** — name files by what they are, not when they were made: `hero-proflow.png` not `hero-new.png`, `logo-dark.svg` not `logo2.svg`
+- **No version suffixes** — never `file-new`, `file-v2`, `file-final`, `file-updated` — if a file replaces another, delete the old one
+- **Prefix by type** for brand_assets root:
+  - `logo-` — logo variants (`logo.svg`, `logo-dark.svg`)
+  - `illus-` — illustrations (`illus-about-main.png`)
+  - `icon-` — icon files (`icon-512.png`)
+  - `team-` — team photos (`team-luis.jpg`)
+  - `work-` — portfolio work samples (`work-proflow.png`) → goes in `portfolio/` not root
+- **Client assets never mix with brand assets** — if it has a client name in it, it belongs in `portfolio/[client-slug]/` or `clients/active/[client-slug]/`
+- **kebab-case always** — no spaces, no underscores, no camelCase in filenames
+
+### Cleanup Rule — Mandatory After Every Build or Asset Generation
+
+Before marking any build done:
+- [ ] Every new file is in the correct folder
+- [ ] No generic names (`image.png`, `test.html`, `screenshot.png`, `new-*`, `*-v2`, `*-final`)
+- [ ] Old/replaced files are deleted — not renamed and left alongside the new version
+- [ ] `.tmp/` is cleared of files no longer needed
+- [ ] `brand_assets/` root contains only live brand files — no dev scripts, no client images, no stale exports
+
+---
 
 ## Output Defaults
 - Single `index.html` file, all styles inline, unless user says otherwise
@@ -268,6 +323,19 @@ IMPORTANT: A page is not done until ALL of these pass:
 - [ ] Every `<script src>` has `defer` — no render-blocking JS
 - [ ] Every page has `<main>` landmark wrapping primary content
 - [ ] Text contrast ≥ 4.5:1 on background (use `#6B6560` for muted/subtle text on `#FAFAF7`)
+
+**Schema (run before screenshot — zero errors required at `validator.schema.org`):**
+- [ ] `Organization` JSON-LD present on every page
+- [ ] `BreadcrumbList` present on every inner page (not homepage)
+- [ ] `WebSite` present on homepage
+- [ ] `LocalBusiness` (or trade sub-type) present on homepage — use most specific type available
+- [ ] `Service` present on every service page
+- [ ] `FAQPage` present on any page with a visible Q&A section
+- [ ] `HowTo` present on any step-by-step blog post or guide
+- [ ] `BlogPosting` present on every blog post
+- [ ] Question-format H2s used where targeting informational queries
+- [ ] 40–60 word direct answer paragraph follows each question-format heading
+- [ ] All schema validated at `https://validator.schema.org/` — zero errors
 
 **Launch smoke test (5 items — run on final localhost before any deploy):**
 - [ ] All nav links resolve (no 404s)

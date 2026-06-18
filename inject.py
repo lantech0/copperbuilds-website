@@ -1,6 +1,6 @@
 """
-inject.py — Lantech site pre-deploy injector
-Reads lantech.env and substitutes {{VAR}} placeholders in site HTML files.
+inject.py — CopperBuilds site pre-deploy injector
+Reads copperbuilds.env and substitutes {{VAR}} placeholders in site HTML files.
 Output goes to dist/ — deploy that folder, not the root.
 
 Usage: python inject.py
@@ -29,16 +29,16 @@ def parse_env(path: Path) -> dict:
 
 
 def main():
-    env_file = Path("lantech.env")
+    env_file = Path("copperbuilds.env")
     if not env_file.exists():
-        print("Error: lantech.env not found.")
-        print("Copy lantech.env.example to lantech.env and fill in your values.")
+        print("Error: copperbuilds.env not found.")
+        print("Copy copperbuilds.env.example to copperbuilds.env and fill in your values.")
         sys.exit(1)
 
     config = parse_env(env_file)
 
     if not config.get("WEB3FORMS_KEY"):
-        print("Warning: WEB3FORMS_KEY is blank in lantech.env.")
+        print("Warning: WEB3FORMS_KEY is blank in copperbuilds.env.")
         print("The contact form will not submit. Fill it in before deploying.")
 
     out_dir = Path("dist")
