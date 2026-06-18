@@ -100,8 +100,7 @@ Lantech | lantech016@gmail.com
 | "I'll do it myself" | "Most of our clients tried that first. Getting it to rank on Google is where we add the real value." |
 | "I don't trust online agencies" | "Fair. That's why you own all the files — no lock-in, no disappearing act. If you want out, take your site and go." |
 | "I already have a website" | "[Specific finding from your audit]. That's costing you Google rankings right now." |
-| "Not in my budget right now" | "We have a Launch plan — $499 to get your site live, then $79/mo. Most owners cover that in one job." |
-| "I can't afford $1,200" | "The Launch plan is built for that — $499 upfront, $79/mo. You get a real custom site, hosting included, and you own everything after 12 months." |
+| "Not in my budget right now" | "Our Starter is $1,200 flat — no contract, no monthly fees unless you want them. Most owners cover it in one job." |
 | "I need to talk to my partner/accountant" | "Of course. When are you talking to them? I can follow up after that." |
 
 ---

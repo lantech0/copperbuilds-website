@@ -193,7 +193,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     "description": "Web design, SEO, and Google Business Profile optimization for home service contractors and local businesses across the United States.",
     "email": "lantech016@gmail.com",
     "telephone": "+639773293969",
-    "priceRange": "$499 - $1,999",
+    "priceRange": "$1,200 - $1,999",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],

@@ -26,7 +26,7 @@ The agency is no longer "for all small businesses." It's for the trades.
 
 > **H1:** Websites that make the phone ring for home services pros.
 >
-> **Subhead:** We build the site, rank your Google Business Profile, and put you in front of the people searching "[trade] near me." Plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $499. Live within a week.
+> **Subhead:** We build the site, rank your Google Business Profile, and put you in front of the people searching "[trade] near me." Plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $1,200. Live within a week.
 >
 > **Tag pill:** Built for Home Services Pros
 
@@ -152,7 +152,6 @@ On services.html and pricing.html, name *real client keywords* in examples ("wat
 
 | Objection | Counter (work into copy) |
 |---|---|
-| "$1,200 still feels like a lot" | "We have a Launch plan — $499 to get live, then $79/mo. One job covers it." |
 | "Will this actually get me calls?" | "We rank your GBP and build a site that converts. Most clients see new calls within 30 days." |
 | "I tried marketing before. Got burned." | "Flat rate on most plans. No retainers unless you want them. You own every file either way." |
 | "I don't have time" | "We handle it. We need 30 minutes from you for content and photos. That's it." |
@@ -184,7 +183,7 @@ Priority order. Do not start any page until user approves the chosen hero option
 |---|---|---|
 | `<title>` | "Lantech — Professional Websites for Small Businesses \| Web Design & SEO" | "Lantech — Websites & Local SEO for Plumbers, HVAC, Electricians & Home Services" |
 | **Sitewide note** | "48 hours" mentioned 56× across 14 files | Replace ALL with "live within a week" / "within a week" / "in a week" — sitewide find-and-replace pass when each page is touched |
-| Meta description | Generic small biz | "Websites and local SEO for home services pros — plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $499. Live within a week. Serving home services pros across the United States." |
+| Meta description | Generic small biz | "Websites and local SEO for home services pros — plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $1,200. Live within a week. Serving home services pros across the United States." |
 | Tag pill | "Built for US Small Businesses" | "Built for Home Services Pros" |
 | Hero H1 | "Your website should work as hard as you do" | (chosen option from §1) |
 | Hero subhead | Generic small biz | (chosen option from §1) |
@@ -218,7 +217,7 @@ Priority order. Do not start any page until user approves the chosen hero option
 
 | Element | Change |
 |---|---|
-| Package tier prices | **KEEP** ($499 setup+$79/mo Launch / $1,200 Starter / $1,699 Growth / $1,999 Pro) |
+| Package tier prices | **KEEP** ($1,200 Starter / $1,699 Growth / $1,999 Pro) |
 | Package descriptions | Reframe deliverables for trades — mention click-to-call, GBP claim/optimize, photo galleries, service-area pages |
 | FAQ | Add: "Can you build service-area pages for the cities I work in?" "Do you handle emergency / 24-hour service messaging?" |
 | Schema offers | Update descriptions to mention home services |
