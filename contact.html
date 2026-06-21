@@ -133,6 +133,10 @@
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:2.25rem;display:flex;flex-direction:column;gap:1.25rem">
           <div>
+            <label style="display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:.5rem" for="name">Your name</label>
+            <input class="input-field" id="name" name="name" type="text" placeholder="Jane Smith" required>
+          </div>
+          <div>
             <label style="display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:.5rem" for="email">Email address</label>
             <input class="input-field" id="email" name="email" type="email" placeholder="jane@yourbusiness.com" required>
           </div>
@@ -218,7 +222,7 @@
           </div>
           <div>
             <div style="font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem">Business Hours</div>
-            <div style="font-weight:700;font-size:1rem;margin-bottom:.3rem">Mon–Fri, 9am–6pm EST</div>
+            <div style="font-weight:700;font-size:1rem;margin-bottom:.3rem">Mon–Fri, 9am–6pm US Eastern</div>
             <div style="color:var(--warm-stone);font-size:.85rem;line-height:1.55">Available during Eastern business hours. Drop us a line anytime—we reply first thing the next morning if it's after hours.</div>
           </div>
         </div>
