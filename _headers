@@ -1,0 +1,16 @@
+# Cloudflare Pages — cache headers for static assets
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=86400
+
+/js/*
+  Cache-Control: public, max-age=86400
+
+/brand_assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/portfolio/*/preview.webp
+  Cache-Control: public, max-age=604800
