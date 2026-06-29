@@ -212,10 +212,6 @@ body {
   background: radial-gradient(circle, rgba(184,115,51,0.10) 0%, transparent 70%);
 }
 
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
 
 /* ===== Nav ===== */
 .site-nav {
@@ -356,7 +352,7 @@ body {
 .breadcrumb a:hover { color: var(--accent); }
 
 .breadcrumb-sep {
-  color: rgba(255,255,255,0.2);
+  color: var(--muted);
 }
 
 .category-pill {
@@ -409,7 +405,7 @@ body {
 }
 
 .author-sep {
-  color: rgba(255,255,255,0.2);
+  color: var(--muted);
 }
 
 .read-badge {
@@ -793,7 +789,6 @@ body {
 <header class="article-header" aria-label="Article header">
   <div class="glow glow-cyan" style="width:500px;height:500px;top:-180px;left:-100px;opacity:0.85" aria-hidden="true"></div>
   <div class="glow glow-purple" style="width:420px;height:420px;top:-80px;right:-120px;opacity:0.75" aria-hidden="true"></div>
-  <div class="dot-grid" style="position:absolute;inset:0;opacity:0.45;pointer-events:none" aria-hidden="true"></div>
 
   <div class="article-container" style="position:relative">
     <!-- Breadcrumb -->

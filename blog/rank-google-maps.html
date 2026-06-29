@@ -188,10 +188,7 @@ body {
 .glow { position: absolute; border-radius: 50%; pointer-events: none; }
 .glow-cyan { background: radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%); }
 .glow-purple { background: radial-gradient(circle, rgba(184,115,51,0.05) 0%, transparent 70%); }
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
+
 .pill {
   display: inline-flex; align-items: center;
   font-family: 'JetBrains Mono', monospace; font-size: .6rem; font-weight: 500;
@@ -393,7 +390,6 @@ body {
 <header style="position:relative;padding:4rem 0 2.5rem;overflow:hidden" aria-label="Article header">
   <div class="glow glow-cyan" style="width:700px;height:700px;top:-300px;left:-200px;opacity:.8"></div>
   <div class="glow glow-purple" style="width:500px;height:500px;top:-100px;right:-200px"></div>
-  <div class="dot-grid" style="position:absolute;inset:0;opacity:.45;pointer-events:none" aria-hidden="true"></div>
   <div class="article-container" style="position:relative">
 
     <!-- Breadcrumb -->
@@ -517,7 +513,7 @@ body {
       <!-- Other 7% = 39.6 -->
 
       <!-- Base ring -->
-      <circle cx="130" cy="130" r="90" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="30"/>
+      <circle cx="130" cy="130" r="90" fill="none" stroke="#E7E0D8" stroke-width="30"/>
 
       <!-- GBP Signals 32% - cyan, starts at -90deg (offset = 0) -->
       <circle cx="130" cy="130" r="90" fill="none"
@@ -857,7 +853,7 @@ body {
       </a>
       <p style="color:var(--muted);font-size:.875rem;line-height:1.7;max-width:220px;margin-bottom:1.5rem">Web design &amp; SEO for small businesses across the United States.</p>
       <div style="display:flex;gap:.625rem">
-        <a href="https://www.facebook.com/LantechAgency/" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+        <a href="https://www.facebook.com/copperbuilds" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 2h-2a3 3 0 00-3 3v2H5v3h2v4h3v-4h2l.5-3H10V5a.5.5 0 01.5-.5H12V2z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg>
         </a>
         <a href="https://www.linkedin.com/in/luisecharri/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">

@@ -144,8 +144,6 @@ body {
 .container { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--container-px); }
 .article-container { max-width: var(--article-max); margin: 0 auto; padding: 0 var(--container-px); }
 
-/* Dot grid background */
-.dot-grid { background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 28px 28px; }
 .glow { position: absolute; border-radius: 50%; pointer-events: none; }
 .glow-cyan { background: radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%); }
 .glow-purple { background: radial-gradient(circle, rgba(184,115,51,0.05) 0%, transparent 70%); }
@@ -197,7 +195,7 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
 .breadcrumb { display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: var(--muted); margin-bottom: 1.25rem; flex-wrap: wrap; }
 .breadcrumb a { color: var(--muted); text-decoration: none; transition: color .2s; }
 .breadcrumb a:hover { color: var(--accent); }
-.breadcrumb-sep { color: rgba(255,255,255,0.18); font-size: .75rem; }
+.breadcrumb-sep { color: var(--muted); font-size: .75rem; }
 
 /* Article typography */
 .article-body h2 {
@@ -423,7 +421,6 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
 <header style="position:relative;padding:4rem 0 0;overflow:hidden" aria-label="Article header">
   <div class="glow glow-cyan" style="width:700px;height:500px;top:-200px;left:-120px;opacity:.8;position:absolute"></div>
   <div class="glow glow-purple" style="width:500px;height:400px;top:-80px;right:-100px;position:absolute"></div>
-  <div class="dot-grid" style="position:absolute;inset:0;opacity:.45;pointer-events:none" aria-hidden="true"></div>
 
   <div class="article-container" style="position:relative">
 
@@ -457,11 +454,11 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
       <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent));display:flex;align-items:center;justify-content:center;font-family:'Calistoga',sans-serif;font-size:.6rem;font-weight:700;color:#FAFAF7;flex-shrink:0">LE</div>
       <div>
         <span style="font-size:.875rem;font-weight:600;color:var(--txt)">By Luis Echarri</span>
-        <span style="color:rgba(255,255,255,0.18);margin:0 .5rem">·</span>
+        <span style="color:var(--muted);margin:0 .5rem">·</span>
         <span style="font-size:.875rem;color:var(--muted)">Founder of CopperBuilds</span>
-        <span style="color:rgba(255,255,255,0.18);margin:0 .5rem">·</span>
+        <span style="color:var(--muted);margin:0 .5rem">·</span>
         <time datetime="2026-02-10" style="font-size:.875rem;color:var(--muted)">February 10, 2026</time>
-        <span style="color:rgba(255,255,255,0.18);margin:0 .5rem">·</span>
+        <span style="color:var(--muted);margin:0 .5rem">·</span>
         <span style="font-size:.875rem;color:var(--muted)">8 min read</span>
       </div>
     </div>
@@ -540,11 +537,11 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
       </linearGradient>
     </defs>
     <!-- Y-axis gridlines -->
-    <line x1="80" y1="20" x2="80" y2="175" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-    <line x1="80" y1="175" x2="520" y2="175" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-    <line x1="80" y1="130" x2="520" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
-    <line x1="80" y1="85" x2="520" y2="85" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
-    <line x1="80" y1="40" x2="520" y2="40" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="80" y1="20" x2="80" y2="175" stroke="#E7E0D8" stroke-width="1"/>
+    <line x1="80" y1="175" x2="520" y2="175" stroke="#E7E0D8" stroke-width="1"/>
+    <line x1="80" y1="130" x2="520" y2="130" stroke="#E7E0D8" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="80" y1="85" x2="520" y2="85" stroke="#E7E0D8" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="80" y1="40" x2="520" y2="40" stroke="#E7E0D8" stroke-width="1" stroke-dasharray="4,4"/>
     <!-- Y-axis labels -->
     <text x="72" y="179" font-family="JetBrains Mono" font-size="9" fill="#78716C" text-anchor="end">0%</text>
     <text x="72" y="134" font-family="JetBrains Mono" font-size="9" fill="#78716C" text-anchor="end">0.5%</text>
@@ -829,7 +826,7 @@ nav { position: sticky; top: 0; z-index: 50; height: 64px; background: rgba(250,
         </a>
         <p style="color:var(--muted);font-size:.875rem;line-height:1.7;max-width:220px;margin-bottom:1.5rem">Web design &amp; SEO for small businesses across the United States.</p>
         <div style="display:flex;gap:.625rem">
-          <a href="https://www.facebook.com/LantechAgency/" class="social-btn" aria-label="CopperBuilds on Facebook" target="_blank" rel="noopener">
+          <a href="https://www.facebook.com/copperbuilds" class="social-btn" aria-label="CopperBuilds on Facebook" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 2h-2a3 3 0 00-3 3v2H5v3h2v4h3v-4h2l.5-3H10V5a.5.5 0 01.5-.5H12V2z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/luisecharri/" class="social-btn" aria-label="CopperBuilds on LinkedIn" target="_blank" rel="noopener">
