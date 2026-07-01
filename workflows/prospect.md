@@ -37,6 +37,26 @@ Output an **Area Selection Rationale** — save to Tab 3 of the Google Sheet:
 - Competition level: [Low / Medium / High]
 - Expected lead quality: [Hot/Warm ratio and why]
 
+### Step 2.5 — SERP Visibility Report
+
+Run `/generate-report` for the target trade + city before any lead research.
+
+**Why it comes first:** The report pulls live SERP data — who owns Local Pack, which features fire, which competitors appear across every keyword. That data feeds the Gold Standard (Step 3), pitch angles (Step 9.5), and outreach credibility (Step 10).
+
+**Run:** `/generate-report --trade [trade] --city [city] --state [state]`
+- No `--domain` flag during prospecting — this is the no-website prospect map mode
+- If `/generate-report` was already run for this exact trade+city combination this session: skip the run, use the existing report URL
+
+**Extract from the report after it generates:**
+- Top 5 competitors by SERP ownership score → these are your Gold Standard candidates (Step 3)
+- Local Pack prevalence % → use as the anchor stat in outreach ("X% of [trade] searches in [city] trigger a Local Pack")
+- SERP ownership scores → use in pitch angles (Step 9.5) to show exactly who is dominating and by how much
+- Published report URL → save it; use in Step 10 outreach as a credibility leave-behind
+
+**If DataForSEO is unavailable or user declines:** note it and proceed to Step 3 without report data. Flag in the session summary that outreach lacks the report URL.
+
+---
+
 ### Step 3 — Gold Standard Research + Sector Benchmark Table
 Find the top 1–2 competitors in the sector + location with the strongest digital presence. Record:
 - Business name
@@ -202,6 +222,7 @@ Rules:
 - Reference Gold Standard by exact name
 - Include exact revenue number and search volume
 - Mention the specific digital gap (no website, dormant social, incomplete GMB)
+- **Include the SERP report URL** (from Step 2.5) as a credibility signal — frame it as: "I ran an analysis of [trade] businesses in [city] — here's what the data shows: [URL]". Only include if the report was generated this session; never fabricate a URL.
 - **Reference their service area** — name how many cities they cover; frame the gap as lost leads across all of them, not just one city (e.g. "you serve 6 cities — that's [N × search volume] people a month who can't find you")
 - **Name their tier** only if it makes the pitch stronger; never lead with price — use it to show you've done your homework (e.g. "businesses your size typically need X city pages to show up where their customers search")
 - No price in message 1
