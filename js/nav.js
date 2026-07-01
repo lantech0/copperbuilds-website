@@ -5,6 +5,7 @@
   function isActive(href) {
     if (href === '/index.html') return page === 'index.html' || page === '';
     if (href === '/blog.html') return page === 'blog.html' || path.includes('/blog/');
+    if (href === '/reports/') return path.includes('/reports/');
     return page === href.replace(/^\//, '');
   }
 
@@ -28,6 +29,7 @@
         + link('/pricing.html', 'Pricing')
         + link('/about.html', 'About')
         + link('/blog.html', 'Blog')
+        + link('/reports/', 'Reports')
       + '</div>'
       + '<div style="display:flex;align-items:center;gap:1rem;">'
         + '<a href="/contact.html" class="btn btn-primary" id="nav-cta" style="white-space:nowrap;">Get a Free Quote</a>'
@@ -44,6 +46,7 @@
       + '<a href="/pricing.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Pricing</a>'
       + '<a href="/about.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">About</a>'
       + '<a href="/blog.html" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Blog</a>'
+      + '<a href="/reports/" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Reports</a>'
       + '<hr style="margin:.75rem 1.5rem;border:none;border-top:1px solid var(--rule);">'
       + '<a href="/contact.html" class="btn btn-primary" style="margin:.5rem 1.5rem 1rem;display:block;text-align:center;">Get a Free Quote</a>'
     + '</div>'
