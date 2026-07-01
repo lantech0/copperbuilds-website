@@ -1,0 +1,216 @@
+{
+  "us": [
+    {
+      "keyword": "google reviews for business",
+      "volume": 12100,
+      "competition": "LOW",
+      "cpc": 12.64,
+      "scope": "US"
+    },
+    {
+      "keyword": "local seo for small business",
+      "volume": 1600,
+      "competition": "LOW",
+      "cpc": 32.77,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac company dallas",
+      "volume": 1000,
+      "competition": "HIGH",
+      "cpc": 15.64,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac marketing agency",
+      "volume": 1000,
+      "competition": "MEDIUM",
+      "cpc": 57.06,
+      "scope": "US"
+    },
+    {
+      "keyword": "contractor website",
+      "volume": 880,
+      "competition": "MEDIUM",
+      "cpc": 23.08,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac seo",
+      "volume": 720,
+      "competition": "LOW",
+      "cpc": 74.41,
+      "scope": "US"
+    },
+    {
+      "keyword": "contractor seo",
+      "volume": 720,
+      "competition": "LOW",
+      "cpc": 55.86,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac marketing",
+      "volume": 590,
+      "competition": "MEDIUM",
+      "cpc": 69.5,
+      "scope": "US"
+    },
+    {
+      "keyword": "plumber website design",
+      "volume": 590,
+      "competition": "LOW",
+      "cpc": 27.54,
+      "scope": "US"
+    },
+    {
+      "keyword": "google maps ranking",
+      "volume": 480,
+      "competition": "LOW",
+      "cpc": 17.67,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac website design",
+      "volume": 480,
+      "competition": "LOW",
+      "cpc": 30.29,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac web design",
+      "volume": 480,
+      "competition": "LOW",
+      "cpc": 30.29,
+      "scope": "US"
+    },
+    {
+      "keyword": "contractor digital marketing",
+      "volume": 480,
+      "competition": "LOW",
+      "cpc": 32.02,
+      "scope": "US"
+    },
+    {
+      "keyword": "home service website design",
+      "volume": 320,
+      "competition": "MEDIUM",
+      "cpc": 29.06,
+      "scope": "US"
+    },
+    {
+      "keyword": "small business website cost",
+      "volume": 260,
+      "competition": "MEDIUM",
+      "cpc": 12.93,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac digital marketing",
+      "volume": 260,
+      "competition": "LOW",
+      "cpc": 49.03,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac company website",
+      "volume": 70,
+      "competition": "MEDIUM",
+      "cpc": 11.97,
+      "scope": "US"
+    },
+    {
+      "keyword": "website vs facebook page",
+      "volume": 20,
+      "competition": "LOW",
+      "cpc": null,
+      "scope": "US"
+    },
+    {
+      "keyword": "website not converting",
+      "volume": 10,
+      "competition": "LOW",
+      "cpc": null,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac marketing dallas",
+      "volume": 10,
+      "competition": "LOW",
+      "cpc": null,
+      "scope": "US"
+    },
+    {
+      "keyword": "web designer for contractors",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac seo dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac website dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac leads dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "US"
+    },
+    {
+      "keyword": "hvac website cost",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "US"
+    }
+  ],
+  "dallas": [
+    {
+      "keyword": "hvac marketing dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "Dallas"
+    },
+    {
+      "keyword": "hvac seo dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "Dallas"
+    },
+    {
+      "keyword": "hvac website dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "Dallas"
+    },
+    {
+      "keyword": "hvac company dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "Dallas"
+    },
+    {
+      "keyword": "hvac leads dallas",
+      "volume": null,
+      "competition": null,
+      "cpc": null,
+      "scope": "Dallas"
+    }
+  ]
+}
