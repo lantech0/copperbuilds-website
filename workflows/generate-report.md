@@ -140,10 +140,10 @@ Zero output = clean.
 
 ### Step 6 — Commit and deploy
 
-Stage only the report files (never stage `_cache/` — it's gitignored):
+Stage the report files AND `keyword-map.json` (never stage `_cache/` — it's gitignored by design, that's fine, it's just a 30-day cost-saving cache; `keyword-map.json` is the permanent record and is NOT gitignored, so it must be committed explicitly or the paid research behind it has no lasting trace — see `reports/README.md`):
 
 ```
-git add reports/index.html reports/{trade}-seo-report-{city}-{state}-{year}/index.html sitemap.xml
+git add reports/index.html reports/{trade}-seo-report-{city}-{state}-{year}/index.html reports/{trade}-seo-report-{city}-{state}-{year}/keyword-map.json sitemap.xml
 git commit -m "feat(reports): add {trade} SEO report — {City}, {STATE} {year}"
 git push origin main
 ```
@@ -193,6 +193,7 @@ Topical review (does this phrase make sense for the trade) was already done for 
 Before reporting done:
 
 - [ ] `reports/{slug}/index.html` exists and opens without errors
+- [ ] `reports/{slug}/keyword-map.json` exists AND is staged/committed (check `git status` — this file is the only permanent record of the paid volume-fetch call; if it's not committed, that DataForSEO spend has no lasting trace)
 - [ ] Hero stat cards show real numbers (not dashes or zeros)
 - [ ] Market Ownership section has at least one competitor with reviews/rating/phone
 - [ ] Position Breakdown shows stacked bars for top competitors
