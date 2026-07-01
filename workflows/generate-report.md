@@ -57,7 +57,7 @@ python generate_report.py --trade {trade} --city {city} --state {state}
 With domain audit: add `--domain {domain}`
 Dry run (no API credits, mock data): add `--dry-run`
 
-**Cache behavior:** DataForSEO results are cached for 30 days in `reports/_cache/`. If all 15 keywords are cached, the run takes ~10 seconds and costs $0. If any keyword is missing from cache, a live API call is made.
+**Cache behavior:** DataForSEO results are cached for 30 days in `reports/_cache/`. If all 15 keywords are cached, the run takes ~10 seconds and costs $0. If any keyword is missing from cache — including because the cache expired past 30 days — a live API call is made. **Expired cache does not skip the confirm-before-run rule.** Stop and get explicit user confirmation before that refresh call runs, exactly as if it were a first-time lookup — never let a stale cache silently trigger a new paid call.
 
 **After running:** confirm the output file exists at `reports/{trade}-seo-report-{city}-{state}-{year}/index.html`. If the script errors, read the full error before attempting any fix.
 
