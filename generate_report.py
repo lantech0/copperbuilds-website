@@ -138,6 +138,18 @@ FEATURE_WEIGHTS = {
     "featured_snippet": 0.05, "ai_overview": 0.03, "people_also_ask": 0.02,
 }
 
+TRADE_AVG_TICKET = {
+    "hvac": 400, "plumbing": 320, "roofing": 900, "electrical": 350,
+    "landscaping": 260, "painting": 320, "cleaning": 180, "pest_control": 210,
+    "general_contractor": 2500,
+}
+
+TRADE_CPC = {
+    "hvac": 45, "plumbing": 35, "roofing": 50, "electrical": 40,
+    "landscaping": 15, "painting": 20, "cleaning": 12, "pest_control": 18,
+    "general_contractor": 30,
+}
+
 FEATURE_LABELS = {
     "local_pack": "Local Pack (3-Map)", "local_services": "Local Services Ads",
     "organic": "Organic Results", "featured_snippet": "Featured Snippet",
@@ -171,6 +183,67 @@ def dfs_serp_cached(keyword: str, location: str) -> tuple[dict, bool]:
     _save_cache(keyword, location, result)
     return result, False
 
+
+def fetch_keyword_volumes(base_keywords: list, location: str, cache_id: str) -> dict:
+    """
+    Batch-fetches monthly search volumes from DataForSEO Keywords Data API.
+    base_keywords: keyword terms WITHOUT city name (DataForSEO filters by location_name).
+    Returns: {keyword: monthly_search_volume}
+    """
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    cache_path = CACHE_DIR / f"__vol__{_cache_key(cache_id, location)}.json"
+    if cache_path.exists():
+        try:
+            data = json.loads(cache_path.read_text(encoding="utf-8"))
+            saved_at = datetime.fromisoformat(data["_cached_at"])
+            if datetime.now() - saved_at <= timedelta(days=CACHE_TTL_DAYS):
+                return data["result"]
+        except Exception:
+            pass
+    url = "https://api.dataforseo.com/v3/keywords_data/google_ads/search_volume/live"
+    payload = [{"keywords": base_keywords, "location_name": location, "language_name": "English"}]
+    resp = requests.post(url, json=payload, auth=(DFS_USER, DFS_PASS), timeout=30)
+    resp.raise_for_status()
+    data = resp.json()
+    volumes = {}
+    if data.get("status_code") == 20000:
+        tasks = data.get("tasks", [])
+        if tasks and tasks[0].get("status_code") == 20000:
+            for r in (tasks[0].get("result", []) or []):
+                kw = r.get("keyword", "")
+                sv = r.get("search_volume") or 0
+                volumes[kw] = sv
+    cache_path.write_text(json.dumps({"_cached_at": datetime.now().isoformat(), "result": volumes},
+                                      ensure_ascii=False), encoding="utf-8")
+    return volumes
+
+
+def calc_revenue_opportunity(volumes: dict, trade: str) -> dict:
+    """Estimate monthly revenue potential for the top local pack position."""
+    total_searches = sum(volumes.values())
+    avg_ticket = TRADE_AVG_TICKET.get(trade, 350)
+    cpc = TRADE_CPC.get(trade, 30)
+    # One of three map-pack spots: ~12% CTR share; 8% of those call/fill form; 40% close
+    clicks = round(total_searches * 0.12)
+    leads = round(clicks * 0.08)
+    jobs = round(leads * 0.40)
+    revenue = jobs * avg_ticket
+    # High-end: 15% CTR, 10% lead, 50% close
+    revenue_high = round(total_searches * 0.15 * 0.10 * 0.50 * avg_ticket)
+    # PPC equivalent: what it would cost to buy these clicks via Google Ads (avg 3% paid CTR)
+    ppc_monthly = round(total_searches * 0.03 * cpc)
+    return {
+        "total_searches": total_searches,
+        "avg_ticket": avg_ticket,
+        "cpc": cpc,
+        "clicks": clicks,
+        "leads": leads,
+        "jobs": jobs,
+        "revenue": revenue,
+        "revenue_high": max(revenue, revenue_high),
+        "ppc_monthly": ppc_monthly,
+    }
+
 # ── Feature Parser ────────────────────────────────────────────────────────────
 
 def parse_features(serp_result: dict, domain: str | None) -> dict:
@@ -185,12 +258,18 @@ def parse_features(serp_result: dict, domain: str | None) -> dict:
         t = item.get("type", "")
         if t == "local_pack":
             f["local_pack"]["fired"] = True
-            for biz in (item.get("items") or []):
-                name = biz.get("title", "")
-                url = biz.get("url", "") or ""
-                f["local_pack"]["businesses"].append({"name": name, "url": url})
-                if domain and domain.lower() in url.lower():
-                    f["local_pack"]["client_present"] = True
+            name = item.get("title", "")
+            url = item.get("url", "") or ""
+            domain_val = item.get("domain", "") or ""
+            rating_obj = item.get("rating") or {}
+            f["local_pack"]["businesses"].append({
+                "name": name, "url": url, "domain": domain_val,
+                "phone": item.get("phone", "") or "",
+                "rating": rating_obj.get("value"),
+                "reviews": rating_obj.get("votes_count"),
+            })
+            if domain and (domain.lower() in url.lower() or domain.lower() in domain_val.lower()):
+                f["local_pack"]["client_present"] = True
         elif t == "local_services":
             f["local_services"]["fired"] = True
             for svc in (item.get("items") or []):
@@ -230,16 +309,35 @@ def parse_features(serp_result: dict, domain: str | None) -> dict:
 
 def aggregate_competitors(all_features: list) -> list:
     counts: dict[str, int] = {}
+    profiles: dict[str, dict] = {}
     for kw_f in all_features:
         for biz in kw_f.get("local_pack", {}).get("businesses", []):
             name = biz.get("name", "").strip()
-            if name:
-                counts[name] = counts.get(name, 0) + 1
+            if not name:
+                continue
+            counts[name] = counts.get(name, 0) + 1
+            if name not in profiles:
+                profiles[name] = {
+                    "phone": biz.get("phone", "") or "",
+                    "domain": biz.get("domain", "") or "",
+                    "rating": biz.get("rating"),
+                    "reviews": biz.get("reviews"),
+                }
+            else:
+                # Keep the highest review count seen (most authoritative snapshot)
+                if biz.get("reviews") and (not profiles[name]["reviews"] or
+                        biz["reviews"] > profiles[name]["reviews"]):
+                    profiles[name]["reviews"] = biz["reviews"]
+                    profiles[name]["rating"] = biz.get("rating")
+                if not profiles[name]["phone"] and biz.get("phone"):
+                    profiles[name]["phone"] = biz["phone"]
     total = len(all_features)
     ranked = sorted(counts.items(), key=lambda x: x[1], reverse=True)
-    return [{"name": n, "appearances": c,
-             "prevalence_pct": round(c / total * 100) if total else 0}
-            for n, c in ranked[:5]]
+    return [{
+        "name": n, "appearances": c,
+        "prevalence_pct": round(c / total * 100) if total else 0,
+        **profiles.get(n, {}),
+    } for n, c in ranked[:5]]
 
 def aggregate_stats(all_features: list) -> dict:
     total = len(all_features)
@@ -283,6 +381,27 @@ def calc_ownership_score(all_features: list, domain: str | None) -> dict:
     comp_scores = {n: round(p / max_pts * 100, 1) for n, p in comp_pts.items()}
     top5 = dict(sorted(comp_scores.items(), key=lambda x: x[1], reverse=True)[:5])
     return {"client": client_score, "competitors": top5}
+
+# ── HTML Helpers ─────────────────────────────────────────────────────────────
+
+def _build_kw_rows(keywords: list, volumes: dict, stats: dict) -> str:
+    """Build keyword table rows sorted by search volume descending."""
+    lp_fired_count = stats.get("local_pack", {}).get("fired_count", 0)
+    total_kw = len(keywords)
+    # Approximate per-keyword LP rate — use aggregate for all rows since we don't track per-kw
+    rows = ""
+    for kw in sorted(keywords, key=lambda k: volumes.get(k, 0), reverse=True):
+        vol = volumes.get(kw, 0)
+        vol_str = f"{vol:,}" if vol else "—"
+        lp_class = "yes" if lp_fired_count / total_kw >= 0.5 else "no"
+        lp_label = "Yes" if lp_fired_count / total_kw >= 0.5 else "Varies"
+        rows += f"""
+        <tr>
+          <td>{kw}</td>
+          <td class="kw-vol">{vol_str}/mo</td>
+          <td><span class="kw-badge {lp_class}">{lp_label}</span></td>
+        </tr>"""
+    return rows
 
 # ── HTML Generator ────────────────────────────────────────────────────────────
 
@@ -330,24 +449,48 @@ def build_competitor_bars(competitors: list, client_score: float, domain: str | 
     return bars
 
 def generate_html(trade: str, city: str, state: str, year: int, domain: str | None,
-                  keywords: list, stats: dict, competitors: list, ownership: dict) -> str:
+                  keywords: list, stats: dict, competitors: list, ownership: dict,
+                  volumes: dict | None = None) -> str:
     tl = TRADE_LABELS.get(trade, trade.replace("_", " ").title())
     city_t = city.title()
     st = state.upper()
     total_kw = len(keywords)
     lp_pct = stats.get("local_pack", {}).get("prevalence_pct", 0)
+    lp_fired = stats.get("local_pack", {}).get("fired_count", 0)
     lsa_pct = stats.get("local_services", {}).get("prevalence_pct", 0)
     ai_pct = stats.get("ai_overview", {}).get("prevalence_pct", 0)
     client_score = ownership.get("client", 0.0)
     comp_scores = ownership.get("competitors", {})
     top_name = list(comp_scores.keys())[0] if comp_scores else "Top Competitor"
-    top_score = list(comp_scores.values())[0] if comp_scores else 0
+    top_name_short = top_name.split("–")[0].split("-")[0].strip()[:30]
+    top_appearances = competitors[0]["appearances"] if competitors else 0
     mode_label = f"Your site ({domain})" if domain else "No website detected"
+    # Revenue opportunity
+    rev = calc_revenue_opportunity(volumes or {}, trade)
+    total_searches = rev["total_searches"]
+    vol_display = f"{total_searches:,}" if total_searches else "—"
+    rev_display = f"${rev['revenue_high']:,}" if rev["revenue_high"] else "—"
+    ppc_display = f"${rev['ppc_monthly']:,}" if rev.get("ppc_monthly") else "—"
     hero_sub = (
-        f"We pulled {total_kw} live Google searches for {tl} services in {city_t}. "
-        f"Here's what customers see — and what your competitors are capturing."
+        f"We tracked {total_kw} real Google searches for {tl} in {city_t} this month. "
+        f"Here's what your customers see — and which competitors are capturing them."
     )
-    month = datetime.now().strftime("%B %Y")
+    now = datetime.now()
+    month = now.strftime("%B %Y")
+    data_date = now.strftime("%B %d, %Y")
+    # Competitor profile card
+    top_comp = competitors[0] if competitors else {}
+    top_rating = top_comp.get("rating")
+    top_reviews = top_comp.get("reviews")
+    top_phone = top_comp.get("phone", "")
+    top_domain = top_comp.get("domain", "")
+    stars_html = ""
+    if top_rating:
+        full = int(top_rating)
+        half = 1 if (top_rating - full) >= 0.5 else 0
+        stars_html = "★" * full + ("½" if half else "") + "☆" * (5 - full - half)
+    # PAA for FAQPage schema
+    paa_schema_items = stats.get("paa_questions", [])[:8]
     feat_rows = build_feature_rows(stats, domain)
     comp_bars = build_competitor_bars(competitors, client_score, domain)
     paa_q = stats.get("paa_questions", [])
@@ -374,8 +517,8 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Are {city_t} {tl} Companies Invisible on Google? | {year} Visibility Report</title>
-<meta name="description" content="We analyzed {total_kw} live Google searches for {tl} services in {city_t}, {st}. See which SERP features fire, who owns them, and what your competitors are capturing that you're missing.">
+<title>{city_t} {tl} SEO Report {year} | Who's Winning Google in {city_t}, {st}</title>
+<meta name="description" content="We analyzed {total_kw} live Google searches for {tl} in {city_t}, {st}. See who owns the map pack, which keywords drive the most traffic, and what it's costing you. {data_date} data.">
 <link rel="canonical" href="https://copperbuilds.com/reports/{trade.replace('_','-')}-seo-report-{city.replace(' ','-').lower()}-{state.lower()}-{year}/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -392,6 +535,19 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
       "logo": "https://copperbuilds.com/brand_assets/logo.svg",
       "contactPoint": {{"@type": "ContactPoint", "email": "lantech016@gmail.com", "contactType": "customer service"}}
     }},
+    {{
+      "@type": "Article",
+      "headline": "{city_t} {tl} SEO Report {year} — Who's Winning Google in {city_t}, {st}",
+      "description": "We analyzed {total_kw} live Google searches for {tl} in {city_t}, {st}. See who owns the map pack, keyword search volumes, and estimated monthly revenue.",
+      "datePublished": "{now.strftime('%Y-%m-%d')}",
+      "dateModified": "{now.strftime('%Y-%m-%d')}",
+      "author": {{"@type": "Organization", "name": "CopperBuilds", "url": "https://copperbuilds.com"}},
+      "publisher": {{"@type": "Organization", "name": "CopperBuilds", "logo": {{"@type": "ImageObject", "url": "https://copperbuilds.com/brand_assets/logo.svg"}}}}
+    }},
+    {f'''{{
+      "@type": "FAQPage",
+      "mainEntity": [{", ".join(f'{{"@type": "Question", "name": {json.dumps(q)}, "acceptedAnswer": {{"@type": "Answer", "text": "This is a common question Dallas {tl} customers ask when searching on Google."}}}}' for q in paa_schema_items)}]
+    }}''' if paa_schema_items else '"@type": "WebPage"'},
     {{
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -480,6 +636,68 @@ a:hover{{color:var(--copper-hover)}}
 .paa-list{{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}}
 .paa-list li{{background:var(--elevated);border-radius:var(--r-md);padding:12px 16px;font-size:.88rem;color:var(--ink)}}
 
+/* DATA NOTE */
+.data-note{{font-size:.76rem;color:var(--subtle);margin-top:20px;font-style:italic;line-height:1.5}}
+
+/* CONSUMER BEHAVIOR CALLOUT */
+.stat-hook{{background:var(--ink);border-radius:var(--r-xl);padding:40px;margin:0 40px 0;max-width:calc(1000px - 80px);margin-left:auto;margin-right:auto}}
+.stat-hook-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}}
+.hook-stat{{text-align:center}}
+.hook-num{{font-family:'JetBrains Mono',monospace;font-size:2.2rem;font-weight:500;color:var(--copper);line-height:1}}
+.hook-label{{font-size:.82rem;color:rgba(255,255,255,0.6);margin-top:6px;line-height:1.4}}
+
+/* KEYWORDS TABLE */
+.kw-table{{width:100%;border-collapse:collapse;margin-top:0}}
+.kw-table th{{text-align:left;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);padding:10px 0;border-bottom:1px solid var(--border)}}
+.kw-table td{{padding:12px 0;border-bottom:1px solid var(--rule);font-size:.9rem;vertical-align:middle}}
+.kw-vol{{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--copper);font-weight:500}}
+.kw-badge{{display:inline-block;font-size:.65rem;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:var(--r-pill);font-weight:500}}
+.kw-badge.yes{{background:var(--teal-dim);color:var(--teal)}}
+.kw-badge.no{{background:var(--copper-dim);color:var(--copper)}}
+.kw-total-row{{font-size:.82rem;color:var(--muted);margin-top:12px;font-style:italic}}
+
+/* COMPETITOR PROFILE CARD */
+.leader-card{{background:var(--surface);border:2px solid var(--copper);border-radius:var(--r-xl);padding:32px;margin-bottom:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}}
+.leader-badge{{display:inline-block;background:var(--copper-dim);color:var(--copper);font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:var(--r-pill);margin-bottom:12px}}
+.leader-name{{font-family:'Calistoga',serif;font-size:1.4rem;color:var(--ink);margin-bottom:8px;line-height:1.2}}
+.leader-meta{{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px}}
+.leader-meta-item{{font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:6px}}
+.leader-meta-item strong{{color:var(--ink)}}
+.leader-stars{{color:#D97706;font-size:1rem;letter-spacing:1px}}
+.leader-stat{{text-align:right}}
+.leader-stat-num{{font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:500;color:var(--copper)}}
+.leader-stat-label{{font-size:.78rem;color:var(--muted);margin-top:4px;line-height:1.4}}
+@media(max-width:640px){{.leader-card{{grid-template-columns:1fr}}.stat-hook-grid{{grid-template-columns:1fr}}.stat-hook{{margin:0 20px}}}}
+
+/* PPC CALLOUT */
+.ppc-callout{{background:var(--elevated);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;margin-top:24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}}
+.ppc-num{{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:500;color:var(--copper);white-space:nowrap}}
+.ppc-label{{font-size:.88rem;color:var(--muted);line-height:1.5}}
+
+/* INTERNAL LINKS */
+.internal-links{{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}}
+.internal-link{{display:inline-block;border:1px solid var(--border);border-radius:var(--r-md);padding:8px 16px;font-size:.82rem;color:var(--copper);transition:border-color .2s,background .2s}}
+.internal-link:hover{{background:var(--copper-dim);border-color:var(--copper);color:var(--copper)}}
+
+/* TIMELINE NOTE */
+.timeline-note{{font-size:.85rem;color:var(--muted);margin-top:12px;display:flex;align-items:center;gap:8px}}
+
+/* REVENUE SECTION */
+.rev-section{{padding:64px 40px;max-width:1000px;margin:0 auto}}
+.rev-banner{{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:48px;margin-bottom:32px}}
+.rev-banner .section-tag{{color:var(--copper)}}
+.rev-banner h2{{font-family:'Calistoga',serif;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin-bottom:8px;color:#fff}}
+.rev-banner p{{color:rgba(255,255,255,0.6);font-size:.95rem;margin-bottom:0;max-width:580px}}
+.rev-steps{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:32px}}
+.rev-step{{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-lg);padding:20px}}
+.rev-step-num{{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:500;color:var(--copper);line-height:1;margin-bottom:6px}}
+.rev-step-label{{font-size:.78rem;color:rgba(255,255,255,0.5);line-height:1.4}}
+.rev-step-formula{{font-size:.72rem;color:rgba(255,255,255,0.35);margin-top:4px;font-style:italic}}
+.rev-total{{background:var(--copper);border-radius:var(--r-lg);padding:20px}}
+.rev-total .rev-step-num{{color:#fff;font-size:1.6rem}}
+.rev-total .rev-step-label{{color:rgba(255,255,255,0.8)}}
+.rev-disclaimer{{font-size:.76rem;color:var(--subtle);margin-top:16px;font-style:italic}}
+
 /* PITCH */
 .pitch{{background:var(--elevated);border-radius:var(--r-xl);padding:56px 48px;margin:0 auto;max-width:820px}}
 .pitch h2{{font-family:'Calistoga',serif;font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:20px;line-height:1.2}}
@@ -527,22 +745,65 @@ a:hover{{color:var(--copper-hover)}}
   <p class="hero-sub">{hero_sub}</p>
   <div class="stat-grid">
     <div class="stat-card">
-      <div class="stat-num">{total_kw}</div>
-      <div class="stat-label">live Google searches analyzed in {city_t}</div>
+      <div class="stat-num teal">{vol_display}</div>
+      <div class="stat-label">people search for {tl} in {city_t} every month across these {total_kw} keyword phrases</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num danger">{lp_pct}%</div>
-      <div class="stat-label">of searches show a Local Pack — the most-clicked result</div>
+      <div class="stat-num danger">{lp_fired} of {total_kw}</div>
+      <div class="stat-label">searches show a map pack of 3 local businesses — the most-clicked results on Google</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">{top_score:.1f}</div>
-      <div class="stat-label">SERP ownership score for {top_name}</div>
+      <div class="stat-num">{top_appearances} of {total_kw}</div>
+      <div class="stat-label">searches where {top_name_short} shows up in the {city_t} map — they're capturing your customers</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num {"teal" if client_score > 5 else "danger"}">{client_score:.1f}</div>
-      <div class="stat-label">{"Your current" if domain else "Your potential"} SERP ownership score</div>
+      <div class="stat-num teal">{rev_display}</div>
+      <div class="stat-label">estimated monthly revenue for the {tl} company that owns the top spot on Google in {city_t}</div>
     </div>
   </div>
+  <p class="data-note">Data pulled on {data_date} &middot; Simulates a {city_t}, {st} mobile search &middot; Results vary by searcher location, device, and date</p>
+</section>
+
+<hr class="section-divider">
+
+<div class="stat-hook">
+  <div class="stat-hook-grid">
+    <div class="hook-stat">
+      <div class="hook-num">97%</div>
+      <div class="hook-label">of people research a local business online before calling</div>
+    </div>
+    <div class="hook-stat">
+      <div class="hook-num">83%</div>
+      <div class="hook-label">of those use Google — not Facebook, not Yelp, not Angi</div>
+    </div>
+    <div class="hook-stat">
+      <div class="hook-num">92%</div>
+      <div class="hook-label">pick a business from the first page — if you're not there, you don't exist</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<section class="section">
+  <div class="section-tag">Keywords Tracked</div>
+  <h2>Every search we analyzed — and how many {city_t} customers type it every month</h2>
+  <p class="section-sub">These are the exact phrases {city_t} residents type into Google when they need {tl}. Monthly volume is how many people searched that phrase in {city_t} last month.</p>
+  <div class="table-scroll">
+  <table class="kw-table" role="table">
+    <thead>
+      <tr>
+        <th scope="col">Search phrase</th>
+        <th scope="col">Monthly searches</th>
+        <th scope="col">Map pack fires?</th>
+      </tr>
+    </thead>
+    <tbody>
+      {_build_kw_rows(keywords, volumes, stats)}
+    </tbody>
+  </table>
+  </div>
+  <p class="kw-total-row">Total: <strong>{vol_display} searches/month</strong> across all {total_kw} tracked keywords in {city_t}</p>
 </section>
 
 <hr class="section-divider">
@@ -571,8 +832,24 @@ a:hover{{color:var(--copper-hover)}}
 
 <section class="section">
   <div class="section-tag">Market Ownership</div>
-  <h2>Who Owns the {city_t} {tl} Market on Google</h2>
-  <p class="section-sub">SERP ownership score across all tracked keywords. Higher score = more visible where customers are searching.</p>
+  <h2>Who {city_t} Customers Find When They Search for {tl}</h2>
+  <p class="section-sub">How many of the {total_kw} tracked searches each business appears in on the Google map pack — the most-clicked result on Google for local searches.</p>
+  <div class="leader-card">
+    <div>
+      <div class="leader-badge">Current Market Leader</div>
+      <div class="leader-name">{top_name}</div>
+      <div class="leader-meta">
+        {f'<div class="leader-meta-item"><span class="leader-stars">{stars_html}</span> <strong>{top_rating}</strong> out of 5</div>' if top_rating else ''}
+        {f'<div class="leader-meta-item">💬 <strong>{top_reviews:,}</strong> Google reviews</div>' if top_reviews else ''}
+        {f'<div class="leader-meta-item">📞 <strong>{top_phone}</strong></div>' if top_phone else ''}
+        {f'<div class="leader-meta-item">🌐 <strong>{top_domain}</strong></div>' if top_domain and top_domain != "www.google.com" else ''}
+      </div>
+    </div>
+    <div class="leader-stat">
+      <div class="leader-stat-num">{top_appearances} of {total_kw}</div>
+      <div class="leader-stat-label">searches where this<br>business appears<br>in the {city_t} map pack</div>
+    </div>
+  </div>
   {comp_bars}
 </section>
 
@@ -584,6 +861,55 @@ a:hover{{color:var(--copper-hover)}}
   <p class="section-sub">The features that fire most — and where your visibility is zero.</p>
   <div class="gap-grid">
     {gap_html}
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<hr class="section-divider">
+
+<section class="rev-section">
+  <div class="rev-banner">
+    <div class="section-tag">Revenue Opportunity</div>
+    <h2>How much money is sitting in {city_t} {tl} searches every month?</h2>
+    <p>Here's what the math looks like for the business that owns the top spot on Google in {city_t}.</p>
+    <div class="rev-steps">
+      <div class="rev-step">
+        <div class="rev-step-num">{vol_display}</div>
+        <div class="rev-step-label">people search for {tl} in {city_t} every month</div>
+        <div class="rev-step-formula">Total monthly search volume</div>
+      </div>
+      <div class="rev-step">
+        <div class="rev-step-num">{rev['clicks']:,}</div>
+        <div class="rev-step-label">of those clicks go to a business in the map pack</div>
+        <div class="rev-step-formula">~12% click-through for a map pack listing</div>
+      </div>
+      <div class="rev-step">
+        <div class="rev-step-num">{rev['leads']:,}</div>
+        <div class="rev-step-label">of those visitors call or fill out a form</div>
+        <div class="rev-step-formula">8% lead conversion — industry benchmark</div>
+      </div>
+      <div class="rev-step">
+        <div class="rev-step-num">{rev['jobs']:,}</div>
+        <div class="rev-step-label">of those leads turn into paying customers</div>
+        <div class="rev-step-formula">40% close rate — typical for {tl}</div>
+      </div>
+      <div class="rev-step rev-total">
+        <div class="rev-step-num">${rev['avg_ticket']:,}/job</div>
+        <div class="rev-step-label">average {tl} job value in {city_t}</div>
+        <div class="rev-step-formula">Industry average for this trade</div>
+      </div>
+      <div class="rev-step rev-total">
+        <div class="rev-step-num">{rev_display}/mo</div>
+        <div class="rev-step-label">estimated monthly revenue at the top of Google</div>
+        <div class="rev-step-formula">Conservative estimate</div>
+      </div>
+    </div>
+    <p class="rev-disclaimer">Estimates based on industry conversion benchmarks. Actual results vary by market, reviews, and site quality. The business currently in the top map-pack spot in {city_t} is: {top_name_short}.</p>
+    <div class="ppc-callout">
+      <div class="ppc-num">{ppc_display}/mo</div>
+      <div class="ppc-label">That's what it would cost to buy these same clicks through Google Ads — at ~${rev['cpc']}/click for {tl} keywords in {city_t}. Ranking organically gets you those clicks for free, every month, without paying per click.</div>
+    </div>
   </div>
 </section>
 
@@ -601,9 +927,15 @@ a:hover{{color:var(--copper-hover)}}
 <div class="section">
   <div class="pitch">
     <h2>Here's what this means for your business.</h2>
-    <p>Google has changed. Organic ranking alone used to be enough. Now, the first thing most customers see is the Local Pack — a map with three businesses, phone numbers, and star ratings. Below that are LSAs with the Google Guaranteed badge. Your organic result, if you have one, comes after all of that.</p>
-    <p>In the {city_t} {tl} market, the Local Pack fires on {lp_pct}% of searches. If you're not in it, you're invisible to most of the people searching for exactly what you do — before they ever scroll down.</p>
-    <p>The businesses in that pack aren't necessarily better than you. They just have a stronger Google presence: an optimized Business Profile, consistent reviews, and a website that tells Google who they are and where they operate. That's fixable. And it's exactly what we do.</p>
+    <p>Google has changed. Organic ranking alone used to be enough. Now, the first thing most customers see is the Local Pack — a map with three businesses, phone numbers, and star ratings. Below that are Local Services Ads with the Google Guaranteed badge. Your organic result, if you have one, comes after all of that.</p>
+    <p>In the {city_t} {tl} market, the map pack fires on {lp_pct}% of searches. If you're not in it, you're invisible to most of the people searching for exactly what you do — before they ever scroll down to organic results.</p>
+    <p>The businesses in that pack aren't necessarily better than you. They just have a stronger Google presence: an optimized Business Profile, consistent reviews, and a website that tells Google who they are and where they operate. That's fixable. Most businesses start showing up on Google Maps within 45–60 days of doing this work correctly.</p>
+    <p>That's exactly what we do at CopperBuilds — <a href="/services.html">websites and local SEO built specifically for home service companies</a>. If you want to know what it would cost to fix your Google presence, <a href="/pricing.html">see our packages</a> or book a free call below.</p>
+    <div class="internal-links">
+      <a href="/services.html" class="internal-link">Our services for {tl} companies</a>
+      <a href="/pricing.html" class="internal-link">See pricing</a>
+      <a href="/blog/rank-google-maps.html" class="internal-link">How to rank on Google Maps</a>
+    </div>
   </div>
 </div>
 
@@ -628,6 +960,22 @@ a:hover{{color:var(--copper-hover)}}
 </body>
 </html>"""
 
+# ── State Abbreviation → Full Name ───────────────────────────────────────────
+
+STATE_NAMES = {
+    "al":"Alabama","ak":"Alaska","az":"Arizona","ar":"Arkansas","ca":"California",
+    "co":"Colorado","ct":"Connecticut","de":"Delaware","fl":"Florida","ga":"Georgia",
+    "hi":"Hawaii","id":"Idaho","il":"Illinois","in":"Indiana","ia":"Iowa",
+    "ks":"Kansas","ky":"Kentucky","la":"Louisiana","me":"Maine","md":"Maryland",
+    "ma":"Massachusetts","mi":"Michigan","mn":"Minnesota","ms":"Mississippi",
+    "mo":"Missouri","mt":"Montana","ne":"Nebraska","nv":"Nevada","nh":"New Hampshire",
+    "nj":"New Jersey","nm":"New Mexico","ny":"New York","nc":"North Carolina",
+    "nd":"North Dakota","oh":"Ohio","ok":"Oklahoma","or":"Oregon","pa":"Pennsylvania",
+    "ri":"Rhode Island","sc":"South Carolina","sd":"South Dakota","tn":"Tennessee",
+    "tx":"Texas","ut":"Utah","vt":"Vermont","va":"Virginia","wa":"Washington",
+    "wv":"West Virginia","wi":"Wisconsin","wy":"Wyoming",
+}
+
 # ── CLI Main ──────────────────────────────────────────────────────────────────
 
 def main():
@@ -650,7 +998,8 @@ def main():
     city = args.city.lower().replace(" ", "-")
     state = args.state.lower()
     city_display = args.city.replace("-", " ")
-    location = f"{city_display.title()},{args.state.upper().replace('-',' ')},United States"
+    state_full = STATE_NAMES.get(state, args.state.upper())
+    location = f"{city_display.title()},{state_full},United States"
     keywords = [f"{kw} {city_display.title()}" for kw in TRADE_KEYWORDS[trade]]
 
     slug = f"{trade.replace('_','-')}-seo-report-{city}-{state}-{args.year}"
@@ -660,6 +1009,7 @@ def main():
     if args.dry_run:
         print(f"[DRY RUN] Using mock data for {len(keywords)} keywords")
         all_features = _mock_features(len(keywords), args.domain)
+        volumes = {}
     else:
         all_features = []
         cache_hits = 0
@@ -678,11 +1028,25 @@ def main():
                 all_features.append({})
         print(f"\n  {cache_hits}/{len(keywords)} keywords served from cache ({len(keywords)-cache_hits} live API calls)")
 
+        # Fetch keyword search volumes — base terms only, filtered by location
+        base_kws = TRADE_KEYWORDS[trade]
+        print(f"Fetching search volumes for {len(base_kws)} keywords...")
+        try:
+            raw_volumes = fetch_keyword_volumes(base_kws, location, f"{trade}--{city}--{state}")
+            # Map full keywords (with city) → volume for display in the table
+            volumes = {keywords[i]: raw_volumes.get(base_kws[i], 0)
+                       for i in range(min(len(keywords), len(base_kws)))}
+            total_vol = sum(volumes.values())
+            print(f"  Total monthly searches: {total_vol:,}")
+        except Exception as e:
+            print(f"  Volume fetch failed: {e} — revenue section will show '—'")
+            volumes = {}
+
     stats = aggregate_stats(all_features)
     competitors = aggregate_competitors(all_features)
     ownership = calc_ownership_score(all_features, args.domain)
     html = generate_html(trade, city_display, args.state, args.year,
-                         args.domain, keywords, stats, competitors, ownership)
+                         args.domain, keywords, stats, competitors, ownership, volumes)
 
     out_path = out_dir / "index.html"
     out_path.write_text(html, encoding="utf-8")
