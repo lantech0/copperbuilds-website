@@ -626,6 +626,7 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="/js/nav.js" defer></script>
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -667,6 +668,7 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
 :root{{
   --bg:#FAFAF7;--surface:#fff;--elevated:#F5F0EA;
   --copper:#B87333;--copper-dim:#B8733318;--copper-hover:#96602A;
+  --accent:#B87333;
   --teal:#4E9F7D;--teal-dim:#4E9F7D18;
   --ink:#1C1917;--muted:#78716C;--subtle:#A8A29E;
   --border:#E7E0D8;--rule:#1C191714;
@@ -676,12 +678,9 @@ body{{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);lin
 a{{color:var(--copper);text-decoration:none}}
 a:hover{{color:var(--copper-hover)}}
 
-/* NAV */
-.nav{{display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}}
-.nav-logo{{font-family:'Calistoga',serif;font-size:1.2rem;letter-spacing:-.01em}}
-.nav-logo span:first-child{{color:var(--copper)}}
-.nav-logo span:last-child{{color:var(--teal);font-family:'DM Sans',sans-serif;font-weight:700}}
-.btn-primary{{background:var(--copper);color:#fff;padding:10px 22px;border-radius:var(--r-md);font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}}
+/* NAV injected by /js/nav.js */
+.btn{{display:inline-block;text-decoration:none;transition:background .2s}}
+.btn-primary{{background:var(--copper);color:#fff;padding:10px 22px;border-radius:var(--r-md);font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}}
 .btn-primary:hover{{background:var(--copper-hover);color:#fff}}
 .btn-teal{{background:var(--teal);color:#fff;padding:14px 32px;border-radius:var(--r-md);font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;display:inline-block}}
 .btn-teal:hover{{background:#3D8B6C;color:#fff}}
@@ -865,11 +864,6 @@ a:hover{{color:var(--copper-hover)}}
 </style>
 </head>
 <body>
-
-<nav class="nav" aria-label="Site navigation">
-  <a href="/index.html" class="nav-logo"><span>Copper</span><span>Builds</span></a>
-  <a href="/contact.html" class="btn-primary">Get a Free Quote</a>
-</nav>
 
 <main>
 <section class="hero">
