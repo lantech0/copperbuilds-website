@@ -668,15 +668,21 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
 :root{{
   --bg:#FAFAF7;--surface:#fff;--elevated:#F5F0EA;
   --copper:#B87333;--copper-dim:#B8733318;--copper-hover:#96602A;
-  --accent:#B87333;
+  --accent:#B87333;--accent-hover:#9A6129;--accent-dim:rgba(184,115,51,0.08);--accent-border:rgba(184,115,51,0.22);
   --teal:#4E9F7D;--teal-dim:#4E9F7D18;
-  --ink:#1C1917;--muted:#78716C;--subtle:#A8A29E;
-  --border:#E7E0D8;--rule:#1C191714;
+  --ink:#1C1917;--muted:#78716C;--warm-stone:#6B6560;--subtle:#A8A29E;
+  --border:#E7E0D8;--rule:#1C191714;--container-max:1200px;
   --r-sm:4px;--r-md:6px;--r-lg:12px;--r-xl:20px;--r-pill:100px;
 }}
 body{{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.72;font-size:1rem}}
 a{{color:var(--copper);text-decoration:none}}
 a:hover{{color:var(--copper-hover)}}
+
+.container{{max-width:var(--container-max);margin:0 auto;padding:0 2rem}}
+.rule{{border:none;border-top:1px solid var(--rule)}}
+.footer-grid{{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}}
+@media(max-width:900px){{.footer-grid{{grid-template-columns:1fr 1fr;gap:2rem}}}}
+@media(max-width:540px){{.footer-grid{{grid-template-columns:1fr}}.container{{padding:0 1.5rem}}}}
 
 /* NAV injected by /js/nav.js */
 .btn{{display:inline-block;text-decoration:none;transition:background .2s}}
@@ -841,14 +847,6 @@ a:hover{{color:var(--copper-hover)}}
 .cta-block p{{color:var(--muted);margin-bottom:36px;font-size:1rem}}
 .cta-secondary{{display:block;margin-top:16px;font-size:.85rem;color:var(--muted)}}
 
-/* FOOTER */
-.footer{{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}}
-.footer-logo{{font-family:'Calistoga',serif;font-size:1rem}}
-.footer-logo span:first-child{{color:var(--copper)}}
-.footer-logo span:last-child{{color:var(--teal);font-family:'DM Sans',sans-serif;font-weight:700}}
-.footer-links{{display:flex;gap:24px;font-size:.85rem;color:var(--muted)}}
-.footer-links a{{color:var(--muted)}}
-.footer-links a:hover{{color:var(--copper)}}
 
 @media(max-width:640px){{
   .nav{{padding:16px 20px}}
@@ -1109,14 +1107,56 @@ a:hover{{color:var(--copper-hover)}}
 </div>
 </main>
 
-<footer class="footer">
-  <a href="/index.html" class="footer-logo"><span>Copper</span><span>Builds</span></a>
-  <nav class="footer-links" aria-label="Footer navigation">
-    <a href="/services.html">Services</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/reports/">More Reports</a>
-  </nav>
+<footer style="background:var(--bg);border-top:1px solid var(--rule);padding:3.5rem 0 2rem" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/index.html" aria-label="CopperBuilds homepage" style="display:inline-block;margin-bottom:1rem">
+          <img src="/brand_assets/logo.svg" alt="CopperBuilds" height="36" style="display:block">
+        </a>
+        <p style="color:var(--warm-stone);font-size:.875rem;line-height:1.72;max-width:260px;margin-bottom:1.25rem">
+          Websites and local SEO for home services pros across the USA. Built for small businesses. Not enterprise.
+        </p>
+        <div style="display:flex;gap:.625rem">
+          <a href="https://www.facebook.com/LantechAgency/" aria-label="CopperBuilds on Facebook" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1.5px solid var(--border);color:var(--warm-stone);text-decoration:none;transition:border-color .15s,background .15s,color .15s" onmouseover="this.style.borderColor='var(--accent-border)';this.style.background='var(--accent-dim)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.background='transparent';this.style.color='var(--warm-stone)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/luisecharri/" aria-label="CopperBuilds on LinkedIn" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1.5px solid var(--border);color:var(--warm-stone);text-decoration:none;transition:border-color .15s,background .15s,color .15s" onmouseover="this.style.borderColor='var(--accent-border)';this.style.background='var(--accent-dim)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.background='transparent';this.style.color='var(--warm-stone)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="11" x2="8" y2="16"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><path d="M12 11v5"/><path d="M12 11a3 3 0 016 0v5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:.04em;text-transform:uppercase">Services</h3>
+        <nav aria-label="Services footer links" style="display:flex;flex-direction:column;gap:.625rem">
+          <a href="/services.html" style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Web Design</a>
+          <a href="/services.html" style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Local SEO</a>
+          <a href="/services.html" style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Google Business</a>
+          <a href="/pricing.html" style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Pricing</a>
+        </nav>
+      </div>
+      <div>
+        <h3 style="font-size:.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:.04em;text-transform:uppercase">Company</h3>
+        <nav aria-label="Company footer links" style="display:flex;flex-direction:column;gap:.625rem">
+          <a href="/about.html"   style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">About</a>
+          <a href="/blog.html"    style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Blog</a>
+          <a href="/reports/"     style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Reports</a>
+          <a href="/contact.html" style="color:var(--warm-stone);font-size:.875rem;text-decoration:none;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--warm-stone)'">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h3 style="font-size:.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:.04em;text-transform:uppercase">Get Started</h3>
+        <p style="color:var(--warm-stone);font-size:.875rem;line-height:1.65;margin-bottom:1rem">Ready to get your business found on Google?</p>
+        <a href="/contact.html" class="btn btn-primary" style="font-size:.875rem;padding:.6875rem 1.25rem">Free Quote</a>
+        <p style="color:var(--subtle);font-size:.8125rem;margin-top:.875rem">lantech016@gmail.com</p>
+      </div>
+    </div>
+    <hr class="rule">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem">
+      <p style="color:var(--subtle);font-size:.8125rem">&copy; 2026 CopperBuilds. All rights reserved.</p>
+      <p style="color:var(--subtle);font-size:.8125rem">Built for small businesses. Not enterprise.</p>
+    </div>
+  </div>
 </footer>
 
 </body>
