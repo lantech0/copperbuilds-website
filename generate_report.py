@@ -150,6 +150,19 @@ TRADE_CPC = {
     "general_contractor": 30,
 }
 
+TRADE_IMAGES = {
+    "hvac":               "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=440&fit=crop&q=80",
+    "plumbing":           "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=440&fit=crop&q=80",
+    "roofing":            "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?w=1200&h=440&fit=crop&q=80",
+    "electrical":         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=440&fit=crop&q=80",
+    "landscaping":        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=440&fit=crop&q=80",
+    "painting":           "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&h=440&fit=crop&q=80",
+    "cleaning":           "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=440&fit=crop&q=80",
+    "concrete":           "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&h=440&fit=crop&q=80",
+    "pool":               "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&h=440&fit=crop&q=80",
+    "general_contractor": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=440&fit=crop&q=80",
+}
+
 FEATURE_LABELS = {
     "local_pack": "Local Pack (3-Map)", "local_services": "Local Services Ads",
     "organic": "Organic Results", "featured_snippet": "Featured Snippet",
@@ -544,7 +557,8 @@ def build_competitor_bars(competitors: list, client_score: float, domain: str | 
 
 def generate_html(trade: str, city: str, state: str, year: int, domain: str | None,
                   keywords: list, stats: dict, competitors: list, ownership: dict,
-                  volumes: dict | None = None, all_features: list | None = None) -> str:
+                  volumes: dict | None = None, all_features: list | None = None,
+                  trade_image: str = "") -> str:
     tl = TRADE_LABELS.get(trade, trade.replace("_", " ").title())
     city_t = city.title()
     st = state.upper()
@@ -868,6 +882,7 @@ a:hover{{color:var(--copper-hover)}}
   <div class="tag-pill">{tl} &middot; {city_t}, {st} &middot; {month}</div>
   <h1>Are {city_t} {tl} Companies Invisible on Google?</h1>
   <p class="hero-sub">{hero_sub}</p>
+  {f'<figure style="margin:0 0 40px;line-height:0;border-radius:16px;overflow:hidden"><img src="{trade_image}" alt="{tl} technician working in {city_t}, {st}" width="1200" height="440" loading="eager" fetchpriority="high" style="width:100%;height:380px;object-fit:cover;display:block;"></figure>' if trade_image else ''}
   <div class="stat-grid">
     <div class="stat-card">
       <div class="stat-num teal">{vol_display}</div>
@@ -1027,6 +1042,8 @@ a:hover{{color:var(--copper-hover)}}
 </section>
 
 <hr class="section-divider">
+
+{f'<div style="max-width:1000px;margin:0 auto;padding:0 40px 0"><figure style="line-height:0;border-radius:16px;overflow:hidden;margin-bottom:0"><img src="{trade_image}" alt="{tl} professionals serving {city_t}, {st}" width="1200" height="340" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;"></figure></div>' if trade_image else ''}
 
 <section class="rev-section">
   <div class="rev-banner">
@@ -1247,8 +1264,10 @@ def main():
     stats = aggregate_stats(all_features)
     competitors = aggregate_competitors(all_features)
     ownership = calc_ownership_score(all_features, args.domain)
+    trade_img = TRADE_IMAGES.get(trade, "")
     html = generate_html(trade, city_display, args.state, args.year,
-                         args.domain, keywords, stats, competitors, ownership, volumes, all_features)
+                         args.domain, keywords, stats, competitors, ownership, volumes, all_features,
+                         trade_image=trade_img)
 
     out_path = out_dir / "index.html"
     out_path.write_text(html, encoding="utf-8")
