@@ -171,6 +171,23 @@ Cloudflare Pages auto-deploys on push. Report goes live at:
 
 ---
 
+## Keyword map relevance audit (pending — not yet run)
+
+`fetch_keyword_volumes()` also writes `reports/{slug}/keyword-map.json` — the full per-trade keyword list from `TRADE_VOLUME_KEYWORDS`, each tagged with `tier: "service"|"informational"` (see `classify_keyword_intent()`) and its real DataForSEO search volume for that city.
+
+Topical review (does this phrase make sense for the trade) was already done for `TRADE_VOLUME_KEYWORDS` — brand/product-line checks, no cross-trade contamination, no dealer/manufacturer-facing terms, no filler/speculative "for [niche location]" combos. But topical relevance is not the same as real search demand: a keyword can be legitimate for the trade and still return 0 volume in a given market. The only way to catch that is real data, not more review.
+
+**Process, once there's enough real report volume to make it worthwhile:**
+1. Run `/generate-report` normally for a representative city in the trade.
+2. Open `reports/{slug}/keyword-map.json`.
+3. Filter keywords where `volume == 0`.
+4. Cross-check the 0-volume list against 1-2 more cities before removing anything — a single market's 0 doesn't mean the keyword is dead everywhere.
+5. Keywords that return 0 across multiple cities/markets are strong candidates to prune from `TRADE_VOLUME_KEYWORDS` in `generate_report.py`.
+
+**Status:** not yet run for any trade. Current `TRADE_VOLUME_KEYWORDS` counts (as of 2026-07-02, post-cleanup): HVAC 938, plumbing 984, roofing 853.
+
+---
+
 ## Quality gate
 
 Before reporting done:
