@@ -267,6 +267,7 @@ def parse_features(serp_result: dict, domain: str | None) -> dict:
                 "phone": item.get("phone", "") or "",
                 "rating": rating_obj.get("value"),
                 "reviews": rating_obj.get("votes_count"),
+                "slot": item.get("rank_group", 0),
             })
             if domain and (domain.lower() in url.lower() or domain.lower() in domain_val.lower()):
                 f["local_pack"]["client_present"] = True
@@ -339,6 +340,47 @@ def aggregate_competitors(all_features: list) -> list:
         **profiles.get(n, {}),
     } for n, c in ranked[:5]]
 
+def aggregate_position_spread(all_features: list) -> dict:
+    """Returns {name: {1: count, 2: count, 3: count}} tracking map pack slot distribution."""
+    spread: dict[str, dict] = {}
+    for kw_f in all_features:
+        for biz in kw_f.get("local_pack", {}).get("businesses", []):
+            name = biz.get("name", "").strip()
+            if not name:
+                continue
+            slot = biz.get("slot", 0)
+            if name not in spread:
+                spread[name] = {1: 0, 2: 0, 3: 0}
+            if slot in (1, 2, 3):
+                spread[name][slot] += 1
+    return spread
+
+
+def build_opportunity_data(keywords: list, volumes: dict, all_features: list,
+                           market_leader: str) -> list:
+    """
+    Returns up to 6 opportunity keywords — sorted by open + high volume first.
+    'Open' = market leader does NOT hold slot 1 for that specific keyword.
+    """
+    rows = []
+    for i, kw in enumerate(keywords):
+        if i >= len(all_features):
+            break
+        businesses = all_features[i].get("local_pack", {}).get("businesses", [])
+        vol = volumes.get(kw, 0)
+        slot1_biz = next((b["name"] for b in businesses if b.get("slot") == 1), None)
+        leader_holds_slot1 = bool(slot1_biz and slot1_biz.strip() == market_leader.strip())
+        rows.append({
+            "keyword": kw,
+            "volume": vol,
+            "slot1": slot1_biz or "—",
+            "is_open": not leader_holds_slot1 and bool(businesses),
+        })
+    # Open opportunities first, then by volume descending
+    rows.sort(key=lambda r: (not r["is_open"], -r["volume"]))
+    return rows[:6]
+
+
 def aggregate_stats(all_features: list) -> dict:
     total = len(all_features)
     stats = {}
@@ -383,6 +425,58 @@ def calc_ownership_score(all_features: list, domain: str | None) -> dict:
     return {"client": client_score, "competitors": top5}
 
 # ── HTML Helpers ─────────────────────────────────────────────────────────────
+
+def _build_position_spread_html(spread: dict, competitors: list, total_kw: int) -> str:
+    """Stacked bar per competitor showing slot 1/2/3 distribution across all keywords."""
+    rows = ""
+    for comp in competitors[:5]:
+        name = comp["name"]
+        d = spread.get(name, {1: 0, 2: 0, 3: 0})
+        s1, s2, s3 = d.get(1, 0), d.get(2, 0), d.get(3, 0)
+        total = s1 + s2 + s3
+        if not total:
+            continue
+        w1 = round(s1 / total_kw * 100)
+        w2 = round(s2 / total_kw * 100)
+        w3 = round(s3 / total_kw * 100)
+        name_short = name[:38] + ("…" if len(name) > 38 else "")
+        rows += f"""
+        <div class="spread-row">
+          <div class="spread-name">{name_short}</div>
+          <div class="spread-bar-wrap">
+            <div class="spread-seg s1" style="width:{w1}%" title="Slot 1: {s1} of {total_kw} searches"></div>
+            <div class="spread-seg s2" style="width:{w2}%" title="Slot 2: {s2} of {total_kw} searches"></div>
+            <div class="spread-seg s3" style="width:{w3}%" title="Slot 3: {s3} of {total_kw} searches"></div>
+          </div>
+          <div class="spread-tally"><span class="spread-slot-1">{s1}×&nbsp;#1</span>&ensp;{s2}×&nbsp;#2&ensp;{s3}×&nbsp;#3</div>
+        </div>"""
+    legend = """
+    <div class="spread-legend">
+      <span class="spread-dot s1"></span> Slot 1 &mdash; top of map (most clicks)
+      &ensp;<span class="spread-dot s2"></span> Slot 2
+      &ensp;<span class="spread-dot s3"></span> Slot 3
+    </div>"""
+    return rows + legend
+
+
+def _build_opportunity_rows(opp_data: list) -> str:
+    rows = ""
+    for row in opp_data:
+        vol = f"{row['volume']:,}/mo" if row["volume"] else "—"
+        badge_cls = "opp-open" if row["is_open"] else "opp-taken"
+        badge_label = "Open" if row["is_open"] else "Locked"
+        holder = row["slot1"]
+        if len(holder) > 32:
+            holder = holder[:32] + "…"
+        rows += f"""
+        <tr>
+          <td class="opp-kw">{row['keyword']}</td>
+          <td class="opp-vol">{vol}</td>
+          <td class="opp-holder">{holder}</td>
+          <td><span class="opp-badge {badge_cls}">{badge_label}</span></td>
+        </tr>"""
+    return rows
+
 
 def _build_kw_rows(keywords: list, volumes: dict, stats: dict) -> str:
     """Build keyword table rows sorted by search volume descending."""
@@ -450,7 +544,7 @@ def build_competitor_bars(competitors: list, client_score: float, domain: str | 
 
 def generate_html(trade: str, city: str, state: str, year: int, domain: str | None,
                   keywords: list, stats: dict, competitors: list, ownership: dict,
-                  volumes: dict | None = None) -> str:
+                  volumes: dict | None = None, all_features: list | None = None) -> str:
     tl = TRADE_LABELS.get(trade, trade.replace("_", " ").title())
     city_t = city.title()
     st = state.upper()
@@ -491,6 +585,15 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
         stars_html = "★" * full + ("½" if half else "") + "☆" * (5 - full - half)
     # PAA for FAQPage schema
     paa_schema_items = stats.get("paa_questions", [])[:8]
+    # Position spread + opportunity analysis
+    _af = all_features or []
+    spread = aggregate_position_spread(_af)
+    spread_html = _build_position_spread_html(spread, competitors, total_kw)
+    opp_data = build_opportunity_data(keywords, volumes or {}, _af, top_name)
+    opp_rows = _build_opportunity_rows(opp_data)
+    open_count = sum(1 for r in opp_data if r["is_open"])
+    # Slot 1 count for market leader (for insight headline)
+    leader_s1 = spread.get(top_name, {}).get(1, 0)
     feat_rows = build_feature_rows(stats, domain)
     comp_bars = build_competitor_bars(competitors, client_score, domain)
     paa_q = stats.get("paa_questions", [])
@@ -682,6 +785,36 @@ a:hover{{color:var(--copper-hover)}}
 /* TIMELINE NOTE */
 .timeline-note{{font-size:.85rem;color:var(--muted);margin-top:12px;display:flex;align-items:center;gap:8px}}
 
+/* POSITION SPREAD */
+.spread-row{{margin-bottom:20px}}
+.spread-name{{font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:7px}}
+.spread-bar-wrap{{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--border);gap:1px}}
+.spread-seg{{height:100%;transition:width .4s;min-width:0}}
+.spread-seg.s1{{background:var(--copper)}}
+.spread-seg.s2{{background:var(--teal)}}
+.spread-seg.s3{{background:var(--subtle)}}
+.spread-tally{{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);margin-top:5px}}
+.spread-slot-1{{color:var(--copper);font-weight:600}}
+.spread-legend{{display:flex;gap:6px;margin-top:20px;font-size:.78rem;color:var(--muted);align-items:center;flex-wrap:wrap}}
+.spread-dot{{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:3px;vertical-align:middle}}
+.spread-dot.s1{{background:var(--copper)}}
+.spread-dot.s2{{background:var(--teal)}}
+.spread-dot.s3{{background:var(--subtle)}}
+.spread-insight{{background:var(--copper-dim);border-left:3px solid var(--copper);border-radius:0 var(--r-md) var(--r-md) 0;padding:14px 18px;margin-bottom:28px;font-size:.9rem;color:var(--ink);line-height:1.55}}
+.spread-insight strong{{color:var(--copper)}}
+
+/* OPPORTUNITY TABLE */
+.opp-table{{width:100%;border-collapse:collapse}}
+.opp-table th{{text-align:left;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);padding:10px 0;border-bottom:1px solid var(--border)}}
+.opp-table td{{padding:13px 0;border-bottom:1px solid var(--rule);vertical-align:middle}}
+.opp-kw{{font-size:.9rem;font-weight:500;padding-right:16px}}
+.opp-vol{{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--copper);font-weight:500;white-space:nowrap;padding-right:16px}}
+.opp-holder{{font-size:.82rem;color:var(--muted);padding-right:16px}}
+.opp-badge{{display:inline-block;font-size:.65rem;font-family:'JetBrains Mono',monospace;padding:3px 9px;border-radius:var(--r-pill);font-weight:500;letter-spacing:.05em}}
+.opp-badge.opp-open{{background:#D1FAE5;color:#065F46}}
+.opp-badge.opp-taken{{background:var(--copper-dim);color:var(--copper)}}
+.opp-note{{font-size:.76rem;color:var(--subtle);margin-top:14px;font-style:italic;line-height:1.55}}
+
 /* REVENUE SECTION */
 .rev-section{{padding:64px 40px;max-width:1000px;margin:0 auto}}
 .rev-banner{{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:48px;margin-bottom:32px}}
@@ -856,6 +989,43 @@ a:hover{{color:var(--copper-hover)}}
 <hr class="section-divider">
 
 <section class="section">
+  <div class="section-tag">Map Pack Position Breakdown</div>
+  <h2>How Deeply Each Competitor Owns the {city_t} Map</h2>
+  <p class="section-sub">Appearing in the map pack is one thing — but slot 1 gets significantly more clicks than slot 2 or 3. This shows where each competitor actually sits.</p>
+  <div class="spread-insight">
+    <strong>{top_name_short}</strong> holds slot&nbsp;1 on <strong>{leader_s1} of {total_kw}</strong> tracked searches — the single most-clicked position in the {city_t} {tl} market.
+  </div>
+  {spread_html}
+</section>
+
+<hr class="section-divider">
+
+<section class="section">
+  <div class="section-tag">Top Opportunity Keywords</div>
+  <h2>Where a New Business Can Win in {city_t}</h2>
+  <p class="section-sub">These are the {city_t} {tl} searches where the market leader does NOT have slot 1 locked — the highest-value keywords where the top map position is still up for grabs.</p>
+  <div class="table-scroll">
+  <table class="opp-table" role="table">
+    <thead>
+      <tr>
+        <th scope="col">Search phrase</th>
+        <th scope="col">Monthly searches</th>
+        <th scope="col">Who's at slot 1 now</th>
+        <th scope="col">Slot 1 status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {opp_rows}
+    </tbody>
+  </table>
+  </div>
+  <p class="opp-note">Open = the dominant market leader does not hold this slot — a well-optimized business with strong Google reviews could take it. Locked = the leader has this position consistently.</p>
+  {f'<p class="data-note" style="margin-top:8px">{open_count} of the top {len(opp_data)} high-volume keywords in {city_t} have an open slot 1 — no entrenched winner.</p>' if open_count else ''}
+</section>
+
+<hr class="section-divider">
+
+<section class="section">
   <div class="section-tag">Visibility Gaps</div>
   <h2>What You're Missing</h2>
   <p class="section-sub">The features that fire most — and where your visibility is zero.</p>
@@ -863,8 +1033,6 @@ a:hover{{color:var(--copper-hover)}}
     {gap_html}
   </div>
 </section>
-
-<hr class="section-divider">
 
 <hr class="section-divider">
 
@@ -1046,7 +1214,7 @@ def main():
     competitors = aggregate_competitors(all_features)
     ownership = calc_ownership_score(all_features, args.domain)
     html = generate_html(trade, city_display, args.state, args.year,
-                         args.domain, keywords, stats, competitors, ownership, volumes)
+                         args.domain, keywords, stats, competitors, ownership, volumes, all_features)
 
     out_path = out_dir / "index.html"
     out_path.write_text(html, encoding="utf-8")
