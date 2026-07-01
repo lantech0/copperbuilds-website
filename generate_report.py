@@ -464,7 +464,7 @@ def _build_opportunity_rows(opp_data: list) -> str:
     for row in opp_data:
         vol = f"{row['volume']:,}/mo" if row["volume"] else "—"
         badge_cls = "opp-open" if row["is_open"] else "opp-taken"
-        badge_label = "Open" if row["is_open"] else "Locked"
+        badge_label = "Winnable" if row["is_open"] else "Leader owns it"
         holder = row["slot1"]
         if len(holder) > 32:
             holder = holder[:32] + "…"
@@ -1010,8 +1010,8 @@ a:hover{{color:var(--copper-hover)}}
       <tr>
         <th scope="col">Search phrase</th>
         <th scope="col">Monthly searches</th>
-        <th scope="col">Who's at slot 1 now</th>
-        <th scope="col">Slot 1 status</th>
+        <th scope="col">Who's at slot 1 right now</th>
+        <th scope="col">Is the market leader there?</th>
       </tr>
     </thead>
     <tbody>
@@ -1019,7 +1019,7 @@ a:hover{{color:var(--copper-hover)}}
     </tbody>
   </table>
   </div>
-  <p class="opp-note">Open = the dominant market leader does not hold this slot — a well-optimized business with strong Google reviews could take it. Locked = the leader has this position consistently.</p>
+  <p class="opp-note"><strong>Winnable</strong> = the market leader ({top_name_short}) is NOT at slot 1 for this keyword — a different competitor holds it, but that competitor is weaker and can be displaced. <strong>Leader owns it</strong> = {top_name_short} already holds slot 1 here.</p>
   {f'<p class="data-note" style="margin-top:8px">{open_count} of the top {len(opp_data)} high-volume keywords in {city_t} have an open slot 1 — no entrenched winner.</p>' if open_count else ''}
 </section>
 
