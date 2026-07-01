@@ -337,12 +337,16 @@ IMPORTANT: A page is not done until ALL of these pass:
 - [ ] 40–60 word direct answer paragraph follows each question-format heading
 - [ ] All schema validated at `https://validator.schema.org/` — zero errors
 
-**Launch smoke test (5 items — run on final localhost before any deploy):**
+**Launch smoke test (run on final localhost before any deploy):**
 - [ ] All nav links resolve (no 404s)
 - [ ] Contact form submits without error (or shows correct placeholder state)
-- [ ] Page title and meta description are set and unique per page
+- [ ] Page title ≤ 60 characters and unique per page — run `wc -m` or count manually; no exceptions
+- [ ] Meta description ≤ 160 characters and unique per page — same check
+- [ ] Every `<img>` has an `alt` attribute (descriptive or `alt=""` for decorative only)
 - [ ] No console errors on load
 - [ ] Page looks correct on both desktop (1280px) and mobile (375px)
+- [ ] `sitemap.xml` URLs all use `https://copperbuilds.com/` — grep for any other domain before every push: `grep -v "copperbuilds.com" sitemap.xml`
+- [ ] Any HTML file NOT in the sitemap and NOT linked from the nav has `<meta name="robots" content="noindex, follow">` — add it at creation time, not as cleanup later
 
 ## Wiki Knowledge Base
 

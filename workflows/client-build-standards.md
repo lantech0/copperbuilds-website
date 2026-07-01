@@ -286,12 +286,14 @@ Before marking any page done, run every item in this checklist:
 - [ ] Nav has max 5 items + phone number
 
 **SEO:**
-- [ ] Unique `<title>` tag per page (60 chars max)
-- [ ] Unique meta description per page (160 chars max)
+- [ ] Unique `<title>` tag per page — 60 chars max; count before finalising, never eyeball it
+- [ ] Unique meta description per page — 160 chars max; count before finalising
 - [ ] H1 present exactly once per page
-- [ ] All images have `alt` attributes
-- [ ] `sitemap.xml` present and linked in `robots.txt`
+- [ ] Every `<img>` has an `alt` attribute — descriptive text or `alt=""` for decorative only; zero bare `<img src>` tags
+- [ ] `sitemap.xml` present at site root; every URL uses the live domain — grep for any non-live domain before delivery: `grep -v "[clientdomain].com" sitemap.xml`
+- [ ] `robots.txt` present at site root with `Sitemap:` directive pointing to the live sitemap URL
 - [ ] Canonical tag on every page
+- [ ] Any dev, staging, or internal HTML file (not in sitemap, not in nav) has `<meta name="robots" content="noindex, follow">` — add at file creation time
 
 **Schema (must pass `validator.schema.org` with 0 errors before launch):**
 - [ ] `Organization` schema on every page
