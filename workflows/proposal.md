@@ -69,7 +69,7 @@ Update the prospect file status: `[x] Proposal Sent — [YYYY-MM-DD]`
 
 The faster the follow-up, the higher the close rate. Same day is ideal. Next morning is acceptable. Beyond 24 hours, momentum dies.
 
-Email subject: `Your Lantech Proposal — [Business Name]`
+Email subject: `Your CopperBuilds Proposal — [Business Name]`
 
 Email body (keep it under 6 lines):
 *"Hi [Name], great speaking with you [today/earlier this week]. Here's the proposal we discussed.*

@@ -1,8 +1,8 @@
-# client-build-standards.md — Lantech Client Website Build Standards
+# client-build-standards.md — CopperBuilds Client Website Build Standards
 
 ## Objective
 
-Define the non-negotiable UX, performance, and design standards that every Lantech client website must meet before it can be marked launch-ready. These standards are drawn from research into top home services agencies (Hook Agency, Scorpion, KickCharge, Rival Digital, Built-Right Digital, BlackStorm) and enforced as hard quality gates in the build process.
+Define the non-negotiable UX, performance, and design standards that every CopperBuilds client website must meet before it can be marked launch-ready. These standards are drawn from research into top home services agencies (Hook Agency, Scorpion, KickCharge, Rival Digital, Built-Right Digital, BlackStorm) and enforced as hard quality gates in the build process.
 
 **Scope: one-time website build only (Step 1 — Starter / Growth / Pro).** The monthly retainer (Step 2 — Local Presence / Lead Machine / Market Leader) is a separate product that manages the site after launch. Do not mix build deliverables with retainer deliverables. If something is an ongoing monthly task, it belongs in `workflows/monthly-report.md` or `workflows/maintenance.md`, not here.
 
@@ -310,11 +310,11 @@ Before marking any page done, run every item in this checklist:
 
 **Copy Quality — Vale (mechanical gate):**
 - [ ] `vale --config=.vale-client.ini [client-source-dir]` returns 0 errors
-- [ ] Lantech/Delivery rule passed — no stale delivery time claims
-- [ ] Lantech/Pricing rule passed — no stale tier names
-- [ ] Lantech/BannedPhrases passed — no agency jargon
-- [ ] Lantech/Substitutions passed — consistent terminology
-- [ ] Lantech/WeakCTAs passed — no "Submit", "Click Here", "Learn More", "Contact Us" as CTA labels
+- [ ] CopperBuilds/Delivery rule passed — no stale delivery time claims
+- [ ] CopperBuilds/Pricing rule passed — no stale tier names
+- [ ] CopperBuilds/BannedPhrases passed — no agency jargon
+- [ ] CopperBuilds/Substitutions passed — consistent terminology
+- [ ] CopperBuilds/WeakCTAs passed — no "Submit", "Click Here", "Learn More", "Contact Us" as CTA labels
 - [ ] proselint.Hedging passed — no hedging language weakening claims
 - [ ] Client/Vocab passed — no off-brand client terms
 

@@ -8,7 +8,7 @@
 
 ## Objective
 
-Run a structured 20-minute call that qualifies the prospect, surfaces their real pain, and closes them on a Lantech package — or identifies why they're not a fit right now.
+Run a structured 20-minute call that qualifies the prospect, surfaces their real pain, and closes them on a CopperBuilds package — or identifies why they're not a fit right now.
 
 ## Pre-Call Prep (5 minutes before the call)
 
@@ -23,7 +23,7 @@ Run a structured 20-minute call that qualifies the prospect, surfaces their real
 ## Call Structure
 
 ### Opening (2 min)
-- Introduce yourself: *"Hi [Name], I'm [Your Name] from Lantech — thanks for taking the time."*
+- Introduce yourself: *"Hi [Name], I'm [Your Name] from CopperBuilds — thanks for taking the time."*
 - Set the agenda: *"I wanted to spend about 20 minutes learning more about your business and showing you what we found. Sound good?"*
 
 ### Discovery (8 min)
@@ -49,7 +49,7 @@ Lead with the gap you found. Be specific — never generic.
 *Based on the [sector] search volume in [location], you're missing roughly [revenue opportunity] a month in customers who can't find you."*
 
 Then introduce the solution:
-*"What we do is build you a professional, fast website that ranks on Google for your local keywords — and we do it in [48–72 hours / 1 week], not months. No templates, no AI-generated junk. A real site built for your business specifically."*
+*"What we do is build you a professional, fast website that ranks on Google for your local keywords — and we do it in 14 days, not months. No templates, no AI-generated junk. A real site built for your business specifically."*
 
 Present one recommended package. Don't offer all three at once.
 

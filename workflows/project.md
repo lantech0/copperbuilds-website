@@ -87,7 +87,7 @@ Send in this order:
 1. **Service Agreement** (`03-service-agreement.md`) — send via email, request signature
 2. **Invoice** (`04-invoice.html`) — open in browser, print to PDF, attach to the same email
 
-Email subject: `Your Lantech Agreement & Invoice — [Business Name]`
+Email subject: `Your CopperBuilds Agreement & Invoice — [Business Name]`
 
 Do not begin any build work until the agreement is signed and payment is confirmed.
 
@@ -148,7 +148,7 @@ When the completed questionnaire arrives:
 
 With `client.env` confirmed and the brief complete:
 
-1. **Run `/lantech-build`** using `client.env` and `06-client-brief.md` as data sources.
+1. **Run `/copperbuilds-build`** using `client.env` and `06-client-brief.md` as data sources.
    - Build all HTML pages using `{{PLACEHOLDER}}` syntax for every variable value
      (phone numbers, SEO fields, nav links, external links, colors, form key).
    - Save all source files to `clients/active/[slug]/_source/`.

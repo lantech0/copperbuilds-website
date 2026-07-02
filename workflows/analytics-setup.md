@@ -7,7 +7,7 @@
 
 ## Objective
 
-Set up Google Analytics 4 and Google Search Console for the client's live site, install tracking, configure conversions, link both tools together, and grant the right access to both Lantech and the client.
+Set up Google Analytics 4 and Google Search Console for the client's live site, install tracking, configure conversions, link both tools together, and grant the right access to both CopperBuilds and the client.
 
 ---
 
@@ -21,7 +21,7 @@ Run this workflow once per client, immediately after the live site smoke test pa
 
 - Client's live domain (e.g., `https://joesplumbing.com`)
 - Client's Google account email (collected in `02-onboarding-questionnaire.md`)
-- Lantech's agency Google account: `luis.copperbuilds@gmail.com`
+- CopperBuilds' agency Google account: `luis.copperbuilds@gmail.com`
 - Access to the live site files (to add tracking code)
 - Hostinger FTP/File Manager access (to re-upload files after adding the tag)
 
@@ -33,7 +33,7 @@ Run this workflow once per client, immediately after the live site smoke test pa
 
 1. Go to [analytics.google.com](https://analytics.google.com) — sign in with `luis.copperbuilds@gmail.com`
 2. Click **Admin** (bottom-left gear icon)
-3. In the Account column: click **Create Account** if this is the first client, or select the existing Lantech account
+3. In the Account column: click **Create Account** if this is the first client, or select the existing CopperBuilds account
    - Account name: `Lantech Agency`
 4. In the Property column: click **Create Property**
    - Property name: `[Business Name]`
@@ -66,7 +66,7 @@ Add this snippet to the `<head>` of **every HTML page** on the site, immediately
 
 Replace `G-XXXXXXXXXX` with the actual Measurement ID from Step A1.
 
-For a Lantech-built site with 4–6 pages: add the snippet manually to each HTML file. It takes 2 minutes per page.
+For a CopperBuilds-built site with 4–6 pages: add the snippet manually to each HTML file. It takes 2 minutes per page.
 
 After adding: re-upload the updated files to Hostinger via File Manager or FTP.
 
@@ -107,7 +107,7 @@ Give the client viewer access so they can check their own data:
 4. Role: **Viewer**
 5. Click **Add**
 
-Lantech (`luis.copperbuilds@gmail.com`) should already be Admin as the property creator. Confirm this is the case.
+CopperBuilds (`luis.copperbuilds@gmail.com`) should already be Admin as the property creator. Confirm this is the case.
 
 ---
 
@@ -277,7 +277,7 @@ GBP verified: yes — [date]
 Ask them to create one before launch: *"You'll need a Google account (Gmail works) so I can give you access to your analytics and search console. Takes 2 minutes at accounts.google.com — just send me the email when it's ready."* Do not skip access setup — they paid for this transparency.
 
 **Client already has an existing GA4 / GSC property:**
-Ask for admin access to their existing account. Add Lantech as an Editor. Do not create a new property that duplicates their old data. Preserve history.
+Ask for admin access to their existing account. Add CopperBuilds as an Editor. Do not create a new property that duplicates their old data. Preserve history.
 
 **Sitemap submission shows "Couldn't fetch":**
 - Confirm `https://[domain]/sitemap.xml` loads in the browser

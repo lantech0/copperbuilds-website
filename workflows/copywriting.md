@@ -34,7 +34,7 @@ Before starting, confirm all of these exist or can be derived from the conversat
 | Page type | User's request | Required |
 | Target reader | User's request or `06-client-brief.md` | Required |
 | Primary service + location | User's request or `06-client-brief.md` | Required |
-| Brand voice | `BRAND-VOICE.md` (Lantech site) or `clients/active/[slug]/BRAND-VOICE.md` (client builds) | Required |
+| Brand voice | `BRAND-VOICE.md` (CopperBuilds site) or `clients/active/[slug]/BRAND-VOICE.md` (client builds) | Required |
 | Primary CTA | User's request or `06-client-brief.md` | Required |
 | Keyword target | User's request, or derive from Layer 1 if not provided | Required — derive if missing |
 | Home services buyer intelligence | `memory/research_home_services_marketing.md` | Load for all home services clients |
@@ -69,7 +69,7 @@ Establish what this page ranks for BEFORE writing a word of copy.
 
 **For client builds:** Check `clients/active/[slug]/_keyword-map.md` — use the primary keyword already assigned to this page type. If the keyword map doesn't exist yet, derive from the client brief and note it in the output.
 
-**For Lantech site pages:** Identify the keyword cluster based on the page purpose (e.g., "HVAC web design", "local SEO for plumbers", "home service website design").
+**For CopperBuilds site pages:** Identify the keyword cluster based on the page purpose (e.g., "HVAC web design", "local SEO for plumbers", "home service website design").
 
 Output a one-paragraph SEO seed before drafting copy:
 
@@ -115,7 +115,7 @@ Draft the full copy using the SEO seed as the spine.
 **Format output as plain copy — no HTML:**
 
 ```
-[PAGE TYPE]: [Business name / Lantech]
+[PAGE TYPE]: [Business name / CopperBuilds]
 ---
 H1: [headline]
 HERO DECK: [1-2 sentences]
@@ -190,7 +190,7 @@ Layer 3B gate: PASS
 Also state: what goes into each HTML section (map copy blocks to HTML structure).
 
 If the copy is for a client build: save it to `clients/active/[slug]/copy-[page].md` — not just `.tmp/`.
-If the copy is for the Lantech site: save it to `.tmp/copy-[page].txt` only — it will be pulled into HTML at build time.
+If the copy is for the CopperBuilds site: save it to `.tmp/copy-[page].txt` only — it will be pulled into HTML at build time.
 
 ---
 
@@ -208,7 +208,7 @@ If the copy is for the Lantech site: save it to `.tmp/copy-[page].txt` only — 
 ## Edge Cases
 
 **Missing keyword data (no keyword map for client):**
-Derive from the client brief (service + location + most common transactional query). State the assumption: "Keyword map not found — using '[keyword]' derived from brief. Verify with `/lantech-seo [slug]` before final approval." Do not block copy production on this.
+Derive from the client brief (service + location + most common transactional query). State the assumption: "Keyword map not found — using '[keyword]' derived from brief. Verify with `/copperbuilds-seo [slug]` before final approval." Do not block copy production on this.
 
 **Client provides their own copy draft:**
 Start at Layer 3A — run Vale on their draft first, then Layer 3B. State at the top: "Client draft received — running quality gates only, not writing from scratch." If the client draft requires heavy revision, flag it before editing extensively.

@@ -80,10 +80,10 @@ If the client can't provide job stories: use the blog topic formula from `seo-br
 Google Local Services Ads place the client at the very top of Google search results — above regular Google Ads and organic results — with a **"Google Verified" blue checkmark** (the old "Google Guaranteed" green badge was retired October 20, 2025; the $2,000 money-back guarantee was discontinued November 7, 2025). The checkmark tells searchers the business passed Google's license, insurance, and background checks. The client pays Google **per verified lead** (a connected phone call or message for the correct service and area), not per click. Budget is controlled by the client via a weekly cap inside the LSA dashboard. All LSA management is at `ads.google.com/localservices` — the mobile app was discontinued January 6, 2025.
 
 **Billing — tell the client this before going live:**
-LSA ad spend is charged directly to the client's Google account. It is NOT included in Lantech's $3,497/month fee. Lantech's fee covers managing the profile, monitoring leads, and flagging invalid charges. The client funds and controls their own ad budget. Include this explicitly in the service agreement before the client signs. Log the conversation in `maintenance-log.md` under "LSA billing explained — [date]."
+LSA ad spend is charged directly to the client's Google account. It is NOT included in CopperBuilds' $3,497/month fee. CopperBuilds' fee covers managing the profile, monitoring leads, and flagging invalid charges. The client funds and controls their own ad budget. Include this explicitly in the service agreement before the client signs. Log the conversation in `maintenance-log.md` under "LSA billing explained — [date]."
 
 A suggested message to send the client:
-> "Your LSA ad spend is billed directly by Google — separate from your Lantech retainer. You set the weekly budget and Google charges you per lead received. We manage the profile and flag invalid leads on your behalf. A good starting budget is $150–250/week. We can adjust it up or down once we see lead quality and volume in the first month."
+> "Your LSA ad spend is billed directly by Google — separate from your CopperBuilds retainer. You set the weekly budget and Google charges you per lead received. We manage the profile and flag invalid leads on your behalf. A good starting budget is $150–250/week. We can adjust it up or down once we see lead quality and volume in the first month."
 
 ---
 
@@ -102,7 +102,7 @@ Work through these steps in order. Log completion of each in `maintenance-log.md
 - [ ] **Set the service area** — enter every city and zip code the client wants to receive leads from. Keep it tight. Overly broad areas dilute impression share and attract out-of-area calls.
 - [ ] **Set business hours** — leads only arrive during the hours listed. If the client takes emergency calls 24/7, mark it accordingly.
 - [ ] **Verify the phone number** — must match the number on the client's website and GBP exactly (NAP consistency). LSA calls go to this number.
-- [ ] **Set the opening weekly budget** — start at $150–250/week for a mid-size market, $300–500/week for a competitive metro. Remind the client this is their Google spend, not Lantech's fee.
+- [ ] **Set the opening weekly budget** — start at $150–250/week for a mid-size market, $300–500/week for a competitive metro. Remind the client this is their Google spend, not CopperBuilds' fee.
 - [ ] **Submit and wait for Google approval** — typically 1–5 business days after all documents are verified. Log the submission date.
 - [ ] **Confirm the badge is live** — once approved, search the client's primary keyword in Google and confirm the Google Verified blue checkmark appears at the top. Screenshot it and send to the client. Tell the client: "This checkmark means Google confirmed your license, insurance, and background check — it's what searchers see when they decide who to call."
 
@@ -221,7 +221,7 @@ Work through the tasks for the client's package tier. All three tiers share the 
 
 - [ ] **GBP post #4 of the month** — end-of-month post; good time for a seasonal message or a review highlight ("Here's what our Cape Coral customers are saying…")
 - [ ] **Review acquisition follow-up** — confirm post-job SMS review requests went out this month; if the client isn't using the review workflow consistently, remind Luis to address it on the next client call
-  - The client sends review requests — not Lantech. Your job is to confirm they're doing it. Use the templates below.
+  - The client sends review requests — not CopperBuilds. Your job is to confirm they're doing it. Use the templates below.
 
 **Review Generation Templates** (give these to the client at onboarding — they send from their own phone/email)
 
@@ -407,7 +407,7 @@ Completed: YYYY-MM-DD
 ## Edge Cases
 
 **Client sends no photos all month:**
-Don't skip GBP posts — use a relevant stock photo from Pexels (same approach as `/lantech-build` Step 1.5) or reuse an older client photo. Log "no client photos received this month" in the maintenance log. After two consecutive months with no photos, flag to Luis: the client needs a reminder that photos directly impact GBP performance.
+Don't skip GBP posts — use a relevant stock photo from Pexels (same approach as `/copperbuilds-build` Step 1.5) or reuse an older client photo. Log "no client photos received this month" in the maintenance log. After two consecutive months with no photos, flag to Luis: the client needs a reminder that photos directly impact GBP performance.
 
 **Client reports a change (new phone, new hours) mid-month:**
 Update the live site immediately — don't wait for the monthly cycle. Update `client.env` to match. Then log the change in the maintenance log under "Business updates."

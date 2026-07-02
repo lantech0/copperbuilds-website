@@ -1,0 +1,3771 @@
+{
+  "trade": "hvac",
+  "city": "dallas",
+  "state": "tx",
+  "location": "Dallas,Texas,United States",
+  "keyword_count": 938,
+  "tier_summary": {
+    "service": {
+      "count": 917,
+      "monthly_searches": 42520
+    },
+    "informational": {
+      "count": 21,
+      "monthly_searches": 300
+    }
+  },
+  "keywords": {
+    "AC repair": {
+      "volume": 3600,
+      "tier": "service"
+    },
+    "HVAC company": {
+      "volume": 390,
+      "tier": "service"
+    },
+    "air conditioning repair": {
+      "volume": 3600,
+      "tier": "service"
+    },
+    "furnace repair": {
+      "volume": 880,
+      "tier": "service"
+    },
+    "HVAC contractor": {
+      "volume": 880,
+      "tier": "service"
+    },
+    "emergency HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "air conditioning installation": {
+      "volume": 590,
+      "tier": "service"
+    },
+    "heating and cooling": {
+      "volume": 170,
+      "tier": "service"
+    },
+    "HVAC service": {
+      "volume": 480,
+      "tier": "service"
+    },
+    "central air repair": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "AC installation": {
+      "volume": 590,
+      "tier": "service"
+    },
+    "heat pump repair": {
+      "volume": 390,
+      "tier": "service"
+    },
+    "HVAC maintenance": {
+      "volume": 320,
+      "tier": "service"
+    },
+    "air conditioner service": {
+      "volume": 880,
+      "tier": "service"
+    },
+    "heating repair": {
+      "volume": 320,
+      "tier": "service"
+    },
+    "HVAC repair": {
+      "volume": 480,
+      "tier": "service"
+    },
+    "air conditioner repair": {
+      "volume": 3600,
+      "tier": "service"
+    },
+    "AC unit repair": {
+      "volume": 320,
+      "tier": "service"
+    },
+    "heater repair": {
+      "volume": 320,
+      "tier": "service"
+    },
+    "ductwork repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "air handler repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "condenser repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "evaporator coil repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "compressor repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "blower motor repair": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "thermostat repair": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "capacitor replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "fan motor repair": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "contactor replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "duct repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "AC compressor repair": {
+      "volume": 720,
+      "tier": "service"
+    },
+    "heat pump compressor repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "refrigerant line repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace installation": {
+      "volume": 260,
+      "tier": "service"
+    },
+    "heat pump installation": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "mini split installation": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "central air installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "ductless AC installation": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "AC replacement": {
+      "volume": 260,
+      "tier": "service"
+    },
+    "furnace replacement": {
+      "volume": 210,
+      "tier": "service"
+    },
+    "HVAC replacement": {
+      "volume": 210,
+      "tier": "service"
+    },
+    "heat pump replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "new AC unit": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "new HVAC system": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "new furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "air conditioning replacement": {
+      "volume": 260,
+      "tier": "service"
+    },
+    "ductless mini split installation": {
+      "volume": 260,
+      "tier": "service"
+    },
+    "mini split system installation": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "ductless heat pump installation": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "packaged unit installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "split system installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "whole house AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC maintenance": {
+      "volume": 590,
+      "tier": "service"
+    },
+    "AC tune-up": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "furnace tune-up": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "AC inspection": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace inspection": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC inspection": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "duct cleaning": {
+      "volume": 170,
+      "tier": "service"
+    },
+    "HVAC cleaning": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "annual AC service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "spring AC service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "fall furnace service": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC seasonal maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "pre-season HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC checkup": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC filter replacement": {
+      "volume": 480,
+      "tier": "service"
+    },
+    "air filter service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace filter replacement": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "HVAC service contract": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC maintenance plan": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "preventive HVAC maintenance": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "AC tune up cost": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "emergency AC repair": {
+      "volume": 110,
+      "tier": "service"
+    },
+    "24 hour HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "after hours AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "emergency heating repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "same day AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "urgent HVAC service": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "emergency air conditioning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "24 hour AC repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "weekend HVAC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "emergency furnace repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "HVAC emergency service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "24 hour furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "night HVAC service": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC not cooling": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "AC blowing warm air": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "AC not working": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "furnace not working": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace not turning on": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "no heat in house": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "house not cooling": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC making noise": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC leaking water": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "AC freezing up": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "AC tripping breaker": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC not working": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heater not working": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "AC won't turn on": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace won't start": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC running but not cooling": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "AC short cycling": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace blowing cold air": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "no hot air from vents": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "water dripping from AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "uneven cooling": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "high energy bill HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC compressor not working": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "thermostat not working": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "thermostat blank screen": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "no airflow from vents": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC icing up": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "frozen AC outside unit": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC smells musty": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "burning smell from AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC rattling noise": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC clicking noise": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump not heating": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump blowing cold air": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace keeps shutting off": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace short cycling": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "hot and cold spots house": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC blows hot air": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "mini split": {
+      "volume": 1000,
+      "tier": "service"
+    },
+    "ductless mini split": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "ductless AC": {
+      "volume": 210,
+      "tier": "service"
+    },
+    "heat pump": {
+      "volume": 260,
+      "tier": "service"
+    },
+    "central air conditioning": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "split system AC": {
+      "volume": 110,
+      "tier": "service"
+    },
+    "packaged unit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "gas furnace": {
+      "volume": 110,
+      "tier": "service"
+    },
+    "electric furnace": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "boiler repair": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "radiant heating": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "window AC installation": {
+      "volume": 110,
+      "tier": "service"
+    },
+    "geothermal HVAC": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "air handler unit": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "variable speed AC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "two-stage furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "dual fuel heat pump": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "multi-zone mini split": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "ceiling cassette mini split": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "concealed duct mini split": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "rooftop unit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "RTU repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier AC": {
+      "volume": 140,
+      "tier": "service"
+    },
+    "Carrier HVAC": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "Lennox HVAC": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "Trane AC": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "Trane HVAC": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "Rheem HVAC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Goodman AC": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "York HVAC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "American Standard HVAC": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "Daikin mini split": {
+      "volume": 140,
+      "tier": "service"
+    },
+    "Bryant HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Mitsubishi mini split": {
+      "volume": 210,
+      "tier": "service"
+    },
+    "LG mini split": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "Bosch HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Heil HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Armstrong furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Amana HVAC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "MrCool mini split": {
+      "volume": 170,
+      "tier": "service"
+    },
+    "Pioneer mini split": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "Carrier furnace repair": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "Lennox furnace repair": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "Trane HVAC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Rheem AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman furnace repair": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "HVAC cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC replacement cost": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "furnace replacement cost": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "HVAC repair cost": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "AC repair cost": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "AC unit cost": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "new HVAC system cost": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "HVAC installation cost": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "furnace cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "mini split cost": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "AC maintenance cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC estimate": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "free HVAC estimate": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "average HVAC replacement cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC tune-up cost": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "furnace inspection cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC service call cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump installation cost": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "duct cleaning cost": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "AC compressor replacement cost": {
+      "volume": 210,
+      "tier": "service"
+    },
+    "HVAC financing": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC financing": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC payment plan": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC near me": {
+      "volume": 880,
+      "tier": "service"
+    },
+    "AC repair near me": {
+      "volume": 1600,
+      "tier": "service"
+    },
+    "air conditioning repair near me": {
+      "volume": 1600,
+      "tier": "service"
+    },
+    "furnace repair near me": {
+      "volume": 480,
+      "tier": "service"
+    },
+    "HVAC company near me": {
+      "volume": 480,
+      "tier": "service"
+    },
+    "AC company near me": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "heating repair near me": {
+      "volume": 140,
+      "tier": "service"
+    },
+    "cooling company near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC contractor near me": {
+      "volume": 320,
+      "tier": "service"
+    },
+    "furnace installation near me": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "AC tune-up near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC maintenance near me": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "furnace service near me": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "heat pump repair near me": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "ductless AC near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "mini split near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC inspection near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC installation near me": {
+      "volume": 170,
+      "tier": "service"
+    },
+    "24 hour AC repair near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "emergency HVAC near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "indoor air quality": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "air purifier installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "air filtration system": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "UV air purifier": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "whole home humidifier": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "dehumidifier installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "air scrubber installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HEPA filtration": {
+      "volume": 210,
+      "tier": "service"
+    },
+    "allergen air filter": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "air quality testing": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "whole house air purifier": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "ERV installation": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "HRV installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "energy recovery ventilator": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "whole house fan installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "ventilation system installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "smart thermostat installation": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Nest thermostat installation": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "Ecobee installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "programmable thermostat": {
+      "volume": 390,
+      "tier": "service"
+    },
+    "energy efficient HVAC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "high efficiency furnace": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "SEER rating": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "ENERGY STAR HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "variable speed HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC energy savings": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial HVAC": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "commercial air conditioning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial heating": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "office HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial HVAC service": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "building HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial HVAC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "restaurant HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "retail HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "warehouse HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "how long does AC last": {
+      "volume": 50,
+      "tier": "informational"
+    },
+    "when to replace AC unit": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "how often to service AC": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "AC vs heat pump": {
+      "volume": 30,
+      "tier": "informational"
+    },
+    "heat pump vs furnace": {
+      "volume": 20,
+      "tier": "informational"
+    },
+    "mini split vs central air": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "best HVAC system": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "most reliable HVAC brand": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "how to choose HVAC system": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "how to lower AC bill": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "refrigerant recharge": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Freon recharge": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "R22 refrigerant": {
+      "volume": 170,
+      "tier": "service"
+    },
+    "R410A refrigerant": {
+      "volume": 260,
+      "tier": "service"
+    },
+    "refrigerant leak": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "compressor replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "drain line cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "condensate drain cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "duct sealing": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "duct insulation": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "zoning system HVAC": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "heat exchanger repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "igniter replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "flame sensor replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "pressure switch HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "expansion tank HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "duct replacement": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "air duct replacement": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "NATE certified HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "licensed HVAC technician": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best HVAC company": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "top rated HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "honest HVAC company": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "reliable HVAC contractor": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified HVAC": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "residential HVAC service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "home AC repair": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "Carrier Infinity series": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Trane XR15": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Lennox XC21": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Rheem Prestige series": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman GSXC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "York YXV": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Daikin DX20VC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bryant Evolution": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud Ultra series": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC keeps running": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC won't turn off": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump reversing valve": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "defrost cycle heat pump": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump stuck in cooling": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC tripping breaker repeatedly": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC breaker keeps tripping": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace ignitor not working": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "pilot light keeps going out": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace making banging noise": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC makes noise when starting": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC drain pan full": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC drain clogged": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC tax credit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "energy efficient tax credit HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC rebate": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC rebate": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace rebate": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "utility rebate HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "home energy audit": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "HVAC energy audit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "energy star rebate": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "VRF system installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "VRF system repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "chiller repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "cooling tower repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "data center HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "server room cooling": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "hydronic heating": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "steam boiler repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "hot water boiler repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "chilled water system": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "VAV box repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "damper repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "economizer repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "commercial rooftop unit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial package unit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC permit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC permit cost": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC inspection permit": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "EPA 608 certified": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "NATE certified technician": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "mold testing HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "duct disinfection": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "air duct mold removal": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "asbestos duct removal": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "carbon monoxide testing": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier AC repair": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "Carrier heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier HVAC service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier AC not cooling": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Lennox AC repair": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "Lennox heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Lennox AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Lennox HVAC service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Trane AC repair": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "Trane furnace repair": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "Trane heat pump repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Trane AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Trane HVAC service": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Rheem furnace repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Rheem heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman HVAC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "York AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "York furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "York heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "American Standard AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "American Standard furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bryant AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bryant furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Daikin mini split repair": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "Daikin AC repair": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "Mitsubishi mini split repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Mitsubishi ductless repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "LG mini split repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Bosch heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "1.5 ton AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "2 ton AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "2.5 ton AC": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "3 ton AC": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "3.5 ton AC": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "4 ton AC": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "5 ton AC": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "80000 BTU furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "100000 BTU furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "120000 BTU furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "12000 BTU mini split": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "18000 BTU mini split": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "24000 BTU mini split": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "36000 BTU mini split": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "14 SEER AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "16 SEER AC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "18 SEER AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "20 SEER AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "80 AFUE furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "90 AFUE furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "96 AFUE furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "98 AFUE furnace": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "high efficiency heat pump": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "SEER2 rating": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HSPF heat pump": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC zoning system": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "multi-zone HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC zone dampers": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "whole house cooling": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "whole house heating": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "new construction HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "home addition HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "basement HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "attic air handler": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "crawl space HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "basement furnace replacement": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "closet air handler installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "sunroom AC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "garage HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "workshop heating cooling": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "evaporator coil cleaning": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "condenser coil cleaning": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "AC coil cleaning": {
+      "volume": 210,
+      "tier": "service"
+    },
+    "air handler cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC drain pan cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC filter 16x25": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC filter 20x25": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "MERV 13 filter": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "MERV 16 filter": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "biannual HVAC service": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "run capacitor replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "start capacitor replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "dual run capacitor": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "TXV replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "electronic expansion valve": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "crankcase heater replacement": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "defrost control board": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "control board replacement HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "disconnect box replacement": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "refrigerant recovery": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "nitrogen pressure test HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "condensate pump replacement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "float switch HVAC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "secondary drain pan": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "drain pan overflow": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC not turning on": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "heat won't come on": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC takes too long to cool": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC running all night": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "humidity too high inside": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "condensate overflow": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC only cools sometimes": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC cycles on and off": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "furnace clicking": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace humming": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace rumbling": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC hissing noise": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC gurgling noise": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best AC company near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable HVAC near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "duct cleaning near me": {
+      "volume": 590,
+      "tier": "service"
+    },
+    "AC replacement near me": {
+      "volume": 70,
+      "tier": "service"
+    },
+    "furnace replacement near me": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "heat pump installation near me": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "cheap HVAC near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC tune up near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial refrigeration repair": {
+      "volume": 90,
+      "tier": "service"
+    },
+    "walk-in cooler repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "commercial freezer repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "industrial HVAC": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "school HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "hospital HVAC": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "medical office HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "retail store HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "restaurant HVAC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial HVAC maintenance contract": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Google Home thermostat": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HomeKit thermostat": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Honeywell thermostat repair": {
+      "volume": 110,
+      "tier": "service"
+    },
+    "Honeywell thermostat installation": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "Alexa HVAC control": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "smart AC controller": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "0 down HVAC financing": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC lease program": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "no interest HVAC": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC monthly payment": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "heat pump federal tax credit": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC utility rebate": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "most reliable AC brand": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "best AC unit brand": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "heat pump pros and cons": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "gas vs electric furnace": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "AC vs heat pump cost": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "when to replace HVAC system": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "signs AC needs replacement": {
+      "volume": 0,
+      "tier": "informational"
+    },
+    "HVAC lifespan": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "how long does furnace last": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "how long does AC unit last": {
+      "volume": 50,
+      "tier": "informational"
+    },
+    "average HVAC life expectancy": {
+      "volume": 0,
+      "tier": "informational"
+    },
+    "HVAC brands ranked": {
+      "volume": 10,
+      "tier": "informational"
+    },
+    "Carrier AC tune-up": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Carrier heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Carrier heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Trane AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Trane furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Trane furnace tune-up": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Trane heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Trane heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Lennox AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Lennox furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Lennox furnace tune-up": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Lennox heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Lennox heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Rheem AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Rheem AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Rheem furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Rheem furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Rheem heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Rheem heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Goodman AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Goodman furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Goodman heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Goodman heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "York AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "York AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "York furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "York furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "York heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "York heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "American Standard AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "American Standard AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "American Standard furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "American Standard furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "American Standard heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "American Standard heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "American Standard heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Bryant AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bryant AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Bryant furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bryant furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Bryant heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bryant heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bryant heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Ruud AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Ruud furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Ruud heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ruud heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Payne AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Payne AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Payne AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Payne furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Payne furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Payne furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Payne heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Payne heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Payne heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Coleman AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Coleman AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Coleman AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Coleman furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Coleman furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Coleman furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Coleman heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Coleman heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Coleman heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Amana AC repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Amana AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Amana AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Amana furnace repair": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Amana furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Amana furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Amana heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Amana heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Amana heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Heil AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Heil AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Heil AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Heil furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Heil furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Heil furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Heil heat pump repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Heil heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Heil heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Armstrong AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Armstrong AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Armstrong AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Armstrong furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Armstrong furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Armstrong furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Armstrong heat pump repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Armstrong heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Armstrong heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Frigidaire AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Frigidaire AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Frigidaire AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Frigidaire furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Frigidaire furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Frigidaire furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Frigidaire heat pump repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Frigidaire heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Frigidaire heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Comfortmaker AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Comfortmaker AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Comfortmaker AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Comfortmaker furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Comfortmaker furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Comfortmaker furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Comfortmaker heat pump repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Comfortmaker heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Comfortmaker heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Tempstar AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Tempstar AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Tempstar AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Tempstar furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Tempstar furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Tempstar furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Tempstar heat pump repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Tempstar heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Tempstar heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Luxaire AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Luxaire AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Luxaire AC tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Luxaire furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Luxaire furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Luxaire furnace tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Luxaire heat pump repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Luxaire heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Luxaire heat pump tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Daikin mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Daikin mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Daikin ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Daikin ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Daikin mini split maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Mitsubishi mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Mitsubishi mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Mitsubishi ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Mitsubishi ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Mitsubishi mini split maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "LG mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "LG mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "LG ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "LG ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "LG mini split maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Fujitsu mini split repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Fujitsu mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Fujitsu mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Fujitsu ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Fujitsu ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Fujitsu mini split maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Gree mini split repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Gree mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Gree mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Gree ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Gree ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Gree mini split maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Midea mini split repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Midea mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Midea mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Midea ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Midea ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Midea mini split maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Haier mini split repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Haier mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Haier mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Haier ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Haier ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Haier mini split maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "MrCool mini split repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "MrCool mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "MrCool mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "MrCool ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "MrCool ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "MrCool mini split maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Pioneer mini split repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Pioneer mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Pioneer mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Pioneer ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Pioneer ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Pioneer mini split maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bosch mini split repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Bosch mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Bosch mini split tune-up": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Bosch ductless AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Bosch ductless AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Bosch mini split maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "Honeywell thermostat troubleshooting": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Honeywell thermostat not working": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "Honeywell thermostat setup": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Nest thermostat repair": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "Nest thermostat troubleshooting": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Nest thermostat not working": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Nest thermostat setup": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "Ecobee thermostat repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ecobee thermostat installation": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "Ecobee thermostat troubleshooting": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ecobee thermostat not working": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "Ecobee thermostat setup": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "mini split repair near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump replacement near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "thermostat installation near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "boiler repair near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "geothermal installation near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "commercial HVAC near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "air purifier installation near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "humidifier installation near me": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "dehumidifier repair near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "zoning system installation near me": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "VRF installation near me": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "chiller repair near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "attic fan installation near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace tune-up near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump tune-up near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "ductless mini split repair near me": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "package unit repair near me": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "ductwork installation near me": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "mini split installation cost": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "ductless AC cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "geothermal system cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "boiler replacement cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "zoning system cost": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "air purifier cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "humidifier installation cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "dehumidifier cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "duct sealing cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "thermostat installation cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump tune-up cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace tune-up cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "VRF system cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "chiller replacement cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "package unit replacement cost": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC leaking Freon": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace pilot light won't light": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump defrost light on": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "thermostat says heat on but no heat": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC unit outside not running": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace flame sensor dirty": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC condensate line frozen": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "mini split error code": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "heat pump error code": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC compressor humming not starting": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "furnace smells like gas": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC unit tripping GFCI": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "heat pump ice buildup": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "furnace exhaust smell": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC drain line backed up": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "mini split leaking water": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump making clicking noise": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace blower running constantly": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC low on refrigerant": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump not defrosting": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace error code": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "AC unit vibrating": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "heat pump fan not spinning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace igniter glowing but not lighting": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "AC unit frozen solid": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "spring HVAC tune-up special": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "fall furnace tune-up special": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC maintenance plan cost": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "annual HVAC service contract": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "bi-annual HVAC inspection": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC service agreement": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "summer AC checkup": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "winter furnace checkup": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "pre-summer AC inspection": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "pre-winter furnace inspection": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "seasonal HVAC changeover": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "whole home dehumidifier installation": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "crawl space dehumidifier": {
+      "volume": 170,
+      "tier": "service"
+    },
+    "solar attic fan installation": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "radiant floor heating installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "hydronic baseboard heating repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "geothermal heat pump installation": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "geothermal system repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "ground source heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "air source heat pump installation": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "in-wall AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "through-the-wall AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "PTAC unit repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "PTAC unit installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "water source heat pump": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "chilled beam system repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "VRF heat recovery system": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "make-up air unit installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "energy recovery ventilator repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC extended warranty": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "furnace warranty repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC parts warranty": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "manufacturer warranty HVAC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC labor warranty": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC warranty claim": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "new construction HVAC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "builder HVAC package": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "spec home HVAC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "custom home HVAC design": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC load calculation": {
+      "volume": 30,
+      "tier": "service"
+    },
+    "Manual J calculation": {
+      "volume": 20,
+      "tier": "service"
+    },
+    "duct design new home": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC rough-in inspection": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "affordable duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable mini split installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "affordable HVAC contractor": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "affordable AC maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best heat pump installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "best AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best furnace installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best HVAC contractor": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "best AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "top rated AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "top rated furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "top rated HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "top rated duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "top rated heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "top rated mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "top rated AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "top rated furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "top rated HVAC contractor": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "top rated AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "licensed furnace repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed duct cleaning": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "licensed HVAC contractor": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "licensed AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified furnace repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "certified heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "certified HVAC contractor": {
+      "volume": 50,
+      "tier": "service"
+    },
+    "certified AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "24 hour HVAC company": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "24 hour duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "24 hour heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "24 hour mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "24 hour AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "24 hour furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "24 hour HVAC contractor": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "24 hour AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "same day furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "same day HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "same day duct cleaning": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "same day heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "same day mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "same day AC installation": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "same day furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "same day HVAC contractor": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "same day AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "emergency HVAC company": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "emergency duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "emergency heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "emergency mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "emergency AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "emergency furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "emergency HVAC contractor": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "emergency AC maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "local AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "local furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "local HVAC company": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "local duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "local heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "local mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "local AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "local furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "local HVAC contractor": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "local AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "family owned furnace repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned duct cleaning": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned HVAC contractor": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "family owned AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned AC repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned furnace repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned duct cleaning": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned HVAC contractor": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "veteran owned AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "trusted furnace repair": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted duct cleaning": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "trusted HVAC contractor": {
+      "volume": 40,
+      "tier": "service"
+    },
+    "trusted AC maintenance": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "reliable AC repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "reliable furnace repair": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "reliable HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "reliable duct cleaning": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "reliable heat pump installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "reliable mini split installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "reliable AC installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "reliable furnace installation": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "reliable AC maintenance": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC same as cash financing": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC 12 month financing": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC 60 month financing": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC credit application": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC financing no credit check": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC lease to own": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC company reviews": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "top HVAC reviews": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "HVAC Google reviews": {
+      "volume": 10,
+      "tier": "service"
+    },
+    "HVAC Yelp reviews": {
+      "volume": 0,
+      "tier": "service"
+    },
+    "BBB accredited HVAC company": {
+      "volume": 0,
+      "tier": "service"
+    }
+  }
+}

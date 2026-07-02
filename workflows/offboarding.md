@@ -7,7 +7,7 @@
 
 ## Objective
 
-Close the client relationship cleanly — hand over every file and access they own, remove Lantech from their accounts, send a graceful goodbye, and archive everything so nothing is left dangling.
+Close the client relationship cleanly — hand over every file and access they own, remove CopperBuilds from their accounts, send a graceful goodbye, and archive everything so nothing is left dangling.
 
 ---
 
@@ -90,7 +90,7 @@ Before preparing the file handover, give the client access to their own Drive fo
 Gather everything the client owns:
 - All HTML/CSS/JS source files (zip the full project folder)
 - All images used on the site
-- Logo files (if Lantech designed or stored them)
+- Logo files (if CopperBuilds designed or stored them)
 - `06-client-brief.md` — their business brief
 - The keyword map (`_keyword-map.md`)
 - Any blog posts written for them
@@ -103,7 +103,7 @@ Email subject: `[Business Name] — Your Website Files`
 Body:
 *"Hi [Name], attached are all your website files — you own these outright. Everything is included: HTML pages, images, and your keyword research. Any developer you work with in the future can host these as-is.*
 
-*I'll be removing Lantech's access from your Google Analytics and Search Console over the next 24 hours. If you need anything from us in the future, we're always here."*
+*I'll be removing CopperBuilds' access from your Google Analytics and Search Console over the next 24 hours. If you need anything from us in the future, we're always here."*
 
 ---
 
@@ -118,27 +118,27 @@ Transfer ownership of all tools where the client should be the primary owner:
 
 **Google Search Console:**
 1. GSC → Settings → Users and permissions
-2. If Lantech is the verified owner: add client as an **Owner** first, then remove Lantech
+2. If CopperBuilds is the verified owner: add client as an **Owner** first, then remove CopperBuilds
 3. Confirm client can see the property before you remove yourself — if they lose access, verification is gone
 
 **Hosting (Hostinger):**
-- If the site is under Lantech's Hostinger plan: transfer the files to the client's own hosting account, or arrange transfer of the hosting plan
+- If the site is under CopperBuilds' Hostinger plan: transfer the files to the client's own hosting account, or arrange transfer of the hosting plan
 - Provide full FTP credentials to the client in the handover email
 - If the site is already on the client's own hosting: confirm they have all login credentials
 
 **Domain:**
-- If the domain is registered under Lantech's account: initiate a domain transfer to the client
+- If the domain is registered under CopperBuilds' account: initiate a domain transfer to the client
 - Hostinger: Domains → select domain → Transfer domain → follow instructions
 - If already under client's account: no action needed
 
 ---
 
-### Step 5 — Revoke Lantech Access
+### Step 5 — Revoke CopperBuilds Access
 
 After confirming the client has full access to everything:
 - Remove `luis.copperbuilds@gmail.com` from GA4 (Step 4 above)
 - Remove from GSC (Step 4 above)
-- Delete stored hosting/FTP credentials from Lantech's password manager
+- Delete stored hosting/FTP credentials from CopperBuilds' password manager
 - Remove client's Google account email from any internal tracking files
 
 ---
@@ -192,11 +192,11 @@ Keep it warm and short. No guilt-tripping, no last-ditch sales pitch.
 - [ ] Google Drive folder: all documents present and confirmed
 - [ ] Google Drive folder shared with client (Editor access) — folder link noted
 - [ ] Site files packaged and delivered to client (zip + Drive)
-- [ ] GA4: client promoted to Admin, Lantech removed
-- [ ] GSC: client added as Owner, Lantech removed
+- [ ] GA4: client promoted to Admin, CopperBuilds removed
+- [ ] GSC: client added as Owner, CopperBuilds removed
 - [ ] Hosting credentials provided or transfer initiated
-- [ ] Domain transfer initiated (if domain is under Lantech's account)
-- [ ] Lantech access revoked from all platforms
+- [ ] Domain transfer initiated (if domain is under CopperBuilds' account)
+- [ ] CopperBuilds access revoked from all platforms
 - [ ] `workflows/portfolio-capture.md` triggered (if case study not yet done)
 - [ ] Client local folder archived to `clients/completed/`
 - [ ] Google Drive folder moved to Completed Clients folder — `DRIVE-FOLDER.md` updated

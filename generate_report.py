@@ -1426,7 +1426,7 @@ def aggregate_competitors(all_features: list) -> list:
         "name": n, "appearances": c,
         "prevalence_pct": round(c / total * 100) if total else 0,
         **profiles.get(n, {}),
-    } for n, c in ranked[:5]]
+    } for n, c in ranked[:15]]
 
 def aggregate_position_spread(all_features: list) -> dict:
     """Returns {name: {1: count, 2: count, 3: count}} tracking map pack slot distribution."""
@@ -1509,15 +1509,15 @@ def calc_ownership_score(all_features: list, domain: str | None) -> dict:
     max_pts = sum(FEATURE_WEIGHTS.values()) * total
     client_score = round(client_pts / max_pts * 100, 1) if max_pts else 0.0
     comp_scores = {n: round(p / max_pts * 100, 1) for n, p in comp_pts.items()}
-    top5 = dict(sorted(comp_scores.items(), key=lambda x: x[1], reverse=True)[:5])
-    return {"client": client_score, "competitors": top5}
+    top_competitors = dict(sorted(comp_scores.items(), key=lambda x: x[1], reverse=True)[:15])
+    return {"client": client_score, "competitors": top_competitors}
 
 # ── HTML Helpers ─────────────────────────────────────────────────────────────
 
 def _build_position_spread_html(spread: dict, competitors: list, total_kw: int) -> str:
     """Stacked bar per competitor showing slot 1/2/3 distribution across all keywords."""
     rows = ""
-    for comp in competitors[:5]:
+    for comp in competitors[:15]:
         name = comp["name"]
         d = spread.get(name, {1: 0, 2: 0, 3: 0})
         s1, s2, s3 = d.get(1, 0), d.get(2, 0), d.get(3, 0)

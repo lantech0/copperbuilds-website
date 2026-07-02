@@ -76,21 +76,21 @@ Read the relevant workflow before starting any process — it defines every requ
 
 ## Page Rebuild Process — FOLLOW THIS EXACTLY
 
-This is the correct process for rebuilding any page — Lantech site and all client builds. Do NOT skip to coding directly.
+This is the correct process for rebuilding any page — CopperBuilds site and all client builds. Do NOT skip to coding directly.
 
 **Three-Layer Copy Framework:** Every page is built in this order — SEO Seed first, Marketing Copy second, Grammar & Structure third. Never reverse the order. Full framework documented in `COPY-STANDARDS.md`.
 
 1. **Invoke `frontend-design` skill** — required before any frontend work (every session)
 
 2. **Layer 1 — SEO Seed**: Establish the keyword target before writing a single word
-   - Client builds: run `/lantech-seo [client-slug]` — validates real keyword volumes via DataForSEO, outputs target phrases, titles, meta, schema, and SEO action plan
-   - Lantech site pages: identify the primary keyword cluster for this page (e.g., "web design for home service businesses", "local SEO for HVAC contractors")
+   - Client builds: run `/copperbuilds-seo [client-slug]` — validates real keyword volumes via DataForSEO, outputs target phrases, titles, meta, schema, and SEO action plan
+   - CopperBuilds site pages: identify the primary keyword cluster for this page (e.g., "web design for home service businesses", "local SEO for HVAC contractors")
    - Every H1, H2, and first body paragraph must contain or directly support the seed keywords
    - The seed is the thesis — the rest of the copy proves it
 
 3. **Layer 2 — Marketing Copy**: Draft copy using the SEO seed as the spine
    - Read `COPY-STANDARDS.md` — readability targets, AIDA/PAS frameworks, headline rules, CTA rules
-   - Client builds: also read `clients/active/[slug]/BRAND-VOICE.md` — brand voice and vocabulary override Lantech defaults for client work
+   - Client builds: also read `clients/active/[slug]/BRAND-VOICE.md` — brand voice and vocabulary override CopperBuilds defaults for client work
    - Run `/impeccable craft` — shape discovery interviews establish page purpose and target reader, design brief is confirmed before code starts, copy is drafted using seed keywords + marketing framework + brand voice
 
 4. **Layer 3A — Mechanical Gate**: Run `/vale-check` on the copy draft
@@ -367,9 +367,9 @@ After every monthly SEO retainer session, run `/save` to file key findings. Know
 - `brand-web` — invoke when creating a new brand or rebranding an existing site (tokens, DESIGN.md, SVG logo, grep audit, file-by-file replacement)
 - `ai-graphic-design` — use for logo, brand identity, visual asset generation (5-phase briefing workflow)
 - `ui-ux-pro-max` — use for design system queries, color/typography recommendations, UX review
-- `market-brand` — brand voice analysis and guidelines (see `BRAND-VOICE.md` for Lantech's output)
-- `/lantech-seo [client-slug]` — **pre-build SEO** for client builds: reads client.env, validates real keyword volumes via DataForSEO, generates titles/meta/schema/action plan. Run BEFORE `/lantech-build`.
-- `/vale-check [file]` — **copy quality gate**: runs Vale grammar/style check against Lantech rules + client brand voice. Mandatory before any page or blog post is marked done. Install once with `winget install --id errata-ai.Vale`, then `vale sync` from this folder.
+- `market-brand` — brand voice analysis and guidelines (see `BRAND-VOICE.md` for CopperBuilds' output)
+- `/copperbuilds-seo [client-slug]` — **pre-build SEO** for client builds: reads client.env, validates real keyword volumes via DataForSEO, generates titles/meta/schema/action plan. Run BEFORE `/copperbuilds-build`.
+- `/vale-check [file]` — **copy quality gate**: runs Vale grammar/style check against CopperBuilds rules + client brand voice. Mandatory before any page or blog post is marked done. Install once with `winget install --id errata-ai.Vale`, then `vale sync` from this folder.
 - `/seo-local <url>` — post-build local SEO audit (GBP, reviews, NAP, citations)
 - `/seo-page <url>` — post-build on-page SEO audit
 - `/seo-schema <url>` — generate/validate structured data on a live page

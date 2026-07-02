@@ -37,7 +37,7 @@ You need:
 
 These should be in one of two places:
 - The client's questionnaire (`02-onboarding-questionnaire.md`) — if they have existing hosting
-- Your own Hostinger account — if you're hosting it under Lantech's plan
+- Your own Hostinger account — if you're hosting it under CopperBuilds' plan
 
 **Never store credentials in a committed file.** Keep them in your password manager only.
 

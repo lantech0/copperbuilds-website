@@ -6,13 +6,13 @@
 
 ## Objective
 
-Capture the completed client site as a portfolio entry — screenshot, write the case study, and add it to the Lantech portfolio page so new prospects see real proof of work.
+Capture the completed client site as a portfolio entry — screenshot, write the case study, and add it to the CopperBuilds portfolio page so new prospects see real proof of work.
 
 ---
 
 ## Step 1 — Screenshot the Live Site
 
-1. Navigate to `copperbuilds/` (the Lantech workstation)
+1. Navigate to `copperbuilds/` (the CopperBuilds workstation)
 2. Take full-page screenshots of the client's live site at 1280px and 375px:
    ```
    node screenshot.mjs https://[CLIENT_DOMAIN] desktop
@@ -68,14 +68,14 @@ Save to: `copperbuilds/portfolio/[client-slug]/case-study.md`
 
 ---
 
-## Step 4 — Add to Lantech Portfolio Page
+## Step 4 — Add to CopperBuilds Portfolio Page
 
 1. Open `copperbuilds/portfolio.html` (or the portfolio section of `index.html` if not a separate page)
 2. Add the new case study entry following the existing card format
 3. Link to the live site and embed the desktop screenshot
 4. Run the build → screenshot → QA process for the portfolio page before considering this done
 
-If a portfolio page doesn't exist yet on the Lantech site:
+If a portfolio page doesn't exist yet on the CopperBuilds site:
 - Flag this to the user — don't add a portfolio page without approval
 - Save the case study to `portfolio/[client-slug]/` and note it's pending a portfolio page build
 
@@ -85,5 +85,5 @@ If a portfolio page doesn't exist yet on the Lantech site:
 
 - [ ] Desktop + mobile screenshots saved to `portfolio/[client-slug]/`
 - [ ] Case study written and saved to `portfolio/[client-slug]/case-study.md`
-- [ ] Case study added to the Lantech portfolio page (or flagged as pending if no portfolio page exists)
+- [ ] Case study added to the CopperBuilds portfolio page (or flagged as pending if no portfolio page exists)
 - [ ] Portfolio page QA'd after update

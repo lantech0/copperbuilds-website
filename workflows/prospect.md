@@ -1,4 +1,4 @@
-# Workflow: Lantech Client Prospecting
+# Workflow: CopperBuilds Client Prospecting
 
 **Skill:** `/prospect`
 **Saves to:** `projects/prospects/` (local backup) + Google Drive "Lantech Agency → Prospects" folder (ID: `1J8Of3xcIt8ZU0LTuPuafrpXVi4Vl2hQZ`) (primary)
@@ -26,6 +26,20 @@ Ask the user which mode before doing anything else:
 ### Step 1.5 — Do-Not-Duplicate Check
 Before starting research, check `projects/prospects/` for existing files in this sector + location. List all businesses already researched in prior sessions. Record at the top of the output: **"Already researched: [list or None]"**
 
+### Step 1.6 — Lead-First Ordering (Discovery Mode Override)
+
+**Why this exists:** Running keyword research (Step 2.5, Step 4) before confirming real no-website leads exist in the target city risks spending API credits and effort on a market that turns out to be a dead end. In a large, saturated metro, nearly every findable business — even ones surfaced through Craigslist or Nextdoor — already has a website and Facebook page by default; the true target (zero web presence) may only exist in smaller suburbs or less-saturated markets, and you don't know which until you've actually looked.
+
+**Revised order for Discovery mode:**
+1. Run Step 5 (Lead Discovery — user-pasted Google Maps results is the primary method, see Step 5) **first**, broadly across the target area (city + surrounding suburbs — see note below on what counts as "the area"), before Step 2, Step 2.5, or Step 4.
+2. Run Step 6 (Owner Lookup), Step 6.5 (Contact Info), and Step 7 (Digital Presence Audit) on candidates as you find them, to confirm which are genuinely no-website / zero-presence — not just weak.
+3. **Threshold to trigger keyword research:** once **3 confirmed no-website leads** are found within a single city, run Step 2.5 (SERP report) and Step 4 (DataForSEO) for that specific city. Do not run either before this threshold is met. If after a reasonable search pass fewer than 3 are found in the original target city, widen to a named suburb (see below) before concluding the market is a dead end.
+4. Step 2 (Area Research) and Step 3 (Gold Standard) still apply, but run **after** the threshold is met, scoped to the city that actually produced the leads — not necessarily the city originally requested.
+
+**Suburb geography note:** a business physically based in a suburb (e.g., Plano, Garland, Mesquite) generally ranks in Google's local map pack for its own city's searches, not the core city's searches (e.g., "HVAC Plano" not "HVAC Dallas"), unless it's explicitly set up as a service-area business covering the core city. Keyword research and outreach stats must be scoped to whichever city the lead is actually based in — do not cite core-city search volume for a suburb-based lead.
+
+**Ghost mode is unaffected** — Ghost mode already starts from a specific known business, so this ordering override does not apply; run Ghost mode's steps in their existing order.
+
 ### Step 2 — Area Research (if location not specified)
 If the user has no specific location in mind, research the best US market for the sector. Evaluate 3–5 cities and pick the best based on: population, digital adoption gap (% of local businesses without websites), market growth, competition level for web agencies, sector-specific demand reason.
 
@@ -39,9 +53,11 @@ Output an **Area Selection Rationale** — save to Tab 3 of the Google Sheet:
 
 ### Step 2.5 — SERP Visibility Report
 
-Run `/generate-report` for the target trade + city before any lead research.
+**Discovery mode: deferred until Step 1.6's 3-lead threshold is met — do not run this before then.**
 
-**Why it comes first:** The report pulls live SERP data — who owns Local Pack, which features fire, which competitors appear across every keyword. That data feeds the Gold Standard (Step 3), pitch angles (Step 9.5), and outreach credibility (Step 10).
+Run `/generate-report` for the target trade + city once real no-website leads are confirmed there.
+
+**Why it comes first (once leads are confirmed):** The report pulls live SERP data — who owns Local Pack, which features fire, which competitors appear across every keyword. That data feeds the Gold Standard (Step 3), pitch angles (Step 9.5), and outreach credibility (Step 10).
 
 **Run:** `/generate-report --trade [trade] --city [city] --state [state]`
 - No `--domain` flag during prospecting — this is the no-website prospect map mode
@@ -82,6 +98,8 @@ Save Gold Standard + Benchmark Table to Tab 3 of the Google Sheet.
 
 ### Step 4 — Keyword Research (Discovery and Ghost)
 
+**Discovery mode: deferred until Step 1.6's 3-lead threshold is met — do not run this before then.** Ghost mode is unaffected (already knows its target city).
+
 DataForSEO charges per call — batch the entire session before calling, not per prospect.
 
 **Before calling DataForSEO:**
@@ -103,11 +121,17 @@ Calculate **Total Monthly Search Traffic** = sum of top keywords.
 Save as: **"[N,NNN] people search for [sector] in [location] every month."** — use in outreach.
 
 ### Step 5 — Lead Discovery (Discovery only)
-Search Google Maps for "[sector] in [location]". Collect for each business:
-- Name, address, phone, Google rating + review count, website URL, years in business
 
-### Step 5B — Additional Lead Sources (supplements Step 5)
-If Google Maps volume is low, or to find leads with no Maps listing, check these:
+**Primary method: ask the user to paste the expanded Google Maps results.** This is the method that actually works — proven 2026-07-02 in Dallas, where it found 11 real no-website leads in two pastes after WebSearch-based methods (below) spent dozens of queries and found close to zero. The reason: WebSearch can only surface businesses that are already indexed somewhere on the web, which structurally excludes true zero-presence businesses by definition. Google Maps' own "Website" field is ground truth that no search-engine proxy can substitute for, and Claude has no reliable tool access to browse Maps directly (a plain fetch returns nothing — it's a JS-rendered app; browser automation may not be available or the user may not want to connect it).
+
+**How to run it:**
+1. Ask the user: "Can you open Google Maps, search '[sector] in [location]', click through to the expanded results list (not just the 3-pack), and paste the results here?"
+2. From the pasted text, extract every entry that does **not** show a "Website" link (only "Directions" and/or "Schedule") — these are the real no-website candidates.
+3. Note name, rating, review count, phone, years in business, and category for each from the pasted text directly — this is often the *only* place that data exists for a truly zero-presence business, so capture it now rather than assuming it can be re-verified later.
+4. Deprioritize entries with no reviews and no phone number — too weak to verify or contact.
+5. Cross-check each candidate via WebSearch (`"[business name]" Yelp BBB website`) before treating it as confirmed — the Maps card can occasionally be stale, and this same query pattern reliably confirms or refutes real website presence (proven both directions this session: correctly found real sites for businesses wrongly assumed to have none, and correctly confirmed zero presence for the genuine no-website leads).
+
+**Fallback method (only if the user can't paste Maps results): WebSearch-based sources below.** These are unreliable for *discovering* true zero-presence leads (they mostly resurface businesses that already have a site) but remain useful for supplementary research — verifying a specific named lead, or finding Gold Standard competitor detail.
 
 | Source | How to use | Best for |
 |--------|-----------|----------|
@@ -115,14 +139,20 @@ If Google Maps volume is low, or to find leads with no Maps listing, check these
 | **Angi / HomeAdvisor / Thumbtack** | Browse provider listings by trade + city | HVAC, plumbing, roofing, electrical, landscaping |
 | **BBB (bbb.org)** | Search by industry + state/city; cross-check for website | Established businesses — high close rate |
 | **Chamber of Commerce directories** | Find city chamber → member list → audit each for website | Local retail, professional services |
-| **Craigslist Services** | Browse services section for target city | Ghost leads — phone only, no site |
-| **Nextdoor Business** | Browse local business listings by city | Home services, retail |
+| **Craigslist Services** | Browse services section for target city | Listings expire within days — treat any details found as unverifiable soon after; low reliability |
+| **Nextdoor Business** | Browse local business listings by city | Home services, retail — but most Nextdoor-recommended businesses already have a site, proven this session |
 | **Google "[sector] in [city]" listicles** | Click every business in roundup articles; audit web presence | Pre-vetted, reputation-verified leads |
 | **Local Facebook Groups** | "[City] Small Businesses" — businesses posting via phone/DM only | Ghost leads with zero web presence |
 
-Collect same fields as Step 5. Mark source per lead (e.g. `Source: Yelp`).
+Collect same fields as the Maps method above. Mark source per lead (e.g. `Source: Yelp` vs `Source: Google Maps (user-pasted)`).
 
 ---
+
+### Data Reliability Notes (learned 2026-07-02, apply throughout Steps 5–7)
+
+- **DataForSEO's `local_pack` `domain`/`url` fields are NOT a reliable website-presence signal.** They reflect where that SERP entry's link goes (often a Google-hosted redirect), not the business's actual configured GBP "Website" field. Two real leads were wrongly marked "no website" this way before being corrected. Use the WebSearch `"[name]" Yelp BBB website` cross-check or the Maps card's own "Website" field instead.
+- **WebSearch's AI-generated summary can state an unsourced phone-number-to-business match with no actual citation behind it.** This happened twice for the same number in one session, both times unverifiable. Treat any phone/business identity claim from a WebSearch summary as unconfirmed unless a specific source URL backs it directly.
+- **WebFetch cannot read Google Maps** — it returns an empty shell (confirmed by direct test). Maps requires a rendered browser or the user's own manual check.
 
 ### Step 6 — Owner Name Lookup
 For each lead, search in order:
@@ -227,7 +257,7 @@ Rules:
 - **Name their tier** only if it makes the pitch stronger; never lead with price — use it to show you've done your homework (e.g. "businesses your size typically need X city pages to show up where their customers search")
 - No price in message 1
 - Low-friction CTA — one question or a 15-min call offer, nothing more
-- Sign as: **Lantech | lantech-website.vercel.app**
+- Sign as: **CopperBuilds | copperbuilds.com**
 - Delivery claim: **14 days** (never "48–72 hours" — matches pricing page)
 
 ### Step 11 — Save Output
