@@ -1672,8 +1672,12 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
         full = int(top_rating)
         half = 1 if (top_rating - full) >= 0.5 else 0
         stars_html = "★" * full + ("½" if half else "") + "☆" * (5 - full - half)
-    # PAA for FAQPage schema
-    paa_schema_items = stats.get("paa_questions", [])[:8]
+    # NOTE: FAQPage schema was previously auto-generated here with a hardcoded
+    # non-answer ("This is a common question Dallas {tl} customers ask...") that
+    # also leaked the literal word "Dallas" into every report regardless of city.
+    # Real FAQ answers require manual research per report and are not auto-generated.
+    # If a report needs FAQPage schema, write real per-question answers by hand
+    # and add the schema block directly in that report's HTML.
     # Position spread + opportunity analysis
     _af = all_features or []
     spread = aggregate_position_spread(_af)
@@ -1709,9 +1713,19 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{city_t} {tl} SEO Report {year} | Who's Winning Google in {city_t}, {st}</title>
-<meta name="description" content="We analyzed {total_kw} live Google searches for {tl} in {city_t}, {st}. See who owns the map pack, which keywords drive the most traffic, and what it's costing you. {data_date} data.">
+<title>{city_t} {tl} SEO Report {year} | Map Pack Rankings</title>
+<meta name="description" content="We analyzed {total_kw} Google searches for {tl} in {city_t}, {st}: who owns the map pack and what it's costing you. {data_date} data.">
 <link rel="canonical" href="https://copperbuilds.com/reports/{trade.replace('_','-')}-seo-report-{city.replace(' ','-').lower()}-{state.lower()}-{year}/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CopperBuilds">
+<meta property="og:title" content="{city_t} {tl} SEO Report {year}: Map Pack Rankings">
+<meta property="og:description" content="We analyzed {total_kw} Google searches for {tl} in {city_t}, {st}: who owns the map pack and what it's costing you.">
+<meta property="og:url" content="https://copperbuilds.com/reports/{trade.replace('_','-')}-seo-report-{city.replace(' ','-').lower()}-{state.lower()}-{year}/">
+<meta property="og:image" content="https://copperbuilds.com/brand_assets/brand-kit/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{city_t} {tl} SEO Report {year}: Map Pack Rankings">
+<meta name="twitter:description" content="We analyzed {total_kw} Google searches for {tl} in {city_t}, {st}: who owns the map pack and what it's costing you.">
+<meta name="twitter:image" content="https://copperbuilds.com/brand_assets/brand-kit/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -1736,10 +1750,7 @@ def generate_html(trade: str, city: str, state: str, year: int, domain: str | No
       "author": {{"@type": "Organization", "name": "CopperBuilds", "url": "https://copperbuilds.com"}},
       "publisher": {{"@type": "Organization", "name": "CopperBuilds", "logo": {{"@type": "ImageObject", "url": "https://copperbuilds.com/brand_assets/logo.svg"}}}}
     }},
-    {f'''{{
-      "@type": "FAQPage",
-      "mainEntity": [{", ".join(f'{{"@type": "Question", "name": {json.dumps(q)}, "acceptedAnswer": {{"@type": "Answer", "text": "This is a common question Dallas {tl} customers ask when searching on Google."}}}}' for q in paa_schema_items)}]
-    }}''' if paa_schema_items else '"@type": "WebPage"'},
+    {{"@type": "WebPage"}},
     {{
       "@type": "BreadcrumbList",
       "itemListElement": [
