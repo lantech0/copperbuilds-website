@@ -53,7 +53,7 @@ After [REVIEW_DEADLINE], this round is considered approved and we move to the ne
 Looking forward to your feedback.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com | lantech-website.vercel.app
+Lantech | luis.copperbuilds@gmail.com | lantech-website.vercel.app
 
 ---
 
@@ -84,7 +84,7 @@ I've addressed all the changes from your last round of feedback. Updated preview
 Please review and reply with your feedback by **[REVIEW_DEADLINE]**, or reply **"approved"** if you're happy with it.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com
 
 ---
 
@@ -105,4 +105,4 @@ Here's what happens next:
 I'll follow up as soon as it's live.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com

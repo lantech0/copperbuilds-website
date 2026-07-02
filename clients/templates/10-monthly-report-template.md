@@ -108,7 +108,7 @@
 
 *List anything the client needs to do this month. If nothing is needed, write "None this month."*
 
-- [ ] [Action item — e.g., "Please add lantech016@gmail.com as a viewer in Google Search Console"]
+- [ ] [Action item — e.g., "Please add luis.copperbuilds@gmail.com as a viewer in Google Search Console"]
 - [ ] [Action item — or delete and write "None this month."]
 
 ---

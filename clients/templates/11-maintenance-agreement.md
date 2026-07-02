@@ -6,7 +6,7 @@
 **Client email:** ___________________________
 **Website:** ___________________________
 
-**Lantech contact:** Luis Echarri — lantech016@gmail.com
+**Lantech contact:** Luis Echarri — luis.copperbuilds@gmail.com
 
 ---
 
@@ -70,7 +70,7 @@ The following are **not** covered by this agreement and will be quoted separatel
 
 ## How to Request Out-of-Scope Work
 
-Email lantech016@gmail.com with a description of the work needed. Lantech will reply within 2 business days with a quote. Work begins only after written approval and payment (or invoice agreement).
+Email luis.copperbuilds@gmail.com with a description of the work needed. Lantech will reply within 2 business days with a quote. Work begins only after written approval and payment (or invoice agreement).
 
 ---
 
@@ -89,8 +89,8 @@ Either party may cancel this agreement with **30 days written notice** via email
 
 To perform maintenance, Lantech requires continued access to:
 - [ ] Hosting/FTP credentials (provided in the original handover package)
-- [ ] Google Analytics 4 (Lantech email: `lantech016@gmail.com` — Editor access)
-- [ ] Google Search Console (Lantech email: `lantech016@gmail.com` — Full access)
+- [ ] Google Analytics 4 (Lantech email: `luis.copperbuilds@gmail.com` — Editor access)
+- [ ] Google Search Console (Lantech email: `luis.copperbuilds@gmail.com` — Full access)
 - [ ] Google Business Profile (Standard/Pro — if GBP posts are included)
 
 If credentials change, notify Lantech within 3 business days.
@@ -109,4 +109,4 @@ By signing below, both parties agree to the terms of this Maintenance & Care Agr
 
 ---
 
-*Questions? Email lantech016@gmail.com before signing.*
+*Questions? Email luis.copperbuilds@gmail.com before signing.*

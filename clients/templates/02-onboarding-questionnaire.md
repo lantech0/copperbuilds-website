@@ -1,7 +1,7 @@
 # Client Onboarding Questionnaire
 > Lantech Web Design — sent to client after deal is closed
 > Takes ~15 minutes to complete. All fields marked * are required.
-> Return completed form to: lantech016@gmail.com
+> Return completed form to: luis.copperbuilds@gmail.com
 
 ---
 
@@ -366,4 +366,4 @@ Once we receive your completed questionnaire:
 5. We hand over the completed site with all logins and a how-to guide
 
 **Questions before submitting?** Reply to your welcome email.
-**Ready to submit?** Email this to: lantech016@gmail.com
+**Ready to submit?** Email this to: luis.copperbuilds@gmail.com

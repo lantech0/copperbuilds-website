@@ -21,7 +21,7 @@ Run this workflow once per client, immediately after the live site smoke test pa
 
 - Client's live domain (e.g., `https://joesplumbing.com`)
 - Client's Google account email (collected in `02-onboarding-questionnaire.md`)
-- Lantech's agency Google account: `lantech016@gmail.com`
+- Lantech's agency Google account: `luis.copperbuilds@gmail.com`
 - Access to the live site files (to add tracking code)
 - Hostinger FTP/File Manager access (to re-upload files after adding the tag)
 
@@ -31,7 +31,7 @@ Run this workflow once per client, immediately after the live site smoke test pa
 
 ### Step A1 — Create the GA4 Property
 
-1. Go to [analytics.google.com](https://analytics.google.com) — sign in with `lantech016@gmail.com`
+1. Go to [analytics.google.com](https://analytics.google.com) — sign in with `luis.copperbuilds@gmail.com`
 2. Click **Admin** (bottom-left gear icon)
 3. In the Account column: click **Create Account** if this is the first client, or select the existing Lantech account
    - Account name: `Lantech Agency`
@@ -107,7 +107,7 @@ Give the client viewer access so they can check their own data:
 4. Role: **Viewer**
 5. Click **Add**
 
-Lantech (`lantech016@gmail.com`) should already be Admin as the property creator. Confirm this is the case.
+Lantech (`luis.copperbuilds@gmail.com`) should already be Admin as the property creator. Confirm this is the case.
 
 ---
 
@@ -115,7 +115,7 @@ Lantech (`lantech016@gmail.com`) should already be Admin as the property creator
 
 ### Step B1 — Create the GSC Property
 
-1. Go to [search.google.com/search-console](https://search.google.com/search-console) — sign in with `lantech016@gmail.com`
+1. Go to [search.google.com/search-console](https://search.google.com/search-console) — sign in with `luis.copperbuilds@gmail.com`
 2. Click **Add property**
 3. Choose **URL prefix** (not Domain — URL prefix is simpler for static sites)
 4. Enter: `https://[clientdomain].com` (include the https://, no trailing slash)
@@ -224,14 +224,14 @@ In `clients/templates/05-handover-package.md`, confirm these fields are filled:
 
 ### Why This Works
 
-Google trusts the GSC ownership signal. If `lantech016@gmail.com` is a verified GSC owner for `https://[clientdomain].com` and the same account manages the GBP listing, Google confirms the business controls the domain and approves GBP verification instantly.
+Google trusts the GSC ownership signal. If `luis.copperbuilds@gmail.com` is a verified GSC owner for `https://[clientdomain].com` and the same account manages the GBP listing, Google confirms the business controls the domain and approves GBP verification instantly.
 
-**Prerequisite:** The GBP listing must be claimed and managed under the same Google Account used for GSC (`lantech016@gmail.com` for CopperBuilds-managed clients). If the client manages their own GBP under a different account, this method doesn't apply — use postcard or phone verification instead.
+**Prerequisite:** The GBP listing must be claimed and managed under the same Google Account used for GSC (`luis.copperbuilds@gmail.com` for CopperBuilds-managed clients). If the client manages their own GBP under a different account, this method doesn't apply — use postcard or phone verification instead.
 
 ### Steps
 
 1. **Verify the domain in GSC first** (Part B, Steps B1–B2) — GSC ownership must be confirmed before GBP will accept it as a verification signal
-2. **Open GBP** — go to [business.google.com](https://business.google.com), sign in with `lantech016@gmail.com`
+2. **Open GBP** — go to [business.google.com](https://business.google.com), sign in with `luis.copperbuilds@gmail.com`
 3. **Start the verification flow** for the listing → when prompted for a verification method, look for **"Google Search Console"** or **"Instant Verification"** as an option
    - This option only appears if: (a) you're signed in with the same Google Account that owns the GSC property, and (b) the website URL on the GBP listing matches the verified GSC property exactly
 4. **Select it** — Google cross-checks the GSC ownership record and approves verification immediately (no waiting period)

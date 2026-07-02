@@ -114,7 +114,7 @@ Transfer ownership of all tools where the client should be the primary owner:
 **Google Analytics 4:**
 1. GA4 → Admin → Account → Account Access Management
 2. Change client's role from Viewer → **Administrator**
-3. Remove `lantech016@gmail.com` from the property
+3. Remove `luis.copperbuilds@gmail.com` from the property
 
 **Google Search Console:**
 1. GSC → Settings → Users and permissions
@@ -136,7 +136,7 @@ Transfer ownership of all tools where the client should be the primary owner:
 ### Step 5 — Revoke Lantech Access
 
 After confirming the client has full access to everything:
-- Remove `lantech016@gmail.com` from GA4 (Step 4 above)
+- Remove `luis.copperbuilds@gmail.com` from GA4 (Step 4 above)
 - Remove from GSC (Step 4 above)
 - Delete stored hosting/FTP credentials from Lantech's password manager
 - Remove client's Google account email from any internal tracking files

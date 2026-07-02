@@ -122,7 +122,7 @@ Any time a value below changes, grep all templates for it and update every occur
 
 | Value | Current | Lives in |
 |---|---|---|
-| Lantech email | `lantech016@gmail.com` | 01, 05, 07, 09, 10, 11, 12, 13 |
+| Lantech email | `luis.copperbuilds@gmail.com` | 01, 05, 07, 09, 10, 11, 12, 13 |
 | Lantech phone | `+63 977 329 3969` (pending Google Voice US number) | 05 (placeholder) |
 | Delivery timeline | `14 days` | 02, 03 |
 | Retainer tiers | Local Presence $997 · Lead Machine $1,997 · Market Leader $3,497 | 02 |

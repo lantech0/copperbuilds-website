@@ -37,7 +37,7 @@ If everything is running smoothly and you're ready to take the next step, here's
 Not pushing anything — just want to make sure you know what's available when you're ready.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com | lantech-website.vercel.app
+Lantech | luis.copperbuilds@gmail.com | lantech-website.vercel.app
 
 ---
 
@@ -59,7 +59,7 @@ You can write anything honest — what the experience was like, what we delivere
 Thank you genuinely.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com
 
 ---
 
@@ -75,7 +75,7 @@ Following up on the [LOCAL SEO / BLOG / MAINTENANCE] option I mentioned — happ
 Just reply here and I'll get back to you same day.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com
 
 ---
 
@@ -98,4 +98,4 @@ A few things worth looking at around this time:
 If anything needs updating or you're thinking about the next step, I'm here.
 
 [YOUR_NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com

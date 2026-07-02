@@ -117,7 +117,7 @@ Every page must have this footer:
 
 ```
 [Lantech logo + tagline]    [Pages]           [Services]         [Contact]
-                            Home              Web Design         lantech016@gmail.com
+                            Home              Web Design         luis.copperbuilds@gmail.com
                             Services          SEO                +63 977 329 3969
                             Pricing           Google Business    
                             Blog              Social Media
@@ -132,7 +132,7 @@ Every page must have this footer:
 Background: var(--ink) (#1C1917), top border: 1px solid rgba(255,255,255,0.06)
 ```
 
-**IMPORTANT:** Use `lantech016@gmail.com` for email and `+63 977 329 3969` (tel:+639773293969) for phone. This IS the public business email — use it on live pages.
+**IMPORTANT:** Use `luis.copperbuilds@gmail.com` for email and `+63 977 329 3969` (tel:+639773293969) for phone. This IS the public business email — use it on live pages.
 
 ---
 
@@ -191,7 +191,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     "logo": "https://copperbuilds.com/brand_assets/logo.svg",
     "image": "https://copperbuilds.com/brand_assets/brand-kit/og-image.png",
     "description": "Web design, SEO, and Google Business Profile optimization for home service contractors and local businesses across the United States.",
-    "email": "lantech016@gmail.com",
+    "email": "luis.copperbuilds@gmail.com",
     "telephone": "+639773293969",
     "priceRange": "$1,200 - $1,999",
     "openingHoursSpecification": {
@@ -260,7 +260,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "logo": "https://copperbuilds.com/brand_assets/logo.svg",
   "description": "A web design studio helping home service businesses rank on Google and turn local searches into booked jobs. Founded by Luis Echarri.",
   "founder": {"@type": "Person", "name": "Luis Echarri"},
-  "email": "lantech016@gmail.com",
+  "email": "luis.copperbuilds@gmail.com",
   "telephone": "+639773293969",
   "areaServed": {"@type": "Country", "name": "United States"}
 }
@@ -278,12 +278,12 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
   "mainEntity": {
     "@type": "Organization",
     "name": "CopperBuilds",
-    "email": "lantech016@gmail.com",
+    "email": "luis.copperbuilds@gmail.com",
     "telephone": "+639773293969",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "sales",
-      "email": "lantech016@gmail.com",
+      "email": "luis.copperbuilds@gmail.com",
       "availableLanguage": "English",
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
@@ -401,8 +401,8 @@ These values must match exactly everywhere they appear:
 |---|---|
 | Business name | Lantech (not "LanTech", not "LANTECH") |
 | Founder | Luis Echarri |
-| Public email | lantech016@gmail.com |
-| Internal email | lantech016@gmail.com (never show on live pages) |
+| Public email | luis.copperbuilds@gmail.com |
+| Internal email | luis.copperbuilds@gmail.com (never show on live pages) |
 | Phone | +63 977 329 3969 |
 | Starter price | $1,200 |
 | Growth price | $1,699 |

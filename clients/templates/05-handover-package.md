@@ -136,7 +136,7 @@ Your website includes a financing section powered by **[PROVIDER — e.g. Hearth
 
 **What you need to manage yourself:**
 - Log in to your **[PROVIDER]** account at **[PROVIDER_LOGIN_URL]** to view and manage applications
-- If you change financing providers, email lantech016@gmail.com — we will update the embed code or apply link on your website
+- If you change financing providers, email luis.copperbuilds@gmail.com — we will update the embed code or apply link on your website
 - If the financing section stops working (broken button, widget not loading), contact **[PROVIDER]** support first, then contact us if the issue is on the website side
 
 **Your financing provider contact:**
@@ -151,7 +151,7 @@ Your website includes a financing section powered by **[PROVIDER — e.g. Hearth
 Your website is built with static HTML/CSS files. To make changes:
 
 **Option A — Hire Lantech** (recommended)
-Email lantech016@gmail.com with the changes you need. We'll send a flat project quote before any work begins.
+Email luis.copperbuilds@gmail.com with the changes you need. We'll send a flat project quote before any work begins.
 
 **Option B — Edit it yourself**
 1. Download your website files from the backup link in Section 4
@@ -185,7 +185,7 @@ This does NOT cover:
 - ❌ Content changes (copy, images, pricing updates)
 - ❌ Third-party service integrations added after launch
 
-**After 30 days:** Additional support is available. Email lantech016@gmail.com and we'll quote it as a flat project fee — no surprises.
+**After 30 days:** Additional support is available. Email luis.copperbuilds@gmail.com and we'll quote it as a flat project fee — no surprises.
 
 ---
 
@@ -214,7 +214,7 @@ Here's what we recommend doing in your first month to get the most from your new
 ## 12. CONTACT & ONGOING SUPPORT
 
 **Project lead:** [YOUR_NAME]
-**Email:** lantech016@gmail.com
+**Email:** luis.copperbuilds@gmail.com
 **Phone:** +1-800-000-0000
 **Response time:** Within 1 business day
 

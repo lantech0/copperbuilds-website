@@ -10,7 +10,7 @@ This Service Agreement ("Agreement") is entered into as of **[DATE]** between:
 
 **Service Provider:**
 Lantech ("Lantech", "we", "us")
-Email: lantech016@gmail.com
+Email: luis.copperbuilds@gmail.com
 Website: lantech-website.vercel.app
 
 **Client:**
@@ -142,7 +142,7 @@ Lantech does not warrant:
 
 - Lantech provides **[30] days** of post-launch support for bug fixes at no additional charge
 - Support covers bugs and errors in the delivered work — not new features or content changes
-- After [30] days, additional support and changes are available and quoted as a flat project fee — email lantech016@gmail.com and we'll send a quote before any work begins
+- After [30] days, additional support and changes are available and quoted as a flat project fee — email luis.copperbuilds@gmail.com and we'll send a quote before any work begins
 
 ---
 

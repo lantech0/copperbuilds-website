@@ -19,7 +19,7 @@ I'll call you at [PHONE NUMBER]. If anything changes, just reply here.
 
 Talk soon,
 [YOUR NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com
 
 ---
 
@@ -51,7 +51,7 @@ If you have questions before deciding, reply here and I'll answer them straight.
 If you're ready to move forward, just reply "yes" and I'll send the agreement and invoice the same day.
 
 [YOUR NAME]
-Lantech | lantech016@gmail.com | lantech-website.vercel.app
+Lantech | luis.copperbuilds@gmail.com | lantech-website.vercel.app
 
 ---
 
@@ -67,7 +67,7 @@ Checking in on the Lantech proposal I sent a few days ago. Still happy to answer
 One thing worth knowing: we build sites in the order they're booked. If timing matters to you, just let me know.
 
 [YOUR NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com
 
 ---
 
@@ -87,7 +87,7 @@ If something about the proposal didn't work, I'd genuinely like to know — it h
 Either way, good luck with [BUSINESS NAME].
 
 [YOUR NAME]
-Lantech | lantech016@gmail.com
+Lantech | luis.copperbuilds@gmail.com
 
 ---
 
