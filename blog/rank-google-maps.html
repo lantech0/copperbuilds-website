@@ -185,9 +185,6 @@ body {
 .gradient-text {
   color: #B87333;
 }
-.glow { position: absolute; border-radius: 50%; pointer-events: none; }
-.glow-cyan { background: radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%); }
-.glow-purple { background: radial-gradient(circle, rgba(184,115,51,0.05) 0%, transparent 70%); }
 
 .pill {
   display: inline-flex; align-items: center;
@@ -294,7 +291,7 @@ body {
 .faq-btn:hover { color: var(--accent); }
 .faq-icon {
   width: 26px; height: 26px; min-width: 26px;
-  border: 1px solid rgba(255,255,255,.1); border-radius: 7px;
+  border: 1px solid var(--border); border-radius: 7px;
   display: flex; align-items: center; justify-content: center;
   color: var(--muted);
   transition: border-color .2s, background .2s, transform .25s cubic-bezier(.34,1.56,.64,1), color .2s;
@@ -310,17 +307,6 @@ body {
   color: var(--muted); line-height: 1.72; font-size: .9125rem;
 }
 .faq-answer-inner a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-
-/* Footer */
-.footer-link { color: var(--muted); font-size: .875rem; text-decoration: none; transition: color .2s; display: block; }
-.footer-link:hover { color: var(--txt); }
-.social-btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 38px; height: 38px; border-radius: 9px;
-  border: 1px solid var(--border); color: var(--muted);
-  transition: border-color .2s, background .2s, color .2s;
-}
-.social-btn:hover { border-color: var(--accent-border); background: var(--accent-dim); color: var(--accent); }
 
 /* Chart containers */
 .chart-wrap {
@@ -365,17 +351,15 @@ body {
   font-size: .8rem; color: var(--muted);
   font-family: 'JetBrains Mono', monospace; flex-wrap: wrap;
 }
-.author-line .sep { color: rgba(255,255,255,.12); }
+.author-line .sep { color: var(--border); }
 
 /* Responsive */
 @media (max-width: 768px) {
   :root { --section-py: 4.5rem; --container-px: 1.25rem; }
   .step-heading-row { align-items: flex-start; }
   .chart-wrap svg { width: 100%; height: auto; }
-  .footer-grid { grid-template-columns: 1fr 1fr !important; }
 }
 @media (max-width: 520px) {
-  .footer-grid { grid-template-columns: 1fr !important; }
   .article-title { font-size: 1.5rem; }
 }
 </style>
@@ -388,8 +372,6 @@ body {
      ARTICLE HEADER
      ============================================================ -->
 <header style="position:relative;padding:4rem 0 2.5rem;overflow:hidden" aria-label="Article header">
-  <div class="glow glow-cyan" style="width:700px;height:700px;top:-300px;left:-200px;opacity:.8"></div>
-  <div class="glow glow-purple" style="width:500px;height:500px;top:-100px;right:-200px"></div>
   <div class="article-container" style="position:relative">
 
     <!-- Breadcrumb -->
@@ -742,7 +724,7 @@ body {
        ============================================================ -->
   <div class="cta-card">
     <h3>Want your Google Maps ranking handled for you?</h3>
-    <p>Every CopperBuilds website package includes Google Business Profile setup and optimization. Starting at $1,699.</p>
+    <p>Every CopperBuilds website package from Growth up includes Google Business Profile setup and optimization, starting at $1,699.</p>
     <a href="../pricing.html" class="btn-primary">
       See Pricing
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -844,58 +826,7 @@ body {
 <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer aria-label="Site footer" style="border-top:1px solid var(--border);padding:4.5rem 0 2rem">
-<div class="container">
-  <div class="footer-grid" style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem">
-    <div>
-      <a href="../index.html" style="display:inline-flex;align-items:center;gap:.625rem;text-decoration:none;margin-bottom:1.125rem">
-        <img src="/brand_assets/logo.svg" alt="CopperBuilds" height="26" style="display:block;flex-shrink:0;">
-      </a>
-      <p style="color:var(--muted);font-size:.875rem;line-height:1.7;max-width:220px;margin-bottom:1.5rem">Web design &amp; SEO for small businesses across the United States.</p>
-      <div style="display:flex;gap:.625rem">
-        <a href="https://www.facebook.com/copperbuilds" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 2h-2a3 3 0 00-3 3v2H5v3h2v4h3v-4h2l.5-3H10V5a.5.5 0 01.5-.5H12V2z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/luisecharri/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.25"/><circle cx="8" cy="8" r="2.75" stroke="currentColor" stroke-width="1.25"/><circle cx="11.5" cy="4.5" r=".75" fill="currentColor"/></svg>
-        </a>
-      </div>
-    </div>
-    <div>
-      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Services</p>
-      <div style="display:flex;flex-direction:column;gap:.625rem">
-        <a href="../services.html" class="footer-link">Web Design</a>
-        <a href="../services.html" class="footer-link">SEO Optimization</a>
-        <a href="../services.html" class="footer-link">Google Business Profile</a>
-        <a href="../services.html" class="footer-link">Social Media</a>
-      </div>
-    </div>
-    <div>
-      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Company</p>
-      <div style="display:flex;flex-direction:column;gap:.625rem">
-        <a href="../about.html" class="footer-link">About</a>
-        <a href="../pricing.html" class="footer-link">Pricing</a>
-        <a href="../blog.html" class="footer-link">Blog</a>
-        <a href="../help.html" class="footer-link">Help</a>
-        <a href="../contact.html" class="footer-link">Contact</a>
-      </div>
-    </div>
-    <div>
-      <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt);margin-bottom:1.25rem">Contact</p>
-      <div style="display:flex;flex-direction:column;gap:.625rem">
-        <a href="mailto:luis.copperbuilds@gmail.com" class="footer-link">luis.copperbuilds@gmail.com</a>
-        <a href="tel:+639773293969" class="footer-link">+63 977 329 3969</a>
-        <a href="../contact.html" class="footer-link" style="color:var(--accent);margin-top:.25rem">Get My Free Quote &rarr;</a>
-      </div>
-    </div>
-  </div>
-  <hr class="rule" style="margin-bottom:1.625rem">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem">
-    <p style="color:var(--muted);font-size:.8rem">&copy; 2026 CopperBuilds. All rights reserved.</p>
-    <p style="color:var(--muted);font-size:.78rem;font-family:'JetBrains Mono',monospace">@copperbuilds</p>
-  </div>
-</div>
-</footer>
+<script src="/js/footer.js" defer></script>
 
 <!-- ============================================================
      SCRIPTS

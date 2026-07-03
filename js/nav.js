@@ -31,7 +31,10 @@
         + link('/blog.html', 'Blog')
         + link('/reports/', 'Reports')
       + '</div>'
-      + '<div style="display:flex;align-items:center;gap:1rem;">'
+      + '<div style="display:flex;align-items:center;gap:.625rem;">'
+        + '<a href="https://wa.me/639773293969" target="_blank" rel="noopener" aria-label="Message CopperBuilds on WhatsApp" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;border:1.5px solid var(--border);color:var(--warm-stone);text-decoration:none;transition:border-color .15s ease,background .15s ease,color .15s ease;flex-shrink:0;" onmouseover="this.style.borderColor=\'var(--accent-border)\';this.style.background=\'var(--accent-dim)\';this.style.color=\'var(--accent)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.background=\'transparent\';this.style.color=\'var(--warm-stone)\'">'
+          + '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>'
+        + '</a>'
         + '<a href="/contact.html" class="btn btn-primary" id="nav-cta" style="white-space:nowrap;">Get a Free Quote</a>'
         + '<button id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" style="display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:0;">'
           + '<span class="hb" style="display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s;"></span>'
@@ -49,6 +52,7 @@
       + '<a href="/reports/" style="display:block;padding:.75rem 1.5rem;font-size:1rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;">Reports</a>'
       + '<hr style="margin:.75rem 1.5rem;border:none;border-top:1px solid var(--rule);">'
       + '<a href="/contact.html" class="btn btn-primary" style="margin:.5rem 1.5rem 1rem;display:block;text-align:center;">Get a Free Quote</a>'
+      + '<a href="https://wa.me/639773293969" target="_blank" rel="noopener" class="btn btn-ghost" style="margin:0 1.5rem 1rem;display:block;text-align:center;">Message Me on WhatsApp</a>'
     + '</div>'
   + '</nav>';
 

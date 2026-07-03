@@ -198,20 +198,6 @@ body {
   color: #B87333;
 }
 
-.glow {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.glow-cyan {
-  background: radial-gradient(circle, rgba(184,115,51,0.09) 0%, transparent 70%);
-}
-
-.glow-purple {
-  background: radial-gradient(circle, rgba(184,115,51,0.10) 0%, transparent 70%);
-}
-
 
 /* ===== Nav ===== */
 .site-nav {
@@ -447,7 +433,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(7,7,14,0.35) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(28,25,23,0.35) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -519,7 +505,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(7,7,14,0.25) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(28,25,23,0.25) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -667,92 +653,9 @@ body {
 }
 
 /* ===== Footer ===== */
-.site-footer {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  padding: 4rem 0 2rem;
-  margin-top: 4rem;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-.footer-logo-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  text-decoration: none;
-  margin-bottom: 1rem;
-}
-
-.footer-tagline {
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 240px;
-  margin-bottom: 1.25rem;
-}
-
-.footer-contact {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.footer-contact a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-contact a:hover { color: var(--accent-hover); }
-
-.footer-col-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
-}
-
-.footer-link {
-  color: var(--muted);
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: color 0.2s;
-  display: block;
-  margin-bottom: 0.625rem;
-}
-
-.footer-link:hover { color: var(--txt); }
-
-.footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.8125rem;
-  color: var(--muted);
-}
-
 .rule { border: none; border-top: 1px solid var(--border); }
 
 /* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-}
-
 @media (max-width: 768px) {
   :root {
     --container-px: 1.25rem;
@@ -767,16 +670,6 @@ body {
   .article-body h2 { margin: 2.25rem 0 1rem; }
 
   .cta-card { padding: 2rem 1.5rem; }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
@@ -787,8 +680,6 @@ body {
 
 <!-- ===== ARTICLE HEADER ===== -->
 <header class="article-header" aria-label="Article header">
-  <div class="glow glow-cyan" style="width:500px;height:500px;top:-180px;left:-100px;opacity:0.85" aria-hidden="true"></div>
-  <div class="glow glow-purple" style="width:420px;height:420px;top:-80px;right:-120px;opacity:0.75" aria-hidden="true"></div>
 
   <div class="article-container" style="position:relative">
     <!-- Breadcrumb -->
@@ -941,7 +832,7 @@ body {
       <!-- INTERNAL CTA CARD -->
       <div class="cta-card">
         <h2>Want more calls from Google Maps?</h2>
-        <p>CopperBuilds builds local SEO strategies for small businesses, from Google Business Profile setup to review systems to Maps ranking. No retainers.</p>
+        <p>CopperBuilds builds local SEO strategies for small businesses, from Google Business Profile setup to review systems to Maps ranking. Month-to-month, no lock-in contracts.</p>
         <a href="../contact.html" class="btn-primary">Get a Free Local SEO Review</a>
       </div>
 
@@ -1026,49 +917,7 @@ body {
 
 
 <!-- ===== FOOTER ===== -->
-<footer class="site-footer" aria-label="Site footer">
-  <div class="container">
-    <div class="footer-grid">
-
-      <!-- Col 1: Brand -->
-      <div>
-        <a href="../index.html" class="footer-logo-wrap" aria-label="CopperBuilds homepage">
-          <img src="/brand_assets/logo.svg" alt="CopperBuilds" height="26" style="display:block;">
-        </a>
-        <p class="footer-tagline">Fast, conversion-focused websites for US small businesses. Flat-rate pricing, no retainers.</p>
-        <p class="footer-contact">Email: <a href="mailto:luis.copperbuilds@gmail.com">luis.copperbuilds@gmail.com</a></p>
-      </div>
-
-      <!-- Col 2: Pages -->
-      <div>
-        <div class="footer-col-title">Pages</div>
-        <a href="../services.html" class="footer-link">Services</a>
-        <a href="../pricing.html" class="footer-link">Pricing</a>
-        <a href="../about.html" class="footer-link">About</a>
-        <a href="../blog.html" class="footer-link">Blog</a>
-      </div>
-
-      <!-- Col 3: Support -->
-      <div>
-        <div class="footer-col-title">Support</div>
-        <a href="../contact.html" class="footer-link">Contact</a>
-        <a href="../help.html" class="footer-link">Help</a>
-      </div>
-
-      <!-- Col 4: Get Started -->
-      <div>
-        <div class="footer-col-title">Get Started</div>
-        <a href="../contact.html" class="btn-primary" style="font-size:0.8125rem;padding:0.6rem 1.1rem">Get My Free Quote</a>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <span>&copy; 2026 CopperBuilds. All rights reserved.</span>
-      <span>Built for small businesses across the US.</span>
-    </div>
-  </div>
-</footer>
+<script src="/js/footer.js" defer></script>
 
 
 <!-- ===== SCRIPTS ===== -->
