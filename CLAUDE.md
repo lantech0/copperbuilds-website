@@ -153,6 +153,7 @@ This is the correct process for rebuilding any page — CopperBuilds site and al
 ## Design System
 - Full token system, component rules, and anti-patterns are in `DESIGN.md` — always read it first.
 - Brand voice, copy rules, and messaging hierarchy are in `BRAND-VOICE.md`.
+- SEO and Local SEO rules, current facts, and figures are in `SEO-STANDARDS.md` — read before any SEO-related work; the SEO/retainer workflows below execute against it.
 
 ## Brand Assets
 - Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.

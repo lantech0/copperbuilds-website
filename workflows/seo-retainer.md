@@ -146,15 +146,15 @@ Work through the tasks for the client's package tier. All three tiers share the 
 - [ ] **GBP post #2 of the month**
 - [ ] **Citation check** — pick 2 directories from the citation list below and verify the client's NAP is correct; fix any inconsistencies found
   - Month 1–3: Yelp, BBB, Facebook Business, Apple Business Connect, Bing Places, Foursquare
-  - Month 4–6: Angi, Porch, Thumbtack, HomeAdvisor, Houzz, Nextdoor Business
+  - Month 4–6: Angi (formerly HomeAdvisor — same platform now, one citation not two), Porch, Thumbtack, Houzz, Nextdoor Business
   - Month 7+: Data Axle submission, Manta, Chamber of Commerce (if applicable), trade association directories
-  - **NAP consistency standard:** every citation must match `client.env` exactly — same phone format, same business name abbreviation, same address style ("St." vs "Street", "LLC" present or absent). Even minor discrepancies trigger verification flags in Google's Knowledge Graph. When you fix a citation, also verify the website's LocalBusiness schema matches `client.env`.
+  - **NAP consistency standard:** see `SEO-STANDARDS.md` §4 for the exact-match rule. When you fix a citation, also verify the website's LocalBusiness schema matches `client.env`.
   - Log each citation checked in `maintenance-log.md`: directory name, NAP status (correct / corrected / claimed this month)
 - [ ] **Review velocity check** — how many new reviews in the last 30 days?
-  - **Target: 4–8 new reviews/month, consistently.** This is now the #11 local ranking factor (up from #93). Consistent monthly velocity outperforms any volume spike.
+  - **Target: 4–8 new reviews/month, consistently.** See `SEO-STANDARDS.md` §3 for the current ranking-factor rationale.
   - If below 4: flag to Luis — the post-job review request SMS may not be running consistently
   - If zero for 2+ consecutive months: escalate — this is a confirmed ranking degradation risk
-  - **Spam filter warning:** if a sudden spike appears (20+ reviews in one week), flag to Luis — Google may suppress them. Remind the client to stagger requests (20–30/week max, not bulk sends).
+  - **Spam filter warning:** stagger requests at 20–30/week max, not bulk sends — see `SEO-STANDARDS.md` §3 for the suppression-risk detail. Flag to Luis if a sudden spike (20+ in one week) appears.
 
 **Lead Machine and Market Leader, additionally:**
 
@@ -164,8 +164,7 @@ Work through the tasks for the client's package tier. All three tiers share the 
   - After publishing: update `maintenance-log.md` with post title, URL, target keyword
 - [ ] **Link building — Week 2 outreach** (4 links/month for Lead Machine, 8 for Market Leader):
   - Target: local chamber of commerce listing, local press, trade association directories, home improvement media, neighborhood/community sites
-  - What counts as a quality link: a real site, locally relevant or trade-relevant, with a crawlable page linking to the client's domain
-  - What does NOT count: link farms, paid link networks, irrelevant directories
+  - What counts as a quality link vs. what doesn't: see `SEO-STANDARDS.md` §5
   - Log each link secured: source domain, anchor text used, target page linked to, date live
 
 ---
@@ -198,12 +197,7 @@ Work through the tasks for the client's package tier. All three tiers share the 
 - [ ] **Blog posts #3 and #4** — two more posts this week (total: 6/month = ~1.5/week)
 - [ ] **Google LSA (Local Services Ads) management**:
   - Open the LSA dashboard at `ads.google.com/localservices` and review all leads received since last check
-  - **LSA reviews are now in GBP** (since July 11, 2025) — there is no separate LSA review system. The client's GBP rating and review volume directly affect LSA ranking. Managing GBP reviews IS managing LSA reviews.
-  - **What counts as a valid lead (do NOT dispute):** Connected call for the correct trade and service area, even if the client didn't answer or didn't book the job. Google charges for the lead, not the outcome.
-  - **What Google auto-credits (no action needed):** Google AI reviews every lead within 72 hours and automatically credits clear spam, robocalls, and wrong-number calls (immediate hangup, no human on the line).
-  - **What you can flag manually:** Use the **"Rate This Lead"** tool inside the LSA dashboard within 30 days of the lead. This is the only manual flag available — the "Report a Problem" dispute button was removed in August 2024.
-  - **What is no longer disputable:** "Job type not serviced" and "outside service area" were removed as credit reasons. Fix these at the profile level instead — update service categories and service area settings so mismatched leads stop arriving.
-  - **30-second billing rule:** Any call lasting 30 seconds or longer is automatically billed with no exceptions.
+  - Full LSA rules (valid lead definition, auto-credit window, "Rate This Lead" success rate, dispute exclusions, 30-second billing rule) are in `SEO-STANDARDS.md` §6 — read before disputing any lead
   - Check budget pacing — is weekly spend on track, over, or under? Flag to Luis if consistently underspending (area may be too narrow) or overspending (budget may need raising if lead quality is good)
   - Log lead count, disputes filed, and budget status in `maintenance-log.md`
 - [ ] **AI search spot-check** — search the client's primary keyword across three platforms:
@@ -416,7 +410,7 @@ Update the live site immediately — don't wait for the monthly cycle. Update `c
 Do not respond without Luis seeing it first. Flag immediately with the review text and star rating. Hold the response until Luis approves the wording. Log the date received and date responded in the maintenance log.
 
 **Review velocity is zero for 2+ consecutive months:**
-Escalate to Luis. The review acquisition workflow (post-job SMS) is not running. Suggest a client call to reinstate it — this is a ranking risk (18-day review drought rule from `seo-local`).
+Escalate to Luis. The review acquisition workflow (post-job SMS) is not running. Suggest a client call to reinstate it — this is a ranking risk (see `SEO-STANDARDS.md` §3, 18-day review drought guideline).
 
 **Blog post can't be written — no topic and no client input:**
 Use the emergency topic formula from `seo-brief.md`: pricing guide for the most common service in the primary city. These require no client input and consistently target high-value informational queries. Never skip a blog post without logging why.

@@ -71,7 +71,7 @@ For SABs: hide the address during setup — do not enter a street address that w
 
 **Step 5: Select categories**
 
-Primary category is the single most important GBP ranking factor (Whitespark 2026, score: 193). Choose carefully — incorrect primary is the #1 negative factor.
+Primary category is the single most important GBP ranking factor — see `SEO-STANDARDS.md` §2 for the current 2026 ranking-factor weights. Choose carefully — incorrect primary is the #1 negative factor.
 
 **CopperBuilds:**
 - Primary: `Web Design Company`

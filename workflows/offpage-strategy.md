@@ -62,7 +62,7 @@ Reviews are 20% of local pack ranking weight (Whitespark 2026) and the 18-day ve
 1. Send review request 3 days after every project milestone delivery (not just final delivery)
 2. Direct link format: `g.page/[your-profile]/review` → shorten via bit.ly for SMS/WhatsApp
 3. WhatsApp follow-up on Day 7 if no review received
-4. Never pre-screen satisfaction before directing to the review link — this is review gating, prohibited by Google and FTC ($50,088/violation)
+4. Never pre-screen satisfaction before directing to the review link — this is review gating, prohibited by Google and FTC. See `SEO-STANDARDS.md` §3 for the current fine amount and 2026 enforcement scope
 5. Respond to every review within 48h — 88% of consumers choose businesses that respond (BrightLocal 2026)
 
 **Step 4: Multi-platform review targets**
@@ -108,7 +108,7 @@ These carry high Trust Flow and create brand mentions in trade-specific AI resul
 
 ### Phase 4 — Link Building (Month 2+)
 
-Links remain ~26% of local organic ranking (Whitespark 2026, factor group #2). Target 5–10 quality links per month.
+Links are ~15% of local organic ranking — see `SEO-STANDARDS.md` §2 for the full 2026 factor-weight breakdown. Target 5–10 quality links per month.
 
 **Step 7: Guest post outreach**
 

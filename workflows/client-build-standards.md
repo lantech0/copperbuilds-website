@@ -14,6 +14,8 @@ Run this workflow during every client site build, starting from Step 2 of the pa
 
 Before drafting any copy: read `COPY-STANDARDS.md` (universal grammar and copywriting standards) and the client's `BRAND-VOICE.md` (client-specific tone and vocabulary). Both are required — standards set the floor, brand voice sets the personality.
 
+For the current facts and figures behind the SEO/schema/local-SEO requirements in this file, see `SEO-STANDARDS.md` — this file is the execution gate, that doc is the source of truth for the rules themselves.
+
 ---
 
 ## Required Inputs
