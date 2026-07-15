@@ -55,18 +55,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://copperbuilds.com/terms</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://copperbuilds.com/privacy</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://copperbuilds.com/blog/contractor-website-not-ranking</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>

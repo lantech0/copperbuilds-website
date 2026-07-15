@@ -4,7 +4,7 @@
       + '<div class="footer-grid" style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem">'
 
         + '<div>'
-          + '<a href="/index.html" aria-label="CopperBuilds homepage" style="display:inline-block;margin-bottom:1rem">'
+          + '<a href="/" aria-label="CopperBuilds homepage" style="display:inline-block;margin-bottom:1rem">'
             + '<img src="/brand_assets/logo.svg" alt="CopperBuilds" height="36" style="display:block">'
           + '</a>'
           + '<p style="color:var(--warm-stone);font-size:0.875rem;line-height:1.72;max-width:260px;margin-bottom:1.25rem">Websites and local SEO for home services pros across the USA. Built for small businesses. Not enterprise.</p>'
@@ -21,30 +21,31 @@
         + '<div>'
           + '<h3 style="font-size:0.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:0.04em;text-transform:uppercase">Services</h3>'
           + '<nav aria-label="Services footer links" style="display:flex;flex-direction:column;gap:0.625rem">'
-            + footerLink('/services.html', 'Web Design')
-            + footerLink('/services.html', 'Local SEO')
-            + footerLink('/services.html', 'Google Business')
-            + footerLink('/services.html', 'Social Media')
-            + footerLink('/pricing.html', 'Pricing')
+            + footerLink('/services', 'Web Design')
+            + footerLink('/services', 'Local SEO')
+            + footerLink('/services', 'Google Business')
+            + footerLink('/services', 'Social Media')
+            + footerLink('/pricing', 'Pricing')
           + '</nav>'
         + '</div>'
 
         + '<div>'
           + '<h3 style="font-size:0.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:0.04em;text-transform:uppercase">Company</h3>'
           + '<nav aria-label="Company footer links" style="display:flex;flex-direction:column;gap:0.625rem">'
-            + footerLink('/about.html', 'About')
-            + footerLink('/portfolio.html', 'Portfolio')
-            + footerLink('/blog.html', 'Blog')
+            + footerLink('/about', 'About')
+            + footerLink('/how-we-work', 'How We Work')
+            + footerLink('/portfolio', 'Portfolio')
+            + footerLink('/blog', 'Blog')
             + footerLink('/reports/', 'Reports')
-            + footerLink('/help.html', 'Help Center')
-            + footerLink('/contact.html', 'Contact')
+            + footerLink('/help', 'Help Center')
+            + footerLink('/contact', 'Contact')
           + '</nav>'
         + '</div>'
 
         + '<div>'
           + '<h3 style="font-size:0.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:0.04em;text-transform:uppercase">Get Started</h3>'
           + '<p style="color:var(--warm-stone);font-size:0.875rem;line-height:1.65;margin-bottom:1rem">Ready to get your business online?</p>'
-          + '<a href="/contact.html" class="btn btn-primary" style="font-size:0.875rem;padding:0.6875rem 1.25rem">Free Quote</a>'
+          + '<a href="/contact" class="btn btn-primary" style="font-size:0.875rem;padding:0.6875rem 1.25rem">Free Quote</a>'
           + '<p style="margin-top:0.875rem">' + footerLink('mailto:luis.copperbuilds@gmail.com', 'luis.copperbuilds@gmail.com', true) + '</p>'
           + '<p style="margin-top:0.375rem">' + footerLink('https://wa.me/639773293969', 'Message on WhatsApp', true) + '</p>'
         + '</div>'
@@ -55,8 +56,8 @@
         + '<p style="color:var(--subtle);font-size:0.8125rem">&copy; 2026 CopperBuilds. All rights reserved.</p>'
         + '<div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap">'
           + '<p style="color:var(--subtle);font-size:0.8125rem;margin:0">Built for small businesses. Not enterprise.</p>'
-          + footerLink('/privacy.html', 'Privacy Policy', true)
-          + footerLink('/terms.html', 'Terms of Service', true)
+          + footerLink('/privacy', 'Privacy Policy', true)
+          + footerLink('/terms', 'Terms of Service', true)
         + '</div>'
       + '</div>'
     + '</div>'
