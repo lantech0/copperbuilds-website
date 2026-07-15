@@ -85,6 +85,7 @@ This is the correct process for rebuilding any page — CopperBuilds site and al
 2. **Layer 1 — SEO Seed**: Establish the keyword target before writing a single word
    - Client builds: run `/copperbuilds-seo [client-slug]` — validates real keyword volumes via DataForSEO, outputs target phrases, titles, meta, schema, and SEO action plan
    - CopperBuilds site pages: identify the primary keyword cluster for this page (e.g., "web design for home service businesses", "local SEO for HVAC contractors")
+   - **Writing 3+ blog posts in the same batch:** run `/blog-cluster` first to map keyword/topic overlap across the batch — this is what catches cannibalization (two posts competing for the same angle) before either post exists, not after both are live and indexed against each other
    - Every H1, H2, and first body paragraph must contain or directly support the seed keywords
    - The seed is the thesis — the rest of the copy proves it
 
@@ -116,9 +117,13 @@ This is the correct process for rebuilding any page — CopperBuilds site and al
 
 9. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
 
-10. **Run quality gates** — user reviews the page in browser; copy reads naturally in context of design
+10. **Run quality gates** — run `/copperbuilds-qa` for the structural/visual check, then user reviews the page in browser; copy reads naturally in context of design
 
 11. **Iterate** — minimum 2 screenshot rounds before calling a page done
+
+**New blog post specifically:** use `/blog-write` as the entry point instead of running this process from scratch — it chains to `/blog-seo-check` as its own SEO gate, and still needs `/vale-check` (Layer 3A) before it's marked done.
+
+**Once a build goes live:** capture a `/seo-drift` baseline — this is what the monthly retainer/maintenance workflows compare against later.
 
 **The old wrong process (banned):**
 - ~~Read old HTML → write new HTML directly → screenshot → iterate~~
@@ -349,6 +354,13 @@ IMPORTANT: A page is not done until ALL of these pass:
 - [ ] `sitemap.xml` URLs all use `https://copperbuilds.com/` — grep for any other domain before every push: `grep -v "copperbuilds.com" sitemap.xml`
 - [ ] Any HTML file NOT in the sitemap and NOT linked from the nav has `<meta name="robots" content="noindex, follow">` — add it at creation time, not as cleanup later
 
+**SEO audit chain (required for new client builds; run standalone for CopperBuilds site pages too):**
+- [ ] `/seo-page` PASS on the built page
+- [ ] `/seo-technical` PASS on the build
+- [ ] `/seo-local` PASS (local biz clients only)
+- [ ] `/seo-sxo` PASS — run after `/seo-technical`
+- This mirrors what `luisweb`'s orchestrator already requires before a new client build is marked done — this gate exists so a session working directly in this folder doesn't fall short of that same bar.
+
 ## Wiki Knowledge Base
 
 **Path:** `C:\Users\User\LantechAI\claude-obsidian`
@@ -369,10 +381,21 @@ After every monthly SEO retainer session, run `/save` to file key findings. Know
 - `ai-graphic-design` — use for logo, brand identity, visual asset generation (5-phase briefing workflow)
 - `ui-ux-pro-max` — use for design system queries, color/typography recommendations, UX review
 - `market-brand` — brand voice analysis and guidelines (see `BRAND-VOICE.md` for CopperBuilds' output)
+- `/copperbuilds-build [client-slug]` — full client website build/update; chains to `/seo-page`, `/seo-technical`, `/seo-local` as part of its own process
 - `/copperbuilds-seo [client-slug]` — **pre-build SEO** for client builds: reads client.env, validates real keyword volumes via DataForSEO, generates titles/meta/schema/action plan. Run BEFORE `/copperbuilds-build`.
+- `/impeccable craft` — page-level design/copy shaping used inside the Page Rebuild Process (Layer 2) and for standalone CopperBuilds site page work
+- `/copperbuilds-qa` — standalone QA check on any page after edits or a rebrand (structural + visual checks, not copy quality)
 - `/vale-check [file]` — **copy quality gate**: runs Vale grammar/style check against CopperBuilds rules + client brand voice. Mandatory before any page or blog post is marked done. Install once with `winget install --id errata-ai.Vale`, then `vale sync` from this folder.
+- `/blog-write` — write a new blog post; chains to `/blog-seo-check` before the post is marked done
+- `/blog-cluster` — **run BEFORE `/blog-write` whenever writing 3+ posts in the same batch** — maps keyword/topic overlap across the batch so two posts don't end up competing for the same angle (see `/blog-seo-check` for the single-post SEO gate instead)
+- `/blog-seo-check` — standalone SEO validation for a single already-written post
 - `/seo-local <url>` — post-build local SEO audit (GBP, reviews, NAP, citations)
 - `/seo-page <url>` — post-build on-page SEO audit
 - `/seo-schema <url>` — generate/validate structured data on a live page
 - `/seo-technical <url>` — post-build technical SEO audit
+- `/seo-sxo <url>` — search experience audit; run after `/seo-technical` on any build or standalone audit
 - `/seo-geo <url>` — AI search visibility audit (GEO, llms.txt, AI crawler access)
+- `/seo-drift` — drift monitoring; capture a baseline on new builds, compare on the monthly retainer cadence
+- `/seo-dataforseo` — optional paid keyword/SERP data; confirm with the user before every call, batch all keywords in one call
+- `/prospect` — web design client prospecting; read `workflows/prospect.md` first
+- `/market-proposal` — client proposal generator; read `workflows/proposal.md` first
