@@ -8,10 +8,10 @@
 
 | # | Blog Title | Target Keyword | Volume | Competition | CPC | Status |
 |---|-----------|---------------|--------|-------------|-----|--------|
-| 1 | HVAC SEO: Who's Winning Google in Dallas — And What It Takes to Beat Them | `hvac seo` | 720/mo | LOW | $74.41 | Planned |
-| 2 | What the Top-Ranked HVAC Websites in Dallas Are Doing Right | `hvac website design` | 480/mo | LOW | $30.29 | Planned |
-| 3 | HVAC Marketing in 2026: What Actually Drives Leads | `hvac marketing` | 590/mo | MEDIUM | $69.50 | Planned |
-| 4 | Contractor SEO in 2026: The Step-by-Step Guide | `contractor seo` | 720/mo | LOW | $55.86 | Planned |
+| 1 | HVAC SEO: Who's Winning Google in Dallas — And What It Takes to Beat Them | `hvac seo` | 720/mo | LOW | $74.41 | **Published** — `blog/hvac-seo.html` |
+| 2 | What the Top-Ranked HVAC Websites in Dallas Are Doing Right | `hvac website design` | 480/mo | LOW | $30.29 | **Published** — `blog/hvac-website-design.html` |
+| 3 | HVAC Marketing in 2026: What Actually Drives Leads | `hvac marketing` | 590/mo | MEDIUM | $69.50 | **Published** — `blog/hvac-marketing-2026.html` |
+| 4 | Contractor SEO in 2026: The Step-by-Step Guide | `contractor seo` | 720/mo | LOW | $55.86 | **Published** — `blog/contractor-seo-guide.html` |
 
 **Note on Dallas targeting:** "hvac seo dallas", "hvac marketing dallas", etc. return 0 search volume — HVAC owners in Dallas search without city modifiers. Posts 1 and 2 target broad keywords but use Dallas HVAC report data as the unique insight, making them relevant to Dallas prospects while ranking nationally.
 
@@ -50,9 +50,9 @@ These are NOT being targeted by any current page. Highest opportunity sorted by 
 | `website design near me` | 14,800/mo | LOW | $22.04 | Services page |
 | `website design agency` | 12,100/mo | LOW | $22.14 | Homepage/services |
 | `local seo services` | 9,900/mo | LOW | $43.07 | Services page |
-| `website redesign service` | 8,100/mo | LOW | $30.85 | Future blog post |
-| `reputation management service` | 5,400/mo | LOW | **$86.62** | High CPC — future blog/service |
-| `home services seo` | 1,300/mo | LOW | $59.65 | Blog post idea |
+| `website redesign service` | 8,100/mo | LOW | $30.85 | **Published** — `blog/website-redesign-service.html` (2026-07-12) |
+| `reputation management service` | 5,400/mo | LOW | **$86.62** | **Published** — `blog/reputation-management-service.html` (2026-07-14) |
+| `home services seo` | 1,300/mo | LOW | $59.65 | **Published** — `blog/home-services-seo.html` (2026-07-16) |
 | `local seo for contractors` | 590/mo | LOW | $27.39 | Blog post idea |
 
 **Key insight:** "Near me" search pattern has massive volume and LOW competition. CopperBuilds should have a dedicated location/local page targeting these.
