@@ -97,6 +97,8 @@ Home | Services (dropdown) | Service Areas | About | Contact
 
 The phone number must appear in the nav bar itself, right-aligned, as a click-to-call button.
 
+**No-JS fallback (mandatory if nav/footer are JS-injected):** if the shared nav/footer are rendered via `js/nav.js` / `js/footer.js` (the standard CopperBuilds component pattern), every page must also include a real, server-rendered `<noscript>` nav block with static `<a href>` links to every core page (Home, Services, Portfolio, Pricing, About, Blog, Contact). This is not optional — a JS-only nav means Googlebot's first crawl pass sees zero internal links in the raw HTML, and any page not reachable another way becomes an orphan that Google may never discover. This was the confirmed root cause of copperbuilds.com's own `/services` and `/blog` pages going unindexed for 6+ weeks (found in the 2026-07-09 audit, fixed 2026-07-20) — do not repeat it on a client site.
+
 ---
 
 ### Step 5 — Build Lead Forms to Spec
@@ -147,6 +149,17 @@ Every page must pass these Google performance standards before launch:
 - Text colors must achieve ≥ 4.5:1 contrast ratio on the background — `#6B6560` on `#FAFAF7` passes (4.97:1); `#A8A29E` on `#FAFAF7` fails (2.3:1)
 
 **If still failing LCP after the above:** check for render-blocking CSS, third-party embeds, or unoptimized web fonts. Do not launch with a failing LCP.
+
+**Security headers (mandatory, set at build time — not a post-launch fix-up):**
+Add a `_headers` file (Cloudflare Pages) at the site root with, at minimum, a sitewide `/*` rule:
+```
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+```
+Verify live with `curl -sI https://[domain]/ | grep -i strict-transport` before delivery — confirm the header is actually being served, don't just confirm the file exists.
 
 ---
 
@@ -349,6 +362,9 @@ Before marking any page done, run every item in this checklist:
 - [ ] No console errors on load
 - [ ] Site loads correctly at 375px (mobile) and 1280px (desktop)
 - [ ] All internal links are relative, not absolute
+- [ ] Security headers live on production — `curl -sI https://[domain]/` shows `strict-transport-security` and `x-frame-options`, not just present in the `_headers` file
+- [ ] If nav/footer are JS-injected: every page has a server-rendered `<noscript>` fallback with real links to every core page — verify with `curl -s https://[domain]/[page] | grep -c noscript` on a sample of pages, not just the homepage
+- [ ] Zero orphan pages — every page in the sitemap has at least one static (non-JS-dependent) internal link pointing to it from somewhere on the site
 
 ---
 
@@ -367,6 +383,8 @@ Before closing any build, confirm every item below exists:
 - [ ] Full schema stack implemented per Step 10 — all required types present for each page type
 - [ ] All schema validated at `validator.schema.org` — zero errors across every page
 - [ ] Accessibility baseline passes (all 8 WCAG checks in Step 11)
+- [ ] Security headers (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) live on production, verified with curl — not just present in `_headers`
+- [ ] No orphan pages — confirmed via `curl` that every sitemap URL has at least one static internal link pointing to it
 - [ ] Handover notes document any placeholders or deferred items
 
 ---

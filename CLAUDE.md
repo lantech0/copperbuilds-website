@@ -329,6 +329,8 @@ IMPORTANT: A page is not done until ALL of these pass:
 - [ ] Every `<script src>` has `defer` — no render-blocking JS
 - [ ] Every page has `<main>` landmark wrapping primary content
 - [ ] Text contrast ≥ 4.5:1 on background (use `#6B6560` for muted/subtle text on `#FAFAF7`)
+- [ ] Security headers (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) set in `_headers` for `/*` and confirmed live with `curl -sI https://copperbuilds.com/`
+- [ ] If nav/footer are JS-injected, every page has a server-rendered `<noscript>` fallback nav — no page should depend entirely on JS execution for its first internal link
 
 **Schema (run before screenshot — zero errors required at `validator.schema.org`):**
 - [ ] `Organization` JSON-LD present on every page
