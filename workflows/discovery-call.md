@@ -1,6 +1,7 @@
 ﻿# Workflow: Discovery Call → Close
 
 **Triggered by:** A prospect replies to outreach and agrees to a call (from `workflows/prospect.md`)
+**Runs first:** `workflows/lite-audit.md` — run immediately once the call is booked, before Pre-Call Prep
 **Template used:** `clients/templates/07-discovery-call-script.md`
 **Handoff to:** `workflows/project.md` when closed
 
@@ -13,10 +14,11 @@ Run a structured 20-minute call that qualifies the prospect, surfaces their real
 ## Pre-Call Prep (5 minutes before the call)
 
 1. Pull the prospect's entry from `projects/prospects/[file].md`
-2. Open their website (if any) and their Google Business Profile
-3. Note the top 2–3 specific gaps you found during the audit (no website / dormant Facebook / no schema / etc.)
-4. Note the Gold Standard competitor you researched and the revenue opportunity figure
-5. Know which package you're recommending before the call starts — don't figure it out on the call
+2. Confirm `workflows/lite-audit.md` has already run for this prospect (it should have run right after the call was booked) — if not, run it now before continuing
+3. Open their Google Business Profile
+4. Note the top 2–3 specific gaps from the lite audit (missing schema / broken sitemap / slow LCP / no meta descriptions / etc. — or no website / dormant Facebook if `lite-audit.md` didn't apply)
+5. Note the Gold Standard competitor you researched and the revenue opportunity figure
+6. Know which package you're recommending before the call starts — don't figure it out on the call
 
 ---
 

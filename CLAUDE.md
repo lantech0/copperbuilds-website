@@ -51,6 +51,7 @@ Read the relevant workflow before starting any process — it defines every requ
 |----------|-------------|
 | `workflows/session-start.md` | **Automatic — run on every session open before anything else** |
 | `workflows/prospect.md` | Before running `/prospect` — any prospecting session |
+| `workflows/lite-audit.md` | Immediately after a prospect books a call — 4-check pre-call audit (technical/on-page/schema/CWV), feeds discovery-call.md and proposal.md |
 | `workflows/discovery-call.md` | When a prospect agrees to a call — pre-call prep, call structure, close |
 | `workflows/project.md` | When a lead closes — creates client folder, queues onboarding |
 | `workflows/revisions.md` | After build passes QA — preview delivery, feedback, revision tracking |
