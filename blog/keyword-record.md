@@ -59,23 +59,25 @@ These are NOT being targeted by any current page. Highest opportunity sorted by 
 
 ---
 
-## High-Value Blog Topics Discovered (Not Yet Scheduled)
+## High-Value Blog Topics Discovered
 
 Sorted by CPC (commercial intent signal):
 
 | Keyword | Volume | Competition | CPC | Notes |
 |---------|--------|-------------|-----|-------|
-| `reputation management service` | 5,400/mo | LOW | $86.62 | Highest CPC in database — buyers ready to spend |
-| `plumber seo` / `seo for plumbers` | 720/mo | LOW | $79.55 | High CPC, underserved topic |
-| `best local seo agency` | 720/mo | LOW | $80.72 | Positioning piece |
-| `electrician seo` | 880/mo | LOW | $73.50 | Future trade-specific post |
+| `reputation management service` | 5,400/mo | LOW | $86.62 | Highest CPC in database — retargeted to "google business profile management service", **Published** — `blog/reputation-management-service.html` (2026-09-07 revamp) |
+| `plumber seo` / `seo for plumbers` | 720/mo | LOW | $79.55 | **Published** — `blog/plumber-seo.html` (2026-08-29) |
+| `best local seo agency` | 720/mo | LOW | $80.72 | **Dropped** — SERP dominated by agency directories (Clutch, First Page Sage) and sales pages, not educational content. Wrong intent for a blog post. |
+| `electrician seo` | 880/mo | LOW | $73.50 | **Published** — `blog/electrician-seo.html` (2026-08-19) |
 | `hvac seo agency` | 210/mo | LOW | $81.38 | Supports Blog #1 |
 | `hvac marketing company` | 590/mo | LOW | $80.96 | Supports Blog #3 |
-| `best roofer marketing` | 70/mo | LOW | $74.98 | Future roofing post |
-| `seo for roofing companies` | 1,000/mo | LOW | $55.38 | Future roofing post |
-| `roofing marketing` | 720/mo | LOW | $57.69 | Strong roofing topic |
-| `website redesign service` | 8,100/mo | LOW | $30.85 | High volume + decent CPC |
-| `seo for small business` | 4,400/mo | LOW | $40.12 | Broad pillar piece |
+| `best roofer marketing` | 70/mo | LOW | $74.98 | Superseded by `roofing marketing` below |
+| `seo for roofing companies` | 1,000/mo | LOW | $55.38 | **Published** — `blog/seo-for-roofing-companies.html` (2026-08-25), ranking-factors angle |
+| `roofing marketing` | 720/mo | LOW | $57.69 | **Published** — `blog/roofing-marketing.html` (2026-09-02), channel-strategy angle, differentiated from the SEO post above |
+| `website redesign service` | 8,100/mo | LOW | $30.85 | **Deleted** — not an actual CopperBuilds service (no redesign offering); post removed 2026-09-07 |
+| `seo for small business` | 4,400/mo | LOW | $40.12 | **Published** — `blog/seo-for-small-business.html` (2026-08-12), horizontal pillar |
+
+**Also removed 2026-09-07** (targeted zero real search volume, DataForSEO-verified): `local-seo-2026.html`, `rank-google-maps.html`, `contractor-website-not-ranking.html`, `how-to-choose-web-designer.html`, `hvac-leads.html`, `hvac-marketing-agency.html` (the last two had no DataForSEO record at all and were dropped rather than re-verified, per no-credits constraint).
 
 ---
 
