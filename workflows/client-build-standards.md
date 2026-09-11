@@ -221,6 +221,9 @@ The monthly retainer then **maintains** these pages (keeps them current, adds ke
 
 Structured data is mandatory on every client site. It is not optional and not a post-launch task. Add schema during the build, validate before delivery, fix all errors before launch.
 
+**Entity consistency — mandatory, every build, single-location included:**
+Every schema block that refers to the business (`Organization`, `LocalBusiness`/trade sub-type, `Service`, `ContactPage`'s `mainEntity`, etc.) must reference one shared, canonical `@id` — e.g. `https://[clientdomain]/#business` — instead of each page repeating a separate inline object. Business `name`, `telephone`, and `address` must be worded identically (same formatting, same abbreviations or lack thereof) in every block on the site. Verify with a grep across every page's JSON-LD for the name/phone/address strings — zero variants allowed, don't eyeball it. Full detail in `SEO-STANDARDS.md` §1.
+
 **Schema by page type:**
 
 | Page type | Required schema types |
@@ -260,12 +263,13 @@ Add `HowTo` JSON-LD whenever a page walks through numbered or sequential steps. 
 - Blog posts structured as step-by-step guides (e.g., "How to get Google reviews", "How to choose an HVAC contractor")
 - Service pages that explain a multi-step process
 
-**Featured snippet implementation — mandatory on blog posts and service pages:**
-Featured snippets are captured by content structure, not just schema. Both elements are required:
+**Featured snippet & AI-citation implementation — mandatory on the homepage, blog posts, and service pages:**
+Featured snippets and AI citations are captured by content structure, not just schema — and they have two different optimal lengths. All elements below are required:
 
 1. **Question-format headings:** Phrase H2s and H3s as questions where the page is targeting informational queries (e.g., "How long does a roof replacement take?" not "Roof Replacement Timeline")
-2. **Direct answer paragraph:** The first paragraph after a question-format heading must be a direct, complete answer in 40–60 words. No preamble, no "it depends" opener — answer first.
-3. **Schema confirms the structure:** `FAQPage` or `HowTo` schema should mirror what the content already says. Do not add schema for Q&A that doesn't exist in the visible HTML.
+2. **Direct answer opener:** The first sentence(s) after a question-format heading must be a direct, complete answer in 40–60 words. No preamble, no "it depends" opener — answer first. This length targets classic featured snippets and quick AI answers.
+3. **Extended citable block:** The full paragraph/section containing that opener must run 134–167 words total and include at least one concrete, specific fact (a number, timeframe, or price). This is the length AI citation research (SE Ranking, 2026) found actually gets pulled into AI Overviews/ChatGPT/Perplexity answers — stopping at the 40–60 word opener optimizes for the older snippet mechanism only, not this one.
+4. **Schema confirms the structure:** `FAQPage` or `HowTo` schema should mirror what the content already says. Do not add schema for Q&A that doesn't exist in the visible HTML.
 
 **Validation — mandatory before launch:**
 - Validate every page's schema at `https://validator.schema.org/` — zero errors required
@@ -321,8 +325,9 @@ Before marking any page done, run every item in this checklist:
 - [ ] `HowTo` schema on any blog post or page structured as a step-by-step guide
 - [ ] `BlogPosting` schema on every blog post
 - [ ] All schema validated at `https://validator.schema.org/` — zero errors
+- [ ] Every schema block referencing the business shares one canonical `Organization @id` — grep every page's JSON-LD for the business name/phone/address strings and confirm zero wording variants across the site
 - [ ] Question-format H2s present on pages targeting informational queries
-- [ ] Direct 40–60 word answer paragraph immediately follows each question-format heading
+- [ ] Direct 40–60 word answer opener immediately follows each question-format heading, AND the full surrounding paragraph/section runs 134–167 words with at least one concrete, specific fact (number, timeframe, or price)
 
 **Copy Quality — Vale (mechanical gate):**
 - [ ] `vale --config=.vale-client.ini [client-source-dir]` returns 0 errors
@@ -384,6 +389,7 @@ Before closing any build, confirm every item below exists:
 - [ ] Full schema stack implemented per Step 10 — all required types present for each page type
 - [ ] All schema validated at `validator.schema.org` — zero errors across every page
 - [ ] Homepage FAQ section (3-4 real Q&As) with matching `FAQPage` schema present
+- [ ] Entity consistency confirmed — one shared `Organization @id` across all schema, zero name/phone/address wording variants (grep-verified)
 - [ ] `robots.txt` explicitly allows GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, Bytespider, CCBot
 - [ ] Accessibility baseline passes (all 8 WCAG checks in Step 11)
 - [ ] Security headers (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) live on production, verified with curl — not just present in `_headers`

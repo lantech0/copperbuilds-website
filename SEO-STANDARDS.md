@@ -39,15 +39,37 @@ HTML. Google's spam filters now actively match visible page content against sche
 mismatched or hidden schema is penalized more heavily in 2026 than in prior years.
 (Google Search Central, structured-data guidelines)
 
-**Forward-looking — no client needs this yet, document before it's needed:** for any
-future multi-location client, each location page needs its own `LocalBusiness` schema
-with consistent NAP, all sharing one canonical `Organization @id`.
+### Entity Consistency — mandatory on every build, not just multi-location
+Every schema block on a client site that refers to the business (`Organization`,
+`LocalBusiness`/trade sub-type, `Service`, `ContactPage`'s `mainEntity`, etc.) must
+reference one shared, canonical `@id` — e.g. `https://[clientdomain]/#business` — instead
+of repeating separate inline objects per page. This is what tells Google and AI systems
+that the entity mentioned on the homepage and the one mentioned on the contact page are
+the same business, not two different ones. Applies to single-location clients too — this
+used to be documented as multi-location-only, which left every current client's schema
+under-linked.
 
-### Featured Snippets
-Two elements are both required — schema alone does not capture a snippet:
+- Business `name`, `telephone`, and `address` must be worded **identically** — same
+  formatting, same abbreviations or lack thereof — across every schema block on the site.
+  This is a separate, stricter check than the off-page NAP-vs-citations check in §4: this
+  one is on-page, block-to-block, same domain.
+- Verify mechanically: grep every JSON-LD block on the site for the business name/phone/
+  address strings and confirm zero variants. Don't eyeball it.
+- For a future multi-location client, each location page additionally needs its own
+  `LocalBusiness` schema with consistent NAP, still sharing the one canonical
+  `Organization @id`.
+
+### Featured Snippets & AI-Citable Content
+Three elements are required — schema alone captures neither a snippet nor an AI citation:
 1. Question-format H2s/H3s on pages targeting informational queries
 2. A direct 40–60 word answer immediately following the heading — no preamble, no
-   "it depends" opener
+   "it depends" opener. This length targets classic featured snippets and quick AI answers.
+3. **The full paragraph or section around that opener extends to 134-167 words** and
+   includes at least one concrete, specific fact (a number, timeframe, or price) — this is
+   the length AI citation research (SE Ranking, 2026) found actually gets pulled into AI
+   Overviews/ChatGPT/Perplexity answers, and it's longer than the 40-60 word snippet
+   target. A self-contained block that only hits the shorter length is optimized for the
+   older mechanism, not the AI-citation one — build for both, not just one.
 
 ### Core Web Vitals
 | Metric | Threshold |
