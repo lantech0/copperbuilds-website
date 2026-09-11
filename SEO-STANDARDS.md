@@ -141,6 +141,19 @@ Never pre-screen customer satisfaction before directing them to the review link.
 - Google is now **retroactively removing** previously-gated reviews, not just blocking
   new ones going forward — a legacy gated-review campaign is a live risk, not a closed one.
 
+### Review Content-Directing — Hard Don't (distinct from gating)
+Google's Rating Manipulation policy was **rewritten April 17, 2026** and now separately
+bans "requesting that reviews include specific content" — this is different from gating
+(pre-screening satisfaction). Directing content means telling a customer what to *say* in
+a review, even with good intent (e.g., "mention the service and your neighborhood").
+
+- Never instruct a customer to name the specific service, city/neighborhood, or any
+  keyword in their review — even as a soft suggestion ("if you can...").
+- It is fine to *know* that reviews naming a service/city carry more local ranking weight
+  (Whitespark 2026) — that fact must never be relayed to the customer or baked into a
+  review-request template. Let specific content happen naturally, don't prompt for it.
+- Source: [support.google.com/business/answer/2622994](https://support.google.com/business/answer/2622994)
+
 ### Negative Reviews
 Never respond without the account owner's approval on the wording first. Flag
 immediately with the review text and star rating; hold the response until approved.
@@ -233,6 +246,19 @@ secured link.
 - **llms.txt adoption is NOT proven to independently increase AI citation rates.** Don't
   over-invest in it at the expense of the fundamentals above (citations, reviews,
   content structure) — it's a minor, unconfirmed lever, not a core one.
+- **AI crawler access in `robots.txt` is a confirmed, mechanical prerequisite** — unlike
+  llms.txt, this is not optional or unproven. Every client build's `robots.txt` must
+  explicitly `Allow: /` for `GPTBot`, `ChatGPT-User`, `ClaudeBot`, `PerplexityBot`,
+  `Google-Extended`, `Bytespider`, and `CCBot`. A default/silent robots.txt does not
+  reliably grant this — state it explicitly. This is the single most common reason a
+  site is invisible to AI search entirely, and it costs nothing to fix.
+- **FAQPage schema still has real value for AI citation** even though Google retired it
+  from Search rich results (May 7, 2026, all sites). ChatGPT, Perplexity, and AI
+  Overviews still extract from FAQ-schema-marked Q&A content — the value moved from
+  "SERP snippet" to "AI answer sourcing," it didn't disappear. Every client build
+  includes a homepage FAQ section (3-4 real, client-specific Q&As, not filler) with
+  matching FAQPage schema as a standard build element — not conditional on whether a
+  FAQ "happens to" exist.
 - **Local and AI-search signals have functionally merged** — the same GBP/citation/review
   inputs that drive Google Maps rankings also drive what ChatGPT, Perplexity, and Google
   AI Overviews recommend. There is no separate "AI SEO" input stream to manage.
@@ -263,6 +289,7 @@ disagree on a number or rule, this document is the more recently verified one.
 | Build or QA a client website (schema, CWV, above-fold, smoke test) | `workflows/client-build-standards.md` |
 | Pre-build keyword research and SEO field generation | `/copperbuilds-seo [client-slug]` |
 | Standalone SEO audits (page, technical, local, schema, GEO) | `/seo-page` · `/seo-technical` · `/seo-local` · `/seo-schema` · `/seo-geo` |
+| Team training reference — Technical SEO (5 steps/19 checks) + On-Page SEO (10 items), Semrush-sourced | `../internal/seo-guidelines.html` (open in browser) |
 
 ---
 

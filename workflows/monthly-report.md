@@ -91,6 +91,7 @@ After pulling target keyword data, also note the top 5 queries by clicks this mo
 - Direction requests
 - Phone calls
 - New reviews received this month
+- AI surface breakdown (Market Leader only): impressions split across classic local panel, Maps AI summary card, and Google AI Overviews — pulled from GBP Insights' 2026 surface breakdown feature
 
 **Core Web Vitals — PageSpeed Insights (mobile):**
 - Performance score

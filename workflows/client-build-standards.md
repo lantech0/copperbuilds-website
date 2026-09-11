@@ -250,11 +250,10 @@ Structured data is mandatory on every client site. It is not optional and not a 
 
 Always use the most specific sub-type available. `LocalBusiness` alone is a fallback, not a first choice.
 
-**FAQPage — when to add it:**
-Add `FAQPage` JSON-LD whenever a page has a Q&A section with 2+ questions. Each question must have a corresponding `acceptedAnswer`. Add it to:
+**FAQPage — mandatory on the homepage, add wherever else a Q&A section exists:**
+Every client build includes a homepage FAQ section (3-4 real, client-specific Q&As — pricing/timeline/ownership/process questions, not filler) with matching `FAQPage` JSON-LD. This is a standard build element, not conditional. Google retired FAQ rich results for all sites (May 7, 2026) — this schema no longer produces a SERP snippet, but ChatGPT, Perplexity, and AI Overviews still extract from it for citation, which is the actual reason it's required. Each question must have a corresponding `acceptedAnswer`, and the schema text must match the visible on-page text exactly (verify programmatically — decode HTML entities before comparing, don't eyeball it). Also add `FAQPage` to:
 - Any service page with an FAQ accordion
 - Any blog post with a FAQ section
-- The homepage if it has a "Common Questions" or "FAQ" block
 
 **HowTo — when to add it:**
 Add `HowTo` JSON-LD whenever a page walks through numbered or sequential steps. This is the highest-value schema for featured snippet capture on how-to queries. Add it to:
@@ -307,6 +306,7 @@ Before marking any page done, run every item in this checklist:
 - [ ] Every `<img>` has an `alt` attribute — descriptive text or `alt=""` for decorative only; zero bare `<img src>` tags
 - [ ] `sitemap.xml` present at site root; every URL uses the live domain — grep for any non-live domain before delivery: `grep -v "[clientdomain].com" sitemap.xml`
 - [ ] `robots.txt` present at site root with `Sitemap:` directive pointing to the live sitemap URL
+- [ ] `robots.txt` explicitly `Allow: /` for `GPTBot`, `ChatGPT-User`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `Bytespider`, and `CCBot` — a generic `User-agent: * / Allow: /` block does not reliably cover this; list them explicitly (see `SEO-STANDARDS.md` §7)
 - [ ] Canonical tag on every page
 - [ ] Any dev, staging, or internal HTML file (not in sitemap, not in nav) has `<meta name="robots" content="noindex, follow">` — add at file creation time
 
@@ -316,7 +316,8 @@ Before marking any page done, run every item in this checklist:
 - [ ] `LocalBusiness` (or trade sub-type) on homepage — use most specific sub-type (Plumber, HVACBusiness, etc.)
 - [ ] `Service` schema on every service page
 - [ ] `LocalBusiness` + `areaServed` on every service-area page
-- [ ] `FAQPage` schema on any page with a visible Q&A section (2+ questions)
+- [ ] `FAQPage` schema present on the homepage (mandatory, 3-4 real Q&As) and on any other page with a visible Q&A section (2+ questions)
+- [ ] `FAQPage` schema text matches the visible on-page text exactly, word for word including punctuation — verify with a script that decodes HTML entities before comparing, not by eye
 - [ ] `HowTo` schema on any blog post or page structured as a step-by-step guide
 - [ ] `BlogPosting` schema on every blog post
 - [ ] All schema validated at `https://validator.schema.org/` — zero errors
@@ -382,6 +383,8 @@ Before closing any build, confirm every item below exists:
 - [ ] Service-area pages built (Lead Machine+ only)
 - [ ] Full schema stack implemented per Step 10 — all required types present for each page type
 - [ ] All schema validated at `validator.schema.org` — zero errors across every page
+- [ ] Homepage FAQ section (3-4 real Q&As) with matching `FAQPage` schema present
+- [ ] `robots.txt` explicitly allows GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, Bytespider, CCBot
 - [ ] Accessibility baseline passes (all 8 WCAG checks in Step 11)
 - [ ] Security headers (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) live on production, verified with curl — not just present in `_headers`
 - [ ] No orphan pages — confirmed via `curl` that every sitemap URL has at least one static internal link pointing to it

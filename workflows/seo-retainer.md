@@ -112,6 +112,8 @@ Work through these steps in order. Log completion of each in `maintenance-log.md
 
 Work through the tasks for the client's package tier. All three tiers share the same calendar structure — the tasks differ by tier.
 
+**Suspension risk — check before every GBP edit this month, all tiers:** Since April 16, 2026, Google runs a Gemini-powered AI moderation pass on routine GBP edits (posts, photos, hours, category changes), not just new listings. Starting April 27, 2026, a related AI "Deceptive Content" suspension wave disproportionately hit **garage door repair, locksmiths, landscaping/lawn care, and general contracting/remodeling** — confirmed concentrated in California so far, national spread not yet confirmed, but the enforcement system itself is not geo-limited. If the client is in one of these verticals: make GBP edits deliberately (real photos only, no stock/AI-generated images, no exaggerated service claims in post copy), and if a suspension does happen, do NOT create a new listing — see the Edge Cases table in `gmb-setup.md`.
+
 ---
 
 ### Week 1 — Setup and GBP
@@ -224,10 +226,10 @@ Work through the tasks for the client's package tier. All three tiers share the 
 2. Format: `https://g.page/r/[PLACE_ID]/review` — save to `client.env` as `GBP_REVIEW_LINK=`
 3. Send the link to the client — they paste it into their templates below
 
-*Timing rule: send within 2 hours of job completion, never the next day. Reviews that name the specific service and city carry more ranking weight than generic ones.*
+*Timing rule: send within 2 hours of job completion, never the next day. Reviews that name the specific service and city do carry more ranking weight than generic ones — but never tell the customer this or ask them to mention it. Google's April 2026 Rating Manipulation policy explicitly bans "requesting that reviews include specific content," even as a soft ask. Send a plain, content-neutral request and let specifics happen naturally.*
 
 **Template 1 — SMS/text:**
-> Hi [First Name], thanks for having us out today! If you're happy with the [service], a quick Google review means a lot to a small business like ours: [GBP_REVIEW_LINK] — if you can mention the service and your neighborhood, that helps us a lot. Thanks! — [Owner Name]
+> Hi [First Name], thanks for having us out today! If you're happy with the [service], a quick Google review means a lot to a small business like ours: [GBP_REVIEW_LINK] Thanks! — [Owner Name]
 
 **Template 2 — Email:**
 > Subject: Quick favor — how did we do today?
@@ -243,6 +245,7 @@ Work through the tasks for the client's package tier. All three tiers share the 
   - GSC: clicks, impressions, CTR, average position for the past full month
   - GA4: sessions, organic sessions, top pages, goal completions
   - GBP: profile views, website clicks, direction requests, phone calls, new reviews
+  - GBP Insights surface breakdown (2026 feature): pull the impressions split across classic local panel, Maps AI summary card, and Google AI Overviews — this shows which AI surface is actually driving the client's visibility, which the aggregate numbers above can't. Most relevant for Market Leader, which already runs the AI-visibility spot-check (`SEO-STANDARDS.md` §7).
   - PageSpeed Insights: homepage mobile score, LCP, INP, CLS
 - [ ] **Work log review** — read through `maintenance-log.md` for this month; confirm all tasks are logged before generating the report
 - [ ] **Run `workflows/monthly-report.md`** — generate and deliver the monthly performance report

@@ -75,6 +75,8 @@
 | Phone Calls | | | |
 | New Reviews | | | |
 
+**AI surface breakdown** *(Market Leader only — delete this row if not applicable)*: Classic panel impressions: ___ · Maps AI summary card impressions: ___ · Google AI Overviews impressions: ___
+
 ---
 
 ## Site Speed — Mobile (PageSpeed Insights)
