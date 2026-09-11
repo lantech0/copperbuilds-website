@@ -18,7 +18,34 @@ Run this workflow when:
 
 ---
 
+## Week 1 Quick Start (~2 hours total — do this before anything else)
+
+This plan has 14 steps across 6 phases. Attempting them in parallel is why prior attempts
+stalled at zero execution. Do these 5 first — all free, ~15 minutes each, no dependencies
+on each other:
+
+1. Bing Places (Step 1)
+2. Apple Business Connect (Step 1)
+3. Yelp (Step 1)
+4. BBB (Step 1)
+5. Clutch.co (Step 1 — also required input for Tier 1 citations)
+
+Everything else in Phase 1–6 waits until these 5 are live. Re-evaluate weekly time budget
+before starting Phase 2.
+
+---
+
 ## Steps
+
+### Phase 0 — Baseline Backlink Audit (run once, before Phase 1)
+
+Run `/seo-backlinks` scoped to the **free tier only** (Common Crawl + verification
+crawler — always available, no cost; Moz/Bing API keys are optional free-signup upgrades,
+not required to run this). Do not default to DataForSEO for this — confirm with the user
+first if paid data is ever considered (see `SEO-STANDARDS.md`).
+
+This establishes the referring-domain baseline the Monthly KPIs table below tracks against,
+and surfaces any existing toxic links or competitor gaps before starting outreach.
 
 ### Phase 1 — Foundational Citations (Month 1, Week 1–2)
 
@@ -102,7 +129,16 @@ These carry high Trust Flow and create brand mentions in trade-specific AI resul
 | NECA | Electrical | necanet.org |
 | NALP | Landscaping | landscapeprofessionals.org |
 
-*Note: These are for clients in the respective trades. For CopperBuilds, target small business / web design associations instead.*
+*Note: The trade associations above are for clients in the respective trades. For*
+*CopperBuilds itself, target these instead (verified live 2026-09-04):*
+
+| Association/Directory | Type | Notes |
+|---|---|---|
+| American Marketing Association (ama.org) | Professional membership | $149/yr professional tier; explicitly positioned for small agencies and freelancers, nationwide chapter network |
+| The Manifest | Agency directory | Sister site to Clutch, different review base |
+| Sortlist | Agency directory | Client-matching directory, EU + US reach |
+| Digital Agency Network | Agency directory/community | Digital marketing agency-specific |
+| Awwwards | Design showcase | High-authority design credibility signal, not a citation but a strong brand-mention/link source |
 
 ---
 
@@ -144,7 +180,7 @@ Local SEO / marketing publications:
 Reach out to complementary service providers for mutual referral pages or resource listings.
 
 High-priority targets:
-- CRM platforms contractors use: ServiceTitan, Jobber, Housecall Pro, Housecall — pitch "preferred web design partner" listing
+- CRM platforms contractors use: ServiceTitan, Jobber, Housecall Pro — pitch "preferred web design partner" listing
 - PPC agencies that don't build websites — referral partnership page
 - Social media managers who need web design referrals
 
@@ -250,8 +286,8 @@ Track these at the start of each month during the retainer check-in.
 | Clutch reviews | 2+ | 5+ |
 | Tier 1 citation coverage | 80% | 95% |
 | "Best of" list appearances | 0 | 3+ |
-| New referring domains (Ahrefs) | Baseline logged | +15 |
-| Brand mentions (Ahrefs) | Baseline logged | +20/mo |
+| New referring domains (`/seo-backlinks`, free tier) | Baseline logged (Phase 0) | +15 — note: may read "insufficient data" until a free Moz/Bing key is added |
+| Brand mentions | Unmeasurable — no installed tool tracks unlinked mentions | Unmeasurable |
 | GBP profile views | Baseline logged | +50% MoM |
 | Guest posts published | 0 | 3+ |
 
