@@ -40,6 +40,18 @@
     "url": "https://copperbuilds.com/"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How much does a CopperBuilds website cost?", "acceptedAnswer": {"@type": "Answer", "text": "Website builds start at $1,200 flat rate—you pay once and own everything, including every file and asset. If you want ongoing local search growth, monthly SEO retainer plans start at $997/mo, month-to-month with no lock-in contract. There’s no hourly billing and no surprise invoices."}},
+      {"@type": "Question", "name": "Do I own my website after it’s built?", "acceptedAnswer": {"@type": "Answer", "text": "Yes—100%. Once your site is delivered you receive all files, code, and assets. No subscriptions, no platform lock-in, and you can host it anywhere."}},
+      {"@type": "Question", "name": "How long does it take to build my website?", "acceptedAnswer": {"@type": "Answer", "text": "Your new site goes live within 14 days—hand-coded for your trade, not a template."}},
+      {"@type": "Question", "name": "Is there a contract, or can I cancel anytime?", "acceptedAnswer": {"@type": "Answer", "text": "All plans are month-to-month. Cancel anytime with 30 days notice—no annual contracts, no lock-in."}}
+    ]
+  }
+  </script>
 
   <link rel="preload" as="image" href="/portfolio/hargrove-design-build/preview.webp" fetchpriority="high">
   <link rel="preload" as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -627,6 +639,18 @@
     @media (max-width: 480px) {
       .footer-grid { grid-template-columns: 1fr !important; }
     }
+
+    /* ── FAQ ACCORDION ─────────── */
+    .faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+    .faq-item{border-bottom:1px solid var(--rule)}
+    .faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0;background:none;border:none;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:.9375rem;font-weight:600;text-align:left;cursor:pointer;transition:color .2s}
+    .faq-btn:hover{color:var(--accent)}
+    .faq-icon{width:26px;height:26px;min-width:26px;border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--warm-stone);transition:border-color .2s,background .2s,transform .25s ease-out,color .2s}
+    .faq-btn[aria-expanded="true"] .faq-icon{border-color:var(--accent-border);background:var(--accent-dim);color:var(--accent);transform:rotate(45deg)}
+    .faq-answer{overflow:hidden;max-height:0;transition:max-height .35s ease}
+    .faq-answer.open{max-height:300px}
+    .faq-answer-inner{padding-bottom:1.375rem;color:var(--warm-stone);line-height:1.72;font-size:.9125rem}
+    @media(max-width:768px){.faq-layout{grid-template-columns:1fr;gap:2rem}}
   </style>
 </head>
 <body>
@@ -1066,6 +1090,35 @@
 
 
 <!-- ═══════════════════════════════════
+     FAQ
+═══════════════════════════════════ -->
+<section class="section" aria-labelledby="ifaq-h2">
+<div class="container">
+  <div class="faq-layout">
+    <div>
+      <span class="section-label">FAQ</span>
+      <h2 class="headline" id="ifaq-h2" style="margin-bottom:1rem">How much does a CopperBuilds website cost?</h2>
+      <p style="color:var(--muted);font-size:.9375rem;line-height:1.72">Website builds start at $1,200 flat rate&mdash;you pay once and own everything, including every file and asset. If you want ongoing local search growth, monthly SEO retainer plans start at $997/mo, month-to-month with no lock-in contract. There&rsquo;s no hourly billing and no surprise invoices.</p>
+    </div>
+    <div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="ifa1" id="ifq1">Do I own my website after it&rsquo;s built?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="ifa1" role="region" aria-labelledby="ifq1"><div class="faq-answer-inner">Yes&mdash;100%. Once your site is delivered you receive all files, code, and assets. No subscriptions, no platform lock-in, and you can host it anywhere.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="ifa2" id="ifq2">How long does it take to build my website?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="ifa2" role="region" aria-labelledby="ifq2"><div class="faq-answer-inner">Your new site goes live within 14 days&mdash;hand-coded for your trade, not a template.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="ifa3" id="ifq3">Is there a contract, or can I cancel anytime?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="ifa3" role="region" aria-labelledby="ifq3"><div class="faq-answer-inner">All plans are month-to-month. Cancel anytime with 30 days notice&mdash;no annual contracts, no lock-in.</div></div>
+</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════
      FINAL CTA
 ═══════════════════════════════════ -->
 <section class="cta-dark" aria-label="Get started">
@@ -1106,6 +1159,14 @@
   <p>&copy; 2026 CopperBuilds. <a href="mailto:luis.copperbuilds@gmail.com">luis.copperbuilds@gmail.com</a> &middot; <a href="https://wa.me/639773293969">WhatsApp</a> &middot; <a href="https://www.facebook.com/CopperBuilds/">Facebook</a> &middot; <a href="https://www.linkedin.com/in/luisecharri/">LinkedIn</a></p>
 </footer>
 </noscript>
-
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const expanded=btn.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.faq-btn').forEach(b=>{b.setAttribute('aria-expanded','false');const p=document.getElementById(b.getAttribute('aria-controls'));if(p)p.classList.remove('open')});
+    if(!expanded){btn.setAttribute('aria-expanded','true');const p=document.getElementById(btn.getAttribute('aria-controls'));if(p)p.classList.add('open')}
+  });
+});
+</script>
 </body>
 </html>

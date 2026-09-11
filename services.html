@@ -54,6 +54,18 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "What services does CopperBuilds offer?", "acceptedAnswer": {"@type": "Answer", "text": "Four core services built for home services pros: web design (live in 14 days, mobile-first), local SEO (rank in your city, not just online), Google Business Profile management (more calls from Maps searches), and social media (stay top of mind every week)."}},
+      {"@type": "Question", "name": "How does my CopperBuilds site connect to my Google Business Profile?", "acceptedAnswer": {"@type": "Answer", "text": "Most calls in home services come from Google Maps, not your website—so the GBP and the site work as a pair. We claim and optimize your GBP, link it to your site (matching name, address, phone), and add LocalBusiness schema so Google reads them as the same business. Result: more “[trade] near me” calls."}},
+      {"@type": "Question", "name": "Can you build service-area pages for the cities I work in?", "acceptedAnswer": {"@type": "Answer", "text": "Yes—service-area pages are how home services pros rank for “[trade] in [city]” searches. Lead Machine builds one new city page per month; Market Leader builds two. Tell us your highest-priority cities at onboarding and we'll start there first."}},
+      {"@type": "Question", "name": "Is there a contract, or can I cancel anytime?", "acceptedAnswer": {"@type": "Answer", "text": "All plans are month-to-month. Cancel anytime with 30 days notice—no annual contracts, no lock-in."}}
+    ]
+  }
+  </script>
 
   <link rel="preload" as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
@@ -116,6 +128,18 @@
     .svc-tile-name { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--ink); margin: 0; }
     .svc-tile-desc { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: var(--warm-stone); line-height: 1.45; margin: 0; }
     @media (max-width: 900px) { .svc-hero-split { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    /* ── FAQ ACCORDION ─────────── */
+    .faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+    .faq-item{border-bottom:1px solid var(--rule)}
+    .faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0;background:none;border:none;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:.9375rem;font-weight:600;text-align:left;cursor:pointer;transition:color .2s}
+    .faq-btn:hover{color:var(--accent)}
+    .faq-icon{width:26px;height:26px;min-width:26px;border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--warm-stone);transition:border-color .2s,background .2s,transform .25s ease-out,color .2s}
+    .faq-btn[aria-expanded="true"] .faq-icon{border-color:var(--accent-border);background:var(--accent-dim);color:var(--accent);transform:rotate(45deg)}
+    .faq-answer{overflow:hidden;max-height:0;transition:max-height .35s ease}
+    .faq-answer.open{max-height:300px}
+    .faq-answer-inner{padding-bottom:1.375rem;color:var(--warm-stone);line-height:1.72;font-size:.9125rem}
+    @media(max-width:768px){.faq-layout{grid-template-columns:1fr;gap:2rem}}
   </style>
 </head>
 
@@ -630,6 +654,35 @@
 
 
 <!-- ═══════════════════════════════════
+     FAQ
+═══════════════════════════════════ -->
+<section class="section" aria-labelledby="sfaq-h2">
+<div class="container">
+  <div class="faq-layout">
+    <div>
+      <span class="section-label">FAQ</span>
+      <h2 class="headline" id="sfaq-h2" style="margin-bottom:1rem">What services does CopperBuilds offer?</h2>
+      <p style="color:var(--muted);font-size:.9375rem;line-height:1.72">Four core services built for home services pros: web design (live in 14 days, mobile-first), local SEO (rank in your city, not just online), Google Business Profile management (more calls from Maps searches), and social media (stay top of mind every week).</p>
+    </div>
+    <div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="sfa1" id="sfq1">How does my CopperBuilds site connect to my Google Business Profile?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="sfa1" role="region" aria-labelledby="sfq1"><div class="faq-answer-inner">Most calls in home services come from Google Maps, not your website&mdash;so the GBP and the site work as a pair. We claim and optimize your GBP, link it to your site (matching name, address, phone), and add LocalBusiness schema so Google reads them as the same business. Result: more &ldquo;[trade] near me&rdquo; calls.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="sfa2" id="sfq2">Can you build service-area pages for the cities I work in?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="sfa2" role="region" aria-labelledby="sfq2"><div class="faq-answer-inner">Yes&mdash;service-area pages are how home services pros rank for &ldquo;[trade] in [city]&rdquo; searches. Lead Machine builds one new city page per month; Market Leader builds two. Tell us your highest-priority cities at onboarding and we'll start there first.</div></div>
+</div>
+      <div class="faq-item">
+  <button class="faq-btn" aria-expanded="false" aria-controls="sfa3" id="sfq3">Is there a contract, or can I cancel anytime?<div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
+  <div class="faq-answer" id="sfa3" role="region" aria-labelledby="sfq3"><div class="faq-answer-inner">All plans are month-to-month. Cancel anytime with 30 days notice&mdash;no annual contracts, no lock-in.</div></div>
+</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════
      CTA
 ═══════════════════════════════════ -->
 <section style="padding: var(--section-py) 0;" aria-label="Get started">
@@ -712,6 +765,15 @@
   setTimeout(() => {
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
   }, 150);
+</script>
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const expanded=btn.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.faq-btn').forEach(b=>{b.setAttribute('aria-expanded','false');const p=document.getElementById(b.getAttribute('aria-controls'));if(p)p.classList.remove('open')});
+    if(!expanded){btn.setAttribute('aria-expanded','true');const p=document.getElementById(btn.getAttribute('aria-controls'));if(p)p.classList.add('open')}
+  });
+});
 </script>
 
 </body>

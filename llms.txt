@@ -1,0 +1,20 @@
+# CopperBuilds
+
+> CopperBuilds builds hand-coded websites and runs local SEO for home services businesses—plumbing, HVAC, electrical, drain & sewer, and water damage restoration, with roofing, garage door, septic, locksmith, and pest control also served. One-time website builds start at $1,200 flat rate (client owns every file, no lock-in). Monthly local SEO retainer plans start at $997/mo, month-to-month, no annual contract.
+
+## Pages
+
+- [Home](https://copperbuilds.com/): Overview of web design and local SEO services for home services pros; new sites live within 14 days.
+- [Services](https://copperbuilds.com/services): The four core services—web design, local SEO, Google Business Profile management, and social media.
+- [Pricing](https://copperbuilds.com/pricing): One-time website build packages (Starter/Growth/Pro) and monthly SEO retainer plans (Local Presence/Lead Machine/Market Leader), with full pricing and inclusions.
+- [About](https://copperbuilds.com/about): Who CopperBuilds is and who it serves.
+- [How We Work](https://copperbuilds.com/how-we-work): The build and retainer process step by step.
+- [Portfolio](https://copperbuilds.com/portfolio): Example website builds for home services clients.
+- [Blog](https://copperbuilds.com/blog): SEO and marketing guides for home services businesses (HVAC, plumbing, electrical, roofing).
+- [Help Center](https://copperbuilds.com/help): FAQs on website builds, Google Business Profile setup, billing, and post-launch site updates.
+- [Contact](https://copperbuilds.com/contact): Get a free quote; requests are answered within 1 hour.
+
+## Optional
+
+- [Terms of Service](https://copperbuilds.com/terms)
+- [Privacy Policy](https://copperbuilds.com/privacy)
