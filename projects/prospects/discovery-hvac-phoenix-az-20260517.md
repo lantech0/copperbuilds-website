@@ -1,10 +1,10 @@
 # Prospect List: HVAC in Phoenix AZ — No Website Filter
 **Mode:** Discovery Mode
-**Date:** 2026-05-17
+**Sessions:** 2026-05-17 (Session 1) · 2026-09-14 (Session 2 — user-pasted Google Maps batch)
 **Filter applied:** No website only
-**Already researched (do-not-duplicate):** None (first Phoenix HVAC web session)
-**Total leads found:** 4
-**Hot leads:** 4 | **Warm leads:** 0 | **Cold leads:** 0
+**Already researched (do-not-duplicate):** See full list at bottom — Session 1's 4 leads + 22 eliminated, plus Session 2's 14 leads + 25 eliminated/dropped (full Google Maps paste, all 36 no-website candidates checked — nothing left unverified)
+**Total leads found:** 18 (4 Session 1 + 14 Session 2)
+**Hot leads:** 18 | **Warm leads:** 0 | **Cold leads:** 0
 
 ---
 
@@ -433,7 +433,1045 @@ Luis — Lantech
 
 ---
 
-## Session Summary
+---
+---
+
+# Session 2 — 2026-09-14 (User-Pasted Google Maps Batch)
+
+**Source:** User pasted the expanded Google Maps results for "HVAC in Phoenix, AZ" directly into chat (~150 entries across multiple scroll pages, ~27 sponsored).
+
+**Verification methodology:** Parsed the paste with a script to flag every non-sponsored entry with no "Website" line in its card (39 found; 3 dropped immediately — no reviews AND no phone, too weak to contact). Ranked the remaining 36 by review count, took the top 20, and cross-checked **every one** individually via WebSearch (`"[name]" [phone] owner Facebook BBB Yelp`) before treating any as a confirmed lead — per this workflow's own Step 5.5 warning that the Maps card's "Website" field can be stale or dropped in a paste.
+
+**Result: only 7 of the top 20 survived verification as genuine no-website businesses.** The other 13 were disqualified:
+- **6 had real websites** the paste simply didn't show a Website link for: Velox Air Inc. (veloxac.com), Cool Blew Inc./Surprise (coolblew.com), Aircold Supply (aircold.com — a Ferguson-owned supply chain, not a real small-business prospect anyway), Sunrise Mechanical Inc (sunrisemechanical.com), Ace Home Services (= ACE Cooling/Heating/Plumbing/Electrical, acehomeaz.com), and a phone-number match strongly suggesting "Phoenix Heating & Air Conditioning Services" routes to phoenixheatingandairconditioning.com.
+- **7 matched a Google Maps spam/duplicate-listing pattern** and were excluded even though no website was found for them individually: "Heating And Air Conditioning Phoenix" and "Phoenix AC Services: Heating & Air Conditioning" both use 928 (Flagstaff/Yuma) area code numbers in the same 928-433-xxxx block as a *different*, real Phoenix business that already has a website (phoenixhvacairconditioning.com) — almost certainly the same lead-gen operator running multiple rank-and-rent listings. "Phoenix HVAC Contractors LLC" uses a 435 (Utah) number. The second "Phoenix Air Conditioning & Heating" listing uses an 888 toll-free number. "Phoenix Air Conditioning and Heating" lists a downtown high-rise office address (201 E Washington St / Chase Tower) implausible for a truck-based HVAC operator. "Phoenix HVAC Contractors." (no phone at all, near-duplicate name to the LLC spam listing above) was excluded on the same pattern.
+
+**Note for a future session:** 16 more no-website candidates from this same paste were never individually checked (ranked below the top 20 by review count). If more Phoenix HVAC leads are wanted later, re-paste isn't needed — they're already extracted in `.tmp/parse_phoenix_hvac.py` output; just resume verification from there.
+
+---
+
+## 🔥 HOT Leads — Session 2 (all 7)
+
+---
+
+### 5. Phoenix Air Cooling & Heating Pros — Score: 95/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | High rating 5.0★, 31 reviews (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **95 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found (no name surfaces anywhere — Google, Facebook, LinkedIn, BBB)
+- **Phone:** (602) 854-5249
+- **Address:** Phoenix, AZ, United States (exact street not listed on GMB)
+- **Google reviews:** 5.0★, 31 reviews
+- **Years in business:** 7+ (since ~2019)
+- **Website:** ❌ None (confirmed — no indexed domain anywhere)
+- **Facebook:** ❌ None found
+- **Instagram:** ❌ None found
+- **LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete (no website field, no photos surfaced)
+- **Service Area:** Phoenix, AZ (metro) — no additional cities found → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+- **Monthly Search Traffic:** 16,000+ HVAC Phoenix searches/month
+
+**Pitch Angle:**
+This is the strongest lead in the batch — a 5.0-star operator with 31 reviews and 7 years in business who has *zero* footprint anywhere online: no website, no Facebook, no Instagram, no LinkedIn, nothing indexed under the business name at all. That review velocity (31 reviews in 7 years, all word-of-mouth) says the work is good and customers are happy enough to leave a review — they just have nowhere to send anyone else who's searching. Every one of the 16,000+ monthly Phoenix HVAC searchers who'd find this operator via Google instead finds Parker & Sons.
+
+**Revenue Calculation:**
+(31 reviews ÷ 7 years ÷ 12 months) × 75 = 27.7 clients/month
+27.7 × $750 avg HVAC job = $20,761/month revenue base
+$20,761 × 30% uplift from web presence = **$6,228/month in recoverable revenue**
+
+---
+
+### Outreach — Phoenix Air Cooling & Heating Pros
+
+#### Email
+**Subject:** Your 5.0★ rating isn't showing up anywhere on Google
+
+Hi Team,
+
+I came across Phoenix Air Cooling & Heating Pros while researching HVAC contractors in the Phoenix area — 5.0 stars across 31 reviews is a strong track record. But I couldn't find a website, Facebook page, or any social presence anywhere for the business.
+
+16,000+ people search for HVAC services in Phoenix every month. Parker & Sons shows up at the top of nearly all of those searches because they have a full website, online booking, and 15,000+ reviews. Right now, Phoenix Air Cooling & Heating Pros doesn't appear in any of those searches at all.
+
+Based on your review activity, a website built to rank locally could add around **$6,200/month in new business** — customers who are already searching and just can't find you.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Would it make sense to get on a quick 10-minute call this week?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text as primary outreach channel: (602) 854-5249.
+
+*Suggested text/call opener:* "Hi — I came across your HVAC business through Google Maps. 5.0 stars, 31 reviews, but I couldn't find a website anywhere for you. 16,000+ people search for HVAC in Phoenix every month and right now none of them can find you online. Worth a quick chat?"
+
+---
+
+#### LinkedIn
+No LinkedIn page found for the business or an owner. Skip this channel — use Email + phone/text instead.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Note: No owner name, no Facebook/Instagram/LinkedIn — phone/text is the only viable first-touch channel
+
+---
+---
+
+### 6. Fair Air Heating & Cooling LLC — Score: 85/100
+
+**Scoring breakdown:**
+No website (+40) | Facebook exists, low/unconfirmed activity (+15) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **85 pts — HOT 🔥**
+
+- **Owner:** ✅ Karla Karina Estrada-Paredes
+- **Address:** 10845 W Michael Dr, Sun City, AZ 85373
+- **Phone:** (602) 551-0771
+- **Email:** Not found (no website to pull from)
+- **Google reviews:** 4.3★, 22 reviews
+- **Years in business:** ~10.5 (registered 1/19/2016)
+- **Website:** ❌ None found (Facebook/Yelp/BBB/Nextdoor presence only — no dedicated domain)
+- **Facebook:** ⚠️ facebook.com/PHXAC — exists, posting activity not confirmed (treat as dormant/low-activity until verified)
+- **Instagram:** ❌ None found
+- **LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete (no website linked)
+- **BBB:** ✅ Accredited since 3/12/2020
+- **Service Area:** Sun City / Phoenix metro, AZ → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted) + BBB + Facebook, cross-verified via WebSearch
+- **Monthly Search Traffic:** 16,000+ HVAC Phoenix searches/month
+
+**Pitch Angle:**
+Karla has run Fair Air for nearly 10 years and earned BBB accreditation in 2020 — real, sustained credibility. She has a Facebook page but no actual website, which means every Google search for HVAC in her market routes around her entirely. Parker & Sons owns that search real estate with a full site and 15,000+ reviews; Karla has the reputation but no digital front door to compete for the same traffic. A website plus tying it to her existing Facebook presence would be a clean upgrade for a decade-old operator who's already invested in credibility (BBB) but stopped short of the one asset that actually captures search traffic.
+
+**Revenue Calculation:**
+(22 reviews ÷ 10.5 years ÷ 12 months) × 75 = 13.1 clients/month
+13.1 × $750 avg HVAC job = $9,825/month revenue base
+$9,825 × 30% uplift from web presence = **$2,948/month in recoverable revenue**
+
+---
+
+### Outreach — Karla Estrada-Paredes / Fair Air Heating & Cooling
+
+#### Email
+**Subject:** Fair Air has BBB accreditation and 10 years in business — but no website
+
+Hi Karla,
+
+I was researching HVAC contractors in the Sun City/Phoenix area and found Fair Air Heating & Cooling through the BBB — accredited since 2020, nearly 10 years in business, 4.3 stars. But I couldn't find a website for the business anywhere, just your Facebook page.
+
+16,000+ people search for HVAC services in Phoenix every month. Parker & Sons shows up at the top of almost every one of those searches with a full website and 15,000+ reviews. Fair Air doesn't show up in web search at all right now.
+
+Based on your review activity and BBB standing, a website built to rank locally could add around **$2,950/month in new business** — customers who are already searching and can't currently find you.
+
+I build websites for HVAC contractors in the Phoenix area — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Would it make sense to get on a quick 10-minute call this week?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (Facebook — facebook.com/PHXAC)
+Hey Karla — found Fair Air through the BBB while researching Phoenix-area HVAC contractors. Almost 10 years in business and BBB accredited since 2020, but no website that I could find.
+
+16,000+ people search for HVAC in Phoenix every month — right now, none of them can find Fair Air unless they already know your name.
+
+Quick question: are you getting most of your jobs through referrals, or are you trying to grow through Google?
+
+---
+
+#### LinkedIn
+No LinkedIn page found for the business or for Karla individually. Skip this channel — use Email + Facebook DM instead.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] DM sent (Facebook PHXAC) — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Note: Facebook activity level unconfirmed — verify before claiming "dormant" in outreach if asked
+
+---
+---
+
+### 7. Air Conditioning Services Arizona — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (480) 716-4702
+- **Google reviews:** 4.4★, 17 reviews
+- **Years in business:** 10+
+- **Website:** ❌ None found (no domain match for name or exact phone number anywhere)
+- **Facebook:** ❌ None found
+- **Instagram:** ❌ None found
+- **LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+- **Monthly Search Traffic:** 16,000+ HVAC Phoenix searches/month
+
+**Pitch Angle:**
+A decade in business with a solid 4.4-star rating and completely invisible online — no website, no social of any kind. This is a mature operator who has survived 10+ years purely on referrals and repeat business in a market where Parker & Sons and George Brazil dominate every search result. The gap here is pure — there's no negative signal to overcome, just an entirely missing digital front door for a business that's clearly doing the work well.
+
+**Revenue Calculation:**
+(17 reviews ÷ 10 years ÷ 12 months) × 75 = 10.6 clients/month
+10.6 × $750 avg HVAC job = $7,972/month revenue base
+$7,972 × 30% uplift from web presence = **$2,392/month in recoverable revenue**
+
+---
+
+### Outreach — Air Conditioning Services Arizona
+
+#### Email
+**Subject:** 10+ years in Phoenix HVAC — but nowhere to be found online
+
+Hi Team,
+
+I was researching HVAC contractors in Phoenix and found Air Conditioning Services Arizona — 4.4 stars, over a decade in business. But I couldn't find a website or any social media presence anywhere for the business.
+
+16,000+ people search for HVAC services in Phoenix every month, and Parker & Sons captures nearly all of that traffic with a full website and 15,000+ reviews. A business with your track record doesn't show up at all right now.
+
+Based on your review activity, a website built to rank locally could add around **$2,400/month in new business** from customers who are already searching for what you do.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call this week?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (480) 716-4702.
+
+*Suggested text/call opener:* "Hi — found your business on Google Maps. Over 10 years in Phoenix HVAC and 4.4 stars, but no website anywhere. 16,000+ people search for HVAC in Phoenix every month and can't find you online right now. Worth a quick chat?"
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel — use Email + phone/text instead.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+
+---
+---
+
+### 8. Phoenix Air Conditioning & Refrigeration — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (602) 313-3249
+- **Google reviews:** 4.8★, 16 reviews
+- **Years in business:** 7+
+- **Website:** ❌ None found (no domain or website match for name or exact phone)
+- **Facebook:** ❌ None found
+- **Instagram:** ❌ None found
+- **LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+- **Monthly Search Traffic:** 16,000+ HVAC Phoenix searches/month
+
+**Pitch Angle:**
+4.8 stars is a near-perfect rating, and 7 years in business with zero digital footprint means this operator has been winning entirely on word-of-mouth in a market saturated with heavily-advertised competitors. That's the strongest possible signal that the actual service is excellent — the only thing missing is anywhere for the 16,000+ monthly Phoenix HVAC searchers to find them.
+
+**Revenue Calculation:**
+(16 reviews ÷ 7 years ÷ 12 months) × 75 = 14.3 clients/month
+14.3 × $750 avg HVAC job = $10,714/month revenue base
+$10,714 × 30% uplift from web presence = **$3,214/month in recoverable revenue**
+
+---
+
+### Outreach — Phoenix Air Conditioning & Refrigeration
+
+#### Email
+**Subject:** 4.8★ rating but zero web presence — here's what that's costing you
+
+Hi Team,
+
+I came across Phoenix Air Conditioning & Refrigeration while researching Phoenix HVAC contractors — a 4.8-star rating over 7 years is excellent. But there's no website or social media presence anywhere for the business that I could find.
+
+16,000+ people search for HVAC services in Phoenix every month, and right now Parker & Sons and other agencies with full websites capture nearly all of that traffic. A business with your rating doesn't show up in any of those searches.
+
+Based on your review activity, a website built to rank locally could add around **$3,200/month in new business** from customers already searching for what you do.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Would a quick 10-minute call this week make sense?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (602) 313-3249.
+
+*Suggested text/call opener:* "Hi — came across your HVAC business on Google Maps, 4.8 stars over 7 years but no website anywhere. 16,000+ people search for HVAC in Phoenix every month and can't find you right now. Worth a quick chat?"
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel — use Email + phone/text instead.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+
+---
+---
+
+### 9. Big O Air Conditioning — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ 85040
+- **Phone:** (480) 395-0735
+- **Google reviews:** 5.0★, 12 reviews
+- **Years in business:** ⚠️ Not stated on GMB — unknown
+- **Website:** ❌ None found
+- **Facebook:** ❌ None found
+- **Instagram:** ❌ None found
+- **LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+- **Monthly Search Traffic:** 16,000+ HVAC Phoenix searches/month
+
+**Note on revenue calc:** Years in business not available (not shown on the GMB card, not found via search) — the standard reviews÷years formula can't be used. Used the supplemental web-traffic model instead, same approach as Armer Air in Session 1.
+
+**Pitch Angle:**
+Perfect 5.0-star rating with 12 reviews and a clear seasonal promotion (a $259 summer tune-up special) shows an operator who's actively marketing — just not online. They're running promotions via text/phone but have no website to send anyone who finds them through search. That's a business already comfortable selling — it just needs a digital storefront to match.
+
+**Revenue Calculation (web-traffic model — years in business unknown):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue**
+
+---
+
+### Outreach — Big O Air Conditioning
+
+#### Email
+**Subject:** Your $259 summer tune-up promo isn't reaching anyone searching online
+
+Hi Team,
+
+I came across Big O Air Conditioning while researching Phoenix HVAC contractors — 5.0 stars, and I saw you're running a $259 summer tune-up special. But there's no website or social presence anywhere for the business, so anyone who searches for HVAC help in Phoenix and finds you would have to already know your name.
+
+16,000+ people search for HVAC services in Phoenix every month. Parker & Sons and other established players with full websites capture nearly all of that traffic right now.
+
+A website built to rank locally could add around **$2,000/month in new business** from customers who are already searching and just can't find you.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (480) 395-0735.
+
+*Suggested text/call opener:* "Hi — saw your 5.0-star rating and summer tune-up special on Google Maps. No website anywhere though, so most people searching for HVAC in Phoenix won't find you. Worth a quick chat?"
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel — use Email + phone/text instead.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Note: Years in business unknown — revenue estimate uses web-traffic model, not the standard formula
+
+---
+---
+
+### 10. TRACK - Smarter Home Air Conditioning Phoenix — Score: 95/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | High rating 5.0★ (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **95 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** 515 E Grant St Suite 109, Phoenix, AZ 85004
+- **Phone:** (602) 962-8722
+- **Google reviews:** 5.0★, 4 reviews
+- **Years in business:** 5+
+- **Website:** ❌ None found
+- **Facebook:** ❌ None found
+- **Instagram:** ❌ None found
+- **LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+- **Monthly Search Traffic:** 16,000+ HVAC Phoenix searches/month
+
+**Pitch Angle:**
+The name "TRACK — Smarter Home Air Conditioning" signals a tech-forward, smart-home-angle positioning — an operator clearly thinking about brand and differentiation. That makes the total absence of a website the biggest missed opportunity in this batch: they've already done the harder work of choosing a distinctive name and angle, they just haven't built the site to back it up. A 5.0-star rating in 5 years reinforces the work is good; the brand instinct is there, the web presence isn't.
+
+**Revenue Calculation:**
+(4 reviews ÷ 5 years ÷ 12 months) × 75 = 5.0 clients/month
+5.0 × $750 avg HVAC job = $3,750/month revenue base
+$3,750 × 30% uplift from web presence = **$1,125/month in recoverable revenue**
+
+---
+
+### Outreach — TRACK Smarter Home Air Conditioning Phoenix
+
+#### Email
+**Subject:** "Smarter Home" is a great angle — but there's no site to back it up
+
+Hi Team,
+
+I came across TRACK - Smarter Home Air Conditioning while researching Phoenix HVAC contractors — 5.0 stars, and the "smarter home" positioning is a strong angle in a market full of generic HVAC names. But I couldn't find a website or any social presence for the business.
+
+16,000+ people search for HVAC services in Phoenix every month. Right now, that smart-home differentiation isn't reaching any of them because there's nowhere online to find you.
+
+A website built around that positioning, ranking locally, could add around **$1,100/month in new business** from customers already searching for what you do — and that's a conservative estimate given how new the business is.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (602) 962-8722.
+
+*Suggested text/call opener:* "Hi — found TRACK on Google Maps, love the 'smarter home' angle. No website anywhere for it though, so it's not reaching anyone searching online. Worth a quick chat?"
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel — use Email + phone/text instead.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+
+---
+---
+
+### 11. Waddell AC Repair — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States (Waddell-area service, exact street not listed)
+- **Phone:** (623) 244-4361
+- **Google reviews:** 4.0★, 4 reviews
+- **Years in business:** 7+
+- **Website:** ❌ None found
+- **Facebook:** ❌ None found
+- **Instagram:** ❌ None found
+- **LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Waddell / West Phoenix metro, AZ → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+- **Monthly Search Traffic:** 16,000+ HVAC Phoenix searches/month — note: Waddell is a named West Valley suburb, so outreach should reference Waddell/West Valley search volume specifically once confirmed rather than core-Phoenix volume (see workflow's suburb geography note)
+
+**Pitch Angle:**
+7 years in business in the Waddell/West Valley corridor with zero web presence, competing against a dense field of established West Valley competitors (several appeared in this same search — A Quality HVAC, Stanley & Sons, Desert Diamond) who all have real websites. This operator is being out-marketed by name recognition alone; a website is the minimum table stakes to compete for the same local searches those competitors are already winning.
+
+**Revenue Calculation:**
+(4 reviews ÷ 7 years ÷ 12 months) × 75 = 3.6 clients/month
+3.6 × $750 avg HVAC job = $2,679/month revenue base
+$2,679 × 30% uplift from web presence = **$804/month in recoverable revenue**
+
+---
+
+### Outreach — Waddell AC Repair
+
+#### Email
+**Subject:** Every other AC company in Waddell has a website — you don't
+
+Hi Team,
+
+I was researching HVAC contractors in the Waddell/West Valley area and found Waddell AC Repair — 7 years in business. But there's no website or social presence for the business anywhere, while most of the other companies serving the same area (Stanley & Sons, A Quality HVAC, Desert Diamond) all have full sites.
+
+People searching for AC repair in Waddell right now are finding your competitors first, purely because they show up in the search and you don't.
+
+Based on your review activity, a website built to rank locally could add around **$800+/month in new business** — and that number grows as review volume grows, since right now you're starting from a small review base relative to your years in business.
+
+I build websites for HVAC contractors in the West Valley — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (623) 244-4361.
+
+*Suggested text/call opener:* "Hi — found Waddell AC Repair on Google Maps. 7 years in business but no website, while most other AC companies in the Waddell area have one. Worth a quick chat about getting you found online?"
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel — use Email + phone/text instead.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Note: Confirm Waddell-specific search volume before quoting the 16,000/mo core-Phoenix figure in a live call — that number is for Phoenix proper, not Waddell
+
+---
+---
+
+---
+---
+
+## Session 2 — Continued Verification (16 remaining candidates, same 2026-09-14 paste)
+
+User asked to verify the rest of the batch rather than stop at the top 20. Checked all 16 remaining candidates (ranked 21–36 by review count, below the earlier cutoff). **7 more confirmed genuine, 9 disqualified.**
+
+**Disqualified this round:**
+- **2 had real websites:** Superior Phoenix HVAC Solutions (superiorphoenixhvacsolutions.com, exact phone match) · Wolff Mechanical Heating AC & Slr (same company as Wolff Mechanical/Tempe, which already has azairconditioning.com — a second GMB listing under a different phone number)
+- **6 matched the spam/duplicate-listing pattern:** Phoenix Heating & Air Conditioning [602-844-4547, 0 reviews, same virtual-address pattern as prior exclusions] · Phoenix City Heating and cooling [928-222-1217, 0 reviews, out-of-area number] · Commercial HVAC System Sweeping [928-216-3951, 0 reviews, out-of-area number, same directory (hvacservice.io) as an already-excluded generic listing] · Nathan Russell HVAC Specialists [928-449-2457, 0 reviews — the 928 number and surname match "Russell and Sons HVAC," a real Northern AZ (Show Low) company, suggesting this is a geography-mismatched or miscategorized listing, not Phoenix-based] · AC Repair Specialists [602-731-3234, tied to homehvacrepairexpert.com, a lead-gen doorway domain, and its claimed 12-review count doesn't match the Maps card's "0 reviews" — likely a directory listing, not an independent business] · Hvac repair Phoenix AZ [877 toll-free number, appeared TWICE in the paste under two different phone numbers, 0 reviews — classic duplicate-listing signature]
+- **1 dropped as unverifiable/too weak:** Precision HVAC Repair Phoenix (no phone captured at all, only 1 review, no corroborating data found in either direction — can't be verified or contacted reliably)
+
+**Confidence note on the 7 new leads below:** unlike the first 7 (which had 12–31 reviews each), these run 1–3 reviews and mostly have no "years in business" shown on their GMB card. That's consistent with genuinely new/tiny operators — but it also means there's less data to rule out a stale or duplicate listing. Verify each by phone before investing outreach time on all of them at once.
+
+---
+
+## 🔥 HOT Leads — Session 2, Continued (7 more)
+
+---
+
+### 12. Premier HVAC Repair Phoenix — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (602) 847-3231
+- **Google reviews:** 5.0★, 3 reviews
+- **Years in business:** ⚠️ Not stated on GMB
+- **Website:** ❌ None found (distinct from "Premier HVAC Solutions" of Glendale, which has premierhvacaz.com — different phone, different entity)
+- **Facebook / Instagram / LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+
+**Pitch Angle:**
+A perfect 5.0-star rating with zero web presence of any kind — this reads as a genuinely new or very small operator who hasn't built any digital assets yet. There's no competing "Premier HVAC" content to correct or displace; this is a clean first-mover opportunity to get a website and GMB optimization in place before the business scales past the point where doing it feels urgent.
+
+**Revenue Calculation (web-traffic model — years in business not available):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue**
+
+---
+
+### Outreach — Premier HVAC Repair Phoenix
+
+#### Email
+**Subject:** 5.0★ on Google, but nothing else online for Premier HVAC Repair
+
+Hi Team,
+
+I came across Premier HVAC Repair while researching Phoenix HVAC contractors — a perfect 5.0-star rating. But there's no website or social media presence anywhere for the business.
+
+16,000+ people search for HVAC services in Phoenix every month. Right now, none of that traffic can find you — Parker & Sons and other established players with full websites capture nearly all of it.
+
+A website built to rank locally could add around **$2,000/month in new business** from customers who are already searching.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (602) 847-3231.
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Verify by phone before outreach — low review count, no corroborating data found
+
+---
+---
+
+### 13. Sarlivo HVAC Repair Phoenix — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (602) 851-4564
+- **Google reviews:** 5.0★, 1 review
+- **Years in business:** ⚠️ Not stated on GMB
+- **Website:** ❌ None found
+- **Facebook / Instagram / LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+
+**Pitch Angle:**
+Only 1 review and no other web trace anywhere — this is almost certainly a brand-new or very early-stage operator. The pitch here is speed: get a web presence in place now, before competitors with sites lock up search rankings while this business is still building its review base.
+
+**Revenue Calculation (web-traffic model — years in business not available):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue**
+
+---
+
+### Outreach — Sarlivo HVAC Repair Phoenix
+
+#### Email
+**Subject:** Get found on Google before your competitors do
+
+Hi Team,
+
+I came across Sarlivo HVAC Repair while researching Phoenix HVAC contractors. I couldn't find a website or any social presence for the business anywhere.
+
+16,000+ people search for HVAC services in Phoenix every month. The contractors who show up in those searches are the ones with websites — Parker & Sons and other established names dominate that traffic right now.
+
+A website built to rank locally could add around **$2,000/month in new business** as your review base grows.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (602) 851-4564.
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Verify by phone before outreach — only 1 review, no corroborating data found
+
+---
+---
+
+### 14. Xelvico HVAC Repair Phoenix — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (602) 445-7752
+- **Google reviews:** 5.0★, 1 review
+- **Years in business:** ⚠️ Not stated on GMB
+- **Website:** ❌ None found
+- **Facebook / Instagram / LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+
+**Pitch Angle:**
+Same profile as Sarlivo above — 1 review, zero web trace, likely brand-new. First-mover website advantage is the angle: cheaper and easier to build search authority now than after competitors establish themselves.
+
+**Revenue Calculation (web-traffic model — years in business not available):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue**
+
+---
+
+### Outreach — Xelvico HVAC Repair Phoenix
+
+#### Email
+**Subject:** Get found on Google before your competitors do
+
+Hi Team,
+
+I came across Xelvico HVAC Repair while researching Phoenix HVAC contractors. I couldn't find a website or any social presence for the business anywhere.
+
+16,000+ people search for HVAC services in Phoenix every month. The contractors who show up in those searches are the ones with websites — Parker & Sons and other established names dominate that traffic right now.
+
+A website built to rank locally could add around **$2,000/month in new business** as your review base grows.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (602) 445-7752.
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Verify by phone before outreach — only 1 review, no corroborating data found
+
+---
+---
+
+### 15. Yorlano HVAC Repair Phoenix — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (602) 842-6260
+- **Google reviews:** 5.0★, 3 reviews
+- **Years in business:** ⚠️ Not stated on GMB
+- **Website:** ❌ None found
+- **Facebook / Instagram / LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+
+**Pitch Angle:**
+3 reviews and zero digital footprint anywhere — an early-stage but validated operator (real customers, real reviews). This is the sweet spot for first-mover positioning: enough proof of quality to build a credible website around, but no competing content to out-rank.
+
+**Revenue Calculation (web-traffic model — years in business not available):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue**
+
+---
+
+### Outreach — Yorlano HVAC Repair Phoenix
+
+#### Email
+**Subject:** 5.0★ rating, but nothing else online for Yorlano HVAC
+
+Hi Team,
+
+I came across Yorlano HVAC Repair while researching Phoenix HVAC contractors — 5.0 stars. But there's no website or social presence anywhere for the business.
+
+16,000+ people search for HVAC services in Phoenix every month, and right now that traffic goes entirely to competitors with websites.
+
+A website built to rank locally could add around **$2,000/month in new business** as your review base grows.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (602) 842-6260.
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Verify by phone before outreach — low review count, no corroborating data found
+
+---
+---
+
+### 16. Complete Phoenix HVAC Solutions — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (602) 698-3006
+- **Google reviews:** 5.0★, 2 reviews
+- **Years in business:** ⚠️ Not stated on GMB
+- **Website:** ❌ None found (distinct from "Complete Heating and Cooling LLC," ROC #338430, a different registered entity)
+- **Facebook / Instagram / LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+
+**Pitch Angle:**
+Small but validated (2 reviews, 5.0 stars), zero web presence, and a name that already reads as a confident, complete-service brand — "Complete Phoenix HVAC Solutions" just needs a website that matches that positioning.
+
+**Revenue Calculation (web-traffic model — years in business not available):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue**
+
+---
+
+### Outreach — Complete Phoenix HVAC Solutions
+
+#### Email
+**Subject:** "Complete Solutions" needs a complete web presence
+
+Hi Team,
+
+I came across Complete Phoenix HVAC Solutions while researching Phoenix HVAC contractors — 5.0 stars. But there's no website or social presence anywhere for the business.
+
+16,000+ people search for HVAC services in Phoenix every month, and right now that traffic goes entirely to competitors with websites — Parker & Sons and others capture nearly all of it.
+
+A website built to rank locally could add around **$2,000/month in new business** as your review base grows.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (602) 698-3006.
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Verify by phone before outreach — low review count, no corroborating data found
+
+---
+---
+
+### 17. NextGen Air Conditioning Repair — Score: 90/100
+
+**Scoring breakdown:**
+No website (+40) | No Facebook found (+20) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) = **90 pts — HOT 🔥**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States
+- **Phone:** (623) 663-3568
+- **Google reviews:** 5.0★, 3 reviews
+- **Years in business:** ⚠️ Not stated on GMB
+- **Website:** ❌ None found (distinct from the several national/regional "NextGen HVAC" brands in CA/NV/IL — different phone, no connection found)
+- **Facebook / Instagram / LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+
+**Pitch Angle:**
+3 reviews, zero web trace, and a name shared with several larger out-of-state brands this Phoenix-local business will never be confused with once it has its own site. Claiming the local "NextGen HVAC Phoenix" search space now, before a national franchise expands into the market, is the angle.
+
+**Revenue Calculation (web-traffic model — years in business not available):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue**
+
+---
+
+### Outreach — NextGen Air Conditioning Repair
+
+#### Email
+**Subject:** Claim the "NextGen HVAC Phoenix" search space before a franchise does
+
+Hi Team,
+
+I came across NextGen Air Conditioning Repair while researching Phoenix HVAC contractors — 5.0 stars. But there's no website or social presence anywhere for the business, and there are several larger "NextGen HVAC" brands operating in other states that could eventually compete for the same name in search.
+
+16,000+ people search for HVAC services in Phoenix every month. A website built to rank locally — under your name, in your market — could add around **$2,000/month in new business** and lock in the local search space before anyone else claims it.
+
+I build websites for HVAC contractors in Phoenix — flat-rate pricing, live in 14 days, SEO included from day one.
+
+Worth a quick 10-minute call?
+
+Luis
+Lantech | lantech016@gmail.com | +63 977 329 3969
+
+---
+
+#### DM (no Facebook/Instagram found — call or text as fallback)
+No Facebook or Instagram page exists to DM. Use phone/text: (623) 663-3568.
+
+---
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel.
+
+---
+
+### Status
+- [ ] Email sent — [date]
+- [ ] Text/call attempted — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ Verify by phone before outreach — low review count, no corroborating data found
+
+---
+---
+
+### 18. Oney's Heating & Cooling — Score: 80/100
+
+**Scoring breakdown:**
+No website (+40) | Facebook exists, activity unconfirmed (+15) | No Instagram (+15) | No LinkedIn (+5) | GMB incomplete (+5) | Local Presence tier (+5) — minus: no phone number captured, weak contactability = **80 pts — HOT 🔥 (but hardest-to-contact lead in the file)**
+
+- **Owner:** ❌ Not found
+- **Address:** Phoenix, AZ, United States (exact street not listed)
+- **Phone:** ❌ Not captured on GMB card — no other source found either
+- **Google reviews:** 5.0★, 1 review
+- **Years in business:** 15+ (long-established, unusual pairing with only 1 review)
+- **Website:** ❌ None found
+- **Facebook:** ⚠️ facebook.com/p/Oneys-Heating-Air-100064023042497/ — exists, posting activity unconfirmed
+- **Instagram / LinkedIn:** ❌ None found
+- **GMB:** ⚠️ Incomplete, no phone listed
+- **Service Area:** Phoenix, AZ (metro) → **Est. Tier: Local Presence**
+- **Source:** Google Maps (user-pasted), cross-verified via WebSearch
+
+**Note on revenue calc:** 15+ years with only 1 review is a mismatch the standard formula badly undervalues (same issue as Cool Valley in Session 1) — used the web-traffic model instead.
+
+**Pitch Angle:**
+15+ years in business but only 1 Google review and no phone number even listed on the GMB profile — this looks like a long-running, word-of-mouth-only operator who has never invested in any digital presence, similar to Cool Valley from Session 1. The catch: there's no phone number to call. Facebook is the only channel available — outreach has to go through Facebook Page messaging, not email or phone, until a number can be found by another means (e.g. state contractor license lookup).
+
+**Revenue Calculation (web-traffic model — 15 years vs. 1 review is a formula mismatch):**
+16,000 monthly Phoenix HVAC searches × 0.5% capture rate with SEO'd site = 80 visitors/month
+80 visitors × 7% conversion to contact = 5.6 contacts
+5.6 contacts × 47% close rate = 2.6 new jobs/month
+2.6 × $750 avg job = **$1,974/month in new web-sourced revenue** — likely conservative given 15 years of accumulated reputation
+
+---
+
+### Outreach — Oney's Heating & Cooling
+
+#### Email
+No email address found and no website to pull one from. Email is not a viable channel for this lead — use Facebook Page messaging instead.
+
+#### DM (Facebook — facebook.com/p/Oneys-Heating-Air-100064023042497/)
+Hi — I came across Oney's Heating & Cooling while researching Phoenix HVAC contractors. 15+ years in business, but I couldn't find a website anywhere for the business, and I wasn't able to find a phone number to call directly either.
+
+16,000+ people search for HVAC in Phoenix every month, and right now none of them can find Oney's Heating & Cooling online.
+
+Would you be open to a quick message exchange about getting a website up? Happy to also grab a phone number if you'd prefer a call instead.
+
+#### LinkedIn
+No LinkedIn page found. Skip this channel.
+
+---
+
+### Status
+- [ ] DM sent (Facebook) — [date]
+- [ ] Reply received — [date + summary]
+- [ ] Discovery call booked — [date]
+- [ ] Converted to client — [date]
+- [ ] ⚠️ CRITICAL: No phone number found anywhere — Facebook DM is the only outreach channel until one is located (try AZ Registrar of Contractors lookup)
+
+---
+---
+
+## Session Summary — Session 1 (2026-05-17)
 
 | | |
 |---|---|
@@ -450,13 +1488,65 @@ Luis — Lantech
 | Dropped (other reasons) | 1 (Cool N AZ LLC — suspended license) |
 | Outreach written | 4 prospects × 3 channels = 12 messages |
 
-**Priority outreach order:**
+**Priority outreach order (Session 1):**
 1. **Cool Valley (Jose Avila)** — 90/100 — 18 years in business, A+ BBB, zero digital presence, maximum contrast with Parker & Sons
 2. **AZ Cool (Jason Nino)** — 90/100 — 8 years, BBB accredited, no social, no website; growth-oriented owner
 3. **Jannay A/C** — 85/100 — 10 years, C+ BBB (website + reputation would address both gaps)
 4. **Armer Air (Matt Armer)** — 85/100 — highest review velocity (45 in 18 months), broken Google Sites, most likely to convert quickly
 
-**Gold Standard referenced in all outreach:** Parker & Sons — 15,000+ Google reviews, full website, online booking
+---
 
-**Do-Not-Duplicate List:**
+## Session Summary — Session 2 (2026-09-14)
+
+| | |
+|---|---|
+| Session date | 2026-09-14 |
+| Sector | HVAC |
+| Location | Phoenix, AZ |
+| Filter | No website only |
+| Source | User-pasted Google Maps expanded results (~150 entries, ~27 sponsored) |
+| Candidates parsed with no "Website" line | 39 (3 dropped immediately — no reviews + no phone) |
+| Candidates individually verified | 36 — **all of them, full batch, nothing left unchecked** |
+| Confirmed genuine no-website leads | 14 |
+| HOT (70–100 pts) | 14 |
+| WARM (40–69 pts) | 0 |
+| COLD (under 40 pts) | 0 |
+| Disqualified — real website found | 8 |
+| Disqualified — spam/duplicate-listing pattern | 13 |
+| Dropped — no reviews AND no phone (unreachable) | 3 |
+| Dropped — no phone captured, unverifiable | 1 (Precision HVAC Repair Phoenix) |
+| Outreach written | 14 prospects — 12 had Email + phone/text only (no FB/IG/LinkedIn exists to DM), 2 had Email/DM + Facebook (Fair Air, Oney's) |
+
+**Priority outreach order (Session 2, all 14, ranked by revenue opportunity):**
+1. **Phoenix Air Cooling & Heating Pros** — 95/100 — 5.0★/31 reviews, 7 yrs — **$6,228/mo**
+2. **Fair Air Heating & Cooling LLC (Karla Estrada-Paredes)** — 85/100 — owner confirmed, BBB accredited 2020 — **$2,948/mo**
+3. **Phoenix Air Conditioning & Refrigeration** — 90/100 — 4.8★/16 reviews, 7 yrs — **$3,214/mo**
+4. **Air Conditioning Services Arizona** — 90/100 — 10+ yrs, mature operator — **$2,392/mo**
+5. **Big O Air Conditioning** — 90/100 — actively promoting offline (tune-up special) but invisible online — **$1,974/mo**
+6. **Premier HVAC Repair Phoenix** — 90/100 — **$1,974/mo**
+7. **Sarlivo HVAC Repair Phoenix** — 90/100 — **$1,974/mo**
+8. **Xelvico HVAC Repair Phoenix** — 90/100 — **$1,974/mo**
+9. **Yorlano HVAC Repair Phoenix** — 90/100 — **$1,974/mo**
+10. **Complete Phoenix HVAC Solutions** — 90/100 — **$1,974/mo**
+11. **NextGen Air Conditioning Repair** — 90/100 — **$1,974/mo**
+12. **Waddell AC Repair** — 90/100 — being out-marketed by name recognition in a competitive West Valley corridor — **$804/mo**
+13. **TRACK - Smarter Home Air Conditioning Phoenix** — 95/100 — distinctive tech-forward brand, no site to back it up — **$1,125/mo**
+14. **Oney's Heating & Cooling** — 80/100 — 15+ yrs, ⚠️ no phone found, Facebook DM only — **$1,974/mo**
+
+*(#6–11 and #14 are tied on the web-traffic-model estimate since years-in-business wasn't available — treat the ranking among them as a coin flip and prioritize by ease of contact instead: the 6 with a phone number over Oney's, which has none.)*
+
+**Gold Standard referenced in all outreach (both sessions):** Parker & Sons — 15,000+ Google reviews, full website, online booking
+
+**Do-Not-Duplicate List — Session 1:**
 TropiCool · We Fix It HVAC · Patriot Air Conditioning · Everest Air · Hometown HVAC Services · Integrity Air Conditioning · Mountainside Air · Cooling Arizona · Valley Air Conditioning and Heating · Valley's Best Air Conditioning · Desert Hills Heating & Cooling · Air Design AC · Certify HVAC · Sun Tech AC · Mi Amigo HVAC · ABC Air Conditioning · HQ Plumbing and Air · Desert Heroes HVAC · Liberty Cooling & Heating · Arizona A/C & Heating Inc. · Reliance Heating and Air Conditioning · Cool N Arizona LLC (suspended license)
+
+**Do-Not-Duplicate List — Session 2 (all 36 no-website candidates from the paste checked — full batch, nothing left):**
+*Confirmed leads (see above):* Phoenix Air Cooling & Heating Pros · Fair Air Heating & Cooling LLC · Air Conditioning Services Arizona · Phoenix Air Conditioning & Refrigeration · Big O Air Conditioning · TRACK - Smarter Home Air Conditioning Phoenix · Waddell AC Repair · Premier HVAC Repair Phoenix · Sarlivo HVAC Repair Phoenix · Xelvico HVAC Repair Phoenix · Yorlano HVAC Repair Phoenix · Complete Phoenix HVAC Solutions · NextGen Air Conditioning Repair · Oney's Heating & Cooling
+
+*Eliminated — has real website:* Velox Air Inc. (veloxac.com) · Cool Blew Inc./Surprise (coolblew.com) · Aircold Supply (aircold.com) · Sunrise Mechanical Inc (sunrisemechanical.com) · Ace Home Services (=acehomeaz.com) · Phoenix Heating & Air Conditioning Services (phone strongly matches phoenixheatingandairconditioning.com) · Superior Phoenix HVAC Solutions (superiorphoenixhvacsolutions.com) · Wolff Mechanical Heating AC & Slr (=Wolff Mechanical/azairconditioning.com, second GMB listing)
+
+*Eliminated — spam/duplicate-listing pattern, not real prospects:* Heating And Air Conditioning Phoenix (928 area code cluster) · Phoenix AC Services: Heating & Air Conditioning (928 area code cluster) · Phoenix Air Conditioning & Heating [888-451-6919, toll-free] · Phoenix HVAC Contractors LLC (435 Utah area code) · Phoenix HVAC Contractors. (no-phone duplicate of the above) · Phoenix Air Conditioning and Heating (downtown high-rise virtual address) · Phoenix Heating & Air Conditioning [602-844-4547, same virtual-address pattern] · Phoenix City Heating and cooling [928-222-1217] · Commercial HVAC System Sweeping [928-216-3951, same directory as prior spam listing] · Nathan Russell HVAC Specialists [928-449-2457, likely a Northern AZ business, not Phoenix] · AC Repair Specialists [602-731-3234, tied to a lead-gen doorway domain] · Hvac repair Phoenix AZ [877 toll-free, appeared twice under different numbers]
+
+*Dropped before verification — no reviews AND no phone (too weak to contact):* Phoenix HVAC Services · ChillBot HVAC Repair · Heydorn AC & Heating Inc
+
+*Dropped — no phone captured, unverifiable, too weak to pursue:* Precision HVAC Repair Phoenix

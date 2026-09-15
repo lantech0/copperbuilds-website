@@ -1,13 +1,13 @@
 # Site Handover Package
-> Lantech Web Design — delivered to client on launch day
+> CopperBuilds Web Design — delivered to client on launch day
 > Replace all [PLACEHOLDERS] before sending.
 
 ---
 
-**LANTECH — WEBSITE HANDOVER PACKAGE**
+**COPPERBUILDS — WEBSITE HANDOVER PACKAGE**
 
 Prepared for: **[CLIENT_BUSINESS_NAME]**
-Prepared by: **[YOUR_NAME]**, Lantech
+Prepared by: **[YOUR_NAME]**, CopperBuilds
 Handover date: **[LAUNCH_DATE]**
 Project: **[PACKAGE_NAME] Website — [NUMBER] pages**
 
@@ -132,7 +132,7 @@ Your contact form is set up and working.
 
 Your website includes a financing section powered by **[PROVIDER — e.g. Hearth / GreenSky / Wisetack]**.
 
-**How it works:** When a visitor clicks "Apply for Financing," they are sent to your lender's application page directly. Lantech does not manage the financing application — that is handled entirely by **[PROVIDER]**.
+**How it works:** When a visitor clicks "Apply for Financing," they are sent to your lender's application page directly. CopperBuilds does not manage the financing application — that is handled entirely by **[PROVIDER]**.
 
 **What you need to manage yourself:**
 - Log in to your **[PROVIDER]** account at **[PROVIDER_LOGIN_URL]** to view and manage applications
@@ -150,7 +150,7 @@ Your website includes a financing section powered by **[PROVIDER — e.g. Hearth
 
 Your website is built with static HTML/CSS files. To make changes:
 
-**Option A — Hire Lantech** (recommended)
+**Option A — Hire CopperBuilds** (recommended)
 Email luis.copperbuilds@gmail.com with the changes you need. We'll send a flat project quote before any work begins.
 
 **Option B — Edit it yourself**
@@ -174,7 +174,7 @@ Email luis.copperbuilds@gmail.com with the changes you need. We'll send a flat p
 
 **Your 30-day support window:** [LAUNCH_DATE] → [SUPPORT_EXPIRY_DATE]
 
-During this period, Lantech will fix any bugs or errors in the delivered work at no charge. This covers:
+During this period, CopperBuilds will fix any bugs or errors in the delivered work at no charge. This covers:
 - ✅ Layout issues or broken sections
 - ✅ Contact form not working
 - ✅ Links going to the wrong page
@@ -218,12 +218,12 @@ Here's what we recommend doing in your first month to get the most from your new
 **Phone:** +1-800-000-0000
 **Response time:** Within 1 business day
 
-For ongoing SEO, social media, or website updates, visit lantech-website.vercel.app or email us anytime.
+For ongoing SEO, social media, or website updates, visit copperbuilds.com or email us anytime.
 
 ---
 
-*Thank you for choosing Lantech. It was a pleasure building your website.*
-*— The Lantech Team*
+*Thank you for choosing CopperBuilds. It was a pleasure building your website.*
+*— The CopperBuilds Team*
 
 ---
 

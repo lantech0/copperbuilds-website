@@ -137,7 +137,7 @@ This is the correct process for rebuilding any page — CopperBuilds site and al
 
 ## Brand
 - **Name:** CopperBuilds
-- **Archetype:** Friend (primary) · Craftsman (secondary) — warm, on the client's side, built with care
+- **Archetype:** Friend (primary) · Rebel (secondary) — warm, on the client's side, quietly angry at agency overcharging
 - **Style:** Clean editorial · Light mode · Warm tones · Anti-corporate
 - **Colors:**
   - `--bg: #FAFAF7` (warm off-white background)

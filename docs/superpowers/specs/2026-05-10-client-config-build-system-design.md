@@ -43,7 +43,7 @@ Saved as `client.env` inside the client folder. Plain text, label=value format.
 
 ```bash
 # ════════════════════════════════════════════════
-#  LANTECH CLIENT CONFIG
+#  COPPERBUILDS CLIENT CONFIG
 #  [Business Name] — [City, State]
 #  Claude populates this from the questionnaire.
 #  Review and confirm before triggering the build.
@@ -227,7 +227,7 @@ This slots into the existing `workflows/project.md` at Step 5 (Questionnaire Rec
 
 **New Step 6 (Build):**
 1. Claude reviews `client.env` — confirms all fields are populated
-2. Claude reads config and runs `/lantech-build` using the config data
+2. Claude reads config and runs `/copperbuilds-build` using the config data
 3. Output goes to `output/` folder
 4. `build.py` generates final HTML wrapping Claude's output
 
@@ -255,7 +255,7 @@ This slots into the existing `workflows/project.md` at Step 5 (Questionnaire Rec
 
 ## Out of Scope
 
-- Visual design of pages (handled by `/lantech-build` + `/impeccable craft`)
+- Visual design of pages (handled by `/copperbuilds-build` + `/impeccable craft`)
 - Hosting / FTP upload (handled by `workflows/deploy.md`)
 - Monthly SEO content updates (handled by `workflows/maintenance.md`)
 - The local SEO expert agent (separate build, separate spec)

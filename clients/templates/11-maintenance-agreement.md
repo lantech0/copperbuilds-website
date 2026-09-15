@@ -1,4 +1,4 @@
-# Lantech Maintenance & Care Agreement
+# CopperBuilds Maintenance & Care Agreement
 
 **Date:** ___________________________
 **Client business name:** ___________________________
@@ -6,7 +6,7 @@
 **Client email:** ___________________________
 **Website:** ___________________________
 
-**Lantech contact:** Luis Echarri — luis.copperbuilds@gmail.com
+**CopperBuilds contact:** Luis Echarri — luis.copperbuilds@gmail.com
 
 ---
 
@@ -34,7 +34,7 @@
 
 ## What's Included
 
-Each month, Lantech will:
+Each month, CopperBuilds will:
 1. Run all checks included in the selected plan above
 2. Apply fixes within the plan's scope (broken links, content updates, etc.)
 3. Log all work completed in a maintenance log saved to your client folder
@@ -70,7 +70,7 @@ The following are **not** covered by this agreement and will be quoted separatel
 
 ## How to Request Out-of-Scope Work
 
-Email luis.copperbuilds@gmail.com with a description of the work needed. Lantech will reply within 2 business days with a quote. Work begins only after written approval and payment (or invoice agreement).
+Email luis.copperbuilds@gmail.com with a description of the work needed. CopperBuilds will reply within 2 business days with a quote. Work begins only after written approval and payment (or invoice agreement).
 
 ---
 
@@ -79,21 +79,21 @@ Email luis.copperbuilds@gmail.com with a description of the work needed. Lantech
 Either party may cancel this agreement with **30 days written notice** via email.
 
 - Client cancellations take effect at the end of the current billing month — no pro-rating
-- If Lantech cancels: client receives a pro-rated refund for unused days
+- If CopperBuilds cancels: client receives a pro-rated refund for unused days
 - Outstanding balances must be settled before cancellation is processed
-- Lantech will deliver a final file handover package upon cancellation (all site files and access details)
+- CopperBuilds will deliver a final file handover package upon cancellation (all site files and access details)
 
 ---
 
-## What Lantech Needs from You
+## What CopperBuilds Needs from You
 
-To perform maintenance, Lantech requires continued access to:
+To perform maintenance, CopperBuilds requires continued access to:
 - [ ] Hosting/FTP credentials (provided in the original handover package)
-- [ ] Google Analytics 4 (Lantech email: `luis.copperbuilds@gmail.com` — Editor access)
-- [ ] Google Search Console (Lantech email: `luis.copperbuilds@gmail.com` — Full access)
+- [ ] Google Analytics 4 (CopperBuilds email: `luis.copperbuilds@gmail.com` — Editor access)
+- [ ] Google Search Console (CopperBuilds email: `luis.copperbuilds@gmail.com` — Full access)
 - [ ] Google Business Profile (Standard/Pro — if GBP posts are included)
 
-If credentials change, notify Lantech within 3 business days.
+If credentials change, notify CopperBuilds within 3 business days.
 
 ---
 
@@ -105,7 +105,7 @@ By signing below, both parties agree to the terms of this Maintenance & Care Agr
 
 **Client printed name:** ___________________________
 
-**Lantech (Luis Echarri):** ___________________________ &nbsp;&nbsp; **Date:** _______________
+**CopperBuilds (Luis Echarri):** ___________________________ &nbsp;&nbsp; **Date:** _______________
 
 ---
 

@@ -57,9 +57,9 @@ All of the following must be filled in `06-client-brief.md` before building star
 ## SECTION D — Content & Media
 
 - [ ] Photos: &nbsp; [ ] Client sending ✉️ &nbsp; [ ] Stock photos approved &nbsp; [ ] Mix (client sending some)
-- [ ] Copy: &nbsp; [ ] Lantech writing all &nbsp; [ ] Client providing all &nbsp; [ ] Mix (client writing: _________ )
+- [ ] Copy: &nbsp; [ ] CopperBuilds writing all &nbsp; [ ] Client providing all &nbsp; [ ] Mix (client writing: _________ )
 - [ ] Testimonials: &nbsp; [ ] Provided (paste in brief) &nbsp; [ ] Pull from Google Reviews &nbsp; [ ] None
-- [ ] Founder / team bio: &nbsp; [ ] Provided &nbsp; [ ] Lantech writing (info in questionnaire)
+- [ ] Founder / team bio: &nbsp; [ ] Provided &nbsp; [ ] CopperBuilds writing (info in questionnaire)
 - [ ] Brochures / existing content to reference: &nbsp; [ ] Received &nbsp; [ ] None
 
 **Photos expected from client:**

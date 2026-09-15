@@ -1,5 +1,5 @@
 # Client Onboarding Questionnaire
-> Lantech Web Design — sent to client after deal is closed
+> CopperBuilds Web Design — sent to client after deal is closed
 > Takes ~15 minutes to complete. All fields marked * are required.
 > Return completed form to: luis.copperbuilds@gmail.com
 
@@ -274,7 +274,7 @@
 ## SECTION 8 — Your Package
 *Confirms what's included in your project.*
 
-37. *Which Lantech monthly plan did you purchase?
+37. *Which CopperBuilds monthly plan did you purchase?
     - [ ] Local Presence — $997/mo (city pages refreshed monthly · GBP 4 posts/mo · Top 50 citations · call tracking · review automation · monthly report)
     - [ ] Lead Machine — $1,997/mo (1 new city page built/mo · GBP weekly posts · 2 articles/mo · 4 links/mo · 10 competitors tracked · monthly strategy call)
     - [ ] Market Leader — $3,497/mo (2 new city pages built/mo · 4 articles/mo · 5–8 links/mo · Google LSA management · AI search optimization · 20 competitors tracked · dedicated account manager · 1 strategy call/mo)
@@ -340,7 +340,7 @@
 
 ## SECTION 10 — Final Notes
 
-39. After your site launches, would you like Lantech to maintain it monthly?
+39. After your site launches, would you like CopperBuilds to maintain it monthly?
     Monthly maintenance covers: speed checks, broken link fixes, content updates, and a performance report.
     - [ ] Yes — tell me more about the plans after launch
     - [ ] No — I'll handle it myself

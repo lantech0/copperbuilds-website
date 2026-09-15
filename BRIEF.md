@@ -1,4 +1,4 @@
-# Lantech Website — Master Page Brief
+# CopperBuilds Website — Master Page Brief
 
 Paste this entire document into Claude when asking it to build or redesign any page.
 Fill in the [BRACKETED] fields before sending.
@@ -7,7 +7,7 @@ Fill in the [BRACKETED] fields before sending.
 
 ## Who This Is For
 
-**Lantech** is a web design agency founded by Luis Echarri, serving small businesses
+**CopperBuilds** is a web design agency founded by Luis Echarri, serving small businesses
 across the United States. We build fast, affordable websites and local SEO for home
 service contractors and local businesses. Monthly retainer plans: Local Presence $997/mo · Lead Machine $1,997/mo · Market Leader $3,497/mo.
 
@@ -88,7 +88,7 @@ Border:       #E7E0D8  (warm border)
 Every page must have this sticky top navigation:
 
 ```
-[Lantech logo/wordmark — left] ........... [Nav links — center/right] ........... [CTA button]
+[CopperBuilds logo/wordmark — left] ........... [Nav links — center/right] ........... [CTA button]
 
 Nav links (in order):
 - Home        → index.html
@@ -104,10 +104,9 @@ CTA button: "Get a Free Quote" → contact.html (var(--accent) orange background
 
 Mobile: hamburger menu that reveals the links as a vertical stack.
 
-Logo: Use the Lantech wordmark. The real logo files are in `/brand_assets/`:
-- Light backgrounds (page body): `lantech-logo-dark.png`
+Logo: Use the CopperBuilds wordmark. The real logo files are in `/brand_assets/`:
+- Light backgrounds (page body): `logo-dark.svg`
 - Dark backgrounds (dark header/footer): `logo.svg`
-- Icon only: `lantech-icon-800.png`
 
 ---
 
@@ -116,7 +115,7 @@ Logo: Use the Lantech wordmark. The real logo files are in `/brand_assets/`:
 Every page must have this footer:
 
 ```
-[Lantech logo + tagline]    [Pages]           [Services]         [Contact]
+[CopperBuilds logo + tagline]    [Pages]           [Services]         [Contact]
                             Home              Web Design         luis.copperbuilds@gmail.com
                             Services          SEO                +63 977 329 3969
                             Pricing           Google Business    
@@ -378,10 +377,10 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 ### What to ALWAYS include
 - **One H1 per page** — contains the primary keyword
 - **H2s for all major sections** — 60% phrased as questions
-- **Internal links** — every page must link to at least 2 other Lantech pages naturally in the copy
+- **Internal links** — every page must link to at least 2 other CopperBuilds pages naturally in the copy
 - **One clear CTA** — every page ends with a call-to-action section (usually "Get a Free Quote → contact.html")
 - **Real copy** — write actual content for the page. No lorem ipsum. No placeholder text.
-- **Author credit** on blog posts — "By Luis Echarri · Founder of Lantech"
+- **Author credit** on blog posts — "By Luis Echarri · Founder of CopperBuilds"
 
 ### What to NEVER do
 - NEVER invent a phone number. If no phone is provided, leave it out.
@@ -399,7 +398,7 @@ These values must match exactly everywhere they appear:
 
 | Field | Value |
 |---|---|
-| Business name | Lantech (not "LanTech", not "LANTECH") |
+| Business name | CopperBuilds (not "Copper Builds", not "COPPERBUILDS") |
 | Founder | Luis Echarri |
 | Public email | luis.copperbuilds@gmail.com |
 | Internal email | luis.copperbuilds@gmail.com (never show on live pages) |
@@ -449,9 +448,9 @@ All brand assets live in `/brand_assets/`:
 | File | Use |
 |---|---|
 | `logo.svg` | Logo on dark backgrounds |
-| `lantech-logo-dark.png` | Logo on light backgrounds |
-| `lantech-icon-800.png` | Favicon, app icon, small logo |
-| `lantech-fb-banner-820x312.png` | OG/social share image |
+| `logo-dark.svg` | Logo on light backgrounds |
+| `brand-kit/favicon.ico`, `brand-kit/icon-180.png` | Favicon, app icon, small logo |
+| `fb-banner.png` | OG/social share image |
 
 ---
 

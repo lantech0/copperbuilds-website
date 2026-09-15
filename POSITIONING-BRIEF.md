@@ -1,4 +1,4 @@
-# Positioning Brief — Lantech (Home Services Niche)
+# Positioning Brief — CopperBuilds (Home Services Niche)
 
 **Date:** 2026-05-04
 **Status:** DRAFT — pending user review (3 questions remaining)
@@ -8,7 +8,7 @@
 - ✅ **Geographic positioning:** National (USA-wide) — Option A. No SWFL/regional mention. **No country-of-origin claim either way** — the team is offshore (Philippines), so we do not state "US-based" anywhere on the site. We say "serving home services pros across the US." Phone number placeholder will be replaced with a Google Voice US number when set up (free, US-formatted, removes friction with US trades buyers).
 - ✅ **Hero option:** A — Outcome-direct (Friend lead)
 - ✅ **Delivery timeline:** "Live within 7 days" — REPLACES the legacy "48-hour delivery" sitewide. Reasoning: industry standard is 3–8 weeks; 7 days is still 4–8x faster than competitors and operationally keepable. 48-hour was high broken-promise risk.
-- ✅ **SEO play:** long-tail content SEO for Lantech itself; local-pack SEO is what we sell to clients
+- ✅ **SEO play:** long-tail content SEO for CopperBuilds itself; local-pack SEO is what we sell to clients
 - ✅ **Tier 1 trades:** Plumbing, HVAC, Electrical, Drain & Sewer, Water Damage Restoration — confirmed as the lead niches
 - ✅ **Phone number:** Placeholder for now — schema/footer keep `+1-800-000-0000` until a real business line is set up. Documented as TBD.
 
@@ -16,7 +16,7 @@
 
 ## The Repositioning in One Sentence
 
-**Lantech builds websites and ranks Google Business Profiles for home services pros — plumbing, HVAC, electrical, drain & sewer, water damage restoration — across the United States.**
+**CopperBuilds builds websites and ranks Google Business Profiles for home services pros — plumbing, HVAC, electrical, drain & sewer, water damage restoration — across the United States.**
 
 The agency is no longer "for all small businesses." It's for the trades.
 
@@ -46,7 +46,7 @@ Replace generic "for small businesses across the USA" with this:
 > **Who we serve:**
 > Home services pros — the people who keep America's water running, AC cold, and lights on.
 >
-> If you run a plumbing, HVAC, electrical, drain & sewer, or water damage restoration business, we built Lantech for you. We also work with roofers, garage door techs, septic pros, locksmiths, and pest control.
+> If you run a plumbing, HVAC, electrical, drain & sewer, or water damage restoration business, we built CopperBuilds for you. We also work with roofers, garage door techs, septic pros, locksmiths, and pest control.
 >
 > Working with home services pros across the United States.
 
@@ -84,9 +84,9 @@ The current services page lists "Web Design, SEO, GBP, Social Media." That's *wh
 
 ## 4. Target Keywords
 
-Two distinct keyword strategies — one for *Lantech's own SEO* (long-tail content play, slow burn), one for *what Lantech delivers to clients* (local pack, the actual product).
+Two distinct keyword strategies — one for *CopperBuilds's own SEO* (long-tail content play, slow burn), one for *what CopperBuilds delivers to clients* (local pack, the actual product).
 
-### A. Lantech's own SEO — long-tail content (your strategy)
+### A. CopperBuilds's own SEO — long-tail content (your strategy)
 
 Build blog posts and landing pages around these. Don't expect to rank for 12–18 months. Goal: topical authority + organic leads from owners researching their problem.
 
@@ -108,8 +108,8 @@ Build blog posts and landing pages around these. Don't expect to rank for 12–1
 - "cheap website for electricians"
 
 **Brand-defensive (Tier 3 — easy wins):**
-- "Lantech web design"
-- "Lantech reviews"
+- "CopperBuilds web design"
+- "CopperBuilds reviews"
 - "[city] web design agency for trades"
 
 **Reserved for later (head terms — don't chase yet):**
@@ -117,9 +117,9 @@ Build blog posts and landing pages around these. Don't expect to rank for 12–1
 - "plumber web design"
 - "HVAC website company"
 
-### B. Client SEO — local pack (the product Lantech sells)
+### B. Client SEO — local pack (the product CopperBuilds sells)
 
-These are the keywords Lantech RANKS CLIENTS FOR — different battle, fully winnable for a new site with good GMB + reviews + on-page basics:
+These are the keywords CopperBuilds RANKS CLIENTS FOR — different battle, fully winnable for a new site with good GMB + reviews + on-page basics:
 
 - "[trade] near me" (e.g., "plumber near me")
 - "[city] [trade]" (e.g., "Austin plumber")
@@ -127,7 +127,7 @@ These are the keywords Lantech RANKS CLIENTS FOR — different battle, fully win
 - "[specific service] [city]" (e.g., "water heater installation Denver")
 - "24 hour [trade] [city]"
 
-This is what makes Lantech credible as an SEO seller — these terms are competitive but winnable, especially in mid-size metros.
+This is what makes CopperBuilds credible as an SEO seller — these terms are competitive but winnable, especially in mid-size metros.
 
 **Why this matters for the website copy:**
 On services.html and pricing.html, name *real client keywords* in examples ("water heater repair [city]," "HVAC repair [city]"). It signals you understand the buyer's actual SERP, not just SEO theory. Use generic city placeholders or varied US cities — don't lock to SWFL.
@@ -181,15 +181,15 @@ Priority order. Do not start any page until user approves the chosen hero option
 
 | Element | Current | New |
 |---|---|---|
-| `<title>` | "Lantech — Professional Websites for Small Businesses \| Web Design & SEO" | "Lantech — Websites & Local SEO for Plumbers, HVAC, Electricians & Home Services" |
+| `<title>` | "CopperBuilds — Professional Websites for Small Businesses \| Web Design & SEO" | "CopperBuilds — Websites & Local SEO for Plumbers, HVAC, Electricians & Home Services" |
 | **Sitewide note** | "48 hours" mentioned 56× across 14 files | Replace ALL with "live within a week" / "within a week" / "in a week" — sitewide find-and-replace pass when each page is touched |
 | Meta description | Generic small biz | "Websites and local SEO for home services pros — plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $1,200. Live within a week. Serving home services pros across the United States." |
 | Tag pill | "Built for US Small Businesses" | "Built for Home Services Pros" |
 | Hero H1 | "Your website should work as hard as you do" | (chosen option from §1) |
 | Hero subhead | Generic small biz | (chosen option from §1) |
 | Schema `description` | Generic small biz | Trades-focused (mirrors meta) |
-| "Why Lantech" H2 | "Built for small businesses. Not enterprise." | **KEEP** — protected tagline |
-| "Why Lantech" para | Generic | Rewrite to mention agencies overcharging trades specifically |
+| "Why CopperBuilds" H2 | "Built for small businesses. Not enterprise." | **KEEP** — protected tagline |
+| "Why CopperBuilds" para | Generic | Rewrite to mention agencies overcharging trades specifically |
 | Footer tagline para | "Professional websites for small businesses across the USA. Built for small businesses. Not enterprise." | "Websites and local SEO for home services pros across the USA. Built for small businesses. Not enterprise." |
 | Dashboard demo | Already shows "Jake's Plumbing" | **KEEP** — accidentally on-niche |
 | Page structure / layout | Working | **DO NOT TOUCH** |
@@ -198,7 +198,7 @@ Priority order. Do not start any page until user approves the chosen hero option
 
 | Element | Change |
 |---|---|
-| `<title>` | "Web Design, Local SEO & Google Profile for Home Services Pros — Lantech" |
+| `<title>` | "Web Design, Local SEO & Google Profile for Home Services Pros — CopperBuilds" |
 | Meta | Trades-focused |
 | H1 | "Four services. Built for home services pros." (current: "Four services. One focused team.") |
 | Each service card description | Rewrite using §3 framing (outcomes-focused) |
@@ -271,7 +271,7 @@ After you review and approve this brief:
 3. **Optional decision:** add the "48-hour or full refund" guarantee? Strong Rebel signal but commits us
 4. **Then** I run `/luisweb` again with `/impeccable craft` for **index.html** as Priority 1 — that page sets the template for the rest
 5. After index.html passes the QA gate, work down the priority list (services → about → pricing → contact → blog → help)
-6. After all pages pass: separate session for the **first long-tail blog post** to start seeding Lantech's own SEO
+6. After all pages pass: separate session for the **first long-tail blog post** to start seeding CopperBuilds's own SEO
 7. Update schema.org structured data across all pages in the same pass
 
 **Estimated total work to fully reposition the site:** 7 pages × ~1 craft + QA cycle each = roughly 7 work sessions. Index.html alone is the priority — once that's right, the rest is patterning.

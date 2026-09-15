@@ -1,12 +1,12 @@
 # Blog Content Strategy: Keyword Research Process
-**Lantech Web Agency — Content Marketing Documentation**
+**CopperBuilds — Content Marketing Documentation**
 **Date:** April 2026 | **Author:** Luis Echarri
 
 ---
 
 ## The Problem We Solved
 
-Lantech's first three blog posts were written without keyword validation. When we audited them, we found the same issue affecting most agency blogs: the topics were written from an agency's perspective ("here's what I know") rather than from a search demand perspective ("here's what my ideal client is actually Googling").
+CopperBuilds' first three blog posts were written without keyword validation. When we audited them, we found the same issue affecting most agency blogs: the topics were written from an agency's perspective ("here's what I know") rather than from a search demand perspective ("here's what my ideal client is actually Googling").
 
 Post 3 — "5 Easy Ways to Boost Your Small Business Website Conversions" — had a double problem: the keyword "small business website conversion tips" is dominated by HubSpot, Unbounce, and Semrush, AND the searchers for that query are SaaS marketers, not small business owners hiring agencies. Wrong competition, wrong audience.
 
@@ -20,7 +20,7 @@ Before writing any article, we answer four questions:
 
 ### 1. Who is actually searching this?
 
-The target client for Lantech is a small local business owner in the US — a plumber, electrician, HVAC company, landscaper, or restaurant owner who needs a website or local SEO help. They search differently than a marketing manager at a SaaS company.
+The target client for CopperBuilds is a small local business owner in the US — a plumber, electrician, HVAC company, landscaper, or restaurant owner who needs a website or local SEO help. They search differently than a marketing manager at a SaaS company.
 
 **Red flag signals:**
 - Top 5 results are all SaaS brand blogs (HubSpot, Semrush, Unbounce, NerdWallet)
@@ -34,7 +34,7 @@ The target client for Lantech is a small local business owner in the US — a pl
 
 ### 2. Who ranks on page 1? Can we compete?
 
-A new domain (Lantech launched in 2026) cannot outrank HubSpot for broad informational keywords. But we CAN outrank:
+A new domain (CopperBuilds launched in 2026) cannot outrank HubSpot for broad informational keywords. But we CAN outrank:
 - Small agency blogs with thin content
 - Quora threads with scattered answers
 - Generic "tips" articles with no local-business specificity
@@ -66,13 +66,13 @@ Even a technically mismatched topic can be rescued with the right framing. "Smal
 **The reframing test:**
 - Does our version answer a question a local business owner would type?
 - Does our version assume no marketing knowledge?
-- Does our version position Lantech as the expert who solves this?
+- Does our version position CopperBuilds as the expert who solves this?
 
 ---
 
 ## The Audit: Validating Existing Posts
 
-We ran the framework against Lantech's first three posts:
+We ran the framework against CopperBuilds' first three posts:
 
 | Post | Keyword | Volume est. | Who Ranks | Intent Match | Verdict |
 |------|---------|------------|-----------|--------------|---------|
@@ -102,7 +102,7 @@ We ran the framework against Lantech's first three posts:
 | Searcher intent | Commercial/transactional — owner ready to buy |
 | Audience match | ✅ Perfect — small business owner pricing research |
 
-**Why this wins:** The intent is pure purchase research. Someone searching this is close to hiring an agency. Lantech can give a real, transparent answer that builds trust immediately. Generic "it depends" content currently dominates — a direct, honest pricing breakdown will stand out.
+**Why this wins:** The intent is pure purchase research. Someone searching this is close to hiring an agency. CopperBuilds can give a real, transparent answer that builds trust immediately. Generic "it depends" content currently dominates — a direct, honest pricing breakdown will stand out.
 
 ---
 
@@ -138,7 +138,7 @@ We ran the framework against Lantech's first three posts:
 
 ## The Content Standards We Set
 
-These rules apply to every Lantech blog post going forward:
+These rules apply to every CopperBuilds blog post going forward:
 
 1. **Validate before writing.** Run the four-question framework. No exceptions.
 2. **Lead with the reader's problem.** Hook → Problem → Promise in the intro. No "In this article, we will cover..."
@@ -163,4 +163,4 @@ All three posts also received structural cleanup: removed AI-pattern elements (K
 
 ---
 
-*This document represents Lantech's content strategy methodology as of April 2026. It will be updated as new data on ranking performance becomes available.*
+*This document represents CopperBuilds' content strategy methodology as of April 2026. It will be updated as new data on ranking performance becomes available.*

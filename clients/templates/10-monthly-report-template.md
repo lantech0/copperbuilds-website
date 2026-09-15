@@ -2,7 +2,7 @@
 
 **Client:** [Business Name]
 **Reporting Period:** [Month YYYY]
-**Prepared by:** Lantech
+**Prepared by:** CopperBuilds
 **Date Sent:** [YYYY-MM-DD]
 
 ---
@@ -115,4 +115,4 @@
 
 ---
 
-*Questions about anything in this report? Reply to this email or text Luis directly. — Lantech*
+*Questions about anything in this report? Reply to this email or text Luis directly. — CopperBuilds*

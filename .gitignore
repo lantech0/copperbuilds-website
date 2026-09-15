@@ -6,5 +6,6 @@ copperbuilds.env
 dist/
 temporary screenshots/
 __pycache__/
+.venv/
 
 .tmp/

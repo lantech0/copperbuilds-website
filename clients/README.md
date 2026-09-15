@@ -1,4 +1,4 @@
-# Lantech — Client Document System
+# CopperBuilds — Client Document System
 
 ## Read This First
 
@@ -41,7 +41,7 @@ This file maps every template AND every named section inside each file.
 
 ### `01-welcome-email.md`
 Sections: Welcome email body · Project summary table · What we need from you
-Key data: delivery timeline placeholder, package name, Lantech email
+Key data: delivery timeline placeholder, package name, CopperBuilds email
 
 ### `02-onboarding-questionnaire.md`
 Sections: Business info (S1) · Brand (S2) · Services (S3) · Target customers (S4) · Competitors (S5) · Website goals (S6) · Design (S7) · Existing assets (S8) · **Retainer tier descriptions Q37** · Add-ons Q38 · **Delivery timeline — WHAT HAPPENS NEXT**
@@ -56,14 +56,14 @@ HTML invoice, open in browser and print to PDF. Fill all placeholders before sen
 
 ### `05-handover-package.md`
 Sections: Live website credentials (S1) · Domain credentials (S2) · SSL (S3) · File backup (S4) · Google Search Console (S5) · Google Analytics (S6) · Google Business Profile (S7) · Contact form (S8) · Financing widget (S8a) · How to update the site (S9) · 30-day support window (S10) · **First 30 days checklist** (S11) · Contact (S12)
-Key data: Lantech email · phone placeholder (pending Google Voice number)
+Key data: CopperBuilds email · phone placeholder (pending Google Voice number)
 
 ### `06-client-brief-template.md`
 Internal build brief. Filled from questionnaire answers before build starts.
 
 ### `07-discovery-call-script.md`
 Sections: **PRE-CALL CONFIRMATION EMAIL** · **POST-CALL FOLLOW-UP — "THINKING IT OVER"** (send within 1hr) · **POST-CALL FOLLOW-UP — 3-DAY BUMP** · **POST-CALL FOLLOW-UP — 7-DAY CLOSE OR DEAD** · **OBJECTION CHEAT SHEET** (reference during call — don't read aloud) · **OPTIONAL ADD-ONS** quick-reference table + full detail sections for each (LSA, ADA)
-Key data: objection responses · LSA and ADA detail · Lantech email in all email signatures · GHL automation is bundled in Lead Machine and Market Leader — not a separate add-on
+Key data: objection responses · LSA and ADA detail · CopperBuilds email in all email signatures · GHL automation is bundled in Lead Machine and Market Leader — not a separate add-on
 
 ### `08-preview-delivery-email.md`
 Preview delivery email, revision round updates, and approval confirmation.
@@ -76,7 +76,7 @@ Sections: Month's headline · Keyword rankings table · GSC organic search overv
 
 ### `11-maintenance-agreement.md`
 Sections: **Plan selected (Basic $99 / Standard $199 / Pro $299)** · What's included per plan · What's not included · Payment terms · Cancellation terms (30 days written notice) · Access requirements
-Key data: maintenance plan prices · cancellation terms · Lantech email
+Key data: maintenance plan prices · cancellation terms · CopperBuilds email
 
 ### `12-onboarding-checklist.md`
 Sections: **Section A — Contract & Payment** · **Section B — Business info** · **Section C — Brand assets** · **Section D — Photos & content** (with trade-specific lists) · **Section E — Website structure** · **Section F — SEO setup** · **Section G — Communication** · **Section H — Post-launch services** · **GO / NO-GO DECISION**
@@ -84,7 +84,7 @@ Key data: photo requirements by trade · go/no-go gate checklist
 
 ### `13-30-60-90-roadmap.md`
 Sections: Day 1–30 Foundation · Day 31–60 Google Starts Noticing · Day 61–90 Traction Builds · **90-day success benchmarks table** · What we need from you monthly
-Key data: GBP post frequency (4/mo) · citation cadence · tier-specific deliverables by month · benchmark ranges table · Lantech email
+Key data: GBP post frequency (4/mo) · citation cadence · tier-specific deliverables by month · benchmark ranges table · CopperBuilds email
 
 ---
 
@@ -122,8 +122,8 @@ Any time a value below changes, grep all templates for it and update every occur
 
 | Value | Current | Lives in |
 |---|---|---|
-| Lantech email | `luis.copperbuilds@gmail.com` | 01, 05, 07, 09, 10, 11, 12, 13 |
-| Lantech phone | `+63 977 329 3969` (pending Google Voice US number) | 05 (placeholder) |
+| CopperBuilds email | `luis.copperbuilds@gmail.com` | 01, 05, 07, 09, 10, 11, 12, 13 |
+| CopperBuilds phone | `+63 977 329 3969` (pending Google Voice US number) | 05 (placeholder) |
 | Delivery timeline | `14 days` | 02, 03 |
 | Retainer tiers | Local Presence $997 · Lead Machine $1,997 · Market Leader $3,497 | 02 |
 | Maintenance plans | Basic $99 · Standard $199 · Pro $299 | 11, 12 |

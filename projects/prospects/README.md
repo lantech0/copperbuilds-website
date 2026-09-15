@@ -1,4 +1,4 @@
-# Prospects — Lantech Website
+# Prospects — CopperBuilds Website
 
 Each file here is one prospect researched via `/prospect`.
 

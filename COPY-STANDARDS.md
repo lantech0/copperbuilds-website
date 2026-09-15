@@ -1,13 +1,13 @@
 # COPY-STANDARDS.md — Universal Copy Quality Standards
 
-Read this before drafting ANY copy — Lantech website pages AND all client builds.
+Read this before drafting ANY copy — CopperBuilds website pages AND all client builds.
 These are the floor. Client-specific voice and tone comes from that client's `BRAND-VOICE.md`.
 
 ---
 
 ## Three-Layer Copy Framework
 
-Every page and post — Lantech site and client builds — is built in this exact order. Never reverse it.
+Every page and post — CopperBuilds site and client builds — is built in this exact order. Never reverse it.
 
 | Layer | Name | Purpose | When to execute |
 |---|---|---|---|
@@ -47,8 +47,8 @@ Vale runs after every copy draft. These are the errors it flags. Do not let any 
 | Corporate jargon | "synergy", "leverage", "innovative solutions", "cutting-edge", "world-class", "best-in-class", "seamlessly", "holistic", "paradigm", "transformative", "empower" |
 | Hedging language | "might", "could possibly", "in some cases", "it seems" — hedges destroy authority in marketing copy |
 | Needless words | "very", "really", "quite", "rather", "somewhat" — weak intensifiers that add no meaning |
-| Banned phrases | See `styles/Lantech/BannedPhrases.yml` for full list |
-| Terminology | See `styles/Lantech/Substitutions.yml` — "Google My Business" → "Google Business Profile", etc. |
+| Banned phrases | See `styles/CopperBuilds/BannedPhrases.yml` for full list |
+| Terminology | See `styles/CopperBuilds/Substitutions.yml` — "Google My Business" → "Google Business Profile", etc. |
 | Clichés | Proselint flags overused phrases |
 | Corporate speak | Proselint flags formal organizational voice |
 

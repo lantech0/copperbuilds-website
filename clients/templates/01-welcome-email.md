@@ -5,14 +5,14 @@
 ---
 
 **To:** [CLIENT_EMAIL]
-**Subject:** Welcome to Lantech — your project starts now 🚀
+**Subject:** Welcome to CopperBuilds — your project starts now 🚀
 **From:** luis.copperbuilds@gmail.com
 
 ---
 
 Hi [CLIENT_FIRST_NAME],
 
-Welcome to Lantech — we're excited to be working with you.
+Welcome to CopperBuilds — we're excited to be working with you.
 
 Your project is now confirmed and officially in the queue. Here's exactly what happens next:
 
@@ -60,9 +60,9 @@ If you have any questions before we start, just reply to this email.
 Looking forward to building something great for [BUSINESS_NAME].
 
 — [YOUR_NAME]
-Lantech
+CopperBuilds
 luis.copperbuilds@gmail.com
-lantech-website.vercel.app
+copperbuilds.com
 
 ---
-*You're receiving this because you recently purchased a website design package from Lantech.*
+*You're receiving this because you recently purchased a website design package from CopperBuilds.*

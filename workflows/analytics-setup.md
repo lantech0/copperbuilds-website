@@ -34,7 +34,7 @@ Run this workflow once per client, immediately after the live site smoke test pa
 1. Go to [analytics.google.com](https://analytics.google.com) — sign in with `luis.copperbuilds@gmail.com`
 2. Click **Admin** (bottom-left gear icon)
 3. In the Account column: click **Create Account** if this is the first client, or select the existing CopperBuilds account
-   - Account name: `Lantech Agency`
+   - Account name: `CopperBuilds Agency`
 4. In the Property column: click **Create Property**
    - Property name: `[Business Name]`
    - Reporting time zone: match the client's city (e.g., `United States — Eastern Time`)

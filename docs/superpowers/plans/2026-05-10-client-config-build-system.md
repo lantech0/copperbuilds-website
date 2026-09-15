@@ -4,7 +4,7 @@
 
 **Goal:** Build a Python rendering engine that reads `client.env` and generates a complete, FTP-ready HTML website for each client.
 
-**Architecture:** Three-module pipeline — parser reads `client.env` into a dict, renderer does `{{VAR}}` substitution on HTML source files, builder orchestrates file generation (standard pages, city pages, blog wrapping, sitemap). The CLI (`build.py`) is the single entry point. Claude builds `_source/` HTML files with placeholder syntax during the normal `/lantech-build` process; the build script renders them into the final uploadable files.
+**Architecture:** Three-module pipeline — parser reads `client.env` into a dict, renderer does `{{VAR}}` substitution on HTML source files, builder orchestrates file generation (standard pages, city pages, blog wrapping, sitemap). The CLI (`build.py`) is the single entry point. Claude builds `_source/` HTML files with placeholder syntax during the normal `/copperbuilds-build` process; the build script renders them into the final uploadable files.
 
 **Tech Stack:** Python 3.9+ (stdlib only — no external dependencies), pytest for tests.
 
@@ -560,7 +560,7 @@ git commit -m "feat: add build.py CLI entry point"
 
 ```bash
 # ════════════════════════════════════════════════
-#  LANTECH CLIENT CONFIG
+#  COPPERBUILDS CLIENT CONFIG
 #  [Business Name] — [City, State]
 #  Claude populates this from the questionnaire.
 #  Review all fields before running build.py.
@@ -739,7 +739,7 @@ Find the `### Step 6 — Trigger the Build` section and update it:
 
 With `client.env` confirmed and the brief complete:
 
-1. **Run `/lantech-build`** using `client.env` and `06-client-brief.md` as data sources.
+1. **Run `/copperbuilds-build`** using `client.env` and `06-client-brief.md` as data sources.
    - Build all HTML pages using `{{PLACEHOLDER}}` syntax for every variable value
      (phone numbers, SEO fields, nav links, external links, colors, form key).
    - Save all source files to `clients/active/[slug]/_source/`.

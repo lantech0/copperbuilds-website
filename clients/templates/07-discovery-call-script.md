@@ -1,5 +1,5 @@
 # Discovery Call Script & Follow-Up Templates
-> Lantech — used before and during discovery calls with prospects
+> CopperBuilds — used before and during discovery calls with prospects
 > See `workflows/discovery-call.md` for the full call structure.
 
 ---
@@ -19,7 +19,7 @@ I'll call you at [PHONE NUMBER]. If anything changes, just reply here.
 
 Talk soon,
 [YOUR NAME]
-Lantech | luis.copperbuilds@gmail.com
+CopperBuilds | luis.copperbuilds@gmail.com
 
 ---
 
@@ -51,7 +51,7 @@ If you have questions before deciding, reply here and I'll answer them straight.
 If you're ready to move forward, just reply "yes" and I'll send the agreement and invoice the same day.
 
 [YOUR NAME]
-Lantech | luis.copperbuilds@gmail.com | lantech-website.vercel.app
+CopperBuilds | luis.copperbuilds@gmail.com | copperbuilds.com
 
 ---
 
@@ -62,12 +62,12 @@ Lantech | luis.copperbuilds@gmail.com | lantech-website.vercel.app
 
 Hi [NAME],
 
-Checking in on the Lantech proposal I sent a few days ago. Still happy to answer any questions.
+Checking in on the CopperBuilds proposal I sent a few days ago. Still happy to answer any questions.
 
 One thing worth knowing: we build sites in the order they're booked. If timing matters to you, just let me know.
 
 [YOUR NAME]
-Lantech | luis.copperbuilds@gmail.com
+CopperBuilds | luis.copperbuilds@gmail.com
 
 ---
 
@@ -87,7 +87,7 @@ If something about the proposal didn't work, I'd genuinely like to know — it h
 Either way, good luck with [BUSINESS NAME].
 
 [YOUR NAME]
-Lantech | luis.copperbuilds@gmail.com
+CopperBuilds | luis.copperbuilds@gmail.com
 
 ---
 
@@ -131,5 +131,5 @@ Lantech | luis.copperbuilds@gmail.com
 
 **What it is:** Websites must be usable by people with disabilities under the Americans with Disabilities Act. The technical standard is WCAG 2.1 AA. Covers: screen reader compatibility, keyboard navigation, color contrast, form labels, heading structure.
 **Risk:** Small businesses in the US have received ADA demand letters. Most settle for $5,000–$25,000. A compliant site eliminates this risk.
-**What Lantech does:** A baseline accessibility pass is included in every new build (8 checks — part of `client-build-standards.md`). For existing sites not built by Lantech: offer a one-time WCAG audit — quote per site.
+**What CopperBuilds does:** A baseline accessibility pass is included in every new build (8 checks — part of `client-build-standards.md`). For existing sites not built by CopperBuilds: offer a one-time WCAG audit — quote per site.
 **When to offer:** If client asks about legal risk, if they serve elderly customers (higher accessibility awareness), or if they have an existing site they want audited.

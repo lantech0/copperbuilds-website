@@ -10,7 +10,7 @@ Prepared 2026-07-18. Follow `workflows/gmb-setup.md` — this file holds the rea
 - [ ] Phase 5 — No GBP post published, no supporting profiles claimed
 
 ## Account
-`lantech016@gmail.com` — same account as GSC/GA4, required for instant verification to appear.
+`luis.copperbuilds@gmail.com` — same account as GSC/GA4, required for instant verification to appear.
 
 ## Phase 2 — Create listing
 1. Go to `business.google.com`, search "CopperBuilds" first — if a ghost listing appears, claim it; otherwise create new

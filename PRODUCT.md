@@ -12,7 +12,7 @@ The team is PH-based, serving clients fully remotely. Clients are US-only. Copy 
 
 ## Product Purpose
 
-Lantech is a web design agency that gives US small businesses a professional online presence at honest, transparent pricing — without the corporate agency overhead and without the AI-template factory aesthetic. It exists as the alternative to two bad options: overpriced full-service agencies and cheap DIY builders that look unprofessional.
+CopperBuilds is a web design agency that gives US small businesses a professional online presence at honest, transparent pricing — without the corporate agency overhead and without the AI-template factory aesthetic. It exists as the alternative to two bad options: overpriced full-service agencies and cheap DIY builders that look unprofessional.
 
 Success on any page = visitor books a discovery call or submits the contact form. Every design decision should reduce friction toward that action.
 
