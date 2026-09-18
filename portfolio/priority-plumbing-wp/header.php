@@ -34,6 +34,7 @@
       <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"<?php echo is_front_page() ? ' aria-current="page"' : ''; ?>>Home</a></li>
       <li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"<?php echo is_page( 'services' ) ? ' aria-current="page"' : ''; ?>>Services</a></li>
       <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"<?php echo is_page( 'about' ) ? ' aria-current="page"' : ''; ?>>About</a></li>
+      <li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"<?php echo is_page( 'blog' ) ? ' aria-current="page"' : ''; ?>>Blog</a></li>
       <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"<?php echo is_page( 'contact' ) ? ' aria-current="page"' : ''; ?>>Contact</a></li>
     </ul>
     <a href="tel:8135550194" class="nav-phone" aria-label="Call Priority Plumbing">

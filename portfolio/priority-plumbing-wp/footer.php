@@ -38,6 +38,7 @@
       <h4>Company</h4>
       <ul>
         <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About Us</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
         <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Free Estimate</a></li>
         <li><a href="tel:8135550194">(813) 555-0194</a></li>
         <li><a href="mailto:info@priorityplumbingtampa.com">Email Us</a></li>

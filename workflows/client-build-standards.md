@@ -99,6 +99,8 @@ The phone number must appear in the nav bar itself, right-aligned, as a click-to
 
 **No-JS fallback (mandatory if nav/footer are JS-injected):** if the shared nav/footer are rendered via `js/nav.js` / `js/footer.js` (the standard CopperBuilds component pattern), every page must also include a real, server-rendered `<noscript>` nav block with static `<a href>` links to every core page (Home, Services, Portfolio, Pricing, About, Blog, Contact). This is not optional — a JS-only nav means Googlebot's first crawl pass sees zero internal links in the raw HTML, and any page not reachable another way becomes an orphan that Google may never discover. This was the confirmed root cause of copperbuilds.com's own `/services` and `/blog` pages going unindexed for 6+ weeks (found in the 2026-07-09 audit, fixed 2026-07-20) — do not repeat it on a client site.
 
+**Nav/footer mirroring (mandatory):** every top-level nav item (Blog included, whenever the client has one) must also appear as a link in the footer, and vice versa for anything the client wants discoverable. Adding a page to the nav without adding it to the footer — or adding it to one shared component but not the other — creates an inconsistent site and, worse, means the `<noscript>` fallback above can drift out of sync too. Update all three (nav, footer, `<noscript>` block) together, in the same pass, whenever a nav item changes.
+
 ---
 
 ### Step 5 — Build Lead Forms to Spec

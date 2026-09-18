@@ -14,13 +14,14 @@ This theme is built the "real WordPress" way: the templates (`front-page.php`, `
 
 ## 2. Create the pages
 
-Go to Pages → Add New and create exactly these 4 pages (slug must match — WordPress sets it from the title automatically, lowercased with dashes):
+Go to Pages → Add New and create exactly these 5 pages (slug must match — WordPress sets it from the title automatically, lowercased with dashes):
 
 | Page title | Slug (auto from title) |
 |---|---|
 | Home | `home` (slug doesn't matter for this one — see step 4) |
 | About | `about` |
 | Services | `services` |
+| Blog | `blog` (leave the content empty — see step 4, this becomes the Posts page, not a normal page you paste content into) |
 | Contact | `contact` |
 
 ## 3. Paste in each page's content
@@ -40,8 +41,9 @@ Click the three-dot menu again → **Visual editor** to switch back, then **Upda
 
 ## 4. Set the homepage and permalinks
 
-- Settings → Reading → "Your homepage displays" → Static Page → set Homepage to the "Home" page you created.
-- Settings → Permalinks → select **"Post name"** → Save. Required — the theme's nav/footer links point to `/about/`, `/services/`, `/contact/`, which 404 on the default "Plain" setting.
+- Settings → Reading → "Your homepage displays" → Static Page → set Homepage to the "Home" page you created, and **Posts page to the "Blog" page you created**. This is what makes `/blog/` show the post archive instead of 404ing — the nav/footer "Blog" link depends on this being set, not just the page existing.
+- Settings → Permalinks → select **"Post name"** → Save. Required — the theme's nav/footer links point to `/about/`, `/services/`, `/blog/`, `/contact/`, which 404 on the default "Plain" setting.
+- Blog will show "No posts found" until an actual post is published — that's expected on a fresh install, not a bug.
 
 ## 5. Install an SEO plugin (RankMath or Yoast)
 
@@ -63,7 +65,7 @@ The theme does not output its own title tag, meta description, canonical URL, Op
 ## 6. Verify
 
 - Visit the homepage — hero, social proof bar, response strip, services grid, financing band, process steps, why-us, service areas, reviews, FAQ accordion, guarantee band, and footer should all render, and the browser tab should show the real SEO title (not "My Blog" — if it still does, the SEO plugin isn't configured for that page yet).
-- Click through Home → Services → About → Contact in the nav — confirm no 404s.
+- Click through Home → Services → About → Blog → Contact in the nav — confirm no 404s (Blog is allowed to show "No posts found").
 - Click a service card on the homepage (e.g. "Emergency Plumbing") — should land on `/services/#emergency` and jump to that section.
 - Click the FAQ accordion questions on the homepage — each should expand/collapse independently, only one open at a time.
 - Check mobile width (375px) — sticky Call/Get Estimate bar should appear at the bottom on every page.
