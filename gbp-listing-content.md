@@ -27,7 +27,7 @@ Instant verification should appear since the Domain property is verified under t
 > CopperBuilds builds lead-generating websites for home service contractors across the US — HVAC, plumbing, roofing, and electrical. Fast builds, local SEO included, no enterprise bloat.
 
 **Services (300 char max each):**
-- **Website Design** — Hand-coded, mobile-first websites for home service contractors. Live in 14 days, built to rank on Google from day one. No templates, no bloated page builders — flat-rate pricing starting at $1,200.
+- **Website Design** — Hand-coded, mobile-first websites for home service contractors. Live in 14 days, built to rank on Google from day one. No templates, no bloated page builders — flat-rate pricing starting at $1,499.
 - **Local SEO** — Google Business Profile optimization, local keyword targeting, and on-page SEO built into every site so contractors show up when their service area searches for help.
 - **Google Business Profile Setup** — Full GBP creation and optimization for contractors with no existing listing, or ghost listings that need claiming — categories, photos, services, posts, and review systems set up right.
 - **Website Maintenance** — Ongoing monthly upkeep — speed checks, broken link fixes, content updates, and security monitoring so the site keeps performing after launch.

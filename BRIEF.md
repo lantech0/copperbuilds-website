@@ -192,7 +192,7 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
     "description": "Web design, SEO, and Google Business Profile optimization for home service contractors and local businesses across the United States.",
     "email": "luis.copperbuilds@gmail.com",
     "telephone": "+639773293969",
-    "priceRange": "$1,200 - $1,999",
+    "priceRange": "$1,499+",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
@@ -231,18 +231,18 @@ Add the matching schema block before `</head>`. Pick the one that matches your p
 ```
 
 ### Pricing page
+Build packages (Starter $1,499 flat / Custom quote-only) are not schema-itemized — Custom has no fixed rate to publish. The live `ItemList` on `pricing.html` covers only the monthly retainer plans:
 ```html
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "CopperBuilds Pricing Plans",
+  "name": "CopperBuilds Monthly Retainer Plans",
   "url": "https://copperbuilds.com/pricing",
   "itemListElement": [
-    {"@type":"ListItem","position":1,"item":{"@type":"Offer","name":"Launch Package","price":"499","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Offer","name":"Starter Package","price":"1200","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
-    {"@type":"ListItem","position":3,"item":{"@type":"Offer","name":"Growth Package","price":"1699","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
-    {"@type":"ListItem","position":4,"item":{"@type":"Offer","name":"Pro Package","price":"1999","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}}
+    {"@type":"ListItem","position":1,"item":{"@type":"Offer","name":"Local Presence Plan","price":"997","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Offer","name":"Lead Machine Plan","price":"1997","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Offer","name":"Market Leader Plan","price":"3497","priceCurrency":"USD","seller":{"@type":"Organization","name":"CopperBuilds"}}}
   ]
 }
 </script>
@@ -403,9 +403,8 @@ These values must match exactly everywhere they appear:
 | Public email | luis.copperbuilds@gmail.com |
 | Internal email | luis.copperbuilds@gmail.com (never show on live pages) |
 | Phone | +63 977 329 3969 |
-| Starter price | $1,200 |
-| Growth price | $1,699 |
-| Pro price | $1,999 |
+| Starter price | $1,499 flat |
+| Custom price | Quote-only, no published rate card |
 | Delivery time | Live within a week (not "48 hours" — that claim was removed) |
 | Business hours | Mon–Fri, 9am–6pm |
 | Website URL | https://copperbuilds.com |

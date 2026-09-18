@@ -26,14 +26,14 @@ The agency is no longer "for all small businesses." It's for the trades.
 
 > **H1:** Websites that make the phone ring for home services pros.
 >
-> **Subhead:** We build the site, rank your Google Business Profile, and put you in front of the people searching "[trade] near me." Plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $1,200. Live within a week.
+> **Subhead:** We build the site, rank your Google Business Profile, and put you in front of the people searching "[trade] near me." Plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $1,499. Live within a week.
 >
 > **Tag pill:** Built for Home Services Pros
 
 **Why this version:**
 - "Outcome-direct (Friend lead)" — clearest value proposition, lowest friction
 - "Live within a week" replaces the legacy "delivered in 48 hours" — honest, keepable, still 4–8x faster than the 3–8 week industry standard
-- Hero copy carries: niche specificity (5 trades named), search intent ("[trade] near me"), price transparency ($1,200), and timeline (7 days)
+- Hero copy carries: niche specificity (5 trades named), search intent ("[trade] near me"), price transparency ($1,499), and timeline (7 days)
 
 **Options B and C archived** — pain-point and Rebel hero variants discussed and ruled out. If we ever A/B test, B is the runner-up.
 
@@ -183,7 +183,7 @@ Priority order. Do not start any page until user approves the chosen hero option
 |---|---|---|
 | `<title>` | "CopperBuilds — Professional Websites for Small Businesses \| Web Design & SEO" | "CopperBuilds — Websites & Local SEO for Plumbers, HVAC, Electricians & Home Services" |
 | **Sitewide note** | "48 hours" mentioned 56× across 14 files | Replace ALL with "live within a week" / "within a week" / "in a week" — sitewide find-and-replace pass when each page is touched |
-| Meta description | Generic small biz | "Websites and local SEO for home services pros — plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $1,200. Live within a week. Serving home services pros across the United States." |
+| Meta description | Generic small biz | "Websites and local SEO for home services pros — plumbing, HVAC, electrical, drain & sewer, water restoration. Starts at $1,499. Live within a week. Serving home services pros across the United States." |
 | Tag pill | "Built for US Small Businesses" | "Built for Home Services Pros" |
 | Hero H1 | "Your website should work as hard as you do" | (chosen option from §1) |
 | Hero subhead | Generic small biz | (chosen option from §1) |
@@ -217,7 +217,7 @@ Priority order. Do not start any page until user approves the chosen hero option
 
 | Element | Change |
 |---|---|
-| Package tier prices | **KEEP** ($1,200 Starter / $1,699 Growth / $1,999 Pro) |
+| Package tier prices | Superseded 2026-09-18 — single $1,499 Starter + quote-only Custom, see `pricing.html` |
 | Package descriptions | Reframe deliverables for trades — mention click-to-call, GBP claim/optimize, photo galleries, service-area pages |
 | FAQ | Add: "Can you build service-area pages for the cities I work in?" "Do you handle emergency / 24-hour service messaging?" |
 | Schema offers | Update descriptions to mention home services |
@@ -251,7 +251,7 @@ These are working — leave them alone:
 
 - ✅ Visual brand: tokens (`#FAFAF7`, `#E8600A`), Calistoga, DM Sans, JetBrains Mono
 - ✅ Tagline "Built for small businesses. Not enterprise." — appears on every page
-- ✅ Pricing tier structure: Starter $1,200 / Growth $1,699 / Pro $1,999
+- ⚠️ Pricing tier structure superseded 2026-09-18 — single $1,499 Starter + quote-only Custom, see `pricing.html`
 - ✅ SEO retainer pricing: $299, $699 etc.
 - ✅ Page architecture, navigation, footer structure
 - ✅ Schema.org skeleton (only descriptions update, structure stays)

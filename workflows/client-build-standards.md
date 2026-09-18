@@ -4,7 +4,7 @@
 
 Define the non-negotiable UX, performance, and design standards that every CopperBuilds client website must meet before it can be marked launch-ready. These standards are drawn from research into top home services agencies (Hook Agency, Scorpion, KickCharge, Rival Digital, Built-Right Digital, BlackStorm) and enforced as hard quality gates in the build process.
 
-**Scope: one-time website build only (Step 1 — Starter / Growth / Pro).** The monthly retainer (Step 2 — Local Presence / Lead Machine / Market Leader) is a separate product that manages the site after launch. Do not mix build deliverables with retainer deliverables. If something is an ongoing monthly task, it belongs in `workflows/monthly-report.md` or `workflows/maintenance.md`, not here.
+**Scope: one-time website build only (Step 1 — Starter / Custom).** The monthly retainer (Step 2 — Local Presence / Lead Machine / Market Leader) is a separate product that manages the site after launch. Do not mix build deliverables with retainer deliverables. If something is an ongoing monthly task, it belongs in `workflows/monthly-report.md` or `workflows/maintenance.md`, not here.
 
 ---
 
@@ -191,15 +191,9 @@ Mobile is the primary device for home services searches (60–75% of traffic). M
 
 ---
 
-### Step 9 — Build Service-Area Pages (Growth and Pro builds)
+### Step 9 — Build Service-Area Pages (Starter builds)
 
-Service-area pages are built as part of the one-time website build, not the monthly retainer. The number of city pages included depends on the build tier:
-
-| Build tier | City pages included |
-|---|---|
-| Starter ($1,200) | None — just the core service page |
-| Growth ($1,699) | 3 city pages — one per top city the client serves |
-| Pro ($1,999) | Full city coverage — one dedicated page per city served |
+Service-area pages are built as part of the one-time website build, not the monthly retainer. Starter ($1,499 flat) includes up to 5 city pages — one per top city the client serves. Coverage beyond 5 cities is Custom scope, quoted case-by-case.
 
 The monthly retainer then **maintains** these pages (keeps them current, adds keywords, refreshes content). The retainer does not build new city pages from scratch — that is a build-tier deliverable.
 

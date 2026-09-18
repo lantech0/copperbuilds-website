@@ -48,7 +48,7 @@ Format:
 ```markdown
 ## [Business Name] — [Industry] | [City, State]
 
-**Package:** [Starter / Growth / Pro]
+**Package:** [Starter / Custom]
 **Pages built:** [N]
 **Delivered in:** [Timeline]
 

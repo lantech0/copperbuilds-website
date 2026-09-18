@@ -5,7 +5,7 @@
 > Source of answers: `02-onboarding-questionnaire.md` (completed by client)
 
 **Client:** ___________________________
-**Package:** [ ] Launch &nbsp; [ ] Starter &nbsp; [ ] Growth &nbsp; [ ] Pro
+**Package:** [ ] Starter &nbsp; [ ] Custom
 **Date checklist completed:** ___________________________
 
 ---
@@ -105,7 +105,7 @@ Send the client this message when requesting photos:
 - [ ] Panel work (before/after)
 - [ ] Completed lighting or outlet installation
 
-**GBP photos (Growth / Pro packages only):**
+**GBP photos (included in every build):**
 - [ ] Exterior — from the street showing building/signage (home-based = branded vehicle from street; required by Google)
 - [ ] Interior — office or shop interior (optional for home services)
 - [ ] Cover photo — landscape orientation, min 1080×608px (main GBP banner)
@@ -140,8 +140,9 @@ Send the client this message when requesting photos:
 | Services | ✅ all packages |
 | About | ✅ all packages |
 | Contact | ✅ all packages |
-| [Page 5] | ✅ Growth + Pro |
-| [Page 6+] | Pro only |
+| Service pages 2–5 | ✅ Starter |
+| City pages 1–5 | ✅ Starter |
+| Beyond Starter's caps | Custom scope |
 
 - [ ] Any special functionality needed? (booking widget, PDF download, map embed): ___________________________
 - [ ] Domain: &nbsp; [ ] Client owns it (domain: _________ ) &nbsp; [ ] Needs one — advise client
@@ -155,8 +156,8 @@ Send the client this message when requesting photos:
 
 - [ ] Target keywords noted in `06-client-brief.md` (from Q24 — client's own words)
 - [ ] Keyword research complete — `_keyword-map.md` created with primary keyword per page
-- [ ] GBP optimization: &nbsp; [ ] Included (Growth/Pro) &nbsp; [ ] Not included (Starter)
-- [ ] **Google Alerts setup** (Growth/Pro only — set up at onboarding, runs passively throughout retainer):
+- [ ] GBP optimization: &nbsp; [ ] Included (every build)
+- [ ] **Google Alerts setup** (every build — set up at onboarding, runs passively throughout retainer):
   - Go to `google.com/alerts` and create two alerts for the client:
     1. `"[exact business name]"` — catches any new web mention of the business
     2. `"[trade] [city] recommendation"` — catches community discussions in the client's market (e.g., `"plumber Cape Coral recommendation"`)

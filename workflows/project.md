@@ -42,7 +42,7 @@ Every client gets a dedicated Google Drive folder from day one. This is the sing
 
 2. Inside that parent folder, create a new subfolder:
    - Name format: `[Business Name] — [Package] — [YYYY-MM]`
-   - Example: `Joe's Plumbing — Growth — 2026-05`
+   - Example: `Joe's Plumbing — Starter — 2026-05`
    - Use `mcp__claude_ai_Google_Drive__create_file` with `mimeType: application/vnd.google-apps.folder`
 
 3. Save the folder details to the client's local folder as `DRIVE-FOLDER.md`:
@@ -67,12 +67,12 @@ Using the information from the prospect file (`projects/prospects/[file].md`), p
 - Phone number
 - Website URL (if any)
 - Google Business Profile URL (if any)
-- Recommended package (Launch / Starter / Growth / Pro)
+- Recommended package (Starter / Custom)
 - Package price
 - Identified digital gaps
 
 **Determine and set:**
-- Expected delivery date: today + [7 business days for Launch / 7 business days for Starter / 10 business days for Growth / 14 business days for Pro]
+- Expected delivery date: today + [14 days for Starter / scoped on the discovery call for Custom]
 - Support expiry date: launch date + 30 days
 - Project lead: Luis Echarri
 

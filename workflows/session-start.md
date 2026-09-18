@@ -68,7 +68,7 @@ ACTIVE CLIENT BUILDS ([N] total)
 
   [Client name]
     Stage:   [Brief / Build / Revisions / Approved / Deploying]
-    Package: [Launch / Starter / Growth / Pro]
+    Package: [Starter / Custom]
     Action:  [e.g. "Run workflows/revisions.md — preview ready to send"]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

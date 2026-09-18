@@ -144,7 +144,7 @@
     3. ___________________________
     4. ___________________________
     5. ___________________________
-    (add more if Growth or Pro package)
+    (add more if Custom scope)
 
 20. Do you offer financing to your customers?
     - [ ] Yes — I offer financing through: ___________________________
@@ -209,7 +209,7 @@
      Google email: ___________________________
 
 28. Do you want us to set up or optimize your Google Business Profile?
-    - [ ] Yes (included in Growth and Pro packages)
+    - [ ] Yes (included in every build)
     - [ ] No thanks
 
 ---

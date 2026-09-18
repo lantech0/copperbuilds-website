@@ -19,7 +19,7 @@ Run at the start of each calendar month for every active maintenance retainer cl
 
 ## Maintenance Plan
 
-This workflow covers the **Care plan — $120/mo**. The Care plan applies to clients who have completed a one-time website build (Starter / Growth / Pro) and want ongoing hosting and maintenance without an SEO retainer.
+This workflow covers the **Care plan — $120/mo**. The Care plan applies to clients who have completed a one-time website build (Starter / Custom) and want ongoing hosting and maintenance without an SEO retainer.
 
 Clients on a monthly SEO retainer (Local Presence / Lead Machine / Market Leader) do NOT run this workflow — their monthly work is handled by `workflows/monthly-report.md`, which already includes a speed check and link check as part of standard reporting.
 

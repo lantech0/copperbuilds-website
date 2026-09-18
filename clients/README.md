@@ -127,4 +127,4 @@ Any time a value below changes, grep all templates for it and update every occur
 | Delivery timeline | `14 days` | 02, 03 |
 | Retainer tiers | Local Presence $997 · Lead Machine $1,997 · Market Leader $3,497 | 02 |
 | Maintenance plans | Basic $99 · Standard $199 · Pro $299 | 11, 12 |
-| One-time build plans | Starter $1,200 · Growth $1,699 · Pro $1,999 | 02 (Section 8) |
+| One-time build plans | Starter $1,499 flat · Custom (quote-only) | 02 (Section 8) |
