@@ -296,6 +296,7 @@ Before marking any page done, run every item in this checklist:
 - [ ] Above-fold contains: headline + contact method + trust signal
 - [ ] Trust strip present below hero
 - [ ] Nav has max 5 items + phone number
+- [ ] Footer credit link matches `AGENCY_CREDIT` in `client.env` — present (small, unobtrusive) if `yes`, absent if `no`
 
 **SEO:**
 - [ ] Unique `<title>` tag per page — 60 chars max; count before finalising, never eyeball it
@@ -368,6 +369,17 @@ Before marking any page done, run every item in this checklist:
 
 ---
 
+### Step 12 — Add the CopperBuilds Footer Credit (Opt-Out)
+
+Every client site includes a small "Site by CopperBuilds" text link in the footer by default — portfolio proof plus a live backlink to copperbuilds.com every time the client site is viewed or linked elsewhere.
+
+- Check `AGENCY_CREDIT` in the client's `client.env` before writing the footer:
+  - `AGENCY_CREDIT=yes` (default) — include the credit line (e.g. `<a href="https://copperbuilds.com">Site by CopperBuilds</a>`) in the footer's bottom row, styled small and unobtrusive — never as a CTA, never larger or bolder than the surrounding copyright text.
+  - `AGENCY_CREDIT=no` — omit it entirely for this client.
+- If a client asks for it removed after launch, flip `AGENCY_CREDIT` to `no` in their `client.env` and remove the link from the live footer.
+
+---
+
 ## Required Outputs
 
 Before closing any build, confirm every item below exists:
@@ -388,6 +400,7 @@ Before closing any build, confirm every item below exists:
 - [ ] Accessibility baseline passes (all 8 WCAG checks in Step 11)
 - [ ] Security headers (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) live on production, verified with curl — not just present in `_headers`
 - [ ] No orphan pages — confirmed via `curl` that every sitemap URL has at least one static internal link pointing to it
+- [ ] Footer credit link present/absent per `AGENCY_CREDIT` in `client.env`
 - [ ] Handover notes document any placeholders or deferred items
 
 ---
