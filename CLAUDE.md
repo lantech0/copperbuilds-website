@@ -77,7 +77,9 @@ Read the relevant workflow before starting any process — it defines every requ
 
 ## Page Rebuild Process — FOLLOW THIS EXACTLY
 
-This is the correct process for rebuilding any page — CopperBuilds site and all client builds. Do NOT skip to coding directly.
+**This process is for the hardcoded (static HTML/CSS/JS) build path.** For a client on the WordPress-ready-built path, use `/copperbuilds-build-wp` instead — its process (Gutenberg block content, no hardcoded SEO, RankMath/Yoast handoff) is different enough that this section doesn't apply directly, though the same brand/copy/schema standards still govern the content itself. `/luisweb` decides which path a build uses before routing — see its Build Type Decision section.
+
+This is the correct process for rebuilding any page — CopperBuilds site and all client builds on the hardcoded path. Do NOT skip to coding directly.
 
 **Three-Layer Copy Framework:** Every page is built in this order — SEO Seed first, Marketing Copy second, Grammar & Structure third. Never reverse the order. Full framework documented in `COPY-STANDARDS.md`.
 
@@ -384,7 +386,8 @@ After every monthly SEO retainer session, run `/save` to file key findings. Know
 - `ai-graphic-design` — use for logo, brand identity, visual asset generation (5-phase briefing workflow)
 - `ui-ux-pro-max` — use for design system queries, color/typography recommendations, UX review
 - `market-brand` — brand voice analysis and guidelines (see `BRAND-VOICE.md` for CopperBuilds' output)
-- `/copperbuilds-build [client-slug]` — full client website build/update; chains to `/seo-page`, `/seo-technical`, `/seo-local` as part of its own process
+- `/copperbuilds-build [client-slug]` — full client website build/update, **hardcoded static HTML/CSS/JS path**; chains to `/seo-page`, `/seo-technical`, `/seo-local` as part of its own process
+- `/copperbuilds-build-wp [client-slug]` — full client website build/update, **WordPress-ready-built path**; real Gutenberg block content editable in wp-admin, SEO left to RankMath/Yoast (no hardcoded title/meta/schema). `/luisweb` decides which of these two to invoke via its Build Type Decision — never guess which one an existing site uses
 - `/copperbuilds-seo [client-slug]` — **pre-build SEO** for client builds: reads client.env, validates real keyword volumes via DataForSEO, generates titles/meta/schema/action plan. Run BEFORE `/copperbuilds-build`.
 - `/impeccable craft` — page-level design/copy shaping used inside the Page Rebuild Process (Layer 2) and for standalone CopperBuilds site page work
 - `/copperbuilds-qa` — standalone QA check on any page after edits or a rebrand (structural + visual checks, not copy quality)
