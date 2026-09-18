@@ -51,6 +51,7 @@
   <div class="footer-bottom">
     <span>© <?php echo esc_html( date( 'Y' ) ); ?> Elite Air Services Tampa. All rights reserved.</span>
     <span>Licensed HVAC Contractor · Hillsborough County, FL</span>
+    <span>Site by <a href="https://copperbuilds.com" style="color:inherit;">CopperBuilds</a></span>
   </div>
 </footer>
 
