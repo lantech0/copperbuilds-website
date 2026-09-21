@@ -142,6 +142,7 @@ Every page must pass these Google performance standards before launch:
 - Self-host all fonts: download WOFF2 files from Google Fonts, save to `/fonts/`, serve via a local `fonts.css` with `@font-face` rules
 - Use the script at `copperbuilds/.tmp/selfhost_fonts.py` as the reference pattern
 - Include `font-display: swap` in every `@font-face` rule
+- **Preload the above-fold font files** — `font-display: swap` still causes a visible reflow (FOUT) on a cold cache while the browser discovers and fetches the WOFF2 files after parsing `fonts.css`. Add `<link rel="preload" as="font" type="font/woff2" href="/fonts/[file].woff2" crossorigin>` in `<head>` for the 2–3 weights actually used above the fold (heading font + body regular + body bold), placed before the `fonts.css` preload. Skipping this is what caused a real CLS spike (0.078 → 0.406) on a cold-cache Lighthouse run of the CopperBuilds site itself (2026-09-21) — the layout looked fine on a warm cache, which is exactly why it's easy to miss without this preload.
 
 **JavaScript:**
 - Every `<script src="...">` tag in `<head>` or early `<body>` must have `defer` — no render-blocking JS
@@ -287,6 +288,7 @@ Before marking any page done, run every item in this checklist:
 - [ ] All non-hero images have `loading="lazy"`
 - [ ] Every `<img>` has explicit `width` and `height` attributes
 - [ ] Fonts are self-hosted from `/fonts/` — no `fonts.googleapis.com` link in any page
+- [ ] Above-fold font weights (heading + body regular + body bold) have `<link rel="preload" as="font" type="font/woff2" crossorigin>` in `<head>`, before the `fonts.css` preload — test on a cold/incognito cache, not just a warm one, since the CLS impact only shows up on first load
 - [ ] Every `<script src>` has `defer` attribute
 - [ ] Every page has a `<main>` landmark element
 - [ ] Total homepage payload < 1 MB (check Network tab in DevTools)
