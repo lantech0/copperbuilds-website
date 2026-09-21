@@ -5,7 +5,7 @@
 
         + '<div>'
           + '<a href="/" aria-label="CopperBuilds homepage" style="display:inline-block;margin-bottom:1rem">'
-            + '<img src="/brand_assets/logo.svg" alt="CopperBuilds" height="36" style="display:block">'
+            + '<img src="/brand_assets/logo.svg" alt="CopperBuilds" width="186" height="36" style="display:block">'
           + '</a>'
           + '<p style="color:var(--warm-stone);font-size:0.875rem;line-height:1.72;max-width:260px;margin-bottom:1.25rem">Websites and local SEO for home services pros across the USA. Built for small businesses. Not enterprise.</p>'
           + '<div style="display:flex;gap:0.625rem">'

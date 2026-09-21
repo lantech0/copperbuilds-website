@@ -364,6 +364,7 @@ IMPORTANT: A page is not done until ALL of these pass:
 - [ ] `/seo-technical` PASS on the build
 - [ ] `/seo-local` PASS (local biz clients only)
 - [ ] `/seo-sxo` PASS — run after `/seo-technical`
+- [ ] `/seo-geo` PASS — AI crawler accessibility, brand mention signals, citability
 - This mirrors what `luisweb`'s orchestrator already requires before a new client build is marked done — this gate exists so a session working directly in this folder doesn't fall short of that same bar.
 
 ## Wiki Knowledge Base
