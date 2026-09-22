@@ -21,10 +21,8 @@
         + '<div>'
           + '<h3 style="font-size:0.8125rem;font-weight:700;color:var(--ink);margin-bottom:1rem;letter-spacing:0.04em;text-transform:uppercase">Services</h3>'
           + '<nav aria-label="Services footer links" style="display:flex;flex-direction:column;gap:0.625rem">'
-            + footerLink('/services', 'Web Design')
-            + footerLink('/services', 'Local SEO')
-            + footerLink('/services', 'Google Business')
-            + footerLink('/services', 'Social Media')
+            + footerLink('/services/web-design', 'Web Design')
+            + footerLink('/services/local-seo', 'Local SEO & GBP')
             + footerLink('/pricing', 'Pricing')
           + '</nav>'
         + '</div>'

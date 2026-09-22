@@ -1,12 +1,14 @@
 # CopperBuilds
 
-> CopperBuilds builds hand-coded websites and runs local SEO for home services businesses—plumbing, HVAC, electrical, drain & sewer, and water damage restoration, with roofing, garage door, septic, locksmith, and pest control also served. One-time website builds start at $1,200 flat rate (client owns every file, no lock-in). Monthly local SEO retainer plans start at $997/mo, month-to-month, no annual contract.
+> CopperBuilds builds hand-coded websites and runs local SEO for home services businesses—plumbing, HVAC, electrical, drain & sewer, and water damage restoration, with roofing, garage door, septic, locksmith, and pest control also served. The Starter website build is a flat $1,499 (client owns every file, no lock-in); larger scope is quoted as Custom. Monthly local SEO retainer plans start at $997/mo, month-to-month, no annual contract.
 
 ## Pages
 
 - [Home](https://copperbuilds.com/): Overview of web design and local SEO services for home services pros; new sites live within 14 days.
-- [Services](https://copperbuilds.com/services): The four core services—web design, local SEO, Google Business Profile management, and social media.
-- [Pricing](https://copperbuilds.com/pricing): One-time website build packages (Starter/Growth/Pro) and monthly SEO retainer plans (Local Presence/Lead Machine/Market Leader), with full pricing and inclusions.
+- [Services](https://copperbuilds.com/services): Overview of the two core services—web design and local SEO with Google Business Profile management.
+- [Web Design](https://copperbuilds.com/services/web-design): Mobile-first, fast-loading websites for home services pros, live in 14 days.
+- [Local SEO](https://copperbuilds.com/services/local-seo): Local SEO and Google Business Profile management to rank in the map pack.
+- [Pricing](https://copperbuilds.com/pricing): Flat-rate $1,499 Starter website build (Custom quoted separately) and monthly SEO retainer plans (Local Presence/Lead Machine/Market Leader), with full pricing and inclusions.
 - [About](https://copperbuilds.com/about): Who CopperBuilds is and who it serves.
 - [How We Work](https://copperbuilds.com/how-we-work): The build and retainer process step by step.
 - [Portfolio](https://copperbuilds.com/portfolio): Example website builds for home services clients.

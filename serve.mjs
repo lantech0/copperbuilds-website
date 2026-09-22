@@ -28,11 +28,12 @@ http.createServer((req, res) => {
 
   let filePath = path.join(__dirname, urlPath);
 
-  // Serve index.html from directories
-  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-    filePath = path.join(filePath, 'index.html');
-  } else if (!path.extname(filePath) && !fs.existsSync(filePath)) {
+  // Clean URLs: a sibling "<path>.html" file takes precedence over a
+  // same-named directory, matching Cloudflare Pages' file-first resolution.
+  if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
     filePath += '.html';
+  } else if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
   }
 
   fs.readFile(filePath, (err, data) => {
