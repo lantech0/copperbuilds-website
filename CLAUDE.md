@@ -79,7 +79,7 @@ Read the relevant workflow before starting any process — it defines every requ
 
 **This process is for the hardcoded (static HTML/CSS/JS) build path.** For a client on the WordPress-ready-built path, use `/copperbuilds-build-wp` instead — its process (Gutenberg block content, no hardcoded SEO, RankMath/Yoast handoff) is different enough that this section doesn't apply directly, though the same brand/copy/schema standards still govern the content itself. `/luisweb` decides which path a build uses before routing — see its Build Type Decision section.
 
-This is the correct process for rebuilding any page — CopperBuilds site and all client builds on the hardcoded path. Do NOT skip to coding directly.
+This is the correct process for any page on the hardcoded path — new builds AND rebuilds, CopperBuilds site and all client builds alike. "Rebuild" in the name refers to the process replacing the old ad hoc one, not to the page needing to already exist. Do NOT skip to coding directly.
 
 **Three-Layer Copy Framework:** Every page is built in this order — SEO Seed first, Marketing Copy second, Grammar & Structure third. Never reverse the order. Full framework documented in `COPY-STANDARDS.md`.
 
@@ -92,22 +92,24 @@ This is the correct process for rebuilding any page — CopperBuilds site and al
    - Every H1, H2, and first body paragraph must contain or directly support the seed keywords
    - The seed is the thesis — the rest of the copy proves it
 
-3. **Layer 2 — Marketing Copy**: Draft copy using the SEO seed as the spine
+3. **Layer 1B — Competitive Check**: Fetch and read the top 3 ranking pages for the primary keyword(s) before drafting — required, not optional. Full steps in `COPY-STANDARDS.md`. Note what they cover that the plan doesn't, how deep each section goes, and the gap the new page can fill. This becomes the brief Layer 2 writes against.
+
+4. **Layer 2 — Marketing Copy**: Draft copy using the SEO seed and competitive check as the spine
    - Read `COPY-STANDARDS.md` — readability targets, AIDA/PAS frameworks, headline rules, CTA rules
    - Client builds: also read `clients/active/[slug]/BRAND-VOICE.md` — brand voice and vocabulary override CopperBuilds defaults for client work
    - Run `/impeccable craft` — shape discovery interviews establish page purpose and target reader, design brief is confirmed before code starts, copy is drafted using seed keywords + marketing framework + brand voice
 
-4. **Layer 3A — Mechanical Gate**: Run `/vale-check` on the copy draft
+5. **Layer 3A — Mechanical Gate**: Run `/vale-check` on the copy draft
    - Vale flags passive voice, weak CTAs, banned phrases, corporate jargon, terminology inconsistencies
    - Fix every error before proceeding. Warnings require judgment — classify each one as genuine fix or false positive in context. Document reasoning for any warning left unfixed.
 
-5. **Layer 3B — Judgment Gate**: Run the manual checklist from `COPY-STANDARDS.md`
+6. **Layer 3B — Judgment Gate**: Run the manual checklist from `COPY-STANDARDS.md`
    - Every item verified explicitly — not by gut feel, not by "looks fine"
    - Key checks: no "We" sentence openers, no dangling modifiers, AIDA structure intact, headline passes Ogilvy test, all CTAs use first-person possessive ("Get My Free Quote" not "Get a Free Quote"), no incomplete comparisons
 
-6. **Build HTML** using DESIGN.md tokens
+7. **Build HTML** using DESIGN.md tokens
 
-7. **Implement schema** — mandatory, not optional, not post-launch
+8. **Implement schema** — mandatory, not optional, not post-launch
    - Determine page type and add all required JSON-LD blocks per the schema stack in `workflows/client-build-standards.md` Step 10
    - Every page minimum: `Organization` + `BreadcrumbList` (inner pages)
    - Homepage: `LocalBusiness` (or trade sub-type) + `WebSite`
@@ -116,15 +118,15 @@ This is the correct process for rebuilding any page — CopperBuilds site and al
    - Question-format H2s + 40–60 word direct answer paragraphs for featured snippet eligibility
    - Validate at `https://validator.schema.org/` — zero errors before continuing
 
-8. **Start dev server** — `node serve.mjs` in background
+9. **Start dev server** — `node serve.mjs` in background
 
-9. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
+10. **Screenshot** — `node screenshot.mjs http://localhost:3000/page.html`
 
-10. **Run quality gates** — run `/copperbuilds-qa` for the structural/visual check, then user reviews the page in browser; copy reads naturally in context of design
+11. **Run quality gates** — run `/copperbuilds-qa` for the structural/visual check, then user reviews the page in browser; copy reads naturally in context of design
 
-11. **Iterate** — minimum 2 screenshot rounds before calling a page done
+12. **Iterate** — minimum 2 screenshot rounds before calling a page done
 
-**New blog post specifically:** use `/blog-write` as the entry point instead of running this process from scratch — it chains to `/blog-seo-check` as its own SEO gate, and still needs `/vale-check` (Layer 3A) before it's marked done.
+**New blog post specifically:** use `/blog-write` as the entry point instead of running this process from scratch — it chains to `/blog-seo-check` as its own SEO gate, and still needs `/vale-check` (Layer 3A) before it's marked done. `/blog-write`'s own research phase does not yet force a top-3-competitor read — see the `local-blog-competitive-check` branch in `claude-blog/` for the patch; until that's merged, confirm the competitor check happened before marking a post done.
 
 **Once a build goes live:** capture a `/seo-drift` baseline — this is what the monthly retainer/maintenance workflows compare against later.
 
@@ -132,9 +134,10 @@ This is the correct process for rebuilding any page — CopperBuilds site and al
 - ~~Read old HTML → write new HTML directly → screenshot → iterate~~
 - ~~Draft copy without running the three-layer framework~~
 - ~~Skip the SEO seed and start with marketing copy~~
+- ~~Skip the competitive check and draft straight from the keyword list~~
 - ~~Skip Vale and the manual checklist because "the copy feels good"~~
 - ~~Copy handoff to .tmp/ for grammar approval — Vale + manual checklist replaces this~~
-- ~~Add schema "later" or "after launch" — schema is built during step 7, never deferred~~
+- ~~Add schema "later" or "after launch" — schema is built during step 8, never deferred~~
 - Reading old HTML for content reference is fine. Jumping to code without the framework is not.
 
 ## Brand

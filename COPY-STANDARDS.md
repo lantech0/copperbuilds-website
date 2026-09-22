@@ -12,6 +12,7 @@ Every page and post — CopperBuilds site and client builds — is built in this
 | Layer | Name | Purpose | When to execute |
 |---|---|---|---|
 | **1** | **SEO Seed** | Establish what the page ranks for — target keyword cluster, search intent, page focus | Before writing anything |
+| **1B** | **Competitive Check** | Confirm the page can actually outrank what's already there | After the SEO seed, before drafting |
 | **2** | **Marketing Copy** | Make the copy convert — buyer psychology, AIDA/PAS structure, trade vocabulary, first-person CTAs | During drafting |
 | **3** | **Grammar & Structure** | Make the copy clean and consistent — Vale gate (3A) + manual checklist (3B) | After drafting, before building HTML |
 
@@ -19,8 +20,26 @@ Every page and post — CopperBuilds site and client builds — is built in this
 - Grammar-polishing copy that doesn't rank is wasted effort — clean sentences no one finds
 - Marketing layering on a keyword-free draft produces copy that converts but never gets discovered
 - SEO-seeded copy that skips the grammar gate ships with "We" openers, passive voice, and weak CTAs that erode trust
+- Search volume alone doesn't tell you what it takes to win — skipping the competitive check produces copy that's on-topic but thinner or less useful than what's already ranking
 
 **For client builds:** The SEO seed uses the client's keyword data. The marketing copy uses the client's `BRAND-VOICE.md`. The grammar gates (`COPY-STANDARDS.md`) apply to every build without exception.
+
+---
+
+## Layer 1B — Competitive Check (mandatory, every page and post — new builds AND rebuilds)
+
+After the SEO seed and before drafting a single sentence of marketing copy:
+
+1. **Search the primary target keyword(s)** (plus the closest "near me" / niche-modified variant for local pages) and identify the top 3 organic results — real pages, not ads.
+2. **Fetch and read all 3** — do not judge from the search snippet alone. Note:
+   - What sections/topics they cover that the planned page doesn't yet
+   - How deep each section goes (a competitor with a real pricing breakdown, FAQ, or process walkthrough sets the depth bar)
+   - What schema or structured content is visibly working for them (FAQ blocks, comparison tables, etc.)
+   - Any gap all 3 share that the new page can fill — that's the differentiation angle
+3. **Write down what the new page needs to beat them** — 3-5 bullets, before drafting. This becomes the brief Layer 2 writes against.
+4. **If genuinely stuck for time**, at minimum read the #1 result — never skip this layer entirely. Note in the page's build record that only 1 of 3 was checked and why.
+
+**Why this exists:** keyword volume from Keyword Planner/DataForSEO tells you what people search for, not what it takes to outrank the pages already sitting there. A page can be perfectly keyword-seeded and still lose because it's thinner or less useful than what's already ranking.
 
 ---
 
